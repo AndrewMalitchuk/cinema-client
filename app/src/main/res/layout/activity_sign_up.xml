@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity"
+    tools:ignore="LabelFor" >
+
+    <LinearLayout
+        android:id="@+id/signUpLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/signUpCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="25dp"
+            android:layout_marginBottom="50dp"
+            android:padding="50dp"
+            app:cardBackgroundColor="@color/colorLoginActivityCardView"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/newAccountSignUpActivityImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="50dp"
+                    android:contentDescription="@string/newAccountSignUpActivityImageViewString"
+                    app:srcCompat="@drawable/ic_account_circle_black_24dp" />
+
+                <TextView
+                    android:id="@+id/loginPromptSignUpActivityTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="@string/newAccountSignUpActivityImageViewString"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorLoginActivityFieldsText"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/emailSignUpActivityTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/emailLoginActivityTextViewString"
+                    android:textColorHint="@color/colorAccent">
+
+                    <EditText
+                        android:id="@+id/emailSignUpActivityEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:autofillHints=""
+                        android:backgroundTint="@color/colorAccent"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:textColor="@color/colorLoginActivityFieldsText"
+                        tools:targetApi="o" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/passwordSignUpActivityTextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/passwordLoginActivityTextViewString"
+                    android:textColorHint="@color/colorAccent">
+
+                    <EditText
+                        android:id="@+id/passwordSignUpActivityEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:autofillHints=""
+                        android:backgroundTint="@color/colorAccent"
+                        android:inputType="textPassword"
+                        android:textColor="@color/colorLoginActivityFieldsText"
+                        tools:targetApi="o" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.example.myloadingbutton.MyLoadingButton
+                    android:id="@+id/signUpSignUpActivityButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:mlb_backgroundColor="@color/colorBackground"
+                    app:mlb_labelColor="@color/colorLoginActivityCardView"
+                    app:mlb_labelSize="20dp">
+
+                </com.example.myloadingbutton.MyLoadingButton>
+
+                <TextView
+                    android:id="@+id/loginSignUpActivityTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:text="@string/loginSignUpActivityTextViewString"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorLoginActivityText"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+    defaultConfig {
+        applicationId "com.cinema.client"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // https://github.com/florent37/MaterialTextField
+    implementation 'com.github.florent37:materialtextfield:1.0.7'
+    // https://android-arsenal.com/details/1/5324?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Android_Arsenal+%28The+Android+Arsenal%29
+    implementation 'com.github.matecode:Snacky:1.1.4'
+    implementation 'com.google.android.material:material:1.0.0'
+    // https://android-arsenal.com/details/1/5219?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Android_Arsenal+%28The+Android+Arsenal%29
+    implementation 'com.keiferstone:nonet:2.0.4'
+    // https://android-arsenal.com/details/1/4517?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Android_Arsenal+%28The+Android+Arsenal%29
+    implementation 'com.devs:acr:1.0.1'
+    // https://android-arsenal.com/details/1/3984?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Android_Arsenal+%28The+Android+Arsenal%29
+    implementation 'com.dynamitechetan.flowinggradient:flowinggradient:1.1'
+    // https://android-arsenal.com/details/1/3735?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Android_Arsenal+%28The+Android+Arsenal%29
+    implementation 'com.github.javiersantos:BottomDialogs:1.2.1'
+    // https://android-arsenal.com/details/1/3826?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Android_Arsenal+%28The+Android+Arsenal%29
+    implementation 'com.tomergoldst.android:tooltips:1.0.10'
+    // https://android-arsenal.com/details/1/7469
+//    implementation 'com.github.Muki1992:MaterialLoadingButton:1.0'
+    //
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    //https://github.com/yatindeokar/MyLoadingButton
+    implementation 'com.github.yatindeokar:MyLoadingButton:v1.0.1'
+    //
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+//    implementation 'com.android.support:design:24.0.0'
+    //https://android-arsenal.com/details/1/6916?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Android_Arsenal+%28The+Android+Arsenal%29
+    implementation 'com.github.medyo:android-about-page:1.2.5'
+    //https://github.com/vipulasri/TicketView
+    implementation 'com.vipulasri:ticketview:1.0.7'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+
+    //
+    implementation 'com.google.android.material:material:1.0.0-beta01'
+
+}
