@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.TicketActivity"></activity>
+        <activity
+            android:name=".activity.AboutFilmActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".activity.TicketActivity" />
         <activity android:name=".activity.AboutActivity" />
         <activity
             android:name=".activity.SignUpActivity"

@@ -67,7 +67,7 @@
                         android:layout_height="200dp"
                         android:layout_margin="50dp"
                         android:contentDescription="@string/ticketLoginActivityImageViewString"
-                        app:srcCompat="@drawable/ic_ticket_black" />
+                        app:srcCompat="@drawable/ic_ticket_white" />
                 </androidx.cardview.widget.CardView>
 
                 <TextView
