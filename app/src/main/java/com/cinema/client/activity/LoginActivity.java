@@ -10,6 +10,7 @@ import com.example.myloadingbutton.MyLoadingButton;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -63,6 +64,12 @@ public class LoginActivity extends AppCompatActivity implements
                 startActivity(intent);
             }
         });
+
+
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        );
 
 
     }

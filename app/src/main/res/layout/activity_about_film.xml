@@ -24,14 +24,18 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_gravity="end|bottom"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:clickable="true"
-        app:srcCompat="@drawable/ic_check_black_24dp" />
+        app:srcCompat="@drawable/ic_share_white_24dp" />
 
     <ScrollView
         android:id="@+id/mScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/my_toolbar"
         android:background="#fafafa">
 
 
@@ -42,26 +46,37 @@
             android:orientation="vertical">
 
 
-            <LinearLayout
-                android:id="@+id/diagonalLayout"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
                 android:layout_width="match_parent"
-                android:layout_height="380dp"
-                android:elevation="10dip"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="5dp">
 
-                <com.flaviofaria.kenburnsview.KenBurnsView
+                <LinearLayout
+                    android:id="@+id/diagonalLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/once_upon_a_time" />
+                    android:layout_height="380dp"
+                    android:elevation="10dip"
+                    android:orientation="vertical">
+
+                    <com.flaviofaria.kenburnsview.KenBurnsView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/once_upon_a_time" />
 
 
-            </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/diagonalLayout"
+                android:layout_below="@+id/cardView"
                 android:layout_marginTop="10dp"
                 android:orientation="vertical"
                 android:padding="20dp">
@@ -106,6 +121,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="TextView" />
+
+                <me.gujun.android.taggroup.TagGroup
+                    android:id="@+id/tag_group"
+                    style="@style/TagGroup"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:atg_borderColor="@color/colorAccent"
+                    app:atg_checkedBackgroundColor="@color/colorAccent"
+                    app:atg_checkedBorderColor="@color/colorAccent"
+                    app:atg_textColor="@color/colorAccent"
+                    app:atg_textSize="15sp"
+                    app:atg_verticalPadding="5dp"
+                    app:atg_verticalSpacing="5dp" />
+
             </LinearLayout>
 
         </RelativeLayout>

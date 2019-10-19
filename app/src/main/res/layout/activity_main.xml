@@ -45,5 +45,19 @@
             android:layout_height="wrap_content"
             android:onClick="aboutFilm"
             android:text="About Film" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="card"
+            android:text="Card" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startup"
+            android:text="Startup" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

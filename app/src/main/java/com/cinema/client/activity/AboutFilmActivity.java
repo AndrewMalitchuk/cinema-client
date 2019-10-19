@@ -13,9 +13,15 @@ import android.widget.ScrollView;
 import com.cinema.client.MainActivity;
 import com.cinema.client.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.skyhope.materialtagview.TagView;
+import com.skyhope.materialtagview.enums.TagSeparator;
+
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import me.gujun.android.taggroup.TagGroup;
 
 public class AboutFilmActivity extends AppCompatActivity {
 
@@ -47,6 +53,12 @@ public class AboutFilmActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
+
+
+        //
+        TagGroup mTagGroup = (TagGroup) findViewById(R.id.tag_group);
+        mTagGroup.setTags(new String[]{"Tag1", "Tag2", "Tag3"});
+
 
 
 

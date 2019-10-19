@@ -8,8 +8,10 @@ import android.view.View;
 
 import com.cinema.client.activity.AboutActivity;
 import com.cinema.client.activity.AboutFilmActivity;
+import com.cinema.client.activity.CardActivity;
 import com.cinema.client.activity.LoginActivity;
 import com.cinema.client.activity.SignUpActivity;
+import com.cinema.client.activity.StartupActivity;
 import com.cinema.client.activity.TicketActivity;
 import com.devs.acr.AutoErrorReporter;
 
@@ -61,4 +63,15 @@ public class MainActivity extends AppCompatActivity {
         Intent intent =new Intent(this, AboutFilmActivity.class);
         startActivity(intent);
     }
+
+    public void card(View view){
+        Intent intent =new Intent(this, CardActivity.class);
+        startActivity(intent);
+    }
+
+    public void startup(View view){
+        Intent intent =new Intent(this, StartupActivity.class);
+        startActivity(intent);
+    }
+
 }
