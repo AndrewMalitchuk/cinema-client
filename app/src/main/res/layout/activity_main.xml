@@ -66,5 +66,12 @@
             android:layout_height="wrap_content"
             android:onClick="table"
             android:text="Table Test" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="bottom"
+            android:text="Bottom Navigation Test" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

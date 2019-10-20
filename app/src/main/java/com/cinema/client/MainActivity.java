@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.cinema.client.activity.AboutActivity;
 import com.cinema.client.activity.AboutFilmActivity;
+import com.cinema.client.activity.BottomNavigation;
 import com.cinema.client.activity.CardActivity;
 import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.LoginActivity;
@@ -77,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void table(View view){
         Intent intent =new Intent(this, HallActivity.class);
+        startActivity(intent);
+    }
+
+    public void bottom(View view){
+        Intent intent =new Intent(this, BottomNavigation.class);
         startActivity(intent);
     }
 

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.RatingBar;
 import android.widget.ScrollView;
 
 import com.cinema.client.MainActivity;
@@ -31,6 +32,9 @@ public class AboutFilmActivity extends AppCompatActivity {
 
     @BindView(R.id.floatingActionButton2)
     FloatingActionButton fab;
+
+    @BindView(R.id.ratingBar)
+    RatingBar ratingBar;
 
 
 
@@ -60,6 +64,9 @@ public class AboutFilmActivity extends AppCompatActivity {
         mTagGroup.setTags(new String[]{"Tag1", "Tag2", "Tag3"});
 
 
+        ratingBar.setNumStars(5);
+        ratingBar.setRating(3.5f);
+        ratingBar.isIndicator();
 
 
 
