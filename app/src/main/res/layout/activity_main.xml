@@ -59,5 +59,12 @@
             android:layout_height="wrap_content"
             android:onClick="startup"
             android:text="Startup" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="table"
+            android:text="Table Test" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

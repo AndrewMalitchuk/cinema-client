@@ -9,20 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.StartupActivity"></activity>
+        <activity android:name=".activity.HallActivity"></activity>
+        <activity android:name=".activity.StartupActivity" />
         <activity android:name=".activity.CardActivity" />
         <activity
             android:name=".activity.AboutFilmActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.TicketActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".activity.TicketActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.AboutActivity" />
         <activity
             android:name=".activity.SignUpActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/LoginActivityTheme"/>
+            android:theme="@style/LoginActivityTheme" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
