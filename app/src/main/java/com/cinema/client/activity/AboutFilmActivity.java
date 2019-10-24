@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.widget.NestedScrollView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.RatingBar;
@@ -13,6 +16,9 @@ import android.widget.ScrollView;
 
 import com.cinema.client.MainActivity;
 import com.cinema.client.R;
+import com.github.rubensousa.bottomsheetbuilder.BottomSheetBuilder;
+import com.github.rubensousa.bottomsheetbuilder.BottomSheetMenuDialog;
+import com.github.rubensousa.bottomsheetbuilder.adapter.BottomSheetItemClickListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.skyhope.materialtagview.TagView;
 import com.skyhope.materialtagview.enums.TagSeparator;
@@ -37,6 +43,8 @@ public class AboutFilmActivity extends AppCompatActivity {
     RatingBar ratingBar;
 
 
+    private BottomSheetMenuDialog mBottomSheetDialog;
+    private boolean mShowingLongDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +77,34 @@ public class AboutFilmActivity extends AppCompatActivity {
         ratingBar.isIndicator();
 
 
+        //
 
+
+
+    }
+
+    public void onFabClick(View view){
+        mShowingLongDialog = true;
+        mBottomSheetDialog = new BottomSheetBuilder(this, R.style.AppTheme_BottomSheetDialog)
+                .setMode(BottomSheetBuilder.MODE_LIST)
+                .setMenu(R.menu.navigation)
+                .addDividerItem()
+                .addTitleItem("Share")
+                .setItemClickListener(new BottomSheetItemClickListener() {
+                    @Override
+                    public void onBottomSheetItemClick(MenuItem item) {
+                        Log.d("Item click", item.getTitle() + "");
+                        mShowingLongDialog = false;
+                    }
+                })
+                .createDialog();
+
+        mBottomSheetDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                mShowingLongDialog = false;
+            }
+        });
+        mBottomSheetDialog.show();
     }
 }

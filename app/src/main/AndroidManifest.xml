@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.BottomNavigation"></activity>
+        <activity android:name=".activity.AboutDeveloperActivity" />
+        <activity android:name=".activity.BottomNavigation" />
         <activity android:name=".activity.HallActivity" />
         <activity android:name=".activity.StartupActivity" />
         <activity android:name=".activity.CardActivity" />

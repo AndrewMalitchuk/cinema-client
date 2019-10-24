@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.cinema.client.activity.AboutActivity;
+import com.cinema.client.activity.AboutDeveloperActivity;
 import com.cinema.client.activity.AboutFilmActivity;
 import com.cinema.client.activity.BottomNavigation;
 import com.cinema.client.activity.CardActivity;
@@ -85,5 +86,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent =new Intent(this, BottomNavigation.class);
         startActivity(intent);
     }
+
+    public void developer(View view){
+        Intent intent =new Intent(this, AboutDeveloperActivity.class);
+        startActivity(intent);
+    }
+
+
+
 
 }

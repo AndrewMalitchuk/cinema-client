@@ -92,14 +92,20 @@
                     app:boxStrokeColor="@color/colorAccent"
                     app:hintTextColor="@color/colorAccent">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/passwordLoginActivityTextInputEditText"
+                    <!--<com.google.android.material.textfield.TextInputEditText-->
+                        <!--android:id="@+id/passwordLoginActivityTextInputEditText"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:backgroundTint="@color/colorAccent"-->
+                        <!--android:hint="@string/passwordLoginActivityTextViewString"-->
+                        <!--android:inputType="textPassword"-->
+                        <!--android:textColor="@color/colorLoginActivityFieldsText" />-->
+
+                    <com.subhrajyoti.passwordview.PasswordView
+                        android:id="@+id/passwordView"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/colorAccent"
-                        android:hint="@string/passwordLoginActivityTextViewString"
-                        android:inputType="textPassword"
-                        android:textColor="@color/colorLoginActivityFieldsText" />
+                        android:layout_height="wrap_content" />
+
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.example.myloadingbutton.MyLoadingButton
