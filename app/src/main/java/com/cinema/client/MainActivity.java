@@ -17,6 +17,9 @@ import com.cinema.client.activity.SignUpActivity;
 import com.cinema.client.activity.StartupActivity;
 import com.cinema.client.activity.TicketActivity;
 import com.devs.acr.AutoErrorReporter;
+import com.skydoves.needs.Needs;
+import com.skydoves.needs.NeedsItem;
+import com.skydoves.needs.OnConfirmListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -92,6 +95,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void permisionShower(View view){
+
+
+    }
 
 
 
