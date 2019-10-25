@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ZoomImageActivity"
+        <activity android:name=".activity.QRZoomActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".activity.ZoomImageActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.NewCardActivity" />
         <activity android:name=".activity.TabActivity" />
         <activity android:name=".activity.AboutDeveloperActivity" />

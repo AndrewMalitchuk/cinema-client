@@ -62,7 +62,8 @@
                     android:paddingTop="30dp"
                     android:paddingRight="30dp"
                     android:paddingBottom="10dp"
-                    app:srcCompat="@color/design_default_color_primary" />
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/static_qr_code_without_logo" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="match_parent"

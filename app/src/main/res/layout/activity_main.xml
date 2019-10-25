@@ -89,5 +89,12 @@
             android:onClick="zoom"
             android:text="zoom" />
 
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="zoomQr"
+            android:text="Zoom QR" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

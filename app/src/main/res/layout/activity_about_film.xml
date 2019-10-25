@@ -67,6 +67,8 @@
                     <com.flaviofaria.kenburnsview.KenBurnsView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:onClick="onImageClick"
                         android:scaleType="centerCrop"
                         android:src="@drawable/once_upon_a_time" />
 

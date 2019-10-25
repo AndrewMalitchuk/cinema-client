@@ -83,6 +83,11 @@ public class AboutFilmActivity extends AppCompatActivity {
 
     }
 
+    public void onImageClick(View view){
+        Intent intent=new Intent(this,ZoomImageActivity.class);
+        startActivity(intent);
+    }
+
     public void onFabClick(View view){
         mShowingLongDialog = true;
         mBottomSheetDialog = new BottomSheetBuilder(this, R.style.AppTheme_BottomSheetDialog)

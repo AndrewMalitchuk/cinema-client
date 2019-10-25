@@ -14,6 +14,7 @@ import com.cinema.client.activity.CardActivity;
 import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.LoginActivity;
 import com.cinema.client.activity.NewCardActivity;
+import com.cinema.client.activity.QRZoomActivity;
 import com.cinema.client.activity.SignUpActivity;
 import com.cinema.client.activity.StartupActivity;
 import com.cinema.client.activity.TabActivity;
@@ -98,6 +99,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void zoom(View view){
         Intent intent =new Intent(this, ZoomImageActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void zoomQr(View view){
+        Intent intent =new Intent(this, QRZoomActivity.class);
         startActivity(intent);
 
     }

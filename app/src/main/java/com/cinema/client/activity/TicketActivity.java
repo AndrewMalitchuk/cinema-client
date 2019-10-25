@@ -3,6 +3,7 @@ package com.cinema.client.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -46,6 +47,7 @@ public class TicketActivity extends AppCompatActivity {
 
 
     public void onQRCodeClick(View view){
-        Toast.makeText(this, "Click", Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(this,QRZoomActivity.class);
+        startActivity(intent);
     }
 }
