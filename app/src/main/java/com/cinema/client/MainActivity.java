@@ -13,13 +13,13 @@ import com.cinema.client.activity.BottomNavigation;
 import com.cinema.client.activity.CardActivity;
 import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.LoginActivity;
+import com.cinema.client.activity.NewCardActivity;
 import com.cinema.client.activity.SignUpActivity;
 import com.cinema.client.activity.StartupActivity;
+import com.cinema.client.activity.TabActivity;
 import com.cinema.client.activity.TicketActivity;
 import com.devs.acr.AutoErrorReporter;
-import com.skydoves.needs.Needs;
-import com.skydoves.needs.NeedsItem;
-import com.skydoves.needs.OnConfirmListener;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void card(View view){
-        Intent intent =new Intent(this, CardActivity.class);
+        Intent intent =new Intent(this, NewCardActivity.class);
         startActivity(intent);
     }
 
@@ -96,7 +96,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void permisionShower(View view){
-
+        Intent intent =new Intent(this, TabActivity.class);
+        startActivity(intent);
 
     }
 
