@@ -86,8 +86,8 @@
             android:id="@+id/button11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="permisionShower"
-            android:text="permision dialog" />
+            android:onClick="zoom"
+            android:text="zoom" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

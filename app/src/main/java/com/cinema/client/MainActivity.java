@@ -18,6 +18,7 @@ import com.cinema.client.activity.SignUpActivity;
 import com.cinema.client.activity.StartupActivity;
 import com.cinema.client.activity.TabActivity;
 import com.cinema.client.activity.TicketActivity;
+import com.cinema.client.activity.ZoomImageActivity;
 import com.devs.acr.AutoErrorReporter;
 
 
@@ -95,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void permisionShower(View view){
-        Intent intent =new Intent(this, TabActivity.class);
+    public void zoom(View view){
+        Intent intent =new Intent(this, ZoomImageActivity.class);
         startActivity(intent);
 
     }
