@@ -27,8 +27,8 @@
             android:hapticFeedbackEnabled="true"
             app:itemIconTint="@color/colorLoginActivityCardView"
             app:itemTextColor="@color/cardview_light_background"
-            app:labelVisibilityMode="labeled"
-            app:menu="@menu/navigation" />
+            app:labelVisibilityMode="selected"
+            app:menu="@menu/bottom_navigation" />
     </LinearLayout>
 
 </FrameLayout>

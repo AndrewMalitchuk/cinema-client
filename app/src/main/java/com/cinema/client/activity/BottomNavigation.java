@@ -5,24 +5,43 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.brouding.simpledialog.SimpleDialog;
 import com.cinema.client.R;
 import com.cinema.client.fragments.HallTestFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.concurrent.TimeUnit;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import iammert.com.library.Status;
+import iammert.com.library.StatusView;
 
 public class BottomNavigation extends AppCompatActivity {
 
 
     @BindView(R.id.navigation)
     BottomNavigationView bottomNavigationView;
+
+
+//    private ProgressDialog mProgressDialog;
+    MyTask mt;
+
+//    @BindView(R.id.status)
+//    StatusView statusView;
+
+    //
+    SimpleDialog simpleDialog;
+    //
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,32 +50,48 @@ public class BottomNavigation extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
+//        mProgressDialog = new ProgressDialog(this);
+
+
+        //
+        simpleDialog = new SimpleDialog.Builder(this)
+                .setContent("The hall is loading...", 7)
+                // .showProgress must be set true if you want ProgressDialog
+                .showProgress(true)     // Default GIF is in the library (R.raw.simple_dialog_progress_default)
+                //.setProgressGIF(R.raw.simple_dialog_progress_default)
+                .setBtnCancelText("Cancel")
+                .setBtnCancelTextColor("#2861b0").build();
+        //
+
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.navigation_shop:
-                        Toast.makeText(BottomNavigation.this, "navigation_shop", Toast.LENGTH_SHORT).show();
+                    case R.id.left_side_of_hall:
+                        Toast.makeText(BottomNavigation.this, "left_side_of_hall", Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.navigation_gifts:
-                        Toast.makeText(BottomNavigation.this, "navigation_gifts", Toast.LENGTH_SHORT).show();
+                    case R.id.center_side_of_hall:
+                        Toast.makeText(BottomNavigation.this, "center_side_of_hall", Toast.LENGTH_SHORT).show();
+
+                        mt = new MyTask();
+                        mt.execute();
+
+
                         break;
-                    case R.id.navigation_cart:
-                        Toast.makeText(BottomNavigation.this, "navigation_cart", Toast.LENGTH_SHORT).show();
+                    case R.id.right_side_of_hall:
+                        Toast.makeText(BottomNavigation.this, "right_side_of_hall", Toast.LENGTH_SHORT).show();
+
+
 
                         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-// Replace the contents of the container with the new fragment
                         ft.replace(R.id.testFragment, new HallTestFragment());
-// or ft.add(R.id.your_placeholder, new FooFragment());
-// Complete the changes added above
                         ft.commit();
 
 
                         break;
-                    case R.id.navigation_profile:
-                        Toast.makeText(BottomNavigation.this, "navigation_profile", Toast.LENGTH_SHORT).show();
-                        break;
+
                 }
                 return true;
             }
@@ -64,6 +99,41 @@ public class BottomNavigation extends AppCompatActivity {
         });
 
 
+    }
+
+
+    class MyTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+//            mProgressDialog.setMessage("Working ...");
+//            mProgressDialog.show();
+//            statusView.setStatus(iammert.com.library.Status.LOADING);
+            simpleDialog.show();
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                TimeUnit.SECONDS.sleep(2);
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.testFragment, new HallTestFragment());
+                ft.commit();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+//            mProgressDialog.dismiss();
+//            statusView.setStatus(iammert.com.library.Status.COMPLETE);
+            simpleDialog.dismiss();
+        }
     }
 
 
