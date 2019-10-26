@@ -13,6 +13,7 @@ import com.cinema.client.activity.BottomNavigation;
 import com.cinema.client.activity.CardActivity;
 import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.LoginActivity;
+import com.cinema.client.activity.Main2Activity;
 import com.cinema.client.activity.NewCardActivity;
 import com.cinema.client.activity.QRZoomActivity;
 import com.cinema.client.activity.SignUpActivity;
@@ -107,6 +108,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent =new Intent(this, QRZoomActivity.class);
         startActivity(intent);
 
+    }
+
+    public void mainActivity(View view){
+        Intent intent =new Intent(this, Main2Activity.class);
+        startActivity(intent);
     }
 
 
