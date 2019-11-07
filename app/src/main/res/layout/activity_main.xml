@@ -103,5 +103,19 @@
             android:onClick="mainActivity"
             android:text="Main" />
 
+        <Button
+            android:id="@+id/button15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="splashActivity"
+            android:text="splash" />
+
+        <Button
+            android:id="@+id/button16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="statusActivity"
+            android:text="status " />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,9 @@ import com.cinema.client.activity.Main2Activity;
 import com.cinema.client.activity.NewCardActivity;
 import com.cinema.client.activity.QRZoomActivity;
 import com.cinema.client.activity.SignUpActivity;
+import com.cinema.client.activity.SplashActivity;
 import com.cinema.client.activity.StartupActivity;
+import com.cinema.client.activity.StatusActivity;
 import com.cinema.client.activity.TabActivity;
 import com.cinema.client.activity.TicketActivity;
 import com.cinema.client.activity.ZoomImageActivity;
@@ -115,6 +117,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void splashActivity(View view){
+        Intent intent =new Intent(this, SplashActivity.class);
+        startActivity(intent);
+    }
+
+    public void statusActivity(View view){
+        Intent intent =new Intent(this, StatusActivity.class);
+        startActivity(intent);
+    }
 
 
 }

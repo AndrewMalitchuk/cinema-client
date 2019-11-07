@@ -108,5 +108,12 @@ dependencies {
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
     //
     implementation 'com.github.rtugeek:materialbanner:1.0.2'
+    //
+    implementation 'com.github.liangpengfei:LoadingPopPoint:912651e54d'
+    //
+    implementation 'com.qintong:insLoadingAnimation:1.1.0'
+    //
+    implementation 'com.github.transferwise:sequence-layout:1.0.11'
+
 
 }

@@ -35,5 +35,9 @@
         <item name="behavior_skipCollapsed">true</item>
     </style>
 
+    <style name="CustomProgressBar" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">#FFFFFF</item>
+    </style>
+
 
 </resources>
