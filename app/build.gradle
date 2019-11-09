@@ -122,6 +122,13 @@ dependencies {
     implementation 'com.github.abdularis:AnalogTvNoiseView:0.1'
     //
     implementation 'com.github.IsPra94:EasyGifView:1.0.1'
-
-
+    //
+    implementation 'com.liangfeizc:avatarview:0.0.1@aar'
+    //
+//    implementation 'com.github.car2go.AnyMaps:anymaps-base:6.0.1'
+//    implementation 'com.github.car2go.AnyMaps:anymaps-osm:6.0.1'
+//    implementation 'com.github.car2go.AnyMaps:anymaps-google:6.0.1'
+//    implementation 'com.google.android.gms:play-services-maps:18.3.0'
+    //
+    implementation 'org.osmdroid:osmdroid-android:6.1.2'
 }

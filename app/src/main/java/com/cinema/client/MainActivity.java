@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.cinema.client.activity.AboutActivity;
+import com.cinema.client.activity.AboutCinemaActivity;
 import com.cinema.client.activity.AboutDeveloperActivity;
 import com.cinema.client.activity.AboutFilmActivity;
 import com.cinema.client.activity.BottomNavigation;
@@ -137,6 +138,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void errorActivity(View view){
         Intent intent =new Intent(this, ErrorActivity.class);
+        startActivity(intent);
+    }
+
+    public void aboutCinemaActivity(View view){
+        Intent intent =new Intent(this, AboutCinemaActivity.class);
         startActivity(intent);
     }
 
