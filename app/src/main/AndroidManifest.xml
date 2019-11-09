@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ErrorActivity"></activity>
+        <activity android:name=".activity.ErrorActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".activity.WhatsNewActivity" />
         <activity android:name=".activity.StatusActivity" />
         <activity

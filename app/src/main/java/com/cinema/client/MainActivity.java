@@ -2,6 +2,7 @@ package com.cinema.client;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.cinema.client.activity.AboutDeveloperActivity;
 import com.cinema.client.activity.AboutFilmActivity;
 import com.cinema.client.activity.BottomNavigation;
 import com.cinema.client.activity.CardActivity;
+import com.cinema.client.activity.ErrorActivity;
 import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.LoginActivity;
 import com.cinema.client.activity.Main2Activity;
@@ -130,6 +132,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void whatsNewActivity(View view){
         Intent intent =new Intent(this, WhatsNewActivity.class);
+        startActivity(intent);
+    }
+
+    public void errorActivity(View view){
+        Intent intent =new Intent(this, ErrorActivity.class);
         startActivity(intent);
     }
 
