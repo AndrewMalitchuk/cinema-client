@@ -22,6 +22,7 @@ import com.cinema.client.activity.StartupActivity;
 import com.cinema.client.activity.StatusActivity;
 import com.cinema.client.activity.TabActivity;
 import com.cinema.client.activity.TicketActivity;
+import com.cinema.client.activity.WhatsNewActivity;
 import com.cinema.client.activity.ZoomImageActivity;
 import com.devs.acr.AutoErrorReporter;
 
@@ -124,6 +125,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void statusActivity(View view){
         Intent intent =new Intent(this, StatusActivity.class);
+        startActivity(intent);
+    }
+
+    public void whatsNewActivity(View view){
+        Intent intent =new Intent(this, WhatsNewActivity.class);
         startActivity(intent);
     }
 

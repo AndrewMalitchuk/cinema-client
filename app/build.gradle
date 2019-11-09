@@ -114,6 +114,10 @@ dependencies {
     implementation 'com.qintong:insLoadingAnimation:1.1.0'
     //
     implementation 'com.github.transferwise:sequence-layout:1.0.11'
+    //
+    implementation "com.github.javiersantos:BottomDialogs:1.2.1"
+    //
+    implementation 'com.github.GrenderG:MarkdownView:0.1.2'
 
 
 }
