@@ -18,49 +18,192 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
-                <androidx.cardview.widget.CardView
+
+                <FrameLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="5dp">
+                    android:layout_height="match_parent">
+
+
+                    <LinearLayout
+                        android:id="@+id/linLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:orientation="vertical">
+
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_height="310dp"
+                        android:layout_marginTop="100dp"
+                        android:orientation="horizontal">
 
-                        <TextView
-                            android:id="@+id/hometown"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|center_horizontal"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="10dp"
-                            android:text="My hometown " />
-
-                        <FrameLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            app:cardElevation="5dp">
 
                             <com.freegeek.android.materialbanner.MaterialBanner
                                 android:id="@+id/material_banner"
                                 android:layout_width="200dp"
                                 android:layout_height="300dp"
-                                android:layout_gravity="center_horizontal|center_vertical"
-                                android:layout_margin="10dp" />
-                        </FrameLayout>
+                                android:layout_marginBottom="10dp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            app:cardElevation="5dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/hometown"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:textColor="@color/colorLoginActivityText"
+                                    android:textSize="25dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:text="Genre:"
+                                    android:textColor="@color/colorLoginActivityText" />
+
+                                <TextView
+                                    android:id="@+id/textView16"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:text="Dramma" />
+
+                                <TextView
+                                    android:id="@+id/textView15"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:text="Premiere:"
+                                    android:textColor="@color/colorLoginActivityText" />
+
+                                <TextView
+                                    android:id="@+id/textView17"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp"
+                                    android:text="2010-10-10" />
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
                     </LinearLayout>
 
-                </androidx.cardview.widget.CardView>
+
+                </FrameLayout>
+
+
+                <!--<androidx.cardview.widget.CardView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--app:cardCornerRadius="5dp">-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="310dp"-->
+                <!--android:background="#00BCD4"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<androidx.cardview.widget.CardView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_margin="5dp">-->
+
+                <!--<com.freegeek.android.materialbanner.MaterialBanner-->
+                <!--android:id="@+id/material_banner"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="300dp"-->
+                <!--android:layout_marginBottom="10dp" />-->
+                <!--</androidx.cardview.widget.CardView>-->
+
+                <!--<androidx.cardview.widget.CardView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_margin="5dp" >-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/hometown"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:textColor="@color/colorLoginActivityText"-->
+                <!--android:textSize="25dp"-->
+                <!--android:textStyle="bold" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/textView14"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:text="Genre:"-->
+                <!--android:textColor="@color/colorLoginActivityText" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/textView16"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:text="Dramma" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/textView15"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:text="Premiere:"-->
+                <!--android:textColor="@color/colorLoginActivityText" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/textView17"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:text="2010-10-10" />-->
+                <!--</LinearLayout>-->
+                <!--</androidx.cardview.widget.CardView>-->
+
+                <!--</LinearLayout>-->
+
+                <!--</LinearLayout>-->
+
+                <!--</androidx.cardview.widget.CardView>-->
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_margin="10dp"
-                    app:cardCornerRadius="5dp" >
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
 
                     <HorizontalScrollView
                         android:layout_width="match_parent"
@@ -77,7 +220,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_margin="10dp"
-                    app:cardCornerRadius="5dp" />
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp" />
 
             </LinearLayout>
         </ScrollView>

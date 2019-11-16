@@ -16,14 +16,48 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <com.transferwise.sequencelayout.SequenceLayout
-                android:id="@+id/status"
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:scrollbarSize="6sp">
+                android:background="@color/colorAccent"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
 
-            </com.transferwise.sequencelayout.SequenceLayout>
+                <com.vivekkaushik.datepicker.DatePickerTimeline
+                    android:id="@+id/datePickerTimeline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:dateTextColor="@color/colorAccent"
+                    app:dayTextColor="@color/colorAccent"
+                    app:monthTextColor="@color/colorAccent"
+                    app:disabledColor="@color/colorAccent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <com.transferwise.sequencelayout.SequenceLayout
+                    android:id="@+id/status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:scrollbarSize="6sp">
+
+                </com.transferwise.sequencelayout.SequenceLayout>
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

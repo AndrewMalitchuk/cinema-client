@@ -131,4 +131,25 @@ dependencies {
 //    implementation 'com.google.android.gms:play-services-maps:18.3.0'
     //
     implementation 'org.osmdroid:osmdroid-android:6.1.2'
+    //
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+    //
+    implementation 'com.github.sharish:CreditCardView:v1.0.4'
+    //
+    implementation 'com.github.nonzeroapps:whatisnewdialog:1.0.4'
+    //
+    implementation 'in.shadowfax:proswipebutton:1.2.2'
+    //
+    implementation 'com.github.devendroid:ReadMoreOption:1.0.2'
+    //
+    implementation 'com.github.mirrajabi:search-dialog:1.2.4'
+    //
+    implementation 'com.github.sangcomz:StickyTimeLine:v0.0.20'
+    //
+    implementation 'com.vivekkaushik.datepicker:datePickerTimeline:0.0.3'
+    //
+    implementation 'com.github.MehdiKh93:Shortcut:1.0.2'
+
+
+
 }

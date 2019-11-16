@@ -18,6 +18,7 @@ import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.LoginActivity;
 import com.cinema.client.activity.Main2Activity;
 import com.cinema.client.activity.NewCardActivity;
+import com.cinema.client.activity.NewNewCardActivity;
 import com.cinema.client.activity.QRZoomActivity;
 import com.cinema.client.activity.SignUpActivity;
 import com.cinema.client.activity.SplashActivity;
@@ -25,9 +26,12 @@ import com.cinema.client.activity.StartupActivity;
 import com.cinema.client.activity.StatusActivity;
 import com.cinema.client.activity.TabActivity;
 import com.cinema.client.activity.TicketActivity;
+import com.cinema.client.activity.TimelineActivity;
 import com.cinema.client.activity.WhatsNewActivity;
 import com.cinema.client.activity.ZoomImageActivity;
 import com.devs.acr.AutoErrorReporter;
+
+import java.sql.Time;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -80,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void card(View view){
-        Intent intent =new Intent(this, NewCardActivity.class);
+        Intent intent =new Intent(this, NewNewCardActivity.class);
         startActivity(intent);
     }
 
@@ -143,6 +147,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void aboutCinemaActivity(View view){
         Intent intent =new Intent(this, AboutCinemaActivity.class);
+        startActivity(intent);
+    }
+
+    public void timelineActivity(View view){
+        Intent intent =new Intent(this, TimelineActivity.class);
         startActivity(intent);
     }
 

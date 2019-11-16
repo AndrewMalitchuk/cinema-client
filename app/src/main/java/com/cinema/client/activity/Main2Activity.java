@@ -1,23 +1,33 @@
 package com.cinema.client.activity;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cinema.client.R;
+import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.freegeek.android.materialbanner.MaterialBanner;
 import com.freegeek.android.materialbanner.simple.SimpleBannerData;
 import com.freegeek.android.materialbanner.simple.SimpleViewHolderCreator;
 import com.freegeek.android.materialbanner.view.indicator.CirclePageIndicator;
 import com.freegeek.android.materialbanner.view.indicator.LinePageIndicator;
+import com.mehdi.shortcut.interfaces.IReceiveStringExtra;
+import com.mehdi.shortcut.model.Shortcut;
+import com.mehdi.shortcut.util.ShortcutUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class Main2Activity extends AppCompatActivity {
     private static int[] images = {
@@ -36,6 +46,11 @@ public class Main2Activity extends AppCompatActivity {
     List<SimpleBannerData> list = new ArrayList<>();
     List<Integer> icons = new ArrayList<>();
 
+
+    @BindView(R.id.linLayout)
+    LinearLayout linLayout;
+
+    @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +58,19 @@ public class Main2Activity extends AppCompatActivity {
         materialBanner = findViewById(R.id.material_banner);
         textView = findViewById(R.id.hometown);
 
+        ButterKnife.bind(this);
+
         initIndicator();
         initData();
+
+
+        //
+        FlowingGradientClass grad = new FlowingGradientClass();
+        grad.setBackgroundResource(R.drawable.translate)
+                .onLinearLayout(linLayout)
+                .setTransitionDuration(4000)
+                .start();
+        //
 
         materialBanner.setPages(new SimpleViewHolderCreator(), list)
                 .setIndicator(circlePageIndicator);
@@ -86,6 +112,33 @@ public class Main2Activity extends AppCompatActivity {
         }
         materialBanner.setIndicatorInside(!materialBanner.isIndicatorInside());
 
+
+        //
+        ShortcutUtils shortcutUtils = new ShortcutUtils(this);
+
+        Shortcut dynamicShortcut = new Shortcut.ShortcutBuilder()
+                .setShortcutIcon(R.drawable.ic_email_black_24dp)
+                .setShortcutId("dynamicShortcutId")
+                .setShortcutLongLabel("dynamicShortcutLongLable")
+                .setShortcutShortLabel("dynamicShortcutShortLabel")
+                .setIntentAction("dynamicShortcutIntentAction")
+                .setIntentStringExtraKey("dynamicShortcutKey")
+                .setIntentStringExtraValue("dynamicShortcutValue")
+                .build();
+        shortcutUtils.addDynamicShortCut(dynamicShortcut, new IReceiveStringExtra() {
+            @Override
+            public void onReceiveStringExtra(String stringExtraKey, String stringExtraValue) {
+                String intent = getIntent().getStringExtra(stringExtraKey);
+                if (intent != null) {
+                    if (intent.equals("dynamicShortcutValue")) {
+                        //write any code here
+                    }
+                }
+            }
+        });
+        //
+
+
     }
 
     private void initIndicator() {
@@ -104,7 +157,7 @@ public class Main2Activity extends AppCompatActivity {
     private void initData() {
         for (int i = 0; i < images.length; i++) {
             SimpleBannerData simpleBannerData = new SimpleBannerData();
-            simpleBannerData.setTitle("Country road " + (i + 1));
+//            simpleBannerData.setTitle("Country road " + (i + 1));
             simpleBannerData.setResId(images[i]);
             list.add(simpleBannerData);
 

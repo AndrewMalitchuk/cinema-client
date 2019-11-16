@@ -8,6 +8,8 @@ import com.cinema.client.R;
 import com.cinema.client.etc.MyItem;
 import com.cinema.client.etc.StatusAdapter;
 import com.transferwise.sequencelayout.SequenceLayout;
+import com.vivekkaushik.datepicker.DatePickerTimeline;
+import com.vivekkaushik.datepicker.OnDateSelectedListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +57,28 @@ public class StatusActivity extends AppCompatActivity {
         list.add(item9);
         sequenceLayout.setAdapter(new StatusAdapter(list, this));
 
+
+        //
+        DatePickerTimeline datePickerTimeline = findViewById(R.id.datePickerTimeline);
+// Set a Start date (Default, 1 Jan 1970)
+        datePickerTimeline.setInitialDate(2019, 3, 21);
+// Set a date Selected Listener
+        datePickerTimeline.setOnDateSelectedListener(new OnDateSelectedListener() {
+            @Override
+            public void onDateSelected(int year, int month, int day, int dayOfWeek) {
+                // Do Something
+            }
+
+            @Override
+            public void onDisabledDateSelected(int year, int month, int day, int dayOfWeek, boolean isDisabled) {
+                // Do Something
+            }
+        });
+
+
+// Disable date
+//        Date[] dates = {Calendar.getInstance().getTime()};
+//        datePickerTimeline.deactivateDates(dates);
 
     }
 }
