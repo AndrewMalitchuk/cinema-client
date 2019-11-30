@@ -15,7 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SearchFilm"></activity>
+        <activity
+            android:name=".activity.SearchCinemaActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".activity.SearchFilmActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.MyTicketsActivity" />
         <activity android:name=".activity.AboutCinema2" />
         <activity android:name=".activity.StoriesActivity" />

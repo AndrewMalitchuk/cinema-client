@@ -405,6 +405,7 @@
                                             android:layout_marginBottom="5dp"
                                             android:layout_weight="1"
                                             android:backgroundTint="@color/colorAccent"
+                                            android:onClick="onFindCinemasButtonClick"
                                             android:text="Cinemas"
                                             android:textColor="@color/white" />
 
@@ -433,6 +434,7 @@
                                             android:layout_marginBottom="5dp"
                                             android:layout_weight="1"
                                             android:backgroundTint="@color/colorAccent"
+                                            android:onClick="onFindFilmsButtonClick"
                                             android:text="Films"
                                             android:textColor="@color/white" />
 

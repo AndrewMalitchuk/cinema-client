@@ -414,4 +414,13 @@ public class Main2Activity extends AppCompatActivity {
         Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
     }
 
+    public void onFindFilmsButtonClick(View view){
+        Intent intent = new Intent(this,SearchFilmActivity.class);
+        startActivity(intent);
+    }
+    public void onFindCinemasButtonClick(View view){
+        Intent intent = new Intent(this,SearchCinemaActivity.class);
+        startActivity(intent);
+    }
+
 }
