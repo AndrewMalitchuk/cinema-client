@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/center_side_of_hall"
+        android:icon="@drawable/ic_stories_24dp"
+        android:title="Stories"/>
+
+    <item
+        android:id="@+id/left_side_of_hall"
+        android:icon="@drawable/ic_main_page_24dp"
+        android:title="Main Flow"/>
+
+    <item
+        android:id="@+id/right_side_of_hall"
+        android:icon="@drawable/ic_ticket_white"
+        android:title="My tickets"/>
+
+
+</menu>

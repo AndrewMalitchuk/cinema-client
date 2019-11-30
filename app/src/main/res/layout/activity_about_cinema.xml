@@ -13,6 +13,7 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:buttonGravity="bottom"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
 
@@ -52,27 +53,28 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cv1"
                         android:layout_width="match_parent"
-                        android:layout_height="250dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="150dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginBottom="10dp"
                         app:cardCornerRadius="5dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <View
-                                android:id="@+id/view2"
-                                android:layout_width="440dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1" />
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="200dp"
+                                android:layout_height="250dp"
+                                android:layout_margin="5dp"
+                                app:srcCompat="@drawable/pulp_fiction" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical">
 
@@ -89,20 +91,10 @@
                                     android:text="Button" />
 
 
-
-
                             </LinearLayout>
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
-
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="200dp"
-                        android:layout_height="250dp"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="50dp"
-                        app:srcCompat="@drawable/pulp_fiction" />
 
                     <!--<com.liangfeizc.avatarview.AvatarView-->
                     <!--android:layout_width="250dp"-->
@@ -269,4 +261,5 @@
 
 
     </ScrollView>
+
 </RelativeLayout>

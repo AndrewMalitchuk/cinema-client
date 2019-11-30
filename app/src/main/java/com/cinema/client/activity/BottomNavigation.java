@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.brouding.simpledialog.SimpleDialog;
+import com.bumptech.glide.annotation.GlideModule;
 import com.cinema.client.R;
 import com.cinema.client.fragments.HallTestFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -54,13 +55,14 @@ public class BottomNavigation extends AppCompatActivity {
 
 
         //
-        simpleDialog = new SimpleDialog.Builder(this)
-                .setContent("The hall is loading...", 7)
-                // .showProgress must be set true if you want ProgressDialog
-                .showProgress(true)     // Default GIF is in the library (R.raw.simple_dialog_progress_default)
-                //.setProgressGIF(R.raw.simple_dialog_progress_default)
-                .setBtnCancelText("Cancel")
-                .setBtnCancelTextColor("#2861b0").build();
+//        simpleDialog = new SimpleDialog.Builder(this)
+//                .setContent("The hall is loading...", 7)
+//                // .showProgress must be set true if you want ProgressDialog
+//                .showProgress(true)     // Default GIF is in the library (R.raw.simple_dialog_progress_default)
+//                //.setProgressGIF(R.raw.simple_dialog_progress_default)
+//                .setBtnCancelText("Cancel")
+//                .setBtnCancelTextColor("#2861b0")
+//                .build();
         //
 
 

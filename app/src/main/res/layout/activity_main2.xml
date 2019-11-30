@@ -6,14 +6,44 @@
     android:layout_height="match_parent"
     tools:context=".activity.Main2Activity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:contentInsetStart="0dp"
+            android:contentInsetLeft="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <!--&lt;!&ndash; dummy to catch focus &ndash;&gt;-->
+            <!--<LinearLayout-->
+            <!--android:layout_width="0px"-->
+            <!--android:layout_height="0px"-->
+            <!--android:focusable="true"-->
+            <!--android:focusableInTouchMode="true" />-->
+
+            <!--<androidx.appcompat.widget.SearchView-->
+            <!--android:id="@+id/search"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:nextFocusLeft="@id/search"-->
+            <!--android:nextFocusUp="@id/search"-->
+            <!--app:searchIcon="@drawable/search_dialog_ic_search" />-->
+
+        </androidx.appcompat.widget.Toolbar>
+
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -25,91 +55,213 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-
                     <LinearLayout
                         android:id="@+id/linLayout"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
+                        android:layout_height="200dp"
                         android:orientation="vertical">
-
 
                     </LinearLayout>
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv1"
                         android:layout_width="match_parent"
-                        android:layout_height="310dp"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="100dp"
-                        android:orientation="horizontal">
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="5dp">
 
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            app:cardElevation="5dp">
-
-                            <com.freegeek.android.materialbanner.MaterialBanner
-                                android:id="@+id/material_banner"
-                                android:layout_width="200dp"
-                                android:layout_height="300dp"
-                                android:layout_marginBottom="10dp" />
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_margin="10dp"
-                            app:cardElevation="5dp">
+                            android:orientation="horizontal">
+
+                            <View
+                                android:id="@+id/view2"
+                                android:layout_width="350dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
+                                android:layout_weight="1"
                                 android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/hometown"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="10dp"
-                                    android:textColor="@color/colorLoginActivityText"
-                                    android:textSize="25dp"
-                                    android:textStyle="bold" />
 
                                 <TextView
                                     android:id="@+id/textView14"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="10dp"
-                                    android:text="Genre:"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="TextView"
+                                    android:textColor="@color/colorLoginActivityText"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView15"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="TextView"
                                     android:textColor="@color/colorLoginActivityText" />
 
                                 <TextView
                                     android:id="@+id/textView16"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="10dp"
-                                    android:text="Dramma" />
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="TextView" />
 
-                                <TextView
-                                    android:id="@+id/textView15"
-                                    android:layout_width="match_parent"
+                                <Button
+                                    android:id="@+id/button21"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_margin="10dp"
-                                    android:text="Premiere:"
-                                    android:textColor="@color/colorLoginActivityText" />
+                                    android:backgroundTint="@color/colorAccent"
+                                    android:text="Order"
+                                    android:textColor="@color/white" />
 
-                                <TextView
-                                    android:id="@+id/textView17"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="10dp"
-                                    android:text="2010-10-10" />
+
                             </LinearLayout>
-                        </androidx.cardview.widget.CardView>
 
-                    </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
+                    <!--<ImageView-->
+                    <!--android:id="@+id/imageView2"-->
+                    <!--android:layout_width="200dp"-->
+                    <!--android:layout_height="250dp"-->
+                    <!--android:layout_marginLeft="20dp"-->
+                    <!--android:layout_marginTop="50dp"-->
+                    <!--app:srcCompat="@drawable/pulp_fiction" />-->
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="5dp">
+
+                        <com.freegeek.android.materialbanner.MaterialBanner
+                            android:id="@+id/material_banner"
+                            android:layout_width="150dp"
+                            android:layout_height="250dp"
+                            android:layout_marginBottom="5dp" />
+                    </androidx.cardview.widget.CardView>
+
+
+                    <!--<com.liangfeizc.avatarview.AvatarView-->
+                    <!--android:layout_width="250dp"-->
+                    <!--android:layout_height="250dp"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:src="@drawable/pulp_fiction"-->
+                    <!--app:border_color="@color/colorLoginActivityText"-->
+                    <!--app:border_width="1dp"-->
+                    <!--app:shadow_color="@color/colorLoginActivityText"-->
+                    <!--app:shadow_width="2dp"-->
+                    <!--tools:layout_conversion_absoluteHeight="250dp"-->
+                    <!--tools:layout_conversion_absoluteWidth="250dp"-->
+                    <!--tools:layout_editor_absoluteX="175dp"-->
+                    <!--tools:layout_editor_absoluteY="114dp" />-->
 
                 </FrameLayout>
+
+
+                <!--<FrameLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+
+
+                <!--<LinearLayout-->
+                <!--android:id="@+id/linLayout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="300dp"-->
+                <!--android:orientation="vertical">-->
+
+
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="310dp"-->
+                <!--android:layout_marginTop="100dp"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<androidx.cardview.widget.CardView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_margin="10dp"-->
+                <!--app:cardElevation="5dp">-->
+
+                <!--<com.freegeek.android.materialbanner.MaterialBanner-->
+                <!--android:id="@+id/material_banner"-->
+                <!--android:layout_width="200dp"-->
+                <!--android:layout_height="300dp"-->
+                <!--android:layout_marginBottom="10dp" />-->
+                <!--</androidx.cardview.widget.CardView>-->
+
+                <!--<androidx.cardview.widget.CardView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_margin="10dp"-->
+                <!--app:cardElevation="5dp">-->
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/hometown"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:textColor="@color/colorLoginActivityText"-->
+                <!--android:textSize="25dp"-->
+                <!--android:textStyle="bold" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/textView14"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:text="Genre:"-->
+                <!--android:textColor="@color/colorLoginActivityText" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/textView16"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:text="Dramma" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/textView15"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:text="Premiere:"-->
+                <!--android:textColor="@color/colorLoginActivityText" />-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/textView17"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:text="2010-10-10" />-->
+                <!--</LinearLayout>-->
+                <!--</androidx.cardview.widget.CardView>-->
+
+                <!--</LinearLayout>-->
+
+
+                <!--</FrameLayout>-->
 
 
                 <!--<androidx.cardview.widget.CardView-->
@@ -200,20 +352,437 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="5dp">
 
-                    <HorizontalScrollView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                        <LinearLayout
+                        <TextView
+                            android:id="@+id/textView_looking"
                             android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical" />
-                    </HorizontalScrollView>
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="I'm looking for..."
+                            android:textColor="@color/colorLoginActivityText"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="5dp">
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <Button
+                                            android:id="@+id/buttonCinema"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="5dp"
+                                            android:layout_weight="1"
+                                            android:backgroundTint="@color/colorAccent"
+                                            android:text="Cinemas"
+                                            android:textColor="@color/white" />
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:background="@color/colorAccent" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <Button
+                                            android:id="@+id/buttonFilms"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="5dp"
+                                            android:layout_weight="1"
+                                            android:backgroundTint="@color/colorAccent"
+                                            android:text="Films"
+                                            android:textColor="@color/white" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </FrameLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView28"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Genre"
+                            android:textColor="@color/colorLoginActivityText"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="5dp">
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView23"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Genre 1"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView24"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Genre 2"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView25"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Genre 3"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView26"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Genre 4"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView27"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Genre 5"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </HorizontalScrollView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Cities"
+                            android:textColor="@color/colorLoginActivityText"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="5dp">
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView17"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="City 1"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView18"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="City 2"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView19"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="City 3"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView20"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="City 4"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView21"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="City 4"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </HorizontalScrollView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -221,10 +790,41 @@
                     android:layout_height="200dp"
                     android:layout_margin="10dp"
                     app:cardCornerRadius="5dp"
-                    app:cardElevation="5dp" />
+                    app:cardElevation="5dp">
+
+                    <com.freegeek.android.materialbanner.MaterialBanner
+                        android:id="@+id/material_banner_adds"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/textView29"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="banner" />-->
+                    <!--</LinearLayout>-->
+                </androidx.cardview.widget.CardView>
+
 
             </LinearLayout>
         </ScrollView>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/colorAccent"
+            android:hapticFeedbackEnabled="true"
+            app:itemIconTint="@color/colorLoginActivityCardView"
+            app:itemTextColor="@color/cardview_light_background"
+            app:labelVisibilityMode="selected"
+            app:menu="@menu/main_bottom_navigation" />
 
 
     </LinearLayout>

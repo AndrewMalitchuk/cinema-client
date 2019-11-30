@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.cinema.client.activity.AboutActivity;
+import com.cinema.client.activity.AboutCinema2;
 import com.cinema.client.activity.AboutCinemaActivity;
 import com.cinema.client.activity.AboutDeveloperActivity;
 import com.cinema.client.activity.AboutFilmActivity;
@@ -17,6 +18,7 @@ import com.cinema.client.activity.ErrorActivity;
 import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.LoginActivity;
 import com.cinema.client.activity.Main2Activity;
+import com.cinema.client.activity.MyTicketsActivity;
 import com.cinema.client.activity.NewCardActivity;
 import com.cinema.client.activity.NewNewCardActivity;
 import com.cinema.client.activity.QRZoomActivity;
@@ -24,11 +26,13 @@ import com.cinema.client.activity.SignUpActivity;
 import com.cinema.client.activity.SplashActivity;
 import com.cinema.client.activity.StartupActivity;
 import com.cinema.client.activity.StatusActivity;
+import com.cinema.client.activity.StoriesActivity;
 import com.cinema.client.activity.TabActivity;
 import com.cinema.client.activity.TicketActivity;
 import com.cinema.client.activity.TimelineActivity;
 import com.cinema.client.activity.WhatsNewActivity;
 import com.cinema.client.activity.ZoomImageActivity;
+import com.cinema.client.etc.MyTickets;
 import com.devs.acr.AutoErrorReporter;
 
 import java.sql.Time;
@@ -151,7 +155,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void timelineActivity(View view){
-        Intent intent =new Intent(this, TimelineActivity.class);
+        Intent intent =new Intent(this, StoriesActivity.class);
+        startActivity(intent);
+    }
+
+    public void aboutCinema2(View view){
+        Intent intent =new Intent(this, AboutCinema2.class);
+        startActivity(intent);
+    }
+
+    public void myTickets(View view){
+        Intent intent =new Intent(this, MyTicketsActivity.class);
         startActivity(intent);
     }
 

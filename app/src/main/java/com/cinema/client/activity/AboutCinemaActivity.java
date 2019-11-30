@@ -1,5 +1,6 @@
 package com.cinema.client.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
@@ -7,9 +8,12 @@ import androidx.cardview.widget.CardView;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -157,6 +161,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
 
 
+
         //
         ReadMoreOption readMoreOption = new ReadMoreOption.Builder(this)
                 .textLength(3, ReadMoreOption.TYPE_LINE) // OR
@@ -174,5 +179,23 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
 
 
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.cinema_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.maps_direction) {
+            Uri gmmIntentUri = Uri.parse("geo:48.931572, 24.697925");
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            mapIntent.setPackage("com.google.android.apps.maps");
+            startActivity(mapIntent);
+        }
+        return true;
     }
 }

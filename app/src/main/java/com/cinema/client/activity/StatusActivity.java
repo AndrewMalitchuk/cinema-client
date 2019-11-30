@@ -3,6 +3,7 @@ package com.cinema.client.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ProgressBar;
 
 import com.cinema.client.R;
 import com.cinema.client.etc.MyItem;
@@ -22,6 +23,8 @@ public class StatusActivity extends AppCompatActivity {
 
     @BindView(R.id.status)
     SequenceLayout sequenceLayout;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +82,9 @@ public class StatusActivity extends AppCompatActivity {
 // Disable date
 //        Date[] dates = {Calendar.getInstance().getTime()};
 //        datePickerTimeline.deactivateDates(dates);
+
+        //
+
 
     }
 }

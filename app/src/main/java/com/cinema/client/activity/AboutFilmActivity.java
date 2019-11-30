@@ -133,27 +133,37 @@ public class AboutFilmActivity extends AppCompatActivity {
     }
 
     public void onFabClick(View view){
-        mShowingLongDialog = true;
-        mBottomSheetDialog = new BottomSheetBuilder(this, R.style.AppTheme_BottomSheetDialog)
-                .setMode(BottomSheetBuilder.MODE_LIST)
-                .setMenu(R.menu.navigation)
-                .addDividerItem()
-                .addTitleItem("Share")
-                .setItemClickListener(new BottomSheetItemClickListener() {
-                    @Override
-                    public void onBottomSheetItemClick(MenuItem item) {
-                        Log.d("Item click", item.getTitle() + "");
-                        mShowingLongDialog = false;
-                    }
-                })
-                .createDialog();
+//        mShowingLongDialog = true;
+//        mBottomSheetDialog = new BottomSheetBuilder(this, R.style.AppTheme_BottomSheetDialog)
+//                .setMode(BottomSheetBuilder.MODE_LIST)
+//                .setMenu(R.menu.navigation)
+//                .addDividerItem()
+//                .addTitleItem("Share")
+//                .setItemClickListener(new BottomSheetItemClickListener() {
+//                    @Override
+//                    public void onBottomSheetItemClick(MenuItem item) {
+//                        Log.d("Item click", item.getTitle() + "");
+//                        mShowingLongDialog = false;
+//                    }
+//                })
+//                .createDialog();
+//
+//        mBottomSheetDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+//            @Override
+//            public void onCancel(DialogInterface dialog) {
+//                mShowingLongDialog = false;
+//            }
+//        });
+//        mBottomSheetDialog.show();
+        Intent share = new Intent(android.content.Intent.ACTION_SEND);
+        share.setType("text/plain");
+        share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
 
-        mBottomSheetDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialog) {
-                mShowingLongDialog = false;
-            }
-        });
-        mBottomSheetDialog.show();
+        // Add data to the intent, the receiving app will decide
+        // what to do with it.
+        share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
+        share.putExtra(Intent.EXTRA_TEXT, "http://www.codeofaninja.com");
+
+        startActivity(Intent.createChooser(share, "Share link!"));
     }
 }
