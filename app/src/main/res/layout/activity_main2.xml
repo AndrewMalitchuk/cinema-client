@@ -460,6 +460,176 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/textView80"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Selected Cinemas"
+                            android:textColor="@color/colorLoginActivityText"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="5dp">
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView81"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Cinema 1"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView82"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Cinema 2"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView83"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Cinema 3"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView84"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Cinema 4"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/pulp_fiction"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView85"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Cinema 5"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </HorizontalScrollView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
                             android:id="@+id/textView28"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -660,10 +830,11 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/ivano_frankivsk"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
+                                            android:src="@drawable/ivano_frankivsk"
                                             app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
@@ -673,7 +844,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="City 1"
+                                            android:text="Ivano-Frankivsk"
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 
@@ -685,10 +856,11 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/lviv"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
+                                            android:src="@drawable/lviv"
                                             app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
@@ -698,7 +870,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="City 2"
+                                            android:text="Lviv"
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 
@@ -710,10 +882,11 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/kiyv"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
+                                            android:src="@drawable/kiev"
                                             app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
@@ -723,7 +896,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="City 3"
+                                            android:text="Kiyv"
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 
@@ -735,10 +908,11 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/kharkiv"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
+                                            android:src="@drawable/kharkiv"
                                             app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
@@ -748,7 +922,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="City 4"
+                                            android:text="Kharkiv"
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 
@@ -760,10 +934,11 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/odessa"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
+                                            android:src="@drawable/odessa"
                                             app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
@@ -773,7 +948,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="City 4"
+                                            android:text="Odessa"
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 

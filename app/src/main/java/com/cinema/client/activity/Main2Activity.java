@@ -5,12 +5,15 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
@@ -28,6 +31,8 @@ import android.widget.Toast;
 import com.brouding.simpledialog.SimpleDialog;
 import com.cinema.client.MainActivity;
 import com.cinema.client.R;
+import com.developer.mtextfield.ExtendedEditText;
+import com.droidbyme.dialoglib.DroidDialog;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.freegeek.android.materialbanner.MaterialBanner;
 import com.freegeek.android.materialbanner.simple.SimpleBannerData;
@@ -38,6 +43,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.mehdi.shortcut.interfaces.IReceiveStringExtra;
 import com.mehdi.shortcut.model.Shortcut;
 import com.mehdi.shortcut.util.ShortcutUtils;
+import com.pd.chocobar.ChocoBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,6 +94,13 @@ public class Main2Activity extends AppCompatActivity {
     @BindView(R.id.textView23)
     TextView textView23;
 
+
+    private SharedPreferences pref;
+    private SharedPreferences prefForCheckingFirstRun;
+    private SharedPreferences.Editor editor;
+
+    private boolean firstRun = false;
+
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,10 +114,23 @@ public class Main2Activity extends AppCompatActivity {
 
         initIndicator();
         initData();
+        //
+        pref = getApplicationContext().getSharedPreferences("UserData", 0);
+        editor = pref.edit();
+
+        prefForCheckingFirstRun = getSharedPreferences("com.cinema.client", MODE_PRIVATE);
+
+
+        //
 
         //
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Hello, $username!");
+        String userNameFromPreferences = pref.getString("user_name", null);
+        if (userNameFromPreferences != null && !userNameFromPreferences.equals("")) {
+            toolbar.setTitle("Hello, " + userNameFromPreferences);
+        } else {
+            toolbar.setTitle("Hello, $username!");
+        }
         setSupportActionBar(toolbar);
 
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
@@ -145,8 +171,22 @@ public class Main2Activity extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 // send data from the AlertDialog to the Activity
-//                                EditText editText = customLayout.findViewById(R.id.editText);
+                                ExtendedEditText userName = customLayout.findViewById(R.id.extended_edit_text1);
+                                ExtendedEditText userCity = customLayout.findViewById(R.id.extended_edit_text2);
 //                                sendDialogDataToActivity(editText.getText().toString());
+                                editor.putString("user_name", userName.getText().toString());
+                                editor.putString("user_city", userCity.getText().toString());
+                                editor.commit(); // commit changes
+
+                                ChocoBar.builder().setActivity(Main2Activity.this)
+                                        .setText("Success!")
+                                        .setDuration(ChocoBar.LENGTH_SHORT)
+                                        .build()
+                                        .show();
+
+                                Intent intent = getIntent();
+                                finish();
+                                startActivity(intent);
                             }
                         });
                         // create and show the alert dialog
@@ -154,20 +194,55 @@ public class Main2Activity extends AppCompatActivity {
                         dialog.show();
                         break;
                     case R.id.action_logout:
-                        AlertDialog.Builder builderLogout = new AlertDialog.Builder(Main2Activity.this);
-                        builderLogout.setTitle("Logout");
-                        builderLogout.setMessage("Are you sure about this?");
-                        // add the buttons
-                        builderLogout.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                Toast.makeText(Main2Activity.this, "Continue", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                        builderLogout.setNegativeButton("Cancel", null);
-                        // create and show the alert dialog
-                        AlertDialog dialogLogout = builderLogout.create();
-                        dialogLogout.show();
+
+                        new DroidDialog.Builder(Main2Activity.this)
+                                .icon(R.drawable.ic_exit_to_app_black_24dp)
+                                .title("Logout")
+                                .content("Are you sure about this?")
+                                .cancelable(true, false)
+                                .positiveButton("Yes, I'm sure", new DroidDialog.onPositiveListener() {
+                                    @Override
+                                    public void onPositive(Dialog droidDialog) {
+                                        Toast.makeText(Main2Activity.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
+                                        //
+                                        Intent intent = getIntent();
+                                        finish();
+                                        startActivity(intent);
+                                        //
+                                    }
+                                })
+                                .negativeButton("No", new DroidDialog.onNegativeListener() {
+                                    @Override
+                                    public void onNegative(Dialog droidDialog) {
+                                        Toast.makeText(Main2Activity.this, "No", Toast.LENGTH_SHORT).show();
+                                        //
+                                        Intent intent = getIntent();
+                                        finish();
+                                        startActivity(intent);
+                                        //
+                                    }
+                                })
+                                .color(ContextCompat.getColor(Main2Activity.this, R.color.colorAccent), ContextCompat.getColor(Main2Activity.this, R.color.white),
+                                        ContextCompat.getColor(Main2Activity.this, R.color.colorAccent))
+                                .show();
+
+
+//                        AlertDialog.Builder builderLogout = new AlertDialog.Builder(Main2Activity.this);
+//                        builderLogout.setTitle("Logout");
+//                        builderLogout.setMessage("Are you sure about this?");
+//                        // add the buttons
+//                        builderLogout.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialogInterface, int i) {
+//                                Toast.makeText(Main2Activity.this, "Continue", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+//                        builderLogout.setNegativeButton("Cancel", null);
+//                        // create and show the alert dialog
+//                        AlertDialog dialogLogout = builderLogout.create();
+//                        dialogLogout.show();
+
+
                         break;
                 }
 
@@ -315,42 +390,47 @@ public class Main2Activity extends AppCompatActivity {
             }
         });
 
-        //
-//        new MaterialTapTargetPrompt.Builder(Main2Activity.this)
-//                .setTarget(R.id.button21)
-//                .setPrimaryText("Send your first email")
-//                .setSecondaryText("Tap the envelope to start composing your first email")
-//                .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener()
-//                {
-//                    @Override
-//                    public void onPromptStateChanged(MaterialTapTargetPrompt prompt, int state)
-//                    {
-//                        if (state == MaterialTapTargetPrompt.STATE_FOCAL_PRESSED)
-//                        {
-//                            new MaterialTapTargetPrompt.Builder(Main2Activity.this)
-//                                    .setTarget(R.id.textView23)
-//                                    .setPrimaryText("Send your first email")
-//                                    .setSecondaryText("Tap the envelope to start composing your first email")
-//                                    .setIcon(R.drawable.ic_account_circle_black_24dp)
-//                                    .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener()
-//                                    {
-//                                        @Override
-//                                        public void onPromptStateChanged(MaterialTapTargetPrompt prompt, int state)
-//                                        {
-//                                            if (state == MaterialTapTargetPrompt.STATE_FOCAL_PRESSED)
-//                                            {
-//                                                // User has pressed the prompt target
-//                                            }
-//                                        }
-//                                    })
-//                                    .show();
-//                        }
-//                    }
-//                })
-//                .show();
 
+        if (prefForCheckingFirstRun.getBoolean("firstrun", true) == true) {
+
+            //
+            new MaterialTapTargetPrompt.Builder(Main2Activity.this)
+                    .setTarget(R.id.button21)
+                    .setPrimaryText("Send your first email")
+                    .setSecondaryText("Tap the envelope to start composing your first email")
+                    .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener() {
+                        @Override
+                        public void onPromptStateChanged(MaterialTapTargetPrompt prompt, int state) {
+                            if (state == MaterialTapTargetPrompt.STATE_FOCAL_PRESSED) {
+                                new MaterialTapTargetPrompt.Builder(Main2Activity.this)
+                                        .setTarget(R.id.textView23)
+                                        .setPrimaryText("Send your first email")
+                                        .setSecondaryText("Tap the envelope to start composing your first email")
+                                        .setIcon(R.drawable.ic_account_circle_black_24dp)
+                                        .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener() {
+                                            @Override
+                                            public void onPromptStateChanged(MaterialTapTargetPrompt prompt, int state) {
+                                                if (state == MaterialTapTargetPrompt.STATE_FOCAL_PRESSED) {
+                                                    // User has pressed the prompt target
+                                                }
+                                            }
+                                        })
+                                        .show();
+                            }
+                        }
+                    })
+                    .show();
+        }
 
         //
+        ChocoBar.builder().setActivity(Main2Activity.this)
+                .setText("Welcome back, "+pref.getString("user_name",null))
+                .setDuration(ChocoBar.LENGTH_SHORT)
+                .build()
+                .show();
+
+        //
+
 
     }
 
@@ -414,13 +494,45 @@ public class Main2Activity extends AppCompatActivity {
         Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
     }
 
-    public void onFindFilmsButtonClick(View view){
-        Intent intent = new Intent(this,SearchFilmActivity.class);
-        startActivity(intent);
-    }
-    public void onFindCinemasButtonClick(View view){
-        Intent intent = new Intent(this,SearchCinemaActivity.class);
+    public void onFindFilmsButtonClick(View view) {
+        Intent intent = new Intent(this, SearchFilmActivity.class);
         startActivity(intent);
     }
 
+    public void onFindCinemasButtonClick(View view) {
+        Intent intent = new Intent(this, SearchCinemaActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (prefForCheckingFirstRun.getBoolean("firstrun", true)) {
+            // Do first run stuff here then set 'firstrun' as false
+            // using the following line to edit/commit prefs
+            prefForCheckingFirstRun.edit().putBoolean("firstrun", false).commit();
+        }
+    }
+
+    public void onCityImageClick(View view) {
+        switch (view.getId()) {
+            case R.id.ivano_frankivsk:
+                Toast.makeText(this, "ivano_frankivsk", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.lviv:
+                Toast.makeText(this, "lviv", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.kiyv:
+                Toast.makeText(this, "kiyv", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.kharkiv:
+                Toast.makeText(this, "kharkiv", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.odessa:
+                Toast.makeText(this, "odessa", Toast.LENGTH_SHORT).show();
+                break;
+
+        }
+    }
 }

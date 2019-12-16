@@ -18,6 +18,7 @@ import com.bumptech.glide.annotation.GlideModule;
 import com.cinema.client.R;
 import com.cinema.client.fragments.HallTestFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
 
 import java.util.concurrent.TimeUnit;
 
@@ -40,8 +41,12 @@ public class BottomNavigation extends AppCompatActivity {
 //    StatusView statusView;
 
     //
-    SimpleDialog simpleDialog;
+//    SimpleDialog simpleDialog;
     //
+
+    @BindView(R.id.llProgressBar)
+    View llProgressBar;
+
 
 
     @Override
@@ -50,6 +55,12 @@ public class BottomNavigation extends AppCompatActivity {
         setContentView(R.layout.activity_bottom_navigation);
 
         ButterKnife.bind(this);
+
+        //
+
+
+        //
+
 
 //        mProgressDialog = new ProgressDialog(this);
 
@@ -62,7 +73,9 @@ public class BottomNavigation extends AppCompatActivity {
 //                //.setProgressGIF(R.raw.simple_dialog_progress_default)
 //                .setBtnCancelText("Cancel")
 //                .setBtnCancelTextColor("#2861b0")
+//                .show();
 //                .build();
+
         //
 
 
@@ -104,6 +117,8 @@ public class BottomNavigation extends AppCompatActivity {
     }
 
 
+
+
     class MyTask extends AsyncTask<Void, Void, Void> {
 
         @Override
@@ -112,7 +127,9 @@ public class BottomNavigation extends AppCompatActivity {
 //            mProgressDialog.setMessage("Working ...");
 //            mProgressDialog.show();
 //            statusView.setStatus(iammert.com.library.Status.LOADING);
-            simpleDialog.show();
+//            simpleDialog.show();
+            llProgressBar.setVisibility(View.VISIBLE);
+            // https://medium.com/@therajanmaurya/progress-bar-instead-progress-dialog-baa5d72c2860
 
         }
 
@@ -134,7 +151,11 @@ public class BottomNavigation extends AppCompatActivity {
             super.onPostExecute(result);
 //            mProgressDialog.dismiss();
 //            statusView.setStatus(iammert.com.library.Status.COMPLETE);
-            simpleDialog.dismiss();
+//            simpleDialog.dismiss();
+            llProgressBar.setVisibility(View.GONE);
+            // https://medium.com/@therajanmaurya/progress-bar-instead-progress-dialog-baa5d72c2860
+
+
         }
     }
 

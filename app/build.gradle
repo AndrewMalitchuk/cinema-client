@@ -150,7 +150,7 @@ dependencies {
     //
     implementation 'com.github.MehdiKh93:Shortcut:1.0.2'
     //
-    implementation 'com.github.bumptech.glide:glide:4.1.1'
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
     //
     implementation 'com.github.OMARIHAMZA:StoryView:1.0.2-alpha'
     //
@@ -159,6 +159,11 @@ dependencies {
     implementation 'com.github.arimorty:floatingsearchview:2.1.1'
     //
     implementation 'uk.co.samuelwall:material-tap-target-prompt:3.0.0'
-
+    //
+    implementation 'com.github.droidbyme:DroidDialog:c6decc7167'
+    //
+    implementation 'com.github.Pradyuman7:ChocoBar:V1.0'
+    //
+    implementation 'com.google.code.gson:gson:2.8.6'
 
 }
