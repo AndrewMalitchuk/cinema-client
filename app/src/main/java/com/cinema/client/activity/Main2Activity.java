@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
@@ -16,6 +17,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -31,6 +33,7 @@ import android.widget.Toast;
 import com.brouding.simpledialog.SimpleDialog;
 import com.cinema.client.MainActivity;
 import com.cinema.client.R;
+import com.cinema.client.fragments.HallTestFragment;
 import com.developer.mtextfield.ExtendedEditText;
 import com.droidbyme.dialoglib.DroidDialog;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
@@ -47,6 +50,7 @@ import com.pd.chocobar.ChocoBar;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -94,12 +98,18 @@ public class Main2Activity extends AppCompatActivity {
     @BindView(R.id.textView23)
     TextView textView23;
 
+    @BindView(R.id.llProgressBar)
+    View llProgressBar;
+
 
     private SharedPreferences pref;
     private SharedPreferences prefForCheckingFirstRun;
     private SharedPreferences.Editor editor;
 
     private boolean firstRun = false;
+
+
+    MyTask mt;
 
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     @Override
@@ -253,6 +263,9 @@ public class Main2Activity extends AppCompatActivity {
 
         //
 
+
+        mt = new MyTask();
+//        mt.execute();
 
         //
         FlowingGradientClass grad = new FlowingGradientClass();
@@ -535,4 +548,51 @@ public class Main2Activity extends AppCompatActivity {
 
         }
     }
+
+    public void onAboutFilmClick(View view){
+        Intent intent = new Intent(this, AboutFilmActivity.class);
+        startActivity(intent);
+    }
+
+
+    class MyTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+//            mProgressDialog.setMessage("Working ...");
+//            mProgressDialog.show();
+//            statusView.setStatus(iammert.com.library.Status.LOADING);
+//            simpleDialog.show();
+            llProgressBar.setVisibility(View.VISIBLE);
+            // https://medium.com/@therajanmaurya/progress-bar-instead-progress-dialog-baa5d72c2860
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            try {
+                TimeUnit.SECONDS.sleep(2);
+//                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//                ft.replace(R.id.testFragment, new HallTestFragment());
+//                ft.commit();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+//            mProgressDialog.dismiss();
+//            statusView.setStatus(iammert.com.library.Status.COMPLETE);
+//            simpleDialog.dismiss();
+            llProgressBar.setVisibility(View.GONE);
+            // https://medium.com/@therajanmaurya/progress-bar-instead-progress-dialog-baa5d72c2860
+
+
+        }
+    }
+
 }

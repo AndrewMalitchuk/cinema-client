@@ -2,12 +2,16 @@ package com.cinema.client.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,13 +21,19 @@ import com.brouding.simpledialog.SimpleDialog;
 import com.bumptech.glide.annotation.GlideModule;
 import com.cinema.client.R;
 import com.cinema.client.fragments.HallTestFragment;
+import com.github.javiersantos.bottomdialogs.BottomDialog;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
+import com.nonzeroapps.whatisnewdialog.NewItemDialog;
+import com.nonzeroapps.whatisnewdialog.object.NewFeatureItem;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import es.dmoral.markdownview.Config;
+import es.dmoral.markdownview.MarkdownView;
 import iammert.com.library.Status;
 import iammert.com.library.StatusView;
 
@@ -32,6 +42,9 @@ public class BottomNavigation extends AppCompatActivity {
 
     @BindView(R.id.navigation)
     BottomNavigationView bottomNavigationView;
+
+    @BindView(R.id.toolbar4)
+    Toolbar toolbar;
 
 
 //    private ProgressDialog mProgressDialog;
@@ -58,6 +71,7 @@ public class BottomNavigation extends AppCompatActivity {
 
         //
 
+        setSupportActionBar(toolbar);
 
         //
 
@@ -117,7 +131,45 @@ public class BottomNavigation extends AppCompatActivity {
     }
 
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.cinema_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.maps_direction:
+                new BottomDialog.Builder(this)
+                        .setTitle("What's new?")
+                        .setContent("Hello, dude!\nWant to see our new features?")
+                        .setPositiveText("Yeah, of course")
+                        .setPositiveBackgroundColorResource(R.color.colorPrimary)
+                        .setPositiveTextColorResource(android.R.color.white)
+                        .onPositive(new BottomDialog.ButtonCallback() {
+                            @Override
+                            public void onClick(BottomDialog dialog) {
+
+                            }
+                        })
+                        .setNegativeText("Life is too short for this, thanks")
+                        .setNegativeTextColorResource(R.color.colorAccent)
+                        .onNegative(new BottomDialog.ButtonCallback() {
+                            @Override
+                            public void onClick(BottomDialog dialog) {
+
+                            }
+                        })
+                        .setCancelable(false)
+                        .show();
+                break;
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
     class MyTask extends AsyncTask<Void, Void, Void> {
 

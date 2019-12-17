@@ -52,14 +52,11 @@ public class AboutCinemaActivity extends AppCompatActivity {
     ScrollView scrollView;
 
 
-    @BindView(R.id.ratingBar)
-    RatingBar ratingBar;
 
     @BindView(R.id.linLayout)
     LinearLayout linLayout;
 
-    @BindView(R.id.imageView2)
-    ImageView imageView2;
+
 
     @BindView(R.id.cv1)
             CardView cv1;
@@ -99,20 +96,15 @@ public class AboutCinemaActivity extends AppCompatActivity {
             }
         });
 
-        imageView2.setElevation(20);
+
         cv1.setElevation(5);
 //        cv2.setElevation(5);
 //        cv3.setElevation(5);
 
 
         //
-        TagGroup mTagGroup = (TagGroup) findViewById(R.id.tag_group);
-        mTagGroup.setTags(new String[]{"Tag1", "Tag2", "Tag3"});
 
 
-        ratingBar.setNumStars(5);
-        ratingBar.setRating(3.5f);
-        ratingBar.isIndicator();
 
 
         FlowingGradientClass grad = new FlowingGradientClass();

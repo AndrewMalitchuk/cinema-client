@@ -1,15 +1,22 @@
 package com.cinema.client.utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.cinema.client.activity.HallActivity;
+import com.cinema.client.activity.Main2Activity;
 import com.cinema.client.entities.Hall;
+import com.pd.chocobar.ChocoBar;
 
 import java.util.ArrayList;
 
@@ -17,6 +24,10 @@ public class HallRender {
 
 
     Context context;
+
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
+
 
     public Context getContext() {
         return context;
@@ -28,6 +39,9 @@ public class HallRender {
 
     public HallRender(Context context) {
         this.context = context;
+        pref = context.getSharedPreferences("UserPlaces", 0);
+        editor = pref.edit();
+
     }
 
     enum Status {
@@ -64,11 +78,12 @@ public class HallRender {
 
             for (int j = 0; j < col; j++) {
                 Button b = new Button(context);
-                b.setText(j +1+ "");
+//                b.setText(j +1+ "");
                 final float scale = context.getResources().getDisplayMetrics().density;
                 int pixels = (int) (50 * scale + 0.5f);
 
                 b.setLayoutParams(new TableRow.LayoutParams(pixels, pixels));
+                b.setText((i +1)+ "x"+(j+1));
 
 //
 //                if (j == 5 && i == 5) {
@@ -120,6 +135,14 @@ public class HallRender {
             case FREE:
                 cell.getBackground().setColorFilter(Color.parseColor("#FF4CAF50"), PorterDuff.Mode.MULTIPLY);
                 cell.setTextColor(Color.parseColor("#FFFAFAFA"));
+                cell.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(context, cell.getText().toString(), Toast.LENGTH_SHORT).show();
+                        cell.setText("✓");
+                        editor.putString("place", cell.getText().toString());
+                    }
+                });
                 break;
             case BOOKED:
                 cell.getBackground().setColorFilter(Color.parseColor("#FDD835"), PorterDuff.Mode.MULTIPLY);
