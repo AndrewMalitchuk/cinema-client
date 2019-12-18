@@ -1,6 +1,8 @@
 package com.cinema.client.etc;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cinema.client.R;
+import com.cinema.client.activity.MyTicketsActivity;
+import com.cinema.client.activity.TicketActivity;
 
 import java.util.List;
 
@@ -50,6 +54,9 @@ public class MyTicketsAdapter extends RecyclerView.Adapter<MyTicketsAdapter.View
             @Override
             public void onClick(View view) {
                 Toast.makeText(context,"The position is:"+position,Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(context, TicketActivity.class);
+                context.startActivity(intent);
+
             }
         });
 

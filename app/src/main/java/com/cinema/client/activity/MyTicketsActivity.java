@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -88,6 +89,9 @@ public class MyTicketsActivity extends AppCompatActivity {
             @Override
             public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
                 Toast.makeText(MyTicketsActivity.this, searchSuggestion.getBody(), Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(MyTicketsActivity.this, TicketActivity.class);
+                startActivity(intent);
+
             }
 
             @Override

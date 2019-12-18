@@ -3,11 +3,17 @@ package com.cinema.client.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.cinema.client.R;
 import com.cinema.client.etc.MyItem;
 import com.cinema.client.etc.StatusAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.pd.chocobar.ChocoBar;
 import com.transferwise.sequencelayout.SequenceLayout;
 import com.vivekkaushik.datepicker.DatePickerTimeline;
 import com.vivekkaushik.datepicker.OnDateSelectedListener;
@@ -24,6 +30,14 @@ public class StatusActivity extends AppCompatActivity {
     @BindView(R.id.status)
     SequenceLayout sequenceLayout;
 
+//    @BindView(R.id.spinner)
+//    Spinner spinner;
+
+    @BindView(R.id.selectedDateTimeTextView)
+    TextView selectedDateTimeTextView;
+
+    @BindView(R.id.floatingActionButton)
+    FloatingActionButton floatingActionButton;
 
 
     @Override
@@ -58,7 +72,23 @@ public class StatusActivity extends AppCompatActivity {
         list.add(item7);
         list.add(item8);
         list.add(item9);
-        sequenceLayout.setAdapter(new StatusAdapter(list, this));
+//        sequenceLayout.setAdapter(new StatusAdapter(list, this));
+        sequenceLayout.setAdapter(new StatusAdapter(list, this,selectedDateTimeTextView,"01.01.2003"));
+
+
+
+
+//        ArrayList<String> spinnerContent = new ArrayList<>();
+//        spinnerContent.add("kek #1");
+//        spinnerContent.add("kek #2");
+//        spinnerContent.add("kek #3");
+//        spinnerContent.add("kek #4");
+//        spinnerContent.add("kek #5");
+//
+//        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,spinnerContent);
+//        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+//
+//        spinner.setAdapter(spinnerAdapter);
 
 
         //
@@ -87,4 +117,26 @@ public class StatusActivity extends AppCompatActivity {
 
 
     }
+
+    public void onFABClick(View view){
+
+        String selectedDate=selectedDateTimeTextView.getText().toString();
+
+        if(selectedDate.equals("Nothing yet...")){
+            ChocoBar.builder().setActivity(StatusActivity.this)
+                    .setText("Please, select date and time!")
+                    .setDuration(ChocoBar.LENGTH_SHORT)
+                    .red()
+                    .show();
+        }else{
+            ChocoBar.builder().setActivity(StatusActivity.this)
+                    .setText("Selected date:\n"+selectedDateTimeTextView.getText().toString())
+                    .setDuration(ChocoBar.LENGTH_SHORT)
+                    .green()
+                    .show();
+        }
+
+
+    }
+
 }

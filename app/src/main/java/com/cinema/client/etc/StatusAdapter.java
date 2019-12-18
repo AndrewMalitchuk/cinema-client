@@ -1,11 +1,19 @@
 package com.cinema.client.etc;
 
 import android.content.Context;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cinema.client.R;
+import com.cinema.client.activity.Main2Activity;
+import com.pd.chocobar.ChocoBar;
 import com.transferwise.sequencelayout.SequenceAdapter;
 import com.transferwise.sequencelayout.SequenceStep;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class StatusAdapter extends SequenceAdapter<MyItem> {
@@ -14,9 +22,20 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
     private List<com.cinema.client.etc.MyItem> items;
     Context context;
 
+
+    TextView selectedDateTimeTextView;
+    String activeDate;
+
     public StatusAdapter (List<com.cinema.client.etc.MyItem> items, Context context){
         this.items=items;
         this.context=context;
+    }
+
+    public StatusAdapter (List<com.cinema.client.etc.MyItem> items, Context context,TextView selectedDateTimeTextView,String activeDate){
+        this.items=items;
+        this.context=context;
+        this.selectedDateTimeTextView=selectedDateTimeTextView;
+        this.activeDate=activeDate;
     }
 
 
@@ -39,6 +58,26 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
         }
         if (myItem.getSubtitle()!=null){
             sequenceStep.setSubtitle(myItem.getSubtitle());
+        }
+
+        Date curent=null;
+        Date temp=null;
+        try {
+            // XXX
+            curent=new SimpleDateFormat("dd.MM.yyy").parse(activeDate);
+            temp=new SimpleDateFormat("dd.MM.yyy").parse(myItem.getFormattedDate());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        if(temp.after(curent) || temp.compareTo(curent)==0) {
+            sequenceStep.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+//                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
+                    selectedDateTimeTextView.setText(myItem.getFormattedDate());
+                }
+            });
         }
 
     }

@@ -2,9 +2,11 @@ package com.cinema.client.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.cinema.client.R;
 
@@ -27,11 +29,11 @@ public class StoriesActivity extends AppCompatActivity {
         //
         SimpleDateFormat fmt = new SimpleDateFormat("dd-MM-yyy HH:mm:ss");
 
-        MyStory currentStory=null;
-        MyStory previousStory=null;
+        MyStory currentStory = null;
+        MyStory previousStory = null;
         try {
             currentStory = new MyStory(
-                    "https://media.kg-portal.ru/movies/b/bladerunner2/posters/bladerunner2_30.jpg",
+                    "https://static.posters.cz/image/750/%D0%9F%D0%BB%D0%B0%D0%BA%D0%B0%D1%82/blade-runner-2049-fire-ice-i50059.jpg",
                     fmt.parse("20-11-2019 10:00:00"),
                     "Blade Runner 2049"
             );
@@ -47,6 +49,13 @@ public class StoriesActivity extends AppCompatActivity {
         ArrayList<MyStory> myStories = new ArrayList<>();
 
 
+         /*
+          є список з юрлками і назвою тайтла
+          коли ти нажимаєш на кнопочку - витягується позиція, і назву тайтлу передаєш в інтент для
+          того щоб в актівіті загрузилась вся інфа
+           */
+
+
         myStories.add(previousStory);
         myStories.add(currentStory);
 
@@ -59,7 +68,13 @@ public class StoriesActivity extends AppCompatActivity {
                 .setStoryClickListeners(new StoryClickListeners() {
                     @Override
                     public void onDescriptionClickListener(int position) {
-                        //your action
+//                        if(position==0){
+//                            Toast.makeText(StoriesActivity.this, position+" ", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StoriesActivity.this, myStories.get(position).getDescription(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(StoriesActivity.this, AboutFilmActivity.class);
+                        startActivity(intent);
+
+//                        }
                     }
 
                     @Override
