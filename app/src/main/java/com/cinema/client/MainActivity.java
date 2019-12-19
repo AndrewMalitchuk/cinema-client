@@ -21,6 +21,7 @@ import com.cinema.client.activity.Main2Activity;
 import com.cinema.client.activity.MyTicketsActivity;
 import com.cinema.client.activity.NewCardActivity;
 import com.cinema.client.activity.NewNewCardActivity;
+import com.cinema.client.activity.PosterActivity;
 import com.cinema.client.activity.QRZoomActivity;
 import com.cinema.client.activity.SignUpActivity;
 import com.cinema.client.activity.SplashActivity;
@@ -160,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void aboutCinema2(View view){
-        Intent intent =new Intent(this, AboutCinema2.class);
+        Intent intent =new Intent(this, PosterActivity.class);
         startActivity(intent);
     }
 

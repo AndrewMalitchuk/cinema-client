@@ -165,5 +165,7 @@ dependencies {
     implementation 'com.github.Pradyuman7:ChocoBar:V1.0'
     //
     implementation 'com.google.code.gson:gson:2.8.6'
+    //
+    implementation 'com.github.nihad92:SwipeableCards:1.0.19'
 
 }

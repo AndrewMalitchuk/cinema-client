@@ -15,9 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.PosterActivity"></activity>
         <activity
             android:name=".activity.SearchCinemaActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.SearchFilmActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -49,8 +50,9 @@
         <activity android:name=".activity.NewCardActivity" />
         <activity android:name=".activity.TabActivity" />
         <activity android:name=".activity.AboutDeveloperActivity" />
-        <activity android:name=".activity.BottomNavigation"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".activity.BottomNavigation"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.HallActivity" />
         <activity android:name=".activity.StartupActivity" />
         <activity android:name=".activity.CardActivity" />
