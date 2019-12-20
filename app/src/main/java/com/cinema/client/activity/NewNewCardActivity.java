@@ -165,4 +165,14 @@ public class NewNewCardActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onChooseCinemaImageButtonClick(View view) {
+        Intent intent = new Intent(this, SearchCinemaActivity.class);
+        startActivity(intent);
+    }
+
+    public void onChooseDateTimeImageButtonClick(View view) {
+        Intent intent = new Intent(this, StatusActivity.class);
+        startActivity(intent);
+    }
+
 }

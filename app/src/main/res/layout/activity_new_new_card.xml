@@ -35,26 +35,88 @@
 
         </com.developer.mtextfield.TextFieldBoxes>
 
-        <com.developer.mtextfield.TextFieldBoxes
-            android:id="@+id/text_field_boxes3"
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="5dp"
-            android:clickable="false"
-            app:enabled="false"
-            app:iconSignifier="@drawable/ic_access_time_black_24dp"
-            app:labelText="Date and time">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-            <com.developer.mtextfield.ExtendedEditText
-                android:id="@+id/extended_edit_text3"
-                android:layout_width="wrap_content"
+            <com.developer.mtextfield.TextFieldBoxes
+                android:id="@+id/text_field_boxes5"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="10.10.2010" />
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                app:enabled="false"
+                app:iconSignifier="@drawable/ic_video_label_black_24dp"
+                app:labelText="Cinema">
 
-        </com.developer.mtextfield.TextFieldBoxes>
+                <com.developer.mtextfield.ExtendedEditText
+                    android:id="@+id/extended_edit_text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kosmos" />
+
+            </com.developer.mtextfield.TextFieldBoxes>
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0"
+                android:backgroundTint="@color/colorAccent"
+                android:onClick="onChooseCinemaImageButtonClick"
+                android:tint="@android:color/white"
+                app:srcCompat="@drawable/ic_create_black_24dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.developer.mtextfield.TextFieldBoxes
+                android:id="@+id/text_field_boxes3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                app:enabled="false"
+                app:iconSignifier="@drawable/ic_access_time_black_24dp"
+                app:labelText="Date and time">
+
+                <com.developer.mtextfield.ExtendedEditText
+                    android:id="@+id/extended_edit_text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10.10.2010" />
+
+            </com.developer.mtextfield.TextFieldBoxes>
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0"
+                android:backgroundTint="@color/colorAccent"
+                android:onClick="onChooseDateTimeImageButtonClick"
+                android:tint="@android:color/white"
+                app:srcCompat="@drawable/ic_create_black_24dp" />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
