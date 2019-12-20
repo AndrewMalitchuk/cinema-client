@@ -1,7 +1,9 @@
 package com.cinema.client.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,12 +12,14 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.cinema.client.MainActivity;
 import com.cinema.client.R;
 import com.cooltechworks.creditcarddesign.CardEditActivity;
 import com.cooltechworks.creditcarddesign.CreditCardUtils;
 import com.cooltechworks.creditcarddesign.CreditCardView;
+import com.droidbyme.dialoglib.DroidDialog;
 import com.pd.chocobar.ChocoBar;
 
 import butterknife.BindView;
@@ -166,8 +170,37 @@ public class NewNewCardActivity extends AppCompatActivity {
     }
 
     public void onChooseCinemaImageButtonClick(View view) {
-        Intent intent = new Intent(this, SearchCinemaActivity.class);
-        startActivity(intent);
+
+        new DroidDialog.Builder(NewNewCardActivity.this)
+                .icon(R.drawable.ic_video_label_black_24dp)
+                .title("Selected cinema")
+                .content("Do you want to open your selected cinema instead of searching another cinema?")
+                .cancelable(true, false)
+                .positiveButton("Yes, I'm sure", new DroidDialog.onPositiveListener() {
+                    @Override
+                    public void onPositive(Dialog droidDialog) {
+                        Toast.makeText(NewNewCardActivity.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
+                        //
+//                        Intent intent = new Intent(NewNewCardActivity.this, SearchCinemaActivity.class);
+//                        startActivity(intent);
+                        //
+                    }
+                })
+                .negativeButton("No, let's search", new DroidDialog.onNegativeListener() {
+                    @Override
+                    public void onNegative(Dialog droidDialog) {
+                        Toast.makeText(NewNewCardActivity.this, "No, let's search", Toast.LENGTH_SHORT).show();
+                        //
+                        Intent intent = new Intent(NewNewCardActivity.this, SearchCinemaActivity.class);
+                        startActivity(intent);
+                        //
+                    }
+                })
+                .color(ContextCompat.getColor(NewNewCardActivity.this, R.color.colorAccent), ContextCompat.getColor(NewNewCardActivity.this, R.color.white),
+                        ContextCompat.getColor(NewNewCardActivity.this, R.color.colorAccent))
+                .show();
+
+
     }
 
     public void onChooseDateTimeImageButtonClick(View view) {

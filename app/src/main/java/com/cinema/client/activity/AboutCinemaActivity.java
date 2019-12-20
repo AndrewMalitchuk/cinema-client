@@ -153,7 +153,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
         final DisplayMetrics dm = context.getResources().getDisplayMetrics();
         ScaleBarOverlay mScaleBarOverlay = new ScaleBarOverlay(map);
         mScaleBarOverlay.setCentred(true);
-//play around with these values to get the location on screen in the right place for your application
+//play around with these about_film_menu to get the location on screen in the right place for your application
         mScaleBarOverlay.setScaleBarOffset(dm.widthPixels / 2, 10);
         map.getOverlays().add(mScaleBarOverlay);
 
@@ -194,4 +194,10 @@ public class AboutCinemaActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    public void onImageClick(View view){
+        Intent intent=new Intent(AboutCinemaActivity.this, ZoomImageActivity.class);
+        startActivity(intent);
+    }
+
 }

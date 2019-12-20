@@ -3,13 +3,16 @@ package com.cinema.client.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -17,10 +20,12 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cinema.client.MainActivity;
 import com.cinema.client.R;
 import com.devs.readmoreoption.ReadMoreOption;
+import com.droidbyme.dialoglib.DroidDialog;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.github.rubensousa.bottomsheetbuilder.BottomSheetBuilder;
 import com.github.rubensousa.bottomsheetbuilder.BottomSheetMenuDialog;
@@ -88,7 +93,7 @@ public class AboutFilmActivity extends AppCompatActivity {
         getLifecycle().addObserver(youTubePlayerView);
 
         youTubePlayerView.getYouTubePlayerWhenReady(e -> {
-            e.loadVideo("bGS3n7yFNv0",0);
+            e.loadVideo("bGS3n7yFNv0", 0);
         });
 
 
@@ -127,12 +132,13 @@ public class AboutFilmActivity extends AppCompatActivity {
 
     }
 
-    public void onImageClick(View view){
-        Intent intent=new Intent(this,ZoomImageActivity.class);
+    public void onImageClick(View view) {
+        Intent intent = new Intent(this, ZoomImageActivity.class);
         startActivity(intent);
     }
 
-    public void onFabClick(View view){
+
+    public void onFabClick(View view) {
 //        mShowingLongDialog = true;
 //        mBottomSheetDialog = new BottomSheetBuilder(this, R.style.AppTheme_BottomSheetDialog)
 //                .setMode(BottomSheetBuilder.MODE_LIST)
@@ -155,15 +161,50 @@ public class AboutFilmActivity extends AppCompatActivity {
 //            }
 //        });
 //        mBottomSheetDialog.show();
-        Intent share = new Intent(android.content.Intent.ACTION_SEND);
-        share.setType("text/plain");
-        share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
 
-        // Add data to the intent, the receiving app will decide
-        // what to do with it.
-        share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
-        share.putExtra(Intent.EXTRA_TEXT, "http://www.codeofaninja.com");
+        // Share link (?)
+//        Intent share = new Intent(android.content.Intent.ACTION_SEND);
+//        share.setType("text/plain");
+//        share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+//
+//        // Add data to the intent, the receiving app will decide
+//        // what to do with it.
+//        share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
+//        share.putExtra(Intent.EXTRA_TEXT, "http://www.codeofaninja.com");
+//
+//        startActivity(Intent.createChooser(share, "Share link!"));
 
-        startActivity(Intent.createChooser(share, "Share link!"));
+
+
+        Intent intent = new Intent(AboutFilmActivity.this, SearchCinemaActivity.class);
+        startActivity(intent);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.about_film_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.action_share:
+                Intent share = new Intent(android.content.Intent.ACTION_SEND);
+                share.setType("text/plain");
+                share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+
+                // Add data to the intent, the receiving app will decide
+                // what to do with it.
+                share.putExtra(Intent.EXTRA_SUBJECT, "Once upon a time in Hollywood");
+                share.putExtra(Intent.EXTRA_TEXT, "https://www.imdb.com/title/tt7131622/?ref_=nv_sr_srsg_0");
+
+                startActivity(Intent.createChooser(share, "Look what I choose!"));
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

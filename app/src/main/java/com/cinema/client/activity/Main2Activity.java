@@ -168,7 +168,7 @@ public class Main2Activity extends AppCompatActivity {
                         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Cinema-App Feedback");
                         emailIntent.putExtra(Intent.EXTRA_TEXT, "Body");
                         startActivity(Intent.createChooser(emailIntent, "Send email..."));
-
+                        break;
                     case R.id.action_change_name:
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(Main2Activity.this);
@@ -204,7 +204,6 @@ public class Main2Activity extends AppCompatActivity {
                         dialog.show();
                         break;
                     case R.id.action_logout:
-
                         new DroidDialog.Builder(Main2Activity.this)
                                 .icon(R.drawable.ic_exit_to_app_black_24dp)
                                 .title("Logout")
@@ -235,23 +234,6 @@ public class Main2Activity extends AppCompatActivity {
                                 .color(ContextCompat.getColor(Main2Activity.this, R.color.colorAccent), ContextCompat.getColor(Main2Activity.this, R.color.white),
                                         ContextCompat.getColor(Main2Activity.this, R.color.colorAccent))
                                 .show();
-
-
-//                        AlertDialog.Builder builderLogout = new AlertDialog.Builder(Main2Activity.this);
-//                        builderLogout.setTitle("Logout");
-//                        builderLogout.setMessage("Are you sure about this?");
-//                        // add the buttons
-//                        builderLogout.setPositiveButton("Continue", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialogInterface, int i) {
-//                                Toast.makeText(Main2Activity.this, "Continue", Toast.LENGTH_SHORT).show();
-//                            }
-//                        });
-//                        builderLogout.setNegativeButton("Cancel", null);
-//                        // create and show the alert dialog
-//                        AlertDialog dialogLogout = builderLogout.create();
-//                        dialogLogout.show();
-
 
                         break;
                 }
@@ -437,7 +419,7 @@ public class Main2Activity extends AppCompatActivity {
 
         //
         ChocoBar.builder().setActivity(Main2Activity.this)
-                .setText("Welcome back, "+pref.getString("user_name",null))
+                .setText("Welcome back, " + pref.getString("user_name", null))
                 .setDuration(ChocoBar.LENGTH_SHORT)
                 .build()
                 .show();
@@ -549,7 +531,7 @@ public class Main2Activity extends AppCompatActivity {
         }
     }
 
-    public void onAboutFilmClick(View view){
+    public void onAboutFilmClick(View view) {
         Intent intent = new Intent(this, AboutFilmActivity.class);
         startActivity(intent);
     }

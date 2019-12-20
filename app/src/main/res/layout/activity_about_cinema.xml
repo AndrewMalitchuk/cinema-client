@@ -75,6 +75,7 @@
                                     android:layout_height="175dp"
                                     android:layout_margin="10dp"
                                     android:elevation="10dp"
+                                    android:onClick="onImageClick"
                                     android:src="@drawable/pulp_fiction"
                                     app:border_color="@color/colorLoginActivityText" />
 
