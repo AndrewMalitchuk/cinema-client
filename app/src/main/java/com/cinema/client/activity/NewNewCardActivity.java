@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.cinema.client.MainActivity;
@@ -14,7 +16,10 @@ import com.cinema.client.R;
 import com.cooltechworks.creditcarddesign.CardEditActivity;
 import com.cooltechworks.creditcarddesign.CreditCardUtils;
 import com.cooltechworks.creditcarddesign.CreditCardView;
+import com.pd.chocobar.ChocoBar;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import in.shadowfax.proswipebutton.ProSwipeButton;
 
 public class NewNewCardActivity extends AppCompatActivity {
@@ -22,7 +27,11 @@ public class NewNewCardActivity extends AppCompatActivity {
     private final int CREATE_NEW_CARD = 0;
 
     private LinearLayout cardContainer;
+    private LinearLayout cardLayout;
     private Button addCardButton;
+
+    @BindView(R.id.imageButton2)
+    ImageButton imageButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +39,8 @@ public class NewNewCardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_new_card);
         initialize();
         listeners();
+
+        ButterKnife.bind(this);
 
 
         ProSwipeButton proSwipeBtn = (ProSwipeButton) findViewById(R.id.proswipebutton_main_error);
@@ -42,8 +53,19 @@ public class NewNewCardActivity extends AppCompatActivity {
                     public void run() {
                         // task success! show TICK icon in ProSwipeButton
                         proSwipeBtn.showResultIcon(true); // false if task failed
+                        //
+                        ChocoBar.builder().setActivity(NewNewCardActivity.this)
+                                .setText("Success!")
+                                .setDuration(ChocoBar.LENGTH_SHORT)
+                                .green()
+                                .show();
+
+                        Intent intent = new Intent(NewNewCardActivity.this, MyTicketsActivity.class);
+                        startActivity(intent);
+                        //
                     }
                 }, 2000);
+
             }
         });
 
@@ -55,28 +77,11 @@ public class NewNewCardActivity extends AppCompatActivity {
 
     private void initialize() {
         addCardButton = (Button) findViewById(R.id.add_card);
-        cardContainer = (LinearLayout) findViewById(R.id.card_container);
+        cardContainer = (LinearLayout) findViewById(R.id.cardLayout);
 //        getSupportActionBar().setTitle("Payment");
 //        populate();
     }
-//
-//    private void populate() {
-//        CreditCardView sampleCreditCardView = new CreditCardView(this);
-//
-//        String name = "Glarence Zhao";
-//        String cvv = "420";
-//        String expiry = "01/18";
-//        String cardNumber = "4242424242424242";
-//
-//        sampleCreditCardView.setCVV(cvv);
-//        sampleCreditCardView.setCardHolderName(name);
-//        sampleCreditCardView.setCardExpiry(expiry);
-//        sampleCreditCardView.setCardNumber(cardNumber);
-//
-//        cardContainer.addView(sampleCreditCardView);
-//        int index = cardContainer.getChildCount() - 1;
-//        addCardListener(index, sampleCreditCardView);
-//    }
+
 
     private void listeners() {
         addCardButton.setOnClickListener(new View.OnClickListener() {
@@ -117,6 +122,7 @@ public class NewNewCardActivity extends AppCompatActivity {
 
     public void onActivityResult(int reqCode, int resultCode, Intent data) {
 
+        super.onActivityResult(reqCode, resultCode, data);
         if (resultCode == RESULT_OK) {
 //            Debug.printToast("Result Code is OK", getApplicationContext());
 
@@ -138,6 +144,8 @@ public class NewNewCardActivity extends AppCompatActivity {
                 int index = cardContainer.getChildCount() - 1;
                 addCardListener(index, creditCardView);
 
+                addCardButton.setVisibility(View.GONE);
+
             } else {
 
                 CreditCardView creditCardView = (CreditCardView) cardContainer.getChildAt(reqCode);
@@ -151,4 +159,10 @@ public class NewNewCardActivity extends AppCompatActivity {
         }
 
     }
+
+    public void onChoosePlaceImageButtonClick(View view) {
+        Intent intent = new Intent(this, BottomNavigation.class);
+        startActivity(intent);
+    }
+
 }

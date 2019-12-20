@@ -13,69 +13,116 @@
         android:orientation="vertical"
         >
 
-        <!--<com.cooltechworks.creditcarddesign.CreditCardView-->
-        <!--android:id="@+id/card_1"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:card_number="56656789000000000"-->
-        <!--app:card_holder_name="JOHN MATTEW"-->
-        <!--app:cvv="522"-->
-        <!--app:card_expiration="01/12"-->
-        <!--/>-->
 
-        <!--<com.cooltechworks.creditcarddesign.CreditCardView-->
-        <!--android:id="@+id/card_2"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:card_number="34656789000000000"-->
-        <!--app:card_holder_name="JOHN MATTEW"-->
-        <!--app:cvv="522"-->
-        <!--app:card_expiration="01/12"-->
-        <!--/>-->
+        <com.developer.mtextfield.TextFieldBoxes
+            android:id="@+id/text_field_boxes2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="false"
+            app:enabled="false"
+            app:iconSignifier="@drawable/ic_ticket_black"
+            app:labelText="Film name">
 
-        <!--<com.cooltechworks.creditcarddesign.CreditCardView-->
-        <!--android:id="@+id/card_3"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:card_number="44656789000000000"-->
-        <!--app:card_holder_name="JOHN MATTEW"-->
-        <!--app:cvv="522"-->
-        <!--app:card_expiration="01/12"-->
-        <!--/>-->
+            <com.developer.mtextfield.ExtendedEditText
+                android:id="@+id/extended_edit_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Once upon a time in Hollywood" />
 
+        </com.developer.mtextfield.TextFieldBoxes>
 
-        <!--<com.cooltechworks.creditcarddesign.CreditCardView-->
-        <!--android:id="@+id/card_4"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:card_number="56456789000000000"-->
-        <!--app:card_holder_name="JOHN MATTEW"-->
-        <!--app:cvv="522"-->
-        <!--app:card_expiration="01/12"-->
-        <!--/>-->
+        <com.developer.mtextfield.TextFieldBoxes
+            android:id="@+id/text_field_boxes3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="false"
+            app:enabled="false"
+            app:iconSignifier="@drawable/ic_access_time_black_24dp"
+            app:labelText="Date and time">
 
-        <!--<com.cooltechworks.creditcarddesign.CreditCardView-->
-        <!--android:id="@+id/card_5"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--app:card_number="38056789000000000"-->
-        <!--app:card_holder_name="JOHN MATTEW"-->
-        <!--app:cvv="522"-->
-        <!--app:card_expiration="01/12"-->
-        <!--/>-->
+            <com.developer.mtextfield.ExtendedEditText
+                android:id="@+id/extended_edit_text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10.10.2010" />
+
+        </com.developer.mtextfield.TextFieldBoxes>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.developer.mtextfield.TextFieldBoxes
+                android:id="@+id/text_field_boxes4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                app:enabled="false"
+                app:iconSignifier="@drawable/ic_event_seat_black_24dp"
+                app:labelText="Places">
+
+                <com.developer.mtextfield.ExtendedEditText
+                    android:id="@+id/extended_edit_text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="C-10-10; R-10-10; L-10-10;" />
+
+            </com.developer.mtextfield.TextFieldBoxes>
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0"
+                android:backgroundTint="@color/colorAccent"
+                android:onClick="onChoosePlaceImageButtonClick"
+                android:tint="@android:color/white"
+                app:srcCompat="@drawable/ic_create_black_24dp" />
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/add_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/colorAccent"
             android:text="ADD CARD"
-            />
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/cardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
 
         <in.shadowfax.proswipebutton.ProSwipeButton
             android:id="@+id/proswipebutton_main_error"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
             app:arrow_color="#33FFFFFF"
             app:bg_color="#4CAF50"
             app:btn_text="Buy"

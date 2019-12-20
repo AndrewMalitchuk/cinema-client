@@ -20,32 +20,41 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <TableLayout
-                        android:id="@+id/tableLayout1"
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/colorLoginActivityCardView">
+                        android:layout_height="match_parent">
 
-                        <TableRow
+                        <TableLayout
+                            android:id="@+id/tableLayout1"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@color/colorLoginActivityCardView"
+                            android:foregroundGravity="center_horizontal"
+                            android:gravity="center_horizontal">
 
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
 
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
 
-                        <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                    </TableLayout>
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent" />
+                        </TableLayout>
+                    </FrameLayout>
+
                 </LinearLayout>
             </HorizontalScrollView>
 
