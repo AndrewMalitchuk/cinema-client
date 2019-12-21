@@ -200,4 +200,9 @@ public class AboutCinemaActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onFabClick(View view){
+        Intent intent=new Intent(AboutCinemaActivity.this, PosterActivity.class);
+        startActivity(intent);
+    }
+
 }

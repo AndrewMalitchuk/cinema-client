@@ -176,7 +176,7 @@ public class AboutFilmActivity extends AppCompatActivity {
 
 
 
-        Intent intent = new Intent(AboutFilmActivity.this, SearchCinemaActivity.class);
+        Intent intent = new Intent(AboutFilmActivity.this, NewNewCardActivity.class);
         startActivity(intent);
 
     }
