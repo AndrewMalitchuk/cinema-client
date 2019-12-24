@@ -76,11 +76,11 @@ public class StoriesActivity extends AppCompatActivity {
 
 //                        }
                     }
-
                     @Override
                     public void onTitleIconClickListener(int position) {
                         //your action
                     }
+
                 }) // Optional Listeners
                 .build() // Must be called before calling show method
                 .show();

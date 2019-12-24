@@ -1,16 +1,24 @@
 package com.cinema.client.activity;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Menu;
@@ -47,7 +55,6 @@ import me.gujun.android.taggroup.TagGroup;
 public class AboutCinemaActivity extends AppCompatActivity {
 
 
-
     @BindView(R.id.textView4)
     TextView textView4;
 
@@ -55,14 +62,12 @@ public class AboutCinemaActivity extends AppCompatActivity {
     ScrollView scrollView;
 
 
-
     @BindView(R.id.linLayout)
     LinearLayout linLayout;
 
 
-
     @BindView(R.id.cv1)
-            CardView cv1;
+    CardView cv1;
 
     @BindView(R.id.cv2)
     CardView cv2;
@@ -73,6 +78,9 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
     @BindView(R.id.datePickerTimeline)
     DatePickerTimeline datePickerTimeline;
+
+    @BindView(R.id.textView7)
+    TextView textView7;
 
 //    private MapContainerView mapView;
 
@@ -111,6 +119,11 @@ public class AboutCinemaActivity extends AppCompatActivity {
         //
 
 
+        SpannableString content = new SpannableString("+380 (50) 541 52 21");
+        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
+        textView7.setText(content);
+        textView7.setOnClickListener(this::onPhoneClick);
+        //
 
 
         FlowingGradientClass grad = new FlowingGradientClass();
@@ -118,7 +131,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
                 .onLinearLayout(linLayout)
                 .setTransitionDuration(4000)
                 .start();
-
 
 
         Context ctx = getApplicationContext();
@@ -139,7 +151,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
 
         //
-        Marker marker=new Marker(map);
+        Marker marker = new Marker(map);
 
         marker.setPosition(new GeoPoint(48.931572, 24.697925));
         marker.setIcon(getResources().getDrawable(R.drawable.ic_ticket_black));
@@ -158,14 +170,12 @@ public class AboutCinemaActivity extends AppCompatActivity {
         map.getOverlays().add(mScaleBarOverlay);
 
 
-
-
         //
         datePickerTimeline.setOnDateSelectedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(int year, int month, int day, int dayOfWeek) {
-                Log.d("Date:",year+" "+month+" "+day);
-                Intent intent = new Intent(AboutCinemaActivity.this,StatusActivity.class);
+                Log.d("Date:", year + " " + month + " " + day);
+                Intent intent = new Intent(AboutCinemaActivity.this, StatusActivity.class);
                 startActivity(intent);
             }
 
@@ -187,7 +197,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.maps_direction) {
+        if (item.getItemId() == R.id.maps_direction) {
             Uri gmmIntentUri = Uri.parse("geo:48.931572, 24.697925");
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
             mapIntent.setPackage("com.google.android.apps.maps");
@@ -196,13 +206,32 @@ public class AboutCinemaActivity extends AppCompatActivity {
         return true;
     }
 
-    public void onImageClick(View view){
-        Intent intent=new Intent(AboutCinemaActivity.this, ZoomImageActivity.class);
+    public void onImageClick(View view) {
+        Intent intent = new Intent(AboutCinemaActivity.this, ZoomImageActivity.class);
         startActivity(intent);
     }
 
-    public void onFabClick(View view){
-        Intent intent=new Intent(AboutCinemaActivity.this, PosterActivity.class);
+    public void onFabClick(View view) {
+        Intent intent = new Intent(AboutCinemaActivity.this, PosterActivity.class);
+        startActivity(intent);
+    }
+
+
+
+    public void onPhoneClick(View view) {
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "+380 (50) 541 52 21"));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    Activity#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for Activity#requestPermissions for more details.
+                return;
+            }
+        }
         startActivity(intent);
     }
 

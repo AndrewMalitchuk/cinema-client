@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.cinema.client.R;
 import com.cinema.client.etc.SwipeCardAdapter;
@@ -29,12 +32,28 @@ public class PosterActivity extends AppCompatActivity {
     @BindView(R.id.linearLayout)
     LinearLayout linearLayout;
 
+    @BindView(R.id.stop)
+    LinearLayout stop;
+
+    @BindView(R.id.imageView4)
+    ImageView imageView4;
+
+    @BindView(R.id.textView31)
+    TextView textView31;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poster);
 
         ButterKnife.bind(this);
+
+
+        //
+        stop.setVisibility(View.GONE);
+        imageView4.setVisibility(View.GONE);
+        textView31.setVisibility(View.GONE);
+        //
 
 
         // Gradient
@@ -55,6 +74,17 @@ public class PosterActivity extends AppCompatActivity {
                     @Override
                     public void onItemSwiped() {
                         adapter.removeTopItem();
+
+
+                        Log.d("Count R",recyclerView.getChildCount()+"");
+                        Log.d("Count A",adapter.getItemCount()+"");
+
+                        if(adapter.getItemCount()==0){
+                            stop.setVisibility(View.VISIBLE);
+                            imageView4.setVisibility(View.VISIBLE);
+                            textView31.setVisibility(View.VISIBLE);
+                        }
+
                     }
 
                     @Override
@@ -96,6 +126,8 @@ public class PosterActivity extends AppCompatActivity {
                 .setScaleGap(0.1f)
                 .setTransYGap(0));
         recyclerView.setAdapter(adapter = new SwipeCardAdapter());
+
+
 
 
 

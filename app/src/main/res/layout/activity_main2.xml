@@ -129,7 +129,7 @@
                                     android:layout_height="wrap_content"
                                     android:backgroundTint="@color/colorAccent"
                                     android:onClick="onAboutFilmClick"
-                                    android:text="Order"
+                                    android:text="More"
                                     android:textColor="@color/white" />
 
 
@@ -499,7 +499,8 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
+                                            android:onClick="onSelectedCinemaClick"
+                                            android:src="@drawable/kosmos_cinema"
                                             app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
@@ -509,7 +510,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="Cinema 1"
+                                            android:text="Kosmos"
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 
@@ -524,7 +525,8 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
+                                            android:onClick="onSelectedCinemaClick"
+                                            android:src="@drawable/lumier_cinema"
                                             app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
@@ -534,82 +536,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="Cinema 2"
-                                            android:textAlignment="center"
-                                            android:textColor="@color/colorLoginActivityText" />
-
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:orientation="vertical">
-
-                                        <com.liangfeizc.avatarview.AvatarView
-                                            android:layout_width="75dp"
-                                            android:layout_height="75dp"
-                                            android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
-                                            app:border_color="@color/colorLoginActivityText" />
-
-                                        <TextView
-                                            android:id="@+id/textView83"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="10dp"
-                                            android:layout_marginRight="10dp"
-                                            android:layout_marginBottom="10dp"
-                                            android:text="Cinema 3"
-                                            android:textAlignment="center"
-                                            android:textColor="@color/colorLoginActivityText" />
-
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:orientation="vertical">
-
-                                        <com.liangfeizc.avatarview.AvatarView
-                                            android:layout_width="75dp"
-                                            android:layout_height="75dp"
-                                            android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
-                                            app:border_color="@color/colorLoginActivityText" />
-
-                                        <TextView
-                                            android:id="@+id/textView84"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="10dp"
-                                            android:layout_marginRight="10dp"
-                                            android:layout_marginBottom="10dp"
-                                            android:text="Cinema 4"
-                                            android:textAlignment="center"
-                                            android:textColor="@color/colorLoginActivityText" />
-
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:orientation="vertical">
-
-                                        <com.liangfeizc.avatarview.AvatarView
-                                            android:layout_width="75dp"
-                                            android:layout_height="75dp"
-                                            android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
-                                            app:border_color="@color/colorLoginActivityText" />
-
-                                        <TextView
-                                            android:id="@+id/textView85"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="10dp"
-                                            android:layout_marginRight="10dp"
-                                            android:layout_marginBottom="10dp"
-                                            android:text="Cinema 5"
+                                            android:text="Lumiere"
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 

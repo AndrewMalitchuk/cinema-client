@@ -49,6 +49,8 @@ import com.mehdi.shortcut.model.Shortcut;
 import com.mehdi.shortcut.util.ShortcutUtils;
 import com.pd.chocobar.ChocoBar;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -57,6 +59,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import es.dmoral.markdownview.Config;
 import es.dmoral.markdownview.MarkdownView;
+import omari.hamza.storyview.StoryView;
+import omari.hamza.storyview.callback.StoryClickListeners;
+import omari.hamza.storyview.model.MyStory;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
 
 public class Main2Activity extends AppCompatActivity {
@@ -130,7 +135,6 @@ public class Main2Activity extends AppCompatActivity {
         editor = pref.edit();
 
         prefForCheckingFirstRun = getSharedPreferences("com.cinema.client", MODE_PRIVATE);
-
 
 
         //
@@ -386,6 +390,16 @@ public class Main2Activity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.center_side_of_hall:
                         bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.blue));
+
+                        //
+                        stories();
+
+                        bottomNavigationView.setSelectedItemId(R.id.left_side_of_hall);
+                        bottomNavigationView.setSelected(true);
+
+                        //
+
+
                         break;
                     case R.id.left_side_of_hall:
                         bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.colorAccent));
@@ -525,7 +539,6 @@ public class Main2Activity extends AppCompatActivity {
     }
 
 
-
     public void onAboutFilmClick(View view) {
         Intent intent = new Intent(this, AboutFilmActivity.class);
         startActivity(intent);
@@ -572,66 +585,128 @@ public class Main2Activity extends AppCompatActivity {
         }
     }
 
-    public void onGenreIconClick(View view){
+    public void onGenreIconClick(View view) {
         Intent intent;
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.comedyAvatar:
-                intent = new Intent(Main2Activity.this,PosterActivity.class);
+                intent = new Intent(Main2Activity.this, PosterActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "comedyAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.actionAvatar:
-                intent = new Intent(Main2Activity.this,PosterActivity.class);
+                intent = new Intent(Main2Activity.this, PosterActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "actionAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.historicalAvatar:
-                intent = new Intent(Main2Activity.this,PosterActivity.class);
+                intent = new Intent(Main2Activity.this, PosterActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "historicalAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.sciFiAvatar:
-                intent = new Intent(Main2Activity.this,PosterActivity.class);
+                intent = new Intent(Main2Activity.this, PosterActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "sciFiAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.horrorAvatar:
-                intent = new Intent(Main2Activity.this,PosterActivity.class);
+                intent = new Intent(Main2Activity.this, PosterActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "horrorAvatar", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
 
-    public void onCityIconClick(View view){
+    public void onCityIconClick(View view) {
         Intent intent;
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.ivano_frankivsk:
-                intent = new Intent(Main2Activity.this,SearchCinemaActivity.class);
+                intent = new Intent(Main2Activity.this, SearchCinemaActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "ivano_frankivsk", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.lviv:
-                intent = new Intent(Main2Activity.this,SearchCinemaActivity.class);
+                intent = new Intent(Main2Activity.this, SearchCinemaActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "lviv", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.kiyv:
-                intent = new Intent(Main2Activity.this,SearchCinemaActivity.class);
+                intent = new Intent(Main2Activity.this, SearchCinemaActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "kiyv", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.kharkiv:
-                intent = new Intent(Main2Activity.this,SearchCinemaActivity.class);
+                intent = new Intent(Main2Activity.this, SearchCinemaActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "kharkiv", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.odessa:
-                intent = new Intent(Main2Activity.this,SearchCinemaActivity.class);
+                intent = new Intent(Main2Activity.this, SearchCinemaActivity.class);
                 startActivity(intent);
                 Toast.makeText(this, "odessa", Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    public void stories() {
+        SimpleDateFormat fmt = new SimpleDateFormat("dd-MM-yyy HH:mm:ss");
+
+        MyStory currentStory = null;
+        MyStory previousStory = null;
+        try {
+            currentStory = new MyStory(
+                    "https://static.posters.cz/image/750/%D0%9F%D0%BB%D0%B0%D0%BA%D0%B0%D1%82/blade-runner-2049-fire-ice-i50059.jpg",
+                    fmt.parse("20-11-2019 10:00:00"),
+                    "Blade Runner 2049"
+            );
+            previousStory = new MyStory(
+                    "https://www.joblo.com/assets/images/joblo/posters/2019/08/joker-poster-main2.jpg",
+                    fmt.parse("20-11-2019 10:00:00"),
+                    "Joker"
+            );
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        ArrayList<MyStory> myStories = new ArrayList<>();
+
+
+         /*
+          є список з юрлками і назвою тайтла
+          коли ти нажимаєш на кнопочку - витягується позиція, і назву тайтлу передаєш в інтент для
+          того щоб в актівіті загрузилась вся інфа
+           */
+
+
+        myStories.add(previousStory);
+        myStories.add(currentStory);
+
+        new StoryView.Builder(getSupportFragmentManager())
+                .setStoriesList(myStories) // Required
+                .setStoryDuration(5000) // Default is 2000 Millis (2 Seconds)
+                .setTitleText("Blade runner 2049") // Default is Hidden
+                .setSubtitleText("Cat meme") // Default is Hidden
+                .setTitleLogoUrl("https://i.pinimg.com/originals/f8/27/ed/f827ed9a704146f65b96226f430abf3c.png") // Default is Hidden
+                .setStoryClickListeners(new StoryClickListeners() {
+                    @Override
+                    public void onDescriptionClickListener(int position) {
+                        Toast.makeText(Main2Activity.this, myStories.get(position).getDescription(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Main2Activity.this, AboutFilmActivity.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onTitleIconClickListener(int position) {
+                        //your action
+                    }
+
+                }) // Optional Listeners
+                .build() // Must be called before calling show method
+                .show();
+    }
+
+    public void onSelectedCinemaClick(View view){
+        Intent intent=new Intent(this,AboutCinemaActivity.class);
+        startActivity(intent);
     }
 
 }
