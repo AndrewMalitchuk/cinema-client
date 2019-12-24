@@ -93,8 +93,14 @@ public class AboutFilmActivity extends AppCompatActivity {
         getLifecycle().addObserver(youTubePlayerView);
 
         youTubePlayerView.getYouTubePlayerWhenReady(e -> {
-            e.loadVideo("bGS3n7yFNv0", 0);
+//            e.loadVideo("bGS3n7yFNv0", 0);
+            e.cueVideo("bGS3n7yFNv0", 0);
         });
+
+
+
+        youTubePlayerView.enableBackgroundPlayback(false);
+        youTubePlayerView.setEnableAutomaticInitialization(false);
 
 
 //        youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {

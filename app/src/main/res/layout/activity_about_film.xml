@@ -60,7 +60,7 @@
                     <LinearLayout
                         android:id="@+id/linLayout"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
+                        android:layout_height="200dp"
                         android:orientation="vertical">
 
 
@@ -71,7 +71,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
-                        android:layout_marginTop="25dp"
+                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
                         app:cardCornerRadius="5dp"
@@ -117,8 +117,9 @@
                             android:id="@+id/textView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="5dp"
                             android:text="Once Upon A Time In Hollywood"
                             android:textSize="25sp"
                             android:textStyle="bold" />
@@ -127,8 +128,9 @@
                             android:id="@+id/textView3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
                             android:text="Description:"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -136,14 +138,18 @@
                         <TextView
                             android:id="@+id/textView4"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp" />
 
                         <TextView
                             android:id="@+id/textView5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
                             android:text="Date:"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -152,14 +158,18 @@
                             android:id="@+id/textView7"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
                             android:text="2010-10-10" />
 
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginBottom="20dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
                             android:text="Tags:"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -167,7 +177,9 @@
                         <me.gujun.android.taggroup.TagGroup
                             android:id="@+id/tag_group"
                             style="@style/TagGroup"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="5dp"
                             android:layout_marginBottom="10dp"
                             app:atg_borderColor="@color/colorAccent"
                             app:atg_checkedBackgroundColor="@color/colorAccent"
@@ -188,7 +200,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginBottom="60dp"
+                    android:layout_marginBottom="70dp"
                     app:cardCornerRadius="5dp"
                     app:cardElevation="5dp">
 
