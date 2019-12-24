@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.brouding.simpledialog.SimpleDialog;
@@ -26,6 +27,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 import com.nonzeroapps.whatisnewdialog.NewItemDialog;
 import com.nonzeroapps.whatisnewdialog.object.NewFeatureItem;
+import com.pd.chocobar.ChocoBar;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
@@ -45,6 +47,7 @@ public class BottomNavigation extends AppCompatActivity {
 
     @BindView(R.id.toolbar4)
     Toolbar toolbar;
+
 
 
 //    private ProgressDialog mProgressDialog;
@@ -100,11 +103,17 @@ public class BottomNavigation extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.left_side_of_hall:
                         Toast.makeText(BottomNavigation.this, "left_side_of_hall", Toast.LENGTH_SHORT).show();
+
+                        mt = new MyTask();
+                        mt.setJson("left_json");
+                        mt.execute();
+
                         break;
                     case R.id.center_side_of_hall:
                         Toast.makeText(BottomNavigation.this, "center_side_of_hall", Toast.LENGTH_SHORT).show();
 
                         mt = new MyTask();
+                        mt.setJson("center_json");
                         mt.execute();
 
 
@@ -113,10 +122,14 @@ public class BottomNavigation extends AppCompatActivity {
                         Toast.makeText(BottomNavigation.this, "right_side_of_hall", Toast.LENGTH_SHORT).show();
 
 
+//
+//                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//                        ft.replace(R.id.testFragment, new HallTestFragment());
+//                        ft.commit();
 
-                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                        ft.replace(R.id.testFragment, new HallTestFragment());
-                        ft.commit();
+                        mt = new MyTask();
+                        mt.setJson("right_json");
+                        mt.execute();
 
 
                         break;
@@ -133,7 +146,7 @@ public class BottomNavigation extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.cinema_menu,menu);
+        getMenuInflater().inflate(R.menu.hall_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -141,29 +154,14 @@ public class BottomNavigation extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()){
-            case R.id.maps_direction:
-                new BottomDialog.Builder(this)
-                        .setTitle("What's new?")
-                        .setContent("Hello, dude!\nWant to see our new features?")
-                        .setPositiveText("Yeah, of course")
-                        .setPositiveBackgroundColorResource(R.color.colorPrimary)
-                        .setPositiveTextColorResource(android.R.color.white)
-                        .onPositive(new BottomDialog.ButtonCallback() {
-                            @Override
-                            public void onClick(BottomDialog dialog) {
-
-                            }
-                        })
-                        .setNegativeText("Life is too short for this, thanks")
-                        .setNegativeTextColorResource(R.color.colorAccent)
-                        .onNegative(new BottomDialog.ButtonCallback() {
-                            @Override
-                            public void onClick(BottomDialog dialog) {
-
-                            }
-                        })
-                        .setCancelable(false)
+            case R.id.submit:
+                ChocoBar.builder().setActivity(BottomNavigation.this)
+                        .setText("Success!")
+                        .setDuration(ChocoBar.LENGTH_SHORT)
+                        .build()
                         .show();
+                TextView textView=findViewById(R.id.selectedPlacesTextView);
+                Log.d("submit",textView.getText().toString());
                 break;
 
         }
@@ -172,6 +170,17 @@ public class BottomNavigation extends AppCompatActivity {
     }
 
     class MyTask extends AsyncTask<Void, Void, Void> {
+
+
+        String json;
+
+        public String getJson() {
+            return json;
+        }
+
+        public void setJson(String json) {
+            this.json = json;
+        }
 
         @Override
         protected void onPreExecute() {
@@ -190,7 +199,13 @@ public class BottomNavigation extends AppCompatActivity {
             try {
                 TimeUnit.SECONDS.sleep(2);
                 FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.testFragment, new HallTestFragment());
+
+                HallTestFragment hallTestFragment = new HallTestFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("json", getJson());
+                hallTestFragment.setArguments(bundle);
+
+                ft.replace(R.id.testFragment, hallTestFragment);
                 ft.commit();
             } catch (InterruptedException e) {
                 e.printStackTrace();

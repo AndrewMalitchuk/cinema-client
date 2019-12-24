@@ -2,6 +2,7 @@ package com.cinema.client.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Toast;
@@ -22,22 +23,51 @@ public class StartupActivity extends OnboarderActivity implements OnboarderPageC
 
         List<OnboarderPage> pages = Arrays.asList(
                 new OnboarderPage.Builder()
-                        .title("Donut")
-                        .description("Android 1.6")
-                        .imageResourceId( R.drawable.about_icon_email)
-                        .backgroundColorId(R.color.about_background_color)
-                        .titleColorId(R.color.about_item_text_color)
-                        .descriptionColorId(R.color.about_item_text_color)
+                        .title("Cinema-App")
+                        .description("Buy tickets easily!")
+                        .imageResourceId( R.drawable.ic_ticket_white)
+                        .imageSizeDp(256,256)
+                        .backgroundColorId(R.color.startup_5)
+                        .titleColorId(R.color.colorLoginActivityText)
+                        .descriptionColorId(R.color.colorLoginActivityText)
                         .multilineDescriptionCentered(true)
                         .build(),
-
-                // No need to write all of them :P
-
                 new OnboarderPage.Builder()
-                        .title("Oreo")
-                        .description("Android 8.0")
-                        .imageResourceId( R.drawable.about_icon_email)
-                        .backgroundColor(R.color.colorAccent)
+                        .title("Films")
+                        .description("Find films you really enjoy!")
+                        .imageResourceId( R.drawable.ic_undraw_apps_m7mh)
+                        .imageSizeDp(256,256)
+                        .backgroundColorId(R.color.startup_1)
+                        .titleColor(R.color.about_item_text_color)
+                        .descriptionColor(R.color.about_item_text_color)
+                        .multilineDescriptionCentered(true)
+                        .build(),
+                new OnboarderPage.Builder()
+                        .title("Cinema")
+                        .description("Find the best cinema hall nearby")
+                        .imageResourceId( R.drawable.ic_undraw_map_1r69)
+                        .imageSizeDp(256,256)
+                        .backgroundColorId(R.color.startup_2)
+                        .titleColor(R.color.about_item_text_color)
+                        .descriptionColor(R.color.about_item_text_color)
+                        .multilineDescriptionCentered(true)
+                        .build(),
+                new OnboarderPage.Builder()
+                        .title("Ticket")
+                        .description("Store and use e-tickets")
+                        .imageResourceId( R.drawable.ic_undraw_address_udes)
+                        .imageSizeDp(256,256)
+                        .backgroundColorId(R.color.startup_3)
+                        .titleColor(R.color.about_item_text_color)
+                        .descriptionColor(R.color.about_item_text_color)
+                        .multilineDescriptionCentered(true)
+                        .build(),
+                new OnboarderPage.Builder()
+                        .title("Notification")
+                        .description("Get notification when film will shown soon")
+                        .imageResourceId( R.drawable.ic_undraw_reminders_697p)
+                        .imageSizeDp(256,256)
+                        .backgroundColorId(R.color.startup_4)
                         .titleColor(R.color.about_item_text_color)
                         .descriptionColor(R.color.about_item_text_color)
                         .multilineDescriptionCentered(true)
@@ -56,10 +86,24 @@ public class StartupActivity extends OnboarderActivity implements OnboarderPageC
     public void onFinishButtonPressed() {
         // implement your logic, save induction has done to sharedPrefs
         Toast.makeText(this, "Finish button was pressed", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, Main2Activity.class);
+        startActivity(intent);
+
+    }
+
+    @Override
+    protected void onSkipButtonPressed() {
+        super.onSkipButtonPressed();
+
+        Toast.makeText(this, "Ok, bro, your time is very important for us!", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, Main2Activity.class);
+        startActivity(intent);
     }
 
     @Override
     public void onPageChanged(int position) {
-        Toast.makeText(this, "onPageChanged: " + position, Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "onPageChanged: " + position, Toast.LENGTH_SHORT).show();
     }
 }

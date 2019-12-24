@@ -181,6 +181,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.cinema_menu, menu);
+
         return true;
     }
 

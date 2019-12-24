@@ -13,6 +13,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cinema.client.R;
 import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.Main2Activity;
 import com.cinema.client.entities.Hall;
@@ -24,6 +25,8 @@ public class HallRender {
 
 
     Context context;
+    String sector;
+
 
     private SharedPreferences pref;
     private SharedPreferences.Editor editor;
@@ -55,7 +58,7 @@ public class HallRender {
     public TableLayout render(Hall hall, TableLayout tableLayout) {
         int row = hall.getRow();
         int col = hall.getCol();
-
+        sector=hall.getSector();
 
         for (int i = 0; i < row; i++) {
             TableRow tr = new TableRow(context);
@@ -83,7 +86,7 @@ public class HallRender {
                 int pixels = (int) (50 * scale + 0.5f);
 
                 b.setLayoutParams(new TableRow.LayoutParams(pixels, pixels));
-                b.setText((i +1)+ "x"+(j+1));
+                b.setText((i +1)+ "-"+(j+1));
 
 //
 //                if (j == 5 && i == 5) {
@@ -138,9 +141,22 @@ public class HallRender {
                 cell.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+
                         Toast.makeText(context, cell.getText().toString(), Toast.LENGTH_SHORT).show();
-                        cell.setText("✓");
+
                         editor.putString("place", cell.getText().toString());
+                        TextView textView=((Activity) context).findViewById(R.id.selectedPlacesTextView);
+
+                        String prevContent=textView.getText().toString();
+                        if(!prevContent.equals("Please, select place. ")){
+                            textView.setText(prevContent+"; "+sector.charAt(0)+"-"+cell.getText());
+
+                        }else {
+
+                            textView.setText(sector.charAt(0)+"-"+cell.getText());
+                        }
+                        cell.setText("✓");
                     }
                 });
                 break;

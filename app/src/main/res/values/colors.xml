@@ -8,4 +8,10 @@
     <color name="colorLoginActivityButton">#ECEFF1</color>
     <color name="colorLoginActivityFields">#f5f5f5</color>
     <color name="colorLoginActivityCardView">#FAFAFA</color>
+
+    <color name="startup_1">#42A5F5</color>
+    <color name="startup_2">#66BB6A</color>
+    <color name="startup_3">#FDD835</color>
+    <color name="startup_4">#FFA726</color>
+    <color name="startup_5">#ef5350</color>
 </resources>

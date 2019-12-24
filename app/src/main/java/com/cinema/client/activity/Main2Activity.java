@@ -43,6 +43,7 @@ import com.freegeek.android.materialbanner.simple.SimpleViewHolderCreator;
 import com.freegeek.android.materialbanner.view.indicator.CirclePageIndicator;
 import com.freegeek.android.materialbanner.view.indicator.LinePageIndicator;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.keiferstone.nonet.NoNet;
 import com.mehdi.shortcut.interfaces.IReceiveStringExtra;
 import com.mehdi.shortcut.model.Shortcut;
 import com.mehdi.shortcut.util.ShortcutUtils;
@@ -130,6 +131,19 @@ public class Main2Activity extends AppCompatActivity {
 
         prefForCheckingFirstRun = getSharedPreferences("com.cinema.client", MODE_PRIVATE);
 
+
+
+        //
+        NoNet.configure()
+                .endpoint("https://google.com")
+                .timeout(5)
+                .connectedPollFrequency(60)
+                .disconnectedPollFrequency(1);
+
+        NoNet.monitor(this)
+                .poll()
+                .snackbar();
+        //
 
         //
 
@@ -510,26 +524,7 @@ public class Main2Activity extends AppCompatActivity {
         }
     }
 
-    public void onCityImageClick(View view) {
-        switch (view.getId()) {
-            case R.id.ivano_frankivsk:
-                Toast.makeText(this, "ivano_frankivsk", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.lviv:
-                Toast.makeText(this, "lviv", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.kiyv:
-                Toast.makeText(this, "kiyv", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.kharkiv:
-                Toast.makeText(this, "kharkiv", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.odessa:
-                Toast.makeText(this, "odessa", Toast.LENGTH_SHORT).show();
-                break;
 
-        }
-    }
 
     public void onAboutFilmClick(View view) {
         Intent intent = new Intent(this, AboutFilmActivity.class);
@@ -574,6 +569,68 @@ public class Main2Activity extends AppCompatActivity {
             // https://medium.com/@therajanmaurya/progress-bar-instead-progress-dialog-baa5d72c2860
 
 
+        }
+    }
+
+    public void onGenreIconClick(View view){
+        Intent intent;
+        switch (view.getId()){
+            case R.id.comedyAvatar:
+                intent = new Intent(Main2Activity.this,PosterActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "comedyAvatar", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.actionAvatar:
+                intent = new Intent(Main2Activity.this,PosterActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "actionAvatar", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.historicalAvatar:
+                intent = new Intent(Main2Activity.this,PosterActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "historicalAvatar", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.sciFiAvatar:
+                intent = new Intent(Main2Activity.this,PosterActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "sciFiAvatar", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.horrorAvatar:
+                intent = new Intent(Main2Activity.this,PosterActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "horrorAvatar", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
+    public void onCityIconClick(View view){
+        Intent intent;
+        switch (view.getId()){
+            case R.id.ivano_frankivsk:
+                intent = new Intent(Main2Activity.this,SearchCinemaActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "ivano_frankivsk", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.lviv:
+                intent = new Intent(Main2Activity.this,SearchCinemaActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "lviv", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.kiyv:
+                intent = new Intent(Main2Activity.this,SearchCinemaActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "kiyv", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.kharkiv:
+                intent = new Intent(Main2Activity.this,SearchCinemaActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "kharkiv", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.odessa:
+                intent = new Intent(Main2Activity.this,SearchCinemaActivity.class);
+                startActivity(intent);
+                Toast.makeText(this, "odessa", Toast.LENGTH_SHORT).show();
+                break;
         }
     }
 

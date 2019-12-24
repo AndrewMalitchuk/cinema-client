@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Hall {
 
+    private String sector;
     private int row;
     private int col;
 
@@ -12,7 +13,8 @@ public class Hall {
     private ArrayList<Cell> disabled;
     private ArrayList<Cell> bought;
 
-    public Hall(int row, int col, ArrayList<Cell> booked, ArrayList<Cell> free, ArrayList<Cell> disabled, ArrayList<Cell> bought) {
+    public Hall(String sector, int row, int col, ArrayList<Cell> booked, ArrayList<Cell> free, ArrayList<Cell> disabled, ArrayList<Cell> bought) {
+        this.sector = sector;
         this.row = row;
         this.col = col;
         this.booked = booked;
@@ -45,8 +47,6 @@ public class Hall {
         this.free = free;
     }
 
-
-
     public ArrayList<Cell> getBooked() {
         return booked;
     }
@@ -69,6 +69,14 @@ public class Hall {
 
     public void setCol(int col) {
         this.col = col;
+    }
+
+    public String getSector() {
+        return sector;
+    }
+
+    public void setSector(String sector) {
+        this.sector = sector;
     }
 
     public class Cell{

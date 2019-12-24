@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cinema.client.MainActivity;
 import com.cinema.client.R;
@@ -46,6 +47,13 @@ public class HallTestFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_hall_test, parent, false);
         ButterKnife.bind(this, view);
 
+
+        Bundle bundle = this.getArguments();
+        if (bundle != null) {
+            String json=bundle.getString("json");
+            Log.d("json",json);
+        }
+
         //
 
         //
@@ -71,6 +79,13 @@ public class HallTestFragment extends Fragment {
 //        test(new HallJsonParser().jsonFooBar());
 
         tableLayout1=new HallRender(getContext()).render(new HallJsonParser().jsonFooBar(),tableLayout1);
+//        HallRender hallRender=new HallRender(getContext());
+//        hallRender.render(new HallJsonParser().jsonFooBar(),tableLayout1);
+//        hallRender.setRow();
+
+
+
+
         //
 
 

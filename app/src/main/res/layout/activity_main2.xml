@@ -666,10 +666,12 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/comedyAvatar"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
+                                            android:onClick="onGenreIconClick"
+                                            android:src="@drawable/comedy"
                                             app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
@@ -679,7 +681,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="Genre 1"
+                                            android:text="Comedy"
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 
@@ -691,10 +693,12 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/actionAvatar"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
+                                            android:onClick="onGenreIconClick"
+                                            android:src="@drawable/action"
                                             app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
@@ -704,7 +708,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="Genre 2"
+                                            android:text="Action "
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 
@@ -716,10 +720,12 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/historicalAvatar"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
+                                            android:onClick="onGenreIconClick"
+                                            android:src="@drawable/historical"
                                             app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
@@ -729,7 +735,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="Genre 3"
+                                            android:text="Historical"
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 
@@ -741,10 +747,12 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/sciFiAvatar"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
+                                            android:onClick="onGenreIconClick"
+                                            android:src="@drawable/sci_fi"
                                             app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
@@ -754,7 +762,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="Genre 4"
+                                            android:text="Sci-Fi"
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 
@@ -766,11 +774,13 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/horrorAvatar"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:src="@drawable/pulp_fiction"
-                                            app:border_color="@color/colorLoginActivityText" />
+                                            android:src="@drawable/horror"
+                                            app:border_color="@color/colorLoginActivityText"
+                                            android:onClick="onGenreIconClick" />
 
                                         <TextView
                                             android:id="@+id/textView27"
@@ -779,7 +789,7 @@
                                             android:layout_marginLeft="10dp"
                                             android:layout_marginRight="10dp"
                                             android:layout_marginBottom="10dp"
-                                            android:text="Genre 5"
+                                            android:text="Horror"
                                             android:textAlignment="center"
                                             android:textColor="@color/colorLoginActivityText" />
 
@@ -840,6 +850,7 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
+                                            android:onClick="onCityIconClick"
                                             android:src="@drawable/ivano_frankivsk"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -866,6 +877,7 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
+                                            android:onClick="onCityIconClick"
                                             android:src="@drawable/lviv"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -892,6 +904,7 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
+                                            android:onClick="onCityIconClick"
                                             android:src="@drawable/kiev"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -918,6 +931,7 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
+                                            android:onClick="onCityIconClick"
                                             android:src="@drawable/kharkiv"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -944,6 +958,7 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
+                                            android:onClick="onCityIconClick"
                                             android:src="@drawable/odessa"
                                             app:border_color="@color/colorLoginActivityText" />
 

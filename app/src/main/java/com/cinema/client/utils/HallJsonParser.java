@@ -13,6 +13,7 @@ public class HallJsonParser {
     public Hall jsonFooBar(){
 
         String jsonTest="{\n" +
+                "\t\"sector\":\"center\",\n" +
                 "\t\"row\":5,\n" +
                 "\t\"col\":5,\n" +
                 "\t\"booked\":[\n" +
