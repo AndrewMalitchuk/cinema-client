@@ -104,6 +104,9 @@ public class SearchFilmActivity extends AppCompatActivity {
             @Override
             public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
                 Toast.makeText(SearchFilmActivity.this, searchSuggestion.getBody(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SearchFilmActivity.this,AboutFilmActivity.class);
+                startActivity(intent);
+
             }
 
             @Override

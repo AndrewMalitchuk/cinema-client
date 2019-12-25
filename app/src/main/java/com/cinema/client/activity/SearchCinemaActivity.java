@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.arlib.floatingsearchview.FloatingSearchView;
 import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
 import com.cinema.client.R;
+import com.cinema.client.adapters.CinemaSearchAdapter;
+import com.cinema.client.entities.CinemaItemSearch;
 import com.cinema.client.etc.MySearchSuggestion;
 import com.cinema.client.etc.MyTickets;
 import com.cinema.client.etc.MyTicketsAdapter;
@@ -27,8 +29,8 @@ public class SearchCinemaActivity extends AppCompatActivity {
 
 
     RecyclerView recyclerView;
-    MyTicketsAdapter myTicketsAdapter;
-    ArrayList<MyTickets> myTicketsArrayList;
+    CinemaSearchAdapter cinemaSearchAdapter;
+    ArrayList<CinemaItemSearch> cinemaItemSearchList;
 
     FloatingSearchView mSearchView;
 
@@ -38,7 +40,7 @@ public class SearchCinemaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search_cinema);
 
         toolbar = findViewById(R.id.toolbar3);
-        toolbar.setTitle("Hello, $username!");
+        toolbar.setTitle("Cinemas");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -51,28 +53,25 @@ public class SearchCinemaActivity extends AppCompatActivity {
         });
 
 
-        myTicketsArrayList = new ArrayList<>();
+        cinemaItemSearchList = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            MyTickets myTickets = new MyTickets();
+            CinemaItemSearch cinemaItemSearch = new CinemaItemSearch();
+            cinemaItemSearch.setCinemaName("Cinema #"+i);
+            cinemaItemSearch.setCinemaAddress("Address #"+i);
+            cinemaItemSearch.setCinemaImg(R.drawable.kosmos_cinema);
 
-            myTickets.setFilmName("Film #" + i);
-            myTickets.setFilmDateTime("Date #" + i);
-            myTickets.setFilmPlace("Place #" + i);
-            myTickets.setFilmCinema("Cinema #" + i);
-            myTickets.setFilmImg(R.drawable.once_upon_a_time);
-
-            myTicketsArrayList.add(myTickets);
+            cinemaItemSearchList.add(cinemaItemSearch);
         }
 
 
-        myTicketsAdapter = new MyTicketsAdapter(myTicketsArrayList);
+        cinemaSearchAdapter = new CinemaSearchAdapter(cinemaItemSearchList);
 
         recyclerView = (RecyclerView) findViewById(R.id.myTicketsRecycleView);
         mSearchView = findViewById(R.id.floating_search_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(myTicketsAdapter);
+        recyclerView.setAdapter(cinemaSearchAdapter);
 
 
         mSearchView.setOnQueryChangeListener(new FloatingSearchView.OnQueryChangeListener() {
@@ -103,6 +102,8 @@ public class SearchCinemaActivity extends AppCompatActivity {
             @Override
             public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
                 Toast.makeText(SearchCinemaActivity.this, searchSuggestion.getBody(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SearchCinemaActivity.this,AboutCinemaActivity.class);
+                startActivity(intent);
             }
 
             @Override

@@ -1,6 +1,5 @@
 package com.cinema.client.etc;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,7 +13,6 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cinema.client.R;
-import com.cinema.client.activity.MyTicketsActivity;
 import com.cinema.client.activity.TicketActivity;
 
 import java.util.List;
@@ -83,8 +81,8 @@ public class MyTicketsAdapter extends RecyclerView.Adapter<MyTicketsAdapter.View
             super(itemView);
 
             filmImage= (ImageView)itemView.findViewById(R.id.filmImage);;
-            filmNameText= (TextView)itemView.findViewById(R.id.filmName);
-            filmDateTimeText= (TextView)itemView.findViewById(R.id.filmDateTime);
+            filmNameText= (TextView)itemView.findViewById(R.id.cinemaName);
+            filmDateTimeText= (TextView)itemView.findViewById(R.id.cinemaAddress);
             filmPlaceText= (TextView)itemView.findViewById(R.id.filmPlace);
             filmCinemaText= (TextView)itemView.findViewById(R.id.filmCinema);
 

@@ -38,7 +38,6 @@ import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.vivekkaushik.datepicker.DatePickerTimeline;
 import com.vivekkaushik.datepicker.OnDateSelectedListener;
-
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
@@ -82,6 +81,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
     @BindView(R.id.textView7)
     TextView textView7;
 
+
 //    private MapContainerView mapView;
 
 
@@ -117,6 +117,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
 
         //
+
+//        blurImageView.setBlur(10);
 
 
         SpannableString content = new SpannableString("+380 (50) 541 52 21");
