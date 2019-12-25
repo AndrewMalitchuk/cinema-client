@@ -14,11 +14,10 @@ import android.widget.Toast;
 
 import com.arlib.floatingsearchview.FloatingSearchView;
 import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
+import com.cinema.client.adapters.FilmSearchAdapter;
+import com.cinema.client.entities.FilmItemSearch;
 import com.cinema.client.etc.MySearchSuggestion;
-import com.cinema.client.etc.MyTickets;
-import com.cinema.client.etc.MyTicketsAdapter;
 
 import java.util.ArrayList;
 
@@ -28,8 +27,8 @@ public class SearchFilmActivity extends AppCompatActivity {
 
 
     RecyclerView recyclerView;
-    MyTicketsAdapter myTicketsAdapter;
-    ArrayList<MyTickets> myTicketsArrayList;
+    FilmSearchAdapter filmSearchAdapter;
+    ArrayList<FilmItemSearch> filmItemSearchList;
 
     FloatingSearchView mSearchView;
 
@@ -39,7 +38,7 @@ public class SearchFilmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search_film);
 
         toolbar = findViewById(R.id.toolbar2);
-        toolbar.setTitle("Hello, $username!");
+        toolbar.setTitle("Films");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -52,28 +51,28 @@ public class SearchFilmActivity extends AppCompatActivity {
         });
 
 
-        myTicketsArrayList = new ArrayList<>();
+        filmItemSearchList = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            MyTickets myTickets = new MyTickets();
+            FilmItemSearch filmItemSearch = new FilmItemSearch();
 
-            myTickets.setFilmName("Film #" + i);
-            myTickets.setFilmDateTime("Date #" + i);
-            myTickets.setFilmPlace("Place #" + i);
-            myTickets.setFilmCinema("Cinema #" + i);
-            myTickets.setFilmImg(R.drawable.once_upon_a_time);
+            filmItemSearch.setFilmName("Film #" + i);
+            filmItemSearch.setFilmDateTime("Date #" + i);
+            filmItemSearch.setFilmPlace("Place #" + i);
+            filmItemSearch.setFilmCinema("Cinema #" + i);
+            filmItemSearch.setFilmImg(R.drawable.once_upon_a_time);
 
-            myTicketsArrayList.add(myTickets);
+            filmItemSearchList.add(filmItemSearch);
         }
 
 
-        myTicketsAdapter = new MyTicketsAdapter(myTicketsArrayList);
+        filmSearchAdapter = new FilmSearchAdapter(filmItemSearchList);
 
         recyclerView = (RecyclerView) findViewById(R.id.myTicketsRecycleView);
         mSearchView = findViewById(R.id.floating_search_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(myTicketsAdapter);
+        recyclerView.setAdapter(filmSearchAdapter);
 
 
         mSearchView.setOnQueryChangeListener(new FloatingSearchView.OnQueryChangeListener() {

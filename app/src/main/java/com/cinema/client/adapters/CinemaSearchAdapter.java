@@ -14,10 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cinema.client.R;
 import com.cinema.client.activity.AboutCinemaActivity;
-import com.cinema.client.activity.TicketActivity;
 import com.cinema.client.entities.CinemaItemSearch;
-import com.cinema.client.etc.MyTickets;
-import com.cinema.client.etc.MyTicketsAdapter;
 
 import java.util.List;
 

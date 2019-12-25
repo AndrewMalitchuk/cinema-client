@@ -1,4 +1,4 @@
-package com.cinema.client.etc;
+package com.cinema.client.entities;
 
 public class MyTickets {
 

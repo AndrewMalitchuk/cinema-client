@@ -8,18 +8,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.arlib.floatingsearchview.FloatingSearchView;
-import com.arlib.floatingsearchview.suggestions.SearchSuggestionsAdapter;
 import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
 import com.cinema.client.R;
 import com.cinema.client.etc.MySearchSuggestion;
-import com.cinema.client.etc.MyTickets;
-import com.cinema.client.etc.MyTicketsAdapter;
+import com.cinema.client.entities.MyTickets;
+import com.cinema.client.adapters.MyTicketsAdapter;
 
 import java.util.ArrayList;
 

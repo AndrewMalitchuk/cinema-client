@@ -1,4 +1,4 @@
-package com.cinema.client.etc;
+package com.cinema.client.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cinema.client.R;
 import com.cinema.client.activity.TicketActivity;
+import com.cinema.client.entities.MyTickets;
 
 import java.util.List;
 

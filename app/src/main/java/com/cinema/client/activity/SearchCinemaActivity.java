@@ -18,8 +18,6 @@ import com.cinema.client.R;
 import com.cinema.client.adapters.CinemaSearchAdapter;
 import com.cinema.client.entities.CinemaItemSearch;
 import com.cinema.client.etc.MySearchSuggestion;
-import com.cinema.client.etc.MyTickets;
-import com.cinema.client.etc.MyTicketsAdapter;
 
 import java.util.ArrayList;
 

@@ -2,24 +2,19 @@ package com.cinema.client;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.cinema.client.activity.AboutActivity;
-import com.cinema.client.activity.AboutCinema2;
 import com.cinema.client.activity.AboutCinemaActivity;
 import com.cinema.client.activity.AboutDeveloperActivity;
 import com.cinema.client.activity.AboutFilmActivity;
 import com.cinema.client.activity.BottomNavigation;
-import com.cinema.client.activity.CardActivity;
 import com.cinema.client.activity.ErrorActivity;
 import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.LoginActivity;
 import com.cinema.client.activity.Main2Activity;
 import com.cinema.client.activity.MyTicketsActivity;
-import com.cinema.client.activity.NewCardActivity;
 import com.cinema.client.activity.NewNewCardActivity;
 import com.cinema.client.activity.PosterActivity;
 import com.cinema.client.activity.QRZoomActivity;
@@ -28,15 +23,9 @@ import com.cinema.client.activity.SplashActivity;
 import com.cinema.client.activity.StartupActivity;
 import com.cinema.client.activity.StatusActivity;
 import com.cinema.client.activity.StoriesActivity;
-import com.cinema.client.activity.TabActivity;
 import com.cinema.client.activity.TicketActivity;
-import com.cinema.client.activity.TimelineActivity;
 import com.cinema.client.activity.WhatsNewActivity;
 import com.cinema.client.activity.ZoomImageActivity;
-import com.cinema.client.etc.MyTickets;
-import com.devs.acr.AutoErrorReporter;
-
-import java.sql.Time;
 
 
 public class MainActivity extends AppCompatActivity {
