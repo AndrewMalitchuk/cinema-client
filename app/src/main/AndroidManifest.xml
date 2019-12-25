@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.PosterActivity"></activity>
+        <activity
+            android:name=".activity.PosterActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".activity.SearchCinemaActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -26,10 +28,10 @@
         <activity
             android:name=".activity.MyTicketsActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".activity.AboutCinema2" />
         <activity android:name=".activity.StoriesActivity" />
-        <activity android:name=".activity.TimelineActivity" />
-        <activity android:name=".activity.NewNewCardActivity" />
+        <activity
+            android:name=".activity.NewNewCardActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".activity.AboutCinemaActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -37,7 +39,9 @@
             android:name=".activity.ErrorActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.WhatsNewActivity" />
-        <activity android:name=".activity.StatusActivity" />
+        <activity
+            android:name=".activity.StatusActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -50,9 +54,9 @@
         <activity
             android:name=".activity.ZoomImageActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.NewCardActivity" />
-        <activity android:name=".activity.TabActivity" />
-        <activity android:name=".activity.AboutDeveloperActivity" />
+        <activity
+            android:name=".activity.AboutDeveloperActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".activity.BottomNavigation"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -65,7 +69,6 @@
         <activity
             android:name=".activity.TicketActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.AboutActivity" />
         <activity
             android:name=".activity.SignUpActivity"
             android:windowSoftInputMode="adjustResize"

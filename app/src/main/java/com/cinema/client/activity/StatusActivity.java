@@ -1,7 +1,9 @@
 package com.cinema.client.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -39,6 +41,8 @@ public class StatusActivity extends AppCompatActivity {
     @BindView(R.id.floatingActionButton)
     FloatingActionButton floatingActionButton;
 
+    @BindView(R.id.toolbar7)
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,20 @@ public class StatusActivity extends AppCompatActivity {
         setContentView(R.layout.activity_status);
 
         ButterKnife.bind(this);
+
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), AboutFilmActivity.class));
+            }
+        });
 
         List<MyItem> list = new ArrayList<>();
 

@@ -35,16 +35,10 @@ import es.dmoral.markdownview.MarkdownView;
 public class WhatsNewActivity extends AppCompatActivity {
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_whats_new);
-
-
-
-
 
 
         new BottomDialog.Builder(this)
@@ -56,38 +50,6 @@ public class WhatsNewActivity extends AppCompatActivity {
                 .onPositive(new BottomDialog.ButtonCallback() {
                     @Override
                     public void onClick(BottomDialog dialog) {
-                        Log.d("BottomDialogs", "Do something!");
-
-
-                        MarkdownView markdownView = new MarkdownView(WhatsNewActivity.this);
-                        markdownView.loadFromText("# Hello!\n ## Hello!");
-
-
-                        Config defaultConfig = Config.getDefaultConfig();
-
-                        defaultConfig.setDefaultMargin(25);
-
-                        markdownView.setCurrentConfig(defaultConfig);
-
-
-                        new SimpleDialog.Builder(WhatsNewActivity.this)
-                                .setTitle("New feautures:")
-                                .setCustomView(markdownView)
-                                .setBtnConfirmText("Check!")
-                                .setBtnConfirmTextSizeDp(16)
-                                .setBtnConfirmTextColor("#1fd1ab")
-                                .show();
-
-                    }
-                })
-                .setNegativeText("Life is too short for this, thanks")
-                .setNegativeTextColorResource(R.color.colorAccent)
-                .onNegative(new BottomDialog.ButtonCallback() {
-                    @Override
-                    public void onClick(BottomDialog dialog) {
-                        Log.d("BottomDialogs", "Do something!");
-
-
                         ArrayList<NewFeatureItem> arrayList = new ArrayList<>();
 
                         NewFeatureItem newFeatureItem = new NewFeatureItem();
@@ -116,14 +78,14 @@ public class WhatsNewActivity extends AppCompatActivity {
                                         Toast.makeText(WhatsNewActivity.this, "Close Clicked", Toast.LENGTH_LONG).show();
                                     }
                                 })
-                                .setShowLaterButtonListener(new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        Toast.makeText(WhatsNewActivity.this, "Remind Me Later Clicked", Toast.LENGTH_LONG).show();
-                                    }
-                                })
                                 .showDialog(WhatsNewActivity.this);
-
+                    }
+                })
+                .setNegativeText("No, thanks")
+                .setNegativeTextColorResource(R.color.colorAccent)
+                .onNegative(new BottomDialog.ButtonCallback() {
+                    @Override
+                    public void onClick(BottomDialog dialog) {
 
 
                     }
@@ -133,10 +95,6 @@ public class WhatsNewActivity extends AppCompatActivity {
 
 
     }
-
-
-
-
 
 
 }

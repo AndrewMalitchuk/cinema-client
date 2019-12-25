@@ -70,7 +70,10 @@ public class AboutFilmActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+
+        myToolbar.setTitle("Once upon a time in Hollywood");
         setSupportActionBar(myToolbar);
+
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);

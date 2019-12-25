@@ -28,8 +28,11 @@ public class QRZoomActivity extends AppCompatActivity {
 
         PhotoView photoView = (PhotoView) findViewById(R.id.photo_view);
         photoView.setImageResource(R.drawable.static_qr_code_without_logo);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        );
 
         FlowingGradientClass grad = new FlowingGradientClass();
         grad.setBackgroundResource(R.drawable.translate)

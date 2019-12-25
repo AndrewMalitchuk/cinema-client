@@ -3,10 +3,8 @@ package com.cinema.client.activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
@@ -20,20 +18,16 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.brouding.simpledialog.SimpleDialog;
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
-import com.cinema.client.fragments.HallTestFragment;
 import com.developer.mtextfield.ExtendedEditText;
 import com.droidbyme.dialoglib.DroidDialog;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
@@ -152,7 +146,7 @@ public class Main2Activity extends AppCompatActivity {
         //
 
         //
-        toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar6);
         String userNameFromPreferences = pref.getString("user_name", null);
         if (userNameFromPreferences != null && !userNameFromPreferences.equals("")) {
             toolbar.setTitle("Hello, " + userNameFromPreferences);

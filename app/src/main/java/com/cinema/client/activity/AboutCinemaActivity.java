@@ -36,6 +36,7 @@ import com.cinema.client.R;
 import com.devs.readmoreoption.ReadMoreOption;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.pd.chocobar.ChocoBar;
 import com.vivekkaushik.datepicker.DatePickerTimeline;
 import com.vivekkaushik.datepicker.OnDateSelectedListener;
 import org.osmdroid.api.IMapController;
@@ -60,10 +61,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
     @BindView(R.id.mScrollView)
     ScrollView scrollView;
 
-
     @BindView(R.id.linLayout)
     LinearLayout linLayout;
-
 
     @BindView(R.id.cv1)
     CardView cv1;
@@ -98,6 +97,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        myToolbar.setTitle("Kosmos");
         setSupportActionBar(myToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -204,6 +204,12 @@ public class AboutCinemaActivity extends AppCompatActivity {
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
             mapIntent.setPackage("com.google.android.apps.maps");
             startActivity(mapIntent);
+        }else if (item.getItemId()==R.id.pin_action){
+            ChocoBar.builder().setActivity(AboutCinemaActivity.this)
+                    .setText("Pin to favourite")
+                    .setDuration(ChocoBar.LENGTH_SHORT)
+                    .green()
+                    .show();
         }
         return true;
     }

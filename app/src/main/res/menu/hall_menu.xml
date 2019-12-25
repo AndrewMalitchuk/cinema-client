@@ -6,7 +6,7 @@
 
     <item
         android:id="@+id/submit"
-        android:icon="@drawable/check_mark"
+        android:icon="@drawable/ic_check_white_24dp"
         android:title="OK"
         app:showAsAction="always" />
 

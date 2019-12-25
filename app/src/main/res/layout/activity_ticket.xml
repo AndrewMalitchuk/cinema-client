@@ -10,14 +10,17 @@
     <LinearLayout
         android:id="@+id/ticketLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/ticketConstraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
 
             <com.vipulasri.ticketview.TicketView
                 android:id="@+id/ticketView"
@@ -71,7 +74,8 @@
                     android:text="Code "
                     android:textAlignment="center"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                    android:textColor="@color/about_text_color" />
+                    android:textColor="@color/about_text_color"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -90,22 +94,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="Film name"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:textSize="24sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:text="Duration"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                    android:textColor="@color/about_text_color" />
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="info "
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                    android:textColor="@color/about_text_color" />
+                    android:textColor="@color/about_text_color"
+                    android:textSize="18sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -125,7 +127,9 @@
                             android:layout_height="wrap_content"
                             android:text="Date"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                            android:textColor="@color/about_text_color" />
+                            android:textColor="@color/about_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
@@ -155,7 +159,9 @@
                             android:layout_height="wrap_content"
                             android:text="Time"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                            android:textColor="@color/about_text_color" />
+                            android:textColor="@color/about_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
@@ -185,7 +191,9 @@
                             android:layout_height="wrap_content"
                             android:text="Seat "
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                            android:textColor="@color/about_text_color" />
+                            android:textColor="@color/about_text_color"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
 
                         <androidx.appcompat.widget.AppCompatTextView
                             android:layout_width="wrap_content"
@@ -197,6 +205,17 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Go back"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
