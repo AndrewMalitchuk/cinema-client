@@ -1,6 +1,7 @@
 package com.cinema.client.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,23 +9,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.arlib.floatingsearchview.FloatingSearchView;
 import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
 import com.cinema.client.R;
 import com.cinema.client.etc.MySearchSuggestion;
-import com.cinema.client.entities.MyTickets;
-import com.cinema.client.adapters.MyTicketsAdapter;
+import com.cinema.client.entities.TicketItemSearch;
+import com.cinema.client.adapters.TicketSearchAdapter;
 
 import java.util.ArrayList;
 
 public class MyTicketsActivity extends AppCompatActivity {
 
+    Toolbar toolbar;
 
     RecyclerView recyclerView;
-    MyTicketsAdapter myTicketsAdapter;
-    ArrayList<MyTickets> myTicketsArrayList;
+    TicketSearchAdapter myTicketsAdapter;
+    ArrayList<TicketItemSearch> myTicketsArrayList;
 
     FloatingSearchView mSearchView;
 
@@ -33,10 +36,23 @@ public class MyTicketsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_tickets);
 
+        toolbar = findViewById(R.id.toolbar3);
+        toolbar.setTitle("Tickets");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Main2Activity.class));
+            }
+        });
+
         myTicketsArrayList = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            MyTickets myTickets = new MyTickets();
+            TicketItemSearch myTickets = new TicketItemSearch();
 
             myTickets.setFilmName("Film #" + i);
             myTickets.setFilmDateTime("Date #" + i);
@@ -48,7 +64,7 @@ public class MyTicketsActivity extends AppCompatActivity {
         }
 
 
-        myTicketsAdapter = new MyTicketsAdapter(myTicketsArrayList);
+        myTicketsAdapter = new TicketSearchAdapter(myTicketsArrayList);
 
         recyclerView = (RecyclerView) findViewById(R.id.myTicketsRecycleView);
         mSearchView = findViewById(R.id.floating_search_view);
@@ -62,11 +78,11 @@ public class MyTicketsActivity extends AppCompatActivity {
             public void onSearchTextChanged(String oldQuery, final String newQuery) {
 
                 ArrayList<MySearchSuggestion> temp=new ArrayList<>();
-                temp.add(new MySearchSuggestion("kek #1"));
-                temp.add(new MySearchSuggestion("kek #2"));
-                temp.add(new MySearchSuggestion("kek #3"));
-                temp.add(new MySearchSuggestion("kek #4"));
-                temp.add(new MySearchSuggestion("kek #5"));
+                temp.add(new MySearchSuggestion("Ticket #1"));
+                temp.add(new MySearchSuggestion("Ticket #2"));
+                temp.add(new MySearchSuggestion("Ticket #3"));
+                temp.add(new MySearchSuggestion("Ticket #4"));
+                temp.add(new MySearchSuggestion("Ticket #5"));
 
                 mSearchView.swapSuggestions(temp);
             }

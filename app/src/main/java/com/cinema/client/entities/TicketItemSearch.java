@@ -1,6 +1,6 @@
 package com.cinema.client.entities;
 
-public class MyTickets {
+public class TicketItemSearch {
 
     private String filmName;
     private String filmDateTime;

@@ -14,16 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cinema.client.R;
 import com.cinema.client.activity.TicketActivity;
-import com.cinema.client.entities.MyTickets;
+import com.cinema.client.entities.TicketItemSearch;
 
 import java.util.List;
 
-public class MyTicketsAdapter extends RecyclerView.Adapter<MyTicketsAdapter.ViewHolder> {
+public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapter.ViewHolder> {
 
-    List<MyTickets> myTicketsList;
+    List<TicketItemSearch> myTicketsList;
     Context context;
 
-    public MyTicketsAdapter(List<MyTickets>myTicketsList)
+    public TicketSearchAdapter(List<TicketItemSearch>myTicketsList)
     {
         this.myTicketsList = myTicketsList;
     }
@@ -38,7 +38,7 @@ public class MyTicketsAdapter extends RecyclerView.Adapter<MyTicketsAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        MyTickets myTickets = myTicketsList.get(position);
+        TicketItemSearch myTickets = myTicketsList.get(position);
 
         holder.filmNameText.setText(myTickets.getFilmName());
         holder.filmDateTimeText.setText(myTickets.getFilmDateTime());

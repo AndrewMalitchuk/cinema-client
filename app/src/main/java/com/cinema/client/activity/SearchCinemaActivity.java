@@ -77,11 +77,11 @@ public class SearchCinemaActivity extends AppCompatActivity {
             public void onSearchTextChanged(String oldQuery, final String newQuery) {
 
                 ArrayList<MySearchSuggestion> temp=new ArrayList<>();
-                temp.add(new MySearchSuggestion("kek #1"));
-                temp.add(new MySearchSuggestion("kek #2"));
-                temp.add(new MySearchSuggestion("kek #3"));
-                temp.add(new MySearchSuggestion("kek #4"));
-                temp.add(new MySearchSuggestion("kek #5"));
+                temp.add(new MySearchSuggestion("Cinema #1"));
+                temp.add(new MySearchSuggestion("Cinema #2"));
+                temp.add(new MySearchSuggestion("Cinema #3"));
+                temp.add(new MySearchSuggestion("Cinema #4"));
+                temp.add(new MySearchSuggestion("Cinema #5"));
 
                 mSearchView.swapSuggestions(temp);
             }

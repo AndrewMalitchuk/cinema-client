@@ -23,7 +23,9 @@
         <activity
             android:name=".activity.SearchFilmActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.MyTicketsActivity" />
+        <activity
+            android:name=".activity.MyTicketsActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".activity.AboutCinema2" />
         <activity android:name=".activity.StoriesActivity" />
         <activity android:name=".activity.TimelineActivity" />
