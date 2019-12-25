@@ -50,6 +50,12 @@ public class LoginActivity extends AppCompatActivity implements
                 .setTransitionDuration(4000)
                 .start();
 
+        //
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        );
+
 
         // LoadingButton
         loginLoginActivityButton.setMyButtonClickListener(this);

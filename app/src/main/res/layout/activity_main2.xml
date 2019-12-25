@@ -101,7 +101,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:layout_marginBottom="5dp"
-                                    android:text="TextView"
+                                    android:text="Film"
                                     android:textColor="@color/colorLoginActivityText"
                                     android:textSize="20sp"
                                     android:textStyle="bold" />
@@ -112,7 +112,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:layout_marginBottom="5dp"
-                                    android:text="TextView"
+                                    android:text="Country"
                                     android:textColor="@color/colorLoginActivityText" />
 
                                 <TextView
@@ -121,7 +121,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:layout_marginBottom="5dp"
-                                    android:text="TextView" />
+                                    android:text="Date " />
 
                                 <Button
                                     android:id="@+id/button21"
@@ -147,8 +147,8 @@
                     <!--app:srcCompat="@drawable/pulp_fiction" />-->
 
                     <androidx.cardview.widget.CardView
-                        android:layout_width="142dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         app:cardCornerRadius="5dp"
