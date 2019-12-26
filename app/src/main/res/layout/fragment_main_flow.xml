@@ -1,51 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Main2Activity">
-
+    tools:context=".fragments.MainFlowFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-
-        <include
-            android:id="@+id/llProgressBar"
-            layout="@layout/progress_layout"
-            android:visibility="gone" />
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar10"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorAccent"
-            android:contentInsetStart="0dp"
-            android:contentInsetLeft="0dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:contentInsetLeft="0dp"
-            app:contentInsetStart="0dp"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
-
-            <!--&lt;!&ndash; dummy to catch focus &ndash;&gt;-->
-            <!--<LinearLayout-->
-            <!--android:layout_width="0px"-->
-            <!--android:layout_height="0px"-->
-            <!--android:focusable="true"-->
-            <!--android:focusableInTouchMode="true" />-->
-
-            <!--<androidx.appcompat.widget.SearchView-->
-            <!--android:id="@+id/search"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:nextFocusLeft="@id/search"-->
-            <!--android:nextFocusUp="@id/search"-->
-            <!--app:searchIcon="@drawable/search_dialog_ic_search" />-->
-
-        </androidx.appcompat.widget.Toolbar>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -130,7 +94,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:backgroundTint="@color/colorAccent"
-                                    android:onClick="onAboutFilmClick"
                                     android:text="More"
                                     android:textColor="@color/white" />
 
@@ -139,14 +102,6 @@
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
-
-                    <!--<ImageView-->
-                    <!--android:id="@+id/imageView2"-->
-                    <!--android:layout_width="200dp"-->
-                    <!--android:layout_height="250dp"-->
-                    <!--android:layout_marginLeft="20dp"-->
-                    <!--android:layout_marginTop="50dp"-->
-                    <!--app:srcCompat="@drawable/pulp_fiction" />-->
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="150dp"
@@ -164,199 +119,7 @@
                     </androidx.cardview.widget.CardView>
 
 
-                    <!--<com.liangfeizc.avatarview.AvatarView-->
-                    <!--android:layout_width="250dp"-->
-                    <!--android:layout_height="250dp"-->
-                    <!--android:background="@android:color/transparent"-->
-                    <!--android:src="@drawable/pulp_fiction"-->
-                    <!--app:border_color="@color/colorLoginActivityText"-->
-                    <!--app:border_width="1dp"-->
-                    <!--app:shadow_color="@color/colorLoginActivityText"-->
-                    <!--app:shadow_width="2dp"-->
-                    <!--tools:layout_conversion_absoluteHeight="250dp"-->
-                    <!--tools:layout_conversion_absoluteWidth="250dp"-->
-                    <!--tools:layout_editor_absoluteX="175dp"-->
-                    <!--tools:layout_editor_absoluteY="114dp" />-->
-
                 </FrameLayout>
-
-
-                <!--<FrameLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent">-->
-
-
-                <!--<LinearLayout-->
-                <!--android:id="@+id/linLayout"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="300dp"-->
-                <!--android:orientation="vertical">-->
-
-
-                <!--</LinearLayout>-->
-
-                <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="310dp"-->
-                <!--android:layout_marginTop="100dp"-->
-                <!--android:orientation="horizontal">-->
-
-                <!--<androidx.cardview.widget.CardView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:layout_margin="10dp"-->
-                <!--app:cardElevation="5dp">-->
-
-                <!--<com.freegeek.android.materialbanner.MaterialBanner-->
-                <!--android:id="@+id/material_banner"-->
-                <!--android:layout_width="200dp"-->
-                <!--android:layout_height="300dp"-->
-                <!--android:layout_marginBottom="10dp" />-->
-                <!--</androidx.cardview.widget.CardView>-->
-
-                <!--<androidx.cardview.widget.CardView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:layout_margin="10dp"-->
-                <!--app:cardElevation="5dp">-->
-
-                <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/hometown"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="10dp"-->
-                <!--android:textColor="@color/colorLoginActivityText"-->
-                <!--android:textSize="25dp"-->
-                <!--android:textStyle="bold" />-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/textView14"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="10dp"-->
-                <!--android:text="Genre:"-->
-                <!--android:textColor="@color/colorLoginActivityText" />-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/textView16"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="10dp"-->
-                <!--android:text="Dramma" />-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/textView15"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="10dp"-->
-                <!--android:text="Premiere:"-->
-                <!--android:textColor="@color/colorLoginActivityText" />-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/textView17"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="10dp"-->
-                <!--android:text="2010-10-10" />-->
-                <!--</LinearLayout>-->
-                <!--</androidx.cardview.widget.CardView>-->
-
-                <!--</LinearLayout>-->
-
-
-                <!--</FrameLayout>-->
-
-
-                <!--<androidx.cardview.widget.CardView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="10dp"-->
-                <!--app:cardCornerRadius="5dp">-->
-
-                <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="310dp"-->
-                <!--android:background="#00BCD4"-->
-                <!--android:orientation="horizontal">-->
-
-                <!--<androidx.cardview.widget.CardView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:layout_margin="5dp">-->
-
-                <!--<com.freegeek.android.materialbanner.MaterialBanner-->
-                <!--android:id="@+id/material_banner"-->
-                <!--android:layout_width="200dp"-->
-                <!--android:layout_height="300dp"-->
-                <!--android:layout_marginBottom="10dp" />-->
-                <!--</androidx.cardview.widget.CardView>-->
-
-                <!--<androidx.cardview.widget.CardView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:layout_margin="5dp" >-->
-
-                <!--<LinearLayout-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:orientation="vertical">-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/hometown"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="10dp"-->
-                <!--android:textColor="@color/colorLoginActivityText"-->
-                <!--android:textSize="25dp"-->
-                <!--android:textStyle="bold" />-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/textView14"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="10dp"-->
-                <!--android:text="Genre:"-->
-                <!--android:textColor="@color/colorLoginActivityText" />-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/textView16"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="10dp"-->
-                <!--android:text="Dramma" />-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/textView15"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="10dp"-->
-                <!--android:text="Premiere:"-->
-                <!--android:textColor="@color/colorLoginActivityText" />-->
-
-                <!--<TextView-->
-                <!--android:id="@+id/textView17"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_margin="10dp"-->
-                <!--android:text="2010-10-10" />-->
-                <!--</LinearLayout>-->
-                <!--</androidx.cardview.widget.CardView>-->
-
-                <!--</LinearLayout>-->
-
-                <!--</LinearLayout>-->
-
-                <!--</androidx.cardview.widget.CardView>-->
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -413,7 +176,7 @@
                                             android:layout_marginBottom="5dp"
                                             android:layout_weight="1"
                                             android:backgroundTint="@color/colorAccent"
-                                            android:onClick="onFindCinemasButtonClick"
+
                                             android:text="Cinemas"
                                             android:textColor="@color/white" />
 
@@ -442,7 +205,7 @@
                                             android:layout_marginBottom="5dp"
                                             android:layout_weight="1"
                                             android:backgroundTint="@color/colorAccent"
-                                            android:onClick="onFindFilmsButtonClick"
+
                                             android:text="Films"
                                             android:textColor="@color/white" />
 
@@ -498,10 +261,10 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/av1"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:onClick="onSelectedCinemaClick"
                                             android:src="@drawable/kosmos_cinema"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -524,10 +287,10 @@
                                         android:orientation="vertical">
 
                                         <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/av2"
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:onClick="onSelectedCinemaClick"
                                             android:src="@drawable/lumier_cinema"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -599,7 +362,6 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:onClick="onGenreIconClick"
                                             android:src="@drawable/comedy"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -626,7 +388,6 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:onClick="onGenreIconClick"
                                             android:src="@drawable/action"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -653,7 +414,6 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:onClick="onGenreIconClick"
                                             android:src="@drawable/historical"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -680,7 +440,6 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:onClick="onGenreIconClick"
                                             android:src="@drawable/sci_fi"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -708,8 +467,7 @@
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
                                             android:src="@drawable/horror"
-                                            app:border_color="@color/colorLoginActivityText"
-                                            android:onClick="onGenreIconClick" />
+                                            app:border_color="@color/colorLoginActivityText" />
 
                                         <TextView
                                             android:id="@+id/textView27"
@@ -779,7 +537,6 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:onClick="onCityIconClick"
                                             android:src="@drawable/ivano_frankivsk"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -806,7 +563,6 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:onClick="onCityIconClick"
                                             android:src="@drawable/lviv"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -833,7 +589,6 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:onClick="onCityIconClick"
                                             android:src="@drawable/kiev"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -860,7 +615,6 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:onClick="onCityIconClick"
                                             android:src="@drawable/kharkiv"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -887,7 +641,6 @@
                                             android:layout_width="75dp"
                                             android:layout_height="75dp"
                                             android:layout_margin="10dp"
-                                            android:onClick="onCityIconClick"
                                             android:src="@drawable/odessa"
                                             app:border_color="@color/colorLoginActivityText" />
 
@@ -924,36 +677,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
 
-                    <!--<LinearLayout-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:orientation="vertical">-->
-
-                        <!--<TextView-->
-                            <!--android:id="@+id/textView29"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="wrap_content"-->
-                            <!--android:text="banner" />-->
-                    <!--</LinearLayout>-->
                 </androidx.cardview.widget.CardView>
 
 
             </LinearLayout>
         </ScrollView>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@color/colorAccent"
-            android:hapticFeedbackEnabled="true"
-            app:itemIconTint="@color/colorLoginActivityCardView"
-            app:itemTextColor="@color/cardview_light_background"
-            app:labelVisibilityMode="selected"
-            app:menu="@menu/main_bottom_navigation" />
-
-
     </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

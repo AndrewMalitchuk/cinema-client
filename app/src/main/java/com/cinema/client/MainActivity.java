@@ -14,6 +14,7 @@ import com.cinema.client.activity.ErrorActivity;
 import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.LoginActivity;
 import com.cinema.client.activity.Main2Activity;
+import com.cinema.client.activity.Main3Activity;
 import com.cinema.client.activity.MyTicketsActivity;
 import com.cinema.client.activity.NewNewCardActivity;
 import com.cinema.client.activity.PosterActivity;
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mainActivity(View view){
-        Intent intent =new Intent(this, Main2Activity.class);
+        Intent intent =new Intent(this, Main3Activity.class);
         startActivity(intent);
     }
 

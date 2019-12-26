@@ -40,7 +40,7 @@ public class PosterActivity extends AppCompatActivity {
     @BindView(R.id.textView31)
     TextView textView31;
 
-    @BindView(R.id.toolbar6)
+    @BindView(R.id.toolbar10)
     Toolbar toolbar;
 
     @Override

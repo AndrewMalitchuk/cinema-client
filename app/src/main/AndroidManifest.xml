@@ -16,9 +16,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activity.Main3Activity"
+            android:theme="@style/AppTheme.NoActionBar"
+            ></activity>
         <activity
             android:name=".activity.PosterActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.SearchCinemaActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -27,11 +30,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.MyTicketsActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.StoriesActivity" />
         <activity
             android:name=".activity.NewNewCardActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.AboutCinemaActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -41,7 +44,7 @@
         <activity android:name=".activity.WhatsNewActivity" />
         <activity
             android:name=".activity.StatusActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -56,7 +59,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.AboutDeveloperActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.BottomNavigation"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -71,9 +74,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.SignUpActivity"
-            android:windowSoftInputMode="adjustResize"
             android:theme="@style/AppTheme.NoActionBar"
-             />
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar" />

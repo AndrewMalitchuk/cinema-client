@@ -146,7 +146,7 @@ public class Main2Activity extends AppCompatActivity {
         //
 
         //
-        toolbar = findViewById(R.id.toolbar6);
+        toolbar = findViewById(R.id.toolbar10);
         String userNameFromPreferences = pref.getString("user_name", null);
         if (userNameFromPreferences != null && !userNameFromPreferences.equals("")) {
             toolbar.setTitle("Hello, " + userNameFromPreferences);
@@ -352,28 +352,28 @@ public class Main2Activity extends AppCompatActivity {
         adsBanner.setIndicatorInside(!adsBanner.isIndicatorInside());
         //
         //
-        ShortcutUtils shortcutUtils = new ShortcutUtils(this);
-
-        Shortcut dynamicShortcut = new Shortcut.ShortcutBuilder()
-                .setShortcutIcon(R.drawable.ic_email_black_24dp)
-                .setShortcutId("dynamicShortcutId")
-                .setShortcutLongLabel("dynamicShortcutLongLable")
-                .setShortcutShortLabel("dynamicShortcutShortLabel")
-                .setIntentAction("dynamicShortcutIntentAction")
-                .setIntentStringExtraKey("dynamicShortcutKey")
-                .setIntentStringExtraValue("dynamicShortcutValue")
-                .build();
-        shortcutUtils.addDynamicShortCut(dynamicShortcut, new IReceiveStringExtra() {
-            @Override
-            public void onReceiveStringExtra(String stringExtraKey, String stringExtraValue) {
-                String intent = getIntent().getStringExtra(stringExtraKey);
-                if (intent != null) {
-                    if (intent.equals("dynamicShortcutValue")) {
-                        //write any code here
-                    }
-                }
-            }
-        });
+//        ShortcutUtils shortcutUtils = new ShortcutUtils(this);
+//
+//        Shortcut dynamicShortcut = new Shortcut.ShortcutBuilder()
+//                .setShortcutIcon(R.drawable.ic_email_black_24dp)
+//                .setShortcutId("dynamicShortcutId")
+//                .setShortcutLongLabel("dynamicShortcutLongLable")
+//                .setShortcutShortLabel("dynamicShortcutShortLabel")
+//                .setIntentAction("dynamicShortcutIntentAction")
+//                .setIntentStringExtraKey("dynamicShortcutKey")
+//                .setIntentStringExtraValue("dynamicShortcutValue")
+//                .build();
+//        shortcutUtils.addDynamicShortCut(dynamicShortcut, new IReceiveStringExtra() {
+//            @Override
+//            public void onReceiveStringExtra(String stringExtraKey, String stringExtraValue) {
+//                String intent = getIntent().getStringExtra(stringExtraKey);
+//                if (intent != null) {
+//                    if (intent.equals("dynamicShortcutValue")) {
+//                        //write any code here
+//                    }
+//                }
+//            }
+//        });
         //
 
 
