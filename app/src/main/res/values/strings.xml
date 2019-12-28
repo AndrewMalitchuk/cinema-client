@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">cinema-client</string>
+    <string name="app_name">Cinema Client</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="loginPromptLoginActivityTextViewString">Cinema Ticket App Demo</string>
     <string name="signUpPromptSignUpActivityTextViewString">Create new account</string>
