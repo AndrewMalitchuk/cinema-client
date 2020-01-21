@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.MainFlowFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:id="@+id/linLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:orientation="vertical">
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cv1"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:id="@+id/view2"
+                                android:layout_width="350dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView14"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="Film"
+                                    android:textColor="@color/colorLoginActivityText"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/textView15"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="Country"
+                                    android:textColor="@color/colorLoginActivityText" />
+
+                                <TextView
+                                    android:id="@+id/textView16"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
+                                    android:text="Date " />
+
+                                <Button
+                                    android:id="@+id/button21"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/colorAccent"
+                                    android:text="More"
+                                    android:textColor="@color/white" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="250dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="5dp">
+
+                        <com.freegeek.android.materialbanner.MaterialBanner
+                            android:id="@+id/material_banner"
+                            android:layout_width="150dp"
+                            android:layout_height="250dp"
+                            android:layout_marginBottom="5dp" />
+                    </androidx.cardview.widget.CardView>
+
+
+                </FrameLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView_looking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="I'm looking for..."
+                            android:textColor="@color/colorLoginActivityText"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="5dp">
+
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <Button
+                                            android:id="@+id/buttonCinema"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="5dp"
+                                            android:layout_weight="1"
+                                            android:backgroundTint="@color/colorAccent"
+
+                                            android:text="Cinemas"
+                                            android:textColor="@color/white" />
+
+                                    </LinearLayout>
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginTop="5dp"
+                                        android:layout_marginBottom="5dp"
+                                        android:background="@color/colorAccent" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:orientation="vertical">
+
+                                        <Button
+                                            android:id="@+id/buttonFilms"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginTop="5dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="5dp"
+                                            android:layout_weight="1"
+                                            android:backgroundTint="@color/colorAccent"
+
+                                            android:text="Films"
+                                            android:textColor="@color/white" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </FrameLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView80"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Selected Cinemas"
+                            android:textColor="@color/colorLoginActivityText"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="5dp">
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/av1"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/kosmos_cinema"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView81"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Kosmos"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/av2"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/lumier_cinema"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView82"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Lumiere"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </HorizontalScrollView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView28"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Genre"
+                            android:textColor="@color/colorLoginActivityText"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="5dp">
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/comedyAvatar"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/comedy"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView23"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Comedy"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/actionAvatar"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/action"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView24"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Action "
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/historicalAvatar"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/historical"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView25"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Historical"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/sciFiAvatar"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/sci_fi"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView26"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Sci-Fi"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/horrorAvatar"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/horror"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView27"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Horror"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </HorizontalScrollView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Cities"
+                            android:textColor="@color/colorLoginActivityText"
+                            android:textStyle="bold" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="5dp">
+
+                            <HorizontalScrollView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/ivano_frankivsk"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/ivano_frankivsk"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView17"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Ivano-Frankivsk"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/lviv"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/lviv"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView18"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Lviv"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/kiyv"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/kiev"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView19"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Kiyv"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/kharkiv"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/kharkiv"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView20"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Kharkiv"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical">
+
+                                        <com.liangfeizc.avatarview.AvatarView
+                                            android:id="@+id/odessa"
+                                            android:layout_width="75dp"
+                                            android:layout_height="75dp"
+                                            android:layout_margin="10dp"
+                                            android:src="@drawable/odessa"
+                                            app:border_color="@color/colorLoginActivityText" />
+
+                                        <TextView
+                                            android:id="@+id/textView21"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="10dp"
+                                            android:layout_marginRight="10dp"
+                                            android:layout_marginBottom="10dp"
+                                            android:text="Odessa"
+                                            android:textAlignment="center"
+                                            android:textColor="@color/colorLoginActivityText" />
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+                            </HorizontalScrollView>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="5dp">
+
+                    <com.freegeek.android.materialbanner.MaterialBanner
+                        android:id="@+id/material_banner_adds"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</FrameLayout>

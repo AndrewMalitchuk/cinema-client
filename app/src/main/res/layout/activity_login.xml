@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity"
+    tools:ignore="LabelFor" >
+
+    <LinearLayout
+        android:id="@+id/loginLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/loginCardView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:foregroundGravity="center"
+                app:cardBackgroundColor="@color/colorLoginActivityCardView"
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="5dp">
+
+                        <ImageView
+                            android:id="@+id/ticketLoginActivityImageView"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_margin="50dp"
+                            android:contentDescription="@string/ticketLoginActivityImageViewString"
+                            app:srcCompat="@drawable/ic_ticket_white" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/loginPromptLoginActivityTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/loginPromptLoginActivityTextViewString"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorLoginActivityFieldsText"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <!--<com.google.android.material.textfield.TextInputLayout-->
+                        <!--android:id="@+id/emailLoginActivityTextInputLayout"-->
+                        <!--style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="10dp"-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:layout_marginRight="10dp"-->
+                        <!--android:textColorHint="@color/colorAccent"-->
+                        <!--app:boxStrokeColor="@color/colorAccent"-->
+                        <!--app:hintTextColor="@color/colorAccent">-->
+
+                        <!--<com.google.android.material.textfield.TextInputEditText-->
+                            <!--android:id="@+id/emailLoginActivityTextInputEditText"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:backgroundTint="@color/colorAccent"-->
+                            <!--android:hint="@string/emailLoginActivityTextViewString"-->
+                            <!--android:inputType="textEmailAddress"-->
+                            <!--android:textColor="@color/colorLoginActivityFieldsText"-->
+                            <!--android:textColorHighlight="@color/colorAccent" />-->
+
+                    <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+                    <!--<com.google.android.material.textfield.TextInputLayout-->
+                        <!--android:id="@+id/passwordLoginActivityTextInputLayout"-->
+                        <!--style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="10dp"-->
+                        <!--android:layout_marginTop="10dp"-->
+                        <!--android:layout_marginRight="10dp"-->
+                        <!--android:textColorHint="@color/colorAccent"-->
+                        <!--app:boxStrokeColor="@color/colorAccent"-->
+                        <!--app:hintTextColor="@color/colorAccent">-->
+
+                        <!--&lt;!&ndash;<com.google.android.material.textfield.TextInputEditText&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:id="@+id/passwordLoginActivityTextInputEditText"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:layout_height="wrap_content"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:backgroundTint="@color/colorAccent"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:hint="@string/passwordLoginActivityTextViewString"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:inputType="textPassword"&ndash;&gt;-->
+                        <!--&lt;!&ndash;android:textColor="@color/colorLoginActivityFieldsText" />&ndash;&gt;-->
+
+                        <!--<com.subhrajyoti.passwordview.PasswordView-->
+                            <!--android:id="@+id/passwordView"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:hint="@string/passwordLoginActivityTextViewString"-->
+                            <!--android:shadowColor="@color/about_facebook_color"-->
+                            <!--android:textColor="@color/colorLoginActivityText"-->
+                            <!--app:eyeTint="@color/colorAccent"-->
+                            <!--app:strikeThrough="true" />-->
+
+                    <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailSignUpActivityTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:hint="@string/emailLoginActivityTextViewString"
+                        android:textColorHint="@color/colorAccent">
+
+                        <EditText
+                            android:id="@+id/emailSignUpActivityEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autofillHints=""
+                            android:backgroundTint="@color/colorAccent"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textColor="@color/colorLoginActivityFieldsText"
+                            tools:targetApi="o" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/passwordSignUpActivityTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:hint="@string/passwordLoginActivityTextViewString"
+                        android:textColorHint="@color/colorAccent">
+
+                        <com.subhrajyoti.passwordview.PasswordView
+                            android:id="@+id/passwordView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:colorControlHighlight="@color/colorAccent"
+                            android:textColor="@color/colorLoginActivityText"
+
+                            android:textCursorDrawable="@null"
+                            app:eyeTint="@color/colorAccent"
+                            app:strikeThrough="true" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.example.myloadingbutton.MyLoadingButton
+                        android:id="@+id/loginLoginActivityButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        app:mlb_backgroundColor="@color/colorBackground"
+                        app:mlb_label="@string/loginLoginActivityButtonString"
+                        app:mlb_labelColor="@color/colorLoginActivityCardView"
+                        app:mlb_loaderColor="@color/colorLoginActivityCardView"
+                        app:mlb_setNormalAfterError="true">
+
+                    </com.example.myloadingbutton.MyLoadingButton>
+
+
+                    <TextView
+                        android:id="@+id/signUpLoginActivityTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:text="@string/signUpLoginActivityTextViewString"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorLoginActivityText"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
