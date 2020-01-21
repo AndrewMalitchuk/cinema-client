@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.polyak:icon-switch:1.0.0@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4626fc3bb93551995503f66083626036/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4626fc3bb93551995503f66083626036/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.polyak/icon-switch/1.0.0/f54445610b6696541fca633b5980f39eaad4b246/icon-switch-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

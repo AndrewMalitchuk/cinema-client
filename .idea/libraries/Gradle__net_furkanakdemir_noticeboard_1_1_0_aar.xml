@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: net.furkanakdemir:noticeboard:1.1.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a8ec72726462d6dc1c17cc803b43a8a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a8ec72726462d6dc1c17cc803b43a8a/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.furkanakdemir/noticeboard/1.1.0/abca9a87ece8eb0b8d81fdc70289529d8f2c8172/noticeboard-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

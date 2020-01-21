@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.piasy.BigImageViewer:FrescoImageViewFactory:1.5.7@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9fa81e6cfcca5f6f72c50657642ae0e1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9fa81e6cfcca5f6f72c50657642ae0e1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.piasy.BigImageViewer/FrescoImageViewFactory/1.5.7/7483b63e5e6b714148918d7da61c8775036ca2ca/FrescoImageViewFactory-1.5.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

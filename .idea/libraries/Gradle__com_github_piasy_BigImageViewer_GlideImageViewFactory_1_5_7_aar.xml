@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.piasy.BigImageViewer:GlideImageViewFactory:1.5.7@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a145f0e8f89787ebfe47d6f9eef66749/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a145f0e8f89787ebfe47d6f9eef66749/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.piasy.BigImageViewer/GlideImageViewFactory/1.5.7/f16ffe8ee4082e3fcc1b6e960f71e017cceaf5f9/GlideImageViewFactory-1.5.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

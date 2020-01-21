@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.piasy.BigImageViewer:ProgressPieIndicator:1.5.7@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/249cdf058dfdd69eb9f1ce9c6ee8453c/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/249cdf058dfdd69eb9f1ce9c6ee8453c/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.piasy.BigImageViewer/ProgressPieIndicator/1.5.7/597898f3ca684250f1b69714c3ac9995c3d5a627/ProgressPieIndicator-1.5.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

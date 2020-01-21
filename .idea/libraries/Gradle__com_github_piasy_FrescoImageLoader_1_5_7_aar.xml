@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.piasy:FrescoImageLoader:1.5.7@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5251f6109fdcf19ecb365ea5667ccf64/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5251f6109fdcf19ecb365ea5667ccf64/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.piasy/FrescoImageLoader/1.5.7/c6205ca48215ff390e923ae18bb6c15e9532d024/FrescoImageLoader-1.5.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

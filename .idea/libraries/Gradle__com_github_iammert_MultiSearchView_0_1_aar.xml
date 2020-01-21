@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.iammert:MultiSearchView:0.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a4d8e70a045ed2ad5b1a043228362e79/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/a4d8e70a045ed2ad5b1a043228362e79/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.iammert/MultiSearchView/0.1/3c3cd6d586d8df87544a8c10b52bd2f8883294fc/MultiSearchView-0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

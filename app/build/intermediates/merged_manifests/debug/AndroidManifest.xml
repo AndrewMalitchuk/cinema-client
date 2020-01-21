@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cinema.client"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="29" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.cinema.client.activity.Main3Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.PosterActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.SearchCinemaActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.SearchFilmActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.MyTicketsActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.cinema.client.activity.StoriesActivity" />
+        <activity
+            android:name="com.cinema.client.activity.NewNewCardActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.AboutCinemaActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.ErrorActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.cinema.client.activity.WhatsNewActivity" />
+        <activity
+            android:name="com.cinema.client.activity.StatusActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.Main2Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.QRZoomActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.ZoomImageActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.AboutDeveloperActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.BottomNavigation"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.cinema.client.activity.HallActivity" />
+        <activity android:name="com.cinema.client.activity.StartupActivity" />
+        <activity android:name="com.cinema.client.activity.CardActivity" />
+        <activity
+            android:name="com.cinema.client.activity.AboutFilmActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.TicketActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cinema.client.activity.SignUpActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.cinema.client.activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.cooltechworks.creditcarddesign.CardEditActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.cinema.client.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.devs.acr.ErrorReporterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" />
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.cinema.client.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>

@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.tomergoldst.android:tooltips:1.0.10@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/18c4e5e1d069ce243ce5c8ecb50d3480/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/18c4e5e1d069ce243ce5c8ecb50d3480/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/18c4e5e1d069ce243ce5c8ecb50d3480/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.tomergoldst.android/tooltips/1.0.10/31900d439571e1d953e0619e761ba836406df01c/tooltips-1.0.10-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

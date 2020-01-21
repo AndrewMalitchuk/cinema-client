@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-no-rNB/values-no-rNB.xml",
+            "map": [
+                {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/8051f73b94c3949c36611afa7b9b201a/res/values-no-rNB/values-no-rNB.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,112,175,235,301,372,434,495",
+                        "endColumns": "56,62,59,65,70,61,60,59",
+                        "endOffsets": "107,170,230,296,367,429,490,550"
+                    }
+                }
+            ]
+        }
+    ]
+}

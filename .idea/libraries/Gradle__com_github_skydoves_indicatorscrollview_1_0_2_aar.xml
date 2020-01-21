@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.skydoves:indicatorscrollview:1.0.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8b87034d0eb1bf42624d2fd0d9420cd2/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8b87034d0eb1bf42624d2fd0d9420cd2/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.skydoves/indicatorscrollview/1.0.2/e5fcc98e8a37fa7feed792ea54ed4ee4088c94ba/indicatorscrollview-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

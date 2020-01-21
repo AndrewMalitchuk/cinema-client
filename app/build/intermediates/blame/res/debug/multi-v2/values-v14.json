@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml",
+            "map": [
+                {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/bfd3491fb9a8597ec4dca2bef3ab0c83/res/values-v14/values-v14.xml",
+                    "from": {
+                        "startLines": "2,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,168",
+                        "endLines": "4,7",
+                        "endColumns": "12,12",
+                        "endOffsets": "163,286"
+                    }
+                }
+            ]
+        }
+    ]
+}

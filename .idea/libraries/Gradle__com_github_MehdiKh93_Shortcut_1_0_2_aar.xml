@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.MehdiKh93:Shortcut:1.0.2@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aa672579e92d582266bc1ebbfda56fde/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/aa672579e92d582266bc1ebbfda56fde/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MehdiKh93/Shortcut/1.0.2/ed0b9d59c8aa6af84ede84cd338633b77829ba21/Shortcut-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,670 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-94:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-94:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-94:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-94:12
+MERGED from [com.github.florent37:materialtextfield:1.0.7] /home/adular/.gradle/caches/transforms-2/files-2.1/ebf4dd5b43b442c39ded6eae357103cf/AndroidManifest.xml:2:1-12:12
+MERGED from [com.github.matecode:Snacky:1.1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/3fead175a53c9951a1484c4df317047e/AndroidManifest.xml:2:1-16:12
+MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/29a0027f21ec4f86e3fd1609a6585b0c/AndroidManifest.xml:2:1-21:12
+MERGED from [com.dynamitechetan.flowinggradient:flowinggradient:1.1] /home/adular/.gradle/caches/transforms-2/files-2.1/eb8e0d362b238a0165bd6961eadf88eb/AndroidManifest.xml:2:1-16:12
+MERGED from [com.github.javiersantos:BottomDialogs:1.2.1] /home/adular/.gradle/caches/transforms-2/files-2.1/bfd3491fb9a8597ec4dca2bef3ab0c83/AndroidManifest.xml:2:1-11:12
+MERGED from [com.tomergoldst.android:tooltips:1.0.10] /home/adular/.gradle/caches/transforms-2/files-2.1/18c4e5e1d069ce243ce5c8ecb50d3480/AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.yatindeokar:MyLoadingButton:v1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/d275a5abc564c639f73a26d6056f98da/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.manojbhadane:PaymentCardView:v1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/ab310290fadef207c1cb69a49b9f9267/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.mahimrocky:TagView:1.0.3] /home/adular/.gradle/caches/transforms-2/files-2.1/0c593b2a43002dcc38275d37a5833126/AndroidManifest.xml:2:1-11:12
+MERGED from [com.cuneytayyildiz:onboarder:1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/0edf713687c712feda614d180bfcff1c/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.harrylefit:bottomnavigation:1.1.7] /home/adular/.gradle/caches/transforms-2/files-2.1/5d36d9a98cb96c831a8aa6772cb61174/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.jrvansuita:MaterialAbout:0.2.3] /home/adular/.gradle/caches/transforms-2/files-2.1/af43d5081a71972e0887e7c4f14f72af/AndroidManifest.xml:2:1-12:12
+MERGED from [com.github.SubhrajyotiSen:library:1.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/630527a589f9c7e34a2bf107d6e252e2/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.TutorialsAndroid:MTextField:v4.0.19] /home/adular/.gradle/caches/transforms-2/files-2.1/b0657bb7ffbde54be1a88cae724f3bb7/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.10bis:compactCreditInput:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/63d51efeed973ec6effe206f82699768/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.iammert:StatusView:1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/a2f62cafd87e4282d41ab05e97c1eb07/AndroidManifest.xml:2:1-17:12
+MERGED from [com.brouding:android-simple-dialog:0.3.1] /home/adular/.gradle/caches/transforms-2/files-2.1/90084c3833a5212be984c42577b9fe5d/AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.chrisbanes:PhotoView:2.3.0] /home/adular/.gradle/caches/transforms-2/files-2.1/cdb9be1f37c5d7874c70b6e860702446/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.rtugeek:materialbanner:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/a34fd275fc2f59c32d689c80cedcd127/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.liangpengfei:LoadingPopPoint:912651e54d] /home/adular/.gradle/caches/transforms-2/files-2.1/e6048a444f4b9f2c92bdb17293a8cf85/AndroidManifest.xml:2:1-17:12
+MERGED from [com.qintong:insLoadingAnimation:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f9bec1186b39b34aa9acd50a66444805/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.transferwise:sequence-layout:1.0.11] /home/adular/.gradle/caches/transforms-2/files-2.1/cb6fd751a104fb0ac0f2ed36b2607799/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.GrenderG:MarkdownView:0.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/7746e22766f1805c0c052a8cdb4ebe1d/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.abdularis:AnalogTvNoiseView:0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/52d4714b09dc07735430aae3ac4b33d4/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.IsPra94:EasyGifView:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/f2b02c212bb2f986615c0358dcb6558f/AndroidManifest.xml:2:1-17:12
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/baf7c5975e8d95c91275338181842cee/AndroidManifest.xml:2:1-14:12
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/a53ccacec5cda13b8fb87b80669e2441/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.nonzeroapps:whatisnewdialog:1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/4cadf58a0753dc67950b161b455ad51b/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.devendroid:ReadMoreOption:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/8646a72fa47400030c941ba08095cbc7/AndroidManifest.xml:16:1-25:12
+MERGED from [com.github.mirrajabi:search-dialog:1.2.4] /home/adular/.gradle/caches/transforms-2/files-2.1/54d72698a46bdfe82fe51b867be10ce9/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.sangcomz:StickyTimeLine:v0.0.20] /home/adular/.gradle/caches/transforms-2/files-2.1/75b3a4a084a9fe9b3149ecfe3a08ff73/AndroidManifest.xml:2:1-11:12
+MERGED from [com.vivekkaushik.datepicker:datePickerTimeline:0.0.3] /home/adular/.gradle/caches/transforms-2/files-2.1/1acdf834bf1a79ad8d1f25c89f6cb0e2/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.OMARIHAMZA:StoryView:1.0.2-alpha] /home/adular/.gradle/caches/transforms-2/files-2.1/38932a51b8dcd249c0b1b56a892a8d6f/AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.skydoves:indicatorscrollview:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/8b87034d0eb1bf42624d2fd0d9420cd2/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.arimorty:floatingsearchview:2.1.1] /home/adular/.gradle/caches/transforms-2/files-2.1/23939d84cc5656e8601a3e89e529d3ab/AndroidManifest.xml:2:1-14:12
+MERGED from [com.github.droidbyme:DroidDialog:c6decc7167] /home/adular/.gradle/caches/transforms-2/files-2.1/5331d0abfb63beb72ebd19e29c16845d/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.Pradyuman7:ChocoBar:V1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/214fcad96295d5b37974d05fddfc908a/AndroidManifest.xml:2:1-16:12
+MERGED from [com.github.armcha:PlayTabLayout:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/3f5d69e50283c72eaa800c800815392d/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.material:material:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/c9f8bfcb3fa6d1a8e98d3e406d9dd66c/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.jrvansuita:IconHandler:v2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/2a7ea01b8721173109a227700011997a/AndroidManifest.xml:2:1-17:12
+MERGED from [com.xgc1986.android:parallaxpagertransformer:1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/b02098940db0fc3ee1f2f54557c14a74/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/9604883ca2a30b920def8e18b3895c76/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/a135992335efbdd9af07236aad9b2842/AndroidManifest.xml:2:1-11:12
+MERGED from [com.bartoszlipinski:viewpropertyobjectanimator:1.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0bc6b3c666b7bb530555e63acdf400d2/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/acdac8f9a6e69db7bba0155d8a7a3966/AndroidManifest.xml:17:1-22:12
+MERGED from [com.devs:acr:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/cad25c028f6bbfbd82209f5cef4bbd26/AndroidManifest.xml:2:1-21:12
+MERGED from [com.jakewharton:butterknife:10.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f91c67dd5f1e44aafd2381631aacecb5/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/b4f6f82b3ffec4afe59ccd2739796efe/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.medyo:android-about-page:1.2.5] /home/adular/.gradle/caches/transforms-2/files-2.1/11bcb58fd355ec3251c4e2e843af6f3a/AndroidManifest.xml:2:1-11:12
+MERGED from [com.vipulasri:ticketview:1.0.7] /home/adular/.gradle/caches/transforms-2/files-2.1/b2c37f188ab452443cc9372d1f1f875e/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android:flexbox:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0700cf69a7083f5b61d0b8f3b0a8ec97/AndroidManifest.xml:17:1-27:12
+MERGED from [me.gujun.android.taggroup:library:1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/45ba2a56e2b359385b0b4e247f6cb4cf/AndroidManifest.xml:2:1-10:12
+MERGED from [com.github.rubensousa:bottomsheetbuilder:1.6.1] /home/adular/.gradle/caches/transforms-2/files-2.1/adafaff7d67d5828dd19056200ff340a/AndroidManifest.xml:2:1-11:12
+MERGED from [com.liangfeizc:avatarview:0.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/907e5e4d3f89cc640b7041bdab741847/AndroidManifest.xml:2:1-16:12
+MERGED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:2:1-29:12
+MERGED from [in.shadowfax:proswipebutton:1.2.2] /home/adular/.gradle/caches/transforms-2/files-2.1/876115506792b702cae6cac78acddc06/AndroidManifest.xml:2:1-17:12
+MERGED from [com.github.MehdiKh93:Shortcut:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/aa672579e92d582266bc1ebbfda56fde/AndroidManifest.xml:2:1-11:12
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ba542d42a247e7c5db0539aeb5fbdfa6/AndroidManifest.xml:2:1-12:12
+MERGED from [uk.co.samuelwall:material-tap-target-prompt:3.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/00dd77a9d04673f8da7697a62083f225/AndroidManifest.xml:17:1-26:12
+MERGED from [com.github.nihad92:SwipeableCards:1.0.19] /home/adular/.gradle/caches/transforms-2/files-2.1/b3df3e38b7492db276a911248fdcc0d7/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/e7fbf7879ad3223092cbb2064cc670df/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/21a056284165b8c0639db5b7806b18e1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f07343c83a7f35798ef6bcbc3a6f144e/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/5d8783338f0ae210a9e4536a694c33af/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/2ad546155c1985b84f0d4ecbec3912ef/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.palette:palette:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/6e221c955b27911287f75371b0af2dbf/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/1a8fd598085bd42676c1dedc89e8eebf/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/243358b6a333f6e546deb8dd898e5c7c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife-runtime:10.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/4869102821cb3ee91ec4004c0dd3e589/AndroidManifest.xml:2:1-7:12
+MERGED from [com.andkulikov:transitionseverywhere:1.7.7] /home/adular/.gradle/caches/transforms-2/files-2.1/c43597b69bc7592ea123750d00ed822b/AndroidManifest.xml:2:1-14:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/da03fb41f56de92254c2c3f8d0d6983b/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/1a3b92f8c7551b9b4a0041d538f2349d/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/6ca25045f4161e08df58771307bb28b2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/29ace8696d1675688aa29392c02d2362/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ac8dd67026dcb103047f5c6ccf08c03f/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ea2dc83affcb8ae957075d940ee288b2/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fa0b61629d5d2385b5aafd068d500717/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-alpha01] /home/adular/.gradle/caches/transforms-2/files-2.1/bd50d7d7b7d8449caa3a583c04b4a24a/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/32c9209d843d5d54be194a98453bb8c3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/34f7f0c92f58b1609eff56a08df66157/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ee0b0f83cde67d2386e289415c5d6458/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/5b631caf720f56644ba12a4d166a34f0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/442170f4370bd1e1a76f36376369cb84/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/57f6b234e777541de9e901c11a97793c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.traex.rippleeffect:library:1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/5c7e960d9c5ea0f940818e0af2b4c6b6/AndroidManifest.xml:2:1-14:12
+MERGED from [androidx.databinding:databinding-adapters:3.5.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0a658e11384897e7bd73419af356dc48/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.databinding:databinding-runtime:3.5.0] /home/adular/.gradle/caches/transforms-2/files-2.1/a7199af34170771e586ea2c383218d1c/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77795652027cb1fcc80d13fdef0bae5a/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/5a08f5f270afc3e6deff2df9cd556661/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/dd3a0630450763edef7618d3cabd9c04/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fac85574cec685bbdf9470d16982a0ef/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/eb829054a8a57ca0a74474d73f838e42/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77e99ef8bf77533337ecaf915ddb41b9/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/adaf96595416b4a612af4eae020e46dd/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/e1ff42103973f73b36d2f510ab6fdbcc/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/68c3cb0a69ad8b995e41aae872524870/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/a88088088f8dff609031ed0e15bc049e/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/bb642433a0a75d60ec00a2d9ce485e4f/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/5a177600a5cdc49d08dc88b3dc981226/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0edc817d814dd078bbc94eaa03dedbc3/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/b21a39c7f9b3adebdbd8d6bdbae1e2d7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.pnikosis:materialish-progress:1.7] /home/adular/.gradle/caches/transforms-2/files-2.1/081328ae470b8374ab33f93aa0595a0e/AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/4db70b0041dbe69501d3a88defb5b344/AndroidManifest.xml:2:1-12:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-94:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-94:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-94:12
+	package
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:3:5-32
+		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-94:12
+		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-94:12
+		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.CALL_PHONE
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:6:5-69
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:6:22-66
+uses-permission#android.permission.INTERNET
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:7:5-67
+MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/29a0027f21ec4f86e3fd1609a6585b0c/AndroidManifest.xml:11:5-67
+MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/29a0027f21ec4f86e3fd1609a6585b0c/AndroidManifest.xml:11:5-67
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/baf7c5975e8d95c91275338181842cee/AndroidManifest.xml:11:5-67
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/baf7c5975e8d95c91275338181842cee/AndroidManifest.xml:11:5-67
+MERGED from [com.github.OMARIHAMZA:StoryView:1.0.2-alpha] /home/adular/.gradle/caches/transforms-2/files-2.1/38932a51b8dcd249c0b1b56a892a8d6f/AndroidManifest.xml:11:5-67
+MERGED from [com.github.OMARIHAMZA:StoryView:1.0.2-alpha] /home/adular/.gradle/caches/transforms-2/files-2.1/38932a51b8dcd249c0b1b56a892a8d6f/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:7:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:8:5-79
+MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/29a0027f21ec4f86e3fd1609a6585b0c/AndroidManifest.xml:13:5-79
+MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/29a0027f21ec4f86e3fd1609a6585b0c/AndroidManifest.xml:13:5-79
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/baf7c5975e8d95c91275338181842cee/AndroidManifest.xml:12:5-79
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/baf7c5975e8d95c91275338181842cee/AndroidManifest.xml:12:5-79
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:8:22-76
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:9:22-78
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:10:5-78
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:10:22-75
+application
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:12:5-92:19
+MERGED from [com.github.matecode:Snacky:1.1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/3fead175a53c9951a1484c4df317047e/AndroidManifest.xml:11:5-14:19
+MERGED from [com.github.matecode:Snacky:1.1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/3fead175a53c9951a1484c4df317047e/AndroidManifest.xml:11:5-14:19
+MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/29a0027f21ec4f86e3fd1609a6585b0c/AndroidManifest.xml:15:5-19:19
+MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/29a0027f21ec4f86e3fd1609a6585b0c/AndroidManifest.xml:15:5-19:19
+MERGED from [com.dynamitechetan.flowinggradient:flowinggradient:1.1] /home/adular/.gradle/caches/transforms-2/files-2.1/eb8e0d362b238a0165bd6961eadf88eb/AndroidManifest.xml:11:5-14:19
+MERGED from [com.dynamitechetan.flowinggradient:flowinggradient:1.1] /home/adular/.gradle/caches/transforms-2/files-2.1/eb8e0d362b238a0165bd6961eadf88eb/AndroidManifest.xml:11:5-14:19
+MERGED from [com.tomergoldst.android:tooltips:1.0.10] /home/adular/.gradle/caches/transforms-2/files-2.1/18c4e5e1d069ce243ce5c8ecb50d3480/AndroidManifest.xml:11:5-20
+MERGED from [com.tomergoldst.android:tooltips:1.0.10] /home/adular/.gradle/caches/transforms-2/files-2.1/18c4e5e1d069ce243ce5c8ecb50d3480/AndroidManifest.xml:11:5-20
+MERGED from [com.github.SubhrajyotiSen:library:1.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/630527a589f9c7e34a2bf107d6e252e2/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.SubhrajyotiSen:library:1.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/630527a589f9c7e34a2bf107d6e252e2/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.iammert:StatusView:1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/a2f62cafd87e4282d41ab05e97c1eb07/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.iammert:StatusView:1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/a2f62cafd87e4282d41ab05e97c1eb07/AndroidManifest.xml:11:5-15:19
+MERGED from [com.brouding:android-simple-dialog:0.3.1] /home/adular/.gradle/caches/transforms-2/files-2.1/90084c3833a5212be984c42577b9fe5d/AndroidManifest.xml:11:5-20
+MERGED from [com.brouding:android-simple-dialog:0.3.1] /home/adular/.gradle/caches/transforms-2/files-2.1/90084c3833a5212be984c42577b9fe5d/AndroidManifest.xml:11:5-20
+MERGED from [com.github.rtugeek:materialbanner:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/a34fd275fc2f59c32d689c80cedcd127/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.rtugeek:materialbanner:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/a34fd275fc2f59c32d689c80cedcd127/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.liangpengfei:LoadingPopPoint:912651e54d] /home/adular/.gradle/caches/transforms-2/files-2.1/e6048a444f4b9f2c92bdb17293a8cf85/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.liangpengfei:LoadingPopPoint:912651e54d] /home/adular/.gradle/caches/transforms-2/files-2.1/e6048a444f4b9f2c92bdb17293a8cf85/AndroidManifest.xml:11:5-15:19
+MERGED from [com.qintong:insLoadingAnimation:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f9bec1186b39b34aa9acd50a66444805/AndroidManifest.xml:11:5-15:19
+MERGED from [com.qintong:insLoadingAnimation:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f9bec1186b39b34aa9acd50a66444805/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.IsPra94:EasyGifView:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/f2b02c212bb2f986615c0358dcb6558f/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.IsPra94:EasyGifView:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/f2b02c212bb2f986615c0358dcb6558f/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/a53ccacec5cda13b8fb87b80669e2441/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/a53ccacec5cda13b8fb87b80669e2441/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.mirrajabi:search-dialog:1.2.4] /home/adular/.gradle/caches/transforms-2/files-2.1/54d72698a46bdfe82fe51b867be10ce9/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.mirrajabi:search-dialog:1.2.4] /home/adular/.gradle/caches/transforms-2/files-2.1/54d72698a46bdfe82fe51b867be10ce9/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.arimorty:floatingsearchview:2.1.1] /home/adular/.gradle/caches/transforms-2/files-2.1/23939d84cc5656e8601a3e89e529d3ab/AndroidManifest.xml:12:5-20
+MERGED from [com.github.arimorty:floatingsearchview:2.1.1] /home/adular/.gradle/caches/transforms-2/files-2.1/23939d84cc5656e8601a3e89e529d3ab/AndroidManifest.xml:12:5-20
+MERGED from [com.github.droidbyme:DroidDialog:c6decc7167] /home/adular/.gradle/caches/transforms-2/files-2.1/5331d0abfb63beb72ebd19e29c16845d/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.droidbyme:DroidDialog:c6decc7167] /home/adular/.gradle/caches/transforms-2/files-2.1/5331d0abfb63beb72ebd19e29c16845d/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.Pradyuman7:ChocoBar:V1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/214fcad96295d5b37974d05fddfc908a/AndroidManifest.xml:11:5-14:19
+MERGED from [com.github.Pradyuman7:ChocoBar:V1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/214fcad96295d5b37974d05fddfc908a/AndroidManifest.xml:11:5-14:19
+MERGED from [com.google.android.material:material:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/c9f8bfcb3fa6d1a8e98d3e406d9dd66c/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/c9f8bfcb3fa6d1a8e98d3e406d9dd66c/AndroidManifest.xml:22:5-20
+MERGED from [com.github.jrvansuita:IconHandler:v2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/2a7ea01b8721173109a227700011997a/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.jrvansuita:IconHandler:v2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/2a7ea01b8721173109a227700011997a/AndroidManifest.xml:11:5-15:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/a135992335efbdd9af07236aad9b2842/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/a135992335efbdd9af07236aad9b2842/AndroidManifest.xml:9:5-20
+MERGED from [com.devs:acr:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/cad25c028f6bbfbd82209f5cef4bbd26/AndroidManifest.xml:11:5-19:19
+MERGED from [com.devs:acr:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/cad25c028f6bbfbd82209f5cef4bbd26/AndroidManifest.xml:11:5-19:19
+MERGED from [com.liangfeizc:avatarview:0.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/907e5e4d3f89cc640b7041bdab741847/AndroidManifest.xml:11:5-14:19
+MERGED from [com.liangfeizc:avatarview:0.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/907e5e4d3f89cc640b7041bdab741847/AndroidManifest.xml:11:5-14:19
+MERGED from [in.shadowfax:proswipebutton:1.2.2] /home/adular/.gradle/caches/transforms-2/files-2.1/876115506792b702cae6cac78acddc06/AndroidManifest.xml:11:5-15:19
+MERGED from [in.shadowfax:proswipebutton:1.2.2] /home/adular/.gradle/caches/transforms-2/files-2.1/876115506792b702cae6cac78acddc06/AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ba542d42a247e7c5db0539aeb5fbdfa6/AndroidManifest.xml:10:5-20
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ba542d42a247e7c5db0539aeb5fbdfa6/AndroidManifest.xml:10:5-20
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/e7fbf7879ad3223092cbb2064cc670df/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/e7fbf7879ad3223092cbb2064cc670df/AndroidManifest.xml:22:5-23:19
+MERGED from [com.andkulikov:transitionseverywhere:1.7.7] /home/adular/.gradle/caches/transforms-2/files-2.1/c43597b69bc7592ea123750d00ed822b/AndroidManifest.xml:12:5-20
+MERGED from [com.andkulikov:transitionseverywhere:1.7.7] /home/adular/.gradle/caches/transforms-2/files-2.1/c43597b69bc7592ea123750d00ed822b/AndroidManifest.xml:12:5-20
+MERGED from [androidx.core:core:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/442170f4370bd1e1a76f36376369cb84/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/442170f4370bd1e1a76f36376369cb84/AndroidManifest.xml:24:5-89
+MERGED from [com.github.traex.rippleeffect:library:1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/5c7e960d9c5ea0f940818e0af2b4c6b6/AndroidManifest.xml:12:5-20
+MERGED from [com.github.traex.rippleeffect:library:1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/5c7e960d9c5ea0f940818e0af2b4c6b6/AndroidManifest.xml:12:5-20
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77795652027cb1fcc80d13fdef0bae5a/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77795652027cb1fcc80d13fdef0bae5a/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fac85574cec685bbdf9470d16982a0ef/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fac85574cec685bbdf9470d16982a0ef/AndroidManifest.xml:24:5-25:19
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0edc817d814dd078bbc94eaa03dedbc3/AndroidManifest.xml:9:5-20
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0edc817d814dd078bbc94eaa03dedbc3/AndroidManifest.xml:9:5-20
+MERGED from [com.pnikosis:materialish-progress:1.7] /home/adular/.gradle/caches/transforms-2/files-2.1/081328ae470b8374ab33f93aa0595a0e/AndroidManifest.xml:11:5-20
+MERGED from [com.pnikosis:materialish-progress:1.7] /home/adular/.gradle/caches/transforms-2/files-2.1/081328ae470b8374ab33f93aa0595a0e/AndroidManifest.xml:11:5-20
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/4db70b0041dbe69501d3a88defb5b344/AndroidManifest.xml:10:5-20
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/4db70b0041dbe69501d3a88defb5b344/AndroidManifest.xml:10:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/442170f4370bd1e1a76f36376369cb84/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:17:9-35
+	android:label
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:15:9-41
+	android:roundIcon
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:16:9-54
+	android:icon
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:14:9-43
+	android:allowBackup
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:13:9-35
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:18:9-40
+activity#com.cinema.client.activity.Main3Activity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:19:9-21:25
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:20:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:19:19-57
+activity#com.cinema.client.activity.PosterActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:22:9-24:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:24:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:23:13-52
+activity#com.cinema.client.activity.SearchCinemaActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:25:9-27:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:27:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:26:13-58
+activity#com.cinema.client.activity.SearchFilmActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:28:9-30:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:30:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:29:13-56
+activity#com.cinema.client.activity.MyTicketsActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:31:9-33:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:33:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:32:13-55
+activity#com.cinema.client.activity.StoriesActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:34:9-62
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:34:19-59
+activity#com.cinema.client.activity.NewNewCardActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:35:9-37:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:37:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:36:13-56
+activity#com.cinema.client.activity.AboutCinemaActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:38:9-40:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:40:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:39:13-57
+activity#com.cinema.client.activity.ErrorActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:41:9-43:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:43:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:42:13-51
+activity#com.cinema.client.activity.WhatsNewActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:44:9-63
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:44:19-60
+activity#com.cinema.client.activity.StatusActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:45:9-47:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:47:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:46:13-52
+activity#com.cinema.client.activity.SplashActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:48:9-50:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:50:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:49:13-52
+activity#com.cinema.client.activity.Main2Activity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:51:9-53:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:53:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:52:13-51
+activity#com.cinema.client.activity.QRZoomActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:54:9-56:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:56:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:55:13-52
+activity#com.cinema.client.activity.ZoomImageActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:57:9-59:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:59:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:58:13-55
+activity#com.cinema.client.activity.AboutDeveloperActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:60:9-62:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:62:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:61:13-60
+activity#com.cinema.client.activity.BottomNavigation
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:63:9-65:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:65:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:64:13-54
+activity#com.cinema.client.activity.HallActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:66:9-59
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:66:19-56
+activity#com.cinema.client.activity.StartupActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:67:9-62
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:67:19-59
+activity#com.cinema.client.activity.CardActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:68:9-59
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:68:19-56
+activity#com.cinema.client.activity.AboutFilmActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:69:9-71:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:71:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:70:13-55
+activity#com.cinema.client.activity.TicketActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:72:9-74:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:74:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:73:13-52
+activity#com.cinema.client.activity.SignUpActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:75:9-78:58
+	android:windowSoftInputMode
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:78:13-55
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:77:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:76:13-52
+activity#com.cinema.client.activity.LoginActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:79:9-81:59
+	android:theme
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:81:13-56
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:80:13-51
+activity#com.cooltechworks.creditcarddesign.CardEditActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:82:9-84:52
+	android:screenOrientation
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:84:13-49
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:83:13-79
+activity#com.cinema.client.MainActivity
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:85:9-91:20
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:85:19-47
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:86:13-90:29
+action#android.intent.action.MAIN
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:87:17-69
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:87:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:89:17-77
+	android:name
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:89:27-74
+uses-sdk
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+MERGED from [com.github.florent37:materialtextfield:1.0.7] /home/adular/.gradle/caches/transforms-2/files-2.1/ebf4dd5b43b442c39ded6eae357103cf/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.florent37:materialtextfield:1.0.7] /home/adular/.gradle/caches/transforms-2/files-2.1/ebf4dd5b43b442c39ded6eae357103cf/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.matecode:Snacky:1.1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/3fead175a53c9951a1484c4df317047e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.matecode:Snacky:1.1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/3fead175a53c9951a1484c4df317047e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/29a0027f21ec4f86e3fd1609a6585b0c/AndroidManifest.xml:7:5-9:41
+MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/29a0027f21ec4f86e3fd1609a6585b0c/AndroidManifest.xml:7:5-9:41
+MERGED from [com.dynamitechetan.flowinggradient:flowinggradient:1.1] /home/adular/.gradle/caches/transforms-2/files-2.1/eb8e0d362b238a0165bd6961eadf88eb/AndroidManifest.xml:7:5-9:41
+MERGED from [com.dynamitechetan.flowinggradient:flowinggradient:1.1] /home/adular/.gradle/caches/transforms-2/files-2.1/eb8e0d362b238a0165bd6961eadf88eb/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.javiersantos:BottomDialogs:1.2.1] /home/adular/.gradle/caches/transforms-2/files-2.1/bfd3491fb9a8597ec4dca2bef3ab0c83/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.javiersantos:BottomDialogs:1.2.1] /home/adular/.gradle/caches/transforms-2/files-2.1/bfd3491fb9a8597ec4dca2bef3ab0c83/AndroidManifest.xml:7:5-9:41
+MERGED from [com.tomergoldst.android:tooltips:1.0.10] /home/adular/.gradle/caches/transforms-2/files-2.1/18c4e5e1d069ce243ce5c8ecb50d3480/AndroidManifest.xml:7:5-9:41
+MERGED from [com.tomergoldst.android:tooltips:1.0.10] /home/adular/.gradle/caches/transforms-2/files-2.1/18c4e5e1d069ce243ce5c8ecb50d3480/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.yatindeokar:MyLoadingButton:v1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/d275a5abc564c639f73a26d6056f98da/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.yatindeokar:MyLoadingButton:v1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/d275a5abc564c639f73a26d6056f98da/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.manojbhadane:PaymentCardView:v1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/ab310290fadef207c1cb69a49b9f9267/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.manojbhadane:PaymentCardView:v1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/ab310290fadef207c1cb69a49b9f9267/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.mahimrocky:TagView:1.0.3] /home/adular/.gradle/caches/transforms-2/files-2.1/0c593b2a43002dcc38275d37a5833126/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.mahimrocky:TagView:1.0.3] /home/adular/.gradle/caches/transforms-2/files-2.1/0c593b2a43002dcc38275d37a5833126/AndroidManifest.xml:7:5-9:41
+MERGED from [com.cuneytayyildiz:onboarder:1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/0edf713687c712feda614d180bfcff1c/AndroidManifest.xml:7:5-9:41
+MERGED from [com.cuneytayyildiz:onboarder:1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/0edf713687c712feda614d180bfcff1c/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.harrylefit:bottomnavigation:1.1.7] /home/adular/.gradle/caches/transforms-2/files-2.1/5d36d9a98cb96c831a8aa6772cb61174/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.harrylefit:bottomnavigation:1.1.7] /home/adular/.gradle/caches/transforms-2/files-2.1/5d36d9a98cb96c831a8aa6772cb61174/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.jrvansuita:MaterialAbout:0.2.3] /home/adular/.gradle/caches/transforms-2/files-2.1/af43d5081a71972e0887e7c4f14f72af/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.jrvansuita:MaterialAbout:0.2.3] /home/adular/.gradle/caches/transforms-2/files-2.1/af43d5081a71972e0887e7c4f14f72af/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.SubhrajyotiSen:library:1.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/630527a589f9c7e34a2bf107d6e252e2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.SubhrajyotiSen:library:1.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/630527a589f9c7e34a2bf107d6e252e2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.TutorialsAndroid:MTextField:v4.0.19] /home/adular/.gradle/caches/transforms-2/files-2.1/b0657bb7ffbde54be1a88cae724f3bb7/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.TutorialsAndroid:MTextField:v4.0.19] /home/adular/.gradle/caches/transforms-2/files-2.1/b0657bb7ffbde54be1a88cae724f3bb7/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.10bis:compactCreditInput:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/63d51efeed973ec6effe206f82699768/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.10bis:compactCreditInput:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/63d51efeed973ec6effe206f82699768/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.iammert:StatusView:1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/a2f62cafd87e4282d41ab05e97c1eb07/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.iammert:StatusView:1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/a2f62cafd87e4282d41ab05e97c1eb07/AndroidManifest.xml:7:5-9:41
+MERGED from [com.brouding:android-simple-dialog:0.3.1] /home/adular/.gradle/caches/transforms-2/files-2.1/90084c3833a5212be984c42577b9fe5d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.brouding:android-simple-dialog:0.3.1] /home/adular/.gradle/caches/transforms-2/files-2.1/90084c3833a5212be984c42577b9fe5d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.chrisbanes:PhotoView:2.3.0] /home/adular/.gradle/caches/transforms-2/files-2.1/cdb9be1f37c5d7874c70b6e860702446/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.chrisbanes:PhotoView:2.3.0] /home/adular/.gradle/caches/transforms-2/files-2.1/cdb9be1f37c5d7874c70b6e860702446/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.rtugeek:materialbanner:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/a34fd275fc2f59c32d689c80cedcd127/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.rtugeek:materialbanner:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/a34fd275fc2f59c32d689c80cedcd127/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.liangpengfei:LoadingPopPoint:912651e54d] /home/adular/.gradle/caches/transforms-2/files-2.1/e6048a444f4b9f2c92bdb17293a8cf85/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.liangpengfei:LoadingPopPoint:912651e54d] /home/adular/.gradle/caches/transforms-2/files-2.1/e6048a444f4b9f2c92bdb17293a8cf85/AndroidManifest.xml:7:5-9:41
+MERGED from [com.qintong:insLoadingAnimation:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f9bec1186b39b34aa9acd50a66444805/AndroidManifest.xml:7:5-9:41
+MERGED from [com.qintong:insLoadingAnimation:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f9bec1186b39b34aa9acd50a66444805/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.transferwise:sequence-layout:1.0.11] /home/adular/.gradle/caches/transforms-2/files-2.1/cb6fd751a104fb0ac0f2ed36b2607799/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.transferwise:sequence-layout:1.0.11] /home/adular/.gradle/caches/transforms-2/files-2.1/cb6fd751a104fb0ac0f2ed36b2607799/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.GrenderG:MarkdownView:0.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/7746e22766f1805c0c052a8cdb4ebe1d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.GrenderG:MarkdownView:0.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/7746e22766f1805c0c052a8cdb4ebe1d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.abdularis:AnalogTvNoiseView:0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/52d4714b09dc07735430aae3ac4b33d4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.abdularis:AnalogTvNoiseView:0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/52d4714b09dc07735430aae3ac4b33d4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.IsPra94:EasyGifView:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/f2b02c212bb2f986615c0358dcb6558f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.IsPra94:EasyGifView:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/f2b02c212bb2f986615c0358dcb6558f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/baf7c5975e8d95c91275338181842cee/AndroidManifest.xml:7:5-9:41
+MERGED from [com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/baf7c5975e8d95c91275338181842cee/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/a53ccacec5cda13b8fb87b80669e2441/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sharish:CreditCardView:v1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/a53ccacec5cda13b8fb87b80669e2441/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.nonzeroapps:whatisnewdialog:1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/4cadf58a0753dc67950b161b455ad51b/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.nonzeroapps:whatisnewdialog:1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/4cadf58a0753dc67950b161b455ad51b/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.devendroid:ReadMoreOption:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/8646a72fa47400030c941ba08095cbc7/AndroidManifest.xml:21:5-23:41
+MERGED from [com.github.devendroid:ReadMoreOption:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/8646a72fa47400030c941ba08095cbc7/AndroidManifest.xml:21:5-23:41
+MERGED from [com.github.mirrajabi:search-dialog:1.2.4] /home/adular/.gradle/caches/transforms-2/files-2.1/54d72698a46bdfe82fe51b867be10ce9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.mirrajabi:search-dialog:1.2.4] /home/adular/.gradle/caches/transforms-2/files-2.1/54d72698a46bdfe82fe51b867be10ce9/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sangcomz:StickyTimeLine:v0.0.20] /home/adular/.gradle/caches/transforms-2/files-2.1/75b3a4a084a9fe9b3149ecfe3a08ff73/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.sangcomz:StickyTimeLine:v0.0.20] /home/adular/.gradle/caches/transforms-2/files-2.1/75b3a4a084a9fe9b3149ecfe3a08ff73/AndroidManifest.xml:7:5-9:41
+MERGED from [com.vivekkaushik.datepicker:datePickerTimeline:0.0.3] /home/adular/.gradle/caches/transforms-2/files-2.1/1acdf834bf1a79ad8d1f25c89f6cb0e2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.vivekkaushik.datepicker:datePickerTimeline:0.0.3] /home/adular/.gradle/caches/transforms-2/files-2.1/1acdf834bf1a79ad8d1f25c89f6cb0e2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.OMARIHAMZA:StoryView:1.0.2-alpha] /home/adular/.gradle/caches/transforms-2/files-2.1/38932a51b8dcd249c0b1b56a892a8d6f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.OMARIHAMZA:StoryView:1.0.2-alpha] /home/adular/.gradle/caches/transforms-2/files-2.1/38932a51b8dcd249c0b1b56a892a8d6f/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.skydoves:indicatorscrollview:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/8b87034d0eb1bf42624d2fd0d9420cd2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.skydoves:indicatorscrollview:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/8b87034d0eb1bf42624d2fd0d9420cd2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.arimorty:floatingsearchview:2.1.1] /home/adular/.gradle/caches/transforms-2/files-2.1/23939d84cc5656e8601a3e89e529d3ab/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.arimorty:floatingsearchview:2.1.1] /home/adular/.gradle/caches/transforms-2/files-2.1/23939d84cc5656e8601a3e89e529d3ab/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.droidbyme:DroidDialog:c6decc7167] /home/adular/.gradle/caches/transforms-2/files-2.1/5331d0abfb63beb72ebd19e29c16845d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.droidbyme:DroidDialog:c6decc7167] /home/adular/.gradle/caches/transforms-2/files-2.1/5331d0abfb63beb72ebd19e29c16845d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.Pradyuman7:ChocoBar:V1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/214fcad96295d5b37974d05fddfc908a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.Pradyuman7:ChocoBar:V1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/214fcad96295d5b37974d05fddfc908a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.armcha:PlayTabLayout:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/3f5d69e50283c72eaa800c800815392d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.armcha:PlayTabLayout:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/3f5d69e50283c72eaa800c800815392d/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/c9f8bfcb3fa6d1a8e98d3e406d9dd66c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/c9f8bfcb3fa6d1a8e98d3e406d9dd66c/AndroidManifest.xml:20:5-44
+MERGED from [com.github.jrvansuita:IconHandler:v2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/2a7ea01b8721173109a227700011997a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.jrvansuita:IconHandler:v2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/2a7ea01b8721173109a227700011997a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.xgc1986.android:parallaxpagertransformer:1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/b02098940db0fc3ee1f2f54557c14a74/AndroidManifest.xml:7:5-9:41
+MERGED from [com.xgc1986.android:parallaxpagertransformer:1.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/b02098940db0fc3ee1f2f54557c14a74/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/9604883ca2a30b920def8e18b3895c76/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/9604883ca2a30b920def8e18b3895c76/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/a135992335efbdd9af07236aad9b2842/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/a135992335efbdd9af07236aad9b2842/AndroidManifest.xml:5:5-7:41
+MERGED from [com.bartoszlipinski:viewpropertyobjectanimator:1.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0bc6b3c666b7bb530555e63acdf400d2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.bartoszlipinski:viewpropertyobjectanimator:1.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0bc6b3c666b7bb530555e63acdf400d2/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/acdac8f9a6e69db7bba0155d8a7a3966/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/acdac8f9a6e69db7bba0155d8a7a3966/AndroidManifest.xml:20:5-44
+MERGED from [com.devs:acr:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/cad25c028f6bbfbd82209f5cef4bbd26/AndroidManifest.xml:7:5-9:41
+MERGED from [com.devs:acr:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/cad25c028f6bbfbd82209f5cef4bbd26/AndroidManifest.xml:7:5-9:41
+MERGED from [com.jakewharton:butterknife:10.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f91c67dd5f1e44aafd2381631aacecb5/AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton:butterknife:10.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f91c67dd5f1e44aafd2381631aacecb5/AndroidManifest.xml:5:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/b4f6f82b3ffec4afe59ccd2739796efe/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/b4f6f82b3ffec4afe59ccd2739796efe/AndroidManifest.xml:20:5-44
+MERGED from [com.github.medyo:android-about-page:1.2.5] /home/adular/.gradle/caches/transforms-2/files-2.1/11bcb58fd355ec3251c4e2e843af6f3a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.medyo:android-about-page:1.2.5] /home/adular/.gradle/caches/transforms-2/files-2.1/11bcb58fd355ec3251c4e2e843af6f3a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.vipulasri:ticketview:1.0.7] /home/adular/.gradle/caches/transforms-2/files-2.1/b2c37f188ab452443cc9372d1f1f875e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.vipulasri:ticketview:1.0.7] /home/adular/.gradle/caches/transforms-2/files-2.1/b2c37f188ab452443cc9372d1f1f875e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android:flexbox:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0700cf69a7083f5b61d0b8f3b0a8ec97/AndroidManifest.xml:23:5-25:41
+MERGED from [com.google.android:flexbox:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0700cf69a7083f5b61d0b8f3b0a8ec97/AndroidManifest.xml:23:5-25:41
+MERGED from [me.gujun.android.taggroup:library:1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/45ba2a56e2b359385b0b4e247f6cb4cf/AndroidManifest.xml:6:5-8:41
+MERGED from [me.gujun.android.taggroup:library:1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/45ba2a56e2b359385b0b4e247f6cb4cf/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.rubensousa:bottomsheetbuilder:1.6.1] /home/adular/.gradle/caches/transforms-2/files-2.1/adafaff7d67d5828dd19056200ff340a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.rubensousa:bottomsheetbuilder:1.6.1] /home/adular/.gradle/caches/transforms-2/files-2.1/adafaff7d67d5828dd19056200ff340a/AndroidManifest.xml:7:5-9:41
+MERGED from [com.liangfeizc:avatarview:0.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/907e5e4d3f89cc640b7041bdab741847/AndroidManifest.xml:7:5-9:41
+MERGED from [com.liangfeizc:avatarview:0.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/907e5e4d3f89cc640b7041bdab741847/AndroidManifest.xml:7:5-9:41
+MERGED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:7:5-9:41
+MERGED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:7:5-9:41
+MERGED from [in.shadowfax:proswipebutton:1.2.2] /home/adular/.gradle/caches/transforms-2/files-2.1/876115506792b702cae6cac78acddc06/AndroidManifest.xml:7:5-9:41
+MERGED from [in.shadowfax:proswipebutton:1.2.2] /home/adular/.gradle/caches/transforms-2/files-2.1/876115506792b702cae6cac78acddc06/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.MehdiKh93:Shortcut:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/aa672579e92d582266bc1ebbfda56fde/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.MehdiKh93:Shortcut:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/aa672579e92d582266bc1ebbfda56fde/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ba542d42a247e7c5db0539aeb5fbdfa6/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.bumptech.glide:glide:4.10.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ba542d42a247e7c5db0539aeb5fbdfa6/AndroidManifest.xml:6:5-8:41
+MERGED from [uk.co.samuelwall:material-tap-target-prompt:3.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/00dd77a9d04673f8da7697a62083f225/AndroidManifest.xml:22:5-24:41
+MERGED from [uk.co.samuelwall:material-tap-target-prompt:3.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/00dd77a9d04673f8da7697a62083f225/AndroidManifest.xml:22:5-24:41
+MERGED from [com.github.nihad92:SwipeableCards:1.0.19] /home/adular/.gradle/caches/transforms-2/files-2.1/b3df3e38b7492db276a911248fdcc0d7/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.nihad92:SwipeableCards:1.0.19] /home/adular/.gradle/caches/transforms-2/files-2.1/b3df3e38b7492db276a911248fdcc0d7/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/e7fbf7879ad3223092cbb2064cc670df/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/e7fbf7879ad3223092cbb2064cc670df/AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/21a056284165b8c0639db5b7806b18e1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/21a056284165b8c0639db5b7806b18e1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f07343c83a7f35798ef6bcbc3a6f144e/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f07343c83a7f35798ef6bcbc3a6f144e/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/5d8783338f0ae210a9e4536a694c33af/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/5d8783338f0ae210a9e4536a694c33af/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/2ad546155c1985b84f0d4ecbec3912ef/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/2ad546155c1985b84f0d4ecbec3912ef/AndroidManifest.xml:20:5-44
+MERGED from [androidx.palette:palette:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/6e221c955b27911287f75371b0af2dbf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.palette:palette:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/6e221c955b27911287f75371b0af2dbf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/1a8fd598085bd42676c1dedc89e8eebf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/1a8fd598085bd42676c1dedc89e8eebf/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/243358b6a333f6e546deb8dd898e5c7c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/243358b6a333f6e546deb8dd898e5c7c/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife-runtime:10.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/4869102821cb3ee91ec4004c0dd3e589/AndroidManifest.xml:5:5-44
+MERGED from [com.jakewharton:butterknife-runtime:10.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/4869102821cb3ee91ec4004c0dd3e589/AndroidManifest.xml:5:5-44
+MERGED from [com.andkulikov:transitionseverywhere:1.7.7] /home/adular/.gradle/caches/transforms-2/files-2.1/c43597b69bc7592ea123750d00ed822b/AndroidManifest.xml:8:5-10:41
+MERGED from [com.andkulikov:transitionseverywhere:1.7.7] /home/adular/.gradle/caches/transforms-2/files-2.1/c43597b69bc7592ea123750d00ed822b/AndroidManifest.xml:8:5-10:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/da03fb41f56de92254c2c3f8d0d6983b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/da03fb41f56de92254c2c3f8d0d6983b/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/1a3b92f8c7551b9b4a0041d538f2349d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/1a3b92f8c7551b9b4a0041d538f2349d/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/6ca25045f4161e08df58771307bb28b2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/6ca25045f4161e08df58771307bb28b2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/29ace8696d1675688aa29392c02d2362/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/29ace8696d1675688aa29392c02d2362/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ac8dd67026dcb103047f5c6ccf08c03f/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ac8dd67026dcb103047f5c6ccf08c03f/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ea2dc83affcb8ae957075d940ee288b2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ea2dc83affcb8ae957075d940ee288b2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fa0b61629d5d2385b5aafd068d500717/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fa0b61629d5d2385b5aafd068d500717/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-alpha01] /home/adular/.gradle/caches/transforms-2/files-2.1/bd50d7d7b7d8449caa3a583c04b4a24a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-alpha01] /home/adular/.gradle/caches/transforms-2/files-2.1/bd50d7d7b7d8449caa3a583c04b4a24a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/32c9209d843d5d54be194a98453bb8c3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/32c9209d843d5d54be194a98453bb8c3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/34f7f0c92f58b1609eff56a08df66157/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/34f7f0c92f58b1609eff56a08df66157/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ee0b0f83cde67d2386e289415c5d6458/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/ee0b0f83cde67d2386e289415c5d6458/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/5b631caf720f56644ba12a4d166a34f0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/5b631caf720f56644ba12a4d166a34f0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/442170f4370bd1e1a76f36376369cb84/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/442170f4370bd1e1a76f36376369cb84/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/57f6b234e777541de9e901c11a97793c/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/57f6b234e777541de9e901c11a97793c/AndroidManifest.xml:20:5-44
+MERGED from [com.github.traex.rippleeffect:library:1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/5c7e960d9c5ea0f940818e0af2b4c6b6/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.traex.rippleeffect:library:1.3] /home/adular/.gradle/caches/transforms-2/files-2.1/5c7e960d9c5ea0f940818e0af2b4c6b6/AndroidManifest.xml:8:5-10:41
+MERGED from [androidx.databinding:databinding-adapters:3.5.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0a658e11384897e7bd73419af356dc48/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-adapters:3.5.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0a658e11384897e7bd73419af356dc48/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-runtime:3.5.0] /home/adular/.gradle/caches/transforms-2/files-2.1/a7199af34170771e586ea2c383218d1c/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-runtime:3.5.0] /home/adular/.gradle/caches/transforms-2/files-2.1/a7199af34170771e586ea2c383218d1c/AndroidManifest.xml:22:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77795652027cb1fcc80d13fdef0bae5a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77795652027cb1fcc80d13fdef0bae5a/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/5a08f5f270afc3e6deff2df9cd556661/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/5a08f5f270afc3e6deff2df9cd556661/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/dd3a0630450763edef7618d3cabd9c04/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/dd3a0630450763edef7618d3cabd9c04/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fac85574cec685bbdf9470d16982a0ef/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fac85574cec685bbdf9470d16982a0ef/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/eb829054a8a57ca0a74474d73f838e42/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/eb829054a8a57ca0a74474d73f838e42/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77e99ef8bf77533337ecaf915ddb41b9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77e99ef8bf77533337ecaf915ddb41b9/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/adaf96595416b4a612af4eae020e46dd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/adaf96595416b4a612af4eae020e46dd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/e1ff42103973f73b36d2f510ab6fdbcc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/e1ff42103973f73b36d2f510ab6fdbcc/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/68c3cb0a69ad8b995e41aae872524870/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/68c3cb0a69ad8b995e41aae872524870/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/a88088088f8dff609031ed0e15bc049e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/a88088088f8dff609031ed0e15bc049e/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/bb642433a0a75d60ec00a2d9ce485e4f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/bb642433a0a75d60ec00a2d9ce485e4f/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/5a177600a5cdc49d08dc88b3dc981226/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/5a177600a5cdc49d08dc88b3dc981226/AndroidManifest.xml:20:5-44
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0edc817d814dd078bbc94eaa03dedbc3/AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0edc817d814dd078bbc94eaa03dedbc3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/b21a39c7f9b3adebdbd8d6bdbae1e2d7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/b21a39c7f9b3adebdbd8d6bdbae1e2d7/AndroidManifest.xml:20:5-44
+MERGED from [com.pnikosis:materialish-progress:1.7] /home/adular/.gradle/caches/transforms-2/files-2.1/081328ae470b8374ab33f93aa0595a0e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.pnikosis:materialish-progress:1.7] /home/adular/.gradle/caches/transforms-2/files-2.1/081328ae470b8374ab33f93aa0595a0e/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/4db70b0041dbe69501d3a88defb5b344/AndroidManifest.xml:6:5-8:41
+MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/4db70b0041dbe69501d3a88defb5b344/AndroidManifest.xml:6:5-8:41
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/29a0027f21ec4f86e3fd1609a6585b0c/AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/29a0027f21ec4f86e3fd1609a6585b0c/AndroidManifest.xml:12:22-73
+activity#com.devs.acr.ErrorReporterActivity
+ADDED from [com.devs:acr:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/cad25c028f6bbfbd82209f5cef4bbd26/AndroidManifest.xml:15:9-18:59
+	android:screenOrientation
+		ADDED from [com.devs:acr:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/cad25c028f6bbfbd82209f5cef4bbd26/AndroidManifest.xml:17:13-49
+	android:theme
+		ADDED from [com.devs:acr:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/cad25c028f6bbfbd82209f5cef4bbd26/AndroidManifest.xml:18:13-56
+	android:name
+		ADDED from [com.devs:acr:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/cad25c028f6bbfbd82209f5cef4bbd26/AndroidManifest.xml:16:13-62
+supports-screens
+ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:11:5-14:40
+	android:largeScreens
+		ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:13:9-36
+	android:normalScreens
+		ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:14:9-37
+	android:anyDensity
+		ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:12:9-34
+uses-feature#android.hardware.location.network
+ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:16:5-18:36
+	android:required
+		ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:18:9-33
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:17:9-57
+uses-feature#android.hardware.location.gps
+ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:19:5-21:36
+	android:required
+		ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:21:9-33
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:20:9-53
+uses-feature#android.hardware.telephony
+ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:22:5-24:36
+	android:required
+		ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:24:9-33
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:23:9-50
+uses-feature#android.hardware.wifi
+ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:25:5-27:36
+	android:required
+		ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:27:9-33
+	android:name
+		ADDED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/AndroidManifest.xml:26:9-45
+provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77795652027cb1fcc80d13fdef0bae5a/AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77795652027cb1fcc80d13fdef0bae5a/AndroidManifest.xml:25:13-69
+	android:multiprocess
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77795652027cb1fcc80d13fdef0bae5a/AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77795652027cb1fcc80d13fdef0bae5a/AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/77795652027cb1fcc80d13fdef0bae5a/AndroidManifest.xml:24:13-79

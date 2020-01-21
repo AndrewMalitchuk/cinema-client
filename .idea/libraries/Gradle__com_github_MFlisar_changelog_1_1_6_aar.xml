@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.MFlisar:changelog:1.1.6@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e0b99b65af65f1bca6bf9176dea7293d/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e0b99b65af65f1bca6bf9176dea7293d/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.MFlisar/changelog/1.1.6/c7a1df25b840c601d437913d4762906f1a8c0c24/changelog-1.1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
