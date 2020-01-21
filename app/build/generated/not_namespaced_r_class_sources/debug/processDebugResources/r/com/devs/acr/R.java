@@ -18,11 +18,11 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int ll_layout = 0x7f09017c;
-        public static final int tv_cancel = 0x7f0902ca;
-        public static final int tv_message = 0x7f0902cb;
-        public static final int tv_report = 0x7f0902cd;
-        public static final int tv_title = 0x7f0902ce;
+        public static final int ll_layout = 0x7f090189;
+        public static final int tv_cancel = 0x7f0902d6;
+        public static final int tv_message = 0x7f0902d7;
+        public static final int tv_report = 0x7f0902d9;
+        public static final int tv_title = 0x7f0902da;
     }
     public static final class layout {
         private layout() {}

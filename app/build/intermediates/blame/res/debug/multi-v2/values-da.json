@@ -4,6 +4,23 @@
             "outputFile": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-da/values-da.xml",
             "map": [
                 {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/852ca25a13ee627cbba8b78039576848/res/values-da/values-da.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,307",
+                        "endColumns": "58,46,145,109",
+                        "endOffsets": "109,156,302,412"
+                    },
+                    "to": {
+                        "startLines": "31,32,33,34",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "2937,2996,3043,3189",
+                        "endColumns": "58,46,145,109",
+                        "endOffsets": "2991,3038,3184,3294"
+                    }
+                },
+                {
                     "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/442170f4370bd1e1a76f36376369cb84/res/values-da/values-da.xml",
                     "from": {
                         "startLines": "2",

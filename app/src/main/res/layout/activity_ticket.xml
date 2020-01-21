@@ -57,6 +57,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
+                    android:id="@+id/qrCodeTicketActivityImageView"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -66,12 +67,13 @@
                     android:paddingRight="30dp"
                     android:paddingBottom="10dp"
                     android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/static_qr_code_without_logo" />
+                    app:srcCompat="@drawable/ic_ticket_accent" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/qrCodeTicketActivityEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Code "
+                    android:text="Loading..."
                     android:textAlignment="center"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                     android:textColor="@color/about_text_color"
@@ -91,20 +93,22 @@
                 app:layout_constraintTop_toTopOf="@+id/guideline">
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/filmTitleTicketActivityEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Film name"
+                    android:text="Loading..."
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                     android:textSize="24sp" />
 
                 <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cinemaNameTicketActivityEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Duration"
+                    android:text="Loading..."
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                     android:textColor="@color/about_text_color"
                     android:textSize="18sp" />
@@ -132,9 +136,10 @@
                             android:textStyle="bold" />
 
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/filmDateTicketActivityEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="2010-10-10"
+                            android:text="Loading..."
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                             android:textColor="@color/about_text_color" />
 
@@ -164,9 +169,10 @@
                             android:textStyle="bold" />
 
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/filmTimeTicketActivityEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="10:10:10"
+                            android:text="Loading..."
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                             android:textColor="@color/about_text_color" />
 
@@ -196,9 +202,10 @@
                             android:textStyle="bold" />
 
                         <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/placeTicketActivityEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="A-5"
+                            android:text="Loading..."
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                             android:textColor="@color/about_text_color" />
 

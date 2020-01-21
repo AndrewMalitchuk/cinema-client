@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Dec 26 17:40:24 EET 2019
+#Tue Jan 21 15:28:12 EET 2020
 17.baseType=DIRECTORY
 4.path=classes.dex
 22.set=ASSET

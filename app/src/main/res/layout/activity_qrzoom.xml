@@ -40,7 +40,7 @@
                         android:textStyle="bold" />
 
                     <com.github.chrisbanes.photoview.PhotoView
-                        android:id="@+id/photo_view"
+                        android:id="@+id/filmPosterZoomActivityPhotoView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1" />

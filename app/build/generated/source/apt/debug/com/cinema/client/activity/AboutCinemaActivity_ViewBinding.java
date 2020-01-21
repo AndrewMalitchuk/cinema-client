@@ -27,14 +27,14 @@ public class AboutCinemaActivity_ViewBinding implements Unbinder {
   public AboutCinemaActivity_ViewBinding(AboutCinemaActivity target, View source) {
     this.target = target;
 
-    target.textView4 = Utils.findRequiredViewAsType(source, R.id.textView4, "field 'textView4'", TextView.class);
+    target.textView4 = Utils.findRequiredViewAsType(source, R.id.filmDescriptionFilmActivityEditText, "field 'textView4'", TextView.class);
     target.scrollView = Utils.findRequiredViewAsType(source, R.id.mScrollView, "field 'scrollView'", ScrollView.class);
     target.linLayout = Utils.findRequiredViewAsType(source, R.id.linLayout, "field 'linLayout'", LinearLayout.class);
     target.cv1 = Utils.findRequiredViewAsType(source, R.id.cv1, "field 'cv1'", CardView.class);
     target.cv2 = Utils.findRequiredViewAsType(source, R.id.cv2, "field 'cv2'", CardView.class);
     target.cv3 = Utils.findRequiredViewAsType(source, R.id.cv3, "field 'cv3'", CardView.class);
     target.datePickerTimeline = Utils.findRequiredViewAsType(source, R.id.datePickerTimeline, "field 'datePickerTimeline'", DatePickerTimeline.class);
-    target.textView7 = Utils.findRequiredViewAsType(source, R.id.textView7, "field 'textView7'", TextView.class);
+    target.textView7 = Utils.findRequiredViewAsType(source, R.id.dateFilmActivityEditText, "field 'textView7'", TextView.class);
   }
 
   @Override

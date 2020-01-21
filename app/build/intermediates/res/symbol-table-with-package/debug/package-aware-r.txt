@@ -987,6 +987,15 @@ attr windowFixedWidthMinor
 attr windowMinWidthMajor
 attr windowMinWidthMinor
 attr windowNoTitle
+attr zxing_framing_rect_height
+attr zxing_framing_rect_width
+attr zxing_possible_result_points
+attr zxing_preview_scaling_strategy
+attr zxing_result_view
+attr zxing_scanner_layout
+attr zxing_use_texture_view
+attr zxing_viewfinder_laser
+attr zxing_viewfinder_mask
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
@@ -1328,6 +1337,16 @@ color whatsapp
 color white
 color white_background_txt
 color yellow
+color zxing_custom_possible_result_points
+color zxing_custom_result_view
+color zxing_custom_viewfinder_laser
+color zxing_custom_viewfinder_mask
+color zxing_possible_result_points
+color zxing_result_view
+color zxing_status_text
+color zxing_transparent
+color zxing_viewfinder_laser
+color zxing_viewfinder_mask
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -2159,6 +2178,7 @@ id activity_chooser_view_content
 id activity_main
 id add
 id add_card
+id additionalInfoFilmActivityTagGroup
 id alertTitle
 id all
 id always
@@ -2253,6 +2273,7 @@ id card_outline_container
 id card_view
 id cb_item_tag
 id center
+id centerCrop
 id center_horizontal
 id center_side_of_hall
 id center_vertical
@@ -2268,6 +2289,7 @@ id chronometer
 id cinemaAddress
 id cinemaImage
 id cinemaName
+id cinemaNameTicketActivityEditText
 id cl_onboarder
 id clear_btn
 id clicked
@@ -2300,6 +2322,7 @@ id cv2
 id cv3
 id dash
 id dataBinding
+id dateFilmActivityEditText
 id datePickerTimeline
 id dateView
 id dayView
@@ -2355,9 +2378,18 @@ id fill_horizontal
 id fill_vertical
 id filled
 id filmCinema
+id filmDateTicketActivityEditText
+id filmDescriptionFilmActivityEditText
 id filmImage
 id filmPlace
+id filmPosterFilmActivityImageView
+id filmPosterZoomActivityPhotoView
+id filmTimeTicketActivityEditText
+id filmTitleFilmActivityEditText
+id filmTitleTicketActivityEditText
 id filter_chip
+id fitCenter
+id fitXY
 id fixed
 id flex_end
 id flex_start
@@ -2536,9 +2568,9 @@ id passwordView
 id pbText
 id percent
 id photo
-id photo_view
 id pin
 id pin_action
+id placeTicketActivityEditText
 id playTabLayout
 id play_pause_button
 id previous
@@ -2557,6 +2589,8 @@ id progress_horizontal
 id proswipebutton_main_error
 id pull_dismiss_layout
 id pulseView
+id qrCodeTicketActivityEditText
+id qrCodeTicketActivityImageView
 id radio
 id rectangle
 id recyclerView
@@ -2674,7 +2708,6 @@ id tag_accessibility_clickable_spans
 id tag_accessibility_heading
 id tag_accessibility_pane_title
 id tag_container
-id tag_group
 id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -2711,10 +2744,8 @@ id textView3
 id textView30
 id textView31
 id textView32
-id textView4
 id textView5
 id textView6
-id textView7
 id textView8
 id textView80
 id textView81
@@ -2832,9 +2863,20 @@ id withText
 id wrap
 id wrap_content
 id wrap_reverse
+id youtubePreviewFilmActivityPlayerView
 id youtube_button
 id youtube_player_seekbar
-id youtube_player_view
+id zxing_back_button
+id zxing_barcode_scanner
+id zxing_barcode_surface
+id zxing_camera_error
+id zxing_decode
+id zxing_decode_failed
+id zxing_decode_succeeded
+id zxing_possible_result_points
+id zxing_prewiew_size_ready
+id zxing_status_view
+id zxing_viewfinder_view
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -3048,6 +3090,8 @@ layout view_tab
 layout xab_about_layout_card
 layout xab_each_action
 layout xab_each_link
+layout zxing_barcode_scanner
+layout zxing_capture
 menu about_film_menu
 menu bottom_navigation
 menu cinema_menu
@@ -3090,6 +3134,7 @@ mipmap whatsapp
 mipmap youtube
 raw ayp_youtube_player
 raw simple_dialog_progress_default
+raw zxing_beep
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -3313,6 +3358,10 @@ string version_name
 string website
 string whastapp
 string youtube
+string zxing_app_name
+string zxing_button_ok
+string zxing_msg_camera_framework_bug
+string zxing_msg_default_status
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AnimDown
@@ -3940,6 +3989,7 @@ style about_image
 style about_separator
 style about_sub_wrapper
 style checkBoxStyle
+style zxing_CaptureTheme
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -4075,3 +4125,6 @@ styleable YouTubePlayerView autoPlay enableAutomaticInitialization enableLiveVid
 styleable creditcard card_expiration card_holder_name card_number card_side cvv
 styleable gradient transition_drawable transition_duration
 styleable statusview complete dismissOnComplete error loading
+styleable zxing_camera_preview zxing_framing_rect_height zxing_framing_rect_width zxing_preview_scaling_strategy zxing_use_texture_view
+styleable zxing_finder zxing_possible_result_points zxing_result_view zxing_viewfinder_laser zxing_viewfinder_mask
+styleable zxing_view zxing_scanner_layout

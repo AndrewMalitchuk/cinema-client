@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/8051f73b94c3949c36611afa7b9b201a/res/values-de/values-de.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/11bcb58fd355ec3251c4e2e843af6f3a/res/values-de/values-de.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -72,7 +72,7 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/ff983cb76af3a914f4a2fd3a40919be0/res/values-de/values-de.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/af43d5081a71972e0887e7c4f14f72af/res/values-de/values-de.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -86,6 +86,23 @@
                         "startOffsets": "3547,3654,3697,3738,3796,3854,3934,4047,4152,4213,4287,4425,4671,4731",
                         "endColumns": "56,42,40,57,57,38,63,55,60,73,56,51,59,44",
                         "endOffsets": "3599,3692,3733,3791,3849,3888,3993,4098,4208,4282,4339,4472,4726,4771"
+                    }
+                },
+                {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/852ca25a13ee627cbba8b78039576848/res/values-de/values-de.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,333",
+                        "endColumns": "58,46,171,108",
+                        "endOffsets": "109,156,328,437"
+                    },
+                    "to": {
+                        "startLines": "62,63,64,65",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "4776,4835,4882,5054",
+                        "endColumns": "58,46,171,108",
+                        "endOffsets": "4830,4877,5049,5158"
                     }
                 }
             ]

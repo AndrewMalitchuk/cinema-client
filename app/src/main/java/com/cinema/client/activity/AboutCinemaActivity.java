@@ -1,18 +1,14 @@
 package com.cinema.client.activity;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,18 +20,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 
 import com.cinema.client.MainActivity;
 import com.cinema.client.R;
-import com.devs.readmoreoption.ReadMoreOption;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.pd.chocobar.ChocoBar;
 import com.vivekkaushik.datepicker.DatePickerTimeline;
 import com.vivekkaushik.datepicker.OnDateSelectedListener;
@@ -46,16 +38,14 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.ScaleBarOverlay;
-import org.osmdroid.views.overlay.infowindow.MarkerInfoWindow;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import me.gujun.android.taggroup.TagGroup;
 
 public class AboutCinemaActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.textView4)
+    @BindView(R.id.filmDescriptionFilmActivityEditText)
     TextView textView4;
 
     @BindView(R.id.mScrollView)
@@ -77,7 +67,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
     @BindView(R.id.datePickerTimeline)
     DatePickerTimeline datePickerTimeline;
 
-    @BindView(R.id.textView7)
+    @BindView(R.id.dateFilmActivityEditText)
     TextView textView7;
 
 

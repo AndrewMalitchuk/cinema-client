@@ -127,25 +127,32 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 29 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:retrofit:2.7.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-viewmodel:2.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.documentfile:documentfile:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.liangpengfei:LoadingPopPoint:912651e54d@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.bartoszlipinski:viewpropertyobjectanimator:1.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.cuneytayyildiz:onboarder:1.0.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.appcompat:appcompat-resources:1.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: androidx.exifinterface:exifinterface:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.collection:collection:1.1.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test.espresso:espresso-core:3.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.customview:customview:1.0.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:runner:1.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.devendroid:ReadMoreOption:1.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.databinding:databinding-common:3.5.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:logging-interceptor:4.3.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.asynclayoutinflater:asynclayoutinflater:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.ozodrukh:CircularReveal:1.0.5@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: javax.inject:javax.inject:1@jar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.3.61@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.media:media:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.10bis:compactCreditInput:2.0.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.fragment:fragment:1.1.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.bumptech.glide:gifdecoder:4.11.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okio:okio:2.4.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.vipulasri:ticketview:1.0.7@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.vectordrawable:vectordrawable-animated:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.jrvansuita:IconHandler:v2.0.0@aar" level="project" />
@@ -154,10 +161,9 @@
     <orderEntry type="library" scope="TEST" name="Gradle: net.sf.kxml:kxml2:2.3.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.arch.core:core-common:2.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.viewpager:viewpager:1.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:3.11.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.flaviofaria:kenburnsview:1.0.7@jar" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.bumptech.glide:glide:4.10.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.javiersantos:BottomDialogs:1.2.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.bumptech.glide:annotations:4.11.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.material:material:1.1.0-alpha03@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.databinding:databinding-runtime:3.5.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.recyclerview:recyclerview:1.1.0-alpha03@aar" level="project" />
@@ -166,13 +172,13 @@
     <orderEntry type="library" name="Gradle: com.github.matecode:Snacky:1.1.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.iammert:StatusView:1.3@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.arimorty:floatingsearchview:2.1.1@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.bumptech.glide:disklrucache:4.10.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.legacy:legacy-support-core-utils:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.print:print:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.constraintlayout:constraintlayout-solver:1.1.3@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.findbugs:jsr305:2.0.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.nineoldandroids:library:2.4.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.nonzeroapps:whatisnewdialog:1.0.4@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.bumptech.glide:glide:4.11.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.mirrajabi:search-dialog:1.2.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.devs:acr:1.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.transition:transition:1.0.1@aar" level="project" />
@@ -180,12 +186,12 @@
     <orderEntry type="library" scope="TEST" name="Gradle: org.hamcrest:hamcrest-core:1.3@jar" level="project" />
     <orderEntry type="library" name="Gradle: org.osmdroid:osmdroid-android:6.1.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.palette:palette:1.0.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.bumptech.glide:annotations:4.10.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.vectordrawable:vectordrawable:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.medyo:android-about-page:1.2.5@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.Pradyuman7:ChocoBar:V1.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.github.bumptech.glide:gifdecoder:4.10.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.3.61@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.drawerlayout:drawerlayout:1.0.0@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.okhttp3:okhttp:4.3.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.localbroadcastmanager:localbroadcastmanager:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.skydoves:indicatorscrollview:1.0.2@aar" level="project" />
@@ -201,13 +207,14 @@
     <orderEntry type="library" name="Gradle: com.github.nihad92:SwipeableCards:1.0.19@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.interpolator:interpolator:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.jakewharton:butterknife:10.2.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: com.squareup.okio:okio:1.14.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.jakewharton:butterknife-annotations:10.2.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.IsPra94:EasyGifView:1.0.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.keiferstone:nonet:2.0.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.xgc1986.android:parallaxpagertransformer:1.0.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.GrenderG:MarkdownView:0.1.2@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.bumptech.glide:disklrucache:4.11.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.yatindeokar:MyLoadingButton:v1.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.squareup.retrofit2:converter-gson:2.7.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.rtugeek:materialbanner:1.0.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.arch.core:core-runtime:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.transferwise:sequence-layout:1.0.11@aar" level="project" />
@@ -220,6 +227,7 @@
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.8.6@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.activity:activity:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.dynamitechetan.flowinggradient:flowinggradient:1.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: org.projectlombok:lombok:1.18.10@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android:flexbox:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.tomergoldst.android:tooltips:1.0.10@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.core:core:1.1.0@aar" level="project" />
@@ -232,6 +240,7 @@
     <orderEntry type="library" name="Gradle: me.gujun.android.taggroup:library:1.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-runtime:2.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.sharish:CreditCardView:v1.0.4@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.zxing:core:3.2.1@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.jakewharton:butterknife-runtime:10.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: junit:junit:4.12@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.TutorialsAndroid:MTextField:v4.0.19@aar" level="project" />
@@ -250,6 +259,7 @@
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-common:2.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.qintong:insLoadingAnimation:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.pnikosis:materialish-progress:1.7@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.journeyapps:zxing-android-embedded:3.2.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.SubhrajyotiSen:library:1.1.2@aar" level="project" />
   </component>
 </module>

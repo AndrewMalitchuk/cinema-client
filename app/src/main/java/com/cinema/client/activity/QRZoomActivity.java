@@ -2,6 +2,7 @@ package com.cinema.client.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
@@ -9,6 +10,11 @@ import android.widget.LinearLayout;
 import com.cinema.client.R;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.github.chrisbanes.photoview.PhotoView;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.MultiFormatWriter;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -26,8 +32,22 @@ public class QRZoomActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        PhotoView photoView = (PhotoView) findViewById(R.id.photo_view);
-        photoView.setImageResource(R.drawable.static_qr_code_without_logo);
+        PhotoView photoView = (PhotoView) findViewById(R.id.filmPosterZoomActivityPhotoView);
+        photoView.setImageResource(R.drawable.ic_ticket_accent);
+
+
+        String text=getIntent().getStringExtra("QR");
+        MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
+        try {
+            BitMatrix bitMatrix = multiFormatWriter.encode(text, BarcodeFormat.QR_CODE,1024,1024);
+            BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
+            Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
+            photoView.setImageBitmap(bitmap);
+        } catch (WriterException e) {
+            e.printStackTrace();
+        }
+
+
 
         getWindow().setFlags(
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,

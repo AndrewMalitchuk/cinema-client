@@ -40,11 +40,11 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int bubble_description = 0x7f09007a;
-        public static final int bubble_image = 0x7f09007b;
-        public static final int bubble_moreinfo = 0x7f09007c;
-        public static final int bubble_subdescription = 0x7f09007d;
-        public static final int bubble_title = 0x7f09007e;
+        public static final int bubble_description = 0x7f09007b;
+        public static final int bubble_image = 0x7f09007c;
+        public static final int bubble_moreinfo = 0x7f09007d;
+        public static final int bubble_subdescription = 0x7f09007e;
+        public static final int bubble_title = 0x7f09007f;
     }
     public static final class layout {
         private layout() {}

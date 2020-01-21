@@ -21,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/8051f73b94c3949c36611afa7b9b201a/res/values-fr/values-fr.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/a53ccacec5cda13b8fb87b80669e2441/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,106,156,220,265,321,363,424,486,532,572,630,671",
+                        "endColumns": "50,49,63,44,55,41,60,61,45,39,57,40,46",
+                        "endOffsets": "101,151,215,260,316,358,419,481,527,567,625,666,713"
+                    },
+                    "to": {
+                        "startLines": "37,38,39,40,41,44,47,48,49,54,56,57,58",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3396,3447,3497,3561,3606,3764,3886,3947,4009,4276,4378,4436,4477",
+                        "endColumns": "50,49,63,44,55,41,60,61,45,39,57,40,46",
+                        "endOffsets": "3442,3492,3556,3601,3657,3801,3942,4004,4050,4311,4431,4472,4519"
+                    }
+                },
+                {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/11bcb58fd355ec3251c4e2e843af6f3a/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/ff983cb76af3a914f4a2fd3a40919be0/res/values-fr/values-fr.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/af43d5081a71972e0887e7c4f14f72af/res/values-fr/values-fr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,23 +69,6 @@
                         "startOffsets": "3662,3724,3806,3845,4055,4107,4171,4209,4316,4524,4588,4666,4816,4979,5047",
                         "endColumns": "61,39,38,40,51,63,37,66,61,63,77,63,61,67,40",
                         "endOffsets": "3719,3759,3840,3881,4102,4166,4204,4271,4373,4583,4661,4725,4873,5042,5083"
-                    }
-                },
-                {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/07454f56cd9bbce6566b27a19625f27e/res/values-fr/values-fr.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,106,156,220,265,321,363,424,486,532,572,630,671",
-                        "endColumns": "50,49,63,44,55,41,60,61,45,39,57,40,46",
-                        "endOffsets": "101,151,215,260,316,358,419,481,527,567,625,666,713"
-                    },
-                    "to": {
-                        "startLines": "37,38,39,40,41,44,47,48,49,54,56,57,58",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3396,3447,3497,3561,3606,3764,3886,3947,4009,4276,4378,4436,4477",
-                        "endColumns": "50,49,63,44,55,41,60,61,45,39,57,40,46",
-                        "endOffsets": "3442,3492,3556,3601,3657,3801,3942,4004,4050,4311,4431,4472,4519"
                     }
                 },
                 {
@@ -86,6 +86,23 @@
                         "startOffsets": "4878",
                         "endColumns": "100",
                         "endOffsets": "4974"
+                    }
+                },
+                {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/852ca25a13ee627cbba8b78039576848/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,327",
+                        "endColumns": "58,46,165,108",
+                        "endOffsets": "109,156,322,431"
+                    },
+                    "to": {
+                        "startLines": "67,68,69,70",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "5088,5147,5194,5360",
+                        "endColumns": "58,46,165,108",
+                        "endOffsets": "5142,5189,5355,5464"
                     }
                 }
             ]

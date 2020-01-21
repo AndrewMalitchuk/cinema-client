@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <supports-screens
@@ -35,6 +36,24 @@
         android:name="android.hardware.wifi"
         android:required="false" />
 
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- Don't require camera, as this requires a rear camera. This allows it to work on the Nexus 7 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" /> <!-- TODO replace above two with next line after Android 4.2 -->
+    <!-- <uses-feature android:name="android.hardware.camera.any"/> -->
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.screen.landscape"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -43,7 +62,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:testOnly="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true" >
         <activity
             android:name="com.cinema.client.activity.Main3Activity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -121,11 +142,22 @@
             android:name="com.devs.acr.ErrorReporterActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Dialog" />
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:clearTaskOnLaunch="true"
+            android:screenOrientation="sensorLandscape"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
             android:authorities="com.cinema.client.lifecycle-process"
             android:exported="false"
+            android:multiprocess="true" />
+        <provider
+            android:name="com.android.tools.ir.server.InstantRunContentProvider"
+            android:authorities="com.cinema.client.com.android.tools.ir.server.InstantRunContentProvider"
             android:multiprocess="true" />
     </application>
 

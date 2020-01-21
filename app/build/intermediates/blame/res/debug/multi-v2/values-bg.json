@@ -14,6 +14,23 @@
                     }
                 },
                 {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/852ca25a13ee627cbba8b78039576848/res/values-bg/values-bg.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,112,159,311",
+                        "endColumns": "56,46,151,110",
+                        "endOffsets": "107,154,306,417"
+                    },
+                    "to": {
+                        "startLines": "31,32,33,34",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "3038,3095,3142,3294",
+                        "endColumns": "56,46,151,110",
+                        "endOffsets": "3090,3137,3289,3400"
+                    }
+                },
+                {
                     "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/442170f4370bd1e1a76f36376369cb84/res/values-bg/values-bg.xml",
                     "from": {
                         "startLines": "2",
