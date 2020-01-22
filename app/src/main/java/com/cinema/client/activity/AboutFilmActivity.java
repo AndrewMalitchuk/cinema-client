@@ -41,7 +41,7 @@ public class AboutFilmActivity extends AppCompatActivity {
 
     APIInterface apiInterface;
 
-    @BindView(R.id.filmDescriptionFilmActivityEditText)
+    @BindView(R.id.cinemaLocationCinemaActivityTextView)
     TextView filmDescriptionFilmActivityEditText;
 
     @BindView(R.id.mScrollView)
@@ -53,13 +53,13 @@ public class AboutFilmActivity extends AppCompatActivity {
     @BindView(R.id.linLayout)
     LinearLayout linLayout;
 
-    @BindView(R.id.filmTitleFilmActivityEditText)
+    @BindView(R.id.cinemaNameBigCinemaActivityTextView)
     AppCompatTextView filmTitleFilmActivityEditText;
 
     @BindView(R.id.my_toolbar)
     Toolbar myToolbar;
 
-    @BindView(R.id.dateFilmActivityEditText)
+    @BindView(R.id.telephoneAboutCinemaTextView)
     AppCompatTextView dateFilmActivityEditText;
 
     @BindView(R.id.youtubePreviewFilmActivityPlayerView)

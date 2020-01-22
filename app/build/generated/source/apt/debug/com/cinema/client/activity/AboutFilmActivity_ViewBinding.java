@@ -31,13 +31,13 @@ public class AboutFilmActivity_ViewBinding implements Unbinder {
   public AboutFilmActivity_ViewBinding(AboutFilmActivity target, View source) {
     this.target = target;
 
-    target.filmDescriptionFilmActivityEditText = Utils.findRequiredViewAsType(source, R.id.filmDescriptionFilmActivityEditText, "field 'filmDescriptionFilmActivityEditText'", TextView.class);
+    target.filmDescriptionFilmActivityEditText = Utils.findRequiredViewAsType(source, R.id.cinemaLocationCinemaActivityTextView, "field 'filmDescriptionFilmActivityEditText'", TextView.class);
     target.scrollView = Utils.findRequiredViewAsType(source, R.id.mScrollView, "field 'scrollView'", ScrollView.class);
     target.fab = Utils.findRequiredViewAsType(source, R.id.floatingActionButton2, "field 'fab'", FloatingActionButton.class);
     target.linLayout = Utils.findRequiredViewAsType(source, R.id.linLayout, "field 'linLayout'", LinearLayout.class);
-    target.filmTitleFilmActivityEditText = Utils.findRequiredViewAsType(source, R.id.filmTitleFilmActivityEditText, "field 'filmTitleFilmActivityEditText'", AppCompatTextView.class);
+    target.filmTitleFilmActivityEditText = Utils.findRequiredViewAsType(source, R.id.cinemaNameBigCinemaActivityTextView, "field 'filmTitleFilmActivityEditText'", AppCompatTextView.class);
     target.myToolbar = Utils.findRequiredViewAsType(source, R.id.my_toolbar, "field 'myToolbar'", Toolbar.class);
-    target.dateFilmActivityEditText = Utils.findRequiredViewAsType(source, R.id.dateFilmActivityEditText, "field 'dateFilmActivityEditText'", AppCompatTextView.class);
+    target.dateFilmActivityEditText = Utils.findRequiredViewAsType(source, R.id.telephoneAboutCinemaTextView, "field 'dateFilmActivityEditText'", AppCompatTextView.class);
     target.youtubePreviewFilmActivityPlayerView = Utils.findRequiredViewAsType(source, R.id.youtubePreviewFilmActivityPlayerView, "field 'youtubePreviewFilmActivityPlayerView'", YouTubePlayerView.class);
     target.filmPosterFilmActivityImageView = Utils.findRequiredViewAsType(source, R.id.filmPosterFilmActivityImageView, "field 'filmPosterFilmActivityImageView'", KenBurnsView.class);
     target.additionalInfoFilmActivityTagGroup = Utils.findRequiredViewAsType(source, R.id.additionalInfoFilmActivityTagGroup, "field 'additionalInfoFilmActivityTagGroup'", TagGroup.class);

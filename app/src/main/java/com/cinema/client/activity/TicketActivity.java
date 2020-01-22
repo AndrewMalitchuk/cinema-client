@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import com.cinema.client.R;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.CinemaAPI;
 import com.cinema.client.requests.entities.FilmAPI;
 import com.cinema.client.requests.entities.TicketAPI;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
@@ -137,8 +138,8 @@ public class TicketActivity extends AppCompatActivity {
         qrCodeTicketActivityEditText.setText(content.getCode());
 
 
-        Call<FilmAPI> call=apiInterface.getFilmById(content.getFilmId());
-        call.enqueue(new Callback<FilmAPI>() {
+        Call<FilmAPI> callFilmApi=apiInterface.getFilmById(content.getFilmId());
+        callFilmApi.enqueue(new Callback<FilmAPI>() {
             @Override
             public void onResponse(Call<FilmAPI> call, Response<FilmAPI> response) {
 
@@ -155,7 +156,23 @@ public class TicketActivity extends AppCompatActivity {
             }
         });
 
-        cinemaNameTicketActivityEditText.setText("{{CINEMA}}");
+        Call<CinemaAPI> callCinemaApi=apiInterface.getCinemaById(content.getCinemaId());
+        callCinemaApi.enqueue(new Callback<CinemaAPI>() {
+            @Override
+            public void onResponse(Call<CinemaAPI> call, Response<CinemaAPI> response) {
+                CinemaAPI content=response.body();
+                cinemaNameTicketActivityEditText.setText(content.getName());
+
+            }
+
+            @Override
+            public void onFailure(Call<CinemaAPI> call, Throwable t) {
+                call.cancel();
+                Intent intent = new Intent(TicketActivity.this,ErrorActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 
@@ -175,4 +192,8 @@ public class TicketActivity extends AppCompatActivity {
 
 
     }
+
+
+
+
 }

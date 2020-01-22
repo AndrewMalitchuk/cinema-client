@@ -115,7 +115,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/filmTitleFilmActivityEditText"
+                            android:id="@+id/cinemaNameBigCinemaActivityTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -137,7 +137,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/filmDescriptionFilmActivityEditText"
+                            android:id="@+id/cinemaLocationCinemaActivityTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -156,7 +156,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/dateFilmActivityEditText"
+                            android:id="@+id/telephoneAboutCinemaTextView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"

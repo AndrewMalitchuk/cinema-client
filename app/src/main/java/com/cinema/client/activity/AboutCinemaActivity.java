@@ -25,12 +25,18 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 
+import com.bumptech.glide.Glide;
 import com.cinema.client.MainActivity;
 import com.cinema.client.R;
+import com.cinema.client.requests.APIClient;
+import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.CinemaAPI;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
+import com.liangfeizc.avatarview.AvatarView;
 import com.pd.chocobar.ChocoBar;
 import com.vivekkaushik.datepicker.DatePickerTimeline;
 import com.vivekkaushik.datepicker.OnDateSelectedListener;
+
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
@@ -41,12 +47,14 @@ import org.osmdroid.views.overlay.ScaleBarOverlay;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AboutCinemaActivity extends AppCompatActivity {
 
 
-    @BindView(R.id.filmDescriptionFilmActivityEditText)
-    TextView textView4;
+
 
     @BindView(R.id.mScrollView)
     ScrollView scrollView;
@@ -67,8 +75,23 @@ public class AboutCinemaActivity extends AppCompatActivity {
     @BindView(R.id.datePickerTimeline)
     DatePickerTimeline datePickerTimeline;
 
-    @BindView(R.id.dateFilmActivityEditText)
-    TextView textView7;
+
+
+    @BindView(R.id.cinemaPictureCinemaActivityAvatarView)
+    AvatarView cinemaPictureCinemaActivityAvatarView;
+
+    @BindView(R.id.cinemaNameCinemaActivityTextView)
+    TextView cinemaNameCinemaActivityTextView;
+
+
+    @BindView(R.id.cinemaNameBigCinemaActivityTextView)
+    TextView cinemaNameBigCinemaActivityTextView;
+
+ @BindView(R.id.cinemaLocationCinemaActivityTextView)
+    TextView cinemaLocationCinemaActivityTextView;
+
+ @BindView(R.id.telephoneAboutCinemaTextView)
+    TextView telephoneAboutCinemaTextView;
 
 
 //    private MapContainerView mapView;
@@ -76,7 +99,12 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
 //    private MapView mapView;
 
-    MapView map = null;
+    MapView map;
+    private Marker marker;
+
+    private APIInterface apiInterface;
+    private CinemaAPI currentCinema;
+
 
 
     @Override
@@ -111,10 +139,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
 //        blurImageView.setBlur(10);
 
 
-        SpannableString content = new SpannableString("+380 (50) 541 52 21");
-        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-        textView7.setText(content);
-        textView7.setOnClickListener(this::onPhoneClick);
+
         //
 
 
@@ -129,37 +154,17 @@ public class AboutCinemaActivity extends AppCompatActivity {
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
 
 
+
         map = (MapView) findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
 
         map.setBuiltInZoomControls(false);
         map.setMultiTouchControls(true);
 
-
-        IMapController mapController = map.getController();
-        mapController.setZoom(16.5);
-        GeoPoint startPoint = new GeoPoint(48.931572, 24.697925);
-        mapController.setCenter(startPoint);
-
+        marker = new Marker(map);
 
         //
-        Marker marker = new Marker(map);
 
-        marker.setPosition(new GeoPoint(48.931572, 24.697925));
-        marker.setIcon(getResources().getDrawable(R.drawable.ic_ticket_black));
-        marker.setTitle("lorem ipsum dolor sit amet");
-        marker.showInfoWindow();
-        map.getOverlays().add(marker);
-        map.invalidate();
-
-
-        final Context context = getApplicationContext();
-        final DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        ScaleBarOverlay mScaleBarOverlay = new ScaleBarOverlay(map);
-        mScaleBarOverlay.setCentred(true);
-//play around with these about_film_menu to get the location on screen in the right place for your application
-        mScaleBarOverlay.setScaleBarOffset(dm.widthPixels / 2, 10);
-        map.getOverlays().add(mScaleBarOverlay);
 
 
         //
@@ -177,6 +182,29 @@ public class AboutCinemaActivity extends AppCompatActivity {
             }
         });
 
+
+        //
+        apiInterface = APIClient.getClient().create(APIInterface.class);
+        int id = 9;
+        Call<CinemaAPI> call = apiInterface.getCinemaById(id);
+        call.enqueue(new Callback<CinemaAPI>() {
+            @Override
+            public void onResponse(Call<CinemaAPI> call, Response<CinemaAPI> response) {
+                currentCinema = response.body();
+                Log.d("CINEMA", currentCinema.toString());
+                setContent(currentCinema);
+
+            }
+
+            @Override
+            public void onFailure(Call<CinemaAPI> call, Throwable t) {
+                call.cancel();
+                Intent intent = new Intent(AboutCinemaActivity.this, ErrorActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
 
@@ -190,11 +218,11 @@ public class AboutCinemaActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.maps_direction) {
-            Uri gmmIntentUri = Uri.parse("geo:48.931572, 24.697925");
+            Uri gmmIntentUri = Uri.parse("geo:"+currentCinema.getGeoLat()+", "+currentCinema.getGeoLon());
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
             mapIntent.setPackage("com.google.android.apps.maps");
             startActivity(mapIntent);
-        }else if (item.getItemId()==R.id.pin_action){
+        } else if (item.getItemId() == R.id.pin_action) {
             ChocoBar.builder().setActivity(AboutCinemaActivity.this)
                     .setText("Pin to favourite")
                     .setDuration(ChocoBar.LENGTH_SHORT)
@@ -215,9 +243,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
     }
 
 
-
     public void onPhoneClick(View view) {
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "+380 (50) 541 52 21"));
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + currentCinema.getTelephone()));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
@@ -231,6 +258,49 @@ public class AboutCinemaActivity extends AppCompatActivity {
             }
         }
         startActivity(intent);
+    }
+
+    public void setContent(CinemaAPI content) {
+
+        Glide.with(this).load(APIClient.HOST + content.getPicUrl()).into(cinemaPictureCinemaActivityAvatarView);
+        cinemaNameCinemaActivityTextView.setText(content.getName());
+        cinemaNameBigCinemaActivityTextView.setText(content.getName());
+        cinemaLocationCinemaActivityTextView.setText(content.getAddress());
+        telephoneAboutCinemaTextView.setText(content.getTelephone());
+        SpannableString spannableString = new SpannableString(content.getTelephone());
+        spannableString.setSpan(new UnderlineSpan(), 0, spannableString.length(), 0);
+        telephoneAboutCinemaTextView.setText(spannableString);
+        telephoneAboutCinemaTextView.setOnClickListener(this::onPhoneClick);
+
+        //
+
+
+        marker.setPosition(new GeoPoint(content.getGeoLat(), content.getGeoLon()));
+        marker.setIcon(getResources().getDrawable(R.drawable.ic_ticket_black));
+        marker.setTitle(content.getName());
+        marker.showInfoWindow();
+        map.getOverlays().add(marker);
+        map.invalidate();
+
+
+        final Context context = getApplicationContext();
+        final DisplayMetrics dm = context.getResources().getDisplayMetrics();
+        ScaleBarOverlay mScaleBarOverlay = new ScaleBarOverlay(map);
+        mScaleBarOverlay.setCentred(true);
+        mScaleBarOverlay.setScaleBarOffset(dm.widthPixels / 2, 10);
+        map.getOverlays().add(mScaleBarOverlay);
+
+
+
+
+
+        IMapController mapController = map.getController();
+        mapController.setZoom(16.5);
+        GeoPoint startPoint = new GeoPoint(content.getGeoLat(), content.getGeoLon());
+        mapController.setCenter(startPoint);
+        //
+
+
     }
 
 }

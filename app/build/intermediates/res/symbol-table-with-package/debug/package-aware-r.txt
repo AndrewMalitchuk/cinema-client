@@ -2288,8 +2288,12 @@ id chip_inner_view
 id chronometer
 id cinemaAddress
 id cinemaImage
+id cinemaLocationCinemaActivityTextView
 id cinemaName
+id cinemaNameBigCinemaActivityTextView
+id cinemaNameCinemaActivityTextView
 id cinemaNameTicketActivityEditText
+id cinemaPictureCinemaActivityAvatarView
 id cl_onboarder
 id clear_btn
 id clicked
@@ -2322,7 +2326,6 @@ id cv2
 id cv3
 id dash
 id dataBinding
-id dateFilmActivityEditText
 id datePickerTimeline
 id dateView
 id dayView
@@ -2379,13 +2382,11 @@ id fill_vertical
 id filled
 id filmCinema
 id filmDateTicketActivityEditText
-id filmDescriptionFilmActivityEditText
 id filmImage
 id filmPlace
 id filmPosterFilmActivityImageView
 id filmPosterZoomActivityPhotoView
 id filmTimeTicketActivityEditText
-id filmTitleFilmActivityEditText
 id filmTitleTicketActivityEditText
 id filter_chip
 id fitCenter
@@ -2712,6 +2713,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id telephoneAboutCinemaTextView
 id testFragment
 id text
 id text2
@@ -2739,7 +2741,6 @@ id textView25
 id textView26
 id textView27
 id textView28
-id textView29
 id textView3
 id textView30
 id textView31
