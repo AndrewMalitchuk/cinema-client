@@ -12,16 +12,16 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int matProg_barColor = 0x7f030237;
-        public static final int matProg_barSpinCycleTime = 0x7f030238;
-        public static final int matProg_barWidth = 0x7f030239;
-        public static final int matProg_circleRadius = 0x7f03023a;
-        public static final int matProg_fillRadius = 0x7f03023b;
-        public static final int matProg_linearProgress = 0x7f03023c;
-        public static final int matProg_progressIndeterminate = 0x7f03023d;
-        public static final int matProg_rimColor = 0x7f03023e;
-        public static final int matProg_rimWidth = 0x7f03023f;
-        public static final int matProg_spinSpeed = 0x7f030240;
+        public static final int matProg_barColor = 0x7f030239;
+        public static final int matProg_barSpinCycleTime = 0x7f03023a;
+        public static final int matProg_barWidth = 0x7f03023b;
+        public static final int matProg_circleRadius = 0x7f03023c;
+        public static final int matProg_fillRadius = 0x7f03023d;
+        public static final int matProg_linearProgress = 0x7f03023e;
+        public static final int matProg_progressIndeterminate = 0x7f03023f;
+        public static final int matProg_rimColor = 0x7f030240;
+        public static final int matProg_rimWidth = 0x7f030241;
+        public static final int matProg_spinSpeed = 0x7f030242;
     }
     public static final class string {
         private string() {}
@@ -32,7 +32,7 @@ public final class R {
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] ProgressWheel = { 0x7f030237, 0x7f030238, 0x7f030239, 0x7f03023a, 0x7f03023b, 0x7f03023c, 0x7f03023d, 0x7f03023e, 0x7f03023f, 0x7f030240 };
+        public static final int[] ProgressWheel = { 0x7f030239, 0x7f03023a, 0x7f03023b, 0x7f03023c, 0x7f03023d, 0x7f03023e, 0x7f03023f, 0x7f030240, 0x7f030241, 0x7f030242 };
         public static final int ProgressWheel_matProg_barColor = 0;
         public static final int ProgressWheel_matProg_barSpinCycleTime = 1;
         public static final int ProgressWheel_matProg_barWidth = 2;

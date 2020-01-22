@@ -31,7 +31,7 @@ public final class R {
         public static final int atg_textSize = 0x7f030049;
         public static final int atg_verticalPadding = 0x7f03004a;
         public static final int atg_verticalSpacing = 0x7f03004b;
-        public static final int tagGroupStyle = 0x7f030327;
+        public static final int tagGroupStyle = 0x7f03032a;
     }
     public static final class string {
         private string() {}
@@ -70,7 +70,7 @@ public final class R {
         public static final int TagGroup_atg_textSize = 16;
         public static final int TagGroup_atg_verticalPadding = 17;
         public static final int TagGroup_atg_verticalSpacing = 18;
-        public static final int[] Themes = { 0x7f030327 };
+        public static final int[] Themes = { 0x7f03032a };
         public static final int Themes_tagGroupStyle = 0;
     }
 }

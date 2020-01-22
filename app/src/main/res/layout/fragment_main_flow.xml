@@ -62,35 +62,35 @@
                                 android:orientation="vertical">
 
                                 <TextView
-                                    android:id="@+id/textView14"
+                                    android:id="@+id/filmTitleMainFlowFragmentTextView"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:layout_marginBottom="5dp"
-                                    android:text="Film"
+                                    android:text="Loading..."
                                     android:textColor="@color/colorLoginActivityText"
                                     android:textSize="20sp"
                                     android:textStyle="bold" />
 
                                 <TextView
-                                    android:id="@+id/textView15"
+                                    android:id="@+id/filmDateMainFlowFragmentTextView"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:layout_marginBottom="5dp"
-                                    android:text="Country"
+                                    android:text="Loading..."
                                     android:textColor="@color/colorLoginActivityText" />
 
                                 <TextView
-                                    android:id="@+id/textView16"
+                                    android:id="@+id/filmDurationMainFlowFragmentTextView"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:layout_marginBottom="5dp"
-                                    android:text="Date " />
+                                    android:text="Loading..." />
 
                                 <Button
-                                    android:id="@+id/button21"
+                                    android:id="@+id/filmMoreMainFlowFragmentButton"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:backgroundTint="@color/colorAccent"
@@ -111,11 +111,22 @@
                         app:cardCornerRadius="5dp"
                         app:cardElevation="5dp">
 
-                        <com.freegeek.android.materialbanner.MaterialBanner
-                            android:id="@+id/material_banner"
+                        <!--<com.freegeek.android.materialbanner.MaterialBanner-->
+                        <!--android:id="@+id/material_banner"-->
+                        <!--android:layout_width="150dp"-->
+                        <!--android:layout_height="250dp"-->
+                        <!--android:layout_marginBottom="5dp" />-->
+
+                        <com.asksira.loopingviewpager.LoopingViewPager
+                            android:id="@+id/viewpager"
                             android:layout_width="150dp"
                             android:layout_height="250dp"
-                            android:layout_marginBottom="5dp" />
+                            android:layout_marginBottom="5dp"
+                            app:autoScroll="true"
+                            app:isInfinite="true"
+                            app:scrollInterval="5000" />
+
+
                     </androidx.cardview.widget.CardView>
 
 
@@ -665,19 +676,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="5dp">
-
-                    <com.freegeek.android.materialbanner.MaterialBanner
-                        android:id="@+id/material_banner_adds"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                </androidx.cardview.widget.CardView>
 
 
             </LinearLayout>

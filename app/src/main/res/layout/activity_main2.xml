@@ -98,7 +98,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
-                                    android:id="@+id/textView14"
+                                    android:id="@+id/filmTitleMainFlowFragmentTextView"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
@@ -109,7 +109,7 @@
                                     android:textStyle="bold" />
 
                                 <TextView
-                                    android:id="@+id/textView15"
+                                    android:id="@+id/filmDateMainFlowFragmentTextView"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
@@ -118,7 +118,7 @@
                                     android:textColor="@color/colorLoginActivityText" />
 
                                 <TextView
-                                    android:id="@+id/textView16"
+                                    android:id="@+id/filmDurationMainFlowFragmentTextView"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
@@ -126,7 +126,7 @@
                                     android:text="Date " />
 
                                 <Button
-                                    android:id="@+id/button21"
+                                    android:id="@+id/filmMoreMainFlowFragmentButton"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:backgroundTint="@color/colorAccent"

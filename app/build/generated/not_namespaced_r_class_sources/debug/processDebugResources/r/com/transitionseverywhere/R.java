@@ -12,31 +12,31 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int disappearedScale = 0x7f030116;
-        public static final int duration = 0x7f03012e;
-        public static final int excludeClass = 0x7f030142;
-        public static final int excludeId = 0x7f030143;
-        public static final int excludeName = 0x7f030144;
-        public static final int fadingMode = 0x7f030156;
-        public static final int fromScene = 0x7f03018e;
-        public static final int interpolator = 0x7f0301bc;
-        public static final int matchOrder = 0x7f030242;
-        public static final int maximumAngle = 0x7f03024f;
-        public static final int minimumHorizontalAngle = 0x7f030254;
-        public static final int minimumVerticalAngle = 0x7f030255;
-        public static final int patternPathData = 0x7f03029a;
-        public static final int reparent = 0x7f0302af;
-        public static final int reparentWithOverlay = 0x7f0302b0;
-        public static final int resizeClip = 0x7f0302b2;
-        public static final int slideEdge = 0x7f0302e7;
-        public static final int startDelay = 0x7f0302f2;
-        public static final int targetClass = 0x7f03032c;
-        public static final int targetId = 0x7f03032d;
-        public static final int targetName = 0x7f03032e;
-        public static final int toScene = 0x7f03037c;
-        public static final int transition = 0x7f030386;
-        public static final int transitionOrdering = 0x7f030387;
-        public static final int transitionVisibilityMode = 0x7f030388;
+        public static final int disappearedScale = 0x7f030117;
+        public static final int duration = 0x7f03012f;
+        public static final int excludeClass = 0x7f030143;
+        public static final int excludeId = 0x7f030144;
+        public static final int excludeName = 0x7f030145;
+        public static final int fadingMode = 0x7f030157;
+        public static final int fromScene = 0x7f03018f;
+        public static final int interpolator = 0x7f0301bd;
+        public static final int matchOrder = 0x7f030244;
+        public static final int maximumAngle = 0x7f030251;
+        public static final int minimumHorizontalAngle = 0x7f030256;
+        public static final int minimumVerticalAngle = 0x7f030257;
+        public static final int patternPathData = 0x7f03029c;
+        public static final int reparent = 0x7f0302b1;
+        public static final int reparentWithOverlay = 0x7f0302b2;
+        public static final int resizeClip = 0x7f0302b4;
+        public static final int slideEdge = 0x7f0302ea;
+        public static final int startDelay = 0x7f0302f5;
+        public static final int targetClass = 0x7f03032f;
+        public static final int targetId = 0x7f030330;
+        public static final int targetName = 0x7f030331;
+        public static final int toScene = 0x7f03037f;
+        public static final int transition = 0x7f030389;
+        public static final int transitionOrdering = 0x7f03038a;
+        public static final int transitionVisibilityMode = 0x7f03038b;
     }
     public static final class id {
         private id() {}
@@ -46,63 +46,63 @@ public final class R {
         public static final int fade_in = 0x7f090114;
         public static final int fade_in_out = 0x7f090115;
         public static final int fade_out = 0x7f090116;
-        public static final int group_layouttransition_backup = 0x7f09013c;
-        public static final int left = 0x7f090178;
-        public static final int overlay_layout_params_backup = 0x7f0901cb;
-        public static final int overlay_view = 0x7f0901cc;
-        public static final int parentMatrix = 0x7f0901d1;
-        public static final int right = 0x7f0901f7;
-        public static final int runningTransitions = 0x7f0901ff;
-        public static final int scene_layoutid_cache = 0x7f090207;
-        public static final int sequential = 0x7f090228;
-        public static final int together = 0x7f0902c2;
-        public static final int top = 0x7f0902ca;
-        public static final int transitionAlpha = 0x7f0902cd;
-        public static final int transitionName = 0x7f0902ce;
-        public static final int transitionPosition = 0x7f0902cf;
-        public static final int transitionTransform = 0x7f0902d0;
+        public static final int group_layouttransition_backup = 0x7f090140;
+        public static final int left = 0x7f09017c;
+        public static final int overlay_layout_params_backup = 0x7f0901cf;
+        public static final int overlay_view = 0x7f0901d0;
+        public static final int parentMatrix = 0x7f0901d5;
+        public static final int right = 0x7f0901fb;
+        public static final int runningTransitions = 0x7f090203;
+        public static final int scene_layoutid_cache = 0x7f09020b;
+        public static final int sequential = 0x7f09022c;
+        public static final int together = 0x7f0902c3;
+        public static final int top = 0x7f0902cb;
+        public static final int transitionAlpha = 0x7f0902ce;
+        public static final int transitionName = 0x7f0902cf;
+        public static final int transitionPosition = 0x7f0902d0;
+        public static final int transitionTransform = 0x7f0902d1;
     }
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] ArcMotion = { 0x7f03024f, 0x7f030254, 0x7f030255 };
+        public static final int[] ArcMotion = { 0x7f030251, 0x7f030256, 0x7f030257 };
         public static final int ArcMotion_maximumAngle = 0;
         public static final int ArcMotion_minimumHorizontalAngle = 1;
         public static final int ArcMotion_minimumVerticalAngle = 2;
-        public static final int[] ChangeBounds = { 0x7f0302b2 };
+        public static final int[] ChangeBounds = { 0x7f0302b4 };
         public static final int ChangeBounds_resizeClip = 0;
-        public static final int[] ChangeTransform = { 0x7f0302af, 0x7f0302b0 };
+        public static final int[] ChangeTransform = { 0x7f0302b1, 0x7f0302b2 };
         public static final int ChangeTransform_reparent = 0;
         public static final int ChangeTransform_reparentWithOverlay = 1;
-        public static final int[] Fade = { 0x7f030156 };
+        public static final int[] Fade = { 0x7f030157 };
         public static final int Fade_fadingMode = 0;
-        public static final int[] PatternPathMotion = { 0x7f03029a };
+        public static final int[] PatternPathMotion = { 0x7f03029c };
         public static final int PatternPathMotion_patternPathData = 0;
-        public static final int[] Scale = { 0x7f030116 };
+        public static final int[] Scale = { 0x7f030117 };
         public static final int Scale_disappearedScale = 0;
-        public static final int[] Slide = { 0x7f0302e7 };
+        public static final int[] Slide = { 0x7f0302ea };
         public static final int Slide_slideEdge = 0;
-        public static final int[] Transition = { 0x1010141, 0x1010198, 0x7f03012e, 0x7f0301bc, 0x7f030242, 0x7f0302f2 };
+        public static final int[] Transition = { 0x1010141, 0x1010198, 0x7f03012f, 0x7f0301bd, 0x7f030244, 0x7f0302f5 };
         public static final int Transition_android_interpolator = 0;
         public static final int Transition_android_duration = 1;
         public static final int Transition_duration = 2;
         public static final int Transition_interpolator = 3;
         public static final int Transition_matchOrder = 4;
         public static final int Transition_startDelay = 5;
-        public static final int[] TransitionManager = { 0x7f03018e, 0x7f03037c, 0x7f030386 };
+        public static final int[] TransitionManager = { 0x7f03018f, 0x7f03037f, 0x7f030389 };
         public static final int TransitionManager_fromScene = 0;
         public static final int TransitionManager_toScene = 1;
         public static final int TransitionManager_transition = 2;
-        public static final int[] TransitionSet = { 0x7f030387 };
+        public static final int[] TransitionSet = { 0x7f03038a };
         public static final int TransitionSet_transitionOrdering = 0;
-        public static final int[] TransitionTarget = { 0x7f030142, 0x7f030143, 0x7f030144, 0x7f03032c, 0x7f03032d, 0x7f03032e };
+        public static final int[] TransitionTarget = { 0x7f030143, 0x7f030144, 0x7f030145, 0x7f03032f, 0x7f030330, 0x7f030331 };
         public static final int TransitionTarget_excludeClass = 0;
         public static final int TransitionTarget_excludeId = 1;
         public static final int TransitionTarget_excludeName = 2;
         public static final int TransitionTarget_targetClass = 3;
         public static final int TransitionTarget_targetId = 4;
         public static final int TransitionTarget_targetName = 5;
-        public static final int[] VisibilityTransition = { 0x7f030388 };
+        public static final int[] VisibilityTransition = { 0x7f03038b };
         public static final int VisibilityTransition_transitionVisibilityMode = 0;
     }
 }

@@ -4,6 +4,8 @@ import com.cinema.client.requests.entities.CinemaAPI;
 import com.cinema.client.requests.entities.FilmAPI;
 import com.cinema.client.requests.entities.TicketAPI;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -11,15 +13,23 @@ import retrofit2.http.Query;
 public interface APIInterface {
 
 
+    public static final String api_film ="/api/v1/film";
+    public static final String api_ticket ="/api/v1/ticket";
+    public static final String api_cinema ="/api/v1/cinema";
 
 
-    @GET("/api/v1/film")
+    @GET(api_film)
     Call<FilmAPI> getFilmById(@Query("id") int id);
 
-    @GET("/api/v1/ticket")
+    @GET(api_film)
+    Call<List<FilmAPI>> getFilms();
+
+    @GET(api_ticket)
     Call<TicketAPI> getTicketByCode(@Query("code") String code);
 
-    @GET("/api/v1/cinema")
+    @GET(api_cinema)
     Call<CinemaAPI> getCinemaById(@Query("id") int id);
+
+
 
 }

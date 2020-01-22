@@ -1,10 +1,6 @@
 package com.cinema.client.fragments;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,47 +17,55 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.asksira.loopingviewpager.LoopingViewPager;
 import com.cinema.client.R;
 import com.cinema.client.activity.AboutCinemaActivity;
 import com.cinema.client.activity.AboutFilmActivity;
+import com.cinema.client.activity.ErrorActivity;
 import com.cinema.client.activity.PosterActivity;
 import com.cinema.client.activity.SearchCinemaActivity;
 import com.cinema.client.activity.SearchFilmActivity;
+import com.cinema.client.adapters.DemoInfiniteAdapter;
+import com.cinema.client.requests.APIClient;
+import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.FilmAPI;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.freegeek.android.materialbanner.MaterialBanner;
 import com.freegeek.android.materialbanner.simple.SimpleBannerData;
 import com.freegeek.android.materialbanner.simple.SimpleViewHolderCreator;
 import com.freegeek.android.materialbanner.view.indicator.CirclePageIndicator;
-import com.freegeek.android.materialbanner.view.indicator.LinePageIndicator;
 import com.liangfeizc.avatarview.AvatarView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainFlowFragment extends Fragment {
 
 
-    private static int[] images = {
-            R.drawable.once_upon_a_time,
-            R.drawable.drive_2011,
-            R.drawable.pulp_fiction};
+//    private static int[] images = {
+//            R.drawable.once_upon_a_time,
+//            R.drawable.drive_2011,
+//            R.drawable.pulp_fiction};
+//
+//    private static int[] banner = {
+//            R.drawable.once_upon_a_time,
+//            R.drawable.drive_2011,
+//            R.drawable.pulp_fiction};
 
-    private static int[] banner = {
-            R.drawable.once_upon_a_time,
-            R.drawable.drive_2011,
-            R.drawable.pulp_fiction};
 
-
-    //    private MaterialBanner<SimpleBannerData> materialBanner;
-//    private MaterialBanner<SimpleBannerData> adsBanner;
-    private TextView textView;
-
-    private CirclePageIndicator circlePageIndicator;
-    private CirclePageIndicator circlePageIndicator1;
-    private LinePageIndicator linePageIndicator;
+//    private TextView textView;
+//
+//    private CirclePageIndicator circlePageIndicator;
+//    private CirclePageIndicator circlePageIndicator1;
+//    private LinePageIndicator linePageIndicator;
 
 
     List<SimpleBannerData> list = new ArrayList<>();
@@ -70,17 +75,17 @@ public class MainFlowFragment extends Fragment {
     @BindView(R.id.linLayout)
     LinearLayout linLayout;
 
-    @BindView(R.id.button21)
-    Button button21;
+    @BindView(R.id.filmMoreMainFlowFragmentButton)
+    Button filmMoreMainFlowFragmentButton;
 
     @BindView(R.id.textView23)
     TextView textView23;
 
-    @BindView(R.id.material_banner)
-    MaterialBanner<SimpleBannerData> materialBanner;
-
-    @BindView(R.id.material_banner_adds)
-    MaterialBanner<SimpleBannerData> adsBanner;
+//    @BindView(R.id.material_banner)
+//    MaterialBanner<SimpleBannerData> materialBanner;
+//
+//    @BindView(R.id.material_banner_adds)
+//    MaterialBanner<SimpleBannerData> adsBanner;
 
 
 //    @BindView(R.id.)
@@ -134,6 +139,28 @@ public class MainFlowFragment extends Fragment {
 //    @BindView(R.id.)
 //    ;
 
+    private APIInterface apiInterface;
+
+    private List<FilmAPI> films;
+
+
+
+    @BindView(R.id.filmTitleMainFlowFragmentTextView)
+    TextView filmTitleMainFlowFragmentTextView;
+
+    @BindView(R.id.filmDateMainFlowFragmentTextView)
+    TextView filmDateMainFlowFragmentTextView;
+
+    @BindView(R.id.filmDurationMainFlowFragmentTextView)
+    TextView filmDurationMainFlowFragmentTextView;
+
+
+
+    @BindView(R.id.viewpager)
+    LoopingViewPager viewPager;
+
+    private DemoInfiniteAdapter adapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -152,6 +179,12 @@ public class MainFlowFragment extends Fragment {
 //        return inflater.inflate(R.layout.fragment_main_flow, container, false);
 
 
+        //
+
+
+
+
+
     }
 
     @Override
@@ -160,8 +193,10 @@ public class MainFlowFragment extends Fragment {
 
         ButterKnife.bind(this, view);
 
-        initIndicator();
-        initData();
+//        initIndicator();
+//        initData();
+
+        //
 
 
         FlowingGradientClass grad = new FlowingGradientClass();
@@ -171,100 +206,9 @@ public class MainFlowFragment extends Fragment {
                 .start();
         //
 
-        materialBanner.setPages(new SimpleViewHolderCreator(), list)
-                .setIndicator(circlePageIndicator);
-
-        materialBanner.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onPageSelected(int position) {
-//                textView.setText("My hometown: page " + ++position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-        //iconPageIndicator request these icons
-        materialBanner.getAdapter().setIcons(icons);
-
-        materialBanner.setOnItemClickListener(new MaterialBanner.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                Toast.makeText(getActivity(), "click:" + position, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        if (materialBanner.isTurning()) {
-            materialBanner.stopTurning();
-            Toast.makeText(getActivity(), "stop turning", Toast.LENGTH_SHORT).show();
-        } else {
-            materialBanner.startTurning(3000);
-            Toast.makeText(getActivity(), "start turning", Toast.LENGTH_SHORT).show();
-        }
-        materialBanner.setIndicatorInside(!materialBanner.isIndicatorInside());
 
 
-        //
-        adsBanner.setPages(new SimpleViewHolderCreator(), list)
-                .setIndicator(circlePageIndicator1);
-
-        adsBanner.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onPageSelected(int position) {
-//                textView.setText("My hometown: page " + ++position);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-        //iconPageIndicator request these icons
-        adsBanner.getAdapter().setIcons(icons);
-
-        adsBanner.setOnItemClickListener(new MaterialBanner.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                Toast.makeText(getActivity(), "click:" + position, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        if (adsBanner.isTurning()) {
-            adsBanner.stopTurning();
-            Toast.makeText(getActivity(), "stop turning", Toast.LENGTH_SHORT).show();
-        } else {
-            adsBanner.startTurning(3000);
-            Toast.makeText(getActivity(), "start turning", Toast.LENGTH_SHORT).show();
-        }
-        adsBanner.setIndicatorInside(!adsBanner.isIndicatorInside());
-        //
-
-
-        //
-
-//        button21.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                onAboutFilmClick(view);
-//            }
-//        });
-
-        button21.setOnClickListener(e -> onAboutFilmClick(e));
+        filmMoreMainFlowFragmentButton.setOnClickListener(e -> onAboutFilmClick(e));
         buttonCinema.setOnClickListener(e -> onFindCinemasButtonClick(e));
         buttonFilms.setOnClickListener(e -> onFindFilmsButtonClick(e));
         av1.setOnClickListener(e -> onSelectedCinemaClick(e));
@@ -278,63 +222,100 @@ public class MainFlowFragment extends Fragment {
         horrorAvatar.setOnClickListener(e -> onGenreIconClick(e));
 
 
-
-
         ivano_frankivsk.setOnClickListener(e -> onCityIconClick(e));
         lviv.setOnClickListener(e -> onCityIconClick(e));
         kiyv.setOnClickListener(e -> onCityIconClick(e));
         odessa.setOnClickListener(e -> onCityIconClick(e));
         kharkiv.setOnClickListener(e -> onCityIconClick(e));
 
+
+        //
+        apiInterface = APIClient.getClient().create(APIInterface.class);
+
+        Call<List<FilmAPI>> call=apiInterface.getFilms();
+
+        call.enqueue(new Callback<List<FilmAPI>>() {
+            @Override
+            public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+
+                films=response.body();
+                Log.d("FILMS", films.size()+"");
+
+                Collections.sort(films, new Comparator<FilmAPI>() {
+                    @Override
+                    public int compare(FilmAPI filmAPI, FilmAPI t1) {
+                        return  t1.getDate().compareTo(filmAPI.getDate());
+                    }
+                });
+
+                setContent(films);
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+                call.cancel();
+                Intent intent = new Intent(getContext(), ErrorActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        //
+
+
+
+
     }
 
 
-    private void initIndicator() {
-        circlePageIndicator = new CirclePageIndicator(getActivity());
-        circlePageIndicator.setStrokeColor(R.color.colorLoginActivityText);
-        circlePageIndicator.setFillColor(R.color.colorLoginActivityText);
-        circlePageIndicator.setRadius(MaterialBanner.dip2Pix(getActivity(), 3));
-        circlePageIndicator.setBetween(20);
-
-        linePageIndicator = new LinePageIndicator(getActivity());
-        linePageIndicator.setUnselectedColor(Color.BLACK);
-//        linePageIndicator.setSelectedColor(Color.YELLOW);
-
-    }
-
-    private void initData() {
-        for (int i = 0; i < images.length; i++) {
-            SimpleBannerData simpleBannerData = new SimpleBannerData();
-//            simpleBannerData.setTitle("Country road " + (i + 1));
-            simpleBannerData.setResId(images[i]);
-            list.add(simpleBannerData);
-
-        }
-    }
 
 
-    private void initIndicatorForBanner() {
-        circlePageIndicator1 = new CirclePageIndicator(getActivity());
-        circlePageIndicator1.setStrokeColor(R.color.colorLoginActivityText);
-        circlePageIndicator1.setFillColor(R.color.colorLoginActivityText);
-        circlePageIndicator1.setRadius(MaterialBanner.dip2Pix(getActivity(), 3));
-        circlePageIndicator1.setBetween(20);
+//    private void initIndicator() {
+//        circlePageIndicator = new CirclePageIndicator(getActivity());
+//        circlePageIndicator.setStrokeColor(R.color.colorLoginActivityText);
+//        circlePageIndicator.setFillColor(R.color.colorLoginActivityText);
+//        circlePageIndicator.setRadius(MaterialBanner.dip2Pix(getActivity(), 3));
+//        circlePageIndicator.setBetween(20);
+//
+//        linePageIndicator = new LinePageIndicator(getActivity());
+//        linePageIndicator.setUnselectedColor(Color.BLACK);
+////        linePageIndicator.setSelectedColor(Color.YELLOW);
+//
+//    }
 
-        linePageIndicator = new LinePageIndicator(getActivity());
-        linePageIndicator.setUnselectedColor(Color.BLACK);
-//        linePageIndicator.setSelectedColor(Color.YELLOW);
+//    private void initData() {
+//        for (int i = 0; i < images.length; i++) {
+//            SimpleBannerData simpleBannerData = new SimpleBannerData();
+////            simpleBannerData.setTitle("Country road " + (i + 1));
+//            simpleBannerData.setResId(images[i]);
+//            list.add(simpleBannerData);
+//
+//        }
+//    }
 
-    }
 
-    private void initDataForBanner() {
-        for (int i = 0; i < banner.length; i++) {
-            SimpleBannerData simpleBannerData = new SimpleBannerData();
-//            simpleBannerData.setTitle("Country road " + (i + 1));
-            simpleBannerData.setResId(banner[i]);
-            list.add(simpleBannerData);
-
-        }
-    }
+//    private void initIndicatorForBanner() {
+//        circlePageIndicator1 = new CirclePageIndicator(getActivity());
+//        circlePageIndicator1.setStrokeColor(R.color.colorLoginActivityText);
+//        circlePageIndicator1.setFillColor(R.color.colorLoginActivityText);
+//        circlePageIndicator1.setRadius(MaterialBanner.dip2Pix(getActivity(), 3));
+//        circlePageIndicator1.setBetween(20);
+//
+//        linePageIndicator = new LinePageIndicator(getActivity());
+//        linePageIndicator.setUnselectedColor(Color.BLACK);
+//
+//    }
+//
+//    private void initDataForBanner() {
+//        for (int i = 0; i < banner.length; i++) {
+//            SimpleBannerData simpleBannerData = new SimpleBannerData();
+////            simpleBannerData.setTitle("Country road " + (i + 1));
+//            simpleBannerData.setResId(banner[i]);
+//            list.add(simpleBannerData);
+//
+//        }
+//    }
 
     public void onFindFilmsButtonClick(View view) {
         Intent intent = new Intent(getActivity(), SearchFilmActivity.class);
@@ -416,5 +397,54 @@ public class MainFlowFragment extends Fragment {
     public void onSelectedCinemaClick(View view) {
         Intent intent = new Intent(getActivity(), AboutCinemaActivity.class);
         startActivity(intent);
+    }
+
+    public void setContent(List<FilmAPI> content){
+
+        Log.d("0",content.get(0).getDate());
+        Log.d("0",content.get(0).getTitle());
+        Log.d("1",content.get(1).getDate());
+        Log.d("1",content.get(1).getTitle());
+        Log.d("2",content.get(2).getDate());
+        Log.d("2",content.get(2).getTitle());
+
+
+        ArrayList<FilmAPI> currentFilms=new ArrayList<>();
+
+        currentFilms.add(content.get(0));
+        currentFilms.add(content.get(1));
+        currentFilms.add(content.get(2));
+
+
+        adapter = new DemoInfiniteAdapter(getContext(), currentFilms, true);
+        viewPager.setAdapter(adapter);
+
+        viewPager.setIndicatorPageChangeListener(new LoopingViewPager.IndicatorPageChangeListener() {
+            @Override
+            public void onIndicatorProgress(int selectingPosition, float progress) {
+                filmTitleMainFlowFragmentTextView.setText(currentFilms.get(selectingPosition).getTitle());
+                filmDateMainFlowFragmentTextView.setText(currentFilms.get(selectingPosition).getDate());
+                filmDurationMainFlowFragmentTextView.setText(currentFilms.get(selectingPosition).getDuration()+"");
+                filmMoreMainFlowFragmentButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(getContext(),currentFilms.get(selectingPosition).getTitle(),Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+            }
+
+
+            @Override
+            public void onIndicatorPageChange(int newIndicatorPosition) {
+//                indicatorView.setSelection(newIndicatorPosition);
+            }
+        });
+
+
+
+
+
+
     }
 }

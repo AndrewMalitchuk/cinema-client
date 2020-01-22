@@ -28,7 +28,7 @@ public class Main2Activity_ViewBinding implements Unbinder {
 
     target.linLayout = Utils.findRequiredViewAsType(source, R.id.linLayout, "field 'linLayout'", LinearLayout.class);
     target.bottomNavigationView = Utils.findRequiredViewAsType(source, R.id.navigation, "field 'bottomNavigationView'", BottomNavigationView.class);
-    target.button21 = Utils.findRequiredViewAsType(source, R.id.button21, "field 'button21'", Button.class);
+    target.button21 = Utils.findRequiredViewAsType(source, R.id.filmMoreMainFlowFragmentButton, "field 'button21'", Button.class);
     target.textView23 = Utils.findRequiredViewAsType(source, R.id.textView23, "field 'textView23'", TextView.class);
     target.llProgressBar = Utils.findRequiredView(source, R.id.llProgressBar, "field 'llProgressBar'");
   }

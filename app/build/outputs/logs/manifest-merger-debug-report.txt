@@ -65,6 +65,7 @@ MERGED from [com.github.bumptech.glide:glide:4.11.0] /home/adular/.gradle/caches
 MERGED from [uk.co.samuelwall:material-tap-target-prompt:3.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/00dd77a9d04673f8da7697a62083f225/AndroidManifest.xml:17:1-26:12
 MERGED from [com.github.nihad92:SwipeableCards:1.0.19] /home/adular/.gradle/caches/transforms-2/files-2.1/b3df3e38b7492db276a911248fdcc0d7/AndroidManifest.xml:2:1-11:12
 MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/852ca25a13ee627cbba8b78039576848/AndroidManifest.xml:17:1-55:12
+MERGED from [com.asksira.android:loopingviewpager:1.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b287f928ea8d73f8b37634566113af4b/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/e7fbf7879ad3223092cbb2064cc670df/AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/21a056284165b8c0639db5b7806b18e1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/f07343c83a7f35798ef6bcbc3a6f144e/AndroidManifest.xml:17:1-24:12
@@ -530,6 +531,8 @@ MERGED from [com.github.nihad92:SwipeableCards:1.0.19] /home/adular/.gradle/cach
 MERGED from [com.github.nihad92:SwipeableCards:1.0.19] /home/adular/.gradle/caches/transforms-2/files-2.1/b3df3e38b7492db276a911248fdcc0d7/AndroidManifest.xml:7:5-9:41
 MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/852ca25a13ee627cbba8b78039576848/AndroidManifest.xml:19:5-43
 MERGED from [com.journeyapps:zxing-android-embedded:3.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/852ca25a13ee627cbba8b78039576848/AndroidManifest.xml:19:5-43
+MERGED from [com.asksira.android:loopingviewpager:1.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b287f928ea8d73f8b37634566113af4b/AndroidManifest.xml:7:5-9:41
+MERGED from [com.asksira.android:loopingviewpager:1.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/b287f928ea8d73f8b37634566113af4b/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/e7fbf7879ad3223092cbb2064cc670df/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/e7fbf7879ad3223092cbb2064cc670df/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0] /home/adular/.gradle/caches/transforms-2/files-2.1/21a056284165b8c0639db5b7806b18e1/AndroidManifest.xml:20:5-22:41

@@ -150,6 +150,7 @@
     <orderEntry type="library" name="Gradle: androidx.slidingpanelayout:slidingpanelayout:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.media:media:1.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.10bis:compactCreditInput:2.0.4@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.asksira.android:loopingviewpager:1.1.2@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.fragment:fragment:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.bumptech.glide:gifdecoder:4.11.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.okio:okio:2.4.1@jar" level="project" />

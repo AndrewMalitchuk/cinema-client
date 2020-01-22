@@ -5,7 +5,6 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
-import androidx.databinding.Bindable;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.AlertDialog;
@@ -23,9 +22,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.brouding.simpledialog.SimpleDialog;
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
-import com.cinema.client.fragments.HallTestFragment;
 import com.cinema.client.fragments.MainFlowFragment;
 import com.cinema.client.fragments.TicketSearchFragment;
 import com.developer.mtextfield.ExtendedEditText;
@@ -320,7 +317,7 @@ public class Main3Activity extends AppCompatActivity {
 
             //
             new MaterialTapTargetPrompt.Builder(Main3Activity.this)
-                    .setTarget(R.id.button21)
+                    .setTarget(R.id.filmMoreMainFlowFragmentButton)
                     .setPrimaryText("Send your first email")
                     .setSecondaryText("Tap the envelope to start composing your first email")
                     .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener() {

@@ -38,9 +38,6 @@ import com.freegeek.android.materialbanner.view.indicator.CirclePageIndicator;
 import com.freegeek.android.materialbanner.view.indicator.LinePageIndicator;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.keiferstone.nonet.NoNet;
-import com.mehdi.shortcut.interfaces.IReceiveStringExtra;
-import com.mehdi.shortcut.model.Shortcut;
-import com.mehdi.shortcut.util.ShortcutUtils;
 import com.pd.chocobar.ChocoBar;
 
 import java.text.ParseException;
@@ -92,7 +89,7 @@ public class Main2Activity extends AppCompatActivity {
     @BindView(R.id.navigation)
     BottomNavigationView bottomNavigationView;
 
-    @BindView(R.id.button21)
+    @BindView(R.id.filmMoreMainFlowFragmentButton)
     Button button21;
 
     @BindView(R.id.textView23)
@@ -412,7 +409,7 @@ public class Main2Activity extends AppCompatActivity {
 
             //
             new MaterialTapTargetPrompt.Builder(Main2Activity.this)
-                    .setTarget(R.id.button21)
+                    .setTarget(R.id.filmMoreMainFlowFragmentButton)
                     .setPrimaryText("Send your first email")
                     .setSecondaryText("Tap the envelope to start composing your first email")
                     .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener() {
