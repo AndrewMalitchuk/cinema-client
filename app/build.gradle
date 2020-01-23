@@ -23,6 +23,10 @@ android {
     }
 }
 
+apply plugin: 'com.android.application'
+
+apply plugin: 'com.google.gms.google-services'
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -184,5 +188,21 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
     //
     implementation 'com.asksira.android:loopingviewpager:1.1.2'
+    //
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
+    implementation 'com.google.firebase:firebase-analytics:17.2.0'
+    implementation 'com.google.firebase:firebase-core:17.2.1'
+    implementation 'com.google.firebase:firebase-iid:20.0.2'
+    implementation 'com.google.firebase:firebase-inappmessaging-display:17.2.0'
+    implementation 'com.google.guava:guava:27.0.1-android'
+
+    //
+    implementation "androidx.work:work-runtime:2.2.0"
+    //
+    implementation 'com.github.jakebonk:NotifyMe:1.0.1'
+    //
+    implementation 'com.github.halysongoncalves:pugnotification:1.8.1'
+    //
+    implementation 'com.wdullaer:materialdatetimepicker:3.6.0'
 
 }

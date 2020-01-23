@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.vivekkaushik.datepicker:datePickerTimeline:0.0.3@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1acdf834bf1a79ad8d1f25c89f6cb0e2/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1acdf834bf1a79ad8d1f25c89f6cb0e2/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f6b550ae7a1ff3897dc7a0bcd46bb3c5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f6b550ae7a1ff3897dc7a0bcd46bb3c5/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

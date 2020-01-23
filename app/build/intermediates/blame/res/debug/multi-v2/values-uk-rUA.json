@@ -4,7 +4,7 @@
             "outputFile": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uk-rUA/values-uk-rUA.xml",
             "map": [
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/af43d5081a71972e0887e7c4f14f72af/res/values-uk-rUA/values-uk-rUA.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/96b654628888144c10e97686be3599a6/res/values-uk-rUA/values-uk-rUA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

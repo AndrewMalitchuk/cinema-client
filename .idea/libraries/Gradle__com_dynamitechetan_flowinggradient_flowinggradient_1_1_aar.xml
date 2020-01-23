@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.dynamitechetan.flowinggradient:flowinggradient:1.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/eb8e0d362b238a0165bd6961eadf88eb/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/eb8e0d362b238a0165bd6961eadf88eb/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5afbc9ee9df8770249bcc027b8d09646/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5afbc9ee9df8770249bcc027b8d09646/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

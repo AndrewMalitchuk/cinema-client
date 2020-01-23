@@ -153,7 +153,10 @@ public class AboutFilmActivity extends AppCompatActivity {
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
 
-        int id=12;
+        int id = getIntent().getIntExtra("filmId", -1);
+        if (id == -1) {
+            id = 12;
+        }
 
         Call<FilmAPI> call = apiInterface.getFilmById(id);
         call.enqueue(new Callback<FilmAPI>() {
@@ -175,7 +178,7 @@ public class AboutFilmActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<FilmAPI> call, Throwable t) {
                 call.cancel();
-                Intent intent = new Intent(AboutFilmActivity.this,ErrorActivity.class);
+                Intent intent = new Intent(AboutFilmActivity.this, ErrorActivity.class);
                 startActivity(intent);
             }
         });
@@ -184,7 +187,7 @@ public class AboutFilmActivity extends AppCompatActivity {
 
     public void onImageClick(View view) {
         Intent intent = new Intent(this, ZoomImageActivity.class);
-        intent.putExtra("url",currentFilm.getPicUrl());
+        intent.putExtra("url", currentFilm.getPicUrl());
         startActivity(intent);
     }
 
@@ -213,7 +216,7 @@ public class AboutFilmActivity extends AppCompatActivity {
                 share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
 
                 share.putExtra(Intent.EXTRA_SUBJECT, currentFilm.getTitle());
-                share.putExtra(Intent.EXTRA_TEXT,currentFilm.getVideoUrl());
+                share.putExtra(Intent.EXTRA_TEXT, currentFilm.getVideoUrl());
 
                 startActivity(Intent.createChooser(share, "cinema-app"));
                 break;
@@ -222,19 +225,19 @@ public class AboutFilmActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void setContent(FilmAPI content){
-        if (content!=null){
-            Glide.with(this).load(APIClient.HOST+content.getPicUrl()).into(filmPosterFilmActivityImageView);
+    public void setContent(FilmAPI content) {
+        if (content != null) {
+            Glide.with(this).load(APIClient.HOST + content.getPicUrl()).into(filmPosterFilmActivityImageView);
             filmTitleFilmActivityEditText.setText(content.getTitle());
             myToolbar.setTitle(content.getTitle());
             readMoreOption.addReadMoreTo(filmDescriptionFilmActivityEditText, content.getDescription());
             dateFilmActivityEditText.setText(content.getDate());
-            additionalInfoFilmActivityTagGroup.setTags(content.getDuration().toString()+" min.");
-            youtubePreviewFilmActivityPlayerView.getYouTubePlayerWhenReady(e->{
-                e.cueVideo(content.getVideoUrl().split("v=")[1],0);
+            additionalInfoFilmActivityTagGroup.setTags(content.getDuration().toString() + " min.");
+            youtubePreviewFilmActivityPlayerView.getYouTubePlayerWhenReady(e -> {
+                e.cueVideo(content.getVideoUrl().split("v=")[1], 0);
             });
-        }else{
-            Intent intent = new Intent(this,ErrorActivity.class);
+        } else {
+            Intent intent = new Intent(this, ErrorActivity.class);
             startActivity(intent);
         }
     }

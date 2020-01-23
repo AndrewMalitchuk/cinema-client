@@ -16,27 +16,41 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.allyants.notifyme.NotifyMe;
 import com.brouding.simpledialog.SimpleDialog;
+import com.cinema.client.MainActivity;
 import com.cinema.client.R;
 import com.cinema.client.fragments.MainFlowFragment;
 import com.cinema.client.fragments.TicketSearchFragment;
+import com.cinema.client.requests.APIClient;
+import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.FilmAPI;
 import com.developer.mtextfield.ExtendedEditText;
 import com.droidbyme.dialoglib.DroidDialog;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.inappmessaging.internal.ApiClient;
 import com.keiferstone.nonet.NoNet;
 import com.mehdi.shortcut.interfaces.IReceiveStringExtra;
 import com.mehdi.shortcut.model.Shortcut;
 import com.mehdi.shortcut.util.ShortcutUtils;
 import com.pd.chocobar.ChocoBar;
+import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
+import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
@@ -46,7 +60,11 @@ import es.dmoral.markdownview.MarkdownView;
 import omari.hamza.storyview.StoryView;
 import omari.hamza.storyview.callback.StoryClickListeners;
 import omari.hamza.storyview.model.MyStory;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
+
 
 public class Main3Activity extends AppCompatActivity {
 
@@ -69,6 +87,16 @@ public class Main3Activity extends AppCompatActivity {
 
 
     MyTask mt;
+
+    Calendar now = Calendar.getInstance();
+
+    TimePickerDialog tpd;
+    DatePickerDialog dpd;
+
+
+    private APIInterface apiInterface;
+
+    private List<FilmAPI> films;
 
     @RequiresApi(api = Build.VERSION_CODES.N_MR1)
     @Override
@@ -232,14 +260,13 @@ public class Main3Activity extends AppCompatActivity {
                 .build();
 
 
-
         shortcutUtils.addDynamicShortCut(dynamicShortcut, new IReceiveStringExtra() {
             @Override
             public void onReceiveStringExtra(String stringExtraKey, String stringExtraValue) {
                 String intent = getIntent().getStringExtra(stringExtraKey);
                 if (intent != null) {
                     if (intent.equals("myTicketsShortcut")) {
-                        Intent ticketIntent = new Intent(Main3Activity.this,MyTicketsActivity.class);
+                        Intent ticketIntent = new Intent(Main3Activity.this, MyTicketsActivity.class);
                         startActivity(ticketIntent);
                     }
                 }
@@ -252,7 +279,7 @@ public class Main3Activity extends AppCompatActivity {
                 String intent = getIntent().getStringExtra(stringExtraKey);
                 if (intent != null) {
                     if (intent.equals("myPosterShortcut")) {
-                        Intent ticketIntent = new Intent(Main3Activity.this,PosterActivity.class);
+                        Intent ticketIntent = new Intent(Main3Activity.this, PosterActivity.class);
                         startActivity(ticketIntent);
                     }
                 }
@@ -270,7 +297,39 @@ public class Main3Activity extends AppCompatActivity {
                         bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.blue));
 
                         //
-                        stories();
+
+
+                        Call<List<FilmAPI>> call=apiInterface.getFilms();
+
+                        call.enqueue(new Callback<List<FilmAPI>>() {
+                            @Override
+                            public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+
+                                films=response.body();
+                                Log.d("FILMS", films.size()+"");
+
+                                Collections.sort(films, new Comparator<FilmAPI>() {
+                                    @Override
+                                    public int compare(FilmAPI filmAPI, FilmAPI t1) {
+                                        return  t1.getDate().compareTo(filmAPI.getDate());
+                                    }
+                                });
+
+                                stories(films);
+
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+                                call.cancel();
+                                Intent intent = new Intent(Main3Activity.this, ErrorActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+
+
+
 
                         bottomNavigationView.setSelectedItemId(R.id.left_side_of_hall);
                         bottomNavigationView.setSelected(true);
@@ -286,7 +345,7 @@ public class Main3Activity extends AppCompatActivity {
 
 //        HallTestFragment hallTestFragment = new HallTestFragment();
 
-                        MainFlowFragment mainFlowFragment=new MainFlowFragment();
+                        MainFlowFragment mainFlowFragment = new MainFlowFragment();
 
                         ft.replace(R.id.fragment, mainFlowFragment);
                         ft.commit();
@@ -299,7 +358,7 @@ public class Main3Activity extends AppCompatActivity {
 
 //        HallTestFragment hallTestFragment = new HallTestFragment();
 
-                        TicketSearchFragment ticketSearchFragment=new TicketSearchFragment();
+                        TicketSearchFragment ticketSearchFragment = new TicketSearchFragment();
 
                         ft.replace(R.id.fragment, ticketSearchFragment);
                         ft.commit();
@@ -357,10 +416,73 @@ public class Main3Activity extends AppCompatActivity {
 
 //        HallTestFragment hallTestFragment = new HallTestFragment();
 
-        MainFlowFragment mainFlowFragment=new MainFlowFragment();
+        MainFlowFragment mainFlowFragment = new MainFlowFragment();
 
         ft.replace(R.id.fragment, mainFlowFragment);
         ft.commit();
+
+        //
+
+//        // in method (?)
+
+
+//        Intent intent = new Intent(this, AboutFilmActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+//
+//
+//        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, getResources().getString(R.string.cinemaAppNotify))
+//                .setSmallIcon(R.drawable.ic_ticket_accent)
+//                .setContentTitle(getString(R.string.filmReminderNotificationMainActivityString))
+//                .setContentText("It's Fight Club in Kosmos cinema")
+//                .setContentIntent(pendingIntent)
+//                .setPriority(NotificationCompat.PRIORITY_HIGH);
+//
+//
+//        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+//
+//
+//        // notification_id (?)
+//        notificationManager.notify(10, builder.build());
+
+        //
+
+        Calendar cal = new GregorianCalendar(2020, 0, 23, 13, 40, 00);
+
+
+//        dpd = DatePickerDialog.newInstance(
+//                Main3Activity.this,
+//                now.get(Calendar.YEAR),
+//                now.get(Calendar.MONTH),
+//                now.get(Calendar.DAY_OF_MONTH)
+//        );
+//
+//        tpd = TimePickerDialog.newInstance(
+//                Main3Activity.this,
+//                now.get(Calendar.HOUR_OF_DAY),
+//                now.get(Calendar.MINUTE),
+//                now.get(Calendar.SECOND),
+//                false
+//        );
+//
+//        dpd.show(getFragmentManager(), "Datepickerdialog");
+
+
+//        Удивительно, но работает
+//        NotifyMe notifyMe = new NotifyMe.Builder(getApplicationContext())
+//                .title("title")
+//                .content("content")
+//                .color(255, 0, 0, 255)
+//                .led_color(255, 255, 255, 255)
+//                .time(cal)
+//                .key("test")
+//                .addAction(new Intent(this, AboutFilmActivity.class), "Open", true, false)
+//                .large_icon(R.drawable.ic_ticket_accent)
+//                .rrule("FREQ=MINUTELY;INTERVAL=5;COUNT=2")
+//                .build();
+
+        //
+        apiInterface = APIClient.getClient().create(APIInterface.class);
 
 
 
@@ -443,6 +565,102 @@ public class Main3Activity extends AppCompatActivity {
                 .show();
     }
 
+    public void stories(List<FilmAPI> films) {
+        SimpleDateFormat fmt = new SimpleDateFormat("yyy-MM-dd");
+
+
+        ArrayList<MyStory> myStories = new ArrayList<>();
+
+
+         /*
+          є список з юрлками і назвою тайтла
+          коли ти нажимаєш на кнопочку - витягується позиція, і назву тайтлу передаєш в інтент для
+          того щоб в актівіті загрузилась вся інфа
+           */
+
+         int i=0;
+
+        try {
+            for (FilmAPI film : films) {
+                if(i==5)
+                    break;
+                MyStory temp = new MyStory();
+                temp.setDate(fmt.parse(film.getDate()));
+                temp.setDescription(film.getTitle());
+                temp.setUrl(APIClient.HOST + film.getPicUrl());
+                Log.d("STR",temp.toString());
+
+                myStories.add(temp);
+                i++;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+//        myStories.add(previousStory);
+//        myStories.add(currentStory);
+
+        new StoryView.Builder(getSupportFragmentManager())
+                .setStoriesList(myStories) // Required
+                .setStoryDuration(5000) // Default is 2000 Millis (2 Seconds)
+//                .setTitleText("New films") // Default is Hidden
+//                .setSubtitleText("") // Default is Hidden
+//                .setTitleLogoUrl("https://i.pinimg.com/originals/f8/27/ed/f827ed9a704146f65b96226f430abf3c.png") // Default is Hidden
+//                .setTitleLogoUrl()
+                .setStoryClickListeners(new StoryClickListeners() {
+                    @Override
+                    public void onDescriptionClickListener(int position) {
+                        Toast.makeText(Main3Activity.this, myStories.get(position).getDescription(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(Main3Activity.this, AboutFilmActivity.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onTitleIconClickListener(int position) {
+                        //your action
+                    }
+
+                }) // Optional Listeners
+                .build() // Must be called before calling show method
+                .show();
+    }
+
+//    @Override
+//    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
+//        now.set(Calendar.YEAR,year);
+//        now.set(Calendar.MONTH,monthOfYear);
+//        now.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+//        tpd.show(getFragmentManager(), "Timepickerdialog");
+//    }
+//
+//    @Override
+//    public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
+//        now.set(Calendar.HOUR_OF_DAY,hourOfDay);
+//        now.set(Calendar.MINUTE,minute);
+//        now.set(Calendar.SECOND,second);
+//        Log.d("YEAR",now.get(Calendar.YEAR)+"");
+//        Log.d("MONTH",now.get(Calendar.MONTH)+"");
+//        Log.d("DAY_OF_MONTH",now.get(Calendar.DAY_OF_MONTH)+"");
+//        Log.d("HOUR_OF_DAY",now.get(Calendar.HOUR_OF_DAY)+"");
+//        Log.d("MINUTE",now.get(Calendar.MINUTE)+"");
+//        Log.d("SECOND",now.get(Calendar.SECOND)+"");
+//        Intent intent = new Intent(getApplicationContext(),Main3Activity.class);
+//        intent.putExtra("test","I am a String");
+//        NotifyMe notifyMe = new NotifyMe.Builder(getApplicationContext())
+//                .title("title")
+//                .content("content")
+//                .color(255,0,0,255)
+//                .led_color(255,255,255,255)
+//                .time(now)
+//                .addAction(intent,"Snooze",false)
+//                .key("test")
+//                .addAction(new Intent(),"Dismiss",true,false)
+//                .addAction(intent,"Done")
+//                .large_icon(R.mipmap.ic_launcher_round)
+//                .rrule("FREQ=MINUTELY;INTERVAL=5;COUNT=2")
+//                .build();
+//    }
 
 
     class MyTask extends AsyncTask<Void, Void, Void> {

@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="film"
+                    android:text="Loading..."
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -48,22 +48,23 @@
                     android:id="@+id/cinemaAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="datetime"
-                    android:textColor="@color/black" />
-
-                <TextView
-                    android:id="@+id/filmPlace"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="place"
+                    android:text="Loading..."
                     android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/filmCinema"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="cinema"
+                    android:text="Loading..."
                     android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/filmPlace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Loading..."
+                    android:textColor="@color/black" />
+
             </LinearLayout>
 
         </LinearLayout>

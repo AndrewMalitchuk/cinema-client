@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.matecode:Snacky:1.1.4@aar">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3fead175a53c9951a1484c4df317047e/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3fead175a53c9951a1484c4df317047e/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3fead175a53c9951a1484c4df317047e/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

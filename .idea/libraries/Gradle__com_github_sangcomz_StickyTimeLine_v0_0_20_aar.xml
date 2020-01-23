@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.sangcomz:StickyTimeLine:v0.0.20@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75b3a4a084a9fe9b3149ecfe3a08ff73/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/75b3a4a084a9fe9b3149ecfe3a08ff73/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8f8a5f57daeb047ab3837e7fe7103211/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/8f8a5f57daeb047ab3837e7fe7103211/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

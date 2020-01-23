@@ -12,43 +12,43 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int ticketBackgroundColor = 0x7f03035d;
-        public static final int ticketBorderColor = 0x7f03035e;
-        public static final int ticketBorderWidth = 0x7f03035f;
-        public static final int ticketCornerRadius = 0x7f030360;
-        public static final int ticketCornerType = 0x7f030361;
-        public static final int ticketDividerColor = 0x7f030362;
-        public static final int ticketDividerDashGap = 0x7f030363;
-        public static final int ticketDividerDashLength = 0x7f030364;
-        public static final int ticketDividerPadding = 0x7f030365;
-        public static final int ticketDividerType = 0x7f030366;
-        public static final int ticketDividerWidth = 0x7f030367;
-        public static final int ticketElevation = 0x7f030368;
-        public static final int ticketOrientation = 0x7f030369;
-        public static final int ticketScallopPositionPercent = 0x7f03036a;
-        public static final int ticketScallopRadius = 0x7f03036b;
-        public static final int ticketShowBorder = 0x7f03036c;
-        public static final int ticketShowDivider = 0x7f03036d;
+        public static final int ticketBackgroundColor = 0x7f040366;
+        public static final int ticketBorderColor = 0x7f040367;
+        public static final int ticketBorderWidth = 0x7f040368;
+        public static final int ticketCornerRadius = 0x7f040369;
+        public static final int ticketCornerType = 0x7f04036a;
+        public static final int ticketDividerColor = 0x7f04036b;
+        public static final int ticketDividerDashGap = 0x7f04036c;
+        public static final int ticketDividerDashLength = 0x7f04036d;
+        public static final int ticketDividerPadding = 0x7f04036e;
+        public static final int ticketDividerType = 0x7f04036f;
+        public static final int ticketDividerWidth = 0x7f040370;
+        public static final int ticketElevation = 0x7f040371;
+        public static final int ticketOrientation = 0x7f040372;
+        public static final int ticketScallopPositionPercent = 0x7f040373;
+        public static final int ticketScallopRadius = 0x7f040374;
+        public static final int ticketShowBorder = 0x7f040375;
+        public static final int ticketShowDivider = 0x7f040376;
     }
     public static final class id {
         private id() {}
 
-        public static final int dash = 0x7f0900e4;
-        public static final int horizontal = 0x7f090146;
-        public static final int normal = 0x7f0901c4;
-        public static final int rounded = 0x7f090200;
-        public static final int scallop = 0x7f09020a;
-        public static final int vertical = 0x7f0902eb;
+        public static final int dash = 0x7f0a00f5;
+        public static final int horizontal = 0x7f0a0157;
+        public static final int normal = 0x7f0a01fd;
+        public static final int rounded = 0x7f0a0242;
+        public static final int scallop = 0x7f0a024c;
+        public static final int vertical = 0x7f0a032e;
     }
     public static final class string {
         private string() {}
 
-        public static final int app_name = 0x7f100029;
+        public static final int app_name = 0x7f110029;
     }
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] TicketView = { 0x1010440, 0x7f03035d, 0x7f03035e, 0x7f03035f, 0x7f030360, 0x7f030361, 0x7f030362, 0x7f030363, 0x7f030364, 0x7f030365, 0x7f030366, 0x7f030367, 0x7f030368, 0x7f030369, 0x7f03036a, 0x7f03036b, 0x7f03036c, 0x7f03036d };
+        public static final int[] TicketView = { 0x1010440, 0x7f040366, 0x7f040367, 0x7f040368, 0x7f040369, 0x7f04036a, 0x7f04036b, 0x7f04036c, 0x7f04036d, 0x7f04036e, 0x7f04036f, 0x7f040370, 0x7f040371, 0x7f040372, 0x7f040373, 0x7f040374, 0x7f040375, 0x7f040376 };
         public static final int TicketView_android_elevation = 0;
         public static final int TicketView_ticketBackgroundColor = 1;
         public static final int TicketView_ticketBorderColor = 2;

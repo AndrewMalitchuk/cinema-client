@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.cinema.client.R;
 import com.cinema.client.activity.AboutFilmActivity;
 import com.cinema.client.entities.FilmItemSearch;
@@ -45,7 +46,9 @@ public class FilmSearchAdapter extends RecyclerView.Adapter<FilmSearchAdapter.Vi
         holder.filmPlaceText.setText(myTickets.getFilmPlace());
         holder.filmCinemaText.setText(myTickets.getFilmCinema());
 
-        holder.filmImage.setImageResource(myTickets.getFilmImg());
+//        holder.filmImage.setImageResource(myTickets.getFilmImg());
+
+        Glide.with(context).load(myTickets.getFilmImg()).into(holder.filmImage);
 
 
 

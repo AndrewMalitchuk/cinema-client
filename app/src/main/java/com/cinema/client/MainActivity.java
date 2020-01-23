@@ -1,10 +1,16 @@
 package com.cinema.client;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.cinema.client.activity.AboutCinemaActivity;
 import com.cinema.client.activity.AboutDeveloperActivity;
@@ -27,6 +33,10 @@ import com.cinema.client.activity.StoriesActivity;
 import com.cinema.client.activity.TicketActivity;
 import com.cinema.client.activity.WhatsNewActivity;
 import com.cinema.client.activity.ZoomImageActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,6 +56,38 @@ public class MainActivity extends AppCompatActivity {
 //        Intent intent =new Intent(this, AboutActivity.class);
 //        Intent intent =new Intent(this, TicketActivity.class);
 //        startActivity(intent);
+
+        // XXX !!!
+        // https://github.com/firebase/quickstart-android/tree/bf928f5b7385637bf14fd91505429322951d3914/messaging
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // Create channel to show notifications.
+            String channelId  = "fcm_default_channel";
+            String channelName = "Weather";
+            NotificationManager notificationManager =
+                    getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(new NotificationChannel(channelId,
+                    channelName, NotificationManager.IMPORTANCE_LOW));
+        }
+
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("MAIN ACTIVITY", "getInstanceId failed", task.getException());
+                            return;
+                        }
+
+                        // Get new Instance ID token
+                        String token = task.getResult().getToken();
+
+                        // Log and toast
+//                        String msg = getString(R.string.msg_token_fmt, token);
+                        Log.d("MAIN ACTIVITY", token);
+                        Toast.makeText(MainActivity.this, token, Toast.LENGTH_SHORT).show();
+                    }
+                });
 
 
     }

@@ -12,20 +12,40 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.cinema.client.R;
 import com.cinema.client.activity.AboutFilmActivity;
+import com.cinema.client.requests.APIClient;
+import com.cinema.client.requests.entities.FilmAPI;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class SwipeCardAdapter extends RecyclerView.Adapter<SwipeCardItem> {
 
     private int pos;
 
-    private List<String> items = new ArrayList<String>(Arrays.asList(
-            "Lorem #1","Lorem #2","Lorem #3",
-            "Lorem #4","Lorem #5","Lorem #6",
-            "Lorem #7","Lorem #8","Lorem #9"
-    ));
+    @Getter
+    @Setter
+    private List<FilmAPI> films;
+
+
+    @Getter
+    @Setter
+    private Context context;
+
+//    private List<String> items = new ArrayList<String>(Arrays.asList(
+//            "Lorem #1","Lorem #2","Lorem #3",
+//            "Lorem #4","Lorem #5","Lorem #6",
+//            "Lorem #7","Lorem #8","Lorem #9"
+//    ));
+
+
+    public SwipeCardAdapter(List<FilmAPI> films, Context context){
+        this.films=films;
+        this.context=context;
+    }
 
 
     private final MyOnClickListener mOnClickListener = new MyOnClickListener();
@@ -39,33 +59,31 @@ public class SwipeCardAdapter extends RecyclerView.Adapter<SwipeCardItem> {
         mOnClickListener.setContext(parent.getContext());
         view.setOnClickListener(mOnClickListener);
         return new SwipeCardItem(view);
-        //
+        //`
 
-
-//        return new SwipeCardItem(
-//                LayoutInflater.from(parent.getContext()).inflate(R.layout.swipe_card_item, parent, false));
     }
 
 
 
     @Override
     public void onBindViewHolder(@NonNull SwipeCardItem holder, int position) {
-//        holder.bind(items.get(position).intValue());
-        holder.bind(items.get(position));
+
+//        holder.bind(items.get(position));
+        holder.bind(films.get(position).getTitle(), APIClient.HOST+films.get(position).getPicUrl(),context);
         pos=position;
     }
 
     @Override
     public int getItemCount() {
-        return items.size();
+        return films.size();
     }
 
-    public List<String> getItems() {
-        return items;
+    public List<FilmAPI> getItems() {
+        return films;
     }
 
     public void removeTopItem() {
-        items.remove(0);
+        films.remove(0);
         notifyDataSetChanged();
     }
 
@@ -87,9 +105,10 @@ public class SwipeCardAdapter extends RecyclerView.Adapter<SwipeCardItem> {
 
 
             Intent intent=new Intent(context, AboutFilmActivity.class);
+            intent.putExtra("filmId",films.get(pos).getId());
             context.startActivity(intent);
 
-            Toast.makeText(context, items.get(pos), Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, films.get(pos).getTitle(), Toast.LENGTH_SHORT).show();
 
 
         }

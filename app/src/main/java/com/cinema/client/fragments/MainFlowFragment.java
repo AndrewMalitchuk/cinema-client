@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +23,7 @@ import com.cinema.client.R;
 import com.cinema.client.activity.AboutCinemaActivity;
 import com.cinema.client.activity.AboutFilmActivity;
 import com.cinema.client.activity.ErrorActivity;
+import com.cinema.client.activity.Main3Activity;
 import com.cinema.client.activity.PosterActivity;
 import com.cinema.client.activity.SearchCinemaActivity;
 import com.cinema.client.activity.SearchFilmActivity;
@@ -34,8 +36,13 @@ import com.freegeek.android.materialbanner.MaterialBanner;
 import com.freegeek.android.materialbanner.simple.SimpleBannerData;
 import com.freegeek.android.materialbanner.simple.SimpleViewHolderCreator;
 import com.freegeek.android.materialbanner.view.indicator.CirclePageIndicator;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.liangfeizc.avatarview.AvatarView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -334,31 +341,159 @@ public class MainFlowFragment extends Fragment {
 
     public void onGenreIconClick(View view) {
         Intent intent;
+
+
+        Call<List<FilmAPI>>call;
         switch (view.getId()) {
             case R.id.comedyAvatar:
                 intent = new Intent(getActivity(), PosterActivity.class);
-                startActivity(intent);
+                call=apiInterface.getFilmByGenre(1);
+                call.enqueue(new Callback<List<FilmAPI>>() {
+                    @Override
+                    public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+                        List<FilmAPI> films=response.body();
+//                        Log.d("POSTER",films.size()+"");
+
+                        Gson gson = new GsonBuilder().create();
+                        JsonArray myCustomArray = gson.toJsonTree(films).getAsJsonArray();
+                        JsonObject jsonObject = new JsonObject();
+//                        jsonObject.add( myCustomArray);
+
+                        intent.putExtra("json",myCustomArray.toString());
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+                        call.cancel();
+                        Intent intent = new Intent(getContext(), ErrorActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+//                startActivity(intent);
                 Toast.makeText(getActivity(), "comedyAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.actionAvatar:
                 intent = new Intent(getActivity(), PosterActivity.class);
-                startActivity(intent);
-                Toast.makeText(getActivity(), "actionAvatar", Toast.LENGTH_SHORT).show();
+                call=apiInterface.getFilmByGenre(2);
+                call.enqueue(new Callback<List<FilmAPI>>() {
+                    @Override
+                    public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+                        List<FilmAPI> films=response.body();
+//                        Log.d("POSTER",films.size()+"");
+
+                        Gson gson = new GsonBuilder().create();
+                        JsonArray myCustomArray = gson.toJsonTree(films).getAsJsonArray();
+                        JsonObject jsonObject = new JsonObject();
+//                        jsonObject.add( myCustomArray);
+
+                        intent.putExtra("json",myCustomArray.toString());
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+                        call.cancel();
+                        Intent intent = new Intent(getContext(), ErrorActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+//                startActivity(intent);
+                Toast.makeText(getActivity(), "comedyAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.historicalAvatar:
                 intent = new Intent(getActivity(), PosterActivity.class);
-                startActivity(intent);
-                Toast.makeText(getActivity(), "historicalAvatar", Toast.LENGTH_SHORT).show();
+                call=apiInterface.getFilmByGenre(3);
+                call.enqueue(new Callback<List<FilmAPI>>() {
+                    @Override
+                    public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+                        List<FilmAPI> films=response.body();
+//                        Log.d("POSTER",films.size()+"");
+
+                        Gson gson = new GsonBuilder().create();
+                        JsonArray myCustomArray = gson.toJsonTree(films).getAsJsonArray();
+                        JsonObject jsonObject = new JsonObject();
+//                        jsonObject.add( myCustomArray);
+
+                        intent.putExtra("json",myCustomArray.toString());
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+                        call.cancel();
+                        Intent intent = new Intent(getContext(), ErrorActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+//                startActivity(intent);
+                Toast.makeText(getActivity(), "comedyAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.sciFiAvatar:
                 intent = new Intent(getActivity(), PosterActivity.class);
-                startActivity(intent);
-                Toast.makeText(getActivity(), "sciFiAvatar", Toast.LENGTH_SHORT).show();
+                call=apiInterface.getFilmByGenre(4);
+                call.enqueue(new Callback<List<FilmAPI>>() {
+                    @Override
+                    public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+                        List<FilmAPI> films=response.body();
+//                        Log.d("POSTER",films.size()+"");
+
+                        Gson gson = new GsonBuilder().create();
+                        JsonArray myCustomArray = gson.toJsonTree(films).getAsJsonArray();
+                        JsonObject jsonObject = new JsonObject();
+//                        jsonObject.add( myCustomArray);
+
+                        intent.putExtra("json",myCustomArray.toString());
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+                        call.cancel();
+                        Intent intent = new Intent(getContext(), ErrorActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+//                startActivity(intent);
+                Toast.makeText(getActivity(), "comedyAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.horrorAvatar:
                 intent = new Intent(getActivity(), PosterActivity.class);
-                startActivity(intent);
-                Toast.makeText(getActivity(), "horrorAvatar", Toast.LENGTH_SHORT).show();
+                call=apiInterface.getFilmByGenre(5);
+                call.enqueue(new Callback<List<FilmAPI>>() {
+                    @Override
+                    public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+                        List<FilmAPI> films=response.body();
+//                        Log.d("POSTER",films.size()+"");
+
+                        Gson gson = new GsonBuilder().create();
+                        JsonArray myCustomArray = gson.toJsonTree(films).getAsJsonArray();
+                        JsonObject jsonObject = new JsonObject();
+//                        jsonObject.add( myCustomArray);
+
+                        intent.putExtra("json",myCustomArray.toString());
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+                        call.cancel();
+                        Intent intent = new Intent(getContext(), ErrorActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+//                startActivity(intent);
+                Toast.makeText(getActivity(), "comedyAvatar", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

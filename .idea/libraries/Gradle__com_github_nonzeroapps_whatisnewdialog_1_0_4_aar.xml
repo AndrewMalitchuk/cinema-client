@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.nonzeroapps:whatisnewdialog:1.0.4@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4cadf58a0753dc67950b161b455ad51b/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4cadf58a0753dc67950b161b455ad51b/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b10c032f3706a42e73b03a08fdc1f0c4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b10c032f3706a42e73b03a08fdc1f0c4/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

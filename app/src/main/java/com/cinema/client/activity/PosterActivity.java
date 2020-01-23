@@ -14,7 +14,14 @@ import android.widget.TextView;
 
 import com.cinema.client.R;
 import com.cinema.client.etc.SwipeCardAdapter;
+import com.cinema.client.requests.entities.FilmAPI;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -80,7 +87,23 @@ public class PosterActivity extends AppCompatActivity {
                 .start();
 
 
-        adapter = new SwipeCardAdapter();
+
+
+        Intent i = getIntent();
+
+        String json =i.getStringExtra("json");
+        Log.d("json",json);
+        Gson gson = new GsonBuilder().create();
+
+        List<FilmAPI> videos = gson.fromJson(json, new TypeToken<List<FilmAPI>>(){}.getType());
+        Log.d("LIST",videos.get(0).toString());
+
+//        adapter.setFilms(videos);
+        adapter = new SwipeCardAdapter(videos,getApplicationContext());
+        Log.d("ADPT",adapter.getFilms().size()+" "+adapter.getFilms().get(0).getTitle());
+
+
+
 
         final RecyclerView recyclerView = findViewById(R.id.recycler_view);
 
@@ -141,7 +164,7 @@ public class PosterActivity extends AppCompatActivity {
                 .setMaxShowCount(3)
                 .setScaleGap(0.1f)
                 .setTransYGap(0));
-        recyclerView.setAdapter(adapter = new SwipeCardAdapter());
+        recyclerView.setAdapter(adapter = new SwipeCardAdapter(videos,getApplicationContext()));
 
 
 

@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: org.osmdroid:osmdroid-android:6.1.2@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1ad0a8da2fdda96cb5f05ca696eff59/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bf68f764dde7e6f74b53a87ebde7a5af/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bf68f764dde7e6f74b53a87ebde7a5af/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

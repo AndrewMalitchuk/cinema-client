@@ -1,52 +1,31 @@
 package com.cinema.client.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
 public class FilmItemSearch {
 
+    @Getter
+    @Setter
     private String filmName;
+
+    @Getter
+    @Setter
     private String filmDateTime;
+
+    @Getter
+    @Setter
     private String filmPlace;
+
+    @Getter
+    @Setter
     private String filmCinema;
 
-    private int filmImg;
+    @Getter
+    @Setter
+    private String filmImg;
 
-    public String getFilmName() {
-        return filmName;
-    }
-
-    public void setFilmName(String filmName) {
-        this.filmName = filmName;
-    }
-
-    public String getFilmDateTime() {
-        return filmDateTime;
-    }
-
-    public void setFilmDateTime(String filmDateTime) {
-        this.filmDateTime = filmDateTime;
-    }
-
-    public String getFilmPlace() {
-        return filmPlace;
-    }
-
-    public void setFilmPlace(String filmPlace) {
-        this.filmPlace = filmPlace;
-    }
-
-    public String getFilmCinema() {
-        return filmCinema;
-    }
-
-    public void setFilmCinema(String filmCinema) {
-        this.filmCinema = filmCinema;
-    }
-
-    public int getFilmImg() {
-        return filmImg;
-    }
-
-    public void setFilmImg(int filmImg) {
-        this.filmImg = filmImg;
-    }
 
 }

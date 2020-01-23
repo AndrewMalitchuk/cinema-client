@@ -12,45 +12,45 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int atg_backgroundColor = 0x7f030039;
-        public static final int atg_borderColor = 0x7f03003a;
-        public static final int atg_borderStrokeWidth = 0x7f03003b;
-        public static final int atg_checkedBackgroundColor = 0x7f03003c;
-        public static final int atg_checkedBorderColor = 0x7f03003d;
-        public static final int atg_checkedMarkerColor = 0x7f03003e;
-        public static final int atg_checkedTextColor = 0x7f03003f;
-        public static final int atg_dashBorderColor = 0x7f030040;
-        public static final int atg_horizontalPadding = 0x7f030041;
-        public static final int atg_horizontalSpacing = 0x7f030042;
-        public static final int atg_inputHint = 0x7f030043;
-        public static final int atg_inputHintColor = 0x7f030044;
-        public static final int atg_inputTextColor = 0x7f030045;
-        public static final int atg_isAppendMode = 0x7f030046;
-        public static final int atg_pressedBackgroundColor = 0x7f030047;
-        public static final int atg_textColor = 0x7f030048;
-        public static final int atg_textSize = 0x7f030049;
-        public static final int atg_verticalPadding = 0x7f03004a;
-        public static final int atg_verticalSpacing = 0x7f03004b;
-        public static final int tagGroupStyle = 0x7f03032a;
+        public static final int atg_backgroundColor = 0x7f040039;
+        public static final int atg_borderColor = 0x7f04003a;
+        public static final int atg_borderStrokeWidth = 0x7f04003b;
+        public static final int atg_checkedBackgroundColor = 0x7f04003c;
+        public static final int atg_checkedBorderColor = 0x7f04003d;
+        public static final int atg_checkedMarkerColor = 0x7f04003e;
+        public static final int atg_checkedTextColor = 0x7f04003f;
+        public static final int atg_dashBorderColor = 0x7f040040;
+        public static final int atg_horizontalPadding = 0x7f040041;
+        public static final int atg_horizontalSpacing = 0x7f040042;
+        public static final int atg_inputHint = 0x7f040043;
+        public static final int atg_inputHintColor = 0x7f040044;
+        public static final int atg_inputTextColor = 0x7f040045;
+        public static final int atg_isAppendMode = 0x7f040046;
+        public static final int atg_pressedBackgroundColor = 0x7f040047;
+        public static final int atg_textColor = 0x7f040048;
+        public static final int atg_textSize = 0x7f040049;
+        public static final int atg_verticalPadding = 0x7f04004a;
+        public static final int atg_verticalSpacing = 0x7f04004b;
+        public static final int tagGroupStyle = 0x7f040333;
     }
     public static final class string {
         private string() {}
 
-        public static final int add_tag = 0x7f100027;
+        public static final int add_tag = 0x7f110027;
     }
     public static final class style {
         private style() {}
 
-        public static final int TagGroup = 0x7f11012c;
-        public static final int TagGroup_Beauty_Red = 0x7f11012d;
-        public static final int TagGroup_Beauty_Red_Inverse = 0x7f11012e;
-        public static final int TagGroup_Large = 0x7f11012f;
-        public static final int TagGroup_Small = 0x7f110130;
+        public static final int TagGroup = 0x7f12013b;
+        public static final int TagGroup_Beauty_Red = 0x7f12013c;
+        public static final int TagGroup_Beauty_Red_Inverse = 0x7f12013d;
+        public static final int TagGroup_Large = 0x7f12013e;
+        public static final int TagGroup_Small = 0x7f12013f;
     }
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] TagGroup = { 0x7f030039, 0x7f03003a, 0x7f03003b, 0x7f03003c, 0x7f03003d, 0x7f03003e, 0x7f03003f, 0x7f030040, 0x7f030041, 0x7f030042, 0x7f030043, 0x7f030044, 0x7f030045, 0x7f030046, 0x7f030047, 0x7f030048, 0x7f030049, 0x7f03004a, 0x7f03004b };
+        public static final int[] TagGroup = { 0x7f040039, 0x7f04003a, 0x7f04003b, 0x7f04003c, 0x7f04003d, 0x7f04003e, 0x7f04003f, 0x7f040040, 0x7f040041, 0x7f040042, 0x7f040043, 0x7f040044, 0x7f040045, 0x7f040046, 0x7f040047, 0x7f040048, 0x7f040049, 0x7f04004a, 0x7f04004b };
         public static final int TagGroup_atg_backgroundColor = 0;
         public static final int TagGroup_atg_borderColor = 1;
         public static final int TagGroup_atg_borderStrokeWidth = 2;
@@ -70,7 +70,7 @@ public final class R {
         public static final int TagGroup_atg_textSize = 16;
         public static final int TagGroup_atg_verticalPadding = 17;
         public static final int TagGroup_atg_verticalSpacing = 18;
-        public static final int[] Themes = { 0x7f03032a };
+        public static final int[] Themes = { 0x7f040333 };
         public static final int Themes_tagGroupStyle = 0;
     }
 }

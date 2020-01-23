@@ -1,8 +1,13 @@
 
 package com.cinema.client.requests.entities;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +15,8 @@ import lombok.ToString;
 
 
 @ToString
-public class FilmAPI {
+public class FilmAPI  {
+//public class FilmAPI  implements Parcelable {
 
     @Getter
     @Setter
@@ -87,6 +93,59 @@ public class FilmAPI {
         this.videoUrl = videoUrl;
         this.picUrl = picUrl;
     }
+
+    protected FilmAPI(Parcel in) {
+        if (in.readByte() == 0) {
+            id = null;
+        } else {
+            id = in.readInt();
+        }
+        title = in.readString();
+        description = in.readString();
+        date = in.readString();
+        if (in.readByte() == 0) {
+            duration = null;
+        } else {
+            duration = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            genre = null;
+        } else {
+            genre = in.readInt();
+        }
+        videoUrl = in.readString();
+        picUrl = in.readString();
+    }
+
+//    public static final Creator<FilmAPI> CREATOR = new Creator<FilmAPI>() {
+//        @Override
+//        public FilmAPI createFromParcel(Parcel in) {
+//            return new FilmAPI(in);
+//        }
+//
+//        @Override
+//        public FilmAPI[] newArray(int size) {
+//            return new FilmAPI[size];
+//        }
+//    };
+//
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    @Override
+//    public void writeToParcel(Parcel parcel, int i) {
+//        parcel.writeInt(id);
+//        parcel.writeString(title);
+//        parcel.writeString(description);
+//        parcel.writeString(date);
+//        parcel.writeInt(duration);
+//        parcel.writeInt(genre);
+//        parcel.writeString(videoUrl);
+//        parcel.writeString(picUrl);
+//
+//    }
 
 //    public Integer getId() {
 //        return id;

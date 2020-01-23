@@ -4,34 +4,7 @@
             "outputFile": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/c9f8bfcb3fa6d1a8e98d3e406d9dd66c/res/values-night-v8/values-night-v8.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,143,245,347,461,581,701",
-                        "endColumns": "87,101,101,113,119,119,111",
-                        "endOffsets": "138,240,342,456,576,696,808"
-                    },
-                    "to": {
-                        "startLines": "14,15,16,17,18,19,20",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "970,1058,1160,1262,1376,1496,1616",
-                        "endColumns": "87,101,101,113,119,119,111",
-                        "endOffsets": "1053,1155,1257,1371,1491,1611,1723"
-                    }
-                },
-                {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/11bcb58fd355ec3251c4e2e843af6f3a/res/values-night-v8/values-night-v8.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,112,175,231,287",
-                        "endColumns": "56,62,55,55,50",
-                        "endOffsets": "107,170,226,282,333"
-                    }
-                },
-                {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/9604883ca2a30b920def8e18b3895c76/res/values-night-v8/values-night-v8.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -45,6 +18,33 @@
                         "startOffsets": "338,408,492,576,672,774,876,1728",
                         "endColumns": "69,83,83,95,101,101,93,88",
                         "endOffsets": "403,487,571,667,769,871,965,1812"
+                    }
+                },
+                {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/d11adf363df3d696af514a59f56b0095/res/values-night-v8/values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,112,175,231,287",
+                        "endColumns": "56,62,55,55,50",
+                        "endOffsets": "107,170,226,282,333"
+                    }
+                },
+                {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/values-night-v8/values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,143,245,347,461,581,701",
+                        "endColumns": "87,101,101,113,119,119,111",
+                        "endOffsets": "138,240,342,456,576,696,808"
+                    },
+                    "to": {
+                        "startLines": "14,15,16,17,18,19,20",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "970,1058,1160,1262,1376,1496,1616",
+                        "endColumns": "87,101,101,113,119,119,111",
+                        "endOffsets": "1053,1155,1257,1371,1491,1611,1723"
                     }
                 }
             ]
