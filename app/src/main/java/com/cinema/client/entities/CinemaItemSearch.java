@@ -1,12 +1,30 @@
 package com.cinema.client.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@ToString
 public class CinemaItemSearch {
 
-    private String cinemaName;
-    private String cinemaAddress;
-    private int cinemaImg;
+    @Getter
+    @Setter
+    private int cinemaId;
 
-    public CinemaItemSearch(String cinemaName, String cinemaAddress, int cinemaImg) {
+    @Getter
+    @Setter
+    private String cinemaName;
+
+    @Getter
+    @Setter
+    private String cinemaAddress;
+
+    @Getter
+    @Setter
+    private String cinemaImg;
+
+    public CinemaItemSearch(int cinemaId,String cinemaName, String cinemaAddress, String cinemaImg) {
+        this.cinemaId=cinemaId;
         this.cinemaName = cinemaName;
         this.cinemaAddress = cinemaAddress;
         this.cinemaImg = cinemaImg;
@@ -15,27 +33,5 @@ public class CinemaItemSearch {
     public CinemaItemSearch() {
     }
 
-    public String getCinemaName() {
-        return cinemaName;
-    }
 
-    public void setCinemaName(String cinemaName) {
-        this.cinemaName = cinemaName;
-    }
-
-    public String getCinemaAddress() {
-        return cinemaAddress;
-    }
-
-    public void setCinemaAddress(String cinemaAddress) {
-        this.cinemaAddress = cinemaAddress;
-    }
-
-    public int getCinemaImg() {
-        return cinemaImg;
-    }
-
-    public void setCinemaImg(int cinemaImg) {
-        this.cinemaImg = cinemaImg;
-    }
 }

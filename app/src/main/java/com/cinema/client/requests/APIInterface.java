@@ -37,8 +37,15 @@ public interface APIInterface {
     @GET(api_ticket)
     Call<TicketAPI> getTicketByCode(@Query("code") String code);
 
+
+    @GET(api_cinema)
+    Call<List<CinemaAPI>> getCinemas();
+
     @GET(api_cinema)
     Call<CinemaAPI> getCinemaById(@Query("id") int id);
+
+    @GET(api_cinema)
+    Call<CinemaAPI> getCinemaByName(@Query("name") String name);
 
 
 

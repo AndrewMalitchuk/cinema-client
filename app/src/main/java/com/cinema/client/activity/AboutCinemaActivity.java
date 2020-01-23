@@ -54,8 +54,6 @@ import retrofit2.Response;
 public class AboutCinemaActivity extends AppCompatActivity {
 
 
-
-
     @BindView(R.id.mScrollView)
     ScrollView scrollView;
 
@@ -76,7 +74,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
     DatePickerTimeline datePickerTimeline;
 
 
-
     @BindView(R.id.cinemaPictureCinemaActivityAvatarView)
     AvatarView cinemaPictureCinemaActivityAvatarView;
 
@@ -87,12 +84,15 @@ public class AboutCinemaActivity extends AppCompatActivity {
     @BindView(R.id.cinemaNameBigCinemaActivityTextView)
     TextView cinemaNameBigCinemaActivityTextView;
 
- @BindView(R.id.cinemaLocationCinemaActivityTextView)
+    @BindView(R.id.cinemaLocationCinemaActivityTextView)
     TextView cinemaLocationCinemaActivityTextView;
 
- @BindView(R.id.telephoneAboutCinemaTextView)
+    @BindView(R.id.telephoneAboutCinemaTextView)
     TextView telephoneAboutCinemaTextView;
 
+
+    @BindView(R.id.my_toolbar)
+    Toolbar myToolbar;
 
 //    private MapContainerView mapView;
 
@@ -106,7 +106,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
     private CinemaAPI currentCinema;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,8 +113,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        myToolbar.setTitle("Kosmos");
+        myToolbar.setTitle("Loading...");
         setSupportActionBar(myToolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -139,7 +137,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
 //        blurImageView.setBlur(10);
 
 
-
         //
 
 
@@ -154,7 +151,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
 
 
-
         map = (MapView) findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
 
@@ -164,7 +160,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
         marker = new Marker(map);
 
         //
-
 
 
         //
@@ -184,8 +179,14 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
 
         //
+
+        int id = getIntent().getIntExtra("cinemaId", -1);
+        if (id == -1) {
+            id = 9;
+        }
+
+
         apiInterface = APIClient.getClient().create(APIInterface.class);
-        int id = 9;
         Call<CinemaAPI> call = apiInterface.getCinemaById(id);
         call.enqueue(new Callback<CinemaAPI>() {
             @Override
@@ -198,6 +199,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<CinemaAPI> call, Throwable t) {
+                Log.d("#!","AboutCinemaActivity");
+
                 call.cancel();
                 Intent intent = new Intent(AboutCinemaActivity.this, ErrorActivity.class);
                 startActivity(intent);
@@ -218,7 +221,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.maps_direction) {
-            Uri gmmIntentUri = Uri.parse("geo:"+currentCinema.getGeoLat()+", "+currentCinema.getGeoLon());
+            Uri gmmIntentUri = Uri.parse("geo:" + currentCinema.getGeoLat() + ", " + currentCinema.getGeoLon());
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
             mapIntent.setPackage("com.google.android.apps.maps");
             startActivity(mapIntent);
@@ -265,6 +268,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
         Glide.with(this).load(APIClient.HOST + content.getPicUrl()).into(cinemaPictureCinemaActivityAvatarView);
         cinemaNameCinemaActivityTextView.setText(content.getName());
         cinemaNameBigCinemaActivityTextView.setText(content.getName());
+        myToolbar.setTitle(content.getName());
         cinemaLocationCinemaActivityTextView.setText(content.getAddress());
         telephoneAboutCinemaTextView.setText(content.getTelephone());
         SpannableString spannableString = new SpannableString(content.getTelephone());
@@ -289,9 +293,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
         mScaleBarOverlay.setCentred(true);
         mScaleBarOverlay.setScaleBarOffset(dm.widthPixels / 2, 10);
         map.getOverlays().add(mScaleBarOverlay);
-
-
-
 
 
         IMapController mapController = map.getController();

@@ -17,9 +17,13 @@ import com.cinema.client.R;
 import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.Main2Activity;
 import com.cinema.client.entities.Hall;
+import com.cinema.client.requests.entities.HallAPI;
+import com.cinema.client.requests.entities.HallCellAPI;
+import com.cinema.client.requests.entities.HallCellCustomAPI;
 import com.pd.chocobar.ChocoBar;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HallRender {
 
@@ -55,17 +59,89 @@ public class HallRender {
     }
 
 
-    public TableLayout render(Hall hall, TableLayout tableLayout) {
+//    public TableLayout render(Hall hall, TableLayout tableLayout) {
+//        int row = hall.getRow();
+//        int col = hall.getCol();
+//        sector=hall.getSector();
+//
+//        for (int i = 0; i < row; i++) {
+//            TableRow tr = new TableRow(context);
+//            tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
+//
+//            TextView temp1 = new TextView(context);
+//            temp1.setText(i + 1 + "");
+//            tr.addView(temp1);
+//            TableRow.LayoutParams params = new TableRow.LayoutParams(
+//                    TableRow.LayoutParams.WRAP_CONTENT,
+//                    TableRow.LayoutParams.WRAP_CONTENT
+//            );
+//
+//            final float scale1 = context.getResources().getDisplayMetrics().density;
+//            int margin = (int) (10 * scale1 + 0.5f);
+//
+//            params.setMargins(margin, 0, margin, 0);
+//            temp1.setLayoutParams(params);
+//
+//
+//            for (int j = 0; j < col; j++) {
+//                Button b = new Button(context);
+////                b.setText(j +1+ "");
+//                final float scale = context.getResources().getDisplayMetrics().density;
+//                int pixels = (int) (50 * scale + 0.5f);
+//
+//                b.setLayoutParams(new TableRow.LayoutParams(pixels, pixels));
+//                b.setText((i +1)+ "-"+(j+1));
+//
+////
+////                if (j == 5 && i == 5) {
+////                    b.getBackground().setColorFilter(Color.parseColor("#FFFAFAFA"), PorterDuff.Mode.MULTIPLY);
+////                    b.setTextColor(Color.parseColor("#FFFAFAFA"));
+////                    b.setEnabled(false);
+////                }
+//
+////                setCellStatus(b,Status.FREE);
+//
+//                setCellStatus(b,hall.getBooked(),Status.BOOKED,i,j);
+//                setCellStatus(b,hall.getFree(),Status.FREE,i,j);
+//                setCellStatus(b,hall.getDisabled(),Status.DISABLED,i,j);
+//                setCellStatus(b,hall.getBought(),Status.BOUGHT,i,j);
+//
+//
+//
+//                tr.addView(b);
+//
+//
+//            }
+//
+//            TextView temp2 = new TextView(context);
+//            temp2.setText(i + 1+ "");
+//            temp2.setLayoutParams(params);
+//            tr.addView(temp2);
+//
+//            tableLayout.addView(tr, new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
+//
+//
+//
+//        }
+//
+//
+//
+//
+//        return tableLayout;
+//
+//    }
+
+    public TableLayout render(HallAPI hall, TableLayout tableLayout) {
         int row = hall.getRow();
         int col = hall.getCol();
-        sector=hall.getSector();
+        sector = hall.getSector();
 
-        for (int i = 0; i < row; i++) {
+        for (int i = 1; i <= row; i++) {
             TableRow tr = new TableRow(context);
             tr.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT, TableRow.LayoutParams.WRAP_CONTENT));
 
             TextView temp1 = new TextView(context);
-            temp1.setText(i + 1 + "");
+            temp1.setText(i + "");
             tr.addView(temp1);
             TableRow.LayoutParams params = new TableRow.LayoutParams(
                     TableRow.LayoutParams.WRAP_CONTENT,
@@ -79,14 +155,14 @@ public class HallRender {
             temp1.setLayoutParams(params);
 
 
-            for (int j = 0; j < col; j++) {
+            for (int j = 1; j <= col; j++) {
                 Button b = new Button(context);
 //                b.setText(j +1+ "");
                 final float scale = context.getResources().getDisplayMetrics().density;
                 int pixels = (int) (50 * scale + 0.5f);
 
                 b.setLayoutParams(new TableRow.LayoutParams(pixels, pixels));
-                b.setText((i +1)+ "-"+(j+1));
+                b.setText((i) + "-" + (j));
 
 //
 //                if (j == 5 && i == 5) {
@@ -97,12 +173,13 @@ public class HallRender {
 
 //                setCellStatus(b,Status.FREE);
 
-                setCellStatus(b,hall.getBooked(),Status.BOOKED,i,j);
-                setCellStatus(b,hall.getFree(),Status.FREE,i,j);
-                setCellStatus(b,hall.getDisabled(),Status.DISABLED,i,j);
-                setCellStatus(b,hall.getBought(),Status.BOUGHT,i,j);
+//                setCellStatus(b,hall.getBooked(),Status.BOOKED,i,j);
+//                setCellStatus(b,hall.getFree(),Status.FREE,i,j);
+                setCellStatus(b, hall.getDisabled(), i, j, Status.DISABLED);
+//                setCellStatus(b,hall.getBought(),Status.BOUGHT,i,j);
 
 
+                setCustomCellStatus(b,hall.getCustom(),i,j);
 
                 tr.addView(b);
 
@@ -110,22 +187,20 @@ public class HallRender {
             }
 
             TextView temp2 = new TextView(context);
-            temp2.setText(i + 1+ "");
+            temp2.setText(i + "");
             temp2.setLayoutParams(params);
             tr.addView(temp2);
 
             tableLayout.addView(tr, new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
 
 
-
         }
-
-
 
 
         return tableLayout;
 
     }
+
 
     public void setCellStatus(Button cell, Status status) {
 
@@ -146,15 +221,15 @@ public class HallRender {
                         Toast.makeText(context, cell.getText().toString(), Toast.LENGTH_SHORT).show();
 
                         editor.putString("place", cell.getText().toString());
-                        TextView textView=((Activity) context).findViewById(R.id.selectedPlacesTextView);
+                        TextView textView = ((Activity) context).findViewById(R.id.selectedPlacesTextView);
 
-                        String prevContent=textView.getText().toString();
-                        if(!prevContent.equals("Please, select place. ")){
-                            textView.setText(prevContent+"; "+sector.charAt(0)+"-"+cell.getText());
+                        String prevContent = textView.getText().toString();
+                        if (!prevContent.equals("Please, select place. ")) {
+                            textView.setText(prevContent + "; " + sector.charAt(0) + "-" + cell.getText());
 
-                        }else {
+                        } else {
 
-                            textView.setText(sector.charAt(0)+"-"+cell.getText());
+                            textView.setText(sector.charAt(0) + "-" + cell.getText());
                         }
                         cell.setText("✓");
                     }
@@ -172,19 +247,48 @@ public class HallRender {
 
     }
 
-    public void setCellStatus(Button button, ArrayList<Hall.Cell> cells, Status status, int i, int j){
+//    public void setCellStatus(Button button, ArrayList<Hall.Cell> cells, Status status, int i, int j){
+//
+//        for(Hall.Cell cell :cells){
+//            int row=cell.getRow();
+//            int col=cell.getCol();
+//
+//
+//            if(row==i && col==j){
+//                setCellStatus(button,status);
+//            }
+//
+//        }
+//
+//    }
 
-        for(Hall.Cell cell :cells){
-            int row=cell.getRow();
-            int col=cell.getCol();
+    public void setCellStatus(Button button, List<HallCellAPI> cells, int i, int j, Status status) {
 
 
-            if(row==i && col==j){
-                setCellStatus(button,status);
+        for (HallCellAPI cell : cells) {
+            int row = cell.getRow();
+            int col = cell.getCol();
+
+
+            if (row == i && col == j) {
+                setCellStatus(button, status);
             }
 
         }
 
+    }
+
+    public void setCustomCellStatus(Button button, List<HallCellCustomAPI> cells, int i, int j) {
+        for (HallCellCustomAPI cell : cells) {
+            int row = cell.getOldRow();
+            int col = cell.getOldCol();
+
+            if (row == i && col == j) {
+                Log.d("DSBL",i+"x"+j);
+
+                button.setText((cell.getNewRow()) + "-" + (cell.getNewCol()));
+            }
+        }
     }
 
 

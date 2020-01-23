@@ -28,7 +28,7 @@
                 android:layout_height="75dp"
                 android:layout_margin="10dp"
                 android:layout_marginRight="5dp"
-                android:src="@drawable/kosmos_cinema"
+                android:src="@drawable/ic_ticket_accent"
                 app:border_color="@color/colorLoginActivityText" />
 
             <LinearLayout
@@ -41,7 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="cinema"
+                    android:text="Loading..."
                     android:textColor="@color/black"
                     android:textSize="17sp"
                     android:textStyle="bold" />
@@ -50,7 +50,7 @@
                     android:id="@+id/cinemaAddress"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="address"
+                    android:text="Loading..."
                     android:textColor="@color/black" />
 
             </LinearLayout>

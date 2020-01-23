@@ -12,9 +12,12 @@ import android.widget.Toast;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.cinema.client.R;
 import com.cinema.client.activity.AboutCinemaActivity;
+import com.cinema.client.activity.AboutFilmActivity;
 import com.cinema.client.entities.CinemaItemSearch;
+import com.cinema.client.entities.FilmItemSearch;
 
 import java.util.List;
 
@@ -23,7 +26,7 @@ public class CinemaSearchAdapter extends RecyclerView.Adapter<CinemaSearchAdapte
     List<CinemaItemSearch> cinemaItemSearchList;
     Context context;
 
-    public CinemaSearchAdapter(List<CinemaItemSearch>cinemaItemSearchList)
+    public CinemaSearchAdapter(List<CinemaItemSearch> cinemaItemSearchList)
     {
         this.cinemaItemSearchList = cinemaItemSearchList;
     }
@@ -40,19 +43,22 @@ public class CinemaSearchAdapter extends RecyclerView.Adapter<CinemaSearchAdapte
     public void onBindViewHolder(CinemaSearchAdapter.ViewHolder holder, final int position) {
         CinemaItemSearch cinemaItemSearch=cinemaItemSearchList.get(position);
 
-        holder.cinemaImage.setImageResource(cinemaItemSearch.getCinemaImg());
+        Glide.with(context).load(cinemaItemSearch.getCinemaImg()).into(holder.cinemaImage);
         holder.cinemaName.setText(cinemaItemSearch.getCinemaName());
         holder.cinemaAddress.setText(cinemaItemSearch.getCinemaAddress());
 
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"The position is:"+position,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context,"The position is:"+position,Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(context, AboutCinemaActivity.class);
+                intent.putExtra("cinemaId",cinemaItemSearch.getCinemaId());
                 context.startActivity(intent);
 
             }
         });
+
+
 
 
     }

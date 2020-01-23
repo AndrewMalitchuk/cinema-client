@@ -22,15 +22,19 @@ import android.widget.Toast;
 import com.brouding.simpledialog.SimpleDialog;
 import com.bumptech.glide.annotation.GlideModule;
 import com.cinema.client.R;
+import com.cinema.client.entities.Hall;
 import com.cinema.client.fragments.HallTestFragment;
+import com.cinema.client.requests.entities.HallAPI;
 import com.github.javiersantos.bottomdialogs.BottomDialog;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.nonzeroapps.whatisnewdialog.NewItemDialog;
 import com.nonzeroapps.whatisnewdialog.object.NewFeatureItem;
 import com.pd.chocobar.ChocoBar;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
@@ -65,6 +69,101 @@ public class BottomNavigation extends AppCompatActivity {
     View llProgressBar;
 
 
+    String json_text="[\n" +
+            "   {\n" +
+            "      \"sector\":\"left\",\n" +
+            "      \"row\":2,\n" +
+            "      \"col\":2,\n" +
+            "      \"disabled\":[\n" +
+            "\n" +
+            "      ],\n" +
+            "      \"custom\":[\n" +
+            "\n" +
+            "      ]\n" +
+            "   },\n" +
+            "   {\n" +
+            "      \"sector\":\"center\",\n" +
+            "      \"row\":4,\n" +
+            "      \"col\":4,\n" +
+            "      \"disabled\":[\n" +
+            "         {\n" +
+            "            \"row\":1,\n" +
+            "            \"col\":1\n" +
+            "         },\n" +
+            "         {\n" +
+            "            \"row\":1,\n" +
+            "            \"col\":4\n" +
+            "         },\n" +
+            "         {\n" +
+            "            \"row\":2,\n" +
+            "            \"col\":1\n" +
+            "         },\n" +
+            "         {\n" +
+            "            \"row\":2,\n" +
+            "            \"col\":4\n" +
+            "         },\n" +
+            "         {\n" +
+            "            \"row\":3,\n" +
+            "            \"col\":1\n" +
+            "         },\n" +
+            "         {\n" +
+            "            \"row\":3,\n" +
+            "            \"col\":4\n" +
+            "         },\n" +
+            "         {\n" +
+            "            \"row\":4,\n" +
+            "            \"col\":1\n" +
+            "         },\n" +
+            "         {\n" +
+            "            \"row\":4,\n" +
+            "            \"col\":4\n" +
+            "         }\n" +
+            "      ],\n" +
+            "      \"custom\":[\n" +
+            "\n" +
+            "      ]\n" +
+            "   },\n" +
+            "   {\n" +
+            "      \"sector\":\"right\",\n" +
+            "      \"row\":6,\n" +
+            "      \"col\":6,\n" +
+            "      \"disabled\":[\n" +
+            "         {\n" +
+            "            \"row\":1,\n" +
+            "            \"col\":1\n" +
+            "         },\n" +
+            "         {\n" +
+            "            \"row\":1,\n" +
+            "            \"col\":2\n" +
+            "         },\n" +
+            "         {\n" +
+            "            \"row\":1,\n" +
+            "            \"col\":5\n" +
+            "         },\n" +
+            "         {\n" +
+            "            \"row\":1,\n" +
+            "            \"col\":6\n" +
+            "         }\n" +
+            "      ],\n" +
+            "      \"custom\":[\n" +
+            "         {\n" +
+            "            \"old_row\":1,\n" +
+            "            \"old_col\":3,\n" +
+            "            \"new_row\":1,\n" +
+            "            \"new_col\":1\n" +
+            "         },\n" +
+            "         {\n" +
+            "            \"old_row\":1,\n" +
+            "            \"old_col\":4,\n" +
+            "            \"new_row\":1,\n" +
+            "            \"new_col\":2\n" +
+            "         }\n" +
+            "      ]\n" +
+            "   }\n" +
+            "]";
+
+
+    Gson gson=new Gson().newBuilder().create();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +188,9 @@ public class BottomNavigation extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), NewNewCardActivity.class));
             }
         });
+
+
+        List<HallAPI> hall=gson.fromJson(json_text,new TypeToken<List<HallAPI>>(){}.getType());
 
         //
 
@@ -120,6 +222,7 @@ public class BottomNavigation extends AppCompatActivity {
 
                         mt = new MyTask();
                         mt.setJson("left_json");
+                        mt.setJson(gson.toJson(hall.get(0)));
                         mt.execute();
 
                         break;
@@ -127,7 +230,9 @@ public class BottomNavigation extends AppCompatActivity {
                         Toast.makeText(BottomNavigation.this, "center_side_of_hall", Toast.LENGTH_SHORT).show();
 
                         mt = new MyTask();
-                        mt.setJson("center_json");
+//                        mt.setJson("center_json");
+//                        mt.setJson(json_text);
+                        mt.setJson(gson.toJson(hall.get(1)));
                         mt.execute();
 
 
@@ -142,7 +247,8 @@ public class BottomNavigation extends AppCompatActivity {
 //                        ft.commit();
 
                         mt = new MyTask();
-                        mt.setJson("right_json");
+//                        mt.setJson("right_json");
+                        mt.setJson(gson.toJson(hall.get(2)));
                         mt.execute();
 
 

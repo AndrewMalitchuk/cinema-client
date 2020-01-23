@@ -79,6 +79,8 @@ public class SearchFilmActivity extends AppCompatActivity {
                 for (FilmAPI film : films) {
                     FilmItemSearch filmItemSearch = new FilmItemSearch();
 
+                    filmItemSearch.setFilmId(film.getId());
+
                     filmItemSearch.setFilmName(film.getTitle());
                     filmItemSearch.setFilmDateTime(film.getDate());
                     filmItemSearch.setFilmPlace("");

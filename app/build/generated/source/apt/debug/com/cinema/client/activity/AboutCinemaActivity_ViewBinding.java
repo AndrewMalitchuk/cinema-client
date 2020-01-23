@@ -7,6 +7,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
@@ -39,6 +40,7 @@ public class AboutCinemaActivity_ViewBinding implements Unbinder {
     target.cinemaNameBigCinemaActivityTextView = Utils.findRequiredViewAsType(source, R.id.cinemaNameBigCinemaActivityTextView, "field 'cinemaNameBigCinemaActivityTextView'", TextView.class);
     target.cinemaLocationCinemaActivityTextView = Utils.findRequiredViewAsType(source, R.id.cinemaLocationCinemaActivityTextView, "field 'cinemaLocationCinemaActivityTextView'", TextView.class);
     target.telephoneAboutCinemaTextView = Utils.findRequiredViewAsType(source, R.id.telephoneAboutCinemaTextView, "field 'telephoneAboutCinemaTextView'", TextView.class);
+    target.myToolbar = Utils.findRequiredViewAsType(source, R.id.my_toolbar, "field 'myToolbar'", Toolbar.class);
   }
 
   @Override
@@ -59,5 +61,6 @@ public class AboutCinemaActivity_ViewBinding implements Unbinder {
     target.cinemaNameBigCinemaActivityTextView = null;
     target.cinemaLocationCinemaActivityTextView = null;
     target.telephoneAboutCinemaTextView = null;
+    target.myToolbar = null;
   }
 }

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -16,10 +17,22 @@ import com.arlib.floatingsearchview.FloatingSearchView;
 import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
 import com.cinema.client.R;
 import com.cinema.client.adapters.CinemaSearchAdapter;
+import com.cinema.client.adapters.FilmSearchAdapter;
 import com.cinema.client.entities.CinemaItemSearch;
+import com.cinema.client.entities.FilmItemSearch;
 import com.cinema.client.etc.MySearchSuggestion;
+import com.cinema.client.requests.APIClient;
+import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.CinemaAPI;
+import com.cinema.client.requests.entities.FilmAPI;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SearchCinemaActivity extends AppCompatActivity {
 
@@ -31,6 +44,8 @@ public class SearchCinemaActivity extends AppCompatActivity {
     ArrayList<CinemaItemSearch> cinemaItemSearchList;
 
     FloatingSearchView mSearchView;
+
+    private List<CinemaAPI> cinemas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,55 +68,110 @@ public class SearchCinemaActivity extends AppCompatActivity {
 
         cinemaItemSearchList = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
-            CinemaItemSearch cinemaItemSearch = new CinemaItemSearch();
-            cinemaItemSearch.setCinemaName("Cinema #"+i);
-            cinemaItemSearch.setCinemaAddress("Address #"+i);
-            cinemaItemSearch.setCinemaImg(R.drawable.kosmos_cinema);
+        APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
 
-            cinemaItemSearchList.add(cinemaItemSearch);
-        }
+        Call<List<CinemaAPI>> call = apiInterface.getCinemas();
+
+        call.enqueue(new Callback<List<CinemaAPI>>() {
+            @Override
+            public void onResponse(Call<List<CinemaAPI>> call, Response<List<CinemaAPI>> response) {
+                cinemas = response.body();
 
 
-        cinemaSearchAdapter = new CinemaSearchAdapter(cinemaItemSearchList);
+                for (CinemaAPI cinema : cinemas) {
+                    CinemaItemSearch cinemaItemSearch = new CinemaItemSearch();
 
-        recyclerView = (RecyclerView) findViewById(R.id.myTicketsRecycleView);
+                    cinemaItemSearch.setCinemaId(cinema.getId());
+                    cinemaItemSearch.setCinemaName(cinema.getName());
+                    cinemaItemSearch.setCinemaAddress(cinema.getAddress());
+                    cinemaItemSearch.setCinemaImg(APIClient.HOST + cinema.getPicUrl());
+                    Log.d("CNM-PIC",cinemaItemSearch.getCinemaImg());
+
+                    cinemaItemSearchList.add(cinemaItemSearch);
+                }
+
+                Log.d("SFACT", cinemaItemSearchList.size() + "");
+
+
+                Log.d("SFACT", cinemaItemSearchList.size() + "");
+
+
+                recyclerView = (RecyclerView) findViewById(R.id.myTicketsRecycleView);
+
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+                recyclerView.setHasFixedSize(false);
+                recyclerView.setNestedScrollingEnabled(false);
+
+                cinemaSearchAdapter = new CinemaSearchAdapter(cinemaItemSearchList);
+                LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+                recyclerView.setLayoutManager(mLayoutManager);
+                recyclerView.setAdapter(cinemaSearchAdapter);
+
+
+            }
+
+            @Override
+            public void onFailure(Call<List<CinemaAPI>> call, Throwable t) {
+                call.cancel();
+                Intent intent = new Intent(SearchCinemaActivity.this, ErrorActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         mSearchView = findViewById(R.id.floating_search_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(cinemaSearchAdapter);
 
 
         mSearchView.setOnQueryChangeListener(new FloatingSearchView.OnQueryChangeListener() {
             @Override
             public void onSearchTextChanged(String oldQuery, final String newQuery) {
 
-                ArrayList<MySearchSuggestion> temp=new ArrayList<>();
-                temp.add(new MySearchSuggestion("Cinema #1"));
-                temp.add(new MySearchSuggestion("Cinema #2"));
-                temp.add(new MySearchSuggestion("Cinema #3"));
-                temp.add(new MySearchSuggestion("Cinema #4"));
-                temp.add(new MySearchSuggestion("Cinema #5"));
 
-                mSearchView.swapSuggestions(temp);
+                Log.d("NEW", newQuery);
+
+//                ArrayList<MySearchSuggestion> temp=new ArrayList<>();
+//                temp.add(new MySearchSuggestion("Film #1"));
+//                temp.add(new MySearchSuggestion("Film #2"));
+//                temp.add(new MySearchSuggestion("Film #3"));
+//                temp.add(new MySearchSuggestion("Film #4"));
+//                temp.add(new MySearchSuggestion("Film #5"));
+
+                mSearchView.swapSuggestions(searchInLoadedData(newQuery));
             }
         });
 
-        //for menu in floating menu view
-        mSearchView.setOnMenuItemClickListener(new FloatingSearchView.OnMenuItemClickListener() {
-            @Override
-            public void onActionMenuItemSelected(MenuItem item) {
-
-            }
-
-        });
 
         mSearchView.setOnSearchListener(new FloatingSearchView.OnSearchListener() {
             @Override
             public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
                 Toast.makeText(SearchCinemaActivity.this, searchSuggestion.getBody(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SearchCinemaActivity.this,AboutCinemaActivity.class);
-                startActivity(intent);
+
+                Call<CinemaAPI> call=apiInterface.getCinemaByName(searchSuggestion.getBody());
+
+                Log.d("getBody",searchSuggestion.getBody());
+
+                call.enqueue(new Callback<CinemaAPI>() {
+                    @Override
+                    public void onResponse(Call<CinemaAPI> call, Response<CinemaAPI> response) {
+                        Log.d("onResponse",response.body().getName());
+
+                        Intent intent = new Intent(SearchCinemaActivity.this, AboutCinemaActivity.class);
+                        intent.putExtra("cinemaId",response.body().getId());
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onFailure(Call<CinemaAPI> call, Throwable t) {
+                        Log.d("#!","SearchCinemaActivity: "+t.getLocalizedMessage());
+                        call.cancel();
+                        Intent intent = new Intent(SearchCinemaActivity.this, ErrorActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+
+
             }
 
             @Override
@@ -109,6 +179,21 @@ public class SearchCinemaActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    public ArrayList<MySearchSuggestion> searchInLoadedData(String value) {
+
+        ArrayList<MySearchSuggestion> res = new ArrayList<>();
+
+        for (CinemaAPI cinema : cinemas) {
+//            if(film.getTitle().conr){
+            if (Pattern.compile(Pattern.quote(value), Pattern.CASE_INSENSITIVE).matcher(cinema.getName()).find()) {
+                res.add(new MySearchSuggestion(cinema.getName()));
+            }
+        }
+
+        return res;
 
     }
 }

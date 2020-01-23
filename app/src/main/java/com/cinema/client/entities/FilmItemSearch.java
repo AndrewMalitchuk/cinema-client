@@ -9,6 +9,10 @@ public class FilmItemSearch {
 
     @Getter
     @Setter
+    private int filmId;
+
+    @Getter
+    @Setter
     private String filmName;
 
     @Getter
