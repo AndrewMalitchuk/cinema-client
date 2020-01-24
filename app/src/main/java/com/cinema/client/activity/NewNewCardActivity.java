@@ -223,6 +223,8 @@ public class NewNewCardActivity extends AppCompatActivity {
 
     public void onChooseDateTimeImageButtonClick(View view) {
         Intent intent = new Intent(this, StatusActivity.class);
+        // туть
+
         startActivity(intent);
     }
 

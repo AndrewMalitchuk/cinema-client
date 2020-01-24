@@ -12,6 +12,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
@@ -31,7 +32,13 @@ import com.cinema.client.R;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.CinemaAPI;
+import com.cinema.client.requests.entities.FilmAPI;
+import com.cinema.client.requests.entities.TimelineAPI;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.liangfeizc.avatarview.AvatarView;
 import com.pd.chocobar.ChocoBar;
 import com.vivekkaushik.datepicker.DatePickerTimeline;
@@ -44,6 +51,14 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.ScaleBarOverlay;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -112,6 +127,12 @@ public class AboutCinemaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_cinema);
 
         ButterKnife.bind(this);
+
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
+
 
         myToolbar.setTitle("Loading...");
         setSupportActionBar(myToolbar);
@@ -199,7 +220,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<CinemaAPI> call, Throwable t) {
-                Log.d("#!","AboutCinemaActivity");
+                Log.d("#!", "AboutCinemaActivity");
 
                 call.cancel();
                 Intent intent = new Intent(AboutCinemaActivity.this, ErrorActivity.class);
@@ -237,12 +258,63 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
     public void onImageClick(View view) {
         Intent intent = new Intent(AboutCinemaActivity.this, ZoomImageActivity.class);
+        intent.putExtra("url", currentCinema.getPicUrl());
         startActivity(intent);
     }
 
     public void onFabClick(View view) {
-        Intent intent = new Intent(AboutCinemaActivity.this, PosterActivity.class);
-        startActivity(intent);
+
+
+        Call<List<TimelineAPI>> call = apiInterface.getTimelineByCinemaId(currentCinema.getId());
+
+
+        try {
+
+            List<TimelineAPI> result = call.execute().body();
+
+
+            List<FilmAPI> films = new ArrayList<>();
+
+            Set<Integer> uniqueFilms = new HashSet<>();
+
+            for (TimelineAPI timeline : result) {
+
+                Log.d("TMLN", timeline.toString());
+
+                Call<FilmAPI> film = apiInterface.getFilmById(timeline.getFilmId());
+
+                uniqueFilms.add(film.execute().body().getId());
+
+
+            }
+
+            Log.d("UNQ", uniqueFilms.size() + "");
+
+            List<FilmAPI> res=new ArrayList<>();
+            for(Integer i:uniqueFilms){
+
+                res.add(apiInterface.getFilmById(i).execute().body());
+
+            }
+
+
+            Gson gson = new GsonBuilder().create();
+            JsonArray myCustomArray = gson.toJsonTree(res).getAsJsonArray();
+            JsonObject jsonObject = new JsonObject();
+            Log.d("PSTR", myCustomArray.toString());
+
+            Intent intent = new Intent(AboutCinemaActivity.this, PosterActivity.class);
+            intent.putExtra("json", myCustomArray.toString());
+            startActivity(intent);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Intent intent = new Intent(AboutCinemaActivity.this, ErrorActivity.class);
+            startActivity(intent);
+        }
+
+
     }
 
 
@@ -303,5 +375,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
 
     }
+
+
+
 
 }

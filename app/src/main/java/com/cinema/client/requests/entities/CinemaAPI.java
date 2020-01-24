@@ -32,7 +32,7 @@ public class CinemaAPI {
     @Setter
     @SerializedName("city")
     @Expose
-    private String city;
+    private int city;
 
     @Getter
     @Setter
@@ -57,37 +57,5 @@ public class CinemaAPI {
     @SerializedName("pic_url")
     @Expose
     private String picUrl;
-
-    /**
-     * No args constructor for use in serialization
-     *
-     */
-    public CinemaAPI() {
-    }
-
-    /**
-     *
-     * @param picUrl
-     * @param address
-     * @param city
-     * @param name
-     * @param geoLat
-     * @param telephone
-     * @param id
-     * @param geoLon
-     */
-    public CinemaAPI(Integer id, String name, String address, String city, String telephone, Double geoLat, Double geoLon, String picUrl) {
-        super();
-        this.id = id;
-        this.name = name;
-        this.address = address;
-        this.city = city;
-        this.telephone = telephone;
-        this.geoLat = geoLat;
-        this.geoLon = geoLon;
-        this.picUrl = picUrl;
-    }
-
-
 
 }

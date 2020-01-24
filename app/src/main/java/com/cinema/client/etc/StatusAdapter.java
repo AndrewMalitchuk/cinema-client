@@ -11,6 +11,7 @@ import com.pd.chocobar.ChocoBar;
 import com.transferwise.sequencelayout.SequenceAdapter;
 import com.transferwise.sequencelayout.SequenceStep;
 
+import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,16 +27,16 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
     TextView selectedDateTimeTextView;
     String activeDate;
 
-    public StatusAdapter (List<com.cinema.client.etc.MyItem> items, Context context){
-        this.items=items;
-        this.context=context;
+    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context) {
+        this.items = items;
+        this.context = context;
     }
 
-    public StatusAdapter (List<com.cinema.client.etc.MyItem> items, Context context,TextView selectedDateTimeTextView,String activeDate){
-        this.items=items;
-        this.context=context;
-        this.selectedDateTimeTextView=selectedDateTimeTextView;
-        this.activeDate=activeDate;
+    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, String activeDate) {
+        this.items = items;
+        this.context = context;
+        this.selectedDateTimeTextView = selectedDateTimeTextView;
+        this.activeDate = activeDate;
     }
 
 
@@ -45,32 +46,41 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
     }
 
 
-
     @Override
     public void bindView(SequenceStep sequenceStep, com.cinema.client.etc.MyItem myItem) {
 
         sequenceStep.setActive(myItem.isActive());
         sequenceStep.setAnchor(myItem.getFormattedDate());
         sequenceStep.setTitle(myItem.getTitle());
-        sequenceStep.setAnchorMinWidth((int) pxFromDp(context,150));
-        if(myItem.isSelected()) {
+        sequenceStep.setAnchorMinWidth((int) pxFromDp(context, 150));
+        if (myItem.isSelected()) {
             sequenceStep.setTitleTextAppearance(R.style.TextAppearance_AppCompat_Title);
         }
-        if (myItem.getSubtitle()!=null){
+        if (myItem.getSubtitle() != null) {
             sequenceStep.setSubtitle(myItem.getSubtitle());
         }
 
-        Date curent=null;
-        Date temp=null;
+        Date curent = null;
+        Date temp = null;
+//        Time curent=null;
+//        Time temp=null;
         try {
             // XXX
-            curent=new SimpleDateFormat("dd.MM.yyy").parse(activeDate);
-            temp=new SimpleDateFormat("dd.MM.yyy").parse(myItem.getFormattedDate());
+//            curent=new SimpleDateFormat("dd.MM.yyy").parse(activeDate);
+//            temp=new SimpleDateFormat("dd.MM.yyy").parse(myItem.getFormattedDate());
+            curent = new SimpleDateFormat("hh:mm:ss").parse(activeDate);
+            temp = new SimpleDateFormat("hh:mm:ss").parse(myItem.getFormattedDate());
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
-        if(temp.after(curent) || temp.compareTo(curent)==0) {
+        if (temp.after(curent) || temp.compareTo(curent) == 0) {
+
+            if (temp.compareTo(curent) == 0) {
+                sequenceStep.setActive(true);
+                sequenceStep.setSelected(true);
+            }
+
             sequenceStep.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

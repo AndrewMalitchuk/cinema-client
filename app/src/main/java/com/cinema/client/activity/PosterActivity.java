@@ -96,7 +96,7 @@ public class PosterActivity extends AppCompatActivity {
         Gson gson = new GsonBuilder().create();
 
         List<FilmAPI> videos = gson.fromJson(json, new TypeToken<List<FilmAPI>>(){}.getType());
-        Log.d("LIST",videos.get(0).toString());
+//        Log.d("LIST",videos.get(0).toString());
 
 //        adapter.setFilms(videos);
         adapter = new SwipeCardAdapter(videos,getApplicationContext());

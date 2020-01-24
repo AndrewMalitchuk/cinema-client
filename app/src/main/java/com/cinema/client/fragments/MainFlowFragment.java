@@ -503,26 +503,31 @@ public class MainFlowFragment extends Fragment {
         switch (view.getId()) {
             case R.id.ivano_frankivsk:
                 intent = new Intent(getActivity(), SearchCinemaActivity.class);
+                intent.putExtra("cityId",1);
                 startActivity(intent);
                 Toast.makeText(getActivity(), "ivano_frankivsk", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.lviv:
                 intent = new Intent(getActivity(), SearchCinemaActivity.class);
+                intent.putExtra("cityId",2);
                 startActivity(intent);
                 Toast.makeText(getActivity(), "lviv", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.kiyv:
                 intent = new Intent(getActivity(), SearchCinemaActivity.class);
+                intent.putExtra("cityId",3);
                 startActivity(intent);
                 Toast.makeText(getActivity(), "kiyv", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.kharkiv:
                 intent = new Intent(getActivity(), SearchCinemaActivity.class);
+                intent.putExtra("cityId",4);
                 startActivity(intent);
                 Toast.makeText(getActivity(), "kharkiv", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.odessa:
                 intent = new Intent(getActivity(), SearchCinemaActivity.class);
+                intent.putExtra("cityId",5);
                 startActivity(intent);
                 Toast.makeText(getActivity(), "odessa", Toast.LENGTH_SHORT).show();
                 break;

@@ -65,12 +65,21 @@ public class SearchCinemaActivity extends AppCompatActivity {
             }
         });
 
+        int cityId=getIntent().getIntExtra("cityId",-1);
+
 
         cinemaItemSearchList = new ArrayList<>();
 
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
 
-        Call<List<CinemaAPI>> call = apiInterface.getCinemas();
+        Call<List<CinemaAPI>> call;
+
+        if (cityId==-1) {
+            call = apiInterface.getCinemas();
+        }else{
+            call = apiInterface.getCinemaByCity(cityId);
+        }
+
 
         call.enqueue(new Callback<List<CinemaAPI>>() {
             @Override
