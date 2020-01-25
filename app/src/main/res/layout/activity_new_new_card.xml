@@ -37,10 +37,10 @@
             app:labelText="Film name">
 
             <com.developer.mtextfield.ExtendedEditText
-                android:id="@+id/extended_edit_text2"
+                android:id="@+id/filmTitleBillActivityExtendedEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Once upon a time in Hollywood" />
+                android:text="Loading..." />
 
         </com.developer.mtextfield.TextFieldBoxes>
 
@@ -66,10 +66,9 @@
                 app:labelText="Cinema">
 
                 <com.developer.mtextfield.ExtendedEditText
-                    android:id="@+id/extended_edit_text5"
+                    android:id="@+id/cinemaNameBillActivityExtendedEditText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Kosmos" />
+                    android:layout_height="wrap_content" />
 
             </com.developer.mtextfield.TextFieldBoxes>
 
@@ -107,10 +106,9 @@
                 app:labelText="Date and time">
 
                 <com.developer.mtextfield.ExtendedEditText
-                    android:id="@+id/extended_edit_text3"
+                    android:id="@+id/datetimeBillActivityExtendedEditText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10.10.2010" />
+                    android:layout_height="wrap_content" />
 
             </com.developer.mtextfield.TextFieldBoxes>
 
@@ -149,8 +147,7 @@
                 <com.developer.mtextfield.ExtendedEditText
                     android:id="@+id/extended_edit_text4"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="C-10-10; R-10-10; L-10-10;" />
+                    android:layout_height="wrap_content" />
 
             </com.developer.mtextfield.TextFieldBoxes>
 

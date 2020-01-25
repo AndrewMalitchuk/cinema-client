@@ -569,6 +569,9 @@ public class MainFlowFragment extends Fragment {
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(getContext(),currentFilms.get(selectingPosition).getTitle(),Toast.LENGTH_SHORT).show();
+                        Intent intent=new Intent(getContext(),AboutFilmActivity.class);
+                        intent.putExtra("filmId",currentFilms.get(selectingPosition).getId());
+                        startActivity(intent);
                     }
                 });
 

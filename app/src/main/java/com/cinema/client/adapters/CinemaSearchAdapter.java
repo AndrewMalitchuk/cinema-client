@@ -1,6 +1,8 @@
 package com.cinema.client.adapters;
 
+import android.app.Activity;
 import android.content.Context;
+
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,10 +28,24 @@ public class CinemaSearchAdapter extends RecyclerView.Adapter<CinemaSearchAdapte
     List<CinemaItemSearch> cinemaItemSearchList;
     Context context;
 
+    private boolean isForSearch;
+    private Intent intent;
+    private Activity activity;
+
     public CinemaSearchAdapter(List<CinemaItemSearch> cinemaItemSearchList)
     {
         this.cinemaItemSearchList = cinemaItemSearchList;
     }
+
+    public CinemaSearchAdapter(List<CinemaItemSearch> cinemaItemSearchList,boolean isForSearch,Intent intent,Activity activity)
+    {
+        this.cinemaItemSearchList = cinemaItemSearchList;
+        this.isForSearch=isForSearch;
+        this.intent=intent;
+        this.activity=activity;
+    }
+
+
 
     @Override
     public CinemaSearchAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -50,10 +66,19 @@ public class CinemaSearchAdapter extends RecyclerView.Adapter<CinemaSearchAdapte
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                if(isForSearch){
+                    intent.putExtra("cinemaName",cinemaItemSearch.getCinemaName());
+                    intent.putExtra("cinemaId",cinemaItemSearch.getCinemaId());
+                    activity.setResult(Activity.RESULT_OK,intent);
+                    activity.finish();
+                }else {
+
 //                Toast.makeText(context,"The position is:"+position,Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(context, AboutCinemaActivity.class);
-                intent.putExtra("cinemaId",cinemaItemSearch.getCinemaId());
-                context.startActivity(intent);
+                    Intent intent = new Intent(context, AboutCinemaActivity.class);
+                    intent.putExtra("cinemaId", cinemaItemSearch.getCinemaId());
+                    context.startActivity(intent);
+                }
 
             }
         });

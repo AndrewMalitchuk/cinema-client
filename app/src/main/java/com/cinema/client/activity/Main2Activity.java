@@ -191,7 +191,7 @@ public class Main2Activity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 // send data from the AlertDialog to the Activity
                                 ExtendedEditText userName = customLayout.findViewById(R.id.extended_edit_text1);
-                                ExtendedEditText userCity = customLayout.findViewById(R.id.extended_edit_text2);
+                                ExtendedEditText userCity = customLayout.findViewById(R.id.filmTitleBillActivityExtendedEditText);
 //                                sendDialogDataToActivity(editText.getText().toString());
                                 editor.putString("user_name", userName.getText().toString());
                                 editor.putString("user_city", userCity.getText().toString());

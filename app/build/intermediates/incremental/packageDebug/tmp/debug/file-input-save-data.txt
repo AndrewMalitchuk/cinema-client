@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Jan 23 13:18:30 EET 2020
+#Sat Jan 25 17:13:34 EET 2020
 17.baseType=DIRECTORY
 4.path=classes.dex
 25.base=/home/adular/Projects/Android/cinema-client/app/build/intermediates/merged_assets/debug/out

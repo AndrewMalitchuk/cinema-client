@@ -62,6 +62,12 @@ public class StatusActivity extends AppCompatActivity {
     @BindView(R.id.toolbar7)
     Toolbar toolbar;
 
+    @BindView(R.id.datePickerTimeline)
+    DatePickerTimeline datePickerTimeline;
+
+
+     private String dateStr;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,22 +95,31 @@ public class StatusActivity extends AppCompatActivity {
             }
         });
 
+        int cinema_id = getIntent().getIntExtra("cinemaId", -1);
+        final int film_id = getIntent().getIntExtra("filmId", 12);
+
+        if (cinema_id == -1) {
+            cinema_id = 9;
+        }
+//        if (film_id == -1) {
+//            film_id = 12;
+//        }
 
         List<MyItem> list = new ArrayList<>();
 
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
-        Call<List<TimelineAPI>> call = apiInterface.getTimelineByCinemaIdAndFilmId(9, 12);
+        Call<List<TimelineAPI>> call = apiInterface.getTimelineByCinemaIdAndFilmId(cinema_id, film_id);
 
         call.enqueue(new Callback<List<TimelineAPI>>() {
             @Override
             public void onResponse(Call<List<TimelineAPI>> call, Response<List<TimelineAPI>> response) {
 
+
                 try {
-                    FilmAPI film = apiInterface.getFilmById(12).execute().body();
+                    FilmAPI film = apiInterface.getFilmById(film_id).execute().body();
 //                    HallAPI hall=apiInterface.getHallByCinemaId().execute().body();
 
-                    String currentTime="15:00:00";
-
+                    String currentTime = "15:00:00";
 
 
                     for (TimelineAPI timeline : response.body()) {
@@ -125,8 +140,7 @@ public class StatusActivity extends AppCompatActivity {
 //                        sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView,
 //                                DateTimeFormatter.ofPattern("hh:mm:ss").format(LocalDateTime.now())));
 //                    }
-                        sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView,currentTime));
-
+                    sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, currentTime));
 
 
                 } catch (IOException e) {
@@ -191,24 +205,25 @@ public class StatusActivity extends AppCompatActivity {
 
 
         //
-        DatePickerTimeline datePickerTimeline = findViewById(R.id.datePickerTimeline);
 // Set a Start date (Default, 1 Jan 1970)
         LocalDateTime date;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             date = LocalDateTime.now();
-            datePickerTimeline.setInitialDate(date.getYear(), date.getMonthValue()-1, date.getDayOfMonth());
+            datePickerTimeline.setInitialDate(date.getYear(), date.getMonthValue() - 1, date.getDayOfMonth());
 
         }
 // Set a date Selected Listener
         datePickerTimeline.setOnDateSelectedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(int year, int month, int day, int dayOfWeek) {
-                Date date=new Date();
+               Date  date = new Date();
                 date.setYear(year);
                 date.setMonth(month);
                 date.setDate(day);
 
                 Toast.makeText(StatusActivity.this, date.toString(), Toast.LENGTH_SHORT).show();
+                // FIXME: 25.01.20
+                dateStr=year+"-"+(month+1)+"-"+day;
 
             }
 
@@ -217,8 +232,6 @@ public class StatusActivity extends AppCompatActivity {
                 // Do Something
             }
         });
-
-
 
 
 // Disable date
@@ -241,11 +254,17 @@ public class StatusActivity extends AppCompatActivity {
                     .red()
                     .show();
         } else {
+
             ChocoBar.builder().setActivity(StatusActivity.this)
                     .setText("Selected date:\n" + selectedDateTimeTextView.getText().toString())
                     .setDuration(ChocoBar.LENGTH_SHORT)
                     .green()
                     .show();
+            getIntent().putExtra("datetime",dateStr+" "+selectedDateTimeTextView.getText().toString());
+            setResult(RESULT_OK,getIntent());
+            finish();
+
+
         }
 
 

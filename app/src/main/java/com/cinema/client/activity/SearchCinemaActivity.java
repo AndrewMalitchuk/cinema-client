@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,6 +48,8 @@ public class SearchCinemaActivity extends AppCompatActivity {
 
     private List<CinemaAPI> cinemas;
 
+    private boolean isForChoosing=false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +70,7 @@ public class SearchCinemaActivity extends AppCompatActivity {
 
         int cityId=getIntent().getIntExtra("cityId",-1);
 
+        isForChoosing=getIntent().getBooleanExtra("isForChoosing",false);
 
         cinemaItemSearchList = new ArrayList<>();
 
@@ -81,6 +85,7 @@ public class SearchCinemaActivity extends AppCompatActivity {
         }
 
 
+        Activity activity =this;
         call.enqueue(new Callback<List<CinemaAPI>>() {
             @Override
             public void onResponse(Call<List<CinemaAPI>> call, Response<List<CinemaAPI>> response) {
@@ -112,7 +117,14 @@ public class SearchCinemaActivity extends AppCompatActivity {
                 recyclerView.setHasFixedSize(false);
                 recyclerView.setNestedScrollingEnabled(false);
 
-                cinemaSearchAdapter = new CinemaSearchAdapter(cinemaItemSearchList);
+                if(isForChoosing){
+
+                    cinemaSearchAdapter=new CinemaSearchAdapter(cinemaItemSearchList,true,getIntent(),activity);
+
+                }else {
+
+                    cinemaSearchAdapter = new CinemaSearchAdapter(cinemaItemSearchList);
+                }
                 LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
                 recyclerView.setLayoutManager(mLayoutManager);
                 recyclerView.setAdapter(cinemaSearchAdapter);
@@ -165,9 +177,20 @@ public class SearchCinemaActivity extends AppCompatActivity {
                     public void onResponse(Call<CinemaAPI> call, Response<CinemaAPI> response) {
                         Log.d("onResponse",response.body().getName());
 
-                        Intent intent = new Intent(SearchCinemaActivity.this, AboutCinemaActivity.class);
-                        intent.putExtra("cinemaId",response.body().getId());
-                        startActivity(intent);
+                        if(isForChoosing){
+
+                            getIntent().putExtra("cinemaName",response.body().getName());
+                            getIntent().putExtra("cinemaId",response.body().getId());
+                            setResult(RESULT_OK,getIntent());
+                            finish();
+
+                        }else {
+
+
+                            Intent intent = new Intent(SearchCinemaActivity.this, AboutCinemaActivity.class);
+                            intent.putExtra("cinemaId", response.body().getId());
+                            startActivity(intent);
+                        }
                     }
 
                     @Override

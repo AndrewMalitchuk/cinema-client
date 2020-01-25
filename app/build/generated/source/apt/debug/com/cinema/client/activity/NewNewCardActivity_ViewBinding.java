@@ -9,6 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.cinema.client.R;
+import com.developer.mtextfield.ExtendedEditText;
 import java.lang.IllegalStateException;
 import java.lang.Override;
 
@@ -26,6 +27,9 @@ public class NewNewCardActivity_ViewBinding implements Unbinder {
 
     target.imageButton = Utils.findRequiredViewAsType(source, R.id.imageButton2, "field 'imageButton'", ImageButton.class);
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar5, "field 'toolbar'", Toolbar.class);
+    target.filmTitleBillActivityExtendedEditText = Utils.findRequiredViewAsType(source, R.id.filmTitleBillActivityExtendedEditText, "field 'filmTitleBillActivityExtendedEditText'", ExtendedEditText.class);
+    target.datetimeBillActivityExtendedEditText = Utils.findRequiredViewAsType(source, R.id.datetimeBillActivityExtendedEditText, "field 'datetimeBillActivityExtendedEditText'", ExtendedEditText.class);
+    target.cinemaNameBillActivityExtendedEditText = Utils.findRequiredViewAsType(source, R.id.cinemaNameBillActivityExtendedEditText, "field 'cinemaNameBillActivityExtendedEditText'", ExtendedEditText.class);
   }
 
   @Override
@@ -37,5 +41,8 @@ public class NewNewCardActivity_ViewBinding implements Unbinder {
 
     target.imageButton = null;
     target.toolbar = null;
+    target.filmTitleBillActivityExtendedEditText = null;
+    target.datetimeBillActivityExtendedEditText = null;
+    target.cinemaNameBillActivityExtendedEditText = null;
   }
 }

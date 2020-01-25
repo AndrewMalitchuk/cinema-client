@@ -1,6 +1,5 @@
 package com.cinema.client.activity;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -22,9 +21,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.allyants.notifyme.NotifyMe;
 import com.brouding.simpledialog.SimpleDialog;
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
 import com.cinema.client.fragments.MainFlowFragment;
 import com.cinema.client.fragments.TicketSearchFragment;
@@ -33,8 +30,6 @@ import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.FilmAPI;
 import com.developer.mtextfield.ExtendedEditText;
 import com.droidbyme.dialoglib.DroidDialog;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.inappmessaging.internal.ApiClient;
 import com.keiferstone.nonet.NoNet;
 import com.mehdi.shortcut.interfaces.IReceiveStringExtra;
 import com.mehdi.shortcut.model.Shortcut;
@@ -51,6 +46,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
@@ -60,6 +56,9 @@ import es.dmoral.markdownview.MarkdownView;
 import omari.hamza.storyview.StoryView;
 import omari.hamza.storyview.callback.StoryClickListeners;
 import omari.hamza.storyview.model.MyStory;
+import pro.midev.expandedmenulibrary.ExpandedMenuClickListener;
+import pro.midev.expandedmenulibrary.ExpandedMenuItem;
+import pro.midev.expandedmenulibrary.ExpandedMenuView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -75,8 +74,11 @@ public class Main3Activity extends AppCompatActivity {
     @BindView(R.id.llProgressBar)
     View llProgressBar;
 
-    @BindView(R.id.navigation)
-    BottomNavigationView bottomNavigationView;
+    @BindView(R.id.expMenu)
+    ExpandedMenuView expandedMenuView;
+
+//    @BindView(R.id.navigation)
+//    BottomNavigationView bottomNavigationView;
 
 
     private SharedPreferences pref;
@@ -171,7 +173,7 @@ public class Main3Activity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 // send data from the AlertDialog to the Activity
                                 ExtendedEditText userName = customLayout.findViewById(R.id.extended_edit_text1);
-                                ExtendedEditText userCity = customLayout.findViewById(R.id.extended_edit_text2);
+                                ExtendedEditText userCity = customLayout.findViewById(R.id.filmTitleBillActivityExtendedEditText);
 //                                sendDialogDataToActivity(editText.getText().toString());
                                 editor.putString("user_name", userName.getText().toString());
                                 editor.putString("user_city", userCity.getText().toString());
@@ -287,31 +289,124 @@ public class Main3Activity extends AppCompatActivity {
         });
 
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        // Naviagation with BottomNavBar
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//
+//                FragmentTransaction ft;
+//                switch (item.getItemId()) {
+//                    case R.id.center_side_of_hall:
+//                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.blue));
+//
+//                        //
+//
+//
+//                        Call<List<FilmAPI>> call=apiInterface.getFilms();
+//
+//                        call.enqueue(new Callback<List<FilmAPI>>() {
+//                            @Override
+//                            public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+//
+//                                films=response.body();
+//                                Log.d("FILMS", films.size()+"");
+//
+//                                Collections.sort(films, new Comparator<FilmAPI>() {
+//                                    @Override
+//                                    public int compare(FilmAPI filmAPI, FilmAPI t1) {
+//                                        return  t1.getDate().compareTo(filmAPI.getDate());
+//                                    }
+//                                });
+//
+//                                stories(films);
+//
+//
+//                            }
+//
+//                            @Override
+//                            public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+//                                call.cancel();
+//                                Intent intent = new Intent(Main3Activity.this, ErrorActivity.class);
+//                                startActivity(intent);
+//                            }
+//                        });
+//
+//
+//
+//
+//                        bottomNavigationView.setSelectedItemId(R.id.left_side_of_hall);
+//                        bottomNavigationView.setSelected(true);
+//
+//                        //
+//
+//
+//                        break;
+//                    case R.id.left_side_of_hall:
+//                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+//
+//                        ft = getSupportFragmentManager().beginTransaction();
+//
+////        HallTestFragment hallTestFragment = new HallTestFragment();
+//
+//                        MainFlowFragment mainFlowFragment = new MainFlowFragment();
+//
+//                        ft.replace(R.id.fragment, mainFlowFragment);
+//                        ft.commit();
+//
+//                        break;
+//                    case R.id.right_side_of_hall:
+//                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.green));
+//
+//                        ft = getSupportFragmentManager().beginTransaction();
+//
+////        HallTestFragment hallTestFragment = new HallTestFragment();
+//
+//                        TicketSearchFragment ticketSearchFragment = new TicketSearchFragment();
+//
+//                        ft.replace(R.id.fragment, ticketSearchFragment);
+//                        ft.commit();
+//
+//
+//                        break;
+//                }
+//
+//                return true;
+//            }
+//        });
+
+
+        // Navigation with this 'awesome' button
+        expandedMenuView.setIcons(
+                new ExpandedMenuItem(R.drawable.ic_stories_24dp, "Stories"),
+                new ExpandedMenuItem(R.drawable.ic_random_white_24dp, "Random"),
+                new ExpandedMenuItem(R.drawable.ic_ticket_white, "Tickets"),
+                new ExpandedMenuItem(R.drawable.ic_main_page_24dp, "Main")
+        );
+
+        expandedMenuView.setOnItemClickListener(new ExpandedMenuClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            public void onItemClick(int i) {
 
                 FragmentTransaction ft;
-                switch (item.getItemId()) {
-                    case R.id.center_side_of_hall:
-                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.blue));
+                switch (i) {
+                    case 0:
 
                         //
 
 
-                        Call<List<FilmAPI>> call=apiInterface.getFilms();
+                        Call<List<FilmAPI>> call = apiInterface.getFilms();
 
                         call.enqueue(new Callback<List<FilmAPI>>() {
                             @Override
                             public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
 
-                                films=response.body();
-                                Log.d("FILMS", films.size()+"");
+                                films = response.body();
+                                Log.d("FILMS", films.size() + "");
 
                                 Collections.sort(films, new Comparator<FilmAPI>() {
                                     @Override
                                     public int compare(FilmAPI filmAPI, FilmAPI t1) {
-                                        return  t1.getDate().compareTo(filmAPI.getDate());
+                                        return t1.getDate().compareTo(filmAPI.getDate());
                                     }
                                 });
 
@@ -329,45 +424,55 @@ public class Main3Activity extends AppCompatActivity {
                         });
 
 
-
-
-                        bottomNavigationView.setSelectedItemId(R.id.left_side_of_hall);
-                        bottomNavigationView.setSelected(true);
-
                         //
 
 
                         break;
-                    case R.id.left_side_of_hall:
-                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.colorAccent));
+                    case 1:
 
+
+                        Call<List<FilmAPI>> callFilms=apiInterface.getFilms();
+                        callFilms.enqueue(new Callback<List<FilmAPI>>() {
+                            @Override
+                            public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+                                List<Integer> input=new ArrayList<>();
+                                for(FilmAPI film:response.body()){
+                                    input.add(film.getId());
+                                }
+                                int randomFilmId=getRandomNum(input);
+                                Intent intent = new Intent(Main3Activity.this, AboutFilmActivity.class);
+                                intent.putExtra("filmId",randomFilmId);
+                                startActivity(intent);
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+                                call.cancel();
+                                Intent intent = new Intent(Main3Activity.this, ErrorActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+
+
+
+                        break;
+                    case 2:
                         ft = getSupportFragmentManager().beginTransaction();
-
-//        HallTestFragment hallTestFragment = new HallTestFragment();
-
+                        TicketSearchFragment ticketSearchFragment = new TicketSearchFragment();
+                        ft.replace(R.id.fragment, ticketSearchFragment);
+                        ft.commit();
+                        break;
+                    case 3:
+                        ft = getSupportFragmentManager().beginTransaction();
                         MainFlowFragment mainFlowFragment = new MainFlowFragment();
-
                         ft.replace(R.id.fragment, mainFlowFragment);
                         ft.commit();
 
                         break;
-                    case R.id.right_side_of_hall:
-                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.green));
 
-                        ft = getSupportFragmentManager().beginTransaction();
-
-//        HallTestFragment hallTestFragment = new HallTestFragment();
-
-                        TicketSearchFragment ticketSearchFragment = new TicketSearchFragment();
-
-                        ft.replace(R.id.fragment, ticketSearchFragment);
-                        ft.commit();
-
-
-                        break;
                 }
 
-                return true;
             }
         });
 
@@ -485,7 +590,6 @@ public class Main3Activity extends AppCompatActivity {
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
 
-
     }
 
     @Override
@@ -578,17 +682,17 @@ public class Main3Activity extends AppCompatActivity {
           того щоб в актівіті загрузилась вся інфа
            */
 
-         int i=0;
+        int i = 0;
 
         try {
             for (FilmAPI film : films) {
-                if(i==5)
+                if (i == 5)
                     break;
                 MyStory temp = new MyStory();
                 temp.setDate(fmt.parse(film.getDate()));
                 temp.setDescription(film.getTitle());
                 temp.setUrl(APIClient.HOST + film.getPicUrl());
-                Log.d("STR",temp.toString());
+                Log.d("STR", temp.toString());
 
                 myStories.add(temp);
                 i++;
@@ -701,5 +805,11 @@ public class Main3Activity extends AppCompatActivity {
 
 
         }
+    }
+
+    public int getRandomNum(List<Integer> input){
+        Random r = new Random();
+        int nextRandomNumberIndex = r.nextInt(input.size());
+        return input.get(nextRandomNumberIndex);
     }
 }

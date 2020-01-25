@@ -5,7 +5,7 @@ android {
     buildToolsVersion "29.0.1"
     defaultConfig {
         applicationId "com.cinema.client"
-        minSdkVersion 21
+        minSdkVersion 22
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -204,5 +204,9 @@ dependencies {
     implementation 'com.github.halysongoncalves:pugnotification:1.8.1'
     //
     implementation 'com.wdullaer:materialdatetimepicker:3.6.0'
+    //
+    implementation 'com.github.zawadz88.materialpopupmenu:material-popup-menu:4.0.1'
+     //
+    implementation 'com.github.luksoral:ExpandedMenuView:1.0.3'
 
 }

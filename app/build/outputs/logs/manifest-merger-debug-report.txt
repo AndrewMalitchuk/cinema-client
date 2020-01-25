@@ -44,6 +44,8 @@ MERGED from [com.github.Pradyuman7:ChocoBar:V1.0] /home/adular/.gradle/caches/tr
 MERGED from [com.google.firebase:firebase-inappmessaging-display:17.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/7e7e27a09a20cf94df80948c1d13fc79/AndroidManifest.xml:2:1-22:12
 MERGED from [com.github.jakebonk:NotifyMe:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/53ddb88c234de77996cfb3ea9aba6063/AndroidManifest.xml:2:1-28:12
 MERGED from [com.wdullaer:materialdatetimepicker:3.6.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fa9a74acbb0326b584f9d791a150b8cc/AndroidManifest.xml:17:1-30:12
+MERGED from [com.github.zawadz88.materialpopupmenu:material-popup-menu:4.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/436092b46fc2e174950903144d9c5af1/AndroidManifest.xml:2:1-13:12
+MERGED from [com.github.luksoral:ExpandedMenuView:1.0.3] /home/adular/.gradle/caches/transforms-2/files-2.1/15a66f69656ed4604ba2de3557f6f256/AndroidManifest.xml:2:1-11:12
 MERGED from [com.github.armcha:PlayTabLayout:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/a401dec7b54c6205154d9e458243b9ca/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.material:material:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/AndroidManifest.xml:17:1-24:12
 MERGED from [com.github.jrvansuita:IconHandler:v2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/4cc55d1314c6d1a00f161c8fa4083d79/AndroidManifest.xml:2:1-17:12
@@ -282,6 +284,8 @@ MERGED from [com.github.jakebonk:NotifyMe:1.0.1] /home/adular/.gradle/caches/tra
 MERGED from [com.github.jakebonk:NotifyMe:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/53ddb88c234de77996cfb3ea9aba6063/AndroidManifest.xml:13:5-26:19
 MERGED from [com.wdullaer:materialdatetimepicker:3.6.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fa9a74acbb0326b584f9d791a150b8cc/AndroidManifest.xml:28:5-20
 MERGED from [com.wdullaer:materialdatetimepicker:3.6.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fa9a74acbb0326b584f9d791a150b8cc/AndroidManifest.xml:28:5-20
+MERGED from [com.github.zawadz88.materialpopupmenu:material-popup-menu:4.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/436092b46fc2e174950903144d9c5af1/AndroidManifest.xml:11:5-20
+MERGED from [com.github.zawadz88.materialpopupmenu:material-popup-menu:4.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/436092b46fc2e174950903144d9c5af1/AndroidManifest.xml:11:5-20
 MERGED from [com.google.android.material:material:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/AndroidManifest.xml:22:5-20
 MERGED from [com.github.jrvansuita:IconHandler:v2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/4cc55d1314c6d1a00f161c8fa4083d79/AndroidManifest.xml:11:5-15:19
@@ -698,6 +702,10 @@ MERGED from [com.github.jakebonk:NotifyMe:1.0.1] /home/adular/.gradle/caches/tra
 MERGED from [com.github.jakebonk:NotifyMe:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/53ddb88c234de77996cfb3ea9aba6063/AndroidManifest.xml:7:5-9:41
 MERGED from [com.wdullaer:materialdatetimepicker:3.6.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fa9a74acbb0326b584f9d791a150b8cc/AndroidManifest.xml:22:5-24:41
 MERGED from [com.wdullaer:materialdatetimepicker:3.6.0] /home/adular/.gradle/caches/transforms-2/files-2.1/fa9a74acbb0326b584f9d791a150b8cc/AndroidManifest.xml:22:5-24:41
+MERGED from [com.github.zawadz88.materialpopupmenu:material-popup-menu:4.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/436092b46fc2e174950903144d9c5af1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.zawadz88.materialpopupmenu:material-popup-menu:4.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/436092b46fc2e174950903144d9c5af1/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.luksoral:ExpandedMenuView:1.0.3] /home/adular/.gradle/caches/transforms-2/files-2.1/15a66f69656ed4604ba2de3557f6f256/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.luksoral:ExpandedMenuView:1.0.3] /home/adular/.gradle/caches/transforms-2/files-2.1/15a66f69656ed4604ba2de3557f6f256/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.armcha:PlayTabLayout:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/a401dec7b54c6205154d9e458243b9ca/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.armcha:PlayTabLayout:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/a401dec7b54c6205154d9e458243b9ca/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.material:material:1.1.0-alpha03] /home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/AndroidManifest.xml:20:5-44

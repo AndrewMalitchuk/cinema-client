@@ -8,9 +8,9 @@ import androidx.appcompat.widget.Toolbar;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.cinema.client.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
+import pro.midev.expandedmenulibrary.ExpandedMenuView;
 
 public class Main3Activity_ViewBinding implements Unbinder {
   private Main3Activity target;
@@ -26,7 +26,7 @@ public class Main3Activity_ViewBinding implements Unbinder {
 
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar10, "field 'toolbar'", Toolbar.class);
     target.llProgressBar = Utils.findRequiredView(source, R.id.llProgressBar, "field 'llProgressBar'");
-    target.bottomNavigationView = Utils.findRequiredViewAsType(source, R.id.navigation, "field 'bottomNavigationView'", BottomNavigationView.class);
+    target.expandedMenuView = Utils.findRequiredViewAsType(source, R.id.expMenu, "field 'expandedMenuView'", ExpandedMenuView.class);
   }
 
   @Override
@@ -38,6 +38,6 @@ public class Main3Activity_ViewBinding implements Unbinder {
 
     target.toolbar = null;
     target.llProgressBar = null;
-    target.bottomNavigationView = null;
+    target.expandedMenuView = null;
   }
 }

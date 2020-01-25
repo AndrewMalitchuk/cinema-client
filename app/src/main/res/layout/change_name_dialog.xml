@@ -37,7 +37,7 @@
         app:labelText="Your city">
 
         <com.developer.mtextfield.ExtendedEditText
-            android:id="@+id/extended_edit_text2"
+            android:id="@+id/filmTitleBillActivityExtendedEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
