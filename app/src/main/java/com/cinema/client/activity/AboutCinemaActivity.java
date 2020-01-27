@@ -8,6 +8,7 @@ import androidx.cardview.widget.CardView;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
@@ -39,6 +40,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import com.liangfeizc.avatarview.AvatarView;
 import com.pd.chocobar.ChocoBar;
 import com.vivekkaushik.datepicker.DatePickerTimeline;
@@ -121,6 +123,9 @@ public class AboutCinemaActivity extends AppCompatActivity {
     private CinemaAPI currentCinema;
 
 
+    public static final String FAVOURITE_CINEMAS_PREF="favourite_cinema_pref";
+    private SharedPreferences sharedpreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -159,6 +164,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
 
         //
+
+        sharedpreferences = getSharedPreferences(FAVOURITE_CINEMAS_PREF, Context.MODE_PRIVATE);
 
 
         FlowingGradientClass grad = new FlowingGradientClass();
@@ -247,11 +254,37 @@ public class AboutCinemaActivity extends AppCompatActivity {
             mapIntent.setPackage("com.google.android.apps.maps");
             startActivity(mapIntent);
         } else if (item.getItemId() == R.id.pin_action) {
+
+            //
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+
+            String json=sharedpreferences.getString("fav_json",null);
+
+            Gson gson=new GsonBuilder().create();
+
+            List<Integer> list;
+            if(json==null){
+                list=new ArrayList<>();
+            }else {
+                list = gson.fromJson(json, new TypeToken<List<Integer>>() {
+                }.getType());
+            }
+
+            if(list.contains(currentCinema.getId())==false){
+                list.add(currentCinema.getId());
+            }
+
+            editor.remove("fav_json");
+            editor.putString("fav_json",gson.toJson(list));
+            editor.commit();
+
+            //
             ChocoBar.builder().setActivity(AboutCinemaActivity.this)
                     .setText("Pin to favourite")
                     .setDuration(ChocoBar.LENGTH_SHORT)
                     .green()
                     .show();
+
         }
         return true;
     }

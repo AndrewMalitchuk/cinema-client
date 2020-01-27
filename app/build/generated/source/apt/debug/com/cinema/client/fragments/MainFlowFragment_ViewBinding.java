@@ -7,6 +7,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.asksira.loopingviewpager.LoopingViewPager;
@@ -27,8 +29,6 @@ public class MainFlowFragment_ViewBinding implements Unbinder {
     target.textView23 = Utils.findRequiredViewAsType(source, R.id.textView23, "field 'textView23'", TextView.class);
     target.buttonCinema = Utils.findRequiredViewAsType(source, R.id.buttonCinema, "field 'buttonCinema'", Button.class);
     target.buttonFilms = Utils.findRequiredViewAsType(source, R.id.buttonFilms, "field 'buttonFilms'", Button.class);
-    target.av1 = Utils.findRequiredViewAsType(source, R.id.av1, "field 'av1'", AvatarView.class);
-    target.av2 = Utils.findRequiredViewAsType(source, R.id.av2, "field 'av2'", AvatarView.class);
     target.comedyAvatar = Utils.findRequiredViewAsType(source, R.id.comedyAvatar, "field 'comedyAvatar'", AvatarView.class);
     target.actionAvatar = Utils.findRequiredViewAsType(source, R.id.actionAvatar, "field 'actionAvatar'", AvatarView.class);
     target.historicalAvatar = Utils.findRequiredViewAsType(source, R.id.historicalAvatar, "field 'historicalAvatar'", AvatarView.class);
@@ -43,6 +43,8 @@ public class MainFlowFragment_ViewBinding implements Unbinder {
     target.filmDateMainFlowFragmentTextView = Utils.findRequiredViewAsType(source, R.id.filmDateMainFlowFragmentTextView, "field 'filmDateMainFlowFragmentTextView'", TextView.class);
     target.filmDurationMainFlowFragmentTextView = Utils.findRequiredViewAsType(source, R.id.filmDurationMainFlowFragmentTextView, "field 'filmDurationMainFlowFragmentTextView'", TextView.class);
     target.viewPager = Utils.findRequiredViewAsType(source, R.id.viewpager, "field 'viewPager'", LoopingViewPager.class);
+    target.favCinemasMainFlowFragmentRecyclerView = Utils.findRequiredViewAsType(source, R.id.favCinemasMainFlowFragmentRecyclerView, "field 'favCinemasMainFlowFragmentRecyclerView'", RecyclerView.class);
+    target.favCinemasMainFlowFragmentCardView = Utils.findRequiredViewAsType(source, R.id.favCinemasMainFlowFragmentCardView, "field 'favCinemasMainFlowFragmentCardView'", CardView.class);
   }
 
   @Override
@@ -57,8 +59,6 @@ public class MainFlowFragment_ViewBinding implements Unbinder {
     target.textView23 = null;
     target.buttonCinema = null;
     target.buttonFilms = null;
-    target.av1 = null;
-    target.av2 = null;
     target.comedyAvatar = null;
     target.actionAvatar = null;
     target.historicalAvatar = null;
@@ -73,5 +73,7 @@ public class MainFlowFragment_ViewBinding implements Unbinder {
     target.filmDateMainFlowFragmentTextView = null;
     target.filmDurationMainFlowFragmentTextView = null;
     target.viewPager = null;
+    target.favCinemasMainFlowFragmentRecyclerView = null;
+    target.favCinemasMainFlowFragmentCardView = null;
   }
 }

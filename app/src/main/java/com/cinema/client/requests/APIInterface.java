@@ -2,15 +2,20 @@ package com.cinema.client.requests;
 
 import com.cinema.client.requests.entities.CinemaAPI;
 import com.cinema.client.requests.entities.FilmAPI;
+import com.cinema.client.requests.entities.RegistrationAPI;
 import com.cinema.client.requests.entities.TicketAPI;
 import com.cinema.client.requests.entities.TimelineAPI;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
+import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface APIInterface {
@@ -20,6 +25,7 @@ public interface APIInterface {
     public static final String api_ticket = "/api/v1/ticket";
     public static final String api_cinema = "/api/v1/cinema";
     public static final String api_timeline = "/api/v1/timeline";
+    public static final String adi_registration = "/api/v1/create/";
 
 
     @GET(api_film)
@@ -60,6 +66,10 @@ public interface APIInterface {
 
     @GET(api_timeline)
     Call<List<TimelineAPI>> getTimelineByCinemaIdAndFilmId(@Query("cinema_id") int cinema_id, @Query("film_id") int film_id);
+
+    @Multipart
+    @POST(adi_registration)
+    Call<RegistrationAPI> createNewUser(@Part("email") RequestBody email, @Part("password") RequestBody password, @Part("username") RequestBody username);
 
 
 }

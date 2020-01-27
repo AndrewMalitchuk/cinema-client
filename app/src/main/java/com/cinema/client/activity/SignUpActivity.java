@@ -4,18 +4,30 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cinema.client.R;
+import com.cinema.client.requests.APIClient;
+import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.RegistrationAPI;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.example.myloadingbutton.MyLoadingButton;
+import com.google.firebase.inappmessaging.internal.ApiClient;
+import com.pd.chocobar.ChocoBar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SignUpActivity extends AppCompatActivity implements
         View.OnClickListener, MyLoadingButton.MyLoadingButtonClick{
@@ -30,6 +42,11 @@ public class SignUpActivity extends AppCompatActivity implements
     @BindView(R.id.loginSignUpActivityTextView)
     TextView loginSignUpActivityTextView;
 
+    @BindView(R.id.emailSignUpActivityEditText)
+    EditText emailSignUpActivityEditText;
+
+    @BindView(R.id.passwordSignUpActivityEditText)
+    EditText passwordSignUpActivityEditText;
 
 
     @Override
@@ -54,13 +71,12 @@ public class SignUpActivity extends AppCompatActivity implements
 
         // LoadingButton
         signUpSignUpActivityButton.setMyButtonClickListener(this);
-        setLoadingButtonStyle();
 
         // Login TextView
         loginSignUpActivityTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"Click",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(),"Click",Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(getApplicationContext(),LoginActivity.class);
                 startActivity(intent);
             }
@@ -75,8 +91,8 @@ public class SignUpActivity extends AppCompatActivity implements
                 .setButtonLabelSize(20)
                 .setProgressLoaderColor(R.color.colorLoginActivityCardView)
                 .setButtonLabelColor(R.color.colorLoginActivityCardView)
-                .setProgressDoneIcon(getResources().getDrawable(R.drawable.ic_check_black_24dp)) // Set MyLoadingButton done icon drawable.
-                .setProgressErrorIcon(getResources().getDrawable(R.drawable.ic_clear_black_24dp)) //Set MyLoadingButton error icon drawable.
+                .setProgressDoneIcon(getResources().getDrawable(R.drawable.ic_check_white_24dp)) // Set MyLoadingButton done icon drawable.
+                .setProgressErrorIcon(getResources().getDrawable(R.drawable.ic_clear_white_24dp)) //Set MyLoadingButton error icon drawable.
                 .setNormalAfterError(false);
     }
 
@@ -88,7 +104,76 @@ public class SignUpActivity extends AppCompatActivity implements
 
     @Override
     public void onMyLoadingButtonClick() {
-        Toast.makeText(this, "MyLoadingButton Click", Toast.LENGTH_SHORT).show();
+
+        Log.d("EM",emailSignUpActivityEditText.getText().length()+"");
+        Log.d("EM",emailSignUpActivityEditText.getText().equals("")+"");
+        Log.d("EM",(emailSignUpActivityEditText.getText()==null)+"");
+
+
+        if(emailSignUpActivityEditText.getText().equals("")||passwordSignUpActivityEditText.getText().equals("")||
+                emailSignUpActivityEditText.getText().length()==0||passwordSignUpActivityEditText.getText().length()==0){
+
+            ChocoBar
+                    .builder()
+                    .setActivity(SignUpActivity.this)
+                    .setText("Please, check fields")
+                    .setDuration(ChocoBar.LENGTH_LONG)
+                    .red()
+                    .show();
+            signUpSignUpActivityButton.showErrorButton();
+
+        }else {
+
+            setLoadingButtonStyle();
+
+
+            APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
+
+
+            RequestBody email_ = RequestBody.create(MediaType.parse("text/plain"),
+                    emailSignUpActivityEditText.getText().toString());
+
+            RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
+                    passwordSignUpActivityEditText.getText().toString());
+
+            RequestBody username_ = RequestBody.create(MediaType.parse("text/plain"),
+                    emailSignUpActivityEditText.getText().toString().split("@")[0]);
+
+
+            Call<RegistrationAPI> call = apiInterface.createNewUser(email_, password_, username_);
+            call.enqueue(new Callback<RegistrationAPI>() {
+                @Override
+                public void onResponse(Call<RegistrationAPI> call, Response<RegistrationAPI> response) {
+                    signUpSignUpActivityButton.showDoneButton();
+                    ChocoBar
+                            .builder()
+                            .setActivity(SignUpActivity.this)
+                            .setText("Success!")
+                            .setDuration(ChocoBar.LENGTH_LONG)
+                            .green()
+                            .setAction("LOGIN", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                                }
+                            })
+                            .show();
+                }
+
+                @Override
+                public void onFailure(Call<RegistrationAPI> call, Throwable t) {
+                    signUpSignUpActivityButton.showErrorButton();
+                    ChocoBar
+                            .builder()
+                            .setActivity(SignUpActivity.this)
+                            .setText(t.getLocalizedMessage())
+                            .setDuration(ChocoBar.LENGTH_LONG)
+                            .red()
+                            .show();
+
+                }
+            });
+        }
 
     }
 }

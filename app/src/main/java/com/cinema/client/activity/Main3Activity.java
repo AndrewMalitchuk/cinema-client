@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -77,6 +78,8 @@ public class Main3Activity extends AppCompatActivity {
     @BindView(R.id.expMenu)
     ExpandedMenuView expandedMenuView;
 
+
+
 //    @BindView(R.id.navigation)
 //    BottomNavigationView bottomNavigationView;
 
@@ -124,6 +127,11 @@ public class Main3Activity extends AppCompatActivity {
         NoNet.monitor(this)
                 .poll()
                 .snackbar();
+
+
+        //
+
+
 
 
         String userNameFromPreferences = pref.getString("user_name", null);
@@ -193,6 +201,9 @@ public class Main3Activity extends AppCompatActivity {
                         // create and show the alert dialog
                         AlertDialog dialog = builder.create();
                         dialog.show();
+                        break;
+                    case R.id.action_about_developer:
+                        startActivity(new Intent(Main3Activity.this,AboutDeveloperActivity.class));
                         break;
                     case R.id.action_logout:
                         new DroidDialog.Builder(Main3Activity.this)

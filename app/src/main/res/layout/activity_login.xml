@@ -158,7 +158,7 @@
                         android:textColorHint="@color/colorAccent">
 
                         <com.subhrajyoti.passwordview.PasswordView
-                            android:id="@+id/passwordView"
+                            android:id="@+id/passwordSignUpActivityEditText"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:colorControlHighlight="@color/colorAccent"

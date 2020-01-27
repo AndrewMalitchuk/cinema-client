@@ -1,5 +1,7 @@
 package com.cinema.client.activity;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -33,6 +35,9 @@ public class LoginActivity extends AppCompatActivity implements
 
     @BindView(R.id.signUpLoginActivityTextView)
     TextView signUpLoginActivityTextView;
+
+
+
 
 
 
@@ -96,6 +101,10 @@ public class LoginActivity extends AppCompatActivity implements
     @Override
     public void onMyLoadingButtonClick() {
         Toast.makeText(this, "MyLoadingButton Click", Toast.LENGTH_SHORT).show();
+        final Account account = new Account("Test", "com.cinema.client.activity");
+        AccountManager accountManager = AccountManager.get(this);
+
+        accountManager.addAccountExplicitly(account, "password", null);
 
     }
 }

@@ -15,36 +15,36 @@ public final class R {
         public static final int bonuspack_bubble = 0x7f08007b;
         public static final int btn_moreinfo = 0x7f080088;
         public static final int center = 0x7f080095;
-        public static final int ic_menu_compass = 0x7f080101;
-        public static final int ic_menu_mapmode = 0x7f080102;
-        public static final int ic_menu_mylocation = 0x7f080103;
-        public static final int ic_menu_offline = 0x7f080104;
-        public static final int marker_default = 0x7f080134;
-        public static final int marker_default_focused_base = 0x7f080135;
-        public static final int moreinfo_arrow = 0x7f08013d;
-        public static final int moreinfo_arrow_pressed = 0x7f08013e;
-        public static final int navto_small = 0x7f080145;
-        public static final int next = 0x7f080147;
-        public static final int osm_ic_center_map = 0x7f080158;
-        public static final int osm_ic_follow_me = 0x7f080159;
-        public static final int osm_ic_follow_me_on = 0x7f08015a;
-        public static final int osm_ic_ic_map_ortho = 0x7f08015b;
-        public static final int person = 0x7f08015d;
-        public static final int previous = 0x7f08015e;
-        public static final int round_navigation_white_48 = 0x7f080164;
-        public static final int sharp_add_black_36 = 0x7f08016e;
-        public static final int sharp_remove_black_36 = 0x7f08016f;
-        public static final int zoom_in = 0x7f080188;
-        public static final int zoom_out = 0x7f080189;
+        public static final int ic_menu_compass = 0x7f080102;
+        public static final int ic_menu_mapmode = 0x7f080103;
+        public static final int ic_menu_mylocation = 0x7f080104;
+        public static final int ic_menu_offline = 0x7f080105;
+        public static final int marker_default = 0x7f080135;
+        public static final int marker_default_focused_base = 0x7f080136;
+        public static final int moreinfo_arrow = 0x7f08013e;
+        public static final int moreinfo_arrow_pressed = 0x7f08013f;
+        public static final int navto_small = 0x7f080146;
+        public static final int next = 0x7f080148;
+        public static final int osm_ic_center_map = 0x7f080159;
+        public static final int osm_ic_follow_me = 0x7f08015a;
+        public static final int osm_ic_follow_me_on = 0x7f08015b;
+        public static final int osm_ic_ic_map_ortho = 0x7f08015c;
+        public static final int person = 0x7f08015e;
+        public static final int previous = 0x7f08015f;
+        public static final int round_navigation_white_48 = 0x7f080165;
+        public static final int sharp_add_black_36 = 0x7f08016f;
+        public static final int sharp_remove_black_36 = 0x7f080170;
+        public static final int zoom_in = 0x7f080189;
+        public static final int zoom_out = 0x7f08018a;
     }
     public static final class id {
         private id() {}
 
-        public static final int bubble_description = 0x7f0a0088;
-        public static final int bubble_image = 0x7f0a0089;
-        public static final int bubble_moreinfo = 0x7f0a008a;
-        public static final int bubble_subdescription = 0x7f0a008b;
-        public static final int bubble_title = 0x7f0a008c;
+        public static final int bubble_description = 0x7f0a0087;
+        public static final int bubble_image = 0x7f0a0088;
+        public static final int bubble_moreinfo = 0x7f0a0089;
+        public static final int bubble_subdescription = 0x7f0a008a;
+        public static final int bubble_title = 0x7f0a008b;
     }
     public static final class layout {
         private layout() {}

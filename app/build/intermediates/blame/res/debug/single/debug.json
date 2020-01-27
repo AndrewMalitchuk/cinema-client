@@ -704,6 +704,10 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/layout/abc_alert_dialog_button_bar_material.xml"
     },
     {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_selected_cinema_item.xml.flat",
+        "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/layout/selected_cinema_item.xml"
+    },
+    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ic_android_white_192dp.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/a99a2e4f3bac3d35e30b580b7d1d747c/res/drawable-xhdpi-v4/ic_android_white_192dp.png"
     },
@@ -2578,6 +2582,10 @@
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/20770dccd6403c8027a019226e749630/res/drawable-xhdpi-v4/googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ic_clear_white_24dp.xml.flat",
+        "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/drawable/ic_clear_white_24dp.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-v24_historical.jpg.flat",

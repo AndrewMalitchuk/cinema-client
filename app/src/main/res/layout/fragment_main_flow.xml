@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".fragments.MainFlowFragment">
 
+    <!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+        <!--android:id="@+id/reloadMainFlowFragmentSwipeRefreshLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -230,6 +235,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/favCinemasMainFlowFragmentCardView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -258,68 +264,10 @@
                             app:cardCornerRadius="5dp"
                             app:cardElevation="5dp">
 
-                            <HorizontalScrollView
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/favCinemasMainFlowFragmentRecyclerView"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent">
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:orientation="vertical">
-
-                                        <com.liangfeizc.avatarview.AvatarView
-                                            android:id="@+id/av1"
-                                            android:layout_width="75dp"
-                                            android:layout_height="75dp"
-                                            android:layout_margin="10dp"
-                                            android:src="@drawable/kosmos_cinema"
-                                            app:border_color="@color/colorLoginActivityText" />
-
-                                        <TextView
-                                            android:id="@+id/textView81"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="10dp"
-                                            android:layout_marginRight="10dp"
-                                            android:layout_marginBottom="10dp"
-                                            android:text="Kosmos"
-                                            android:textAlignment="center"
-                                            android:textColor="@color/colorLoginActivityText" />
-
-                                    </LinearLayout>
-
-                                    <LinearLayout
-                                        android:layout_width="match_parent"
-                                        android:layout_height="match_parent"
-                                        android:orientation="vertical">
-
-                                        <com.liangfeizc.avatarview.AvatarView
-                                            android:id="@+id/av2"
-                                            android:layout_width="75dp"
-                                            android:layout_height="75dp"
-                                            android:layout_margin="10dp"
-                                            android:src="@drawable/lumier_cinema"
-                                            app:border_color="@color/colorLoginActivityText" />
-
-                                        <TextView
-                                            android:id="@+id/textView82"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginLeft="10dp"
-                                            android:layout_marginRight="10dp"
-                                            android:layout_marginBottom="10dp"
-                                            android:text="Lumiere"
-                                            android:textAlignment="center"
-                                            android:textColor="@color/colorLoginActivityText" />
-
-                                    </LinearLayout>
-
-                                </LinearLayout>
-                            </HorizontalScrollView>
+                                android:layout_height="wrap_content" />
                         </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
@@ -682,4 +630,5 @@
         </ScrollView>
 
     </LinearLayout>
+    <!--</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
 </FrameLayout>

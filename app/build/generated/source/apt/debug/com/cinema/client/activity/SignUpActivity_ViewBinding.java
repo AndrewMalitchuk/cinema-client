@@ -2,6 +2,7 @@
 package com.cinema.client.activity;
 
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.CallSuper;
@@ -28,6 +29,8 @@ public class SignUpActivity_ViewBinding implements Unbinder {
     target.signUpLinearLayout = Utils.findRequiredViewAsType(source, R.id.signUpLinearLayout, "field 'signUpLinearLayout'", LinearLayout.class);
     target.signUpSignUpActivityButton = Utils.findRequiredViewAsType(source, R.id.signUpSignUpActivityButton, "field 'signUpSignUpActivityButton'", MyLoadingButton.class);
     target.loginSignUpActivityTextView = Utils.findRequiredViewAsType(source, R.id.loginSignUpActivityTextView, "field 'loginSignUpActivityTextView'", TextView.class);
+    target.emailSignUpActivityEditText = Utils.findRequiredViewAsType(source, R.id.emailSignUpActivityEditText, "field 'emailSignUpActivityEditText'", EditText.class);
+    target.passwordSignUpActivityEditText = Utils.findRequiredViewAsType(source, R.id.passwordSignUpActivityEditText, "field 'passwordSignUpActivityEditText'", EditText.class);
   }
 
   @Override
@@ -40,5 +43,7 @@ public class SignUpActivity_ViewBinding implements Unbinder {
     target.signUpLinearLayout = null;
     target.signUpSignUpActivityButton = null;
     target.loginSignUpActivityTextView = null;
+    target.emailSignUpActivityEditText = null;
+    target.passwordSignUpActivityEditText = null;
   }
 }
