@@ -22,12 +22,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.cinema.client.MainActivity;
 import com.cinema.client.R;
 import com.cinema.client.requests.APIClient;
@@ -45,7 +47,6 @@ import com.liangfeizc.avatarview.AvatarView;
 import com.pd.chocobar.ChocoBar;
 import com.vivekkaushik.datepicker.DatePickerTimeline;
 import com.vivekkaushik.datepicker.OnDateSelectedListener;
-
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
@@ -64,9 +65,12 @@ import java.util.TreeSet;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import jp.wasabeef.glide.transformations.BlurTransformation;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 
 public class AboutCinemaActivity extends AppCompatActivity {
 
@@ -94,8 +98,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
     @BindView(R.id.cinemaPictureCinemaActivityAvatarView)
     AvatarView cinemaPictureCinemaActivityAvatarView;
 
-    @BindView(R.id.cinemaNameCinemaActivityTextView)
-    TextView cinemaNameCinemaActivityTextView;
+//    @BindView(R.id.cinemaNameCinemaActivityTextView)
+//    TextView cinemaNameCinemaActivityTextView;
 
 
     @BindView(R.id.cinemaNameBigCinemaActivityTextView)
@@ -111,6 +115,12 @@ public class AboutCinemaActivity extends AppCompatActivity {
     @BindView(R.id.my_toolbar)
     Toolbar myToolbar;
 
+//    @BindView(R.id.imageView5)
+//    BlurImageView blurImageView;
+
+    @BindView(R.id.imageView5)
+    ImageView blurImageView;
+
 //    private MapContainerView mapView;
 
 
@@ -123,7 +133,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
     private CinemaAPI currentCinema;
 
 
-    public static final String FAVOURITE_CINEMAS_PREF="favourite_cinema_pref";
+    public static final String FAVOURITE_CINEMAS_PREF = "favourite_cinema_pref";
     private SharedPreferences sharedpreferences;
 
     @Override
@@ -258,24 +268,24 @@ public class AboutCinemaActivity extends AppCompatActivity {
             //
             SharedPreferences.Editor editor = sharedpreferences.edit();
 
-            String json=sharedpreferences.getString("fav_json",null);
+            String json = sharedpreferences.getString("fav_json", null);
 
-            Gson gson=new GsonBuilder().create();
+            Gson gson = new GsonBuilder().create();
 
             List<Integer> list;
-            if(json==null){
-                list=new ArrayList<>();
-            }else {
+            if (json == null) {
+                list = new ArrayList<>();
+            } else {
                 list = gson.fromJson(json, new TypeToken<List<Integer>>() {
                 }.getType());
             }
 
-            if(list.contains(currentCinema.getId())==false){
+            if (list.contains(currentCinema.getId()) == false) {
                 list.add(currentCinema.getId());
             }
 
             editor.remove("fav_json");
-            editor.putString("fav_json",gson.toJson(list));
+            editor.putString("fav_json", gson.toJson(list));
             editor.commit();
 
             //
@@ -323,8 +333,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
             Log.d("UNQ", uniqueFilms.size() + "");
 
-            List<FilmAPI> res=new ArrayList<>();
-            for(Integer i:uniqueFilms){
+            List<FilmAPI> res = new ArrayList<>();
+            for (Integer i : uniqueFilms) {
 
                 res.add(apiInterface.getFilmById(i).execute().body());
 
@@ -371,7 +381,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
     public void setContent(CinemaAPI content) {
 
         Glide.with(this).load(APIClient.HOST + content.getPicUrl()).into(cinemaPictureCinemaActivityAvatarView);
-        cinemaNameCinemaActivityTextView.setText(content.getName());
+//        cinemaNameCinemaActivityTextView.setText(content.getName());
         cinemaNameBigCinemaActivityTextView.setText(content.getName());
         myToolbar.setTitle(content.getName());
         cinemaLocationCinemaActivityTextView.setText(content.getAddress());
@@ -382,6 +392,38 @@ public class AboutCinemaActivity extends AppCompatActivity {
         telephoneAboutCinemaTextView.setOnClickListener(this::onPhoneClick);
 
         //
+//        Glide.with(this).load(APIClient.HOST + content.getPicUrl()).into(blurImageView);
+//        blurImageView.setBlur(25);
+//        blurImageView.setBlurImageByUrl(APIClient.HOST + content.getPicUrl());
+//
+//        blurImageView.setBlurFactor(20);
+
+
+//        Glide
+//                .with(this)
+//                .load(APIClient.HOST + content.getPicUrl())
+//                .into(blurImageView);
+
+//        BlurImage.withContext(AboutCinemaActivity.this)
+//                .blurFromUri(APIClient.HOST + content.getPicUrl())
+//                .into(blurImageView);
+
+
+
+//        blurImageView.setImageResource();
+
+//        Glide.with(this)
+//                .load(APIClient.HOST + content.getPicUrl())
+//                .apply(RequestOptions.bitmapTransform(BlurTransformation(25,3)))
+//                .into(blurImageView);
+
+        Glide.with(this)
+                .load(APIClient.HOST + content.getPicUrl())
+                .apply(RequestOptions.bitmapTransform(new BlurTransformation(25, 3)))
+                .into(blurImageView);
+        //
+
+
 
 
         marker.setPosition(new GeoPoint(content.getGeoLat(), content.getGeoLon()));
@@ -408,8 +450,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
 
     }
-
-
 
 
 }

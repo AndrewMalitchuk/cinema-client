@@ -32,10 +32,10 @@ public final class R {
         public static final int person = 0x7f08015e;
         public static final int previous = 0x7f08015f;
         public static final int round_navigation_white_48 = 0x7f080165;
-        public static final int sharp_add_black_36 = 0x7f08016f;
-        public static final int sharp_remove_black_36 = 0x7f080170;
-        public static final int zoom_in = 0x7f080189;
-        public static final int zoom_out = 0x7f08018a;
+        public static final int sharp_add_black_36 = 0x7f080170;
+        public static final int sharp_remove_black_36 = 0x7f080171;
+        public static final int zoom_in = 0x7f08018a;
+        public static final int zoom_out = 0x7f08018b;
     }
     public static final class id {
         private id() {}

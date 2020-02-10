@@ -392,6 +392,7 @@ public class MainFlowFragment extends Fragment {
 //                        jsonObject.add( myCustomArray);
 
                         intent.putExtra("json", myCustomArray.toString());
+                        intent.putExtra("genre","Comedy");
                         startActivity(intent);
                     }
 
@@ -422,6 +423,8 @@ public class MainFlowFragment extends Fragment {
 //                        jsonObject.add( myCustomArray);
 
                         intent.putExtra("json", myCustomArray.toString());
+                        intent.putExtra("genre","Action");
+
                         startActivity(intent);
                     }
 
@@ -452,6 +455,8 @@ public class MainFlowFragment extends Fragment {
 //                        jsonObject.add( myCustomArray);
 
                         intent.putExtra("json", myCustomArray.toString());
+                        intent.putExtra("genre","Historical");
+
                         startActivity(intent);
                     }
 
@@ -482,6 +487,8 @@ public class MainFlowFragment extends Fragment {
 //                        jsonObject.add( myCustomArray);
 
                         intent.putExtra("json", myCustomArray.toString());
+                        intent.putExtra("genre","Sci-Fi");
+
                         startActivity(intent);
                     }
 
@@ -512,6 +519,8 @@ public class MainFlowFragment extends Fragment {
 //                        jsonObject.add( myCustomArray);
 
                         intent.putExtra("json", myCustomArray.toString());
+                        intent.putExtra("genre","Horror");
+
                         startActivity(intent);
                     }
 

@@ -59,6 +59,8 @@ public class TicketActivity extends AppCompatActivity {
     @BindView(R.id.placeTicketActivityEditText)
     AppCompatTextView placeTicketActivityEditText;
 
+
+
     private APIInterface apiInterface;
     private TicketAPI curentTicket;
 

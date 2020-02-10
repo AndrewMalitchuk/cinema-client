@@ -82,9 +82,31 @@ public class SearchFilmActivity extends AppCompatActivity {
                     filmItemSearch.setFilmId(film.getId());
 
                     filmItemSearch.setFilmName(film.getTitle());
-                    filmItemSearch.setFilmDateTime(film.getDate());
-                    filmItemSearch.setFilmPlace("");
-                    filmItemSearch.setFilmCinema("");
+                    filmItemSearch.setFilmDateTime("Date: "+film.getDate());
+                    filmItemSearch.setFilmPlace("Dur: "+film.getDuration().toString()+" min.");
+
+                    String genre = "Loading...";
+
+                    switch (film.getGenre()) {
+                        case 1:
+                            genre="Comedy";
+                            break;
+                        case 2:
+                            genre="Action";
+                            break;
+                        case 3:
+                            genre="Historical";
+                            break;
+                        case 4:
+                            genre="Sci-Fi";
+                            break;
+                        case 5:
+                            genre="Horror";
+                            break;
+                    }
+
+
+                    filmItemSearch.setFilmCinema("Genre: "+genre);
                     filmItemSearch.setFilmImg(APIClient.HOST + film.getPicUrl());
 
                     filmItemSearchList.add(filmItemSearch);
@@ -147,13 +169,13 @@ public class SearchFilmActivity extends AppCompatActivity {
             public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
                 Toast.makeText(SearchFilmActivity.this, searchSuggestion.getBody(), Toast.LENGTH_SHORT).show();
 
-                Call<FilmAPI> call=apiInterface.getFilmByTitle(searchSuggestion.getBody());
+                Call<FilmAPI> call = apiInterface.getFilmByTitle(searchSuggestion.getBody());
 
                 call.enqueue(new Callback<FilmAPI>() {
                     @Override
                     public void onResponse(Call<FilmAPI> call, Response<FilmAPI> response) {
                         Intent intent = new Intent(SearchFilmActivity.this, AboutFilmActivity.class);
-                        intent.putExtra("filmId",response.body().getId());
+                        intent.putExtra("filmId", response.body().getId());
 
                         startActivity(intent);
                     }
@@ -165,7 +187,6 @@ public class SearchFilmActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-
 
 
             }

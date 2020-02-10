@@ -89,9 +89,8 @@
                                 android:id="@+id/imageView5"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:adjustViewBounds="false"
-                                android:scaleType="center"
-                                app:srcCompat="@drawable/cinema_wallpaper" />
+
+                                android:scaleType="fitXY" />
 
 
 
@@ -111,18 +110,18 @@
                                     android:elevation="10dp"
                                     android:onClick="onImageClick"
                                     android:src="@drawable/ic_ticket_accent"
-                                    app:border_color="@color/white"
-                                    app:shadow_color="@color/white" />
+                                    app:border_color="@color/colorAccent"
+                                    app:shadow_color="@color/colorAccent" />
 
-                                <TextView
-                                    android:id="@+id/cinemaNameCinemaActivityTextView"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:text="Loading..."
-                                    android:textAlignment="center"
-                                    android:textColor="@color/white"
-                                    android:textSize="18sp"
-                                    android:textStyle="bold" />
+                                <!--<TextView-->
+                                    <!--android:id="@+id/cinemaNameCinemaActivityTextView"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="wrap_content"-->
+                                    <!--android:text="Loading..."-->
+                                    <!--android:textAlignment="center"-->
+                                    <!--android:textColor="@color/colorAccent"-->
+                                    <!--android:textSize="18sp"-->
+                                    <!--android:textStyle="bold" />-->
 
 
                             </LinearLayout>

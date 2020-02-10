@@ -2,6 +2,7 @@
 package com.cinema.client.activity;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -36,11 +37,11 @@ public class AboutCinemaActivity_ViewBinding implements Unbinder {
     target.cv3 = Utils.findRequiredViewAsType(source, R.id.cv3, "field 'cv3'", CardView.class);
     target.datePickerTimeline = Utils.findRequiredViewAsType(source, R.id.datePickerTimeline, "field 'datePickerTimeline'", DatePickerTimeline.class);
     target.cinemaPictureCinemaActivityAvatarView = Utils.findRequiredViewAsType(source, R.id.cinemaPictureCinemaActivityAvatarView, "field 'cinemaPictureCinemaActivityAvatarView'", AvatarView.class);
-    target.cinemaNameCinemaActivityTextView = Utils.findRequiredViewAsType(source, R.id.cinemaNameCinemaActivityTextView, "field 'cinemaNameCinemaActivityTextView'", TextView.class);
     target.cinemaNameBigCinemaActivityTextView = Utils.findRequiredViewAsType(source, R.id.cinemaNameBigCinemaActivityTextView, "field 'cinemaNameBigCinemaActivityTextView'", TextView.class);
     target.cinemaLocationCinemaActivityTextView = Utils.findRequiredViewAsType(source, R.id.cinemaLocationCinemaActivityTextView, "field 'cinemaLocationCinemaActivityTextView'", TextView.class);
     target.telephoneAboutCinemaTextView = Utils.findRequiredViewAsType(source, R.id.telephoneAboutCinemaTextView, "field 'telephoneAboutCinemaTextView'", TextView.class);
     target.myToolbar = Utils.findRequiredViewAsType(source, R.id.my_toolbar, "field 'myToolbar'", Toolbar.class);
+    target.blurImageView = Utils.findRequiredViewAsType(source, R.id.imageView5, "field 'blurImageView'", ImageView.class);
   }
 
   @Override
@@ -57,10 +58,10 @@ public class AboutCinemaActivity_ViewBinding implements Unbinder {
     target.cv3 = null;
     target.datePickerTimeline = null;
     target.cinemaPictureCinemaActivityAvatarView = null;
-    target.cinemaNameCinemaActivityTextView = null;
     target.cinemaNameBigCinemaActivityTextView = null;
     target.cinemaLocationCinemaActivityTextView = null;
     target.telephoneAboutCinemaTextView = null;
     target.myToolbar = null;
+    target.blurImageView = null;
   }
 }

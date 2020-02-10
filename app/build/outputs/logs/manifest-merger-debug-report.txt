@@ -69,6 +69,7 @@ MERGED from [com.liangfeizc:avatarview:0.0.1] /home/adular/.gradle/caches/transf
 MERGED from [org.osmdroid:osmdroid-android:6.1.2] /home/adular/.gradle/caches/transforms-2/files-2.1/bf68f764dde7e6f74b53a87ebde7a5af/AndroidManifest.xml:2:1-29:12
 MERGED from [in.shadowfax:proswipebutton:1.2.2] /home/adular/.gradle/caches/transforms-2/files-2.1/261fad36fdf32cb1ee4872e7a405bb47/AndroidManifest.xml:2:1-17:12
 MERGED from [com.github.MehdiKh93:Shortcut:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/238e17f8d658a74eda7895c5784a1b95/AndroidManifest.xml:2:1-11:12
+MERGED from [jp.wasabeef:glide-transformations:4.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/dccd90d9ec8205396e941fea59e9edef/AndroidManifest.xml:2:1-9:12
 MERGED from [com.github.bumptech.glide:glide:4.11.0] /home/adular/.gradle/caches/transforms-2/files-2.1/10803abcbe1024d4d6efc5eaf013ff63/AndroidManifest.xml:2:1-12:12
 MERGED from [uk.co.samuelwall:material-tap-target-prompt:3.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/915afad1b6d4fc1b9bf4d40160881159/AndroidManifest.xml:17:1-26:12
 MERGED from [com.google.firebase:firebase-inappmessaging:17.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/7f4c9b797090d2e10fa6f814d10b8921/AndroidManifest.xml:2:1-23:12
@@ -756,6 +757,8 @@ MERGED from [in.shadowfax:proswipebutton:1.2.2] /home/adular/.gradle/caches/tran
 MERGED from [in.shadowfax:proswipebutton:1.2.2] /home/adular/.gradle/caches/transforms-2/files-2.1/261fad36fdf32cb1ee4872e7a405bb47/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.MehdiKh93:Shortcut:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/238e17f8d658a74eda7895c5784a1b95/AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.MehdiKh93:Shortcut:1.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/238e17f8d658a74eda7895c5784a1b95/AndroidManifest.xml:7:5-9:41
+MERGED from [jp.wasabeef:glide-transformations:4.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/dccd90d9ec8205396e941fea59e9edef/AndroidManifest.xml:5:5-7:41
+MERGED from [jp.wasabeef:glide-transformations:4.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/dccd90d9ec8205396e941fea59e9edef/AndroidManifest.xml:5:5-7:41
 MERGED from [com.github.bumptech.glide:glide:4.11.0] /home/adular/.gradle/caches/transforms-2/files-2.1/10803abcbe1024d4d6efc5eaf013ff63/AndroidManifest.xml:6:5-8:41
 MERGED from [com.github.bumptech.glide:glide:4.11.0] /home/adular/.gradle/caches/transforms-2/files-2.1/10803abcbe1024d4d6efc5eaf013ff63/AndroidManifest.xml:6:5-8:41
 MERGED from [uk.co.samuelwall:material-tap-target-prompt:3.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/915afad1b6d4fc1b9bf4d40160881159/AndroidManifest.xml:22:5-24:41

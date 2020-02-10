@@ -5,11 +5,13 @@ import com.cinema.client.requests.entities.FilmAPI;
 import com.cinema.client.requests.entities.RegistrationAPI;
 import com.cinema.client.requests.entities.TicketAPI;
 import com.cinema.client.requests.entities.TimelineAPI;
+import com.cinema.client.requests.entities.TokenAPI;
 
 import java.util.List;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -26,6 +28,7 @@ public interface APIInterface {
     public static final String api_cinema = "/api/v1/cinema";
     public static final String api_timeline = "/api/v1/timeline";
     public static final String adi_registration = "/api/v1/create/";
+    public static final String api_token = "/api/token/";
 
 
     @GET(api_film)
@@ -43,6 +46,10 @@ public interface APIInterface {
 
     @GET(api_ticket)
     Call<TicketAPI> getTicketByCode(@Query("code") String code);
+
+    @POST(api_ticket)
+    Call<TicketAPI> updateTicketById(@Query("id") int id, @Body TicketAPI ticket);
+
 
 
     @GET(api_cinema)
@@ -67,9 +74,21 @@ public interface APIInterface {
     @GET(api_timeline)
     Call<List<TimelineAPI>> getTimelineByCinemaIdAndFilmId(@Query("cinema_id") int cinema_id, @Query("film_id") int film_id);
 
+
+
     @Multipart
     @POST(adi_registration)
-    Call<RegistrationAPI> createNewUser(@Part("email") RequestBody email, @Part("password") RequestBody password, @Part("username") RequestBody username);
+    Call<RegistrationAPI> createNewUser(
+            @Part("email") RequestBody email,
+            @Part("password") RequestBody password,
+            @Part("username") RequestBody username);
 
+
+
+    @Multipart
+    @POST(api_token)
+    Call<TokenAPI> refreshToken(
+            @Part("username") RequestBody username,
+            @Part("password") RequestBody password);
 
 }

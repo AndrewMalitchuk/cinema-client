@@ -703,6 +703,7 @@ public class Main3Activity extends AppCompatActivity {
                 temp.setDate(fmt.parse(film.getDate()));
                 temp.setDescription(film.getTitle());
                 temp.setUrl(APIClient.HOST + film.getPicUrl());
+//                temp.setDate(film.getId().toString());
                 Log.d("STR", temp.toString());
 
                 myStories.add(temp);
@@ -728,6 +729,8 @@ public class Main3Activity extends AppCompatActivity {
                     public void onDescriptionClickListener(int position) {
                         Toast.makeText(Main3Activity.this, myStories.get(position).getDescription(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Main3Activity.this, AboutFilmActivity.class);
+
+                        intent.putExtra("filmId",films.get(position).getId());
                         startActivity(intent);
                     }
 

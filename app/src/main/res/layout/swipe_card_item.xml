@@ -34,6 +34,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:elevation="10dp"
+                android:scaleType="fitXY"
                 app:srcCompat="@drawable/ic_ticket_accent" />
         </androidx.cardview.widget.CardView>
 

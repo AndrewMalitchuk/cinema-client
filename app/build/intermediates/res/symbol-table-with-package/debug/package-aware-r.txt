@@ -2278,6 +2278,7 @@ drawable ripple
 drawable round_navigation_white_48
 drawable rounded_button_selector
 drawable rounded_layout
+drawable sad_emoji
 drawable sci_fi
 drawable search_dialog_ic_search
 drawable seventh_bg
@@ -2525,7 +2526,6 @@ id cinemaLocationCinemaActivityTextView
 id cinemaName
 id cinemaNameBigCinemaActivityTextView
 id cinemaNameBillActivityExtendedEditText
-id cinemaNameCinemaActivityTextView
 id cinemaNameTicketActivityEditText
 id cinemaPictureCinemaActivityAvatarView
 id cl_onboarder

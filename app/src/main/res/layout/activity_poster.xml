@@ -24,7 +24,7 @@
             android:id="@+id/imageView4"
             android:layout_width="141dp"
             android:layout_height="145dp"
-            app:srcCompat="@drawable/ic_undraw_no_data_qbuo" />
+            app:srcCompat="@drawable/sad_emoji" />
 
         <TextView
             android:id="@+id/textView31"

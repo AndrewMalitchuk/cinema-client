@@ -91,6 +91,9 @@ public class PosterActivity extends AppCompatActivity {
 
         Intent i = getIntent();
 
+        String genre=i.getStringExtra("genre");
+        toolbar.setTitle(genre);
+
         String json =i.getStringExtra("json");
         Log.d("json",json);
         Gson gson = new GsonBuilder().create();
