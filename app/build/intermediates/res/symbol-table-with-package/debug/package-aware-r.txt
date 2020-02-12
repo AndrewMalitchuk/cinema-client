@@ -395,6 +395,11 @@ attr errorTextColor
 attr excludeClass
 attr excludeId
 attr excludeName
+attr exp_animateExpand
+attr exp_backgroundColor
+attr exp_expandIndicator
+attr exp_icon
+attr exp_iconStyle
 attr expandActivityOverflowButtonDrawable
 attr expanded
 attr expandedTitleGravity
@@ -1133,6 +1138,7 @@ color colorDefaultLine
 color colorDefaultStroke
 color colorDefaultSubTitle
 color colorDefaultTitle
+color colorLightGray
 color colorLoginActivityButton
 color colorLoginActivityCardView
 color colorLoginActivityFields
@@ -1583,6 +1589,8 @@ dimen chip_height_normal
 dimen chip_width_normal
 dimen clear_button_min_height
 dimen clear_button_min_width
+dimen collapsed_icon_size
+dimen collapsed_size
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -1599,6 +1607,7 @@ dimen default_banner_height
 dimen default_banner_text_size
 dimen default_circle_indicator_radius
 dimen default_circle_indicator_stroke_width
+dimen default_corner_radius
 dimen default_line_indicator_gap_width
 dimen default_line_indicator_line_width
 dimen default_line_indicator_stroke_width
@@ -1677,6 +1686,8 @@ dimen edittext_text_size
 dimen edt_txtsize
 dimen end_icon_min_height
 dimen end_icon_min_width
+dimen expand_drawable_size
+dimen expanded_icon_size
 dimen fab_margin
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
@@ -1692,6 +1703,7 @@ dimen hint_alpha_material_dark
 dimen hint_alpha_material_light
 dimen hint_pressed_alpha_material_dark
 dimen hint_pressed_alpha_material_light
+dimen icon_margin
 dimen icon_padding
 dimen icon_signifier_height
 dimen icon_signifier_marginEnd
@@ -2155,6 +2167,7 @@ drawable ic_credit_card_black_24dp
 drawable ic_credit_card_with_cvv_code
 drawable ic_discover
 drawable ic_done_white_24dp
+drawable ic_down
 drawable ic_email_black_24dp
 drawable ic_email_white_24dp
 drawable ic_empty_24dp
@@ -2193,6 +2206,7 @@ drawable ic_perm_identity_black_24dp
 drawable ic_photo_library_white_24dp
 drawable ic_progress_cancle
 drawable ic_progress_done
+drawable ic_random_black_24dp
 drawable ic_random_white_24dp
 drawable ic_right_white_24dp
 drawable ic_search_black_24dp
@@ -2200,6 +2214,7 @@ drawable ic_search_white_24dp
 drawable ic_share_black_24dp
 drawable ic_share_white_24dp
 drawable ic_stories_24dp
+drawable ic_stories_black_24dp
 drawable ic_swipe_right_caret
 drawable ic_ticket_accent
 drawable ic_ticket_black
@@ -2488,6 +2503,7 @@ id button_label_tv
 id button_layout
 id button_next
 id button_skip
+id calendarView
 id cancel_action
 id cardLayout
 id cardView
@@ -2528,6 +2544,7 @@ id cinemaNameBigCinemaActivityTextView
 id cinemaNameBillActivityExtendedEditText
 id cinemaNameTicketActivityEditText
 id cinemaPictureCinemaActivityAvatarView
+id circle
 id cl_onboarder
 id clear_btn
 id clicked
@@ -2906,6 +2923,7 @@ id right_side
 id right_side_of_hall
 id rootView
 id rounded
+id roundedSquare
 id row
 id row_reverse
 id runningTransitions
@@ -2979,6 +2997,7 @@ id spread
 id spread_inside
 id sprmonth
 id spryear
+id square
 id src_atop
 id src_in
 id src_over
@@ -3454,6 +3473,7 @@ mipmap google_play_store
 mipmap google_plus
 mipmap help
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 mipmap instagram
 mipmap intrduce
@@ -4479,6 +4499,7 @@ styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_a
 styleable DatePickerTimeline dateTextColor dayTextColor disabledColor monthTextColor
 styleable DesignTheme bottomSheetDialogTheme bottomSheetStyle
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
+styleable Expandable exp_animateExpand exp_backgroundColor exp_expandIndicator exp_icon exp_iconStyle
 styleable ExpandedMenuView em_background_color em_close_menu_icon em_font_family em_is_on_click_closable em_menu_icon em_outside_margin em_shadow_color em_text_color
 styleable ExtendedEditText prefix prefixTextColor suffix suffixTextColor
 styleable Fade fadingMode

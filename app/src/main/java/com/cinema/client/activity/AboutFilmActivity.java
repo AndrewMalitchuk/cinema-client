@@ -195,6 +195,7 @@ public class AboutFilmActivity extends AppCompatActivity {
     public void onFabClick(View view) {
         Intent intent = new Intent(AboutFilmActivity.this, NewNewCardActivity.class);
         intent.putExtra("filmTitle",currentFilm.getTitle());
+        intent.putExtra("filmId",currentFilm.getId());
 
 
         startActivity(intent);

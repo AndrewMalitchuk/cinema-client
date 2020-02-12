@@ -51,7 +51,6 @@ public interface APIInterface {
     Call<TicketAPI> updateTicketById(@Query("id") int id, @Body TicketAPI ticket);
 
 
-
     @GET(api_cinema)
     Call<List<CinemaAPI>> getCinemas();
 
@@ -74,6 +73,11 @@ public interface APIInterface {
     @GET(api_timeline)
     Call<List<TimelineAPI>> getTimelineByCinemaIdAndFilmId(@Query("cinema_id") int cinema_id, @Query("film_id") int film_id);
 
+    @GET(api_timeline)
+    Call<List<TimelineAPI>> getTimelineByDateAndCinemaId(@Query("date") String date, @Query("cinema_id") int cinema_id);
+
+    @GET(api_timeline)
+    Call<List<TimelineAPI>> getTimelineByDateAndCinemaIdAndFilmId(@Query("date") String date, @Query("cinema_id") int cinema_id, @Query("film_id") int film_id);
 
 
     @Multipart
@@ -82,7 +86,6 @@ public interface APIInterface {
             @Part("email") RequestBody email,
             @Part("password") RequestBody password,
             @Part("username") RequestBody username);
-
 
 
     @Multipart

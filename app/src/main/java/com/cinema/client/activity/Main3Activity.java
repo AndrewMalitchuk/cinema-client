@@ -79,7 +79,6 @@ public class Main3Activity extends AppCompatActivity {
     ExpandedMenuView expandedMenuView;
 
 
-
 //    @BindView(R.id.navigation)
 //    BottomNavigationView bottomNavigationView;
 
@@ -132,8 +131,6 @@ public class Main3Activity extends AppCompatActivity {
         //
 
 
-
-
         String userNameFromPreferences = pref.getString("user_name", null);
         if (userNameFromPreferences != null && !userNameFromPreferences.equals("")) {
             toolbar.setTitle("Hello, " + userNameFromPreferences);
@@ -141,6 +138,7 @@ public class Main3Activity extends AppCompatActivity {
             toolbar.setTitle("Hello, $username!");
         }
         setSupportActionBar(toolbar);
+
 
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
@@ -163,9 +161,9 @@ public class Main3Activity extends AppCompatActivity {
                         break;
                     case R.id.action_feedback:
                         Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                                "mailto", "cinema.app.feedback@gmail.com", null));
-                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Cinema-App Feedback");
-                        emailIntent.putExtra(Intent.EXTRA_TEXT, "Body");
+                                "mailto", "cinema.app.diploma@gmail.com", null));
+//                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Cinema-App Feedback");
+//                        emailIntent.putExtra(Intent.EXTRA_TEXT, "Body");
                         startActivity(Intent.createChooser(emailIntent, "Send email..."));
                         break;
                     case R.id.action_change_name:
@@ -203,7 +201,7 @@ public class Main3Activity extends AppCompatActivity {
                         dialog.show();
                         break;
                     case R.id.action_about_developer:
-                        startActivity(new Intent(Main3Activity.this,AboutDeveloperActivity.class));
+                        startActivity(new Intent(Main3Activity.this, AboutDeveloperActivity.class));
                         break;
                     case R.id.action_logout:
                         new DroidDialog.Builder(Main3Activity.this)
@@ -262,14 +260,25 @@ public class Main3Activity extends AppCompatActivity {
                 .setIntentStringExtraValue("myTicketsShortcut")
                 .build();
 
-        Shortcut posterShortcut = new Shortcut.ShortcutBuilder()
-                .setShortcutIcon(R.drawable.ic_video_label_black_24dp)
-                .setShortcutId("myPosterShortcut")
-                .setShortcutLongLabel("Poster")
-                .setShortcutShortLabel("Poster")
-                .setIntentAction("myPosterShortcut")
-                .setIntentStringExtraKey("myPosterShortcut")
-                .setIntentStringExtraValue("myPosterShortcut")
+
+        Shortcut randomShortcut = new Shortcut.ShortcutBuilder()
+                .setShortcutIcon(R.drawable.ic_random_black_24dp)
+                .setShortcutId("myRandomShortcut")
+                .setShortcutLongLabel("Random")
+                .setShortcutShortLabel("Random")
+                .setIntentAction("myRandomShortcut")
+                .setIntentStringExtraKey("myRandomShortcut")
+                .setIntentStringExtraValue("myRandomShortcut")
+                .build();
+
+        Shortcut storiesShortcut = new Shortcut.ShortcutBuilder()
+                .setShortcutIcon(R.drawable.ic_stories_black_24dp)
+                .setShortcutId("myStoriesShortcut")
+                .setShortcutLongLabel("Stories")
+                .setShortcutShortLabel("Stories")
+                .setIntentAction("myStoriesShortcut")
+                .setIntentStringExtraKey("myStoriesShortcut")
+                .setIntentStringExtraValue("myStoriesShortcut")
                 .build();
 
 
@@ -286,16 +295,83 @@ public class Main3Activity extends AppCompatActivity {
             }
         });
 
-        shortcutUtils.addDynamicShortCut(posterShortcut, new IReceiveStringExtra() {
+
+        // TODO:
+        shortcutUtils.addDynamicShortCut(randomShortcut, new IReceiveStringExtra() {
             @Override
             public void onReceiveStringExtra(String stringExtraKey, String stringExtraValue) {
                 String intent = getIntent().getStringExtra(stringExtraKey);
                 if (intent != null) {
-                    if (intent.equals("myPosterShortcut")) {
-                        Intent ticketIntent = new Intent(Main3Activity.this, PosterActivity.class);
-                        startActivity(ticketIntent);
+                    if (intent.equals("myRandomShortcut")) {
+                        apiInterface = APIClient.getClient().create(APIInterface.class);
+                        Call<List<FilmAPI>> callFilms = apiInterface.getFilms();
+                        callFilms.enqueue(new Callback<List<FilmAPI>>() {
+                            @Override
+                            public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+                                List<Integer> input = new ArrayList<>();
+                                for (FilmAPI film : response.body()) {
+                                    input.add(film.getId());
+                                }
+                                int randomFilmId = getRandomNum(input);
+                                Intent intent = new Intent(Main3Activity.this, AboutFilmActivity.class);
+                                intent.putExtra("filmId", randomFilmId);
+                                startActivity(intent);
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+                                call.cancel();
+                                Intent intent = new Intent(Main3Activity.this, ErrorActivity.class);
+                                startActivity(intent);
+                            }
+                        });
                     }
                 }
+
+
+            }
+        });
+
+        shortcutUtils.addDynamicShortCut(storiesShortcut, new IReceiveStringExtra() {
+            @Override
+            public void onReceiveStringExtra(String stringExtraKey, String stringExtraValue) {
+                String intent = getIntent().getStringExtra(stringExtraKey);
+                if (intent != null) {
+                    if (intent.equals("myStoriesShortcut")) {
+
+                        apiInterface = APIClient.getClient().create(APIInterface.class);
+                        Call<List<FilmAPI>> call = apiInterface.getFilms();
+
+                        call.enqueue(new Callback<List<FilmAPI>>() {
+                            @Override
+                            public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+
+                                films = response.body();
+                                Log.d("FILMS", films.size() + "");
+
+                                Collections.sort(films, new Comparator<FilmAPI>() {
+                                    @Override
+                                    public int compare(FilmAPI filmAPI, FilmAPI t1) {
+                                        return t1.getDate().compareTo(filmAPI.getDate());
+                                    }
+                                });
+
+                                stories(films);
+
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+                                call.cancel();
+                                Intent intent = new Intent(Main3Activity.this, ErrorActivity.class);
+                                startActivity(intent);
+                            }
+                        });
+                    }
+                }
+
             }
         });
 
@@ -442,17 +518,17 @@ public class Main3Activity extends AppCompatActivity {
                     case 1:
 
 
-                        Call<List<FilmAPI>> callFilms=apiInterface.getFilms();
+                        Call<List<FilmAPI>> callFilms = apiInterface.getFilms();
                         callFilms.enqueue(new Callback<List<FilmAPI>>() {
                             @Override
                             public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
-                                List<Integer> input=new ArrayList<>();
-                                for(FilmAPI film:response.body()){
+                                List<Integer> input = new ArrayList<>();
+                                for (FilmAPI film : response.body()) {
                                     input.add(film.getId());
                                 }
-                                int randomFilmId=getRandomNum(input);
+                                int randomFilmId = getRandomNum(input);
                                 Intent intent = new Intent(Main3Activity.this, AboutFilmActivity.class);
-                                intent.putExtra("filmId",randomFilmId);
+                                intent.putExtra("filmId", randomFilmId);
                                 startActivity(intent);
 
                             }
@@ -464,7 +540,6 @@ public class Main3Activity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         });
-
 
 
                         break;
@@ -730,7 +805,7 @@ public class Main3Activity extends AppCompatActivity {
                         Toast.makeText(Main3Activity.this, myStories.get(position).getDescription(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Main3Activity.this, AboutFilmActivity.class);
 
-                        intent.putExtra("filmId",films.get(position).getId());
+                        intent.putExtra("filmId", films.get(position).getId());
                         startActivity(intent);
                     }
 
@@ -821,7 +896,7 @@ public class Main3Activity extends AppCompatActivity {
         }
     }
 
-    public int getRandomNum(List<Integer> input){
+    public int getRandomNum(List<Integer> input) {
         Random r = new Random();
         int nextRandomNumberIndex = r.nextInt(input.size());
         return input.get(nextRandomNumberIndex);

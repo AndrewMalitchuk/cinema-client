@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.bumptech.glide.Glide;
@@ -56,7 +57,9 @@ import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.ScaleBarOverlay;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -200,12 +203,36 @@ public class AboutCinemaActivity extends AppCompatActivity {
         //
 
 
+        LocalDateTime date;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            date = LocalDateTime.now();
+            datePickerTimeline.setInitialDate(date.getYear(), date.getMonthValue() - 1, date.getDayOfMonth());
+
+        }
+
         //
         datePickerTimeline.setOnDateSelectedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(int year, int month, int day, int dayOfWeek) {
                 Log.d("Date:", year + " " + month + " " + day);
                 Intent intent = new Intent(AboutCinemaActivity.this, StatusActivity.class);
+                intent.putExtra("cinemaName",currentCinema.getName() );
+
+                Date date = new Date();
+                date.setYear(year);
+                date.setMonth(month);
+                date.setDate(day);
+                Toast.makeText(AboutCinemaActivity.this, ""+date.toString(), Toast.LENGTH_SHORT).show();
+
+
+
+//                intent.putExtra("selectedDate",date.getTime());
+                intent.putExtra("selectedDate",year+"-"+(month+1)+"-"+day);
+                intent.putExtra("cinemaId",currentCinema.getId());
+                intent.putExtra("isFilmTimeline",false);
+
+
+//                Log.d("LONG",date.getTime()+"");
                 startActivity(intent);
             }
 
@@ -348,6 +375,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
             Intent intent = new Intent(AboutCinemaActivity.this, PosterActivity.class);
             intent.putExtra("json", myCustomArray.toString());
+            intent.putExtra("genre", currentCinema.getName());
             startActivity(intent);
 
 
@@ -443,7 +471,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
 
         IMapController mapController = map.getController();
-        mapController.setZoom(16.5);
+        mapController.setZoom(19);
         GeoPoint startPoint = new GeoPoint(content.getGeoLat(), content.getGeoLon());
         mapController.setCenter(startPoint);
         //

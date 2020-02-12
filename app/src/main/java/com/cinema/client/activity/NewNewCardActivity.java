@@ -219,40 +219,6 @@ public class NewNewCardActivity extends AppCompatActivity {
 
         }
 
-//        if (resultCode == RESULT_OK) {
-////            Debug.printToast("Result Code is OK", getApplicationContext());
-//
-//            String name = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
-//            String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);
-//            String expiry = data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY);
-//            String cvv = data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV);
-//
-//            if (reqCode == CREATE_NEW_CARD) {
-//
-//                CreditCardView creditCardView = new CreditCardView(this);
-//
-//                creditCardView.setCVV(cvv);
-//                creditCardView.setCardHolderName(name);
-//                creditCardView.setCardExpiry(expiry);
-//                creditCardView.setCardNumber(cardNumber);
-//
-//                cardContainer.addView(creditCardView);
-//                int index = cardContainer.getChildCount() - 1;
-//                addCardListener(index, creditCardView);
-//
-//                addCardButton.setVisibility(View.GONE);
-//
-//            } else {
-//
-//                CreditCardView creditCardView = (CreditCardView) cardContainer.getChildAt(reqCode);
-//
-//                creditCardView.setCardExpiry(expiry);
-//                creditCardView.setCardNumber(cardNumber);
-//                creditCardView.setCardHolderName(name);
-//                creditCardView.setCVV(cvv);
-//
-//            }
-//        }
 
     }
 
@@ -303,7 +269,12 @@ public class NewNewCardActivity extends AppCompatActivity {
         Intent intent = new Intent(this, StatusActivity.class);
         // туть
         intent.putExtra("filmId", filmId);
-        intent.putExtra("cinemaId", -1);
+
+        intent.putExtra("cinemaId", cinemaId);
+        intent.putExtra("cinemaName", cinemaName);
+        Log.d("filmId", filmId+"");
+        intent.putExtra("isFilmTimeline", true);
+
 
         startActivityForResult(intent, PICK_DATETIME_REQUEST);
     }

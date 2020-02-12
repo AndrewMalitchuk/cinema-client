@@ -19,10 +19,16 @@ import com.cinema.client.entities.FilmItemSearch;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+import dagger.android.ContributesAndroidInjector;
+
+
 public class FilmSearchAdapter extends RecyclerView.Adapter<FilmSearchAdapter.ViewHolder> {
 
     List<FilmItemSearch> filmItemSearchList;
     Context context;
+
 
     public FilmSearchAdapter(List<FilmItemSearch>filmItemSearchList)
     {

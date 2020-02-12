@@ -28,6 +28,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import javax.inject.Inject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -38,6 +40,9 @@ public class SearchFilmActivity extends AppCompatActivity {
 
 
     RecyclerView recyclerView;
+
+
+
     FilmSearchAdapter filmSearchAdapter;
     ArrayList<FilmItemSearch> filmItemSearchList;
 

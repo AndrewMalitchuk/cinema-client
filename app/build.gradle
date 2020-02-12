@@ -211,5 +211,11 @@ dependencies {
     //
 //    implementation 'com.eightbitlab:supportrenderscriptblur:1.0.2'
     implementation 'jp.wasabeef:glide-transformations:4.0.0'
+    //https://android-arsenal.com/details/1/6433
+    implementation 'com.robertlevonyan.view:MaterialExpansionPanel:2.0.7'
+
+
+
+
 
 }
