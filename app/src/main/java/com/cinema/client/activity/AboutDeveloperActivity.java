@@ -32,7 +32,7 @@ public class AboutDeveloperActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        toolbar.setTitle("Developer");
+        toolbar.setTitle("About developer");
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -61,11 +61,9 @@ public class AboutDeveloperActivity extends AppCompatActivity {
                 .addGitHubLink("AndrewMalitchuk")
                 .addFiveStarsAction()
                 .setVersionNameAsAppSubTitle()
-                .addShareAction(R.string.app_name)
                 .setActionsColumnsCount(2)
-                .addFeedbackAction("andrew.malitchuk@gmail.com")
+                .addFeedbackAction("cinema.app.diploma@gmail.com")
                 .addIntroduceAction(new Intent(AboutDeveloperActivity.this,StartupActivity.class))
-                .addHelpAction((Intent) null)
                 .addChangeLogAction((Intent) null)
                 .setWrapScrollView(true)
                 .setShowAsCard(true);

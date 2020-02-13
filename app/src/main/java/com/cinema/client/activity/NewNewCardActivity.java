@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -58,6 +60,9 @@ public class NewNewCardActivity extends AppCompatActivity {
     private int filmId;
     private int cinemaId;
     private String cinemaName;
+
+    public static final String FAVOURITE_CINEMAS_PREF = "favourite_cinema_pref";
+    private SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -240,8 +245,12 @@ public class NewNewCardActivity extends AppCompatActivity {
                         Toast.makeText(NewNewCardActivity.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
                         droidDialog.cancel();
                         //
-//                        Intent intent = new Intent(NewNewCardActivity.this, SearchCinemaActivity.class);
-//                        startActivity(intent);
+                        Intent intent = new Intent(NewNewCardActivity.this, SearchCinemaActivity.class);
+//                        intent.putExtra("isForChoosing",true);
+                        sharedpreferences = getSharedPreferences(FAVOURITE_CINEMAS_PREF, Context.MODE_PRIVATE);
+                        intent.putExtra("selectedCinemasJson",sharedpreferences.getString("fav_json", null));
+                        intent.putExtra("isForChoosing",true);
+                        startActivityForResult(intent,PICK_CINEMA_SEARCH_REQUEST);
                         //
                     }
                 })
