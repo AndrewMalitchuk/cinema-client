@@ -1,7 +1,9 @@
 package com.cinema.client.fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,6 +13,8 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,11 +29,23 @@ import com.cinema.client.activity.TicketActivity;
 import com.cinema.client.adapters.TicketSearchAdapter;
 import com.cinema.client.entities.TicketItemSearch;
 import com.cinema.client.etc.MySearchSuggestion;
+import com.cinema.client.requests.APIClient;
+import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.TicketAPI;
+import com.cinema.client.requests.entities.TokenAPI;
+import com.pd.chocobar.ChocoBar;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class TicketSearchFragment extends Fragment {
@@ -43,6 +59,12 @@ public class TicketSearchFragment extends Fragment {
 
     TicketSearchAdapter myTicketsAdapter;
     ArrayList<TicketItemSearch> myTicketsArrayList;
+
+
+    private APIInterface apiInterface;
+
+    public static final String ACCOUNT_PREF = "accountPref";
+    private SharedPreferences sharedpreferences;
 
 
     @Override
@@ -63,6 +85,56 @@ public class TicketSearchFragment extends Fragment {
         ButterKnife.bind(this, view);
 
         myTicketsArrayList = new ArrayList<>();
+
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
+
+
+        //
+        apiInterface = APIClient.getClient().create(APIInterface.class);
+
+        sharedpreferences = getActivity().getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE);
+        if (sharedpreferences != null) {
+//            String token = sharedpreferences.getString("token", null);
+            String login = sharedpreferences.getString("login", null);
+            String password = sharedpreferences.getString("password", null);
+            int userId = sharedpreferences.getInt("userId", -1);
+
+            RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
+                    password);
+
+            RequestBody login_ = RequestBody.create(MediaType.parse("text/plain"),
+                    login);
+
+            Call<TokenAPI> call = apiInterface.refreshToken(login_, password_);
+
+            call.enqueue(new Callback<TokenAPI>() {
+                @Override
+                public void onResponse(Call<TokenAPI> call, Response<TokenAPI> response) {
+                    try {
+                        List<TicketAPI> ticketList= apiInterface.getTicketByUserId(userId,response.body().getAccess()).execute().body();
+
+                        Log.d("LIST",ticketList.size()+"");
+
+
+                    }
+                    catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<TokenAPI> call, Throwable t) {
+
+                }
+            });
+
+
+        }
+        //
+
 
         for (int i = 0; i < 10; i++) {
             TicketItemSearch myTickets = new TicketItemSearch();

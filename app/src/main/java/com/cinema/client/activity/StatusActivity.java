@@ -141,6 +141,8 @@ public class StatusActivity extends AppCompatActivity {
 
         }else{
 
+            floatingActionButton.hide();
+
             try {
                 calendarView.setDate(new SimpleDateFormat("yyyy-MM-dd").parse(getIntent().getStringExtra("selectedDate")).getTime(), true, true);
             } catch (ParseException e) {

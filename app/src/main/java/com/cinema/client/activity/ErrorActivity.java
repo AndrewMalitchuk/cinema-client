@@ -2,7 +2,9 @@ package com.cinema.client.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 
 import com.cinema.client.R;
@@ -25,4 +27,10 @@ public class ErrorActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         );
     }
+
+    public void onUnderstandButtonClick(View view){
+        Intent intent=new Intent(this,Main3Activity.class);
+        startActivity(intent);
+    }
+
 }

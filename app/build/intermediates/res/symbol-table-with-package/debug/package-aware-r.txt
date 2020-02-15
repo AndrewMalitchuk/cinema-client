@@ -2622,7 +2622,6 @@ id expMenu
 id expand_activities_button
 id expanded_menu
 id extended_edit_text1
-id extended_edit_text4
 id extra_views_container
 id fab
 id fade
@@ -2887,6 +2886,7 @@ id photo
 id pin
 id pin_action
 id placeTicketActivityEditText
+id placesBillActivityExtendedEditText
 id playTabLayout
 id play_pause_button
 id posterNameSwipeCardTextView

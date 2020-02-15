@@ -145,7 +145,7 @@
                 app:labelText="Places">
 
                 <com.developer.mtextfield.ExtendedEditText
-                    android:id="@+id/extended_edit_text4"
+                    android:id="@+id/placesBillActivityExtendedEditText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 

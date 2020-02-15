@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-147:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-147:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-147:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-147:12
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
 MERGED from [com.github.florent37:materialtextfield:1.0.7] /home/adular/.gradle/caches/transforms-2/files-2.1/cf3973b8f9f370c33a5222c204e40370/AndroidManifest.xml:2:1-12:12
 MERGED from [com.github.matecode:Snacky:1.1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/AndroidManifest.xml:2:1-16:12
 MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/9c20b07155f48244f89546fa5355129f/AndroidManifest.xml:2:1-21:12
@@ -154,20 +154,20 @@ MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/adular/.gradle/cach
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/215e2e884e494afec2f3ccbf50093c87/AndroidManifest.xml:15:1-22:12
 MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/7c4ff1ac83ceeb6716031c84bfca05f4/AndroidManifest.xml:2:1-11:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/3f6faafbd6cf0e44581c3f1823df13b8/AndroidManifest.xml:15:1-21:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-147:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-147:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-147:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
 	package
 		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:3:5-32
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-147:12
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-147:12
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:11-69
@@ -252,7 +252,7 @@ ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManif
 	android:name
 		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:12:22-77
 application
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:14:5-145:19
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:14:5-146:19
 MERGED from [com.github.matecode:Snacky:1.1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/AndroidManifest.xml:11:5-14:19
 MERGED from [com.github.matecode:Snacky:1.1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/AndroidManifest.xml:11:5-14:19
 MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/9c20b07155f48244f89546fa5355129f/AndroidManifest.xml:15:5-19:19
@@ -514,7 +514,9 @@ ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManif
 	android:name
 		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:76:13-52
 activity#com.cinema.client.activity.SignUpActivity
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:78:9-81:58
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:78:9-82:47
+	android:fitsSystemWindows
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:82:13-45
 	android:windowSoftInputMode
 		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:81:13-55
 	android:theme
@@ -522,93 +524,93 @@ ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManif
 	android:name
 		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:79:13-52
 activity#com.cinema.client.activity.LoginActivity
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:82:9-84:59
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:83:9-85:59
 	android:theme
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:84:13-56
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:85:13-56
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:83:13-51
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:84:13-51
 activity#com.cooltechworks.creditcarddesign.CardEditActivity
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:85:9-87:52
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:86:9-88:52
 	android:screenOrientation
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:87:13-49
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:88:13-49
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:86:13-79
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:87:13-79
 activity#com.cinema.client.MainActivity
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:88:9-94:20
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:89:9-95:20
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:88:19-47
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:89:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:89:13-93:29
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:90:13-94:29
 action#android.intent.action.MAIN
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:90:17-69
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:91:17-69
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:90:25-66
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:91:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:92:17-77
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:93:17-77
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:92:27-74
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:93:27-74
 meta-data#com.google.firebase.messaging.default_notification_icon
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:101:9-103:61
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:102:9-104:61
 	android:resource
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:103:13-58
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:104:13-58
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:102:13-83
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:103:13-83
 meta-data#com.google.firebase.messaging.default_notification_color
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:106:9-108:53
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:107:9-109:53
 	android:resource
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:108:13-50
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:109:13-50
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:107:13-84
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:108:13-84
 meta-data#firebase_messaging_auto_init_enabled
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:110:9-112:37
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:111:9-113:37
 	android:value
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:112:13-34
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:113:13-34
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:111:13-64
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:112:13-64
 meta-data#firebase_analytics_collection_enabled
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:113:9-115:37
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:114:9-116:37
 	android:value
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:115:13-34
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:116:13-34
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:114:13-65
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:115:13-65
 meta-data#firebase_analytics_collection_deactivated
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:116:9-118:37
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:117:9-119:37
 	android:value
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:118:13-34
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:119:13-34
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:117:13-69
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:118:13-69
 service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:120:9-122:39
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:121:9-123:39
 MERGED from [com.google.android.gms:play-services-measurement:17.2.1] /home/adular/.gradle/caches/transforms-2/files-2.1/1a90efff77adba3cc3516058c6e44a9a/AndroidManifest.xml:44:9-47:40
 MERGED from [com.google.android.gms:play-services-measurement:17.2.1] /home/adular/.gradle/caches/transforms-2/files-2.1/1a90efff77adba3cc3516058c6e44a9a/AndroidManifest.xml:44:9-47:40
 	android:enabled
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:121:13-35
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:122:13-35
 	android:exported
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:122:13-37
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:123:13-37
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:120:18-89
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:121:18-89
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:124:9-129:20
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:125:9-130:20
 MERGED from [com.google.android.gms:play-services-measurement:17.2.1] /home/adular/.gradle/caches/transforms-2/files-2.1/1a90efff77adba3cc3516058c6e44a9a/AndroidManifest.xml:29:9-33:20
 MERGED from [com.google.android.gms:play-services-measurement:17.2.1] /home/adular/.gradle/caches/transforms-2/files-2.1/1a90efff77adba3cc3516058c6e44a9a/AndroidManifest.xml:29:9-33:20
 	android:enabled
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:125:13-35
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:126:13-35
 	android:exported
 		ADDED from [com.google.android.gms:play-services-measurement:17.2.1] /home/adular/.gradle/caches/transforms-2/files-2.1/1a90efff77adba3cc3516058c6e44a9a/AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:124:19-91
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:125:19-91
 intent-filter#action:name:com.google.android.gms.measurement.UPLOAD
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:126:13-128:29
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:127:13-129:29
 action#com.google.android.gms.measurement.UPLOAD
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:127:17-84
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:128:17-84
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:127:25-81
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:128:25-81
 receiver#com.allyants.notifyme.NotificationPublisher
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:131:9-80
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:132:9-80
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:131:19-77
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:132:19-77
 receiver#com.allyants.notifyme.BootNotifyMe
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:132:9-138:20
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:133:9-139:20
 MERGED from [com.github.jakebonk:NotifyMe:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/53ddb88c234de77996cfb3ea9aba6063/AndroidManifest.xml:14:9-17:39
 MERGED from [com.github.jakebonk:NotifyMe:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/53ddb88c234de77996cfb3ea9aba6063/AndroidManifest.xml:14:9-17:39
 	android:enabled
@@ -616,17 +618,17 @@ MERGED from [com.github.jakebonk:NotifyMe:1.0.1] /home/adular/.gradle/caches/tra
 	android:exported
 		ADDED from [com.github.jakebonk:NotifyMe:1.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/53ddb88c234de77996cfb3ea9aba6063/AndroidManifest.xml:17:13-36
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:132:19-68
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:133:19-68
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+category:name:android.intent.category.HOME
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:133:13-137:29
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:134:13-138:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:134:17-79
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:135:17-79
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:134:25-76
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:135:25-76
 category#android.intent.category.HOME
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:136:17-73
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:137:17-73
 	android:name
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:136:27-70
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:137:27-70
 uses-sdk
 INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml

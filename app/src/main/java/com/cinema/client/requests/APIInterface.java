@@ -6,6 +6,7 @@ import com.cinema.client.requests.entities.RegistrationAPI;
 import com.cinema.client.requests.entities.TicketAPI;
 import com.cinema.client.requests.entities.TimelineAPI;
 import com.cinema.client.requests.entities.TokenAPI;
+import com.cinema.client.requests.entities.UserAPI;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
@@ -24,10 +26,11 @@ public interface APIInterface {
 
 
     public static final String api_film = "/api/v1/film";
-    public static final String api_ticket = "/api/v1/ticket";
+    public static final String api_ticket = "/api/v1/ticket/";
     public static final String api_cinema = "/api/v1/cinema";
     public static final String api_timeline = "/api/v1/timeline";
-    public static final String adi_registration = "/api/v1/create/";
+    public static final String api_registration = "/api/v1/create/";
+    public static final String api_user = "/api/v1/user/";
     public static final String api_token = "/api/token/";
 
 
@@ -47,8 +50,22 @@ public interface APIInterface {
     @GET(api_ticket)
     Call<TicketAPI> getTicketByCode(@Query("code") String code);
 
+    @GET(api_ticket)
+    Call<List<TicketAPI>> getTicketByUserId(@Query("user_id") int user_id,@Header("Authorization") String authHeader);
+
     @POST(api_ticket)
     Call<TicketAPI> updateTicketById(@Query("id") int id, @Body TicketAPI ticket);
+
+    @Multipart
+    @POST(api_ticket)
+    Call<TicketAPI> createTicket(@Part("place") RequestBody place,
+                                 @Part("code") RequestBody code,
+                                 @Part("status") RequestBody status,
+                                 @Part("cinema_id") RequestBody cinema_id,
+                                 @Part("film_id") RequestBody film_id,
+                                 @Part("user") RequestBody user,
+                                 @Part("date") RequestBody date,
+                                 @Header("Authorization") String authHeader);
 
 
     @GET(api_cinema)
@@ -81,7 +98,7 @@ public interface APIInterface {
 
 
     @Multipart
-    @POST(adi_registration)
+    @POST(api_registration)
     Call<RegistrationAPI> createNewUser(
             @Part("email") RequestBody email,
             @Part("password") RequestBody password,
@@ -93,5 +110,9 @@ public interface APIInterface {
     Call<TokenAPI> refreshToken(
             @Part("username") RequestBody username,
             @Part("password") RequestBody password);
+
+
+    @GET(api_user)
+    Call<UserAPI> getCurrentUser(@Header("Authorization") String authHeader);
 
 }

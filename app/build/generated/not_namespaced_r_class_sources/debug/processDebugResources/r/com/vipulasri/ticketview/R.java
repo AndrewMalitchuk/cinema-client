@@ -34,8 +34,8 @@ public final class R {
         private id() {}
 
         public static final int dash = 0x7f0a00f6;
-        public static final int horizontal = 0x7f0a015e;
-        public static final int normal = 0x7f0a0209;
+        public static final int horizontal = 0x7f0a015d;
+        public static final int normal = 0x7f0a0208;
         public static final int rounded = 0x7f0a024e;
         public static final int scallop = 0x7f0a0259;
         public static final int vertical = 0x7f0a033c;

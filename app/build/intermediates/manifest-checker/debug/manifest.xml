@@ -130,6 +130,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.cinema.client.activity.SignUpActivity"
+            android:fitsSystemWindows="true"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustResize" />
         <activity

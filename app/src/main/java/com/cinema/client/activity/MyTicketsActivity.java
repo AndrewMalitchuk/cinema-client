@@ -6,8 +6,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -18,8 +21,22 @@ import com.cinema.client.R;
 import com.cinema.client.etc.MySearchSuggestion;
 import com.cinema.client.entities.TicketItemSearch;
 import com.cinema.client.adapters.TicketSearchAdapter;
+import com.cinema.client.requests.APIClient;
+import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.TicketAPI;
+import com.cinema.client.requests.entities.TokenAPI;
+import com.google.firebase.inappmessaging.internal.ApiClient;
+import com.pd.chocobar.ChocoBar;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MyTicketsActivity extends AppCompatActivity {
 
@@ -30,6 +47,11 @@ public class MyTicketsActivity extends AppCompatActivity {
     ArrayList<TicketItemSearch> myTicketsArrayList;
 
     FloatingSearchView mSearchView;
+
+    private APIInterface apiInterface;
+
+    public static final String ACCOUNT_PREF = "accountPref";
+    private SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +72,76 @@ public class MyTicketsActivity extends AppCompatActivity {
         });
 
         myTicketsArrayList = new ArrayList<>();
+
+
+        apiInterface = APIClient.getClient().create(APIInterface.class);
+
+        sharedpreferences = getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE);
+        if (sharedpreferences != null) {
+//            String token = sharedpreferences.getString("token", null);
+            String login = sharedpreferences.getString("login", null);
+            String password = sharedpreferences.getString("password", null);
+            int userId = sharedpreferences.getInt("userId", -1);
+
+            RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
+                    password);
+
+            RequestBody login_ = RequestBody.create(MediaType.parse("text/plain"),
+                    login);
+
+            Call<TokenAPI> call = apiInterface.refreshToken(login_, password_);
+            call.enqueue(new Callback<TokenAPI>() {
+                @Override
+                public void onResponse(Call<TokenAPI> call, Response<TokenAPI> response) {
+                    if (response.isSuccessful()) {
+
+
+                        Call<List<TicketAPI>> callTicketList = apiInterface.getTicketByUserId(userId, response.body().getAccess());
+                        callTicketList.enqueue(new Callback<List<TicketAPI>>() {
+                            @Override
+                            public void onResponse(Call<List<TicketAPI>> call, Response<List<TicketAPI>> response) {
+                                if (response.isSuccessful()) {
+
+                                    Log.d("LIST", response.body().size()+"");
+
+
+                                } else {
+                                    ChocoBar.builder().setActivity(MyTicketsActivity.this)
+                                            .setText("Something goes wrong!")
+                                            .setDuration(ChocoBar.LENGTH_SHORT)
+                                            .red()
+                                            .show();
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<List<TicketAPI>> call, Throwable t) {
+
+                            }
+                        });
+
+
+                    } else {
+                        ChocoBar.builder().setActivity(MyTicketsActivity.this)
+                                .setText("Something goes wrong!")
+                                .setDuration(ChocoBar.LENGTH_SHORT)
+                                .red()
+                                .show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<TokenAPI> call, Throwable t) {
+
+                }
+            });
+
+
+        }
+
+
+//
+
 
         for (int i = 0; i < 10; i++) {
             TicketItemSearch myTickets = new TicketItemSearch();
@@ -77,7 +169,7 @@ public class MyTicketsActivity extends AppCompatActivity {
             @Override
             public void onSearchTextChanged(String oldQuery, final String newQuery) {
 
-                ArrayList<MySearchSuggestion> temp=new ArrayList<>();
+                ArrayList<MySearchSuggestion> temp = new ArrayList<>();
                 temp.add(new MySearchSuggestion("Ticket #1"));
                 temp.add(new MySearchSuggestion("Ticket #2"));
                 temp.add(new MySearchSuggestion("Ticket #3"));
@@ -101,7 +193,7 @@ public class MyTicketsActivity extends AppCompatActivity {
             @Override
             public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
                 Toast.makeText(MyTicketsActivity.this, searchSuggestion.getBody(), Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(MyTicketsActivity.this, TicketActivity.class);
+                Intent intent = new Intent(MyTicketsActivity.this, TicketActivity.class);
                 startActivity(intent);
 
             }

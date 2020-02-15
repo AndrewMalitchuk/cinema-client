@@ -1,34 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.LoginActivity"
-    tools:ignore="LabelFor">
+    tools:ignore="LabelFor"
+    android:fillViewport="true">
+
 
     <LinearLayout
         android:id="@+id/signUpLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:fillViewport="true">
 
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/signUpCardView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_margin="10dp"
+                android:layout_gravity="center"
                 android:foregroundGravity="center"
                 android:padding="50dp"
                 app:cardBackgroundColor="@color/colorLoginActivityCardView"
                 app:cardCornerRadius="5dp"
-                app:cardElevation="5dp">
+                app:cardElevation="5dp"
+                android:fillViewport="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -112,71 +117,6 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <!--<com.google.android.material.textfield.TextInputLayout-->
-                    <!--android:id="@+id/emailLoginActivityTextInputLayout"-->
-                    <!--style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginLeft="10dp"-->
-                    <!--android:layout_marginTop="10dp"-->
-                    <!--android:layout_marginRight="10dp"-->
-                    <!--android:textColorHint="@color/colorAccent"-->
-                    <!--android:colorControlHighlight="@color/colorAccent"-->
-                    <!--app:boxStrokeColor="@color/colorAccent"-->
-                    <!--app:hintTextColor="@color/colorAccent">-->
-
-                    <!--<com.google.android.material.textfield.TextInputEditText-->
-                    <!--android:id="@+id/emailLoginActivityTextInputEditText"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:hint="@string/emailLoginActivityTextViewString"-->
-                    <!--android:inputType="textEmailAddress"-->
-                    <!--android:colorControlHighlight="@color/colorAccent"-->
-                    <!--android:textCursorDrawable="@color/colorAccent"-->
-                    <!--android:textColor="@color/colorLoginActivityFieldsText"-->
-                    <!--android:textColorHighlight="@color/colorAccent"-->
-                    <!--android:backgroundTint="@color/colorAccent"/>-->
-
-                    <!--</com.google.android.material.textfield.TextInputLayout>-->
-
-                    <!--<com.google.android.material.textfield.TextInputLayout-->
-                    <!--android:id="@+id/passwordLoginActivityTextInputLayout"-->
-                    <!--style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_marginLeft="10dp"-->
-                    <!--android:layout_marginTop="10dp"-->
-                    <!--android:layout_marginRight="10dp"-->
-                    <!--android:textColorHint="@color/colorAccent"-->
-                    <!--app:boxStrokeColor="@color/colorAccent"-->
-                    <!--app:hintTextColor="@color/colorAccent">-->
-
-                    <!--<com.subhrajyoti.passwordview.PasswordView-->
-                    <!--android:id="@+id/passwordView"-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:hint="@string/passwordLoginActivityTextViewString"-->
-                    <!--android:textColor="@color/colorLoginActivityText"-->
-                    <!--android:colorControlHighlight="@color/colorAccent"-->
-                    <!--android:textCursorDrawable="@null"-->
-                    <!--android:textColorHighlight="@color/colorAccent"-->
-                    <!--app:eyeTint="@color/colorAccent"-->
-                    <!--app:strikeThrough="true" />-->
-
-                    <!--</com.google.android.material.textfield.TextInputLayout>-->
-
-
-                    <!--<com.example.myloadingbutton.MyLoadingButton-->
-                    <!--android:id="@+id/signUpSignUpActivityButton"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:layout_margin="20dp"-->
-                    <!--app:mlb_backgroundColor="@color/colorBackground"-->
-                    <!--app:mlb_labelColor="@color/colorLoginActivityCardView"-->
-                    <!--app:mlb_labelSize="20dp">-->
-
-                    <!--</com.example.myloadingbutton.MyLoadingButton>-->
-
                     <com.example.myloadingbutton.MyLoadingButton
                         android:id="@+id/signUpSignUpActivityButton"
                         android:layout_width="wrap_content"
@@ -185,7 +125,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="10dp"
                         app:mlb_backgroundColor="@color/colorBackground"
-                        app:mlb_label="@string/loginLoginActivityButtonString"
+                        app:mlb_label="Sign up"
                         app:mlb_labelColor="@color/colorLoginActivityCardView"
                         app:mlb_loaderColor="@color/colorLoginActivityCardView"
                         app:mlb_setNormalAfterError="true">
@@ -213,4 +153,5 @@
 
     </LinearLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</ScrollView>

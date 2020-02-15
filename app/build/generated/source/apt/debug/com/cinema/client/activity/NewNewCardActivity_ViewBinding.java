@@ -30,6 +30,7 @@ public class NewNewCardActivity_ViewBinding implements Unbinder {
     target.filmTitleBillActivityExtendedEditText = Utils.findRequiredViewAsType(source, R.id.filmTitleBillActivityExtendedEditText, "field 'filmTitleBillActivityExtendedEditText'", ExtendedEditText.class);
     target.datetimeBillActivityExtendedEditText = Utils.findRequiredViewAsType(source, R.id.datetimeBillActivityExtendedEditText, "field 'datetimeBillActivityExtendedEditText'", ExtendedEditText.class);
     target.cinemaNameBillActivityExtendedEditText = Utils.findRequiredViewAsType(source, R.id.cinemaNameBillActivityExtendedEditText, "field 'cinemaNameBillActivityExtendedEditText'", ExtendedEditText.class);
+    target.placesBillActivityExtendedEditText = Utils.findRequiredViewAsType(source, R.id.placesBillActivityExtendedEditText, "field 'placesBillActivityExtendedEditText'", ExtendedEditText.class);
   }
 
   @Override
@@ -44,5 +45,6 @@ public class NewNewCardActivity_ViewBinding implements Unbinder {
     target.filmTitleBillActivityExtendedEditText = null;
     target.datetimeBillActivityExtendedEditText = null;
     target.cinemaNameBillActivityExtendedEditText = null;
+    target.placesBillActivityExtendedEditText = null;
   }
 }

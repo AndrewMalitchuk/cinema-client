@@ -2,6 +2,7 @@ package com.cinema.client.requests;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.cinema.client.R;
 import com.cinema.client.requests.entities.TokenAPI;
@@ -50,6 +51,8 @@ public class TokenAuthenticator implements Authenticator {
             TokenAPI call= (TokenAPI) retrofitResponse.body();
 
             String newAccessToken = call.getAccess();
+
+            Log.d("accessToken",newAccessToken);
             return response.request().newBuilder()
                     .header("Authorization", newAccessToken)
                     .build();
