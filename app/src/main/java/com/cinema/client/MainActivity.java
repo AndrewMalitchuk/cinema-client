@@ -179,6 +179,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void errorActivity(View view){
         Intent intent =new Intent(this, ErrorActivity.class);
+        intent.putExtra("isNetworkError",true);
         startActivity(intent);
     }
 

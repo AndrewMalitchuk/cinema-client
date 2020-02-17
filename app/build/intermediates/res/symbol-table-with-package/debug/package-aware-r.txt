@@ -2036,6 +2036,7 @@ drawable about_icon_link
 drawable about_icon_twitter
 drawable about_icon_youtube
 drawable action
+drawable app_error
 drawable avd_hide_password
 drawable avd_show_password
 drawable ayp_background_item_selected
@@ -2260,6 +2261,7 @@ drawable mtrl_popupmenu_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
 drawable navto_small
+drawable net_error
 drawable new_state
 drawable next
 drawable notification_action_background
@@ -2504,6 +2506,7 @@ id button_layout
 id button_next
 id button_skip
 id calendarView
+id cancel
 id cancel_action
 id cardLayout
 id cardView
@@ -2617,6 +2620,8 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id errorDescription
+id errorTitle
 id exitUntilCollapsed
 id expMenu
 id expand_activities_button
@@ -3044,8 +3049,6 @@ id textStart
 id textView
 id textView10
 id textView11
-id textView12
-id textView13
 id textView17
 id textView18
 id textView19
@@ -3437,6 +3440,7 @@ layout tag_layout
 layout test_action_chip
 layout test_reflow_chipgroup
 layout text_field_boxes_layout
+layout ticket_search_item
 layout timeline_item_layout
 layout view_compact_credit_input
 layout view_creditcard
@@ -3457,6 +3461,7 @@ menu main_menu
 menu menu_main
 menu navigation
 menu ticket_context_menu1
+menu ticket_context_menu2
 mipmap ads
 mipmap android
 mipmap bitbucket

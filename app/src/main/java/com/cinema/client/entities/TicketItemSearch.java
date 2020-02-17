@@ -1,13 +1,47 @@
 package com.cinema.client.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class TicketItemSearch {
+
+    @Getter
+    @Setter
+    private int filmId;
+
+    @Getter
+    @Setter
+    private int ticketId;
+
+    @Getter
+    @Setter
+    private int cinemaId;
+
+    @Getter
+    @Setter
+    private int userId;
+
 
     private String filmName;
     private String filmDateTime;
     private String filmPlace;
     private String filmCinema;
 
+    @Getter
+    @Setter
+    private String ticketCode;
+
+    @Getter
+    @Setter
+    private String filmUrl;
+
+
+    @Getter
+    @Setter
+    private int status;
+
     private int filmImg;
+
 
     public String getFilmName() {
         return filmName;

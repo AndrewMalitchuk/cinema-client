@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.arlib.floatingsearchview.FloatingSearchView;
 import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
 import com.cinema.client.R;
+import com.cinema.client.activity.Main3Activity;
 import com.cinema.client.activity.MyTicketsActivity;
 import com.cinema.client.activity.TicketActivity;
 import com.cinema.client.adapters.TicketSearchAdapter;
@@ -31,6 +32,8 @@ import com.cinema.client.entities.TicketItemSearch;
 import com.cinema.client.etc.MySearchSuggestion;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.CinemaAPI;
+import com.cinema.client.requests.entities.FilmAPI;
 import com.cinema.client.requests.entities.TicketAPI;
 import com.cinema.client.requests.entities.TokenAPI;
 import com.pd.chocobar.ChocoBar;
@@ -38,9 +41,14 @@ import com.pd.chocobar.ChocoBar;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.reactivex.Observable;
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -59,6 +67,8 @@ public class TicketSearchFragment extends Fragment {
 
     TicketSearchAdapter myTicketsAdapter;
     ArrayList<TicketItemSearch> myTicketsArrayList;
+
+    List<TicketAPI> ticketList;
 
 
     private APIInterface apiInterface;
@@ -97,10 +107,12 @@ public class TicketSearchFragment extends Fragment {
 
         sharedpreferences = getActivity().getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE);
         if (sharedpreferences != null) {
-//            String token = sharedpreferences.getString("token", null);
             String login = sharedpreferences.getString("login", null);
             String password = sharedpreferences.getString("password", null);
             int userId = sharedpreferences.getInt("userId", -1);
+
+
+            ticketList=new ArrayList<>();
 
             RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
                     password);
@@ -108,84 +120,140 @@ public class TicketSearchFragment extends Fragment {
             RequestBody login_ = RequestBody.create(MediaType.parse("text/plain"),
                     login);
 
-            Call<TokenAPI> call = apiInterface.refreshToken(login_, password_);
+            Observable<TokenAPI> tokenRx = apiInterface.refreshTokenRx(login_, password_);
 
-            call.enqueue(new Callback<TokenAPI>() {
-                @Override
-                public void onResponse(Call<TokenAPI> call, Response<TokenAPI> response) {
-                    try {
-                        List<TicketAPI> ticketList= apiInterface.getTicketByUserId(userId,response.body().getAccess()).execute().body();
-
-                        Log.d("LIST",ticketList.size()+"");
-
-
-                    }
-                    catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<TokenAPI> call, Throwable t) {
-
-                }
-            });
+            tokenRx.subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .map(result -> result)
+                    .subscribe(this::onToken);
 
 
         }
-        //
+    }
 
 
-        for (int i = 0; i < 10; i++) {
+    public void onToken(TokenAPI token) {
+        Log.d("RXTOKEN", token.getAccess());
+        int userId = sharedpreferences.getInt("userId", -1);
+        Observable<List<TicketAPI>> listObservable = apiInterface.getTicketByUserIdRx(userId, "Bearer " + token.getAccess());
+        listObservable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .map(result -> result)
+                .doOnComplete(this::loadFinish)
+                .subscribe(this::onTicketSuccess);
+
+    }
+
+    private void loadFinish() {
+
+        ChocoBar.builder().setActivity(getActivity())
+                .setText("Success!")
+                .setDuration(ChocoBar.LENGTH_SHORT)
+                .build()
+                .show();
+
+    }
+
+
+    public void onTicketSuccess(List<TicketAPI> list) {
+        Log.d("RXLIST", list.size() + "");
+
+
+//        Observable<FilmAPI> filmObservable=apiInterface.getFilmByIdRx()
+
+
+        for (TicketAPI ticketAPI : list) {
             TicketItemSearch myTickets = new TicketItemSearch();
 
-            myTickets.setFilmName("Film #" + i);
-            myTickets.setFilmDateTime("Date #" + i);
-            myTickets.setFilmPlace("Place #" + i);
-            myTickets.setFilmCinema("Cinema #" + i);
-            myTickets.setFilmImg(R.drawable.once_upon_a_time);
+            Call<FilmAPI> filmAPICall = apiInterface.getFilmById(ticketAPI.getFilmId());
+            FilmAPI filmAPI = null;
+            Call<CinemaAPI> cinemaAPICall = apiInterface.getCinemaById(ticketAPI.getCinemaId());
+            CinemaAPI cinemaAPI = null;
+            try {
+                filmAPI = filmAPICall.execute().body();
+                cinemaAPI = cinemaAPICall.execute().body();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+
+            myTickets.setTicketId(ticketAPI.getId());
+            myTickets.setFilmId(filmAPI.getId());
+            myTickets.setFilmName(filmAPI.getTitle());
+            myTickets.setCinemaId(ticketAPI.getCinemaId());
+            myTickets.setUserId(ticketAPI.getUser());
+
+
+            //
+
+
+            //
+
+            myTickets.setFilmDateTime(ticketAPI.getDate());
+            myTickets.setFilmPlace(ticketAPI.getPlace());
+            myTickets.setFilmCinema(cinemaAPI.getName());
+            myTickets.setFilmUrl(APIClient.HOST + filmAPI.getPicUrl());
+
+            //
+            myTickets.setTicketCode(ticketAPI.getCode());
+            //
+            myTickets.setStatus(ticketAPI.getStatus());
+            //
 
             myTicketsArrayList.add(myTickets);
+
+
         }
 
 
         myTicketsAdapter = new TicketSearchAdapter(myTicketsArrayList);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView = (RecyclerView) getActivity().findViewById(R.id.myTicketsRecycleView);
+        mSearchView = getActivity().findViewById(R.id.floating_search_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(myTicketsAdapter);
+
+
+        ArrayList<MySearchSuggestion> temp = new ArrayList<>();
 
 
         mSearchView.setOnQueryChangeListener(new FloatingSearchView.OnQueryChangeListener() {
             @Override
             public void onSearchTextChanged(String oldQuery, final String newQuery) {
 
-                ArrayList<MySearchSuggestion> temp = new ArrayList<>();
-                temp.add(new MySearchSuggestion("Ticket #1"));
-                temp.add(new MySearchSuggestion("Ticket #2"));
-                temp.add(new MySearchSuggestion("Ticket #3"));
-                temp.add(new MySearchSuggestion("Ticket #4"));
-                temp.add(new MySearchSuggestion("Ticket #5"));
 
-                mSearchView.swapSuggestions(temp);
+                mSearchView.swapSuggestions(searchInLoadedData(newQuery));
             }
         });
 
-        //for menu in floating menu view
-        mSearchView.setOnMenuItemClickListener(new FloatingSearchView.OnMenuItemClickListener() {
-            @Override
-            public void onActionMenuItemSelected(MenuItem item) {
-
-            }
-
-        });
 
         mSearchView.setOnSearchListener(new FloatingSearchView.OnSearchListener() {
             @Override
             public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
-                Toast.makeText(getActivity(), searchSuggestion.getBody(), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), TicketActivity.class);
-                startActivity(intent);
+                String suggestion=searchSuggestion.getBody();
+//                Call<FilmAPI> call=apiInterface.getFilmByTitle(suggestion);
+//                call.enqueue(new Callback<FilmAPI>() {
+//                    @Override
+//                    public void onResponse(Call<FilmAPI> call, Response<FilmAPI> response) {
+//
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<FilmAPI> call, Throwable t) {
+//
+//                    }
+//                });
+
+                for(TicketItemSearch ticketItemSearch:myTicketsArrayList){
+                    if(suggestion.equals(ticketItemSearch.getFilmName())){
+                        Toast.makeText(getActivity(), ticketItemSearch.getTicketCode(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getContext(), TicketActivity.class);
+                        intent.putExtra("ticketCode",ticketItemSearch.getTicketCode());
+                        getContext().startActivity(intent);
+                    }
+                }
+
 
             }
 
@@ -194,5 +262,29 @@ public class TicketSearchFragment extends Fragment {
 
             }
         });
+
     }
+
+
+    public void render() {
+
+    }
+
+    public ArrayList<MySearchSuggestion> searchInLoadedData(String value) {
+
+        ArrayList<MySearchSuggestion> res = new ArrayList<>();
+
+        for (TicketItemSearch myTicketsItem: myTicketsArrayList) {
+//            if(film.getTitle().conr){
+            if (Pattern.compile(Pattern.quote(value), Pattern.CASE_INSENSITIVE).matcher(myTicketsItem.getFilmName()).find()) {
+                res.add(new MySearchSuggestion(myTicketsItem.getFilmName()));
+            }
+        }
+
+        return res;
+
+    }
+
+
+
 }

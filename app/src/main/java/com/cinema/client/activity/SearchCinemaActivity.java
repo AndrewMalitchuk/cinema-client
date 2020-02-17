@@ -199,7 +199,7 @@ public class SearchCinemaActivity extends AppCompatActivity {
 
                         cinemaItemSearch.setCinemaId(cinema.getId());
                         cinemaItemSearch.setCinemaName(cinema.getName());
-                        cinemaItemSearch.setCinemaAddress(cinema.getAddress());
+                        cinemaItemSearch.setCinemaAddress("Address: \n"+cinema.getAddress());
                         cinemaItemSearch.setCinemaImg(APIClient.HOST + cinema.getPicUrl());
                         Log.d("CNM-PIC", cinemaItemSearch.getCinemaImg());
 

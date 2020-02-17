@@ -3,7 +3,9 @@ package com.cinema.client.activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +20,7 @@ import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.CinemaAPI;
 import com.cinema.client.requests.entities.FilmAPI;
 import com.cinema.client.requests.entities.TicketAPI;
+import com.cinema.client.requests.entities.TokenAPI;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
@@ -25,8 +28,15 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 
+import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+import okhttp3.MediaType;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -64,6 +74,11 @@ public class TicketActivity extends AppCompatActivity {
     private APIInterface apiInterface;
     private TicketAPI curentTicket;
 
+    public static final String ACCOUNT_PREF = "accountPref";
+    private SharedPreferences sharedpreferences;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,9 +100,54 @@ public class TicketActivity extends AppCompatActivity {
 
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
-        String code="4a39efc6fc7e6b4ed772e3941cf86964";
+//        String code="4a39efc6fc7e6b4ed772e3941cf86964";
 
-        Call<TicketAPI> call=apiInterface.getTicketByCode(code);
+
+
+
+        sharedpreferences = getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE);
+        if (sharedpreferences != null) {
+            String login = sharedpreferences.getString("login", null);
+            String password = sharedpreferences.getString("password", null);
+            int userId = sharedpreferences.getInt("userId", -1);
+
+
+
+
+            RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
+                    password);
+
+            RequestBody login_ = RequestBody.create(MediaType.parse("text/plain"),
+                    login);
+
+            Observable<TokenAPI> tokenRx = apiInterface.refreshTokenRx(login_, password_);
+
+            tokenRx.subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .map(result -> result)
+                    .subscribe(this::onToken);
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    private void onToken(TokenAPI tokenAPI) {
+
+        String ticketCode=getIntent().getStringExtra("ticketCode");
+
+        Call<TicketAPI> call=apiInterface.getTicketByCode(ticketCode,"Bearer " +tokenAPI.getAccess());
         call.enqueue(new Callback<TicketAPI>() {
             @Override
             public void onResponse(Call<TicketAPI> call, Response<TicketAPI> response) {
@@ -97,7 +157,7 @@ public class TicketActivity extends AppCompatActivity {
                 Log.d("TICKET",curentTicket.toString());
 
 
-               setContent(curentTicket);
+                setContent(curentTicket);
 
 
             }
@@ -109,9 +169,6 @@ public class TicketActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
 
 
     }

@@ -83,6 +83,7 @@ MERGED from [com.google.firebase:firebase-analytics:17.2.1] /home/adular/.gradle
 MERGED from [com.google.android.gms:play-services-measurement-api:17.2.1] /home/adular/.gradle/caches/transforms-2/files-2.1/42fb80067bde4817667e2012a0c50fd3/AndroidManifest.xml:17:1-36:12
 MERGED from [com.google.firebase:firebase-iid:20.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/824a3bdc7ed0e2ee3dfebdd10725a9f5/AndroidManifest.xml:17:1-47:12
 MERGED from [androidx.work:work-runtime:2.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/8c9ad2366593ed48a7349b52a70b580a/AndroidManifest.xml:17:1-125:12
+MERGED from [io.reactivex.rxjava3:rxandroid:3.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/1ecbfde28581171c23b11d1043918b9d/AndroidManifest.xml:15:1-20:12
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/3ae8a27762297230e2063a49db259e90/AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /home/adular/.gradle/caches/transforms-2/files-2.1/5cf1daa80ba8209c65ce09e1d0b4f585/AndroidManifest.xml:15:1-34:12
 MERGED from [com.google.firebase:firebase-common:19.3.0] /home/adular/.gradle/caches/transforms-2/files-2.1/0c35df755c02b3405322374932311f86/AndroidManifest.xml:15:1-39:12
@@ -152,8 +153,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/adular/.gradle/
 MERGED from [com.pnikosis:materialish-progress:1.7] /home/adular/.gradle/caches/transforms-2/files-2.1/e6755f2d8969988270720fb8c4821151/AndroidManifest.xml:2:1-13:12
 MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/5c4231ae421badc6d550e233388b89e2/AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/215e2e884e494afec2f3ccbf50093c87/AndroidManifest.xml:15:1-22:12
-MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/7c4ff1ac83ceeb6716031c84bfca05f4/AndroidManifest.xml:2:1-11:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/3f6faafbd6cf0e44581c3f1823df13b8/AndroidManifest.xml:15:1-21:12
+MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/7c4ff1ac83ceeb6716031c84bfca05f4/AndroidManifest.xml:2:1-11:12
 INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
 INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
 INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-148:12
@@ -791,6 +792,8 @@ MERGED from [com.google.firebase:firebase-iid:20.0.2] /home/adular/.gradle/cache
 MERGED from [com.google.firebase:firebase-iid:20.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/824a3bdc7ed0e2ee3dfebdd10725a9f5/AndroidManifest.xml:20:5-44
 MERGED from [androidx.work:work-runtime:2.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/8c9ad2366593ed48a7349b52a70b580a/AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.work:work-runtime:2.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/8c9ad2366593ed48a7349b52a70b580a/AndroidManifest.xml:21:5-23:41
+MERGED from [io.reactivex.rxjava3:rxandroid:3.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/1ecbfde28581171c23b11d1043918b9d/AndroidManifest.xml:18:5-43
+MERGED from [io.reactivex.rxjava3:rxandroid:3.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/1ecbfde28581171c23b11d1043918b9d/AndroidManifest.xml:18:5-43
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/3ae8a27762297230e2063a49db259e90/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /home/adular/.gradle/caches/transforms-2/files-2.1/3ae8a27762297230e2063a49db259e90/AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-datatransport:17.0.3] /home/adular/.gradle/caches/transforms-2/files-2.1/5cf1daa80ba8209c65ce09e1d0b4f585/AndroidManifest.xml:19:5-21:41
@@ -929,10 +932,10 @@ MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/adular/.gradle/cach
 MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/adular/.gradle/caches/transforms-2/files-2.1/5c4231ae421badc6d550e233388b89e2/AndroidManifest.xml:6:5-8:41
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/215e2e884e494afec2f3ccbf50093c87/AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/215e2e884e494afec2f3ccbf50093c87/AndroidManifest.xml:18:5-20:41
-MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/7c4ff1ac83ceeb6716031c84bfca05f4/AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/7c4ff1ac83ceeb6716031c84bfca05f4/AndroidManifest.xml:7:5-9:41
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/3f6faafbd6cf0e44581c3f1823df13b8/AndroidManifest.xml:19:5-43
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/3f6faafbd6cf0e44581c3f1823df13b8/AndroidManifest.xml:19:5-43
+MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/7c4ff1ac83ceeb6716031c84bfca05f4/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/7c4ff1ac83ceeb6716031c84bfca05f4/AndroidManifest.xml:7:5-9:41
 INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
 INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
