@@ -1,7 +1,9 @@
 package com.cinema.client.requests;
 
+import com.cinema.client.requests.entities.AllHallAPI;
 import com.cinema.client.requests.entities.CinemaAPI;
 import com.cinema.client.requests.entities.FilmAPI;
+import com.cinema.client.requests.entities.HallAPI;
 import com.cinema.client.requests.entities.RegistrationAPI;
 import com.cinema.client.requests.entities.TicketAPI;
 import com.cinema.client.requests.entities.TimelineAPI;
@@ -35,6 +37,7 @@ public interface APIInterface {
     public static final String api_registration = "/api/v1/create/";
     public static final String api_user = "/api/v1/user/";
     public static final String api_token = "/api/token/";
+    public static final String api_hall="/api/v1/hall";
 
 
     @GET(api_film)
@@ -143,5 +146,9 @@ public interface APIInterface {
 
     @GET(api_user)
     Call<UserAPI> getCurrentUser(@Header("Authorization") String authHeader);
+
+    @GET(api_hall)
+    Call<AllHallAPI> getHallByCinemaId(@Query("cinema_id") int cinema_id);
+
 
 }

@@ -9,6 +9,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -88,6 +89,8 @@ public class Main3Activity extends AppCompatActivity {
     private SharedPreferences.Editor editor;
 
     private boolean firstRun = false;
+
+    public static final String ACCOUNT_PREF = "accountPref";
 
 
     MyTask mt;
@@ -214,8 +217,16 @@ public class Main3Activity extends AppCompatActivity {
                                     public void onPositive(Dialog droidDialog) {
                                         Toast.makeText(Main3Activity.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
                                         //
-                                        Intent intent = getIntent();
-                                        finish();
+
+                                        pref.edit().clear();
+                                        pref.edit().commit();
+
+                                        getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE).edit().clear();
+                                        getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE).edit().commit();
+
+
+                                        Intent intent = new Intent(Main3Activity.this,LoginActivity.class);
+
                                         startActivity(intent);
                                         //
                                     }

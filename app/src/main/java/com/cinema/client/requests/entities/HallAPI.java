@@ -38,6 +38,25 @@ public class HallAPI {
 
     @Getter
     @Setter
+    @SerializedName("booked")
+    @Expose
+    private List<HallCellAPI> booked = null;
+
+    @Getter
+    @Setter
+    @SerializedName("free")
+    @Expose
+    private List<HallCellAPI> free = null;
+
+
+    @Getter
+    @Setter
+    @SerializedName("bought")
+    @Expose
+    private List<HallCellAPI> bought = null;
+
+    @Getter
+    @Setter
     @SerializedName("custom")
     @Expose
     private List<HallCellCustomAPI> custom = null;

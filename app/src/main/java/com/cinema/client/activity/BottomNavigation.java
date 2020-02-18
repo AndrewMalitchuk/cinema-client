@@ -9,8 +9,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,7 +25,11 @@ import com.brouding.simpledialog.SimpleDialog;
 import com.bumptech.glide.annotation.GlideModule;
 import com.cinema.client.R;
 import com.cinema.client.entities.Hall;
+import com.cinema.client.etc.SitButton;
 import com.cinema.client.fragments.HallTestFragment;
+import com.cinema.client.requests.APIClient;
+import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.AllHallAPI;
 import com.cinema.client.requests.entities.HallAPI;
 import com.github.javiersantos.bottomdialogs.BottomDialog;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -43,6 +49,9 @@ import es.dmoral.markdownview.Config;
 import es.dmoral.markdownview.MarkdownView;
 import iammert.com.library.Status;
 import iammert.com.library.StatusView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BottomNavigation extends AppCompatActivity {
 
@@ -53,117 +62,26 @@ public class BottomNavigation extends AppCompatActivity {
     @BindView(R.id.toolbar4)
     Toolbar toolbar;
 
-
-
-//    private ProgressDialog mProgressDialog;
     MyTask mt;
 
-//    @BindView(R.id.status)
-//    StatusView statusView;
+    private APIInterface apiInterface;
 
-    //
-//    SimpleDialog simpleDialog;
-    //
+
+    private List<String> selectedPlaces;
+
 
     @BindView(R.id.llProgressBar)
     View llProgressBar;
 
 
-    String json_text="[\n" +
-            "   {\n" +
-            "      \"sector\":\"left\",\n" +
-            "      \"row\":2,\n" +
-            "      \"col\":2,\n" +
-            "      \"disabled\":[\n" +
-            "\n" +
-            "      ],\n" +
-            "      \"custom\":[\n" +
-            "\n" +
-            "      ]\n" +
-            "   },\n" +
-            "   {\n" +
-            "      \"sector\":\"center\",\n" +
-            "      \"row\":4,\n" +
-            "      \"col\":4,\n" +
-            "      \"disabled\":[\n" +
-            "         {\n" +
-            "            \"row\":1,\n" +
-            "            \"col\":1\n" +
-            "         },\n" +
-            "         {\n" +
-            "            \"row\":1,\n" +
-            "            \"col\":4\n" +
-            "         },\n" +
-            "         {\n" +
-            "            \"row\":2,\n" +
-            "            \"col\":1\n" +
-            "         },\n" +
-            "         {\n" +
-            "            \"row\":2,\n" +
-            "            \"col\":4\n" +
-            "         },\n" +
-            "         {\n" +
-            "            \"row\":3,\n" +
-            "            \"col\":1\n" +
-            "         },\n" +
-            "         {\n" +
-            "            \"row\":3,\n" +
-            "            \"col\":4\n" +
-            "         },\n" +
-            "         {\n" +
-            "            \"row\":4,\n" +
-            "            \"col\":1\n" +
-            "         },\n" +
-            "         {\n" +
-            "            \"row\":4,\n" +
-            "            \"col\":4\n" +
-            "         }\n" +
-            "      ],\n" +
-            "      \"custom\":[\n" +
-            "\n" +
-            "      ]\n" +
-            "   },\n" +
-            "   {\n" +
-            "      \"sector\":\"right\",\n" +
-            "      \"row\":6,\n" +
-            "      \"col\":6,\n" +
-            "      \"disabled\":[\n" +
-            "         {\n" +
-            "            \"row\":1,\n" +
-            "            \"col\":1\n" +
-            "         },\n" +
-            "         {\n" +
-            "            \"row\":1,\n" +
-            "            \"col\":2\n" +
-            "         },\n" +
-            "         {\n" +
-            "            \"row\":1,\n" +
-            "            \"col\":5\n" +
-            "         },\n" +
-            "         {\n" +
-            "            \"row\":1,\n" +
-            "            \"col\":6\n" +
-            "         }\n" +
-            "      ],\n" +
-            "      \"custom\":[\n" +
-            "         {\n" +
-            "            \"old_row\":1,\n" +
-            "            \"old_col\":3,\n" +
-            "            \"new_row\":1,\n" +
-            "            \"new_col\":1\n" +
-            "         },\n" +
-            "         {\n" +
-            "            \"old_row\":1,\n" +
-            "            \"old_col\":4,\n" +
-            "            \"new_row\":1,\n" +
-            "            \"new_col\":2\n" +
-            "         }\n" +
-            "      ]\n" +
-            "   }\n" +
-            "]";
+    private List<HallAPI> hall;
 
 
-    Gson gson=new Gson().newBuilder().create();
+
+    SharedPreferences sharedPreferences;
+
+
+    Gson gson = new Gson().newBuilder().create();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,12 +92,11 @@ public class BottomNavigation extends AppCompatActivity {
 
         //
 
-        toolbar.setTitle("Ruby hall");
+        toolbar.setTitle("Loading...");
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
 
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -189,28 +106,55 @@ public class BottomNavigation extends AppCompatActivity {
             }
         });
 
-
-        List<HallAPI> hall=gson.fromJson(json_text,new TypeToken<List<HallAPI>>(){}.getType());
-
+        //
+//        sharedPreferences=getSharedPreferences("places", MODE_PRIVATE);
+        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
+        sharedPreferences.edit().putString("json","");
+        sharedPreferences.edit().commit();
         //
 
 
-//        mProgressDialog = new ProgressDialog(this);
+        //
+
+        apiInterface = APIClient.getClient().create(APIInterface.class);
+
+        int cinema_id = 9;
+
+        Call<AllHallAPI> call = apiInterface.getHallByCinemaId(cinema_id);
+
+        call.enqueue(new Callback<AllHallAPI>() {
+            @Override
+            public void onResponse(Call<AllHallAPI> call, Response<AllHallAPI> response) {
+
+                if (response.isSuccessful()) {
+                    hall = gson.fromJson(response.body().getHallJson(), new TypeToken<List<HallAPI>>() {
+                    }.getType());
+
+                    Log.d("NAME",response.body().getName());
+
+                    toolbar.setTitle(response.body().getName());
+
+
+
+                    Log.d("JSON",response.body().getHallJson());
+                    Log.d("JSON",hall.get(0).getSector());
+                    Log.d("JSON",hall.get(1).getSector());
+                    Log.d("JSON",hall.get(2).getSector());
+
+
+                }
+
+
+            }
+
+            @Override
+            public void onFailure(Call<AllHallAPI> call, Throwable t) {
+
+            }
+        });
 
 
         //
-//        simpleDialog = new SimpleDialog.Builder(this)
-//                .setContent("The hall is loading...", 7)
-//                // .showProgress must be set true if you want ProgressDialog
-//                .showProgress(true)     // Default GIF is in the library (R.raw.simple_dialog_progress_default)
-//                //.setProgressGIF(R.raw.simple_dialog_progress_default)
-//                .setBtnCancelText("Cancel")
-//                .setBtnCancelTextColor("#2861b0")
-//                .show();
-//                .build();
-
-        //
-
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -266,22 +210,32 @@ public class BottomNavigation extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.hall_menu,menu);
+        getMenuInflater().inflate(R.menu.hall_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.submit:
                 ChocoBar.builder().setActivity(BottomNavigation.this)
                         .setText("Success!")
                         .setDuration(ChocoBar.LENGTH_SHORT)
                         .build()
                         .show();
-                TextView textView=findViewById(R.id.selectedPlacesTextView);
-                Log.d("submit",textView.getText().toString());
+                TextView textView = findViewById(R.id.selectedPlacesTextView);
+                Log.d("submit", textView.getText().toString());
+
+                //
+                if(sharedPreferences.getString("json",null)!=null){
+                    Gson gson=new Gson().newBuilder().create();
+                    List<SitButton> list=gson.fromJson(sharedPreferences.getString("json",null),new TypeToken<List<SitButton>>(){}.getType());
+                    Log.d("JSON",list.size()+"");
+
+                }
+                //
+
                 break;
 
         }
