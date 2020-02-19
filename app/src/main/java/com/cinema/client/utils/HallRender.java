@@ -42,7 +42,7 @@ public class HallRender {
 
     private List<String> selectedPlaces;
 
-    private List<SitButton> selectedCells;
+    private List<HallCellAPI> selectedCells;
 
 
     public Context getContext() {
@@ -56,8 +56,8 @@ public class HallRender {
     public HallRender(Context context) {
         this.context = context;
 //        sharedpreferences = context.getSharedPreferences("places", Context.MODE_PRIVATE);
-        sharedpreferences= PreferenceManager.getDefaultSharedPreferences(context);
-        editor = sharedpreferences.edit();
+//        sharedpreferences= context.getSharedPreferences("selectedPlaces",Context.MODE_PRIVATE);
+//        editor = sharedpreferences.edit();
 
         selectedPlaces = new ArrayList<>();
         selectedCells = new ArrayList<>();
@@ -119,6 +119,7 @@ public class HallRender {
                 HallCellAPI absoluteLocation = new HallCellAPI();
                 absoluteLocation.setCol(j);
                 absoluteLocation.setRow(i);
+                absoluteLocation.setSector(sector);
                 b.setAbsoluteLocation(absoluteLocation);
 
 
@@ -168,9 +169,9 @@ public class HallRender {
 
                         TextView textView = ((Activity) context).findViewById(R.id.selectedPlacesTextView);
 
-                        String json_pref = sharedpreferences.getString("json", null);
+                        TextView dummyTextView = ((Activity) context).findViewById(R.id.dummyTextView);
 
-                        Toast.makeText(context, "@" + json_pref, Toast.LENGTH_SHORT).show();
+
 
 
                         String buttonContent = cell.getText().toString();
@@ -182,37 +183,42 @@ public class HallRender {
                             selectedPlaces.remove(sector.charAt(0) + "-" + sitNum);
 
                             textView.setText(getSelectedTextViewContent(selectedPlaces));
-//                            textView.setText(pref.getString("UserPlaces","Please, select place. "));
 
+                            String dummy=dummyTextView.getText().toString();
 
-                            if (json_pref != null) {
+                            if (dummy != null && dummy.length()!=0) {
 
-                                List<SitButton> list = new ArrayList<>();
+//                                List<SitButton> list = new ArrayList<>();
 
                                 Gson gson = new Gson().newBuilder().create();
 
-                                list = gson.fromJson(json_pref, new TypeToken<List<SitButton>>() {
+                                selectedCells.clear();
+                                selectedCells = gson.fromJson(dummy, new TypeToken<List<HallCellAPI>>() {
                                 }.getType());
-                                list.remove(cell);
-//                                list.add(cell);
 
-                                editor.remove("json");
-//                                editor.putString("json", gson.toJson(list));
-                                editor.putString("json", "json");
-                                editor.commit();
+                                Log.d("BEFORE",dummy);
 
 
-                            }else{
-                                List<SitButton> list = new ArrayList<>();
+
+
+//                                selectedCells.remove(cell.getAbsoluteLocation());
+                                int i=getItemFromList(selectedCells,cell.getAbsoluteLocation());
+
+                                selectedCells.remove(i);
+
+
+
+
+
+                                dummyTextView.setText(gson.toJson(selectedCells));
+
+                                Log.d("AFTER",dummy);
+
 
                             }
 
 
                         } else {
-
-//                            Toast.makeText(context, cell.getText().toString(), Toast.LENGTH_SHORT).show();
-
-//                            editor.putString("place", sector.charAt(0)+"-"+cell.getText().toString());
 
                             String prevContent = textView.getText().toString();
 
@@ -228,31 +234,37 @@ public class HallRender {
                             }
 
                             textView.setText(getSelectedTextViewContent(selectedPlaces));
-//                            textView.setText(pref.getString("UserPlaces","Please, select place. "));
+
+                            String dummy=dummyTextView.getText().toString();
 
 
-                            if (json_pref != null) {
+                            if (dummy != null && dummy.length()!=0) {
 
-                                List<SitButton> list = new ArrayList<>();
+//                                List<SitButton> list = new ArrayList<>();
 
                                 Gson gson = new Gson().newBuilder().create();
 
-                                list = gson.fromJson(json_pref, new TypeToken<List<SitButton>>() {
+                                selectedCells = gson.fromJson(dummy, new TypeToken<List<HallCellAPI>>() {
                                 }.getType());
 
-                                list.add(cell);
+                                selectedCells.add(cell.getAbsoluteLocation());
 
-                                editor.remove("json");
-//                                editor.putString("json", gson.toJson(list));
-                                editor.putString("json", "json");
-                                editor.commit();
+                                dummyTextView.setText(gson.toJson(selectedCells));
 
+                            }else{
+
+//                                List<SitButton> list = new ArrayList<>();
+
+                                Gson gson = new Gson().newBuilder().create();
+
+//                                list.add(cell);
+                                selectedCells.add(cell.getAbsoluteLocation());
+
+//                                dummyTextView.setText(gson.toJson(list));
+                                dummyTextView.setText(gson.toJson(selectedCells));
 
                             }
-
-
-                            editor.commit();
-                            Log.d("IN", sharedpreferences.getString("json", "kek"));
+//
                             cell.setText("✓\n" + cell.getText());
                         }
                     }
@@ -335,6 +347,20 @@ public class HallRender {
 
             }
         }
+    }
+
+
+    public int getItemFromList(List<HallCellAPI> list, HallCellAPI hall){
+
+
+        for(int i=0;i<list.size();i++){
+            HallCellAPI temp=list.get(i);
+            if(temp.getCol()==hall.getCol() && temp.getRow()==hall.getRow()){
+                return i;
+            }
+        }
+        return -1;
+
     }
 
 

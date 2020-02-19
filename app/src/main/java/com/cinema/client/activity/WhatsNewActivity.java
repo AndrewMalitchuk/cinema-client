@@ -53,24 +53,36 @@ public class WhatsNewActivity extends AppCompatActivity {
                         ArrayList<NewFeatureItem> arrayList = new ArrayList<>();
 
                         NewFeatureItem newFeatureItem = new NewFeatureItem();
-                        newFeatureItem.setFeatureDesc("From now on, you can search all things with keys. For searching please go to ");
+                        newFeatureItem.setFeatureDesc("From now on, you can search all things you need - cinemas, films, tickets and even genre!");
                         newFeatureItem.setFeatureTitle("Searching");
-                        newFeatureItem.setImageResource(R.drawable.pulp_fiction);
+                        newFeatureItem.setImageResource("https://media.giphy.com/media/cWVlY0EeQZOrm/source.gif");
                         arrayList.add(newFeatureItem);
 
                         NewFeatureItem newFeatureItem2 = new NewFeatureItem();
-                        newFeatureItem2.setFeatureTitle("Feature 2");
-                        newFeatureItem2.setFeatureDesc("You waited long for this feature, we know that!!!\n\n From now on, you can follow your friend with our application. This makes our application super and cool. Don't believe my words, try and see it. If you want another features like this please contact with us via e-mail or feedback button.");
-                        newFeatureItem2.setImageResource("https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif");
+                        newFeatureItem2.setFeatureTitle("Notify");
+                        newFeatureItem2.setFeatureDesc("Get notification when new film arrive and when your chosen film will be shown");
+                        newFeatureItem2.setImageResource("https://media.giphy.com/media/huyZxIJvtqVeRp7QcS/source.gif");
                         arrayList.add(newFeatureItem2);
+
+                        NewFeatureItem newFeatureItem3 = new NewFeatureItem();
+                        newFeatureItem3.setFeatureTitle("Find in map");
+                        newFeatureItem3.setFeatureDesc("Find your favourite cinema theatre easily via map!");
+                        newFeatureItem3.setImageResource("https://media.giphy.com/media/3ov9jYkVbdGMo6UcG4/source.gif");
+                        arrayList.add(newFeatureItem3);
+
+                        NewFeatureItem newFeatureItem4 = new NewFeatureItem();
+                        newFeatureItem4.setFeatureTitle("More information");
+                        newFeatureItem4.setFeatureDesc("Watch trailer before choosing film.");
+                        newFeatureItem4.setImageResource("https://media.giphy.com/media/Iyqv0kE4hUwYE/source.gif");
+                        arrayList.add(newFeatureItem4);
 
                         NewItemDialog
                                 .init(getApplicationContext())
                                 .setVersionName("1.2.0")
-                                .setDialogTitle("New Features of 1.2.0 Version!")
+                                .setDialogTitle("New Features of 0.1 Version!")
                                 .setPositiveButtonTitle("Close")
-                                .setNeutralButtonTitle("Show Me Later")
-                                .setCancelable(false)
+                                .setCancelable(true)
+//                                .setCancelable(false)
                                 .setItems(arrayList)
                                 .setCancelButtonListener(new DialogInterface.OnClickListener() {
                                     @Override

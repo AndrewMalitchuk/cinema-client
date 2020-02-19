@@ -2,6 +2,7 @@
 package com.cinema.client.activity;
 
 import android.view.View;
+import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.appcompat.widget.Toolbar;
@@ -26,6 +27,7 @@ public class BottomNavigation_ViewBinding implements Unbinder {
 
     target.bottomNavigationView = Utils.findRequiredViewAsType(source, R.id.navigation, "field 'bottomNavigationView'", BottomNavigationView.class);
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar4, "field 'toolbar'", Toolbar.class);
+    target.dummyTextView = Utils.findRequiredViewAsType(source, R.id.dummyTextView, "field 'dummyTextView'", TextView.class);
     target.llProgressBar = Utils.findRequiredView(source, R.id.llProgressBar, "field 'llProgressBar'");
   }
 
@@ -38,6 +40,7 @@ public class BottomNavigation_ViewBinding implements Unbinder {
 
     target.bottomNavigationView = null;
     target.toolbar = null;
+    target.dummyTextView = null;
     target.llProgressBar = null;
   }
 }

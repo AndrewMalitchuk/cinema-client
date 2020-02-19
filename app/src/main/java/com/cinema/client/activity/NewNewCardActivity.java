@@ -21,6 +21,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.cinema.client.MainActivity;
 import com.cinema.client.R;
+import com.cinema.client.fragments.TicketSearchFragment;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.TicketAPI;
@@ -198,6 +199,10 @@ public class NewNewCardActivity extends AppCompatActivity {
                                                             .setDuration(ChocoBar.LENGTH_SHORT)
                                                             .green()
                                                             .show();
+                                                    //
+//                                                    Intent intent=new Intent(NewNewCardActivity.this, TicketSearchFragment.class);
+//                                                    startActivity(intent);
+                                                    //
                                                 }else {
                                                     // task success! show TICK icon in ProSwipeButton
                                                     proSwipeBtn.showResultIcon(false); // false if task failed

@@ -7,11 +7,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
@@ -31,6 +33,7 @@ import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.AllHallAPI;
 import com.cinema.client.requests.entities.HallAPI;
+import com.cinema.client.requests.entities.HallCellAPI;
 import com.github.javiersantos.bottomdialogs.BottomDialog;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
@@ -62,6 +65,9 @@ public class BottomNavigation extends AppCompatActivity {
     @BindView(R.id.toolbar4)
     Toolbar toolbar;
 
+    @BindView(R.id.dummyTextView)
+    TextView dummyTextView;
+
     MyTask mt;
 
     private APIInterface apiInterface;
@@ -75,10 +81,6 @@ public class BottomNavigation extends AppCompatActivity {
 
 
     private List<HallAPI> hall;
-
-
-
-    SharedPreferences sharedPreferences;
 
 
     Gson gson = new Gson().newBuilder().create();
@@ -107,10 +109,8 @@ public class BottomNavigation extends AppCompatActivity {
         });
 
         //
-//        sharedPreferences=getSharedPreferences("places", MODE_PRIVATE);
-        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(this);
-        sharedPreferences.edit().putString("json","");
-        sharedPreferences.edit().commit();
+
+
         //
 
 
@@ -130,16 +130,15 @@ public class BottomNavigation extends AppCompatActivity {
                     hall = gson.fromJson(response.body().getHallJson(), new TypeToken<List<HallAPI>>() {
                     }.getType());
 
-                    Log.d("NAME",response.body().getName());
+                    Log.d("NAME", response.body().getName());
 
                     toolbar.setTitle(response.body().getName());
 
 
-
-                    Log.d("JSON",response.body().getHallJson());
-                    Log.d("JSON",hall.get(0).getSector());
-                    Log.d("JSON",hall.get(1).getSector());
-                    Log.d("JSON",hall.get(2).getSector());
+                    Log.d("JSON", response.body().getHallJson());
+                    Log.d("JSON", hall.get(0).getSector());
+                    Log.d("JSON", hall.get(1).getSector());
+                    Log.d("JSON", hall.get(2).getSector());
 
 
                 }
@@ -205,6 +204,12 @@ public class BottomNavigation extends AppCompatActivity {
         });
 
 
+        //
+
+
+        //
+
+
     }
 
 
@@ -227,15 +232,26 @@ public class BottomNavigation extends AppCompatActivity {
                 TextView textView = findViewById(R.id.selectedPlacesTextView);
                 Log.d("submit", textView.getText().toString());
 
-                //
-                if(sharedPreferences.getString("json",null)!=null){
-                    Gson gson=new Gson().newBuilder().create();
-                    List<SitButton> list=gson.fromJson(sharedPreferences.getString("json",null),new TypeToken<List<SitButton>>(){}.getType());
-                    Log.d("JSON",list.size()+"");
+
+                // Ну я не знаю как сделать, SharedPref не работает, вооооооообще, да костыль, но если кто-то это читает, кроме меня -
+                // - тогда скажи как сделать. Две сутки сижу с тем шердпред - ни чи го.
+                // и вообще - это не костиль, а паллиатив
+
+                String dummy = dummyTextView.getText().toString();
+
+                if (dummy != null && dummy.length() != 0) {
+
+
+                    Log.d("JSON", dummy);
+
+//                    Gson gson = new Gson().newBuilder().create();
+//                    List<SitButton> list = gson.fromJson(dummy, new TypeToken<List<HallCellAPI>>() {
+//                    }.getType());
+//                    Log.d("JSON", list.size() + "");
+//                    Log.d("JSON", list.size() + "");
+
 
                 }
-                //
-
                 break;
 
         }

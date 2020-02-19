@@ -68,7 +68,6 @@ public class HallTestFragment extends Fragment {
 
             Log.d("L",hall.getSector());
 
-//            this.hall=hall.get(2);
 
         }
 
@@ -85,32 +84,8 @@ public class HallTestFragment extends Fragment {
     // Any view setup should occur here.  E.g., view lookups and attaching view listeners.
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        // Setup any handles to view objects here
-        // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
-
-
-//        MyTask mt = new MyTask();
-//        mt.execute();
-
-        //
-//        test();
-//        test(new HallJsonParser().jsonFooBar());
-
-//        tableLayout1=new HallRender(getContext()).render(new HallJsonParser().jsonFooBar(),tableLayout1);
-
-        ArrayList<String> list=new ArrayList<>();
 
         tableLayout1=new HallRender(getContext()).render(hall,tableLayout1);
-//        tableLayout1=new HallRender(getActivity()).render(hall,tableLayout1);
-//        tableLayout1=new HallRender(getContext()).render(hall,tableLayout1);
-//        HallRender hallRender=new HallRender(getContext());
-//        hallRender.render(new HallJsonParser().jsonFooBar(),tableLayout1);
-//        hallRender.setRow();
-
-
-
-
-
 
     }
 
