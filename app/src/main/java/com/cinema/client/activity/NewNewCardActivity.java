@@ -115,6 +115,13 @@ public class NewNewCardActivity extends AppCompatActivity {
         filmTitleBillActivityExtendedEditText.setText(getIntent().getStringExtra("filmTitle"));
         filmId = getIntent().getIntExtra("filmId", 12);
 
+        if(getIntent().getStringExtra("cinemaName")!=null && getIntent().getIntExtra("cinemaId",-1)!=-1){
+            cinemaId=getIntent().getIntExtra("cinemaId",-1);
+            cinemaName=getIntent().getStringExtra("cinemaName");
+            cinemaNameBillActivityExtendedEditText.setText(cinemaName);
+        }
+
+
 
         ProSwipeButton proSwipeBtn = (ProSwipeButton) findViewById(R.id.proswipebutton_main_error);
         proSwipeBtn.setOnSwipeListener(new ProSwipeButton.OnSwipeListener() {

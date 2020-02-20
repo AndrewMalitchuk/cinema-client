@@ -64,7 +64,6 @@ public class PosterActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
-
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,25 +86,22 @@ public class PosterActivity extends AppCompatActivity {
                 .start();
 
 
-
-
         Intent i = getIntent();
 
-        String genre=i.getStringExtra("genre");
+        String genre = i.getStringExtra("genre");
         toolbar.setTitle(genre);
 
-        String json =i.getStringExtra("json");
-        Log.d("json",json);
+        String json = i.getStringExtra("json");
+        Log.d("json", json);
         Gson gson = new GsonBuilder().create();
 
-        List<FilmAPI> videos = gson.fromJson(json, new TypeToken<List<FilmAPI>>(){}.getType());
+        List<FilmAPI> videos = gson.fromJson(json, new TypeToken<List<FilmAPI>>() {
+        }.getType());
 //        Log.d("LIST",videos.get(0).toString());
 
 //        adapter.setFilms(videos);
-        adapter = new SwipeCardAdapter(videos,getApplicationContext());
-        Log.d("ADPT",adapter.getFilms().size()+" "+adapter.getFilms().get(0).getTitle());
-
-
+        adapter = new SwipeCardAdapter(videos, getApplicationContext());
+        Log.d("ADPT", adapter.getFilms().size() + " " + adapter.getFilms().get(0).getTitle());
 
 
         final RecyclerView recyclerView = findViewById(R.id.recycler_view);
@@ -118,10 +114,10 @@ public class PosterActivity extends AppCompatActivity {
                         adapter.removeTopItem();
 
 
-                        Log.d("Count R",recyclerView.getChildCount()+"");
-                        Log.d("Count A",adapter.getItemCount()+"");
+                        Log.d("Count R", recyclerView.getChildCount() + "");
+                        Log.d("Count A", adapter.getItemCount() + "");
 
-                        if(adapter.getItemCount()==0){
+                        if (adapter.getItemCount() == 0) {
                             stop.setVisibility(View.VISIBLE);
                             imageView4.setVisibility(View.VISIBLE);
                             textView31.setVisibility(View.VISIBLE);
@@ -149,16 +145,13 @@ public class PosterActivity extends AppCompatActivity {
                     public void onItemSwipedDown() {
                         Log.e("SWIPE", "DOWN");
                     }
-                })
-                {
+                }) {
                     @Override
                     public int getAllowedSwipeDirectionsMovementFlags(RecyclerView.ViewHolder viewHolder) {
                         return ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT | ItemTouchHelper.DOWN;
                     }
 
-                }
-
-                ;
+                };
         final ItemTouchHelper itemTouchHelper = new ItemTouchHelper(swipeableTouchHelperCallback);
         itemTouchHelper.attachToRecyclerView(recyclerView);
 
@@ -167,11 +160,17 @@ public class PosterActivity extends AppCompatActivity {
                 .setMaxShowCount(3)
                 .setScaleGap(0.1f)
                 .setTransYGap(0));
-        recyclerView.setAdapter(adapter = new SwipeCardAdapter(videos,getApplicationContext()));
+//        recyclerView.setAdapter(adapter = new SwipeCardAdapter(videos,getApplicationContext()));
 
 
+        String cinemaName = getIntent().getStringExtra("cinemaName");
+        int cinemaId = getIntent().getIntExtra("cinemaId", -1);
+        if (cinemaId != -1 && cinemaName != null) {
+            recyclerView.setAdapter(adapter = new SwipeCardAdapter(videos, getApplicationContext(), cinemaName, cinemaId));
+        } else {
 
-
+            recyclerView.setAdapter(adapter = new SwipeCardAdapter(videos, getApplicationContext()));
+        }
 
 
 //        Button button = findViewById(R.id.swipe);

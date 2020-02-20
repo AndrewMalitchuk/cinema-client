@@ -197,6 +197,13 @@ public class AboutFilmActivity extends AppCompatActivity {
         intent.putExtra("filmTitle",currentFilm.getTitle());
         intent.putExtra("filmId",currentFilm.getId());
 
+        String cinemaName = getIntent().getStringExtra("cinemaName");
+        int cinemaId = getIntent().getIntExtra("cinemaId", -1);
+        if (cinemaId != -1 && cinemaName != null) {
+            intent.putExtra("cinemaId",cinemaId);
+            intent.putExtra("cinemaName",cinemaName);
+        }
+
 
         startActivity(intent);
 

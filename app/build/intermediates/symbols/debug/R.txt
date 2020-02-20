@@ -5913,3 +5913,4 @@ int styleable zxing_finder_zxing_viewfinder_laser 2
 int styleable zxing_finder_zxing_viewfinder_mask 3
 int[] styleable zxing_view { 0x7f0403cb }
 int styleable zxing_view_zxing_scanner_layout 0
+int xml cinema_app_auth 0x7f140000

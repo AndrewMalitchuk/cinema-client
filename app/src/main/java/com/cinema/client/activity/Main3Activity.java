@@ -7,6 +7,8 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -25,6 +27,7 @@ import android.widget.Toast;
 
 import com.brouding.simpledialog.SimpleDialog;
 import com.cinema.client.R;
+import com.cinema.client.etc.CinemaAppAccountAuthenticator;
 import com.cinema.client.fragments.MainFlowFragment;
 import com.cinema.client.fragments.TicketSearchFragment;
 import com.cinema.client.requests.APIClient;
@@ -32,6 +35,7 @@ import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.FilmAPI;
 import com.developer.mtextfield.ExtendedEditText;
 import com.droidbyme.dialoglib.DroidDialog;
+import com.google.android.gms.common.internal.AccountType;
 import com.keiferstone.nonet.NoNet;
 import com.mehdi.shortcut.interfaces.IReceiveStringExtra;
 import com.mehdi.shortcut.model.Shortcut;
@@ -225,7 +229,7 @@ public class Main3Activity extends AppCompatActivity {
                                         getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE).edit().commit();
 
 
-                                        Intent intent = new Intent(Main3Activity.this,LoginActivity.class);
+                                        Intent intent = new Intent(Main3Activity.this, LoginActivity.class);
 
                                         startActivity(intent);
                                         //
@@ -685,6 +689,25 @@ public class Main3Activity extends AppCompatActivity {
 
         //
         apiInterface = APIClient.getClient().create(APIInterface.class);
+
+
+        //
+        // Account Manager stuff
+        // https://www.zoftino.com/android-account-manager-&-create-custom-account-type
+
+//        AccountManager manager = AccountManager.get(getApplicationContext());
+//        final Account account = new Account(userNameFromPreferences, "com.cinema.app");
+//
+////        new CinemaAppAccountAuthenticator(this).addAccountFromCredentials()
+//
+//        boolean success = manager.addAccountExplicitly(account, getSharedPreferences("accountPref", Context.MODE_PRIVATE).getString("password", null), null);
+//        if (success) {
+//            Log.d("ACCOUNT", "Account created");
+//        } else {
+//            Log.d("ACCOUNT", "Account creation failed. Look at previous logs to investigate");
+//        }
+
+        //
 
 
     }

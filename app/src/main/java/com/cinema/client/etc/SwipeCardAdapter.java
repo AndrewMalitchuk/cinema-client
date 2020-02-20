@@ -42,9 +42,20 @@ public class SwipeCardAdapter extends RecyclerView.Adapter<SwipeCardItem> {
 //    ));
 
 
+    private String cinemaName=null;
+    private int cinemaId=-1;
+
+
     public SwipeCardAdapter(List<FilmAPI> films, Context context){
         this.films=films;
         this.context=context;
+    }
+
+    public SwipeCardAdapter(List<FilmAPI> films, Context context,String cinemaName,int cinemaId){
+        this.films=films;
+        this.context=context;
+        this.cinemaName=cinemaName;
+        this.cinemaId=cinemaId;
     }
 
 
@@ -106,6 +117,16 @@ public class SwipeCardAdapter extends RecyclerView.Adapter<SwipeCardItem> {
 
             Intent intent=new Intent(context, AboutFilmActivity.class);
             intent.putExtra("filmId",films.get(pos).getId());
+            //
+
+            if (cinemaId != -1 && cinemaName != null) {
+                intent.putExtra("cinemaId",cinemaId);
+                intent.putExtra("cinemaName",cinemaName);
+            }
+
+            //
+
+
             context.startActivity(intent);
 
             Toast.makeText(context, films.get(pos).getTitle(), Toast.LENGTH_SHORT).show();

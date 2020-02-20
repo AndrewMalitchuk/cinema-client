@@ -33621,4 +33621,7 @@ public final class R {
      */
     public static final int zxing_view_zxing_scanner_layout=0;
   }
+  public static final class xml {
+    public static final int cinema_app_auth=0x7f140000;
+  }
 }

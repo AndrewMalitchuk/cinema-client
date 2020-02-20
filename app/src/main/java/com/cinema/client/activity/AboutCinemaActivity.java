@@ -376,6 +376,10 @@ public class AboutCinemaActivity extends AppCompatActivity {
             Intent intent = new Intent(AboutCinemaActivity.this, PosterActivity.class);
             intent.putExtra("json", myCustomArray.toString());
             intent.putExtra("genre", currentCinema.getName());
+            //
+            intent.putExtra("cinemaId",currentCinema.getId());
+            intent.putExtra("cinemaName",currentCinema.getName());
+            //
             startActivity(intent);
 
 
