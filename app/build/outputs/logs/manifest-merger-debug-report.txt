@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-162:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-162:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-162:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-162:12
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-163:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-163:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-163:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-163:12
 MERGED from [com.github.florent37:materialtextfield:1.0.7] /home/adular/.gradle/caches/transforms-2/files-2.1/cf3973b8f9f370c33a5222c204e40370/AndroidManifest.xml:2:1-12:12
 MERGED from [com.github.matecode:Snacky:1.1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/AndroidManifest.xml:2:1-16:12
 MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/9c20b07155f48244f89546fa5355129f/AndroidManifest.xml:2:1-21:12
@@ -155,20 +155,20 @@ MERGED from [com.github.ozodrukh:CircularReveal:1.0.5] /home/adular/.gradle/cach
 MERGED from [com.google.android.datatransport:transport-api:2.2.0] /home/adular/.gradle/caches/transforms-2/files-2.1/215e2e884e494afec2f3ccbf50093c87/AndroidManifest.xml:15:1-22:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.0.2] /home/adular/.gradle/caches/transforms-2/files-2.1/3f6faafbd6cf0e44581c3f1823df13b8/AndroidManifest.xml:15:1-21:12
 MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] /home/adular/.gradle/caches/transforms-2/files-2.1/7c4ff1ac83ceeb6716031c84bfca05f4/AndroidManifest.xml:2:1-11:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-162:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-162:12
-INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-162:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-163:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-163:12
+INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-163:12
 	package
 		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:3:5-32
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-162:12
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-163:12
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
-		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-162:12
+		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:1-163:12
 		INJECTED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:2:11-69
@@ -257,7 +257,7 @@ ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManif
 	android:name
 		ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:17:22-71
 application
-ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:19:5-160:19
+ADDED from /home/adular/Projects/Android/cinema-client/app/src/main/AndroidManifest.xml:19:5-161:19
 MERGED from [com.github.matecode:Snacky:1.1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/AndroidManifest.xml:11:5-14:19
 MERGED from [com.github.matecode:Snacky:1.1.4] /home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/AndroidManifest.xml:11:5-14:19
 MERGED from [com.keiferstone:nonet:2.0.4] /home/adular/.gradle/caches/transforms-2/files-2.1/9c20b07155f48244f89546fa5355129f/AndroidManifest.xml:15:5-19:19

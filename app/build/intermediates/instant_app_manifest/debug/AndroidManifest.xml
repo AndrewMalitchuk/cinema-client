@@ -205,6 +205,7 @@
             </intent-filter>
         </receiver>
 
+        <!--  -->
         <service android:name="com.cinema.client.etc.AccountTypeService" >
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator" />
@@ -214,6 +215,8 @@
                 android:name="android.accounts.AccountAuthenticator"
                 android:resource="@xml/cinema_app_auth" />
         </service>
+        <!--  -->
+
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
             android:directBootAware="true"

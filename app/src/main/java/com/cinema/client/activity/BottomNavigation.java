@@ -132,6 +132,7 @@ public class BottomNavigation extends AppCompatActivity {
 
                     Log.d("NAME", response.body().getName());
 
+
                     toolbar.setTitle(response.body().getName());
 
 

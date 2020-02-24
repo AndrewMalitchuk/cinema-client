@@ -41,4 +41,14 @@ public class SitButton extends Button {
     }
 
 
+    public String absoluteLocationToString(){
+        return absoluteLocation.getSector().charAt(0)+"-"+absoluteLocation.getRow()+"-"+absoluteLocation.getCol();
+    }
+
+    public String relativeLocationToString(){
+        return relativeLocation.getSector().charAt(0)+"-"+relativeLocation.getRow()+"-"+relativeLocation.getCol();
+
+    }
+
+
 }
