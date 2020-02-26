@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,9 +26,15 @@ import com.cinema.client.activity.TicketActivity;
 import com.cinema.client.entities.TicketItemSearch;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.AllHallAPI;
+import com.cinema.client.requests.entities.HallAPI;
+import com.cinema.client.requests.entities.HallCellAPI;
+import com.cinema.client.requests.entities.HallCellCustomAPI;
 import com.cinema.client.requests.entities.TicketAPI;
 import com.cinema.client.requests.entities.TokenAPI;
 import com.droidbyme.dialoglib.DroidDialog;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.pd.chocobar.ChocoBar;
 import com.skyhope.materialtagview.TagView;
 
@@ -90,19 +97,19 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
             case 1:
                 // Returned
 
-                holder.status.setTags("Returned");
+                holder.status.setTags("Returned",myTicketsList.get(position).getFilmPlace());
 
                 break;
             case 2:
                 // Active
 
-                holder.status.setTags("Active");
+                holder.status.setTags("Active",myTicketsList.get(position).getFilmPlace());
 
                 break;
             case 3:
                 // Canceled
 
-                holder.status.setTags("Canceled");
+                holder.status.setTags("Canceled",myTicketsList.get(position).getFilmPlace());
 
                 break;
         }
@@ -157,6 +164,7 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                                                     String login = sharedpreferences.getString("login", null);
                                                     String password = sharedpreferences.getString("password", null);
 
+                                                    // update ticket
                                                     RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
                                                             password);
 
@@ -170,6 +178,9 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                                                             .observeOn(AndroidSchedulers.mainThread())
                                                             .map(result -> result)
                                                             .subscribe(TicketSearchAdapter.this::onToken);
+                                                    //
+
+
 
 
                                                 }
@@ -246,7 +257,180 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
             }
         });
 
+
+        Call<AllHallAPI> callPrevHall=apiInterface.getHallByCinemaId(myTicketsList.get(positionOfDeleted).getCinemaId());
+        callPrevHall.enqueue(new Callback<AllHallAPI>() {
+            @Override
+            public void onResponse(Call<AllHallAPI> call, Response<AllHallAPI> response) {
+                AllHallAPI hall=response.body();
+
+                HallCellAPI hallCellAPI=new HallCellAPI();
+
+                hallCellAPI.setRow(Integer.valueOf(myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[1]));
+                hallCellAPI.setCol(Integer.valueOf(myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[2]));
+
+                Gson gson=new Gson().newBuilder().create();
+
+                Log.d("hallCellAPI",hallCellAPI.toString());
+
+
+                List<HallAPI> hallAPI;
+
+                //
+
+                if(myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[0].equals("l")){
+//                    hallCellAPI.setSector("left");
+
+                    hallAPI=gson.fromJson(hall.getHallJson(),new TypeToken<List<HallAPI>>(){
+
+                    }.getType());
+
+
+                    Log.d("ABSOLUTE",getAbsolute(hallAPI.get(0).getCustom(),hallCellAPI).toString());
+
+                    Log.d("hall 0",removePlace(hallAPI.get(0).getBought(),getAbsolute(hallAPI.get(0).getCustom(),hallCellAPI))+"");
+
+
+                    hallAPI.get(0).getBought().remove(removePlace(hallAPI.get(0).getBought(),getAbsolute(hallAPI.get(0).getCustom(),hallCellAPI)));
+
+                    hallAPI.get(0).getFree().add(getAbsolute(hallAPI.get(0).getCustom(),hallCellAPI));
+
+
+                    hall.setHallJson(gson.toJson(hallAPI));
+
+                    Log.d("NEW JSON",hall.getHallJson());
+
+                }else if(myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[0].equals("c")){
+//                    hallCellAPI.setSector("center");
+
+                    hallAPI=gson.fromJson(hall.getHallJson(),new TypeToken<List<HallAPI>>(){
+
+                    }.getType());
+
+
+                    Log.d("ABSOLUTE",getAbsolute(hallAPI.get(1).getCustom(),hallCellAPI).toString());
+
+                    Log.d("hall 1",removePlace(hallAPI.get(1).getBought(),getAbsolute(hallAPI.get(1).getCustom(),hallCellAPI))+"");
+
+
+                    hallAPI.get(1).getBought().remove(removePlace(hallAPI.get(1).getBought(),getAbsolute(hallAPI.get(1).getCustom(),hallCellAPI)));
+
+                    hallAPI.get(1).getFree().add(getAbsolute(hallAPI.get(1).getCustom(),hallCellAPI));
+
+
+                    hall.setHallJson(gson.toJson(hallAPI));
+
+                    Log.d("NEW JSON",hall.getHallJson());
+
+                }else if(myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[0].equals("r")){
+//                    hallCellAPI.setSector("right");
+
+                    hallAPI=gson.fromJson(hall.getHallJson(),new TypeToken<List<HallAPI>>(){
+
+                    }.getType());
+
+
+                    Log.d("ABSOLUTE",getAbsolute(hallAPI.get(2).getCustom(),hallCellAPI).toString());
+
+                    Log.d("hall 2",removePlace(hallAPI.get(2).getBought(),getAbsolute(hallAPI.get(2).getCustom(),hallCellAPI))+"");
+
+
+                    hallAPI.get(2).getBought().remove(removePlace(hallAPI.get(2).getBought(),getAbsolute(hallAPI.get(2).getCustom(),hallCellAPI)));
+
+                    hallAPI.get(2).getFree().add(getAbsolute(hallAPI.get(2).getCustom(),hallCellAPI));
+
+
+                    hall.setHallJson(gson.toJson(hallAPI));
+
+                    Log.d("NEW JSON",hall.getHallJson());
+
+                }
+
+                Log.d("OUT",hall.getHallJson());
+
+
+                //
+                RequestBody name_ = RequestBody.create(MediaType.parse("text/plain"),
+                        hall.getName());
+
+                RequestBody hall_json_ = RequestBody.create(MediaType.parse("text/plain"),
+                        hall.getHallJson());
+
+                RequestBody cinema_id_ = RequestBody.create(MediaType.parse("text/plain"),
+                        hall.getCinemaId()+"");
+
+
+                Call<AllHallAPI> callUpdate=apiInterface.updateHallByHallId(
+                        hall.getId(),
+                        name_,
+                        hall_json_,
+                        cinema_id_,
+                        "Bearer "+tokenAPI.getAccess()
+
+                );
+
+                callUpdate.enqueue(new Callback<AllHallAPI>() {
+                    @Override
+                    public void onResponse(Call<AllHallAPI> call, Response<AllHallAPI> response) {
+                        if(response.isSuccessful()){
+                            Log.d("!!!","Yeah");
+
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<AllHallAPI> call, Throwable t) {
+
+                    }
+                });
+                //
+
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<AllHallAPI> call, Throwable t) {
+
+            }
+        });
+
     }
+
+
+    public int removePlace(List<HallCellAPI> list, HallCellAPI place){
+
+//        for(HallCellAPI hallCellAPI:list){
+        for(int i=0;i<list.size();i++){
+
+            Log.d("removePlace",list.get(i).toString());
+
+            if(list.get(i).getCol()==place.getCol()&&list.get(i).getRow()==place.getRow()){
+//                list.remove(hallCellAPI);
+                Log.d("removePlace",i+"");
+                return i;
+            }
+        }
+        return -1;
+
+    }
+
+    public HallCellAPI getAbsolute(List<HallCellCustomAPI> list, HallCellAPI place){
+
+        for(HallCellCustomAPI hallCellCustomAPI:list){
+            if(hallCellCustomAPI.getNewCol()==place.getCol() && hallCellCustomAPI.getNewRow()==place.getRow()){
+                HallCellAPI hallCellAPI =new HallCellAPI();
+                hallCellAPI.setRow(hallCellCustomAPI.getOldRow());
+                hallCellAPI.setCol(hallCellCustomAPI.getOldCol());
+                return hallCellAPI;
+            }
+        }
+        return place;
+
+    }
+
 
     @Override
     public int getItemCount() {

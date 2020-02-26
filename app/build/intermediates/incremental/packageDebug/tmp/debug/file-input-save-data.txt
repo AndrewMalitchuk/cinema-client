@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Feb 24 17:52:03 EET 2020
+#Wed Feb 26 18:01:56 EET 2020
 5.base=/home/adular/Projects/Android/cinema-client/app/build/intermediates/merged_assets/debug/out
 22.path=html/css/highlight/github.css
 32.set=ASSET

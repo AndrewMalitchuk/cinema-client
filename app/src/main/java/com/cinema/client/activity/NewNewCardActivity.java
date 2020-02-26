@@ -47,6 +47,7 @@ public class NewNewCardActivity extends AppCompatActivity {
     private final int CREATE_NEW_CARD = 0;
     private final int PICK_DATETIME_REQUEST = 1;
     private final int PICK_CINEMA_SEARCH_REQUEST = 2;
+    private final int PICK_HALL_PLACE_REQUEST = 3;
 
     private LinearLayout cardContainer;
     private LinearLayout cardLayout;
@@ -73,6 +74,7 @@ public class NewNewCardActivity extends AppCompatActivity {
     private int filmId;
     private int cinemaId;
     private String cinemaName;
+    private String hallPlace;
 
     public static final String FAVOURITE_CINEMAS_PREF = "favourite_cinema_pref";
     private SharedPreferences sharedpreferences;
@@ -115,12 +117,11 @@ public class NewNewCardActivity extends AppCompatActivity {
         filmTitleBillActivityExtendedEditText.setText(getIntent().getStringExtra("filmTitle"));
         filmId = getIntent().getIntExtra("filmId", 12);
 
-        if(getIntent().getStringExtra("cinemaName")!=null && getIntent().getIntExtra("cinemaId",-1)!=-1){
-            cinemaId=getIntent().getIntExtra("cinemaId",-1);
-            cinemaName=getIntent().getStringExtra("cinemaName");
+        if (getIntent().getStringExtra("cinemaName") != null && getIntent().getIntExtra("cinemaId", -1) != -1) {
+            cinemaId = getIntent().getIntExtra("cinemaId", -1);
+            cinemaName = getIntent().getStringExtra("cinemaName");
             cinemaNameBillActivityExtendedEditText.setText(cinemaName);
         }
-
 
 
         ProSwipeButton proSwipeBtn = (ProSwipeButton) findViewById(R.id.proswipebutton_main_error);
@@ -145,9 +146,9 @@ public class NewNewCardActivity extends AppCompatActivity {
 
                             // TODO: add placesBillActivityExtendedEditText.getText() != null
                             // TODO: add datetimeBillActivityExtendedEditText.getText().length()!=0
-                            if (cinemaNameBillActivityExtendedEditText.getText().length()!=0
-                                     ) {
+                            if (cinemaNameBillActivityExtendedEditText.getText().length() != 0) {
 
+                                final boolean[] success = {true};
 
                                 Log.d("NEW", token + " " + login + " " + password + " " + userId);
 
@@ -167,67 +168,58 @@ public class NewNewCardActivity extends AppCompatActivity {
                                         Toast.makeText(NewNewCardActivity.this, token, Toast.LENGTH_SHORT).show();
 
 
-//                                    int status=2; // Active
+                                        String[] ticketPlaces = placesBillActivityExtendedEditText.getText().toString().split(";");
+
+                                        for (String ticketPlace : ticketPlaces) {
+
+                                            Log.d("ticketPlace", ticketPlace);
 
 
-                                        String placeTemp = "c-1-1";
-
-                                        RequestBody place = RequestBody.create(MediaType.parse("text/plain"), placeTemp);
-                                        RequestBody code = RequestBody.create(MediaType.parse("text/plain"), "");
-                                        RequestBody status = RequestBody.create(MediaType.parse("text/plain"), "2");
-                                        RequestBody cinemaIdRequestBody = RequestBody.create(MediaType.parse("text/plain"), cinemaId + "");
-                                        RequestBody filmIdRequestBody = RequestBody.create(MediaType.parse("text/plain"), filmId + "");
-                                        RequestBody userId = RequestBody.create(MediaType.parse("text/plain"), sharedpreferences1.getInt("userId", -1) + "");
+//                                            RequestBody place = RequestBody.create(MediaType.parse("text/plain"), placesBillActivityExtendedEditText.getText().toString().substring(0,5));
+                                            RequestBody place = RequestBody.create(MediaType.parse("text/plain"), ticketPlace);
+                                            RequestBody code = RequestBody.create(MediaType.parse("text/plain"), "");
+                                            RequestBody status = RequestBody.create(MediaType.parse("text/plain"), "2");
+                                            RequestBody cinemaIdRequestBody = RequestBody.create(MediaType.parse("text/plain"), cinemaId + "");
+                                            RequestBody filmIdRequestBody = RequestBody.create(MediaType.parse("text/plain"), filmId + "");
+                                            RequestBody userId = RequestBody.create(MediaType.parse("text/plain"), sharedpreferences1.getInt("userId", -1) + "");
 //                                        RequestBody date = RequestBody.create(MediaType.parse("text/plain"), datetimeBillActivityExtendedEditText.getText().toString());
-                                        RequestBody date = RequestBody.create(MediaType.parse("text/plain"), "2020-02-15 10:10:10");
+                                            RequestBody date = RequestBody.create(MediaType.parse("text/plain"), "2020-02-15 10:10:10");
 
 
-                                        Call<TicketAPI> newTicket = apiInterface.createTicket(
-                                                place,
-                                                code,
-                                                status,
-                                                cinemaIdRequestBody,
-                                                filmIdRequestBody,
-                                                userId,
-                                                date,
-                                                "Bearer " + token);
+                                            Call<TicketAPI> newTicket = apiInterface.createTicket(
+                                                    place,
+                                                    code,
+                                                    status,
+                                                    cinemaIdRequestBody,
+                                                    filmIdRequestBody,
+                                                    userId,
+                                                    date,
+                                                    "Bearer " + token);
 
-                                        newTicket.enqueue(new Callback<TicketAPI>() {
-                                            @Override
-                                            public void onResponse(Call<TicketAPI> call, Response<TicketAPI> response) {
-                                                Toast.makeText(NewNewCardActivity.this, response.body().getCode(), Toast.LENGTH_SHORT).show();
+                                            newTicket.enqueue(new Callback<TicketAPI>() {
+                                                @Override
+                                                public void onResponse(Call<TicketAPI> call, Response<TicketAPI> response) {
+//                                                    Toast.makeText(NewNewCardActivity.this, response.body().getCode(), Toast.LENGTH_SHORT).show();
 
-                                                if(response.isSuccessful()){
-                                                    // task success! show TICK icon in ProSwipeButton
-                                                    proSwipeBtn.showResultIcon(true); // false if task failed
-                                                    //
-                                                    ChocoBar.builder().setActivity(NewNewCardActivity.this)
-                                                            .setText("Success!")
-                                                            .setDuration(ChocoBar.LENGTH_SHORT)
-                                                            .green()
-                                                            .show();
-                                                    //
-//                                                    Intent intent=new Intent(NewNewCardActivity.this, TicketSearchFragment.class);
-//                                                    startActivity(intent);
-                                                    //
-                                                }else {
-                                                    // task success! show TICK icon in ProSwipeButton
-                                                    proSwipeBtn.showResultIcon(false); // false if task failed
-                                                    //
-                                                    ChocoBar.builder().setActivity(NewNewCardActivity.this)
-                                                            .setText("Something goes wrong!")
-                                                            .setDuration(ChocoBar.LENGTH_SHORT)
-                                                            .red()
-                                                            .show();
+                                                    if (response.isSuccessful()) {
+
+//                                                        ;
+
+//
+                                                    } else {
+                                                        success[0] = false;
+                                                    }
+
                                                 }
 
-                                            }
+                                                @Override
+                                                public void onFailure(Call<TicketAPI> call, Throwable t) {
 
-                                            @Override
-                                            public void onFailure(Call<TicketAPI> call, Throwable t) {
+                                                }
+                                            });
 
-                                            }
-                                        });
+
+                                        }
 
 
                                     }
@@ -239,13 +231,36 @@ public class NewNewCardActivity extends AppCompatActivity {
                                 });
 
 
+                                if (success[0] == true) {
+                                    // task success! show TICK icon in ProSwipeButton
+                                    proSwipeBtn.showResultIcon(true); // false if task failed
+//                                                        //
+                                    ChocoBar.builder().setActivity(NewNewCardActivity.this)
+                                            .setText("Success!")
+                                            .setDuration(ChocoBar.LENGTH_SHORT)
+                                            .green()
+                                            .show();
+//                                                        //
+//                                                        Intent intent=new Intent(NewNewCardActivity.this, Main3Activity.class);
+//                                                        startActivity(intent);
+//                                                        //
+                                } else {
+                                    // task success! show TICK icon in ProSwipeButton
+                                    proSwipeBtn.showResultIcon(false); // false if task failed
+                                    //
+                                    ChocoBar.builder().setActivity(NewNewCardActivity.this)
+                                            .setText("Something goes wrong!")
+                                            .setDuration(ChocoBar.LENGTH_SHORT)
+                                            .red()
+                                            .show();
+                                }
 
 
 //                        Intent intent = new Intent(NewNewCardActivity.this, MyTicketsActivity.class);
 //                        startActivity(intent);
                                 //
 
-                            }else{
+                            } else {
                                 proSwipeBtn.showResultIcon(false);
 
                                 ChocoBar.builder().setActivity(NewNewCardActivity.this)
@@ -370,6 +385,14 @@ public class NewNewCardActivity extends AppCompatActivity {
                     cinemaNameBillActivityExtendedEditText.setText(cinemaName);
                 }
                 break;
+            case PICK_HALL_PLACE_REQUEST:
+                if (resultCode == RESULT_OK) {
+                    hallPlace = data.getStringExtra("hallPlace");
+                    placesBillActivityExtendedEditText.setText(hallPlace);
+                    Log.d("PLACE", hallPlace);
+
+                }
+                break;
 
         }
 
@@ -378,7 +401,7 @@ public class NewNewCardActivity extends AppCompatActivity {
 
     public void onChoosePlaceImageButtonClick(View view) {
         Intent intent = new Intent(this, BottomNavigation.class);
-        startActivity(intent);
+        startActivityForResult(intent, PICK_HALL_PLACE_REQUEST);
     }
 
     public void onChooseCinemaImageButtonClick(View view) {

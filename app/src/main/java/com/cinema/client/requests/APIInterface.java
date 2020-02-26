@@ -37,7 +37,7 @@ public interface APIInterface {
     public static final String api_registration = "/api/v1/create/";
     public static final String api_user = "/api/v1/user/";
     public static final String api_token = "/api/token/";
-    public static final String api_hall="/api/v1/hall";
+    public static final String api_hall="/api/v1/hall/";
 
 
     @GET(api_film)
@@ -149,6 +149,15 @@ public interface APIInterface {
 
     @GET(api_hall)
     Call<AllHallAPI> getHallByCinemaId(@Query("cinema_id") int cinema_id);
+
+    @Multipart
+    @PUT(api_hall)
+    Call<AllHallAPI> updateHallByHallId(
+            @Query("id") int hall_id,
+            @Part("name") RequestBody name,
+            @Part("hall_json") RequestBody hall_json,
+            @Part("cinema_id") RequestBody cinema_id,
+            @Header("Authorization") String authHeader);
 
 
 }

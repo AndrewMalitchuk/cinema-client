@@ -154,7 +154,7 @@ public class Main3Activity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.action_settings:
                         MarkdownView markdownView = new MarkdownView(Main3Activity.this);
-                        markdownView.loadFromText("# Hello!\n ## Hello!");
+                        markdownView.loadFromText("# Hello!\n ## Hello!\n **сюда кинь вступ з звіту**");
                         Config defaultConfig = Config.getDefaultConfig();
                         defaultConfig.setDefaultMargin(25);
                         markdownView.setCurrentConfig(defaultConfig);
