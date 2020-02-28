@@ -35,6 +35,7 @@ import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.CinemaAPI;
 import com.cinema.client.requests.entities.FilmAPI;
 import com.cinema.client.requests.entities.TicketAPI;
+import com.cinema.client.requests.entities.TimelineAPI;
 import com.cinema.client.requests.entities.TokenAPI;
 import com.pd.chocobar.ChocoBar;
 
@@ -112,7 +113,7 @@ public class TicketSearchFragment extends Fragment {
             int userId = sharedpreferences.getInt("userId", -1);
 
 
-            ticketList=new ArrayList<>();
+            ticketList = new ArrayList<>();
 
             RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
                     password);
@@ -155,52 +156,303 @@ public class TicketSearchFragment extends Fragment {
     }
 
 
+//    public void onTicketSuccess(List<TicketAPI> list) {
+//        Log.d("RXLIST", list.size() + "");
+//
+//
+//
+//
+//        for (TicketAPI ticketAPI : list) {
+//            TicketItemSearch myTickets = new TicketItemSearch();
+//
+//            Call<FilmAPI> filmAPICall = apiInterface.getFilmById(ticketAPI.getFilmId());
+//            FilmAPI filmAPI = null;
+//            Call<CinemaAPI> cinemaAPICall = apiInterface.getCinemaById(ticketAPI.getCinemaId());
+//            CinemaAPI cinemaAPI = null;
+//            try {
+//                filmAPI = filmAPICall.execute().body();
+//                cinemaAPI = cinemaAPICall.execute().body();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//
+//            myTickets.setTicketId(ticketAPI.getId());
+//            myTickets.setFilmId(filmAPI.getId());
+//            myTickets.setFilmName(filmAPI.getTitle());
+//            myTickets.setCinemaId(ticketAPI.getCinemaId());
+//            myTickets.setUserId(ticketAPI.getUser());
+//
+//
+//            //
+//
+//
+//            //
+//
+//            myTickets.setFilmDateTime(ticketAPI.getDate());
+//            myTickets.setFilmPlace(ticketAPI.getPlace());
+//            myTickets.setFilmCinema(cinemaAPI.getName());
+//            myTickets.setFilmUrl(APIClient.HOST + filmAPI.getPicUrl());
+//
+//            //
+//            myTickets.setTicketCode(ticketAPI.getCode());
+//            //
+//            myTickets.setStatus(ticketAPI.getStatus());
+//            //
+//
+//            myTicketsArrayList.add(myTickets);
+//
+//
+//        }
+//
+//
+//        myTicketsAdapter = new TicketSearchAdapter(myTicketsArrayList);
+//
+//        recyclerView = (RecyclerView) getActivity().findViewById(R.id.myTicketsRecycleView);
+//        mSearchView = getActivity().findViewById(R.id.floating_search_view);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView.setAdapter(myTicketsAdapter);
+//
+//
+//        ArrayList<MySearchSuggestion> temp = new ArrayList<>();
+//
+//
+//        mSearchView.setOnQueryChangeListener(new FloatingSearchView.OnQueryChangeListener() {
+//            @Override
+//            public void onSearchTextChanged(String oldQuery, final String newQuery) {
+//
+//
+//                mSearchView.swapSuggestions(searchInLoadedData(newQuery));
+//            }
+//        });
+//
+//
+//        mSearchView.setOnSearchListener(new FloatingSearchView.OnSearchListener() {
+//            @Override
+//            public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
+//                String suggestion=searchSuggestion.getBody();
+////                Call<FilmAPI> call=apiInterface.getFilmByTitle(suggestion);
+////                call.enqueue(new Callback<FilmAPI>() {
+////                    @Override
+////                    public void onResponse(Call<FilmAPI> call, Response<FilmAPI> response) {
+////
+////                    }
+////
+////                    @Override
+////                    public void onFailure(Call<FilmAPI> call, Throwable t) {
+////
+////                    }
+////                });
+//
+//                for(TicketItemSearch ticketItemSearch:myTicketsArrayList){
+//                    if(suggestion.equals(ticketItemSearch.getFilmName())){
+//                        Toast.makeText(getActivity(), ticketItemSearch.getTicketCode(), Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(getContext(), TicketActivity.class);
+//                        intent.putExtra("ticketCode",ticketItemSearch.getTicketCode());
+//                        getContext().startActivity(intent);
+//                    }
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onSearchAction(String currentQuery) {
+//
+//            }
+//        });
+//
+//    }
+
+//    public void onTicketSuccess(List<TicketAPI> list) {
+//
+//
+//        ticketList=list;
+//
+//        Log.d("RXLIST", list.size() + "");
+//
+//
+//        for (TicketAPI ticketAPI : list) {
+//
+//
+//            Call<TimelineAPI> callTimeline = apiInterface.getTimelineById(ticketAPI.getTimeline_id().intValue());
+//
+//
+//            callTimeline.enqueue(new Callback<TimelineAPI>() {
+//                @Override
+//                public void onResponse(Call<TimelineAPI> call, Response<TimelineAPI> response) {
+//
+//                    TicketItemSearch myTickets = new TicketItemSearch();
+//
+//                    Call<FilmAPI> filmAPICall = apiInterface.getFilmById(response.body().getFilmId());
+//                    FilmAPI filmAPI = null;
+//                    Call<CinemaAPI> cinemaAPICall = apiInterface.getCinemaById(response.body().getCinemaId());
+//                    CinemaAPI cinemaAPI = null;
+//                    try {
+//                        filmAPI = filmAPICall.execute().body();
+//                        cinemaAPI = cinemaAPICall.execute().body();
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//
+//                    myTickets.setTicketId(ticketAPI.getId());
+//                    myTickets.setFilmId(filmAPI.getId());
+//                    myTickets.setFilmName(filmAPI.getTitle());
+//                    myTickets.setCinemaId(response.body().getCinemaId());
+//                    myTickets.setUserId(ticketAPI.getUser());
+//
+//
+//                    //
+//
+//
+//                    //
+//
+//                    myTickets.setFilmDateTime(response.body().getDate() +" "+ response.body().getTime());
+//                    myTickets.setFilmPlace(ticketAPI.getPlace());
+//                    myTickets.setFilmCinema(cinemaAPI.getName());
+//                    myTickets.setFilmUrl(APIClient.HOST + filmAPI.getPicUrl());
+//
+//                    //
+//                    myTickets.setTicketCode(ticketAPI.getCode());
+//                    //
+//                    myTickets.setStatus(ticketAPI.getStatus());
+//                    //
+//
+//                    myTicketsArrayList.add(myTickets);
+//
+//
+//                }
+//
+//                @Override
+//                public void onFailure(Call<TimelineAPI> call, Throwable t) {
+//
+//                }
+//            });
+//
+//
+//        }
+//
+//
+//        myTicketsAdapter = new TicketSearchAdapter(myTicketsArrayList);
+//
+//        recyclerView = (RecyclerView) getActivity().findViewById(R.id.myTicketsRecycleView);
+//        mSearchView = getActivity().findViewById(R.id.floating_search_view);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView.setAdapter(myTicketsAdapter);
+//
+//
+//        ArrayList<MySearchSuggestion> temp = new ArrayList<>();
+//
+//
+//        mSearchView.setOnQueryChangeListener(new FloatingSearchView.OnQueryChangeListener() {
+//            @Override
+//            public void onSearchTextChanged(String oldQuery, final String newQuery) {
+//
+//
+//                mSearchView.swapSuggestions(searchInLoadedData(newQuery));
+//            }
+//        });
+//
+//
+//        mSearchView.setOnSearchListener(new FloatingSearchView.OnSearchListener() {
+//            @Override
+//            public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
+//                String suggestion = searchSuggestion.getBody();
+////                Call<FilmAPI> call=apiInterface.getFilmByTitle(suggestion);
+////                call.enqueue(new Callback<FilmAPI>() {
+////                    @Override
+////                    public void onResponse(Call<FilmAPI> call, Response<FilmAPI> response) {
+////
+////                    }
+////
+////                    @Override
+////                    public void onFailure(Call<FilmAPI> call, Throwable t) {
+////
+////                    }
+////                });
+//
+//                for (TicketItemSearch ticketItemSearch : myTicketsArrayList) {
+//                    if (suggestion.equals(ticketItemSearch.getFilmName())) {
+//                        Toast.makeText(getActivity(), ticketItemSearch.getTicketCode(), Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(getContext(), TicketActivity.class);
+//                        intent.putExtra("ticketCode", ticketItemSearch.getTicketCode());
+//                        getContext().startActivity(intent);
+//                    }
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onSearchAction(String currentQuery) {
+//
+//            }
+//        });
+//
+//    }
+
+
     public void onTicketSuccess(List<TicketAPI> list) {
+
+
+
+
+
+        ticketList=list;
+
         Log.d("RXLIST", list.size() + "");
+        Log.d("RXLIST", ticketList.size() + "");
 
 
-//        Observable<FilmAPI> filmObservable=apiInterface.getFilmByIdRx()
 
 
         for (TicketAPI ticketAPI : list) {
-            TicketItemSearch myTickets = new TicketItemSearch();
 
-            Call<FilmAPI> filmAPICall = apiInterface.getFilmById(ticketAPI.getFilmId());
-            FilmAPI filmAPI = null;
-            Call<CinemaAPI> cinemaAPICall = apiInterface.getCinemaById(ticketAPI.getCinemaId());
-            CinemaAPI cinemaAPI = null;
+
+            Call<TimelineAPI> callTimeline = apiInterface.getTimelineById(ticketAPI.getTimeline_id().intValue());
+
+
             try {
-                filmAPI = filmAPICall.execute().body();
-                cinemaAPI = cinemaAPICall.execute().body();
+                TimelineAPI timelineAPI=callTimeline.execute().body();
+
+                TicketItemSearch myTickets = new TicketItemSearch();
+
+                Call<FilmAPI> filmAPICall = apiInterface.getFilmById(timelineAPI.getFilmId());
+                FilmAPI filmAPI = null;
+                Call<CinemaAPI> cinemaAPICall = apiInterface.getCinemaById(timelineAPI.getCinemaId());
+                CinemaAPI cinemaAPI = null;
+                try {
+                    filmAPI = filmAPICall.execute().body();
+                    cinemaAPI = cinemaAPICall.execute().body();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                //
+                myTickets.setTicketId(ticketAPI.getId());
+                myTickets.setFilmId(filmAPI.getId());
+                myTickets.setFilmName(filmAPI.getTitle());
+                myTickets.setCinemaId(timelineAPI.getCinemaId());
+                myTickets.setUserId(ticketAPI.getUser());
+                myTickets.setFilmDateTime(timelineAPI.getDatetime());
+                myTickets.setFilmPlace(ticketAPI.getPlace());
+                myTickets.setFilmCinema(cinemaAPI.getName());
+                myTickets.setFilmUrl(APIClient.HOST + filmAPI.getPicUrl());
+                myTickets.setTicketCode(ticketAPI.getCode());
+                myTickets.setStatus(ticketAPI.getStatus());
+                myTickets.setTimelineId(timelineAPI.getId());
+                //
+
+                myTicketsArrayList.add(myTickets);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
 
-            myTickets.setTicketId(ticketAPI.getId());
-            myTickets.setFilmId(filmAPI.getId());
-            myTickets.setFilmName(filmAPI.getTitle());
-            myTickets.setCinemaId(ticketAPI.getCinemaId());
-            myTickets.setUserId(ticketAPI.getUser());
-
-
-            //
-
-
-            //
-
-            myTickets.setFilmDateTime(ticketAPI.getDate());
-            myTickets.setFilmPlace(ticketAPI.getPlace());
-            myTickets.setFilmCinema(cinemaAPI.getName());
-            myTickets.setFilmUrl(APIClient.HOST + filmAPI.getPicUrl());
-
-            //
-            myTickets.setTicketCode(ticketAPI.getCode());
-            //
-            myTickets.setStatus(ticketAPI.getStatus());
-            //
-
-            myTicketsArrayList.add(myTickets);
 
 
         }
@@ -231,29 +483,21 @@ public class TicketSearchFragment extends Fragment {
         mSearchView.setOnSearchListener(new FloatingSearchView.OnSearchListener() {
             @Override
             public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
-                String suggestion=searchSuggestion.getBody();
-//                Call<FilmAPI> call=apiInterface.getFilmByTitle(suggestion);
-//                call.enqueue(new Callback<FilmAPI>() {
-//                    @Override
-//                    public void onResponse(Call<FilmAPI> call, Response<FilmAPI> response) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<FilmAPI> call, Throwable t) {
-//
-//                    }
-//                });
+                String suggestion = searchSuggestion.getBody();
 
-                for(TicketItemSearch ticketItemSearch:myTicketsArrayList){
-                    if(suggestion.equals(ticketItemSearch.getFilmName())){
+                for (TicketItemSearch ticketItemSearch : myTicketsArrayList) {
+                    if (suggestion.equals(ticketItemSearch.getFilmName())) {
                         Toast.makeText(getActivity(), ticketItemSearch.getTicketCode(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getContext(), TicketActivity.class);
-                        intent.putExtra("ticketCode",ticketItemSearch.getTicketCode());
+                        intent.putExtra("ticketCode", ticketItemSearch.getTicketCode());
+                        intent.putExtra("timeline_id",ticketItemSearch.getTimelineId());
+                        intent.putExtra("film_id",ticketItemSearch.getFilmId());
+                        intent.putExtra("cinema_id",ticketItemSearch.getCinemaId());
+                        intent.putExtra("datetime",ticketItemSearch.getFilmDateTime());
+
                         getContext().startActivity(intent);
                     }
                 }
-
 
             }
 
@@ -274,8 +518,7 @@ public class TicketSearchFragment extends Fragment {
 
         ArrayList<MySearchSuggestion> res = new ArrayList<>();
 
-        for (TicketItemSearch myTicketsItem: myTicketsArrayList) {
-//            if(film.getTitle().conr){
+        for (TicketItemSearch myTicketsItem : myTicketsArrayList) {
             if (Pattern.compile(Pattern.quote(value), Pattern.CASE_INSENSITIVE).matcher(myTicketsItem.getFilmName()).find()) {
                 res.add(new MySearchSuggestion(myTicketsItem.getFilmName()));
             }
@@ -284,7 +527,6 @@ public class TicketSearchFragment extends Fragment {
         return res;
 
     }
-
 
 
 }

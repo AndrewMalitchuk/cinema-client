@@ -29,6 +29,7 @@ public class StatusActivity_ViewBinding implements Unbinder {
 
     target.sequenceLayout = Utils.findRequiredViewAsType(source, R.id.status, "field 'sequenceLayout'", SequenceLayout.class);
     target.selectedDateTimeTextView = Utils.findRequiredViewAsType(source, R.id.selectedDateTimeTextView, "field 'selectedDateTimeTextView'", TextView.class);
+    target.selectedTimelineStatusActivityTextView = Utils.findRequiredViewAsType(source, R.id.selectedTimelineStatusActivityTextView, "field 'selectedTimelineStatusActivityTextView'", TextView.class);
     target.floatingActionButton = Utils.findRequiredViewAsType(source, R.id.floatingActionButton, "field 'floatingActionButton'", FloatingActionButton.class);
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar7, "field 'toolbar'", Toolbar.class);
     target.calendarView = Utils.findRequiredViewAsType(source, R.id.calendarView, "field 'calendarView'", CalendarView.class);
@@ -43,6 +44,7 @@ public class StatusActivity_ViewBinding implements Unbinder {
 
     target.sequenceLayout = null;
     target.selectedDateTimeTextView = null;
+    target.selectedTimelineStatusActivityTextView = null;
     target.floatingActionButton = null;
     target.toolbar = null;
     target.calendarView = null;

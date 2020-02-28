@@ -35,6 +35,10 @@ public class TicketItemSearch {
     @Setter
     private String filmUrl;
 
+    @Getter
+    @Setter
+    private Integer timelineId;
+
 
     @Getter
     @Setter

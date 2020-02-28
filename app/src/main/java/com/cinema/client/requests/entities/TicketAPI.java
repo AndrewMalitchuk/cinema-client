@@ -28,11 +28,11 @@ public class TicketAPI {
     @Expose
     private String code;
 
-    @Getter
-    @Setter
-    @SerializedName("date")
-    @Expose
-    private String date;
+//    @Getter
+//    @Setter
+//    @SerializedName("date")
+//    @Expose
+//    private String date;
 
     @Getter
     @Setter
@@ -40,17 +40,17 @@ public class TicketAPI {
     @Expose
     private Integer status;
 
-    @Getter
-    @Setter
-    @SerializedName("cinema_id")
-    @Expose
-    private Integer cinemaId;
-
-    @Getter
-    @Setter
-    @SerializedName("film_id")
-    @Expose
-    private Integer filmId;
+//    @Getter
+//    @Setter
+//    @SerializedName("cinema_id")
+//    @Expose
+//    private Integer cinemaId;
+//
+//    @Getter
+//    @Setter
+//    @SerializedName("film_id")
+//    @Expose
+//    private Integer filmId;
 
     @Getter
     @Setter
@@ -58,34 +58,12 @@ public class TicketAPI {
     @Expose
     private Integer user;
 
-    /**
-     * No args constructor for use in serialization
-     *
-     */
-    private TicketAPI() {
-    }
+    @Getter
+    @Setter
+    @SerializedName("timeline_id")
+    @Expose
+    private Integer timeline_id;
 
-    /**
-     *
-     * @param date
-     * @param code
-     * @param cinemaId
-     * @param filmId
-     * @param id
-     * @param place
-     * @param user
-     * @param status
-     */
-    private TicketAPI(Integer id, String place, String code, String date, Integer status, Integer cinemaId, Integer filmId, Integer user) {
-        super();
-        this.id = id;
-        this.place = place;
-        this.code = code;
-        this.date = date;
-        this.status = status;
-        this.cinemaId = cinemaId;
-        this.filmId = filmId;
-        this.user = user;
-    }
+
 
 }

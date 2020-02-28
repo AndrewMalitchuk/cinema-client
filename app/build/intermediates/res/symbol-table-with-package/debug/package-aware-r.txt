@@ -2974,6 +2974,7 @@ id select_dialog_listview
 id selected
 id selectedDateTimeTextView
 id selectedPlacesTextView
+id selectedTimelineStatusActivityTextView
 id sequential
 id serif
 id shadow

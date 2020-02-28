@@ -343,6 +343,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
             List<TimelineAPI> result = call.execute().body();
 
 
+
+
             List<FilmAPI> films = new ArrayList<>();
 
             Set<Integer> uniqueFilms = new HashSet<>();

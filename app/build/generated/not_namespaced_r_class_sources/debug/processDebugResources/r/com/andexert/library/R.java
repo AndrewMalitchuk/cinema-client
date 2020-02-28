@@ -33,7 +33,7 @@ public final class R {
 
         public static final int doubleRipple = 0x7f0a0110;
         public static final int rectangle = 0x7f0a0247;
-        public static final int simpleRipple = 0x7f0a028d;
+        public static final int simpleRipple = 0x7f0a028e;
     }
     public static final class style {
         private style() {}

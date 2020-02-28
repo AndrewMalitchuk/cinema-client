@@ -1,5 +1,10 @@
 package com.cinema.client.etc;
 
+import com.cinema.client.requests.entities.TimelineAPI;
+
+import lombok.Getter;
+import lombok.Setter;
+
 public class MyItem{
 
     private boolean isActive;
@@ -8,12 +13,28 @@ public class MyItem{
     private boolean isSelected;
     private String subtitle;
 
+    //
+    @Getter
+    @Setter
+    private TimelineAPI timelineAPI;
+    //
+
+
     public MyItem(boolean isActive, String formattedDate, String title, boolean isSelected, String subtitle) {
         this.isActive = isActive;
         this.formattedDate = formattedDate;
         this.title = title;
         this.isSelected = isSelected;
         this.subtitle = subtitle;
+    }
+
+    public MyItem(boolean isActive, String formattedDate, String title, boolean isSelected, String subtitle, TimelineAPI timelineAPI) {
+        this.isActive = isActive;
+        this.formattedDate = formattedDate;
+        this.title = title;
+        this.isSelected = isSelected;
+        this.subtitle = subtitle;
+        this.timelineAPI=timelineAPI;
     }
 
     public boolean isActive() {

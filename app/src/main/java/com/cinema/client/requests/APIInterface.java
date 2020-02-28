@@ -69,15 +69,24 @@ public interface APIInterface {
     @POST(api_ticket)
     Call<TicketAPI> updateTicketById(@Query("id") int id, @Body TicketAPI ticket);
 
+//    @Multipart
+//    @POST(api_ticket)
+//    Call<TicketAPI> createTicket(@Part("place") RequestBody place,
+//                                 @Part("code") RequestBody code,
+//                                 @Part("status") RequestBody status,
+//                                 @Part("cinema_id") RequestBody cinema_id,
+//                                 @Part("film_id") RequestBody film_id,
+//                                 @Part("user") RequestBody user,
+//                                 @Part("date") RequestBody date,
+//                                 @Header("Authorization") String authHeader);
+
     @Multipart
     @POST(api_ticket)
     Call<TicketAPI> createTicket(@Part("place") RequestBody place,
                                  @Part("code") RequestBody code,
                                  @Part("status") RequestBody status,
-                                 @Part("cinema_id") RequestBody cinema_id,
-                                 @Part("film_id") RequestBody film_id,
                                  @Part("user") RequestBody user,
-                                 @Part("date") RequestBody date,
+                                 @Part("timeline_id") RequestBody timeline_id,
                                  @Header("Authorization") String authHeader);
 
 
@@ -91,6 +100,16 @@ public interface APIInterface {
                                  @Part("film_id") RequestBody film_id,
                                  @Part("user") RequestBody user,
                                  @Part("date") RequestBody date,
+                                 @Header("Authorization") String authHeader);
+
+    @Multipart
+    @PUT(api_ticket)
+    Call<TicketAPI> updateTicket(@Query("id") int id,
+                                 @Part("place") RequestBody place,
+                                 @Part("code") RequestBody code,
+                                 @Part("status") RequestBody status,
+                                 @Part("timeline_id") RequestBody timeline_id,
+                                 @Part("user") RequestBody user,
                                  @Header("Authorization") String authHeader);
 
 
@@ -111,10 +130,20 @@ public interface APIInterface {
     Call<List<TimelineAPI>> getTimeline();
 
     @GET(api_timeline)
-    Call<List<TimelineAPI>> getTimelineByCinemaId(@Query("id") int id);
+    Call<List<TimelineAPI>> getTimelineByCinemaId(@Query("cinema_id") int cinema_id);
+
+    @GET(api_timeline)
+    Observable<TimelineAPI> getTimelineByIdRx(@Query("id") int id);
+
+    @GET(api_timeline)
+    Call<TimelineAPI> getTimelineById(@Query("id") int id);
+
 
     @GET(api_timeline)
     Call<List<TimelineAPI>> getTimelineByCinemaIdAndFilmId(@Query("cinema_id") int cinema_id, @Query("film_id") int film_id);
+
+    @GET(api_timeline)
+    Call<TimelineAPI> getTimelineByCinemaIdAndFilmIdAndDate(@Query("cinema_id") int cinema_id, @Query("film_id") int film_id, @Query("date") String date);
 
     @GET(api_timeline)
     Call<List<TimelineAPI>> getTimelineByDateAndCinemaId(@Query("date") String date, @Query("cinema_id") int cinema_id);

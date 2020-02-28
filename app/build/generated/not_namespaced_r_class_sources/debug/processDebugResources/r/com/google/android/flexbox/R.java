@@ -48,12 +48,12 @@ public final class R {
         public static final int nowrap = 0x7f0a0216;
         public static final int row = 0x7f0a0254;
         public static final int row_reverse = 0x7f0a0255;
-        public static final int space_around = 0x7f0a0294;
-        public static final int space_between = 0x7f0a0295;
-        public static final int space_evenly = 0x7f0a0296;
-        public static final int stretch = 0x7f0a02a9;
-        public static final int wrap = 0x7f0a0353;
-        public static final int wrap_reverse = 0x7f0a0355;
+        public static final int space_around = 0x7f0a0295;
+        public static final int space_between = 0x7f0a0296;
+        public static final int space_evenly = 0x7f0a0297;
+        public static final int stretch = 0x7f0a02aa;
+        public static final int wrap = 0x7f0a0354;
+        public static final int wrap_reverse = 0x7f0a0356;
     }
     public static final class styleable {
         private styleable() {}

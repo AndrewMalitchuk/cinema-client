@@ -1,12 +1,14 @@
 package com.cinema.client.etc;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cinema.client.R;
 import com.cinema.client.activity.Main2Activity;
+import com.cinema.client.requests.entities.TimelineAPI;
 import com.pd.chocobar.ChocoBar;
 import com.transferwise.sequencelayout.SequenceAdapter;
 import com.transferwise.sequencelayout.SequenceStep;
@@ -25,7 +27,9 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
 
 
     TextView selectedDateTimeTextView;
+    TextView selectedTimelineStatusActivityTextView;
     String activeDate;
+    List<TimelineAPI> list;
 
     public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context) {
         this.items = items;
@@ -36,6 +40,15 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
         this.items = items;
         this.context = context;
         this.selectedDateTimeTextView = selectedDateTimeTextView;
+        this.activeDate = activeDate;
+    }
+
+    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, TextView selectedTimelineStatusActivityTextView, String activeDate) {
+        this.items = items;
+        this.context = context;
+        this.selectedDateTimeTextView = selectedDateTimeTextView;
+        this.selectedTimelineStatusActivityTextView = selectedTimelineStatusActivityTextView;
+
         this.activeDate = activeDate;
     }
 
@@ -68,15 +81,34 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
             // XXX
 //            curent=new SimpleDateFormat("dd.MM.yyy").parse(activeDate);
 //            temp=new SimpleDateFormat("dd.MM.yyy").parse(myItem.getFormattedDate());
-            curent = new SimpleDateFormat("hh:mm:ss").parse(activeDate);
-            temp = new SimpleDateFormat("hh:mm:ss").parse(myItem.getFormattedDate());
+            Log.d("Active Date", activeDate);
+            Log.d("Formatter Date", myItem.getFormattedDate());
+
+            curent = new SimpleDateFormat("yyyy.MM.dd hh:mm:ss").parse(activeDate);
+            temp = new SimpleDateFormat("yyyy.MM.dd hh:mm:ss").parse(myItem.getFormattedDate());
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
-        if (temp.after(curent) || temp.compareTo(curent) == 0) {
+//        if (temp.after(curent) || temp.compareTo(curent) == 0) {
+//
+//            if (temp.compareTo(curent) == 0) {
+//                sequenceStep.setActive(true);
+//                sequenceStep.setSelected(true);
+//            }
+//
+//            sequenceStep.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+////                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
+//                    selectedDateTimeTextView.setText(myItem.getFormattedDate());
+//                }
+//            });
+//        }
 
-            if (temp.compareTo(curent) == 0) {
+        if (true) {
+
+            if (true) {
                 sequenceStep.setActive(true);
                 sequenceStep.setSelected(true);
             }
@@ -86,6 +118,8 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
                 public void onClick(View view) {
 //                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
                     selectedDateTimeTextView.setText(myItem.getFormattedDate());
+                    Log.d("TimelineAPI",myItem.getTimelineAPI().getId()+"");
+                    selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getId()+"");
                 }
             });
         }

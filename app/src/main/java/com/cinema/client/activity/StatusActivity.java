@@ -62,6 +62,9 @@ public class StatusActivity extends AppCompatActivity {
     @BindView(R.id.selectedDateTimeTextView)
     TextView selectedDateTimeTextView;
 
+    @BindView(R.id.selectedTimelineStatusActivityTextView)
+    TextView selectedTimelineStatusActivityTextView;
+
     @BindView(R.id.floatingActionButton)
     FloatingActionButton floatingActionButton;
 
@@ -80,6 +83,8 @@ public class StatusActivity extends AppCompatActivity {
     private APIInterface apiInterface;
 
     private boolean isFilmTimeline;
+
+    private TimelineAPI currentTimeline;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,59 +161,6 @@ public class StatusActivity extends AppCompatActivity {
 
 
 
-//        List<MyItem> list = new ArrayList<>();
-//
-//        apiInterface = APIClient.getClient().create(APIInterface.class);
-//        Call<List<TimelineAPI>> call = apiInterface.getTimelineByCinemaIdAndFilmId(cinema_id, film_id);
-//
-//        call.enqueue(new Callback<List<TimelineAPI>>() {
-//            @Override
-//            public void onResponse(Call<List<TimelineAPI>> call, Response<List<TimelineAPI>> response) {
-//
-//
-//                try {
-//                    FilmAPI film = apiInterface.getFilmById(film_id).execute().body();
-////                    HallAPI hall=apiInterface.getHallByCinemaId().execute().body();
-//
-//                    String currentTime = "15:00:00";
-//
-//
-//                    for (TimelineAPI timeline : response.body()) {
-//                        list.add(new MyItem(false, timeline.getTime(), film.getTitle(), false, "Ruby hall"));
-//                    }
-//
-//                    Collections.sort(list, new Comparator<MyItem>() {
-//                        @Override
-//                        public int compare(MyItem u1, MyItem u2) {
-//                            return u1.getFormattedDate().compareTo(u2.getFormattedDate());
-//                        }
-//                    });
-//
-//
-////                    sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext()));
-//
-////                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-////                        sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView,
-////                                DateTimeFormatter.ofPattern("hh:mm:ss").format(LocalDateTime.now())));
-////                    }
-//                    sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, currentTime));
-//
-//
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                    Intent intent = new Intent(StatusActivity.this, ErrorActivity.class);
-//                    startActivity(intent);
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<TimelineAPI>> call, Throwable t) {
-//                call.cancel();
-//                Intent intent = new Intent(StatusActivity.this, ErrorActivity.class);
-//                startActivity(intent);
-//            }
-//        });
 
 
         //
@@ -244,13 +196,13 @@ public class StatusActivity extends AppCompatActivity {
 
         String selectedDate = selectedDateTimeTextView.getText().toString();
 
-        if (calendarView.getDate()<= new Date(new Date().getYear(),new Date().getMonth(),new Date().getDate()).getTime()){
-            ChocoBar.builder().setActivity(StatusActivity.this)
-                    .setText("Please, check your date!")
-                    .setDuration(ChocoBar.LENGTH_SHORT)
-                    .red()
-                    .show();
-        }else {
+//        if (calendarView.getDate()<= new Date(new Date().getYear(),new Date().getMonth(),new Date().getDate()).getTime()){
+//            ChocoBar.builder().setActivity(StatusActivity.this)
+//                    .setText("Please, check your date!")
+//                    .setDuration(ChocoBar.LENGTH_SHORT)
+//                    .red()
+//                    .show();
+//        }else {
             if (selectedDate.equals("Nothing yet...")) {
 
                 ChocoBar.builder().setActivity(StatusActivity.this)
@@ -269,12 +221,13 @@ public class StatusActivity extends AppCompatActivity {
                 String date=new SimpleDateFormat("yyyy-MM-dd").format(new Date(calendarView.getDate()));
 
                 getIntent().putExtra("datetime", date + " " + selectedDateTimeTextView.getText().toString());
+                getIntent().putExtra("timeline_id",selectedTimelineStatusActivityTextView.getText());
                 setResult(RESULT_OK, getIntent());
                 finish();
 
 
             }
-        }
+//        }
 
 
     }
@@ -295,14 +248,14 @@ public class StatusActivity extends AppCompatActivity {
 
 //                    HallAPI hall=apiInterface.getHallByCinemaId().execute().body();
 
-                    String currentTime = "00:00:00";
+                    String currentTime = "2020-01-01T00:00:00+02:00";
 
 
                     for (TimelineAPI timeline : response.body()) {
 
                         FilmAPI film = apiInterface.getFilmById(timeline.getFilmId()).execute().body();
 
-                        list.add(new MyItem(false, timeline.getTime(), film.getTitle(), false, "Ruby hall"));
+                        list.add(new MyItem(false, timeline.getDatetime(), film.getTitle(), false, timeline.getPrice()+" ₴"));
                     }
 
                     if(list.size()==0){
@@ -362,14 +315,14 @@ public class StatusActivity extends AppCompatActivity {
 
 //                    HallAPI hall=apiInterface.getHallByCinemaId().execute().body();
 
-                    String currentTime = "00:00:00";
+                    String currentTime = "2020-01-01T00:00:00+02:00";
 
 
                     for (TimelineAPI timeline : response.body()) {
 
                         FilmAPI film = apiInterface.getFilmById(timeline.getFilmId()).execute().body();
 
-                        list.add(new MyItem(false, timeline.getTime(), film.getTitle(), false, "Ruby hall"));
+                        list.add(new MyItem(false, timeline.getDatetime(), film.getTitle(), false, timeline.getPrice()+" ₴",timeline));
                     }
 
                     if(list.size()==0){
@@ -389,7 +342,13 @@ public class StatusActivity extends AppCompatActivity {
                         });
 
 
-                        sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, currentTime));
+//                        sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, currentTime));
+                        sequenceLayout.setAdapter(new StatusAdapter(
+                                list,
+                                getApplicationContext(),
+                                selectedDateTimeTextView,
+                                selectedTimelineStatusActivityTextView,
+                                currentTime));
                     }
 
                 } catch (IOException e) {

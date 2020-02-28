@@ -38,7 +38,7 @@ public final class R {
         public static final int normal = 0x7f0a020c;
         public static final int rounded = 0x7f0a0252;
         public static final int scallop = 0x7f0a025d;
-        public static final int vertical = 0x7f0a033e;
+        public static final int vertical = 0x7f0a033f;
     }
     public static final class string {
         private string() {}

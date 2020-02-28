@@ -54,13 +54,13 @@ public final class R {
         public static final int right = 0x7f0a024d;
         public static final int runningTransitions = 0x7f0a0256;
         public static final int scene_layoutid_cache = 0x7f0a025e;
-        public static final int sequential = 0x7f0a0280;
-        public static final int together = 0x7f0a0316;
-        public static final int top = 0x7f0a031e;
-        public static final int transitionAlpha = 0x7f0a0321;
-        public static final int transitionName = 0x7f0a0322;
-        public static final int transitionPosition = 0x7f0a0323;
-        public static final int transitionTransform = 0x7f0a0324;
+        public static final int sequential = 0x7f0a0281;
+        public static final int together = 0x7f0a0317;
+        public static final int top = 0x7f0a031f;
+        public static final int transitionAlpha = 0x7f0a0322;
+        public static final int transitionName = 0x7f0a0323;
+        public static final int transitionPosition = 0x7f0a0324;
+        public static final int transitionTransform = 0x7f0a0325;
     }
     public static final class styleable {
         private styleable() {}

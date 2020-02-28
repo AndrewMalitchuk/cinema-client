@@ -104,6 +104,13 @@ public class TicketActivity extends AppCompatActivity {
 
 
 
+        int cinema_id=getIntent().getIntExtra("cinema_id",-1);
+        int film_id=getIntent().getIntExtra("film_id",-1);
+        int timeline_id=getIntent().getIntExtra("timeline_id",-1);
+        String datetime=getIntent().getStringExtra("datetime");
+        Log.d("intent",cinema_id+" "+film_id+" "+timeline_id+" "+datetime);
+
+
 
         sharedpreferences = getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE);
         if (sharedpreferences != null) {
@@ -184,6 +191,7 @@ public class TicketActivity extends AppCompatActivity {
 
 
 
+
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {
             BitMatrix bitMatrix = multiFormatWriter.encode(content.getCode(), BarcodeFormat.QR_CODE,1024,1024);
@@ -197,7 +205,7 @@ public class TicketActivity extends AppCompatActivity {
         qrCodeTicketActivityEditText.setText(content.getCode());
 
 
-        Call<FilmAPI> callFilmApi=apiInterface.getFilmById(content.getFilmId());
+        Call<FilmAPI> callFilmApi=apiInterface.getFilmById(getIntent().getIntExtra("film_id",-1));
         callFilmApi.enqueue(new Callback<FilmAPI>() {
             @Override
             public void onResponse(Call<FilmAPI> call, Response<FilmAPI> response) {
@@ -215,7 +223,7 @@ public class TicketActivity extends AppCompatActivity {
             }
         });
 
-        Call<CinemaAPI> callCinemaApi=apiInterface.getCinemaById(content.getCinemaId());
+        Call<CinemaAPI> callCinemaApi=apiInterface.getCinemaById(getIntent().getIntExtra("cinema_id",-1));
         callCinemaApi.enqueue(new Callback<CinemaAPI>() {
             @Override
             public void onResponse(Call<CinemaAPI> call, Response<CinemaAPI> response) {
@@ -238,7 +246,7 @@ public class TicketActivity extends AppCompatActivity {
 
 
         //
-        String temp_datetime=content.getDate();
+        String temp_datetime=getIntent().getStringExtra("datetime");
         String temp_date=temp_datetime.split("T")[0];
         String temp_time=temp_datetime.split("T")[1].substring(0,5);
 

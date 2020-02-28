@@ -25,6 +25,7 @@ import com.cinema.client.fragments.TicketSearchFragment;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.TicketAPI;
+import com.cinema.client.requests.entities.TimelineAPI;
 import com.cinema.client.requests.entities.TokenAPI;
 import com.cooltechworks.creditcarddesign.CardEditActivity;
 import com.cooltechworks.creditcarddesign.CreditCardUtils;
@@ -32,6 +33,8 @@ import com.cooltechworks.creditcarddesign.CreditCardView;
 import com.developer.mtextfield.ExtendedEditText;
 import com.droidbyme.dialoglib.DroidDialog;
 import com.pd.chocobar.ChocoBar;
+
+import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -71,10 +74,12 @@ public class NewNewCardActivity extends AppCompatActivity {
     @BindView(R.id.placesBillActivityExtendedEditText)
     ExtendedEditText placesBillActivityExtendedEditText;
 
+
     private int filmId;
     private int cinemaId;
     private String cinemaName;
     private String hallPlace;
+    private Integer timeline_id;
 
     public static final String FAVOURITE_CINEMAS_PREF = "favourite_cinema_pref";
     private SharedPreferences sharedpreferences;
@@ -88,6 +93,10 @@ public class NewNewCardActivity extends AppCompatActivity {
 
     public static final String ACCOUNT_PREF = "accountPref";
     private SharedPreferences sharedpreferences1;
+
+    //
+    TimelineAPI temp = null;
+    //
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +132,13 @@ public class NewNewCardActivity extends AppCompatActivity {
             cinemaNameBillActivityExtendedEditText.setText(cinemaName);
         }
 
+        //
+        String datetime = "2020-02-27T23:05:02+02:00";
+        datetimeBillActivityExtendedEditText.setText(datetime);
+        //
+
+
+        //
 
         ProSwipeButton proSwipeBtn = (ProSwipeButton) findViewById(R.id.proswipebutton_main_error);
         proSwipeBtn.setOnSwipeListener(new ProSwipeButton.OnSwipeListener() {
@@ -147,6 +163,7 @@ public class NewNewCardActivity extends AppCompatActivity {
                             // TODO: add placesBillActivityExtendedEditText.getText() != null
                             // TODO: add datetimeBillActivityExtendedEditText.getText().length()!=0
                             if (cinemaNameBillActivityExtendedEditText.getText().length() != 0) {
+
 
                                 final boolean[] success = {true};
 
@@ -179,9 +196,12 @@ public class NewNewCardActivity extends AppCompatActivity {
                                             RequestBody place = RequestBody.create(MediaType.parse("text/plain"), ticketPlace);
                                             RequestBody code = RequestBody.create(MediaType.parse("text/plain"), "");
                                             RequestBody status = RequestBody.create(MediaType.parse("text/plain"), "2");
-                                            RequestBody cinemaIdRequestBody = RequestBody.create(MediaType.parse("text/plain"), cinemaId + "");
-                                            RequestBody filmIdRequestBody = RequestBody.create(MediaType.parse("text/plain"), filmId + "");
+
+
+                                            RequestBody timeline = RequestBody.create(MediaType.parse("text/plain"), timeline_id.toString());
+
                                             RequestBody userId = RequestBody.create(MediaType.parse("text/plain"), sharedpreferences1.getInt("userId", -1) + "");
+
 //                                        RequestBody date = RequestBody.create(MediaType.parse("text/plain"), datetimeBillActivityExtendedEditText.getText().toString());
                                             RequestBody date = RequestBody.create(MediaType.parse("text/plain"), "2020-02-15 10:10:10");
 
@@ -190,10 +210,8 @@ public class NewNewCardActivity extends AppCompatActivity {
                                                     place,
                                                     code,
                                                     status,
-                                                    cinemaIdRequestBody,
-                                                    filmIdRequestBody,
                                                     userId,
-                                                    date,
+                                                    timeline,
                                                     "Bearer " + token);
 
                                             newTicket.enqueue(new Callback<TicketAPI>() {
@@ -345,8 +363,6 @@ public class NewNewCardActivity extends AppCompatActivity {
                     String expiry = data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY);
                     String cvv = data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV);
 
-//                    if (reqCode == CREATE_NEW_CARD) {
-
                     CreditCardView creditCardView = new CreditCardView(this);
 
                     creditCardView.setCVV(cvv);
@@ -360,14 +376,6 @@ public class NewNewCardActivity extends AppCompatActivity {
 
                     addCardButton.setVisibility(View.GONE);
 
-//                    } else {
-//
-//                        CreditCardView creditCardView = (CreditCardView) cardContainer.getChildAt(reqCode);
-//
-//                        creditCardView.setCardExpiry(expiry);
-//                        creditCardView.setCardNumber(cardNumber);
-//                        creditCardView.setCardHolderName(name);
-//                        creditCardView.setCVV(cvv);
 //
                 }
                 break;
@@ -375,6 +383,15 @@ public class NewNewCardActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK) {
                     String datetime = data.getStringExtra("datetime");
                     datetimeBillActivityExtendedEditText.setText(datetime);
+                    //
+                    //TODO: REMOVE
+                    datetime = "2020-02-27T23:05:02+02:00";
+                    datetimeBillActivityExtendedEditText.setText(datetime);
+                    //
+
+                    timeline_id = Integer.valueOf(data.getStringExtra("timeline_id"));
+                    Log.d("timeline_id", timeline_id.toString());
+
                 }
                 break;
             case PICK_CINEMA_SEARCH_REQUEST:
@@ -383,6 +400,8 @@ public class NewNewCardActivity extends AppCompatActivity {
                     cinemaId = data.getIntExtra("cinemaId", -1);
                     Log.d("CINEMA", cinemaName);
                     cinemaNameBillActivityExtendedEditText.setText(cinemaName);
+
+
                 }
                 break;
             case PICK_HALL_PLACE_REQUEST:
@@ -390,6 +409,10 @@ public class NewNewCardActivity extends AppCompatActivity {
                     hallPlace = data.getStringExtra("hallPlace");
                     placesBillActivityExtendedEditText.setText(hallPlace);
                     Log.d("PLACE", hallPlace);
+
+                    //
+
+                    //
 
                 }
                 break;

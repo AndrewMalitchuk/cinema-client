@@ -124,6 +124,13 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                 Toast.makeText(context, "The position is:" + position, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, TicketActivity.class);
                 intent.putExtra("ticketCode", myTicketsList.get(position).getTicketCode());
+                //
+                intent.putExtra("ticketCode", myTicketsList.get(position).getTicketCode());
+                intent.putExtra("timeline_id",myTicketsList.get(position).getTimelineId());
+                intent.putExtra("film_id",myTicketsList.get(position).getFilmId());
+                intent.putExtra("cinema_id",myTicketsList.get(position).getCinemaId());
+                intent.putExtra("datetime",myTicketsList.get(position).getFilmDateTime());
+                //
                 context.startActivity(intent);
 
             }
@@ -231,8 +238,8 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                 3 + "");
         RequestBody cinema_id_ = RequestBody.create(MediaType.parse("text/plain"),
                 myTicketsList.get(positionOfDeleted).getCinemaId() + "");
-        RequestBody film_id_ = RequestBody.create(MediaType.parse("text/plain"),
-                myTicketsList.get(positionOfDeleted).getFilmId() + "");
+        RequestBody timeline_id_ = RequestBody.create(MediaType.parse("text/plain"),
+                myTicketsList.get(positionOfDeleted).getTimelineId() + "");
         RequestBody user_ = RequestBody.create(MediaType.parse("text/plain"),
                 myTicketsList.get(positionOfDeleted).getUserId() + "");
         RequestBody date_ = RequestBody.create(MediaType.parse("text/plain"),
@@ -240,7 +247,7 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
 
 
         Call<TicketAPI> call = apiInterface.updateTicket(
-                myTicketsList.get(positionOfDeleted).getTicketId(),place_, code_, status_, cinema_id_, film_id_, user_, date_, "Bearer " + tokenAPI.getAccess()
+                myTicketsList.get(positionOfDeleted).getTicketId(),place_, code_, status_,timeline_id_ , user_ , "Bearer " + tokenAPI.getAccess()
         );
 
         call.enqueue(new Callback<TicketAPI>() {

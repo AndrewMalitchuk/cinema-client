@@ -392,18 +392,18 @@ public final class R {
         public static final int search_plate = 0x7f0a0274;
         public static final int search_src_text = 0x7f0a0276;
         public static final int search_voice_btn = 0x7f0a0278;
-        public static final int shortcut = 0x7f0a0283;
-        public static final int showCustom = 0x7f0a0284;
-        public static final int showHome = 0x7f0a0286;
-        public static final int showTitle = 0x7f0a0288;
-        public static final int split_action_bar = 0x7f0a0298;
-        public static final int submit_area = 0x7f0a02ae;
-        public static final int tabMode = 0x7f0a02b4;
-        public static final int title = 0x7f0a030c;
-        public static final int up = 0x7f0a033b;
-        public static final int useLogo = 0x7f0a033c;
-        public static final int withText = 0x7f0a0352;
-        public static final int wrap_content = 0x7f0a0354;
+        public static final int shortcut = 0x7f0a0284;
+        public static final int showCustom = 0x7f0a0285;
+        public static final int showHome = 0x7f0a0287;
+        public static final int showTitle = 0x7f0a0289;
+        public static final int split_action_bar = 0x7f0a0299;
+        public static final int submit_area = 0x7f0a02af;
+        public static final int tabMode = 0x7f0a02b5;
+        public static final int title = 0x7f0a030d;
+        public static final int up = 0x7f0a033c;
+        public static final int useLogo = 0x7f0a033d;
+        public static final int withText = 0x7f0a0353;
+        public static final int wrap_content = 0x7f0a0355;
     }
     public static final class layout {
         private layout() {}
