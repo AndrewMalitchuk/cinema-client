@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/b5f879673bec40ef55716eaca14bb4b7/res/values-km/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "207",
+                        "endOffsets": "454"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "3950",
+                        "endColumns": "207",
+                        "endOffsets": "4153"
+                    }
+                },
+                {
                     "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/20770dccd6403c8027a019226e749630/res/values-km/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -55,24 +72,7 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/f7a84d15ad643e1979d9d1ce35b5a971/res/values-km/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "207",
-                        "endOffsets": "454"
-                    },
-                    "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "3950",
-                        "endColumns": "207",
-                        "endOffsets": "4153"
-                    }
-                },
-                {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/baf824eb36e9b94b8df6210cb93a270a/res/values-km/values.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/463874f79968f5e596b51bf6bb567c64/res/values-km/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",

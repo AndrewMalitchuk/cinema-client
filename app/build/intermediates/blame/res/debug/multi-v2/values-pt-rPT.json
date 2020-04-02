@@ -21,6 +21,23 @@
                     }
                 },
                 {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/values-pt-rPT/values-pt-rPT.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,173,246,354,468,552,678,800,930,1025,1118,1215,1305",
+                        "endColumns": "67,72,107,113,83,125,121,129,94,92,96,89,100",
+                        "endOffsets": "168,241,349,463,547,673,795,925,1020,1113,1210,1300,1401"
+                    },
+                    "to": {
+                        "startLines": "48,49,50,51,52,53,54,55,56,57,58,59,60",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "5778,5846,5919,6027,6141,6225,6351,6473,6603,6698,6791,6888,6978",
+                        "endColumns": "67,72,107,113,83,125,121,129,94,92,96,89,100",
+                        "endOffsets": "5841,5914,6022,6136,6220,6346,6468,6598,6693,6786,6883,6973,7074"
+                    }
+                },
+                {
                     "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/f010b034b2dcb5484a3f426072275c7b/res/values-pt-rPT/values-pt-rPT.xml",
                     "from": {
                         "startLines": "2",
@@ -35,23 +52,6 @@
                         "startOffsets": "7164",
                         "endColumns": "100",
                         "endOffsets": "7260"
-                    }
-                },
-                {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/baf824eb36e9b94b8df6210cb93a270a/res/values-pt-rPT/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "211",
-                        "endColumns": "102",
-                        "endOffsets": "313"
-                    },
-                    "to": {
-                        "startLines": "47",
-                        "startColumns": "4",
-                        "startOffsets": "5671",
-                        "endColumns": "106",
-                        "endOffsets": "5773"
                     }
                 },
                 {
@@ -72,24 +72,7 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/fa9a74acbb0326b584f9d791a150b8cc/res/values-pt-rPT/values-pt-rPT.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,173,246,354,468,552,678,800,930,1025,1118,1215,1305",
-                        "endColumns": "67,72,107,113,83,125,121,129,94,92,96,89,100",
-                        "endOffsets": "168,241,349,463,547,673,795,925,1020,1113,1210,1300,1401"
-                    },
-                    "to": {
-                        "startLines": "48,49,50,51,52,53,54,55,56,57,58,59,60",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "5778,5846,5919,6027,6141,6225,6351,6473,6603,6698,6791,6888,6978",
-                        "endColumns": "67,72,107,113,83,125,121,129,94,92,96,89,100",
-                        "endOffsets": "5841,5914,6022,6136,6220,6346,6468,6598,6693,6786,6883,6973,7074"
-                    }
-                },
-                {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/f7a84d15ad643e1979d9d1ce35b5a971/res/values-pt-rPT/values.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/b5f879673bec40ef55716eaca14bb4b7/res/values-pt-rPT/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -103,6 +86,23 @@
                         "startOffsets": "4037",
                         "endColumns": "203",
                         "endOffsets": "4236"
+                    }
+                },
+                {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/463874f79968f5e596b51bf6bb567c64/res/values-pt-rPT/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "211",
+                        "endColumns": "102",
+                        "endOffsets": "313"
+                    },
+                    "to": {
+                        "startLines": "47",
+                        "startColumns": "4",
+                        "startOffsets": "5671",
+                        "endColumns": "106",
+                        "endOffsets": "5773"
                     }
                 }
             ]

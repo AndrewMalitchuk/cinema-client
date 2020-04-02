@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.abdularis:AnalogTvNoiseView:0.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1da6569efed865b86bb90c1598a94253/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1da6569efed865b86bb90c1598a94253/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9d505ea746d9353df7c446d5c4acc81b/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9d505ea746d9353df7c446d5c4acc81b/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

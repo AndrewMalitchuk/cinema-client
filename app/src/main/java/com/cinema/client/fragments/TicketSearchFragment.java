@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.StrictMode;
 import android.util.Log;
@@ -19,6 +20,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.arlib.floatingsearchview.FloatingSearchView;
@@ -38,6 +41,7 @@ import com.cinema.client.requests.entities.TicketAPI;
 import com.cinema.client.requests.entities.TimelineAPI;
 import com.cinema.client.requests.entities.TokenAPI;
 import com.pd.chocobar.ChocoBar;
+import com.rw.loadingdialog.LoadingView;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -66,10 +70,16 @@ public class TicketSearchFragment extends Fragment {
     @BindView(R.id.floating_search_view)
     FloatingSearchView mSearchView;
 
+    @BindView(R.id.frame)
+//    SwipeRefreshLayout frame;
+    FrameLayout frame;
+
     TicketSearchAdapter myTicketsAdapter;
     ArrayList<TicketItemSearch> myTicketsArrayList;
 
     List<TicketAPI> ticketList;
+
+    LoadingView loadingView;
 
 
     private APIInterface apiInterface;
@@ -101,6 +111,18 @@ public class TicketSearchFragment extends Fragment {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
         }
+
+        //
+
+        loadingView = new LoadingView.Builder(getContext())
+                .setProgressColorResource(R.color.colorAccent)
+                .setBackgroundColorRes(R.color.white)
+                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+                .attachTo(frame);
+
+        loadingView.show();
+
+        //
 
 
         //
@@ -152,6 +174,8 @@ public class TicketSearchFragment extends Fragment {
                 .setDuration(ChocoBar.LENGTH_SHORT)
                 .build()
                 .show();
+
+        loadingView.hide();
 
     }
 

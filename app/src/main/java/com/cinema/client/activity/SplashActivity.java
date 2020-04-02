@@ -69,6 +69,8 @@ public class SplashActivity extends AppCompatActivity {
                 RequestBody login_ = RequestBody.create(MediaType.parse("text/plain"),
                         login);
 
+                Log.d("splash",password+" "+login);
+
                 Call<TokenAPI> call=apiInterface.refreshToken(login_,password_);
                 call.enqueue(new Callback<TokenAPI>() {
                     @Override
@@ -82,7 +84,7 @@ public class SplashActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<TokenAPI> call, Throwable t) {
                         Log.d("FROM","2");
-                        Intent intent=new Intent(SplashActivity.this,LoginActivity.class);
+                        Intent intent=new Intent(SplashActivity.this, LoginActivity.class);
                         startActivity(intent);
                     }
                 });
@@ -105,3 +107,4 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 }
+

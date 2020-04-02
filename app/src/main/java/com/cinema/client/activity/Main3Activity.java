@@ -222,11 +222,13 @@ public class Main3Activity extends AppCompatActivity {
                                         Toast.makeText(Main3Activity.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
                                         //
 
-                                        pref.edit().clear();
-                                        pref.edit().commit();
+//                                        pref.edit().clear();
+//                                        pref.edit().commit();
+//
+//                                        getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE).edit().clear();
+//                                        getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE).edit().commit();
 
-                                        getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE).edit().clear();
-                                        getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE).edit().commit();
+                                        getApplicationContext().getSharedPreferences("ACCOUNT_PREF", 0).edit().clear().commit();
 
 
                                         Intent intent = new Intent(Main3Activity.this, LoginActivity.class);

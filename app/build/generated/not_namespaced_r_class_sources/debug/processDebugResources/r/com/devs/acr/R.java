@@ -12,17 +12,17 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int ic_warning_black_36dp = 0x7f08012e;
-        public static final int ic_warning_black_48dp = 0x7f08012f;
+        public static final int ic_warning_black_36dp = 0x7f08012c;
+        public static final int ic_warning_black_48dp = 0x7f08012d;
     }
     public static final class id {
         private id() {}
 
-        public static final int ll_layout = 0x7f0a01ad;
-        public static final int tv_cancel = 0x7f0a032c;
-        public static final int tv_message = 0x7f0a032d;
-        public static final int tv_report = 0x7f0a032f;
-        public static final int tv_title = 0x7f0a0330;
+        public static final int ll_layout = 0x7f0a01af;
+        public static final int tv_cancel = 0x7f0a0337;
+        public static final int tv_message = 0x7f0a0338;
+        public static final int tv_report = 0x7f0a033a;
+        public static final int tv_title = 0x7f0a033b;
     }
     public static final class layout {
         private layout() {}

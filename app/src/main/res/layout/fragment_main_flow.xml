@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.MainFlowFragment">
+    tools:context=".fragments.MainFlowFragment"
+    android:id="@+id/refreshMainFlow"
+    >
 
     <!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
         <!--android:id="@+id/reloadMainFlowFragmentSwipeRefreshLayout"-->
@@ -16,7 +18,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -627,8 +629,10 @@
 
 
             </LinearLayout>
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView >
+        <!--</ScrollView>-->
+
 
     </LinearLayout>
     <!--</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
-</FrameLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

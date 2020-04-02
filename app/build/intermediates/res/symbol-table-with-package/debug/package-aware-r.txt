@@ -2224,7 +2224,6 @@ drawable ic_undraw_address_udes
 drawable ic_undraw_apps_m7mh
 drawable ic_undraw_map_1r69
 drawable ic_undraw_movie_night_93wl
-drawable ic_undraw_no_data_qbuo
 drawable ic_undraw_reminders_697p
 drawable ic_unionpay
 drawable ic_video_label_black_24dp
@@ -2295,6 +2294,7 @@ drawable ripple
 drawable round_navigation_white_48
 drawable rounded_button_selector
 drawable rounded_layout
+drawable rw_rounded_rect_white
 drawable sad_emoji
 drawable sci_fi
 drawable search_dialog_ic_search
@@ -2669,6 +2669,7 @@ id floatingActionButton3
 id floating_search_view
 id forever
 id fragment
+id frame
 id front
 id front_card_container
 id front_card_expiry
@@ -2761,6 +2762,7 @@ id listMode
 id list_item
 id list_item_section_sub_title
 id list_item_section_title
+id listview_background_shape
 id live_video_indicator
 id llProgressBar
 id ll_layout
@@ -2852,6 +2854,7 @@ id navigation_gifts
 id navigation_header_container
 id navigation_profile
 id navigation_shop
+id nearLinearLayout
 id nestedScrollView
 id never
 id next
@@ -2920,6 +2923,7 @@ id radio
 id rectangle
 id recyclerView
 id recycler_view
+id refreshMainFlow
 id relativeLayout
 id relativeLayout2
 id relativeLayout_swipeBtn_contentContainer
@@ -2934,6 +2938,13 @@ id row
 id row_reverse
 id runningTransitions
 id rv_items
+id rw_dialog_container
+id rw_dialog_progress_bar
+id rw_dialog_progress_textView
+id rw_loadingview_background
+id rw_loadingview_progress
+id rw_loadingview_progress2
+id rw_loadingview_retry_container
 id sans
 id save_image_matrix
 id save_non_transition_alpha
@@ -3420,6 +3431,9 @@ layout pausable_progress
 layout progress_layout
 layout pugnotification_custom
 layout recycler_section_header
+layout rw_dialog_progress
+layout rw_layout_loading_retry
+layout rw_layout_progress
 layout search_dialog_compat
 layout search_query_section
 layout search_suggestion_item
@@ -3670,10 +3684,12 @@ string library_bottomdialogs_licenseId
 string library_bottomdialogs_repositoryLink
 string license
 string linkedin
+string load_failed
 string loginLoginActivityButtonString
 string loginPromptLoginActivityTextViewString
 string loginSignUpActivityTextViewString
 string long_text
+string lorem_ipsum
 string map_mode
 string mapbox
 string mapnik
@@ -3755,6 +3771,7 @@ string pugnotification_text_title
 string rate_five_stars
 string remind_me_later
 string remove_ads
+string retry_btn
 string roads_nl
 string samples
 string search_menu_title

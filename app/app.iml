@@ -198,6 +198,7 @@
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-service:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.android.gms:play-services-measurement-base:17.2.1@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.IsPra94:EasyGifView:1.0.1@aar" level="project" />
+    <orderEntry type="library" name="Gradle: com.github.ravindu1024:android-loadingdialog:1.0.3@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.keiferstone:nonet:2.0.4@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.google.firebase:firebase-messaging:20.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: com.xgc1986.android:parallaxpagertransformer:1.0.4@aar" level="project" />

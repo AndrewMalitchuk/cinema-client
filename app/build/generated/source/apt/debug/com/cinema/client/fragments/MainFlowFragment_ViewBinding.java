@@ -9,6 +9,7 @@ import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.asksira.loopingviewpager.LoopingViewPager;
@@ -27,6 +28,7 @@ public class MainFlowFragment_ViewBinding implements Unbinder {
     target.linLayout = Utils.findRequiredViewAsType(source, R.id.linLayout, "field 'linLayout'", LinearLayout.class);
     target.filmMoreMainFlowFragmentButton = Utils.findRequiredViewAsType(source, R.id.filmMoreMainFlowFragmentButton, "field 'filmMoreMainFlowFragmentButton'", Button.class);
     target.textView23 = Utils.findRequiredViewAsType(source, R.id.textView23, "field 'textView23'", TextView.class);
+    target.refreshMainFlow = Utils.findRequiredViewAsType(source, R.id.refreshMainFlow, "field 'refreshMainFlow'", SwipeRefreshLayout.class);
     target.buttonCinema = Utils.findRequiredViewAsType(source, R.id.buttonCinema, "field 'buttonCinema'", Button.class);
     target.buttonFilms = Utils.findRequiredViewAsType(source, R.id.buttonFilms, "field 'buttonFilms'", Button.class);
     target.comedyAvatar = Utils.findRequiredViewAsType(source, R.id.comedyAvatar, "field 'comedyAvatar'", AvatarView.class);
@@ -57,6 +59,7 @@ public class MainFlowFragment_ViewBinding implements Unbinder {
     target.linLayout = null;
     target.filmMoreMainFlowFragmentButton = null;
     target.textView23 = null;
+    target.refreshMainFlow = null;
     target.buttonCinema = null;
     target.buttonFilms = null;
     target.comedyAvatar = null;

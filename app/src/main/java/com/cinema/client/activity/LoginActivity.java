@@ -92,10 +92,10 @@ public class LoginActivity extends AppCompatActivity implements
                 .start();
 
         //
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        );
+
+
+        getApplicationContext().getSharedPreferences("accountPref", 0).edit().clear().commit();
+
 
 
         // LoadingButton
@@ -270,7 +270,7 @@ public class LoginActivity extends AppCompatActivity implements
                                     .setAction("LOGIN", new View.OnClickListener() {
                                         @Override
                                         public void onClick(View view) {
-                                            startActivity(new Intent(LoginActivity.this, LoginActivity.class));
+                                            startActivity(new Intent(LoginActivity.this, Main3Activity.class));
                                         }
                                     })
                                     .show();

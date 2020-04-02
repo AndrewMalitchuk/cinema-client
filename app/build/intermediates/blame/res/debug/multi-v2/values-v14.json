@@ -4,7 +4,7 @@
             "outputFile": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml",
             "map": [
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/66f83497c356385a6e5b6a0a6d14816b/res/values-v14/values-v14.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/20745e3ff54f0b2a143b577367a5d0af/res/values-v14/values-v14.xml",
                     "from": {
                         "startLines": "2,5",
                         "startColumns": "4,4",

@@ -38,24 +38,24 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/f7a84d15ad643e1979d9d1ce35b5a971/res/values-am/values.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/values-am/values-am.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,166,232,333,443,524,627,743,849,937,1023,1112,1196",
+                        "endColumns": "60,65,100,109,80,102,115,105,87,85,88,83,96",
+                        "endOffsets": "161,227,328,438,519,622,738,844,932,1018,1107,1191,1288"
                     },
                     "to": {
-                        "startLines": "37",
-                        "startColumns": "4",
-                        "startOffsets": "3806",
-                        "endColumns": "190",
-                        "endOffsets": "3992"
+                        "startLines": "48,49,50,51,52,53,54,55,56,57,58,59,60",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "5322,5383,5449,5550,5660,5741,5844,5960,6066,6154,6240,6329,6413",
+                        "endColumns": "60,65,100,109,80,102,115,105,87,85,88,83,96",
+                        "endOffsets": "5378,5444,5545,5655,5736,5839,5955,6061,6149,6235,6324,6408,6505"
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/baf824eb36e9b94b8df6210cb93a270a/res/values-am/values.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/463874f79968f5e596b51bf6bb567c64/res/values-am/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -72,20 +72,20 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/fa9a74acbb0326b584f9d791a150b8cc/res/values-am/values-am.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/b5f879673bec40ef55716eaca14bb4b7/res/values-am/values.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,166,232,333,443,524,627,743,849,937,1023,1112,1196",
-                        "endColumns": "60,65,100,109,80,102,115,105,87,85,88,83,96",
-                        "endOffsets": "161,227,328,438,519,622,738,844,932,1018,1107,1191,1288"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
                     },
                     "to": {
-                        "startLines": "48,49,50,51,52,53,54,55,56,57,58,59,60",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "5322,5383,5449,5550,5660,5741,5844,5960,6066,6154,6240,6329,6413",
-                        "endColumns": "60,65,100,109,80,102,115,105,87,85,88,83,96",
-                        "endOffsets": "5378,5444,5545,5655,5736,5839,5955,6061,6149,6235,6324,6408,6505"
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "3806",
+                        "endColumns": "190",
+                        "endOffsets": "3992"
                     }
                 },
                 {

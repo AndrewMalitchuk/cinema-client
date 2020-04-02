@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/fa9a74acbb0326b584f9d791a150b8cc/res/values-pt/values-pt.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/values-pt/values-pt.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -35,23 +35,6 @@
                         "startOffsets": "2843,2911,2984,3091,3204,3288,3414,3536,3666,3764,3859,3958,4049",
                         "endColumns": "67,72,106,112,83,125,121,129,97,94,98,90,100",
                         "endOffsets": "2906,2979,3086,3199,3283,3409,3531,3661,3759,3854,3953,4044,4145"
-                    }
-                },
-                {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/befe9c379cba749ee1ceae18591d4bf3/res/values-pt/values-pt.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,114,161,317",
-                        "endColumns": "58,46,155,106",
-                        "endOffsets": "109,156,312,419"
-                    },
-                    "to": {
-                        "startLines": "44,45,46,47",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "4336,4395,4442,4598",
-                        "endColumns": "58,46,155,106",
-                        "endOffsets": "4390,4437,4593,4700"
                     }
                 },
                 {
@@ -69,6 +52,23 @@
                         "startOffsets": "4235",
                         "endColumns": "100",
                         "endOffsets": "4331"
+                    }
+                },
+                {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/06acd0577ef232a26cc6d685291ae14e/res/values-pt/values-pt.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,317",
+                        "endColumns": "58,46,155,106",
+                        "endOffsets": "109,156,312,419"
+                    },
+                    "to": {
+                        "startLines": "44,45,46,47",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "4336,4395,4442,4598",
+                        "endColumns": "58,46,155,106",
+                        "endOffsets": "4390,4437,4593,4700"
                     }
                 }
             ]

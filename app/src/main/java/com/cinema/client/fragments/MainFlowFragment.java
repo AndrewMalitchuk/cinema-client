@@ -100,6 +100,9 @@ public class MainFlowFragment extends Fragment {
     @BindView(R.id.textView23)
     TextView textView23;
 
+    @BindView(R.id.refreshMainFlow)
+    SwipeRefreshLayout refreshMainFlow;
+
 //    @BindView(R.id.material_banner)
 //    MaterialBanner<SimpleBannerData> materialBanner;
 //
@@ -262,6 +265,110 @@ public class MainFlowFragment extends Fragment {
 
 
         //
+//        sharedpreferences = getActivity().getSharedPreferences(FAVOURITE_CINEMAS_PREF, Context.MODE_PRIVATE);
+//
+//        if (sharedpreferences != null) {
+//
+////            SharedPreferences.Editor editor = sharedpreferences.edit();
+//
+//
+//            String fav_json = sharedpreferences.getString("fav_json", null);
+//
+//            if (fav_json != null) {
+//                Gson gson = new GsonBuilder().create();
+//                List<Integer> favourite_cinema_id_list = gson.fromJson(fav_json, new TypeToken<List<Integer>>() {
+//                }.getType());
+//
+//                Log.d("id_list", favourite_cinema_id_list.size() + "");
+//
+//                if (favourite_cinema_id_list.size() == 0) {
+//                    favCinemasMainFlowFragmentCardView.setVisibility(View.GONE);
+//                } else {
+//                    favCinemasMainFlowFragmentCardView.setVisibility(View.VISIBLE);
+//                }
+//
+////                if(favourite_cinema_id_list.size()==0) {
+//
+//                List<CinemaItemSearch> list = new ArrayList<>();
+//
+//                for (Integer i : favourite_cinema_id_list) {
+//                    Call<CinemaAPI> call = apiInterface.getCinemaById(i);
+//                    try {
+//                        Response<CinemaAPI> temp = call.execute();
+//
+//                        CinemaItemSearch cinemaItemSearch = new CinemaItemSearch();
+//                        cinemaItemSearch.setCinemaId(temp.body().getId());
+//                        cinemaItemSearch.setCinemaName(temp.body().getName());
+//                        cinemaItemSearch.setCinemaImg(APIClient.HOST + temp.body().getPicUrl());
+//
+//                        list.add(cinemaItemSearch);
+//
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//
+//                favCinemasMainFlowFragmentRecyclerView.setHasFixedSize(false);
+//
+//                FavouriteCinemasAdapter favouriteCinemasAdapter = new FavouriteCinemasAdapter(list);
+//
+//
+//                LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext(), LinearLayout.HORIZONTAL, false);
+//                favCinemasMainFlowFragmentRecyclerView.setLayoutManager(mLayoutManager);
+//                favCinemasMainFlowFragmentRecyclerView.setAdapter(favouriteCinemasAdapter);
+////                }
+//
+//            }
+//
+//
+//        }
+//
+//        //
+//
+//        Call<List<FilmAPI>> call = apiInterface.getFilms();
+//
+//        call.enqueue(new Callback<List<FilmAPI>>() {
+//            @Override
+//            public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
+//
+//                films = response.body();
+//                Log.d("FILMS", films.size() + "");
+//
+//                Collections.sort(films, new Comparator<FilmAPI>() {
+//                    @Override
+//                    public int compare(FilmAPI filmAPI, FilmAPI t1) {
+//                        return t1.getDate().compareTo(filmAPI.getDate());
+//                    }
+//                });
+//
+//                setContent(films);
+//
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
+//                call.cancel();
+//                Intent intent = new Intent(getContext(), ErrorActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+        update();
+
+        //
+        refreshMainFlow.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Toast.makeText(getContext(), "Reload", Toast.LENGTH_SHORT).show();
+                update();
+            }
+        });
+        //
+
+
+    }
+
+    public void update(){
         sharedpreferences = getActivity().getSharedPreferences(FAVOURITE_CINEMAS_PREF, Context.MODE_PRIVATE);
 
         if (sharedpreferences != null) {
@@ -341,6 +448,7 @@ public class MainFlowFragment extends Fragment {
                 setContent(films);
 
 
+
             }
 
             @Override
@@ -350,13 +458,11 @@ public class MainFlowFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
-        //
-
-
     }
 
     public void onFindFilmsButtonClick(View view) {
+        //XXX
+//        refreshMainFlow.setRefreshing(false);
         Intent intent = new Intent(getActivity(), SearchFilmActivity.class);
         startActivity(intent);
     }
@@ -624,6 +730,8 @@ public class MainFlowFragment extends Fragment {
 //                indicatorView.setSelection(newIndicatorPosition);
             }
         });
+
+        refreshMainFlow.setRefreshing(false);
 
 
     }
