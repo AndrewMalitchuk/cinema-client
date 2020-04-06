@@ -2,6 +2,7 @@ package com.cinema.client.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -19,6 +20,7 @@ import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.rw.loadingdialog.LoadingView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +52,12 @@ public class PosterActivity extends AppCompatActivity {
     @BindView(R.id.toolbar10)
     Toolbar toolbar;
 
+    @BindView(R.id.frame)
+    ConstraintLayout frame;
+
+
+    LoadingView loadingView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +85,16 @@ public class PosterActivity extends AppCompatActivity {
         textView31.setVisibility(View.GONE);
         //
 
+        //
+        loadingView = new LoadingView.Builder(this)
+                .setProgressColorResource(R.color.colorAccent)
+                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+                .attachTo(frame);
+        loadingView.hide();
+
+        //
+
+
 
         // Gradient
         FlowingGradientClass grad = new FlowingGradientClass();
@@ -100,9 +118,13 @@ public class PosterActivity extends AppCompatActivity {
 //        Log.d("LIST",videos.get(0).toString());
 
 //        adapter.setFilms(videos);
-        adapter = new SwipeCardAdapter(videos, getApplicationContext());
+        adapter = new SwipeCardAdapter(videos, getApplicationContext(),loadingView);
         Log.d("ADPT", adapter.getFilms().size() + " " + adapter.getFilms().get(0).getTitle());
 
+
+        //
+        adapter.setLoadingView(loadingView);
+        //
 
         final RecyclerView recyclerView = findViewById(R.id.recycler_view);
 
@@ -166,10 +188,10 @@ public class PosterActivity extends AppCompatActivity {
         String cinemaName = getIntent().getStringExtra("cinemaName");
         int cinemaId = getIntent().getIntExtra("cinemaId", -1);
         if (cinemaId != -1 && cinemaName != null) {
-            recyclerView.setAdapter(adapter = new SwipeCardAdapter(videos, getApplicationContext(), cinemaName, cinemaId));
+            recyclerView.setAdapter(adapter = new SwipeCardAdapter(videos, getApplicationContext(), cinemaName, cinemaId,loadingView));
         } else {
 
-            recyclerView.setAdapter(adapter = new SwipeCardAdapter(videos, getApplicationContext()));
+            recyclerView.setAdapter(adapter = new SwipeCardAdapter(videos, getApplicationContext(),loadingView));
         }
 
 

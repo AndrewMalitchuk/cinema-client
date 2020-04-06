@@ -49,7 +49,7 @@ public final class R {
     public static final class layout {
         private layout() {}
 
-        public static final int bonuspack_bubble = 0x7f0d0048;
+        public static final int bonuspack_bubble = 0x7f0d0047;
     }
     public static final class string {
         private string() {}
@@ -76,23 +76,23 @@ public final class R {
         public static final int format_distance_only_nautical_mile = 0x7f110085;
         public static final int format_distance_value_unit = 0x7f110086;
         public static final int hills = 0x7f110095;
-        public static final int map_mode = 0x7f1100b0;
-        public static final int mapbox = 0x7f1100b1;
-        public static final int mapnik = 0x7f1100b2;
-        public static final int mapquest_aerial = 0x7f1100b3;
-        public static final int mapquest_osm = 0x7f1100b4;
-        public static final int my_location = 0x7f1100e3;
-        public static final int offline = 0x7f1100e9;
-        public static final int public_transport = 0x7f1100f5;
-        public static final int roads_nl = 0x7f110102;
-        public static final int samples = 0x7f110103;
-        public static final int set_mode_hide_me = 0x7f110105;
-        public static final int set_mode_offline = 0x7f110106;
-        public static final int set_mode_online = 0x7f110107;
-        public static final int set_mode_show_me = 0x7f110108;
-        public static final int snapshot = 0x7f11010f;
-        public static final int states = 0x7f110110;
-        public static final int topo = 0x7f110115;
-        public static final int unknown = 0x7f110117;
+        public static final int map_mode = 0x7f1100b1;
+        public static final int mapbox = 0x7f1100b2;
+        public static final int mapnik = 0x7f1100b3;
+        public static final int mapquest_aerial = 0x7f1100b4;
+        public static final int mapquest_osm = 0x7f1100b5;
+        public static final int my_location = 0x7f1100e4;
+        public static final int offline = 0x7f1100ea;
+        public static final int public_transport = 0x7f1100f6;
+        public static final int roads_nl = 0x7f110103;
+        public static final int samples = 0x7f110104;
+        public static final int set_mode_hide_me = 0x7f110106;
+        public static final int set_mode_offline = 0x7f110107;
+        public static final int set_mode_online = 0x7f110108;
+        public static final int set_mode_show_me = 0x7f110109;
+        public static final int snapshot = 0x7f110110;
+        public static final int states = 0x7f110111;
+        public static final int topo = 0x7f110116;
+        public static final int unknown = 0x7f110118;
     }
 }

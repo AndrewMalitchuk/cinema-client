@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.Manifest;
 import android.content.Context;
@@ -46,6 +47,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.liangfeizc.avatarview.AvatarView;
 import com.pd.chocobar.ChocoBar;
+import com.rw.loadingdialog.LoadingView;
 import com.vivekkaushik.datepicker.DatePickerTimeline;
 import com.vivekkaushik.datepicker.OnDateSelectedListener;
 import org.osmdroid.api.IMapController;
@@ -62,12 +64,16 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
+import io.reactivex.Observable;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.functions.Action;
+import io.reactivex.schedulers.Schedulers;
 import jp.wasabeef.glide.transformations.BlurTransformation;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -126,6 +132,11 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
 //    private MapContainerView mapView;
 
+    @BindView(R.id.relativeLayout2)
+    ConstraintLayout relativeLayout2;
+
+    LoadingView loadingView;
+
 
 //    private MapView mapView;
 
@@ -164,6 +175,13 @@ public class AboutCinemaActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
+        //
+                loadingView = new LoadingView.Builder(this)
+                .setProgressColorResource(R.color.colorAccent)
+                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+                .attachTo(relativeLayout2);
+
+        //
 
 
         cv1.setElevation(5);
@@ -335,12 +353,31 @@ public class AboutCinemaActivity extends AppCompatActivity {
     public void onFabClick(View view) {
 
 
-        Call<List<TimelineAPI>> call = apiInterface.getTimelineByCinemaId(currentCinema.getId());
+        loadingView.show();
+
+        Observable<List<TimelineAPI>> callRx=apiInterface.getTimelineByCinemaIdRx(currentCinema.getId());
+
+        callRx.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .map(result -> result)
+                .doOnComplete(() -> loadingView.hide())
+                .subscribe(this::onTimelineSuccess);
+
+
+
+
+
+
+
+
+    }
+
+    private void onTimelineSuccess(List<TimelineAPI> result) {
+
 
 
         try {
 
-            List<TimelineAPI> result = call.execute().body();
 
 
 
@@ -382,6 +419,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
             intent.putExtra("cinemaId",currentCinema.getId());
             intent.putExtra("cinemaName",currentCinema.getName());
             //
+            loadingView.hide();
             startActivity(intent);
 
 
@@ -390,7 +428,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
             Intent intent = new Intent(AboutCinemaActivity.this, ErrorActivity.class);
             startActivity(intent);
         }
-
 
     }
 

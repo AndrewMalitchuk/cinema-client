@@ -12,23 +12,18 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.StrictMode;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.arlib.floatingsearchview.FloatingSearchView;
 import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
 import com.cinema.client.R;
-import com.cinema.client.activity.Main3Activity;
-import com.cinema.client.activity.MyTicketsActivity;
 import com.cinema.client.activity.TicketActivity;
 import com.cinema.client.adapters.TicketSearchAdapter;
 import com.cinema.client.entities.TicketItemSearch;
@@ -51,14 +46,11 @@ import java.util.regex.Pattern;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.reactivex.Observable;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class TicketSearchFragment extends Fragment {
@@ -461,7 +453,7 @@ public class TicketSearchFragment extends Fragment {
                 myTickets.setFilmName(filmAPI.getTitle());
                 myTickets.setCinemaId(timelineAPI.getCinemaId());
                 myTickets.setUserId(ticketAPI.getUser());
-                myTickets.setFilmDateTime(timelineAPI.getDatetime());
+                myTickets.setFilmDateTime(timelineAPI.getDate()+" "+timelineAPI.getTime());
                 myTickets.setFilmPlace(ticketAPI.getPlace());
                 myTickets.setFilmCinema(cinemaAPI.getName());
                 myTickets.setFilmUrl(APIClient.HOST + filmAPI.getPicUrl());

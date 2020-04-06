@@ -19,6 +19,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class StatusAdapter extends SequenceAdapter<MyItem> {
 
 
@@ -28,28 +31,38 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
 
     TextView selectedDateTimeTextView;
     TextView selectedTimelineStatusActivityTextView;
+    TextView selectedPriceStatusActivityTextView;
     String activeDate;
+    String activeTime;
     List<TimelineAPI> list;
+
+    @Getter
+    @Setter
+    boolean isFilmTimeline;
 
     public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context) {
         this.items = items;
         this.context = context;
     }
 
-    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, String activeDate) {
+    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, String activeDate, String activeTime) {
         this.items = items;
         this.context = context;
         this.selectedDateTimeTextView = selectedDateTimeTextView;
         this.activeDate = activeDate;
+        this.activeTime = activeTime;
     }
 
-    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, TextView selectedTimelineStatusActivityTextView, String activeDate) {
+    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, TextView selectedTimelineStatusActivityTextView, TextView selectedPriceStatusActivityTextView,String activeDate, String activeTime) {
         this.items = items;
         this.context = context;
         this.selectedDateTimeTextView = selectedDateTimeTextView;
         this.selectedTimelineStatusActivityTextView = selectedTimelineStatusActivityTextView;
+        this.selectedPriceStatusActivityTextView=selectedPriceStatusActivityTextView;
 
         this.activeDate = activeDate;
+        this.activeTime = activeTime;
+
     }
 
 
@@ -63,7 +76,7 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
     public void bindView(SequenceStep sequenceStep, com.cinema.client.etc.MyItem myItem) {
 
         sequenceStep.setActive(myItem.isActive());
-        sequenceStep.setAnchor(myItem.getFormattedDate());
+        sequenceStep.setAnchor(myItem.getFormattedTime());
         sequenceStep.setTitle(myItem.getTitle());
         sequenceStep.setAnchorMinWidth((int) pxFromDp(context, 150));
         if (myItem.isSelected()) {
@@ -75,38 +88,75 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
 
         Date curent = null;
         Date temp = null;
+        Date curentDate = null;
+        Date tempDate = null;
 //        Time curent=null;
 //        Time temp=null;
         try {
             // XXX
 //            curent=new SimpleDateFormat("dd.MM.yyy").parse(activeDate);
 //            temp=new SimpleDateFormat("dd.MM.yyy").parse(myItem.getFormattedDate());
+
             Log.d("Active Date", activeDate);
             Log.d("Formatter Date", myItem.getFormattedDate());
 
-            curent = new SimpleDateFormat("yyyy.MM.dd hh:mm:ss").parse(activeDate);
-            temp = new SimpleDateFormat("yyyy.MM.dd hh:mm:ss").parse(myItem.getFormattedDate());
-        } catch (ParseException e) {
+            curentDate = new SimpleDateFormat("yyyy-MM-dd").parse(activeDate);
+            Log.d("current", curentDate.toString());
+
+            tempDate = new SimpleDateFormat("yyyy-MM-dd").parse(myItem.getFormattedDate());
+            Log.d("temp", tempDate.toString());
+
+            //
+
+            Log.d("Active Date", activeTime);
+            Log.d("Formatter Date", myItem.getFormattedDate());
+
+            curent = new SimpleDateFormat("HH:mm:ss").parse(activeTime);
+            Log.d("current", curent.toString());
+
+            temp = new SimpleDateFormat("HH:mm:ss").parse(myItem.getFormattedTime());
+            Log.d("temp", temp.toString());
+
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
-//        if (temp.after(curent) || temp.compareTo(curent) == 0) {
-//
-//            if (temp.compareTo(curent) == 0) {
-//                sequenceStep.setActive(true);
-//                sequenceStep.setSelected(true);
-//            }
-//
-//            sequenceStep.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-////                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
-//                    selectedDateTimeTextView.setText(myItem.getFormattedDate());
-//                }
-//            });
-//        }
+        if (tempDate.before(curentDate) || tempDate.compareTo(curentDate) == 0) {
 
-        if (true) {
+            if (temp.after(curent) || temp.compareTo(curent) == 0) {
+
+                if (temp.before(curent) == true) {
+                    sequenceStep.setActive(false);
+                    sequenceStep.setSelected(false);
+                }
+
+                sequenceStep.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+//                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
+                        selectedDateTimeTextView.setText(myItem.getFormattedTime());
+                        selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getId());
+                        selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getPrice()+"");
+                    }
+                });
+            }
+
+
+        } else {
+//            sequenceStep.setActive(true);
+//            sequenceStep.setSelected(true);
+            sequenceStep.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+//                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
+                    selectedDateTimeTextView.setText(myItem.getFormattedTime());
+                }
+            });
+        }
+
+        Log.d("isFilmTimeline", isFilmTimeline + "");
+        if (isFilmTimeline) {
 
             if (true) {
                 sequenceStep.setActive(true);
@@ -117,9 +167,11 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
                 @Override
                 public void onClick(View view) {
 //                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
-                    selectedDateTimeTextView.setText(myItem.getFormattedDate());
-                    Log.d("TimelineAPI",myItem.getTimelineAPI().getId()+"");
+                    selectedDateTimeTextView.setText(myItem.getFormattedTime());
+                    Log.d("TimelineAPI", myItem.getTimelineAPI().toString() + "");
+//                    Log.d("TimelineAPI",myItem.getTimelineAPI().getId()+"");
                     selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getId()+"");
+                    selectedPriceStatusActivityTextView.setText(myItem.getTimelineAPI().getPrice()+"");
                 }
             });
         }

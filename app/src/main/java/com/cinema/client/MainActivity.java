@@ -19,9 +19,7 @@ import com.cinema.client.activity.BottomNavigation;
 import com.cinema.client.activity.ErrorActivity;
 import com.cinema.client.activity.HallActivity;
 import com.cinema.client.activity.LoginActivity;
-import com.cinema.client.activity.Main2Activity;
 import com.cinema.client.activity.Main3Activity;
-import com.cinema.client.activity.MyTicketsActivity;
 import com.cinema.client.activity.NewNewCardActivity;
 import com.cinema.client.activity.PosterActivity;
 import com.cinema.client.activity.QRZoomActivity;
@@ -199,8 +197,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void myTickets(View view){
-        Intent intent =new Intent(this, MyTicketsActivity.class);
-        startActivity(intent);
+
     }
 
 

@@ -21,4 +21,6 @@
 
     <string name="cinemaAppNotify">cinema_app_notify_about_film</string>
     <string name="filmReminderNotificationMainActivityString">Hey, your film will be shown soon!</string>
+
+    <string name="loadingMessage">Loading...</string>
 </resources>

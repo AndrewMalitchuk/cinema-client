@@ -10,6 +10,7 @@ import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.cinema.client.R;
@@ -42,6 +43,7 @@ public class AboutCinemaActivity_ViewBinding implements Unbinder {
     target.telephoneAboutCinemaTextView = Utils.findRequiredViewAsType(source, R.id.telephoneAboutCinemaTextView, "field 'telephoneAboutCinemaTextView'", TextView.class);
     target.myToolbar = Utils.findRequiredViewAsType(source, R.id.my_toolbar, "field 'myToolbar'", Toolbar.class);
     target.blurImageView = Utils.findRequiredViewAsType(source, R.id.imageView5, "field 'blurImageView'", ImageView.class);
+    target.relativeLayout2 = Utils.findRequiredViewAsType(source, R.id.relativeLayout2, "field 'relativeLayout2'", ConstraintLayout.class);
   }
 
   @Override
@@ -63,5 +65,6 @@ public class AboutCinemaActivity_ViewBinding implements Unbinder {
     target.telephoneAboutCinemaTextView = null;
     target.myToolbar = null;
     target.blurImageView = null;
+    target.relativeLayout2 = null;
   }
 }

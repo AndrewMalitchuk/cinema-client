@@ -36,9 +36,9 @@ public final class R {
         public static final int dash = 0x7f0a00f7;
         public static final int horizontal = 0x7f0a0162;
         public static final int normal = 0x7f0a020f;
-        public static final int rounded = 0x7f0a0256;
-        public static final int scallop = 0x7f0a0268;
-        public static final int vertical = 0x7f0a034a;
+        public static final int rounded = 0x7f0a0257;
+        public static final int scallop = 0x7f0a0269;
+        public static final int vertical = 0x7f0a034f;
     }
     public static final class string {
         private string() {}

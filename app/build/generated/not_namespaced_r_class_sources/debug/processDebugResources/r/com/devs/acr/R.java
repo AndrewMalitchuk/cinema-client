@@ -19,10 +19,10 @@ public final class R {
         private id() {}
 
         public static final int ll_layout = 0x7f0a01af;
-        public static final int tv_cancel = 0x7f0a0337;
-        public static final int tv_message = 0x7f0a0338;
-        public static final int tv_report = 0x7f0a033a;
-        public static final int tv_title = 0x7f0a033b;
+        public static final int tv_cancel = 0x7f0a033c;
+        public static final int tv_message = 0x7f0a033d;
+        public static final int tv_report = 0x7f0a033f;
+        public static final int tv_title = 0x7f0a0340;
     }
     public static final class layout {
         private layout() {}

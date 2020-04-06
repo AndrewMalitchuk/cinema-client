@@ -133,6 +133,9 @@ public interface APIInterface {
     Call<List<TimelineAPI>> getTimelineByCinemaId(@Query("cinema_id") int cinema_id);
 
     @GET(api_timeline)
+    Observable<List<TimelineAPI>> getTimelineByCinemaIdRx(@Query("cinema_id") int cinema_id);
+
+    @GET(api_timeline)
     Observable<TimelineAPI> getTimelineByIdRx(@Query("id") int id);
 
     @GET(api_timeline)

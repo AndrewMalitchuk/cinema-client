@@ -2901,6 +2901,7 @@ id play_pause_button
 id posterNameSwipeCardTextView
 id posterSwipeCardImageView
 id previous
+id priceBillActivityExtendedEditText
 id primary_button
 id progress
 id progressBar
@@ -2983,8 +2984,10 @@ id section1
 id section2
 id select_dialog_listview
 id selected
+id selectedCardView
 id selectedDateTimeTextView
 id selectedPlacesTextView
+id selectedPriceStatusActivityTextView
 id selectedTimelineStatusActivityTextView
 id sequential
 id serif
@@ -3099,6 +3102,7 @@ id text_field_boxes2
 id text_field_boxes3
 id text_field_boxes4
 id text_field_boxes5
+id text_field_boxes6
 id text_field_boxes_bottom
 id text_field_boxes_clear_button
 id text_field_boxes_counter
@@ -3125,6 +3129,7 @@ id ticketLinearLayout
 id ticketLoginActivityImageView
 id ticketView
 id time
+id timelineFrame
 id timelineView
 id title
 id titleCardView
@@ -3296,7 +3301,6 @@ layout activity_login
 layout activity_main
 layout activity_main2
 layout activity_main3
-layout activity_my_tickets
 layout activity_new_card
 layout activity_new_new_card
 layout activity_onboarder
@@ -3685,6 +3689,7 @@ string library_bottomdialogs_repositoryLink
 string license
 string linkedin
 string load_failed
+string loadingMessage
 string loginLoginActivityButtonString
 string loginPromptLoginActivityTextViewString
 string loginSignUpActivityTextViewString

@@ -16,24 +16,24 @@ public class TimelineAPI {
     @Expose
     private Integer id;
 
-//    @Getter
-//    @Setter
-//    @SerializedName("time")
-//    @Expose
-//    private String time;
-//
-//    @Getter
-//    @Setter
-//    @SerializedName("date")
-//    @Expose
-//    private String date;
-
+    @Getter
+    @Setter
+    @SerializedName("time")
+    @Expose
+    private String time;
 
     @Getter
     @Setter
-    @SerializedName("datetime")
+    @SerializedName("date")
     @Expose
-    private String datetime;
+    private String date;
+
+
+//    @Getter
+//    @Setter
+//    @SerializedName("datetime")
+//    @Expose
+//    private String datetime;
 
     @Getter
     @Setter

@@ -1,5 +1,7 @@
 package com.cinema.client.etc;
 
+import android.util.Log;
+
 import com.cinema.client.requests.entities.TimelineAPI;
 
 import lombok.Getter;
@@ -9,6 +11,9 @@ public class MyItem{
 
     private boolean isActive;
     private String formattedDate;
+    @Getter
+    @Setter
+    private String formattedTime;
     private String title;
     private boolean isSelected;
     private String subtitle;
@@ -20,17 +25,20 @@ public class MyItem{
     //
 
 
-    public MyItem(boolean isActive, String formattedDate, String title, boolean isSelected, String subtitle) {
+    public MyItem(boolean isActive, String formattedDate,String formattedTime, String title, boolean isSelected, String subtitle) {
         this.isActive = isActive;
         this.formattedDate = formattedDate;
+        this.formattedTime=formattedTime;
         this.title = title;
         this.isSelected = isSelected;
         this.subtitle = subtitle;
     }
 
-    public MyItem(boolean isActive, String formattedDate, String title, boolean isSelected, String subtitle, TimelineAPI timelineAPI) {
+    public MyItem(boolean isActive, String formattedDate, String formattedTime,String title, boolean isSelected, String subtitle, TimelineAPI timelineAPI) {
         this.isActive = isActive;
         this.formattedDate = formattedDate;
+        this.formattedTime=formattedTime;
+        Log.d("formattedDate",formattedDate);
         this.title = title;
         this.isSelected = isSelected;
         this.subtitle = subtitle;

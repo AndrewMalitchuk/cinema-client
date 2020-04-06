@@ -3,6 +3,8 @@ package com.cinema.client.activity;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -28,14 +30,17 @@ import com.cinema.client.requests.entities.HallAPI;
 import com.cinema.client.requests.entities.TimelineAPI;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.pd.chocobar.ChocoBar;
+import com.rw.loadingdialog.LoadingView;
 import com.transferwise.sequencelayout.SequenceLayout;
 import com.vivekkaushik.datepicker.DatePickerTimeline;
 import com.vivekkaushik.datepicker.OnDateSelectedListener;
 
 import java.io.IOException;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -56,14 +61,15 @@ public class StatusActivity extends AppCompatActivity {
     @BindView(R.id.status)
     SequenceLayout sequenceLayout;
 
-//    @BindView(R.id.spinner)
-//    Spinner spinner;
 
     @BindView(R.id.selectedDateTimeTextView)
     TextView selectedDateTimeTextView;
 
     @BindView(R.id.selectedTimelineStatusActivityTextView)
     TextView selectedTimelineStatusActivityTextView;
+
+    @BindView(R.id.selectedPriceStatusActivityTextView)
+    TextView selectedPriceStatusActivityTextView;
 
     @BindView(R.id.floatingActionButton)
     FloatingActionButton floatingActionButton;
@@ -78,13 +84,27 @@ public class StatusActivity extends AppCompatActivity {
 //    DatePickerTimeline datePickerTimeline;
 
 
-    private String dateStr;
+    private String dateStr=null;
 
     private APIInterface apiInterface;
 
     private boolean isFilmTimeline;
 
     private TimelineAPI currentTimeline;
+
+    @BindView(R.id.frame)
+    ConstraintLayout frame;
+
+    @BindView(R.id.timelineFrame)
+    ConstraintLayout timelineFrame;
+
+    @BindView(R.id.selectedCardView)
+    CardView selectedCardView;
+
+    private LoadingView loadingView;
+    private LoadingView timelineLoadingView;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +130,22 @@ public class StatusActivity extends AppCompatActivity {
         String cinemaName = getIntent().getStringExtra("cinemaName");
         toolbar.setTitle(cinemaName);
 
+        //
+        loadingView = new LoadingView.Builder(getApplication())
+                .setProgressColorResource(R.color.colorAccent)
+                .setBackgroundColorRes(R.color.white)
+                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+                .attachTo(frame);
 
+        loadingView.show();
+        //
+        timelineLoadingView = new LoadingView.Builder(getApplication())
+                .setProgressColorResource(R.color.colorAccent)
+                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+                .attachTo(frame);
+
+
+        //
 
 
 
@@ -144,9 +179,13 @@ public class StatusActivity extends AppCompatActivity {
                     cinema_id,
                     film_id);
 
+
         }else{
 
             floatingActionButton.hide();
+
+            selectedCardView.setVisibility(View.GONE);
+
 
             try {
                 calendarView.setDate(new SimpleDateFormat("yyyy-MM-dd").parse(getIntent().getStringExtra("selectedDate")).getTime(), true, true);
@@ -168,6 +207,14 @@ public class StatusActivity extends AppCompatActivity {
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int day) {
+
+                //
+
+                timelineLoadingView.show();
+                //
+
+                dateStr=year+"-"+(month+1)+"-"+day;
+
 
                 Toast.makeText(StatusActivity.this, day+" "+(month+1)+" "+year, Toast.LENGTH_SHORT).show();
                 selectedDateTimeTextView.setText("Nothing yet...");
@@ -220,8 +267,14 @@ public class StatusActivity extends AppCompatActivity {
 
                 String date=new SimpleDateFormat("yyyy-MM-dd").format(new Date(calendarView.getDate()));
 
-                getIntent().putExtra("datetime", date + " " + selectedDateTimeTextView.getText().toString());
-                getIntent().putExtra("timeline_id",selectedTimelineStatusActivityTextView.getText());
+
+                if(dateStr==null) {
+                    getIntent().putExtra("datetime", date + " " + selectedDateTimeTextView.getText().toString());
+                }else{
+                    getIntent().putExtra("datetime", dateStr + " " + selectedDateTimeTextView.getText().toString());
+                }
+                getIntent().putExtra("timeline_id",selectedTimelineStatusActivityTextView.getText().toString());
+                getIntent().putExtra("price",selectedPriceStatusActivityTextView.getText().toString());
                 setResult(RESULT_OK, getIntent());
                 finish();
 
@@ -248,14 +301,30 @@ public class StatusActivity extends AppCompatActivity {
 
 //                    HallAPI hall=apiInterface.getHallByCinemaId().execute().body();
 
-                    String currentTime = "2020-01-01T00:00:00+02:00";
+                    DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                    Date date = new Date();
+                    Log.d("now",dateFormat.format(date));
+
+//                    String currentTime = "2020-01-01T00:00:00+02:00";
+                    String currentTime = dateFormat.format(date);
+
+
+                    dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+                    String currentDate=dateFormat.format(date);
 
 
                     for (TimelineAPI timeline : response.body()) {
 
                         FilmAPI film = apiInterface.getFilmById(timeline.getFilmId()).execute().body();
 
-                        list.add(new MyItem(false, timeline.getDatetime(), film.getTitle(), false, timeline.getPrice()+" ₴"));
+                        list.add(new MyItem(false, timeline.getDate(),timeline.getTime(), film.getTitle(), false, timeline.getPrice()+" ₴"));
+
+                        //
+//                        Log.d("date",timeline.getDatetime().substring(0,18));
+//                        Date date1 = dateFormat1.parse( );
+                        //
+//                        Log.d("formated",dateFormat.format(date1));
                     }
 
                     if(list.size()==0){
@@ -275,14 +344,16 @@ public class StatusActivity extends AppCompatActivity {
                         });
 
 
-                        sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, currentTime));
+                        sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, currentDate,currentTime));
                     }
 
 
-                    sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, currentTime));
+                    sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, currentDate, currentTime));
+                    loadingView.hide();
+                    timelineLoadingView.hide();
 
 
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                     Intent intent = new Intent(StatusActivity.this, ErrorActivity.class);
                     startActivity(intent);
@@ -301,6 +372,8 @@ public class StatusActivity extends AppCompatActivity {
 
     private void setTimeline(String date,int cinema_id,int film_id){
 
+        // film timeline
+
         Log.d("INPUT",date+" "+cinema_id+" "+film_id);
 
         List<MyItem> list = new ArrayList<>();
@@ -315,14 +388,28 @@ public class StatusActivity extends AppCompatActivity {
 
 //                    HallAPI hall=apiInterface.getHallByCinemaId().execute().body();
 
-                    String currentTime = "2020-01-01T00:00:00+02:00";
+                    //XXX
+                    DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+                    Date date = new Date();
+                    Log.d("now",dateFormat.format(date));
+
+//                    String currentTime = "2020-01-01T00:00:00+02:00";
+                    String currentTime = dateFormat.format(date);
+
+
+                    dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+                    String currentDate=dateFormat.format(date);
+
 
 
                     for (TimelineAPI timeline : response.body()) {
 
                         FilmAPI film = apiInterface.getFilmById(timeline.getFilmId()).execute().body();
 
-                        list.add(new MyItem(false, timeline.getDatetime(), film.getTitle(), false, timeline.getPrice()+" ₴",timeline));
+                        Log.d("timeling",timeline.toString());
+
+                        list.add(new MyItem(false, timeline.getDate(),timeline.getTime(), film.getTitle(), false, timeline.getPrice()+" ₴",timeline));
                     }
 
                     if(list.size()==0){
@@ -343,13 +430,30 @@ public class StatusActivity extends AppCompatActivity {
 
 
 //                        sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, currentTime));
-                        sequenceLayout.setAdapter(new StatusAdapter(
+
+                        StatusAdapter statusAdapter=new StatusAdapter(
                                 list,
                                 getApplicationContext(),
                                 selectedDateTimeTextView,
                                 selectedTimelineStatusActivityTextView,
-                                currentTime));
+                                selectedPriceStatusActivityTextView,
+                                currentDate,
+                                currentTime);
+                        statusAdapter.setFilmTimeline(true);
+
+                        sequenceLayout.setAdapter(statusAdapter);
+
+//                        sequenceLayout.setAdapter(new StatusAdapter(
+//                                list,
+//                                getApplicationContext(),
+//                                selectedDateTimeTextView,
+//                                selectedTimelineStatusActivityTextView,
+//                                currentTime));
                     }
+                    loadingView.hide();
+                    timelineLoadingView.hide();
+
+
 
                 } catch (IOException e) {
                     e.printStackTrace();

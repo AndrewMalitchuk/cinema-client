@@ -89,9 +89,6 @@
         <activity
             android:name="com.cinema.client.activity.SearchFilmActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.cinema.client.activity.MyTicketsActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.cinema.client.activity.StoriesActivity" />
         <activity
             android:name="com.cinema.client.activity.NewNewCardActivity"

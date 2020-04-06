@@ -165,6 +165,35 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.developer.mtextfield.TextFieldBoxes
+                android:id="@+id/text_field_boxes6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                app:enabled="false"
+                app:iconSignifier="@drawable/ic_attach_money_black_24dp"
+                app:labelText="Price">
+
+                <com.developer.mtextfield.ExtendedEditText
+                    android:id="@+id/priceBillActivityExtendedEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </com.developer.mtextfield.TextFieldBoxes>
+
+
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/add_card"

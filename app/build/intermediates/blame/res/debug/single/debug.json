@@ -104,10 +104,6 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/privacy.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_activity_my_tickets.xml.flat",
-        "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/layout/activity_my_tickets.xml"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_tooltip_arrow_right.9.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/2af11de41c6657e7c01eb57721881f89/res/drawable-xxhdpi-v4/tooltip_arrow_right.9.png"
     },

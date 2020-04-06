@@ -14,6 +14,7 @@ import com.cinema.client.R;
 import com.cinema.client.activity.AboutFilmActivity;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.entities.FilmAPI;
+import com.rw.loadingdialog.LoadingView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +30,10 @@ public class SwipeCardAdapter extends RecyclerView.Adapter<SwipeCardItem> {
     @Getter
     @Setter
     private List<FilmAPI> films;
+
+    @Setter
+    @Getter
+    LoadingView loadingView;
 
 
     @Getter
@@ -46,16 +51,18 @@ public class SwipeCardAdapter extends RecyclerView.Adapter<SwipeCardItem> {
     private int cinemaId=-1;
 
 
-    public SwipeCardAdapter(List<FilmAPI> films, Context context){
+    public SwipeCardAdapter(List<FilmAPI> films, Context context,LoadingView loadingView){
         this.films=films;
         this.context=context;
+        this.loadingView=loadingView;
     }
 
-    public SwipeCardAdapter(List<FilmAPI> films, Context context,String cinemaName,int cinemaId){
+    public SwipeCardAdapter(List<FilmAPI> films, Context context,String cinemaName,int cinemaId,LoadingView loadingView){
         this.films=films;
         this.context=context;
         this.cinemaName=cinemaName;
         this.cinemaId=cinemaId;
+        this.loadingView=loadingView;
     }
 
 
@@ -114,6 +121,7 @@ public class SwipeCardAdapter extends RecyclerView.Adapter<SwipeCardItem> {
         @Override
         public void onClick(View view) {
 
+//            loadingView.show();
 
             Intent intent=new Intent(context, AboutFilmActivity.class);
             intent.putExtra("filmId",films.get(pos).getId());

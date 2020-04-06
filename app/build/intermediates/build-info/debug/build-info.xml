@@ -6,36 +6,33 @@
     density="440dpi"
     format="10"
     plugin-version="3.4.2"
-    timestamp="1585855065979"
+    timestamp="1586204175253"
     token="-2849268533494592384"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="10937" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="340" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="58" />
     <task
         name="verifier"
-        duration="0" />
+        duration="2" />
 
     <artifact
-        location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
-        type="SPLIT" />
+        location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/reload-dex/debug/classes.dex"
+        type="RELOAD_DEX" />
 
     <build
         build-mode="FULL"
-        timestamp="1585853987604"
+        timestamp="1586200885386"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
@@ -53,13 +50,16 @@
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
+            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            type="SPLIT" />
+        <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
@@ -73,8 +73,8 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1585854595102"
+        ir-eligibility="R_CLASS_CHANGE"
+        timestamp="1586202146961"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
@@ -86,7 +86,7 @@
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
@@ -97,6 +97,30 @@
         <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="METHOD_ADDED"
+        timestamp="1586203292551"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="FIELD_ADDED"
+        timestamp="1586203696365"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="METHOD_DELETED"
+        timestamp="1586203994536"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
@@ -105,21 +129,20 @@
             type="SPLIT" />
     </build>
     <build
-        build-mode="COLD"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1585854837677"
-        verifier="COLD_SWAP_REQUESTED" >
+        build-mode="HOT_WARM"
+        timestamp="1586204086058"
+        verifier="COMPATIBLE" >
         <artifact
-            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
+            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/builds/debug/1586204086058/classes.dex"
+            type="RELOAD_DEX" />
     </build>
     <build
         build-mode="HOT_WARM"
-        timestamp="1585855065979"
+        timestamp="1586204175253"
         verifier="COMPATIBLE" >
         <artifact
-            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
-            type="SPLIT" />
+            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/reload-dex/debug/classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

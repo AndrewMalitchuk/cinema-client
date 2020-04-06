@@ -305,7 +305,7 @@ public class Main3Activity extends AppCompatActivity {
                 String intent = getIntent().getStringExtra(stringExtraKey);
                 if (intent != null) {
                     if (intent.equals("myTicketsShortcut")) {
-                        Intent ticketIntent = new Intent(Main3Activity.this, MyTicketsActivity.class);
+                        Intent ticketIntent = new Intent(Main3Activity.this, TicketSearchFragment.class);
                         startActivity(ticketIntent);
                     }
                 }

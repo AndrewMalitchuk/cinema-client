@@ -74,6 +74,9 @@ public class NewNewCardActivity extends AppCompatActivity {
     @BindView(R.id.placesBillActivityExtendedEditText)
     ExtendedEditText placesBillActivityExtendedEditText;
 
+    @BindView(R.id.priceBillActivityExtendedEditText)
+    ExtendedEditText priceBillActivityExtendedEditText;
+
 
     private int filmId;
     private int cinemaId;
@@ -133,8 +136,8 @@ public class NewNewCardActivity extends AppCompatActivity {
         }
 
         //
-        String datetime = "2020-02-27T23:05:02+02:00";
-        datetimeBillActivityExtendedEditText.setText(datetime);
+//        String datetime = "2020-02-27T23:05:02+02:00";
+//        datetimeBillActivityExtendedEditText.setText(datetime);
         //
 
 
@@ -203,7 +206,7 @@ public class NewNewCardActivity extends AppCompatActivity {
                                             RequestBody userId = RequestBody.create(MediaType.parse("text/plain"), sharedpreferences1.getInt("userId", -1) + "");
 
 //                                        RequestBody date = RequestBody.create(MediaType.parse("text/plain"), datetimeBillActivityExtendedEditText.getText().toString());
-                                            RequestBody date = RequestBody.create(MediaType.parse("text/plain"), "2020-02-15 10:10:10");
+//                                            RequestBody date = RequestBody.create(MediaType.parse("text/plain"), "2020-02-15 10:10:10");
 
 
                                             Call<TicketAPI> newTicket = apiInterface.createTicket(
@@ -274,8 +277,6 @@ public class NewNewCardActivity extends AppCompatActivity {
                                 }
 
 
-//                        Intent intent = new Intent(NewNewCardActivity.this, MyTicketsActivity.class);
-//                        startActivity(intent);
                                 //
 
                             } else {
@@ -383,14 +384,18 @@ public class NewNewCardActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK) {
                     String datetime = data.getStringExtra("datetime");
                     datetimeBillActivityExtendedEditText.setText(datetime);
+                    Log.d("datetime",datetime);
                     //
                     //TODO: REMOVE
-                    datetime = "2020-02-27T23:05:02+02:00";
-                    datetimeBillActivityExtendedEditText.setText(datetime);
+//                    datetimeBillActivityExtendedEditText.setText(datetime);
                     //
 
                     timeline_id = Integer.valueOf(data.getStringExtra("timeline_id"));
                     Log.d("timeline_id", timeline_id.toString());
+
+                    String price=data.getStringExtra("price");
+                    priceBillActivityExtendedEditText.setText(price);
+                    Log.d("price",price);
 
                 }
                 break;

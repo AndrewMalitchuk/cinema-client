@@ -3,6 +3,7 @@ package com.cinema.client.activity;
 
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.CallSuper;
@@ -41,6 +42,7 @@ public class AboutFilmActivity_ViewBinding implements Unbinder {
     target.youtubePreviewFilmActivityPlayerView = Utils.findRequiredViewAsType(source, R.id.youtubePreviewFilmActivityPlayerView, "field 'youtubePreviewFilmActivityPlayerView'", YouTubePlayerView.class);
     target.filmPosterFilmActivityImageView = Utils.findRequiredViewAsType(source, R.id.filmPosterFilmActivityImageView, "field 'filmPosterFilmActivityImageView'", KenBurnsView.class);
     target.additionalInfoFilmActivityTagGroup = Utils.findRequiredViewAsType(source, R.id.additionalInfoFilmActivityTagGroup, "field 'additionalInfoFilmActivityTagGroup'", TagGroup.class);
+    target.frame = Utils.findRequiredViewAsType(source, R.id.frame, "field 'frame'", RelativeLayout.class);
   }
 
   @Override
@@ -60,5 +62,6 @@ public class AboutFilmActivity_ViewBinding implements Unbinder {
     target.youtubePreviewFilmActivityPlayerView = null;
     target.filmPosterFilmActivityImageView = null;
     target.additionalInfoFilmActivityTagGroup = null;
+    target.frame = null;
   }
 }

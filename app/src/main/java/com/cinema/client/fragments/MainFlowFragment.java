@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,6 +53,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.liangfeizc.avatarview.AvatarView;
+import com.rw.loadingdialog.LoadingView;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -190,6 +192,12 @@ public class MainFlowFragment extends Fragment {
     public static final String FAVOURITE_CINEMAS_PREF = "favourite_cinema_pref";
     private SharedPreferences sharedpreferences;
 
+    LoadingView loadingView;
+
+
+//    @BindView(R.id.frame)
+//    FrameLayout frame;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -236,6 +244,14 @@ public class MainFlowFragment extends Fragment {
                 .start();
         //
 
+
+//        loadingView = new LoadingView.Builder(getContext())
+//                .setProgressColorResource(R.color.colorAccent)
+//                .setBackgroundColorRes(R.color.white)
+//                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+//                .attachTo(frame);
+//
+//        loadingView.show();
 
         //
 

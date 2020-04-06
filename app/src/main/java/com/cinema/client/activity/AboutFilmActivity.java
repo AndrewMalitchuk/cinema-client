@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -28,6 +29,7 @@ import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.github.rubensousa.bottomsheetbuilder.BottomSheetMenuDialog;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
+import com.rw.loadingdialog.LoadingView;
 
 
 import butterknife.BindView;
@@ -78,6 +80,12 @@ public class AboutFilmActivity extends AppCompatActivity {
 
     private FilmAPI currentFilm;
 
+
+    private LoadingView loadingView;
+
+    @BindView(R.id.frame)
+    RelativeLayout frame;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,7 +95,8 @@ public class AboutFilmActivity extends AppCompatActivity {
 
 //        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
 
-        myToolbar.setTitle("Loading...");
+//        myToolbar.setTitle("Loading...");
+        myToolbar.setTitle(R.string.loadingMessage);
         setSupportActionBar(myToolbar);
 
 
@@ -100,6 +109,15 @@ public class AboutFilmActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
+        //
+        loadingView = new LoadingView.Builder(getApplication())
+                .setProgressColorResource(R.color.colorAccent)
+                .setBackgroundColorRes(R.color.white)
+                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+                .attachTo(frame);
+
+        loadingView.show();
+        //
 
 
         //
@@ -245,6 +263,7 @@ public class AboutFilmActivity extends AppCompatActivity {
             youtubePreviewFilmActivityPlayerView.getYouTubePlayerWhenReady(e -> {
                 e.cueVideo(content.getVideoUrl().split("v=")[1], 0);
             });
+            loadingView.hide();
         } else {
             Intent intent = new Intent(this, ErrorActivity.class);
             startActivity(intent);
