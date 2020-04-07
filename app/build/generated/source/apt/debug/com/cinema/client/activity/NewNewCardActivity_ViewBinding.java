@@ -6,6 +6,7 @@ import android.widget.ImageButton;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.cinema.client.R;
@@ -32,6 +33,7 @@ public class NewNewCardActivity_ViewBinding implements Unbinder {
     target.cinemaNameBillActivityExtendedEditText = Utils.findRequiredViewAsType(source, R.id.cinemaNameBillActivityExtendedEditText, "field 'cinemaNameBillActivityExtendedEditText'", ExtendedEditText.class);
     target.placesBillActivityExtendedEditText = Utils.findRequiredViewAsType(source, R.id.placesBillActivityExtendedEditText, "field 'placesBillActivityExtendedEditText'", ExtendedEditText.class);
     target.priceBillActivityExtendedEditText = Utils.findRequiredViewAsType(source, R.id.priceBillActivityExtendedEditText, "field 'priceBillActivityExtendedEditText'", ExtendedEditText.class);
+    target.frame = Utils.findRequiredViewAsType(source, R.id.frame, "field 'frame'", ConstraintLayout.class);
   }
 
   @Override
@@ -48,5 +50,6 @@ public class NewNewCardActivity_ViewBinding implements Unbinder {
     target.cinemaNameBillActivityExtendedEditText = null;
     target.placesBillActivityExtendedEditText = null;
     target.priceBillActivityExtendedEditText = null;
+    target.frame = null;
   }
 }

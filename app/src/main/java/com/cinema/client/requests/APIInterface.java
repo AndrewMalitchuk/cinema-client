@@ -182,6 +182,9 @@ public interface APIInterface {
     @GET(api_hall)
     Call<AllHallAPI> getHallByCinemaId(@Query("cinema_id") int cinema_id);
 
+    @GET(api_hall)
+    Call<AllHallAPI> getHallById(@Query("id") int id);
+
     @Multipart
     @PUT(api_hall)
     Call<AllHallAPI> updateHallByHallId(

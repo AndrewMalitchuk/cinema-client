@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +47,7 @@ import com.google.gson.reflect.TypeToken;
 import com.nonzeroapps.whatisnewdialog.NewItemDialog;
 import com.nonzeroapps.whatisnewdialog.object.NewFeatureItem;
 import com.pd.chocobar.ChocoBar;
+import com.rw.loadingdialog.LoadingView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,9 +92,14 @@ public class BottomNavigation extends AppCompatActivity {
     View llProgressBar;
 
 
+    @BindView(R.id.frame)
+    FrameLayout frame;
+
     private List<HallAPI> hall;
 
     private AllHallAPI currentHall;
+
+    LoadingView loadingView;
 
 
     Gson gson = new Gson().newBuilder().create();
@@ -126,6 +133,12 @@ public class BottomNavigation extends AppCompatActivity {
 
         //
 
+        loadingView = new LoadingView.Builder(this)
+                .setProgressColorResource(R.color.colorAccent)
+                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+                .attachTo(frame);
+//        loadingView.show();
+
 
         //
 
@@ -134,9 +147,9 @@ public class BottomNavigation extends AppCompatActivity {
 
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
-        int cinema_id = 9;
+        int cinema_id = getIntent().getIntExtra("id",-1);
 
-        Call<AllHallAPI> call = apiInterface.getHallByCinemaId(cinema_id);
+        Call<AllHallAPI> call = apiInterface.getHallById(cinema_id);
 
         call.enqueue(new Callback<AllHallAPI>() {
             @Override
@@ -350,6 +363,13 @@ public class BottomNavigation extends AppCompatActivity {
 
                                 private void onToken(TokenAPI tokenAPI) {
 
+                                    //
+                                    getIntent().putExtra("hallPlace", textView.getText().toString());
+                                    setResult(RESULT_OK, getIntent());
+                                    finish();
+                                    //
+
+
                                     RequestBody name_ = RequestBody.create(MediaType.parse("text/plain"),
                                             currentHall.getName());
 
@@ -359,10 +379,10 @@ public class BottomNavigation extends AppCompatActivity {
                                     RequestBody cinema_id_ = RequestBody.create(MediaType.parse("text/plain"),
                                             currentHall.getCinemaId()+"");
 
+                                    Log.d("hall_id",currentHall.toString());
+                                    Log.d("gson",gson.toJson(hall));
 
-
-
-
+                                    //
                                     Call<AllHallAPI> call=apiInterface.updateHallByHallId(
                                             currentHall.getId(),
                                             name_,
@@ -371,7 +391,7 @@ public class BottomNavigation extends AppCompatActivity {
                                             "Bearer "+tokenAPI.getAccess()
 
                                     );
-
+//
                                     call.enqueue(new Callback<AllHallAPI>() {
                                         @Override
                                         public void onResponse(Call<AllHallAPI> call, Response<AllHallAPI> response) {
@@ -392,9 +412,11 @@ public class BottomNavigation extends AppCompatActivity {
                                         @Override
                                         public void onFailure(Call<AllHallAPI> call, Throwable t) {
 
+                                            startActivity(new Intent(BottomNavigation.this,ErrorActivity.class));
+
                                         }
                                     });
-
+                                    //
 
                                 }
                             })
@@ -412,9 +434,9 @@ public class BottomNavigation extends AppCompatActivity {
                             .show();
 
 
-//                    Log.d("JSON 0", hall.get(0).getBought().toString());
-//                    Log.d("JSON 1", hall.get(1).getBought().toString());
-//                    Log.d("JSON 2", hall.get(2).getBought().toString());
+                    Log.d("JSON 0", hall.get(0).getBought().toString());
+                    Log.d("JSON 1", hall.get(1).getBought().toString());
+                    Log.d("JSON 2", hall.get(2).getBought().toString());
 
 
                 }
@@ -460,7 +482,8 @@ public class BottomNavigation extends AppCompatActivity {
 //            mProgressDialog.show();
 //            statusView.setStatus(iammert.com.library.Status.LOADING);
 //            simpleDialog.show();
-            llProgressBar.setVisibility(View.VISIBLE);
+//            llProgressBar.setVisibility(View.VISIBLE);
+            loadingView.show();
             // https://medium.com/@therajanmaurya/progress-bar-instead-progress-dialog-baa5d72c2860
 
         }
@@ -490,7 +513,8 @@ public class BottomNavigation extends AppCompatActivity {
 //            mProgressDialog.dismiss();
 //            statusView.setStatus(iammert.com.library.Status.COMPLETE);
 //            simpleDialog.dismiss();
-            llProgressBar.setVisibility(View.GONE);
+//            llProgressBar.setVisibility(View.GONE);
+            loadingView.hide();
             // https://medium.com/@therajanmaurya/progress-bar-instead-progress-dialog-baa5d72c2860
 
 

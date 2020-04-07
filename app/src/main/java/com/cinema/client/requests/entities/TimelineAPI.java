@@ -52,4 +52,10 @@ public class TimelineAPI {
     @SerializedName("price")
     @Expose
     private Double price;
+
+    @Getter
+    @Setter
+    @SerializedName("hall_id")
+    @Expose
+    private Integer hallId;
 }

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.NewNewCardActivity">
+    tools:context=".activity.NewNewCardActivity"
+    android:id="@+id/frame">
 
     <LinearLayout
         android:id="@+id/card_container"
@@ -182,7 +183,7 @@
                 android:clickable="false"
                 app:enabled="false"
                 app:iconSignifier="@drawable/ic_attach_money_black_24dp"
-                app:labelText="Price">
+                app:labelText="Price per ticket">
 
                 <com.developer.mtextfield.ExtendedEditText
                     android:id="@+id/priceBillActivityExtendedEditText"

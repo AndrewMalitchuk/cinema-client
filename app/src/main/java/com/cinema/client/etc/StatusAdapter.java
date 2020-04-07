@@ -40,25 +40,25 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
     @Setter
     boolean isFilmTimeline;
 
-    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context) {
-        this.items = items;
-        this.context = context;
-    }
+//    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context) {
+//        this.items = items;
+//        this.context = context;
+//    }
+//
+//    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, String activeDate, String activeTime) {
+//        this.items = items;
+//        this.context = context;
+//        this.selectedDateTimeTextView = selectedDateTimeTextView;
+//        this.activeDate = activeDate;
+//        this.activeTime = activeTime;
+//    }
 
-    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, String activeDate, String activeTime) {
-        this.items = items;
-        this.context = context;
-        this.selectedDateTimeTextView = selectedDateTimeTextView;
-        this.activeDate = activeDate;
-        this.activeTime = activeTime;
-    }
-
-    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, TextView selectedTimelineStatusActivityTextView, TextView selectedPriceStatusActivityTextView,String activeDate, String activeTime) {
+    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, TextView selectedTimelineStatusActivityTextView, TextView selectedPriceStatusActivityTextView, String activeDate, String activeTime) {
         this.items = items;
         this.context = context;
         this.selectedDateTimeTextView = selectedDateTimeTextView;
         this.selectedTimelineStatusActivityTextView = selectedTimelineStatusActivityTextView;
-        this.selectedPriceStatusActivityTextView=selectedPriceStatusActivityTextView;
+        this.selectedPriceStatusActivityTextView = selectedPriceStatusActivityTextView;
 
         this.activeDate = activeDate;
         this.activeTime = activeTime;
@@ -122,59 +122,83 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
             e.printStackTrace();
         }
 
-        if (tempDate.before(curentDate) || tempDate.compareTo(curentDate) == 0) {
+        Log.d("KEK", tempDate + " | " + curentDate);
 
-            if (temp.after(curent) || temp.compareTo(curent) == 0) {
+        if (tempDate.before(curentDate)) {
 
-                if (temp.before(curent) == true) {
-                    sequenceStep.setActive(false);
-                    sequenceStep.setSelected(false);
-                }
+            Log.d("KEK", "before");
+
+            sequenceStep.setActive(false);
+            sequenceStep.setSelected(false);
+
+        } else if (tempDate.after(curentDate) || tempDate.compareTo(curentDate) == 0) {
+
+            Log.d("KEK", "after");
+
+            Log.d("KEK", temp + " | " + curent);
+
+
+            if (temp.after(curent)) {
+
+                Log.d("KEK", "after time");
+
 
                 sequenceStep.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 //                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
                         selectedDateTimeTextView.setText(myItem.getFormattedTime());
-                        selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getId());
-                        selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getPrice()+"");
+
+                        Log.d("TimelineAPI", myItem.getTimelineAPI().toString());
+
+                        try {
+                            Log.d("null", (selectedTimelineStatusActivityTextView == null) + "");
+
+//                            selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getId());
+//
+//                            selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getPrice() + "");
+
+                            selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getId() + "");
+                            selectedPriceStatusActivityTextView.setText(myItem.getTimelineAPI().getPrice() + "");
+
+                        } catch (Exception e) {
+
+                        }
                     }
                 });
+
+
+//                if (temp.before(curent) == true) {
+//                    sequenceStep.setActive(true);
+//                    sequenceStep.setSelected(true);
+//                }
+
+
             }
 
 
-        } else {
-//            sequenceStep.setActive(true);
-//            sequenceStep.setSelected(true);
-            sequenceStep.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-//                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
-                    selectedDateTimeTextView.setText(myItem.getFormattedTime());
-                }
-            });
         }
 
         Log.d("isFilmTimeline", isFilmTimeline + "");
-        if (isFilmTimeline) {
-
-            if (true) {
-                sequenceStep.setActive(true);
-                sequenceStep.setSelected(true);
-            }
-
-            sequenceStep.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-//                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
-                    selectedDateTimeTextView.setText(myItem.getFormattedTime());
-                    Log.d("TimelineAPI", myItem.getTimelineAPI().toString() + "");
-//                    Log.d("TimelineAPI",myItem.getTimelineAPI().getId()+"");
-                    selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getId()+"");
-                    selectedPriceStatusActivityTextView.setText(myItem.getTimelineAPI().getPrice()+"");
-                }
-            });
-        }
+//        if (isFilmTimeline) {
+//
+//            if (true) {
+//                sequenceStep.setActive(true);
+//                sequenceStep.setSelected(true);
+//            }
+//
+//            sequenceStep.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+////                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
+//                    selectedDateTimeTextView.setText(myItem.getFormattedTime());
+//                    Log.d("TimelineAPI", myItem.getTimelineAPI().toString() + "");
+////                    Log.d("TimelineAPI",myItem.getTimelineAPI().getId()+"");
+//                    selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getId() + "");
+//                    selectedPriceStatusActivityTextView.setText(myItem.getTimelineAPI().getPrice() + "");
+//                }
+//            });
+//        }
 
     }
 

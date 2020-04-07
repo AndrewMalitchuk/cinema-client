@@ -1,6 +1,7 @@
 package com.cinema.client.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
@@ -33,12 +34,16 @@ import com.cooltechworks.creditcarddesign.CreditCardView;
 import com.developer.mtextfield.ExtendedEditText;
 import com.droidbyme.dialoglib.DroidDialog;
 import com.pd.chocobar.ChocoBar;
+import com.rw.loadingdialog.LoadingView;
 
 import java.io.IOException;
+import io.reactivex.Observable;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import in.shadowfax.proswipebutton.ProSwipeButton;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -97,6 +102,12 @@ public class NewNewCardActivity extends AppCompatActivity {
     public static final String ACCOUNT_PREF = "accountPref";
     private SharedPreferences sharedpreferences1;
 
+    @BindView(R.id.frame)
+    ConstraintLayout frame;
+
+
+    LoadingView loadingView;
+
     //
     TimelineAPI temp = null;
     //
@@ -139,6 +150,11 @@ public class NewNewCardActivity extends AppCompatActivity {
 //        String datetime = "2020-02-27T23:05:02+02:00";
 //        datetimeBillActivityExtendedEditText.setText(datetime);
         //
+
+        loadingView=new LoadingView.Builder(this)
+                .setProgressColorResource(R.color.colorAccent)
+                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+                .attachTo(frame);
 
 
         //
@@ -428,8 +444,32 @@ public class NewNewCardActivity extends AppCompatActivity {
     }
 
     public void onChoosePlaceImageButtonClick(View view) {
+
+        loadingView.show();
+
         Intent intent = new Intent(this, BottomNavigation.class);
-        startActivityForResult(intent, PICK_HALL_PLACE_REQUEST);
+
+        //XXX
+        if(timeline_id==null){
+            timeline_id=8;
+        }
+
+
+        Observable<TimelineAPI> call=apiInterface.getTimelineByIdRx(timeline_id);
+
+         call.subscribeOn(Schedulers.io())
+                 .observeOn(AndroidSchedulers.mainThread())
+                 .map(result -> result)
+                 .doOnComplete(() -> {
+                     loadingView.hide();
+                 })
+                 .subscribe(timelineAPI -> {
+                     intent.putExtra("id",timelineAPI.getHallId());
+                     startActivityForResult(intent, PICK_HALL_PLACE_REQUEST);
+                 });
+
+
+
     }
 
     public void onChooseCinemaImageButtonClick(View view) {

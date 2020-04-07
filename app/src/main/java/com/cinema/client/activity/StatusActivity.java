@@ -344,11 +344,12 @@ public class StatusActivity extends AppCompatActivity {
                         });
 
 
-                        sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, currentDate,currentTime));
+                        sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView,selectedTimelineStatusActivityTextView,selectedPriceStatusActivityTextView, currentDate,currentTime));
                     }
 
 
-                    sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, currentDate, currentTime));
+                    sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView,selectedTimelineStatusActivityTextView,selectedPriceStatusActivityTextView, currentDate,currentTime));
+
                     loadingView.hide();
                     timelineLoadingView.hide();
 
