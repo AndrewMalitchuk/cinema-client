@@ -7,6 +7,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.cinema.client.R;
@@ -33,6 +34,7 @@ public class TicketActivity_ViewBinding implements Unbinder {
     target.filmDateTicketActivityEditText = Utils.findRequiredViewAsType(source, R.id.filmDateTicketActivityEditText, "field 'filmDateTicketActivityEditText'", AppCompatTextView.class);
     target.filmTimeTicketActivityEditText = Utils.findRequiredViewAsType(source, R.id.filmTimeTicketActivityEditText, "field 'filmTimeTicketActivityEditText'", AppCompatTextView.class);
     target.placeTicketActivityEditText = Utils.findRequiredViewAsType(source, R.id.placeTicketActivityEditText, "field 'placeTicketActivityEditText'", AppCompatTextView.class);
+    target.frame = Utils.findRequiredViewAsType(source, R.id.frame, "field 'frame'", ConstraintLayout.class);
   }
 
   @Override
@@ -50,5 +52,6 @@ public class TicketActivity_ViewBinding implements Unbinder {
     target.filmDateTicketActivityEditText = null;
     target.filmTimeTicketActivityEditText = null;
     target.placeTicketActivityEditText = null;
+    target.frame = null;
   }
 }

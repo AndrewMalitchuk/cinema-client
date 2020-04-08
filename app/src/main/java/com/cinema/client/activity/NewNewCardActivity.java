@@ -240,6 +240,8 @@ public class NewNewCardActivity extends AppCompatActivity {
 
                                                     if (response.isSuccessful()) {
 
+                                                        Toast.makeText(NewNewCardActivity.this, "KEK", Toast.LENGTH_SHORT).show();
+
 //                                                        ;
 
 //

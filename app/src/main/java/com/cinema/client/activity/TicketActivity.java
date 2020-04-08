@@ -2,6 +2,7 @@ package com.cinema.client.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.CinemaAPI;
 import com.cinema.client.requests.entities.FilmAPI;
 import com.cinema.client.requests.entities.TicketAPI;
+import com.cinema.client.requests.entities.TimelineAPI;
 import com.cinema.client.requests.entities.TokenAPI;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.google.zxing.BarcodeFormat;
@@ -27,6 +29,7 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
+import com.rw.loadingdialog.LoadingView;
 
 import java.util.ArrayList;
 
@@ -69,6 +72,8 @@ public class TicketActivity extends AppCompatActivity {
     @BindView(R.id.placeTicketActivityEditText)
     AppCompatTextView placeTicketActivityEditText;
 
+    @BindView(R.id.frame)
+    ConstraintLayout frame;
 
 
     private APIInterface apiInterface;
@@ -77,7 +82,9 @@ public class TicketActivity extends AppCompatActivity {
     public static final String ACCOUNT_PREF = "accountPref";
     private SharedPreferences sharedpreferences;
 
+    int timeline_id;
 
+    LoadingView loadingView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,13 +110,19 @@ public class TicketActivity extends AppCompatActivity {
 //        String code="4a39efc6fc7e6b4ed772e3941cf86964";
 
 
+        //
+        loadingView = new LoadingView.Builder(this)
+                .setProgressColorResource(R.color.colorAccent)
+                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+                .attachTo(frame);
+        //
 
-        int cinema_id=getIntent().getIntExtra("cinema_id",-1);
-        int film_id=getIntent().getIntExtra("film_id",-1);
-        int timeline_id=getIntent().getIntExtra("timeline_id",-1);
-        String datetime=getIntent().getStringExtra("datetime");
-        Log.d("intent",cinema_id+" "+film_id+" "+timeline_id+" "+datetime);
 
+        int cinema_id = getIntent().getIntExtra("cinema_id", -1);
+        int film_id = getIntent().getIntExtra("film_id", -1);
+        timeline_id = getIntent().getIntExtra("timeline_id", -1);
+        String datetime = getIntent().getStringExtra("datetime");
+        Log.d("intent", cinema_id + " " + film_id + " " + timeline_id + " " + datetime);
 
 
         sharedpreferences = getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE);
@@ -117,8 +130,6 @@ public class TicketActivity extends AppCompatActivity {
             String login = sharedpreferences.getString("login", null);
             String password = sharedpreferences.getString("password", null);
             int userId = sharedpreferences.getInt("userId", -1);
-
-
 
 
             RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
@@ -138,30 +149,20 @@ public class TicketActivity extends AppCompatActivity {
         }
 
 
-
-
-
-
-
-
-
-
-
-
     }
 
     private void onToken(TokenAPI tokenAPI) {
 
-        String ticketCode=getIntent().getStringExtra("ticketCode");
+        String ticketCode = getIntent().getStringExtra("ticketCode");
 
-        Call<TicketAPI> call=apiInterface.getTicketByCode(ticketCode,"Bearer " +tokenAPI.getAccess());
+        Call<TicketAPI> call = apiInterface.getTicketByCode(ticketCode, "Bearer " + tokenAPI.getAccess());
         call.enqueue(new Callback<TicketAPI>() {
             @Override
             public void onResponse(Call<TicketAPI> call, Response<TicketAPI> response) {
 
-                curentTicket=response.body();
+                curentTicket = response.body();
 
-                Log.d("TICKET",curentTicket.toString());
+                Log.d("TICKET", curentTicket.toString());
 
 
                 setContent(curentTicket);
@@ -172,7 +173,7 @@ public class TicketActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<TicketAPI> call, Throwable t) {
                 call.cancel();
-                Intent intent = new Intent(TicketActivity.this,ErrorActivity.class);
+                Intent intent = new Intent(TicketActivity.this, ErrorActivity.class);
                 startActivity(intent);
             }
         });
@@ -181,20 +182,38 @@ public class TicketActivity extends AppCompatActivity {
     }
 
 
-    public void onQRCodeClick(View view){
-        Intent intent=new Intent(this,QRZoomActivity.class);
-        intent.putExtra("QR",curentTicket.getCode());
+    public void onQRCodeClick(View view) {
+        Intent intent = new Intent(this, QRZoomActivity.class);
+        intent.putExtra("QR", curentTicket.getCode());
         startActivity(intent);
     }
 
-    public void setContent(TicketAPI content){
+    public void setContent(TicketAPI content) {
+
+        loadingView.show();
 
 
+        Observable<TimelineAPI> call = apiInterface.getTimelineByIdRx(timeline_id);
+
+        call
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .map(result -> result)
+                .doOnComplete(() -> {
+                    loadingView.hide();
+
+
+                })
+                .subscribe(timelineAPI -> {
+                    filmDateTicketActivityEditText.setText(timelineAPI.getDate());
+                    filmTimeTicketActivityEditText.setText(timelineAPI.getTime());
+
+                });
 
 
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try {
-            BitMatrix bitMatrix = multiFormatWriter.encode(content.getCode(), BarcodeFormat.QR_CODE,1024,1024);
+            BitMatrix bitMatrix = multiFormatWriter.encode(content.getCode(), BarcodeFormat.QR_CODE, 1024, 1024);
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
             Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
             qrCodeTicketActivityImageView.setImageBitmap(bitmap);
@@ -205,12 +224,12 @@ public class TicketActivity extends AppCompatActivity {
         qrCodeTicketActivityEditText.setText(content.getCode());
 
 
-        Call<FilmAPI> callFilmApi=apiInterface.getFilmById(getIntent().getIntExtra("film_id",-1));
+        Call<FilmAPI> callFilmApi = apiInterface.getFilmById(getIntent().getIntExtra("film_id", -1));
         callFilmApi.enqueue(new Callback<FilmAPI>() {
             @Override
             public void onResponse(Call<FilmAPI> call, Response<FilmAPI> response) {
 
-                FilmAPI content=response.body();
+                FilmAPI content = response.body();
 
                 filmTitleTicketActivityEditText.setText(content.getTitle());
             }
@@ -218,16 +237,16 @@ public class TicketActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<FilmAPI> call, Throwable t) {
                 call.cancel();
-                Intent intent = new Intent(TicketActivity.this,ErrorActivity.class);
+                Intent intent = new Intent(TicketActivity.this, ErrorActivity.class);
                 startActivity(intent);
             }
         });
 
-        Call<CinemaAPI> callCinemaApi=apiInterface.getCinemaById(getIntent().getIntExtra("cinema_id",-1));
+        Call<CinemaAPI> callCinemaApi = apiInterface.getCinemaById(getIntent().getIntExtra("cinema_id", -1));
         callCinemaApi.enqueue(new Callback<CinemaAPI>() {
             @Override
             public void onResponse(Call<CinemaAPI> call, Response<CinemaAPI> response) {
-                CinemaAPI content=response.body();
+                CinemaAPI content = response.body();
                 cinemaNameTicketActivityEditText.setText(content.getName());
 
             }
@@ -235,32 +254,24 @@ public class TicketActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<CinemaAPI> call, Throwable t) {
                 call.cancel();
-                Intent intent = new Intent(TicketActivity.this,ErrorActivity.class);
+                Intent intent = new Intent(TicketActivity.this, ErrorActivity.class);
                 startActivity(intent);
             }
         });
 
 
-
-
-
-
         //
-        String temp_datetime=getIntent().getStringExtra("datetime");
-        String temp_date=temp_datetime.split("T")[0];
-        String temp_time=temp_datetime.split("T")[1].substring(0,5);
+//        String temp_datetime=getIntent().getStringExtra("datetime");
+//        String temp_date=temp_datetime.split("T")[0];
+//        String temp_time=temp_datetime.split("T")[1].substring(0,5);
 
         //
 
-        filmDateTicketActivityEditText.setText(temp_date);
-        filmTimeTicketActivityEditText.setText(temp_time);
+
         placeTicketActivityEditText.setText(content.getPlace());
 
 
-
     }
-
-
 
 
 }

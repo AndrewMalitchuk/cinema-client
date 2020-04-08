@@ -509,7 +509,8 @@ public class TicketSearchFragment extends Fragment {
                         intent.putExtra("timeline_id",ticketItemSearch.getTimelineId());
                         intent.putExtra("film_id",ticketItemSearch.getFilmId());
                         intent.putExtra("cinema_id",ticketItemSearch.getCinemaId());
-                        intent.putExtra("datetime",ticketItemSearch.getFilmDateTime());
+//                        intent.putExtra("datetime",ticketItemSearch.getFilmDateTime());
+//                        intent.putExtra("datetime",ticketItemSearch.getFilmDateTime());
 
                         getContext().startActivity(intent);
                     }
