@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.NewNewCardActivity"
+    tools:context=".activity.BillActivity"
     android:id="@+id/frame">
 
     <LinearLayout
@@ -41,7 +41,7 @@
                 android:id="@+id/filmTitleBillActivityExtendedEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Loading..." />
+                android:text="@string/loadingMessage" />
 
         </com.developer.mtextfield.TextFieldBoxes>
 

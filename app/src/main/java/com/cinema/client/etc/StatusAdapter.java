@@ -7,7 +7,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.cinema.client.R;
-import com.cinema.client.activity.Main2Activity;
 import com.cinema.client.requests.entities.TimelineAPI;
 import com.pd.chocobar.ChocoBar;
 import com.transferwise.sequencelayout.SequenceAdapter;

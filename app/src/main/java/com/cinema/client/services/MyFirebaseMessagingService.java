@@ -14,8 +14,8 @@ import androidx.core.app.NotificationCompat;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
+import com.cinema.client.activity.Main3Activity;
 import com.cinema.client.activity.StoriesActivity;
 import com.cinema.client.worker.MyWorker;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -133,7 +133,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
      * @param messageBody FCM message body received.
      */
     private void sendNotification(String messageBody) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Main3Activity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
                 PendingIntent.FLAG_ONE_SHOT);

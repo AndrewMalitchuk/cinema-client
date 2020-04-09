@@ -1,42 +1,21 @@
 package com.cinema.client.fragments;
 
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
-import com.cinema.client.activity.BottomNavigation;
-import com.cinema.client.entities.Hall;
-import com.cinema.client.requests.entities.FilmAPI;
 import com.cinema.client.requests.entities.HallAPI;
-import com.cinema.client.utils.HallJsonParser;
 import com.cinema.client.utils.HallRender;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

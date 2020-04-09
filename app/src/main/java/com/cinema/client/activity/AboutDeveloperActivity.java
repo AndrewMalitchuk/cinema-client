@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
 import com.vansuita.materialabout.builder.AboutBuilder;
 import com.vansuita.materialabout.views.AboutView;
@@ -41,7 +40,7 @@ public class AboutDeveloperActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Main2Activity.class));
+                startActivity(new Intent(getApplicationContext(), Main3Activity.class));
             }
         });
 

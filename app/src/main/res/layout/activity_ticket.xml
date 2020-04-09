@@ -74,7 +74,7 @@
                     android:id="@+id/qrCodeTicketActivityEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Loading..."
+                    android:text="@string/loadingMessage"
                     android:textAlignment="center"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                     android:textColor="@color/about_text_color"
@@ -99,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Loading..."
+                    android:text="@string/loadingMessage"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                     android:textSize="24sp" />
 
@@ -109,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="Loading..."
+                    android:text="@string/loadingMessage"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                     android:textColor="@color/about_text_color"
                     android:textSize="18sp" />
@@ -140,7 +140,7 @@
                             android:id="@+id/filmDateTicketActivityEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Loading..."
+                            android:text="@string/loadingMessage"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                             android:textColor="@color/about_text_color" />
 
@@ -173,7 +173,7 @@
                             android:id="@+id/filmTimeTicketActivityEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Loading..."
+                            android:text="@string/loadingMessage"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                             android:textColor="@color/about_text_color" />
 
@@ -206,7 +206,7 @@
                             android:id="@+id/placeTicketActivityEditText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Loading..."
+                            android:text="@string/loadingMessage"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                             android:textColor="@color/about_text_color" />
 

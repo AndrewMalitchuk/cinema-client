@@ -4,48 +4,34 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.Preference;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.brouding.simpledialog.SimpleDialog;
-import com.bumptech.glide.annotation.GlideModule;
 import com.cinema.client.R;
-import com.cinema.client.entities.Hall;
-import com.cinema.client.etc.SitButton;
 import com.cinema.client.fragments.HallTestFragment;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.AllHallAPI;
 import com.cinema.client.requests.entities.HallAPI;
 import com.cinema.client.requests.entities.HallCellAPI;
-import com.cinema.client.requests.entities.TicketAPI;
 import com.cinema.client.requests.entities.TokenAPI;
 import com.droidbyme.dialoglib.DroidDialog;
-import com.github.javiersantos.bottomdialogs.BottomDialog;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.nonzeroapps.whatisnewdialog.NewItemDialog;
-import com.nonzeroapps.whatisnewdialog.object.NewFeatureItem;
 import com.pd.chocobar.ChocoBar;
 import com.rw.loadingdialog.LoadingView;
 
@@ -55,10 +41,6 @@ import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import es.dmoral.markdownview.Config;
-import es.dmoral.markdownview.MarkdownView;
-import iammert.com.library.Status;
-import iammert.com.library.StatusView;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -68,7 +50,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class BottomNavigation extends AppCompatActivity {
+public class HallNavigationActivity extends AppCompatActivity {
 
 
     @BindView(R.id.navigation)
@@ -111,7 +93,7 @@ public class BottomNavigation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bottom_navigation);
+        setContentView(R.layout.activity_hall_navigation);
 
         ButterKnife.bind(this);
 
@@ -127,7 +109,7 @@ public class BottomNavigation extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), NewNewCardActivity.class));
+                startActivity(new Intent(getApplicationContext(), BillActivity.class));
             }
         });
 
@@ -193,7 +175,7 @@ public class BottomNavigation extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.left_side_of_hall:
-                        Toast.makeText(BottomNavigation.this, "left_side_of_hall", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HallNavigationActivity.this, "left_side_of_hall", Toast.LENGTH_SHORT).show();
 
                         mt = new MyTask();
                         mt.setJson("left_json");
@@ -202,7 +184,7 @@ public class BottomNavigation extends AppCompatActivity {
 
                         break;
                     case R.id.center_side_of_hall:
-                        Toast.makeText(BottomNavigation.this, "center_side_of_hall", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HallNavigationActivity.this, "center_side_of_hall", Toast.LENGTH_SHORT).show();
 
                         mt = new MyTask();
 //                        mt.setJson("center_json");
@@ -213,7 +195,7 @@ public class BottomNavigation extends AppCompatActivity {
 
                         break;
                     case R.id.right_side_of_hall:
-                        Toast.makeText(BottomNavigation.this, "right_side_of_hall", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(HallNavigationActivity.this, "right_side_of_hall", Toast.LENGTH_SHORT).show();
 
 
 //
@@ -256,7 +238,7 @@ public class BottomNavigation extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.submit:
-                ChocoBar.builder().setActivity(BottomNavigation.this)
+                ChocoBar.builder().setActivity(HallNavigationActivity.this)
                         .setText("Success!")
                         .setDuration(ChocoBar.LENGTH_SHORT)
                         .build()
@@ -282,7 +264,7 @@ public class BottomNavigation extends AppCompatActivity {
                     Log.d("JSON", list.size() + "");
 
 
-                    DroidDialog dialog = new DroidDialog.Builder(BottomNavigation.this)
+                    DroidDialog dialog = new DroidDialog.Builder(HallNavigationActivity.this)
                             .icon(R.drawable.ic_ticket_black)
                             .title("Confirmation")
                             .content("Are you sure about buying this tickets?")
@@ -290,7 +272,7 @@ public class BottomNavigation extends AppCompatActivity {
                             .positiveButton("Yes, I'm sure", new DroidDialog.onPositiveListener() {
                                 @Override
                                 public void onPositive(Dialog droidDialog) {
-                                    Toast.makeText(BottomNavigation.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(HallNavigationActivity.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
                                     droidDialog.cancel();
                                     //
                                     List<Integer> leftFreeRemove=new ArrayList<>();
@@ -397,7 +379,7 @@ public class BottomNavigation extends AppCompatActivity {
                                         public void onResponse(Call<AllHallAPI> call, Response<AllHallAPI> response) {
                                             if(response.isSuccessful()){
                                                 Log.d("!!!","Yeah");
-                                                ChocoBar.builder().setActivity(BottomNavigation.this)
+                                                ChocoBar.builder().setActivity(HallNavigationActivity.this)
                                                         .setText("Success!")
                                                         .setDuration(ChocoBar.LENGTH_SHORT)
                                                         .green()
@@ -412,7 +394,7 @@ public class BottomNavigation extends AppCompatActivity {
                                         @Override
                                         public void onFailure(Call<AllHallAPI> call, Throwable t) {
 
-                                            startActivity(new Intent(BottomNavigation.this,ErrorActivity.class));
+                                            startActivity(new Intent(HallNavigationActivity.this,ErrorActivity.class));
 
                                         }
                                     });
@@ -423,14 +405,14 @@ public class BottomNavigation extends AppCompatActivity {
                             .negativeButton("No, it was a mistake", new DroidDialog.onNegativeListener() {
                                 @Override
                                 public void onNegative(Dialog droidDialog) {
-                                    Toast.makeText(BottomNavigation.this, "No, it was a mistake", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(HallNavigationActivity.this, "No, it was a mistake", Toast.LENGTH_SHORT).show();
                                     //
 
                                     //
                                 }
                             })
-                            .color(ContextCompat.getColor(BottomNavigation.this, R.color.colorAccent), ContextCompat.getColor(BottomNavigation.this, R.color.white),
-                                    ContextCompat.getColor(BottomNavigation.this, R.color.colorAccent))
+                            .color(ContextCompat.getColor(HallNavigationActivity.this, R.color.colorAccent), ContextCompat.getColor(HallNavigationActivity.this, R.color.white),
+                                    ContextCompat.getColor(HallNavigationActivity.this, R.color.colorAccent))
                             .show();
 
 

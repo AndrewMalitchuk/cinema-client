@@ -91,7 +91,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.cinema.client.activity.StoriesActivity" />
         <activity
-            android:name="com.cinema.client.activity.NewNewCardActivity"
+            android:name="com.cinema.client.activity.BillActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.cinema.client.activity.AboutCinemaActivity"
@@ -113,9 +113,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.cinema.client.activity.Main2Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name="com.cinema.client.activity.QRZoomActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -125,9 +122,8 @@
             android:name="com.cinema.client.activity.AboutDeveloperActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.cinema.client.activity.BottomNavigation"
+            android:name="com.cinema.client.activity.HallNavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.cinema.client.activity.HallActivity" />
         <activity android:name="com.cinema.client.activity.StartupActivity" />
         <activity android:name="com.cinema.client.activity.CardActivity" />
         <activity
@@ -147,8 +143,6 @@
         <activity
             android:name="com.cooltechworks.creditcarddesign.CardEditActivity"
             android:screenOrientation="portrait" />
-        <activity android:name="com.cinema.client.MainActivity" >
-        </activity>
 
         <!-- <receiver android:name="utils.notification.AlarmReceiver"/> -->
 

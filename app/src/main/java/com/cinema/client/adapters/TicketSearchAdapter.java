@@ -20,8 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.cinema.client.R;
-import com.cinema.client.activity.NewNewCardActivity;
-import com.cinema.client.activity.SearchCinemaActivity;
+import com.cinema.client.activity.Main3Activity;
 import com.cinema.client.activity.TicketActivity;
 import com.cinema.client.entities.TicketItemSearch;
 import com.cinema.client.requests.APIClient;
@@ -35,10 +34,7 @@ import com.cinema.client.requests.entities.TokenAPI;
 import com.droidbyme.dialoglib.DroidDialog;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.pd.chocobar.ChocoBar;
-import com.skyhope.materialtagview.TagView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observable;
@@ -61,6 +57,8 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
     public static final String ACCOUNT_PREF = "accountPref";
     private SharedPreferences sharedpreferences;
 
+    DroidDialog dialog;
+
 
     int positionOfDeleted;
 
@@ -82,9 +80,9 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
 
         holder.filmNameText.setText(myTickets.getFilmName());
         //
-        String date=myTickets.getFilmDateTime().split("T")[0];
-        String time=myTickets.getFilmDateTime().split("T")[0].split("/+")[0];
-        holder.filmDateTimeText.setText(date+" "+time);
+        String date = myTickets.getFilmDate();
+        String time = myTickets.getFilmTime();
+        holder.filmDateTimeText.setText(date + " " + time);
 
         //
 
@@ -97,19 +95,19 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
             case 1:
                 // Returned
 
-                holder.status.setTags("Returned",myTicketsList.get(position).getFilmPlace());
+                holder.status.setTags("Returned", myTicketsList.get(position).getFilmPlace());
 
                 break;
             case 2:
                 // Active
 
-                holder.status.setTags("Active",myTicketsList.get(position).getFilmPlace());
+                holder.status.setTags("Active", myTicketsList.get(position).getFilmPlace());
 
                 break;
             case 3:
                 // Canceled
 
-                holder.status.setTags("Canceled",myTicketsList.get(position).getFilmPlace());
+                holder.status.setTags("Canceled", myTicketsList.get(position).getFilmPlace());
 
                 break;
         }
@@ -126,10 +124,10 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                 intent.putExtra("ticketCode", myTicketsList.get(position).getTicketCode());
                 //
                 intent.putExtra("ticketCode", myTicketsList.get(position).getTicketCode());
-                intent.putExtra("timeline_id",myTicketsList.get(position).getTimelineId());
-                intent.putExtra("film_id",myTicketsList.get(position).getFilmId());
-                intent.putExtra("cinema_id",myTicketsList.get(position).getCinemaId());
-                intent.putExtra("datetime",myTicketsList.get(position).getFilmDateTime());
+                intent.putExtra("timeline_id", myTicketsList.get(position).getTimelineId());
+                intent.putExtra("film_id", myTicketsList.get(position).getFilmId());
+                intent.putExtra("cinema_id", myTicketsList.get(position).getCinemaId());
+                intent.putExtra("datetime", myTicketsList.get(position).getFilmDateTime());
                 //
                 context.startActivity(intent);
 
@@ -151,65 +149,68 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                             case R.id.cancel:
                                 Toast.makeText(context, "Delete #" + position, Toast.LENGTH_SHORT).show();
 
-                                positionOfDeleted = position;
+                                if (myTicketsList.get(position).getStatus() ==2) {
+
+                                    positionOfDeleted = position;
 
 
-                                DroidDialog dialog = new DroidDialog.Builder(context)
-                                        .icon(R.drawable.ic_video_label_black_24dp)
-                                        .title("Confirm your action")
-                                        .content("Are you really want to delete this ticket?")
-                                        .cancelable(true, false)
-                                        .positiveButton("Yes, I'm sure", new DroidDialog.onPositiveListener() {
-                                            @Override
-                                            public void onPositive(Dialog droidDialog) {
-                                                Toast.makeText(context, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
+                                    dialog = new DroidDialog.Builder(context)
+                                            .icon(R.drawable.ic_video_label_black_24dp)
+                                            .title("Confirm your action")
+                                            .content("Are you really want to delete this ticket?")
+                                            .cancelable(true, false)
+                                            .positiveButton("Yes, I'm sure", new DroidDialog.onPositiveListener() {
+                                                @Override
+                                                public void onPositive(Dialog droidDialog) {
+                                                    Toast.makeText(context, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
 //                                                droidDialog.cancel();
-                                                //
-
-                                                sharedpreferences = context.getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE);
-                                                if (sharedpreferences != null) {
-                                                    String login = sharedpreferences.getString("login", null);
-                                                    String password = sharedpreferences.getString("password", null);
-
-                                                    // update ticket
-                                                    RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
-                                                            password);
-
-                                                    RequestBody login_ = RequestBody.create(MediaType.parse("text/plain"),
-                                                            login);
-
-                                                    apiInterface = APIClient.getClient().create(APIInterface.class);
-                                                    Observable<TokenAPI> tokenRx = apiInterface.refreshTokenRx(login_, password_);
-
-                                                    tokenRx.subscribeOn(Schedulers.io())
-                                                            .observeOn(AndroidSchedulers.mainThread())
-                                                            .map(result -> result)
-                                                            .subscribe(TicketSearchAdapter.this::onToken);
                                                     //
 
+                                                    sharedpreferences = context.getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE);
+                                                    if (sharedpreferences != null) {
+                                                        String login = sharedpreferences.getString("login", null);
+                                                        String password = sharedpreferences.getString("password", null);
+
+                                                        // update ticket
+                                                        RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
+                                                                password);
+
+                                                        RequestBody login_ = RequestBody.create(MediaType.parse("text/plain"),
+                                                                login);
+
+                                                        apiInterface = APIClient.getClient().create(APIInterface.class);
+                                                        Observable<TokenAPI> tokenRx = apiInterface.refreshTokenRx(login_, password_);
+
+                                                        tokenRx.subscribeOn(Schedulers.io())
+                                                                .observeOn(AndroidSchedulers.mainThread())
+                                                                .map(result -> result)
+                                                                .subscribe(TicketSearchAdapter.this::onToken);
+                                                        //
 
 
+                                                    }
 
+
+                                                    //
                                                 }
 
 
-                                                //
-                                            }
+                                            })
+                                            .negativeButton("No, thanks", new DroidDialog.onNegativeListener() {
+                                                @Override
+                                                public void onNegative(Dialog droidDialog) {
+                                                    Toast.makeText(context, "No, thanks", Toast.LENGTH_SHORT).show();
+                                                    //
+                                                    droidDialog.cancel();
+                                                    //
+                                                }
+                                            })
+                                            .color(ContextCompat.getColor(context, R.color.colorAccent), ContextCompat.getColor(context, R.color.white),
+                                                    ContextCompat.getColor(context, R.color.colorAccent))
+                                            .show();
+                                }else{
 
-
-                                        })
-                                        .negativeButton("No, thanks", new DroidDialog.onNegativeListener() {
-                                            @Override
-                                            public void onNegative(Dialog droidDialog) {
-                                                Toast.makeText(context, "No, thanks", Toast.LENGTH_SHORT).show();
-                                                //
-                                                droidDialog.cancel();
-                                                //
-                                            }
-                                        })
-                                        .color(ContextCompat.getColor(context, R.color.colorAccent), ContextCompat.getColor(context, R.color.white),
-                                                ContextCompat.getColor(context, R.color.colorAccent))
-                                        .show();
+                                }
 
 
                                 return true;
@@ -236,24 +237,26 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                 myTicketsList.get(positionOfDeleted).getTicketCode());
         RequestBody status_ = RequestBody.create(MediaType.parse("text/plain"),
                 3 + "");
-        RequestBody cinema_id_ = RequestBody.create(MediaType.parse("text/plain"),
-                myTicketsList.get(positionOfDeleted).getCinemaId() + "");
         RequestBody timeline_id_ = RequestBody.create(MediaType.parse("text/plain"),
                 myTicketsList.get(positionOfDeleted).getTimelineId() + "");
         RequestBody user_ = RequestBody.create(MediaType.parse("text/plain"),
                 myTicketsList.get(positionOfDeleted).getUserId() + "");
-        RequestBody date_ = RequestBody.create(MediaType.parse("text/plain"),
-                myTicketsList.get(positionOfDeleted).getFilmDateTime());
 
 
         Call<TicketAPI> call = apiInterface.updateTicket(
-                myTicketsList.get(positionOfDeleted).getTicketId(),place_, code_, status_,timeline_id_ , user_ , "Bearer " + tokenAPI.getAccess()
+                myTicketsList.get(positionOfDeleted).getTicketId(),
+                place_,
+                code_,
+                status_,
+                timeline_id_,
+                user_,
+                "Bearer " + tokenAPI.getAccess()
         );
 
         call.enqueue(new Callback<TicketAPI>() {
             @Override
             public void onResponse(Call<TicketAPI> call, Response<TicketAPI> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
                     Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -265,95 +268,95 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
         });
 
 
-        Call<AllHallAPI> callPrevHall=apiInterface.getHallByCinemaId(myTicketsList.get(positionOfDeleted).getCinemaId());
+        Call<AllHallAPI> callPrevHall = apiInterface.getHallById(myTicketsList.get(positionOfDeleted).getHallId());
         callPrevHall.enqueue(new Callback<AllHallAPI>() {
             @Override
             public void onResponse(Call<AllHallAPI> call, Response<AllHallAPI> response) {
-                AllHallAPI hall=response.body();
+                AllHallAPI hall = response.body();
 
-                HallCellAPI hallCellAPI=new HallCellAPI();
+                HallCellAPI hallCellAPI = new HallCellAPI();
 
                 hallCellAPI.setRow(Integer.valueOf(myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[1]));
                 hallCellAPI.setCol(Integer.valueOf(myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[2]));
 
-                Gson gson=new Gson().newBuilder().create();
+                Gson gson = new Gson().newBuilder().create();
 
-                Log.d("hallCellAPI",hallCellAPI.toString());
+                Log.d("hallCellAPI", hallCellAPI.toString());
 
 
                 List<HallAPI> hallAPI;
 
                 //
 
-                if(myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[0].equals("l")){
+                if (myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[0].equals("l")) {
 //                    hallCellAPI.setSector("left");
 
-                    hallAPI=gson.fromJson(hall.getHallJson(),new TypeToken<List<HallAPI>>(){
+                    hallAPI = gson.fromJson(hall.getHallJson(), new TypeToken<List<HallAPI>>() {
 
                     }.getType());
 
 
-                    Log.d("ABSOLUTE",getAbsolute(hallAPI.get(0).getCustom(),hallCellAPI).toString());
+                    Log.d("ABSOLUTE", getAbsolute(hallAPI.get(0).getCustom(), hallCellAPI).toString());
 
-                    Log.d("hall 0",removePlace(hallAPI.get(0).getBought(),getAbsolute(hallAPI.get(0).getCustom(),hallCellAPI))+"");
+                    Log.d("hall 0", removePlace(hallAPI.get(0).getBought(), getAbsolute(hallAPI.get(0).getCustom(), hallCellAPI)) + "");
 
 
-                    hallAPI.get(0).getBought().remove(removePlace(hallAPI.get(0).getBought(),getAbsolute(hallAPI.get(0).getCustom(),hallCellAPI)));
+                    hallAPI.get(0).getBought().remove(removePlace(hallAPI.get(0).getBought(), getAbsolute(hallAPI.get(0).getCustom(), hallCellAPI)));
 
-                    hallAPI.get(0).getFree().add(getAbsolute(hallAPI.get(0).getCustom(),hallCellAPI));
+                    hallAPI.get(0).getFree().add(getAbsolute(hallAPI.get(0).getCustom(), hallCellAPI));
 
 
                     hall.setHallJson(gson.toJson(hallAPI));
 
-                    Log.d("NEW JSON",hall.getHallJson());
+                    Log.d("NEW JSON", hall.getHallJson());
 
-                }else if(myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[0].equals("c")){
+                } else if (myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[0].equals("c")) {
 //                    hallCellAPI.setSector("center");
 
-                    hallAPI=gson.fromJson(hall.getHallJson(),new TypeToken<List<HallAPI>>(){
+                    hallAPI = gson.fromJson(hall.getHallJson(), new TypeToken<List<HallAPI>>() {
 
                     }.getType());
 
 
-                    Log.d("ABSOLUTE",getAbsolute(hallAPI.get(1).getCustom(),hallCellAPI).toString());
+                    Log.d("ABSOLUTE", getAbsolute(hallAPI.get(1).getCustom(), hallCellAPI).toString());
 
-                    Log.d("hall 1",removePlace(hallAPI.get(1).getBought(),getAbsolute(hallAPI.get(1).getCustom(),hallCellAPI))+"");
+                    Log.d("hall 1", removePlace(hallAPI.get(1).getBought(), getAbsolute(hallAPI.get(1).getCustom(), hallCellAPI)) + "");
 
 
-                    hallAPI.get(1).getBought().remove(removePlace(hallAPI.get(1).getBought(),getAbsolute(hallAPI.get(1).getCustom(),hallCellAPI)));
+                    hallAPI.get(1).getBought().remove(removePlace(hallAPI.get(1).getBought(), getAbsolute(hallAPI.get(1).getCustom(), hallCellAPI)));
 
-                    hallAPI.get(1).getFree().add(getAbsolute(hallAPI.get(1).getCustom(),hallCellAPI));
+                    hallAPI.get(1).getFree().add(getAbsolute(hallAPI.get(1).getCustom(), hallCellAPI));
 
 
                     hall.setHallJson(gson.toJson(hallAPI));
 
-                    Log.d("NEW JSON",hall.getHallJson());
+                    Log.d("NEW JSON", hall.getHallJson());
 
-                }else if(myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[0].equals("r")){
+                } else if (myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[0].equals("r")) {
 //                    hallCellAPI.setSector("right");
 
-                    hallAPI=gson.fromJson(hall.getHallJson(),new TypeToken<List<HallAPI>>(){
+                    hallAPI = gson.fromJson(hall.getHallJson(), new TypeToken<List<HallAPI>>() {
 
                     }.getType());
 
 
-                    Log.d("ABSOLUTE",getAbsolute(hallAPI.get(2).getCustom(),hallCellAPI).toString());
+                    Log.d("ABSOLUTE", getAbsolute(hallAPI.get(2).getCustom(), hallCellAPI).toString());
 
-                    Log.d("hall 2",removePlace(hallAPI.get(2).getBought(),getAbsolute(hallAPI.get(2).getCustom(),hallCellAPI))+"");
+                    Log.d("hall 2", removePlace(hallAPI.get(2).getBought(), getAbsolute(hallAPI.get(2).getCustom(), hallCellAPI)) + "");
 
 
-                    hallAPI.get(2).getBought().remove(removePlace(hallAPI.get(2).getBought(),getAbsolute(hallAPI.get(2).getCustom(),hallCellAPI)));
+                    hallAPI.get(2).getBought().remove(removePlace(hallAPI.get(2).getBought(), getAbsolute(hallAPI.get(2).getCustom(), hallCellAPI)));
 
-                    hallAPI.get(2).getFree().add(getAbsolute(hallAPI.get(2).getCustom(),hallCellAPI));
+                    hallAPI.get(2).getFree().add(getAbsolute(hallAPI.get(2).getCustom(), hallCellAPI));
 
 
                     hall.setHallJson(gson.toJson(hallAPI));
 
-                    Log.d("NEW JSON",hall.getHallJson());
+                    Log.d("NEW JSON", hall.getHallJson());
 
                 }
 
-                Log.d("OUT",hall.getHallJson());
+                Log.d("OUT", hall.getHallJson());
 
 
                 //
@@ -364,24 +367,27 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                         hall.getHallJson());
 
                 RequestBody cinema_id_ = RequestBody.create(MediaType.parse("text/plain"),
-                        hall.getCinemaId()+"");
+                        hall.getCinemaId() + "");
 
 
-                Call<AllHallAPI> callUpdate=apiInterface.updateHallByHallId(
+                Call<AllHallAPI> callUpdate = apiInterface.updateHallByHallId(
                         hall.getId(),
                         name_,
                         hall_json_,
                         cinema_id_,
-                        "Bearer "+tokenAPI.getAccess()
+                        "Bearer " + tokenAPI.getAccess()
 
                 );
 
                 callUpdate.enqueue(new Callback<AllHallAPI>() {
                     @Override
                     public void onResponse(Call<AllHallAPI> call, Response<AllHallAPI> response) {
-                        if(response.isSuccessful()){
-                            Log.d("!!!","Yeah");
+                        if (response.isSuccessful()) {
+                            Log.d("!!!", "Yeah");
 
+
+                            dialog.dialog.cancel();
+                            context.startActivity(new Intent(context, Main3Activity.class));
 
                         }
                     }
@@ -392,8 +398,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                     }
                 });
                 //
-
-
 
 
             }
@@ -407,16 +411,16 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
     }
 
 
-    public int removePlace(List<HallCellAPI> list, HallCellAPI place){
+    public int removePlace(List<HallCellAPI> list, HallCellAPI place) {
 
 //        for(HallCellAPI hallCellAPI:list){
-        for(int i=0;i<list.size();i++){
+        for (int i = 0; i < list.size(); i++) {
 
-            Log.d("removePlace",list.get(i).toString());
+            Log.d("removePlace", list.get(i).toString());
 
-            if(list.get(i).getCol()==place.getCol()&&list.get(i).getRow()==place.getRow()){
+            if (list.get(i).getCol() == place.getCol() && list.get(i).getRow() == place.getRow()) {
 //                list.remove(hallCellAPI);
-                Log.d("removePlace",i+"");
+                Log.d("removePlace", i + "");
                 return i;
             }
         }
@@ -424,11 +428,11 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
 
     }
 
-    public HallCellAPI getAbsolute(List<HallCellCustomAPI> list, HallCellAPI place){
+    public HallCellAPI getAbsolute(List<HallCellCustomAPI> list, HallCellAPI place) {
 
-        for(HallCellCustomAPI hallCellCustomAPI:list){
-            if(hallCellCustomAPI.getNewCol()==place.getCol() && hallCellCustomAPI.getNewRow()==place.getRow()){
-                HallCellAPI hallCellAPI =new HallCellAPI();
+        for (HallCellCustomAPI hallCellCustomAPI : list) {
+            if (hallCellCustomAPI.getNewCol() == place.getCol() && hallCellCustomAPI.getNewRow() == place.getRow()) {
+                HallCellAPI hallCellAPI = new HallCellAPI();
                 hallCellAPI.setRow(hallCellCustomAPI.getOldRow());
                 hallCellAPI.setCol(hallCellCustomAPI.getOldCol());
                 return hallCellAPI;
@@ -472,48 +476,5 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
         }
 
     }
-//    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener, View.OnClickListener,
-//        MenuItem.OnMenuItemClickListener
-//    {
-//        ImageView filmImage;
-//        TextView filmNameText;
-//        TextView filmDateTimeText;
-//        TextView filmPlaceText;
-//        TextView filmCinemaText;
-//        CardView cv;
-//
-//        public ViewHolder(View itemView)
-//        {
-//
-//            super(itemView);
-//
-//            filmImage= (ImageView)itemView.findViewById(R.id.filmImage);;
-//            filmNameText= (TextView)itemView.findViewById(R.id.cinemaName);
-//            filmDateTimeText= (TextView)itemView.findViewById(R.id.cinemaAddress);
-//            filmPlaceText= (TextView)itemView.findViewById(R.id.filmPlace);
-//            filmCinemaText= (TextView)itemView.findViewById(R.id.filmCinema);
-//
-//            cv = (CardView)itemView.findViewById(R.id.cv);
-//
-//            //
-//            itemView.setOnClickListener(this);
-//            itemView.setOnCreateContextMenuListener(this);
-//        }
-//
-//        @Override
-//        public boolean onMenuItemClick(MenuItem menuItem) {
-//            return true;
-//        }
-//
-//        @Override
-//        public void onClick(View view) {
-//
-//        }
-//
-//        @Override
-//        public void onCreateContextMenu(ContextMenu contextMenu, View view, ContextMenu.ContextMenuInfo contextMenuInfo) {
-//            MenuItem myActionItem = contextMenu.add("Some menu item");
-//            myActionItem.setOnMenuItemClickListener(this);
-//        }
-//    }
+
 }

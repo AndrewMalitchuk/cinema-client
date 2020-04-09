@@ -32,7 +32,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
@@ -66,20 +65,15 @@ import java.util.HashSet;
 import java.util.List;
 import io.reactivex.Observable;
 import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Action;
 import io.reactivex.schedulers.Schedulers;
 import jp.wasabeef.glide.transformations.BlurTransformation;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 
 public class AboutCinemaActivity extends AppCompatActivity {
 
@@ -172,7 +166,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
         myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Main3Activity.class));
             }
         });
         //

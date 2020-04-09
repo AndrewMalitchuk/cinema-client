@@ -18,7 +18,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
@@ -106,7 +105,7 @@ public class AboutFilmActivity extends AppCompatActivity {
         myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), Main3Activity.class));
             }
         });
         //
@@ -211,7 +210,7 @@ public class AboutFilmActivity extends AppCompatActivity {
 
 
     public void onFabClick(View view) {
-        Intent intent = new Intent(AboutFilmActivity.this, NewNewCardActivity.class);
+        Intent intent = new Intent(AboutFilmActivity.this, BillActivity.class);
         intent.putExtra("filmTitle",currentFilm.getTitle());
         intent.putExtra("filmId",currentFilm.getId());
 

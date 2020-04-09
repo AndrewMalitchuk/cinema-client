@@ -1,35 +1,17 @@
 package com.cinema.client.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.text.style.TtsSpan;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.brouding.simpledialog.SimpleDialog;
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
 import com.github.javiersantos.bottomdialogs.BottomDialog;
 import com.nonzeroapps.whatisnewdialog.NewItemDialog;
 import com.nonzeroapps.whatisnewdialog.object.NewFeatureItem;
 
 import java.util.ArrayList;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import es.dmoral.markdownview.Config;
-import es.dmoral.markdownview.MarkdownView;
 
 
 public class WhatsNewActivity extends AppCompatActivity {

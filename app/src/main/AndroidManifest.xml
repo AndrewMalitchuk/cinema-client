@@ -38,7 +38,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.StoriesActivity" />
         <activity
-            android:name=".activity.NewNewCardActivity"
+            android:name=".activity.BillActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.AboutCinemaActivity"
@@ -60,9 +60,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.Main2Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".activity.QRZoomActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -72,9 +69,8 @@
             android:name=".activity.AboutDeveloperActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.BottomNavigation"
+            android:name=".activity.HallNavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.HallActivity" />
         <activity android:name=".activity.StartupActivity" />
         <activity android:name=".activity.CardActivity" />
         <activity
@@ -94,9 +90,6 @@
         <activity
             android:name="com.cooltechworks.creditcarddesign.CardEditActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity">
-
-        </activity>
 
         <!--<receiver android:name="utils.notification.AlarmReceiver"/>-->
 

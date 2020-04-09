@@ -87,7 +87,7 @@ public class StartupActivity extends OnboarderActivity implements OnboarderPageC
         // implement your logic, save induction has done to sharedPrefs
         Toast.makeText(this, "Finish button was pressed", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, Main3Activity.class);
         startActivity(intent);
 
     }
@@ -98,7 +98,7 @@ public class StartupActivity extends OnboarderActivity implements OnboarderPageC
 
         Toast.makeText(this, "Ok, bro, your time is very important for us!", Toast.LENGTH_SHORT).show();
 
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, Main3Activity.class);
         startActivity(intent);
     }
 

@@ -1,17 +1,16 @@
 package com.cinema.client.activity;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import android.accounts.Account;
-import android.accounts.AccountManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -27,7 +26,6 @@ import android.widget.Toast;
 
 import com.brouding.simpledialog.SimpleDialog;
 import com.cinema.client.R;
-import com.cinema.client.etc.CinemaAppAccountAuthenticator;
 import com.cinema.client.fragments.MainFlowFragment;
 import com.cinema.client.fragments.TicketSearchFragment;
 import com.cinema.client.requests.APIClient;
@@ -35,7 +33,10 @@ import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.FilmAPI;
 import com.developer.mtextfield.ExtendedEditText;
 import com.droidbyme.dialoglib.DroidDialog;
-import com.google.android.gms.common.internal.AccountType;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.keiferstone.nonet.NoNet;
 import com.mehdi.shortcut.interfaces.IReceiveStringExtra;
 import com.mehdi.shortcut.model.Shortcut;
@@ -260,6 +261,38 @@ public class Main3Activity extends AppCompatActivity {
             }
         });
 
+        //
+        // XXX !!!
+        // https://github.com/firebase/quickstart-android/tree/bf928f5b7385637bf14fd91505429322951d3914/messaging
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            // Create channel to show notifications.
+            String channelId  = "fcm_default_channel";
+            String channelName = "Weather";
+            NotificationManager notificationManager =
+                    getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(new NotificationChannel(channelId,
+                    channelName, NotificationManager.IMPORTANCE_LOW));
+        }
+
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (!task.isSuccessful()) {
+                            Log.w("MAIN ACTIVITY", "getInstanceId failed", task.getException());
+                            return;
+                        }
+
+                        // Get new Instance ID token
+                        String token = task.getResult().getToken();
+
+                        // Log and toast
+//                        String msg = getString(R.string.msg_token_fmt, token);
+                        Log.d("MAIN ACTIVITY", token);
+                        Toast.makeText(Main3Activity.this, token, Toast.LENGTH_SHORT).show();
+                    }
+                });
         //
 
 

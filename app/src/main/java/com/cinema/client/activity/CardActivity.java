@@ -7,14 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
 import com.cooltechworks.creditcarddesign.CardEditActivity;
 import com.cooltechworks.creditcarddesign.CreditCardUtils;
 import com.cooltechworks.creditcarddesign.CreditCardView;
-import com.manojbhadane.PaymentCardView;
 
 public class CardActivity extends AppCompatActivity {
 

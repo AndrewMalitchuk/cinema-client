@@ -75,7 +75,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:layout_marginBottom="5dp"
-                                    android:text="Loading..."
+                                    android:text="@string/loadingMessage"
                                     android:textColor="@color/colorLoginActivityText"
                                     android:textSize="20sp"
                                     android:textStyle="bold" />
@@ -86,7 +86,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:layout_marginBottom="5dp"
-                                    android:text="Loading..."
+                                    android:text="@string/loadingMessage"
                                     android:textColor="@color/colorLoginActivityText" />
 
                                 <TextView
@@ -95,7 +95,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="5dp"
                                     android:layout_marginBottom="5dp"
-                                    android:text="Loading..." />
+                                    android:text="@string/loadingMessage" />
 
                                 <Button
                                     android:id="@+id/filmMoreMainFlowFragmentButton"

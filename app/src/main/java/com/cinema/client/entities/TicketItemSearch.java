@@ -22,6 +22,15 @@ public class TicketItemSearch {
     private int userId;
 
 
+    @Getter
+    @Setter
+    String filmDate;
+
+    @Getter
+    @Setter
+    String filmTime;
+
+
     private String filmName;
     private String filmDateTime;
     private String filmPlace;
@@ -38,6 +47,10 @@ public class TicketItemSearch {
     @Getter
     @Setter
     private Integer timelineId;
+
+    @Getter
+    @Setter
+    private Integer hallId;
 
 
     @Getter

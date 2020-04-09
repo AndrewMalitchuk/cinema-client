@@ -14,15 +14,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
-import com.cinema.client.MainActivity;
 import com.cinema.client.R;
-import com.cinema.client.fragments.TicketSearchFragment;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.TicketAPI;
@@ -36,7 +33,6 @@ import com.droidbyme.dialoglib.DroidDialog;
 import com.pd.chocobar.ChocoBar;
 import com.rw.loadingdialog.LoadingView;
 
-import java.io.IOException;
 import io.reactivex.Observable;
 
 import butterknife.BindView;
@@ -50,7 +46,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NewNewCardActivity extends AppCompatActivity {
+public class BillActivity extends AppCompatActivity {
 
     private final int CREATE_NEW_CARD = 0;
     private final int PICK_DATETIME_REQUEST = 1;
@@ -115,7 +111,7 @@ public class NewNewCardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_new_card);
+        setContentView(R.layout.activity_bill);
         initialize();
         listeners();
 
@@ -201,12 +197,11 @@ public class NewNewCardActivity extends AppCompatActivity {
                                     public void onResponse(Call<TokenAPI> call, Response<TokenAPI> response) {
 
                                         String token = response.body().getAccess();
-                                        Toast.makeText(NewNewCardActivity.this, token, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(BillActivity.this, token, Toast.LENGTH_SHORT).show();
 
 
-                                        String[] ticketPlaces = placesBillActivityExtendedEditText.getText().toString().split(";");
+                                        String ticketPlace = placesBillActivityExtendedEditText.getText().toString().split(";")[0];
 
-                                        for (String ticketPlace : ticketPlaces) {
 
                                             Log.d("ticketPlace", ticketPlace);
 
@@ -240,7 +235,7 @@ public class NewNewCardActivity extends AppCompatActivity {
 
                                                     if (response.isSuccessful()) {
 
-                                                        Toast.makeText(NewNewCardActivity.this, "KEK", Toast.LENGTH_SHORT).show();
+//                                                        Toast.makeText(NewNewCardActivity.this, "KEK", Toast.LENGTH_SHORT).show();
 
 //                                                        ;
 
@@ -258,7 +253,7 @@ public class NewNewCardActivity extends AppCompatActivity {
                                             });
 
 
-                                        }
+
 
 
                                     }
@@ -274,10 +269,15 @@ public class NewNewCardActivity extends AppCompatActivity {
                                     // task success! show TICK icon in ProSwipeButton
                                     proSwipeBtn.showResultIcon(true); // false if task failed
 //                                                        //
-                                    ChocoBar.builder().setActivity(NewNewCardActivity.this)
+                                    ChocoBar.builder().setActivity(BillActivity.this)
                                             .setText("Success!")
-                                            .setDuration(ChocoBar.LENGTH_SHORT)
                                             .green()
+                                            .setAction("Main Flow", new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
+                                                    startActivity(new Intent(BillActivity.this, Main3Activity.class));
+                                                }
+                                            })
                                             .show();
 //                                                        //
 //                                                        Intent intent=new Intent(NewNewCardActivity.this, Main3Activity.class);
@@ -287,7 +287,7 @@ public class NewNewCardActivity extends AppCompatActivity {
                                     // task success! show TICK icon in ProSwipeButton
                                     proSwipeBtn.showResultIcon(false); // false if task failed
                                     //
-                                    ChocoBar.builder().setActivity(NewNewCardActivity.this)
+                                    ChocoBar.builder().setActivity(BillActivity.this)
                                             .setText("Something goes wrong!")
                                             .setDuration(ChocoBar.LENGTH_SHORT)
                                             .red()
@@ -300,7 +300,7 @@ public class NewNewCardActivity extends AppCompatActivity {
                             } else {
                                 proSwipeBtn.showResultIcon(false);
 
-                                ChocoBar.builder().setActivity(NewNewCardActivity.this)
+                                ChocoBar.builder().setActivity(BillActivity.this)
                                         .setText("Check fields!")
                                         .setDuration(ChocoBar.LENGTH_SHORT)
                                         .red()
@@ -337,7 +337,7 @@ public class NewNewCardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(NewNewCardActivity.this, CardEditActivity.class);
+                Intent intent = new Intent(BillActivity.this, CardEditActivity.class);
                 startActivityForResult(intent, CREATE_NEW_CARD);
             }
         });
@@ -354,7 +354,7 @@ public class NewNewCardActivity extends AppCompatActivity {
                 String cardHolderName = creditCardView.getCardHolderName();
                 String cvv = creditCardView.getCVV();
 
-                Intent intent = new Intent(NewNewCardActivity.this, CardEditActivity.class);
+                Intent intent = new Intent(BillActivity.this, CardEditActivity.class);
                 intent.putExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME, cardHolderName);
                 intent.putExtra(CreditCardUtils.EXTRA_CARD_NUMBER, cardNumber);
                 intent.putExtra(CreditCardUtils.EXTRA_CARD_EXPIRY, expiry);
@@ -449,7 +449,7 @@ public class NewNewCardActivity extends AppCompatActivity {
 
         loadingView.show();
 
-        Intent intent = new Intent(this, BottomNavigation.class);
+        Intent intent = new Intent(this, HallNavigationActivity.class);
 
         //XXX
         if(timeline_id==null){
@@ -476,7 +476,7 @@ public class NewNewCardActivity extends AppCompatActivity {
 
     public void onChooseCinemaImageButtonClick(View view) {
 
-        DroidDialog dialog = new DroidDialog.Builder(NewNewCardActivity.this)
+        DroidDialog dialog = new DroidDialog.Builder(BillActivity.this)
                 .icon(R.drawable.ic_video_label_black_24dp)
                 .title("Selected cinema")
                 .content("Do you want to open your selected cinema instead of searching another cinema?")
@@ -484,10 +484,10 @@ public class NewNewCardActivity extends AppCompatActivity {
                 .positiveButton("Yes, I'm sure", new DroidDialog.onPositiveListener() {
                     @Override
                     public void onPositive(Dialog droidDialog) {
-                        Toast.makeText(NewNewCardActivity.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BillActivity.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
                         droidDialog.cancel();
                         //
-                        Intent intent = new Intent(NewNewCardActivity.this, SearchCinemaActivity.class);
+                        Intent intent = new Intent(BillActivity.this, SearchCinemaActivity.class);
 //                        intent.putExtra("isForChoosing",true);
                         sharedpreferences = getSharedPreferences(FAVOURITE_CINEMAS_PREF, Context.MODE_PRIVATE);
                         intent.putExtra("selectedCinemasJson", sharedpreferences.getString("fav_json", null));
@@ -499,9 +499,9 @@ public class NewNewCardActivity extends AppCompatActivity {
                 .negativeButton("No, let's search", new DroidDialog.onNegativeListener() {
                     @Override
                     public void onNegative(Dialog droidDialog) {
-                        Toast.makeText(NewNewCardActivity.this, "No, let's search", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BillActivity.this, "No, let's search", Toast.LENGTH_SHORT).show();
                         //
-                        Intent intent = new Intent(NewNewCardActivity.this, SearchCinemaActivity.class);
+                        Intent intent = new Intent(BillActivity.this, SearchCinemaActivity.class);
                         intent.putExtra("isForChoosing", true);
                         droidDialog.cancel();
 //                        startActivity(intent);
@@ -509,8 +509,8 @@ public class NewNewCardActivity extends AppCompatActivity {
                         //
                     }
                 })
-                .color(ContextCompat.getColor(NewNewCardActivity.this, R.color.colorAccent), ContextCompat.getColor(NewNewCardActivity.this, R.color.white),
-                        ContextCompat.getColor(NewNewCardActivity.this, R.color.colorAccent))
+                .color(ContextCompat.getColor(BillActivity.this, R.color.colorAccent), ContextCompat.getColor(BillActivity.this, R.color.white),
+                        ContextCompat.getColor(BillActivity.this, R.color.colorAccent))
                 .show();
 
 
