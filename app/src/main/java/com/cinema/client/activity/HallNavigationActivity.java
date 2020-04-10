@@ -143,16 +143,11 @@ public class HallNavigationActivity extends AppCompatActivity {
 
                     currentHall=response.body();
 
-                    Log.d("NAME", response.body().getName());
 
 
                     toolbar.setTitle(response.body().getName());
 
 
-                    Log.d("JSON", response.body().getHallJson());
-                    Log.d("JSON", hall.get(0).getSector());
-                    Log.d("JSON", hall.get(1).getSector());
-                    Log.d("JSON", hall.get(2).getSector());
 
 
                 }
@@ -175,7 +170,6 @@ public class HallNavigationActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.left_side_of_hall:
-                        Toast.makeText(HallNavigationActivity.this, "left_side_of_hall", Toast.LENGTH_SHORT).show();
 
                         mt = new MyTask();
                         mt.setJson("left_json");
@@ -184,7 +178,6 @@ public class HallNavigationActivity extends AppCompatActivity {
 
                         break;
                     case R.id.center_side_of_hall:
-                        Toast.makeText(HallNavigationActivity.this, "center_side_of_hall", Toast.LENGTH_SHORT).show();
 
                         mt = new MyTask();
 //                        mt.setJson("center_json");
@@ -195,7 +188,6 @@ public class HallNavigationActivity extends AppCompatActivity {
 
                         break;
                     case R.id.right_side_of_hall:
-                        Toast.makeText(HallNavigationActivity.this, "right_side_of_hall", Toast.LENGTH_SHORT).show();
 
 
 //
@@ -244,7 +236,6 @@ public class HallNavigationActivity extends AppCompatActivity {
                         .build()
                         .show();
                 TextView textView = findViewById(R.id.selectedPlacesTextView);
-                Log.d("submit", textView.getText().toString());
 
 
                 // Ну я не знаю как сделать, SharedPref не работает, вооооооообще, да костыль, но если кто-то это читает, кроме меня -
@@ -256,12 +247,10 @@ public class HallNavigationActivity extends AppCompatActivity {
                 if (dummy != null && dummy.length() != 0) {
 
 
-                    Log.d("JSON", dummy);
 
                     Gson gson = new Gson().newBuilder().create();
                     List<HallCellAPI> list = gson.fromJson(dummy, new TypeToken<List<HallCellAPI>>() {
                     }.getType());
-                    Log.d("JSON", list.size() + "");
 
 
                     DroidDialog dialog = new DroidDialog.Builder(HallNavigationActivity.this)
@@ -272,7 +261,6 @@ public class HallNavigationActivity extends AppCompatActivity {
                             .positiveButton("Yes, I'm sure", new DroidDialog.onPositiveListener() {
                                 @Override
                                 public void onPositive(Dialog droidDialog) {
-                                    Toast.makeText(HallNavigationActivity.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
                                     droidDialog.cancel();
                                     //
                                     List<Integer> leftFreeRemove=new ArrayList<>();
@@ -361,8 +349,6 @@ public class HallNavigationActivity extends AppCompatActivity {
                                     RequestBody cinema_id_ = RequestBody.create(MediaType.parse("text/plain"),
                                             currentHall.getCinemaId()+"");
 
-                                    Log.d("hall_id",currentHall.toString());
-                                    Log.d("gson",gson.toJson(hall));
 
                                     //
                                     Call<AllHallAPI> call=apiInterface.updateHallByHallId(
@@ -378,7 +364,6 @@ public class HallNavigationActivity extends AppCompatActivity {
                                         @Override
                                         public void onResponse(Call<AllHallAPI> call, Response<AllHallAPI> response) {
                                             if(response.isSuccessful()){
-                                                Log.d("!!!","Yeah");
                                                 ChocoBar.builder().setActivity(HallNavigationActivity.this)
                                                         .setText("Success!")
                                                         .setDuration(ChocoBar.LENGTH_SHORT)
@@ -405,7 +390,6 @@ public class HallNavigationActivity extends AppCompatActivity {
                             .negativeButton("No, it was a mistake", new DroidDialog.onNegativeListener() {
                                 @Override
                                 public void onNegative(Dialog droidDialog) {
-                                    Toast.makeText(HallNavigationActivity.this, "No, it was a mistake", Toast.LENGTH_SHORT).show();
                                     //
 
                                     //
@@ -416,9 +400,6 @@ public class HallNavigationActivity extends AppCompatActivity {
                             .show();
 
 
-                    Log.d("JSON 0", hall.get(0).getBought().toString());
-                    Log.d("JSON 1", hall.get(1).getBought().toString());
-                    Log.d("JSON 2", hall.get(2).getBought().toString());
 
 
                 }
@@ -436,7 +417,6 @@ public class HallNavigationActivity extends AppCompatActivity {
 
             if(list.get(i).getCol()==place.getCol()&&list.get(i).getRow()==place.getRow()){
 //                list.remove(hallCellAPI);
-                Log.d("removePlace",i+"");
                 return i;
             }
         }

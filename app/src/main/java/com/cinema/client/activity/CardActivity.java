@@ -27,28 +27,7 @@ public class CardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_card);
 
 
-//        PaymentCardView paymentCard = (PaymentCardView) findViewById(R.id.creditCard);
-//
-//        //Callbacks
-//        paymentCard.setOnPaymentCardEventListener(new PaymentCardView.OnPaymentCardEventListener() {
-//            @Override
-//            public void onCardDetailsSubmit(String month, String year, String cardNumber, String cvv) {
-//
-//                Toast.makeText(CardActivity.this, "Great!", Toast.LENGTH_SHORT).show();
-//
-//            }
-//
-//            @Override
-//            public void onError(String error) {
-//                Toast.makeText(CardActivity.this, error, Toast.LENGTH_SHORT).show();
-//            }
-//
-//            @Override
-//            public void onCancelClick() {
-//
-//            }
-//        });
-        //
+
         initialize();
         listeners();
 
@@ -117,40 +96,4 @@ public class CardActivity extends AppCompatActivity {
         });
     }
 
-//    public void onActivityResult(int reqCode, int resultCode, Intent data) {
-//
-//        if (resultCode == RESULT_OK) {
-////            Debug.printToast("Result Code is OK", getApplicationContext());
-//
-//            String name = data.getStringExtra(CreditCardUtils.EXTRA_CARD_HOLDER_NAME);
-//            String cardNumber = data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER);
-//            String expiry = data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY);
-//            String cvv = data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV);
-//
-//            if (reqCode == CREATE_NEW_CARD) {
-//
-//                CreditCardView creditCardView = new CreditCardView(this);
-//
-//                creditCardView.setCVV(cvv);
-//                creditCardView.setCardHolderName(name);
-//                creditCardView.setCardExpiry(expiry);
-//                creditCardView.setCardNumber(cardNumber);
-//
-//                cardContainer.addView(creditCardView);
-//                int index = cardContainer.getChildCount() - 1;
-//                addCardListener(index, creditCardView);
-//
-//            } else {
-//
-//                CreditCardView creditCardView = (CreditCardView) cardContainer.getChildAt(reqCode);
-//
-//                creditCardView.setCardExpiry(expiry);
-//                creditCardView.setCardNumber(cardNumber);
-//                creditCardView.setCardHolderName(name);
-//                creditCardView.setCVV(cvv);
-//
-//            }
-//        }
-//
-//    }
 }

@@ -226,7 +226,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
         datePickerTimeline.setOnDateSelectedListener(new OnDateSelectedListener() {
             @Override
             public void onDateSelected(int year, int month, int day, int dayOfWeek) {
-                Log.d("Date:", year + " " + month + " " + day);
                 Intent intent = new Intent(AboutCinemaActivity.this, StatusActivity.class);
                 intent.putExtra("cinemaName",currentCinema.getName() );
 
@@ -244,7 +243,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
                 intent.putExtra("isFilmTimeline",false);
 
 
-//                Log.d("LONG",date.getTime()+"");
                 startActivity(intent);
             }
 
@@ -269,14 +267,12 @@ public class AboutCinemaActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<CinemaAPI> call, Response<CinemaAPI> response) {
                 currentCinema = response.body();
-                Log.d("CINEMA", currentCinema.toString());
                 setContent(currentCinema);
 
             }
 
             @Override
             public void onFailure(Call<CinemaAPI> call, Throwable t) {
-                Log.d("#!", "AboutCinemaActivity");
 
                 call.cancel();
                 Intent intent = new Intent(AboutCinemaActivity.this, ErrorActivity.class);
@@ -382,7 +378,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
             for (TimelineAPI timeline : result) {
 
-                Log.d("TMLN", timeline.toString());
 
                 Call<FilmAPI> film = apiInterface.getFilmById(timeline.getFilmId());
 
@@ -391,7 +386,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
             }
 
-            Log.d("UNQ", uniqueFilms.size() + "");
 
             List<FilmAPI> res = new ArrayList<>();
             for (Integer i : uniqueFilms) {
@@ -404,7 +398,6 @@ public class AboutCinemaActivity extends AppCompatActivity {
             Gson gson = new GsonBuilder().create();
             JsonArray myCustomArray = gson.toJsonTree(res).getAsJsonArray();
             JsonObject jsonObject = new JsonObject();
-            Log.d("PSTR", myCustomArray.toString());
 
             Intent intent = new Intent(AboutCinemaActivity.this, PosterActivity.class);
             intent.putExtra("json", myCustomArray.toString());

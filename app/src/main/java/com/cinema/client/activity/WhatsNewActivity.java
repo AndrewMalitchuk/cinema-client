@@ -69,7 +69,7 @@ public class WhatsNewActivity extends AppCompatActivity {
                                 .setCancelButtonListener(new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        Toast.makeText(WhatsNewActivity.this, "Close Clicked", Toast.LENGTH_LONG).show();
+
                                     }
                                 })
                                 .showDialog(WhatsNewActivity.this);

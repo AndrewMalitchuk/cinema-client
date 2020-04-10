@@ -220,8 +220,7 @@ public class Main3Activity extends AppCompatActivity {
                                 .positiveButton("Yes, I'm sure", new DroidDialog.onPositiveListener() {
                                     @Override
                                     public void onPositive(Dialog droidDialog) {
-                                        Toast.makeText(Main3Activity.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
-                                        //
+                                       //
 
 //                                        pref.edit().clear();
 //                                        pref.edit().commit();
@@ -241,8 +240,7 @@ public class Main3Activity extends AppCompatActivity {
                                 .negativeButton("No", new DroidDialog.onNegativeListener() {
                                     @Override
                                     public void onNegative(Dialog droidDialog) {
-                                        Toast.makeText(Main3Activity.this, "No", Toast.LENGTH_SHORT).show();
-                                        //
+                                         //
                                         Intent intent = getIntent();
                                         finish();
                                         startActivity(intent);
@@ -289,8 +287,6 @@ public class Main3Activity extends AppCompatActivity {
 
                         // Log and toast
 //                        String msg = getString(R.string.msg_token_fmt, token);
-                        Log.d("MAIN ACTIVITY", token);
-                        Toast.makeText(Main3Activity.this, token, Toast.LENGTH_SHORT).show();
                     }
                 });
         //
@@ -300,15 +296,15 @@ public class Main3Activity extends AppCompatActivity {
         //
         ShortcutUtils shortcutUtils = new ShortcutUtils(this);
 
-        Shortcut dynamicShortcut = new Shortcut.ShortcutBuilder()
-                .setShortcutIcon(R.drawable.ic_ticket_black)
-                .setShortcutId("myTicketsShortcut")
-                .setShortcutLongLabel("My Tickets")
-                .setShortcutShortLabel("My Tickets")
-                .setIntentAction("myTicketsShortcut")
-                .setIntentStringExtraKey("myTicketsShortcut")
-                .setIntentStringExtraValue("myTicketsShortcut")
-                .build();
+//        Shortcut dynamicShortcut = new Shortcut.ShortcutBuilder()
+//                .setShortcutIcon(R.drawable.ic_ticket_black)
+//                .setShortcutId("myTicketsShortcut")
+//                .setShortcutLongLabel("My Tickets")
+//                .setShortcutShortLabel("My Tickets")
+//                .setIntentAction("myTicketsShortcut")
+//                .setIntentStringExtraKey("myTicketsShortcut")
+//                .setIntentStringExtraValue("myTicketsShortcut")
+//                .build();
 
 
         Shortcut randomShortcut = new Shortcut.ShortcutBuilder()
@@ -331,14 +327,47 @@ public class Main3Activity extends AppCompatActivity {
                 .setIntentStringExtraValue("myStoriesShortcut")
                 .build();
 
+        Shortcut searchFilmsShortcut = new Shortcut.ShortcutBuilder()
+                .setShortcutIcon(R.drawable.ic_videocam_black_24dp)
+                .setShortcutId("mySearchFilmsShortcut")
+                .setShortcutLongLabel("Search Films")
+                .setShortcutShortLabel("Search Films")
+                .setIntentAction("mySearchFilmsShortcut")
+                .setIntentStringExtraKey("mySearchFilmsShortcut")
+                .setIntentStringExtraValue("mySearchFilmsShortcut")
+                .build();
 
-        shortcutUtils.addDynamicShortCut(dynamicShortcut, new IReceiveStringExtra() {
+        Shortcut searchCinemaShortcut = new Shortcut.ShortcutBuilder()
+                .setShortcutIcon(R.drawable.ic_personal_video_black_24dp)
+                .setShortcutId("mySearchCinemasShortcut")
+                .setShortcutLongLabel("Search Cinemas")
+                .setShortcutShortLabel("Search Cinemas")
+                .setIntentAction("mySearchCinemasShortcut")
+                .setIntentStringExtraKey("mySearchCinemasShortcut")
+                .setIntentStringExtraValue("mySearchCinemasShortcut")
+                .build();
+
+
+        shortcutUtils.addDynamicShortCut(searchFilmsShortcut, new IReceiveStringExtra() {
             @Override
             public void onReceiveStringExtra(String stringExtraKey, String stringExtraValue) {
                 String intent = getIntent().getStringExtra(stringExtraKey);
                 if (intent != null) {
-                    if (intent.equals("myTicketsShortcut")) {
-                        Intent ticketIntent = new Intent(Main3Activity.this, TicketSearchFragment.class);
+                    if (intent.equals("mySearchFilmsShortcut")) {
+                        Intent ticketIntent = new Intent(Main3Activity.this, SearchFilmActivity.class);
+                        startActivity(ticketIntent);
+                    }
+                }
+            }
+        });
+
+        shortcutUtils.addDynamicShortCut(searchCinemaShortcut, new IReceiveStringExtra() {
+            @Override
+            public void onReceiveStringExtra(String stringExtraKey, String stringExtraValue) {
+                String intent = getIntent().getStringExtra(stringExtraKey);
+                if (intent != null) {
+                    if (intent.equals("mySearchCinemasShortcut")) {
+                        Intent ticketIntent = new Intent(Main3Activity.this, SearchCinemaActivity.class);
                         startActivity(ticketIntent);
                     }
                 }
@@ -398,8 +427,6 @@ public class Main3Activity extends AppCompatActivity {
                             public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
 
                                 films = response.body();
-                                Log.d("FILMS", films.size() + "");
-
                                 Collections.sort(films, new Comparator<FilmAPI>() {
                                     @Override
                                     public int compare(FilmAPI filmAPI, FilmAPI t1) {
@@ -426,90 +453,6 @@ public class Main3Activity extends AppCompatActivity {
         });
 
 
-        // Naviagation with BottomNavBar
-//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-//            @Override
-//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//
-//                FragmentTransaction ft;
-//                switch (item.getItemId()) {
-//                    case R.id.center_side_of_hall:
-//                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.blue));
-//
-//                        //
-//
-//
-//                        Call<List<FilmAPI>> call=apiInterface.getFilms();
-//
-//                        call.enqueue(new Callback<List<FilmAPI>>() {
-//                            @Override
-//                            public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
-//
-//                                films=response.body();
-//                                Log.d("FILMS", films.size()+"");
-//
-//                                Collections.sort(films, new Comparator<FilmAPI>() {
-//                                    @Override
-//                                    public int compare(FilmAPI filmAPI, FilmAPI t1) {
-//                                        return  t1.getDate().compareTo(filmAPI.getDate());
-//                                    }
-//                                });
-//
-//                                stories(films);
-//
-//
-//                            }
-//
-//                            @Override
-//                            public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
-//                                call.cancel();
-//                                Intent intent = new Intent(Main3Activity.this, ErrorActivity.class);
-//                                startActivity(intent);
-//                            }
-//                        });
-//
-//
-//
-//
-//                        bottomNavigationView.setSelectedItemId(R.id.left_side_of_hall);
-//                        bottomNavigationView.setSelected(true);
-//
-//                        //
-//
-//
-//                        break;
-//                    case R.id.left_side_of_hall:
-//                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.colorAccent));
-//
-//                        ft = getSupportFragmentManager().beginTransaction();
-//
-////        HallTestFragment hallTestFragment = new HallTestFragment();
-//
-//                        MainFlowFragment mainFlowFragment = new MainFlowFragment();
-//
-//                        ft.replace(R.id.fragment, mainFlowFragment);
-//                        ft.commit();
-//
-//                        break;
-//                    case R.id.right_side_of_hall:
-//                        bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.green));
-//
-//                        ft = getSupportFragmentManager().beginTransaction();
-//
-////        HallTestFragment hallTestFragment = new HallTestFragment();
-//
-//                        TicketSearchFragment ticketSearchFragment = new TicketSearchFragment();
-//
-//                        ft.replace(R.id.fragment, ticketSearchFragment);
-//                        ft.commit();
-//
-//
-//                        break;
-//                }
-//
-//                return true;
-//            }
-//        });
 
 
         // Navigation with this 'awesome' button
@@ -538,7 +481,6 @@ public class Main3Activity extends AppCompatActivity {
                             public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
 
                                 films = response.body();
-                                Log.d("FILMS", films.size() + "");
 
                                 Collections.sort(films, new Comparator<FilmAPI>() {
                                     @Override
@@ -726,23 +668,6 @@ public class Main3Activity extends AppCompatActivity {
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
 
-        //
-        // Account Manager stuff
-        // https://www.zoftino.com/android-account-manager-&-create-custom-account-type
-
-//        AccountManager manager = AccountManager.get(getApplicationContext());
-//        final Account account = new Account(userNameFromPreferences, "com.cinema.app");
-//
-////        new CinemaAppAccountAuthenticator(this).addAccountFromCredentials()
-//
-//        boolean success = manager.addAccountExplicitly(account, getSharedPreferences("accountPref", Context.MODE_PRIVATE).getString("password", null), null);
-//        if (success) {
-//            Log.d("ACCOUNT", "Account created");
-//        } else {
-//            Log.d("ACCOUNT", "Account creation failed. Look at previous logs to investigate");
-//        }
-
-        //
 
 
     }
@@ -809,7 +734,6 @@ public class Main3Activity extends AppCompatActivity {
                 .setStoryClickListeners(new StoryClickListeners() {
                     @Override
                     public void onDescriptionClickListener(int position) {
-                        Toast.makeText(Main3Activity.this, myStories.get(position).getDescription(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Main3Activity.this, AboutFilmActivity.class);
                         startActivity(intent);
                     }
@@ -848,7 +772,6 @@ public class Main3Activity extends AppCompatActivity {
                 temp.setDescription(film.getTitle());
                 temp.setUrl(APIClient.HOST + film.getPicUrl());
 //                temp.setDate(film.getId().toString());
-                Log.d("STR", temp.toString());
 
                 myStories.add(temp);
                 i++;
@@ -871,7 +794,6 @@ public class Main3Activity extends AppCompatActivity {
                 .setStoryClickListeners(new StoryClickListeners() {
                     @Override
                     public void onDescriptionClickListener(int position) {
-                        Toast.makeText(Main3Activity.this, myStories.get(position).getDescription(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(Main3Activity.this, AboutFilmActivity.class);
 
                         intent.putExtra("filmId", films.get(position).getId());
@@ -888,41 +810,7 @@ public class Main3Activity extends AppCompatActivity {
                 .show();
     }
 
-//    @Override
-//    public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-//        now.set(Calendar.YEAR,year);
-//        now.set(Calendar.MONTH,monthOfYear);
-//        now.set(Calendar.DAY_OF_MONTH,dayOfMonth);
-//        tpd.show(getFragmentManager(), "Timepickerdialog");
-//    }
-//
-//    @Override
-//    public void onTimeSet(TimePickerDialog view, int hourOfDay, int minute, int second) {
-//        now.set(Calendar.HOUR_OF_DAY,hourOfDay);
-//        now.set(Calendar.MINUTE,minute);
-//        now.set(Calendar.SECOND,second);
-//        Log.d("YEAR",now.get(Calendar.YEAR)+"");
-//        Log.d("MONTH",now.get(Calendar.MONTH)+"");
-//        Log.d("DAY_OF_MONTH",now.get(Calendar.DAY_OF_MONTH)+"");
-//        Log.d("HOUR_OF_DAY",now.get(Calendar.HOUR_OF_DAY)+"");
-//        Log.d("MINUTE",now.get(Calendar.MINUTE)+"");
-//        Log.d("SECOND",now.get(Calendar.SECOND)+"");
-//        Intent intent = new Intent(getApplicationContext(),Main3Activity.class);
-//        intent.putExtra("test","I am a String");
-//        NotifyMe notifyMe = new NotifyMe.Builder(getApplicationContext())
-//                .title("title")
-//                .content("content")
-//                .color(255,0,0,255)
-//                .led_color(255,255,255,255)
-//                .time(now)
-//                .addAction(intent,"Snooze",false)
-//                .key("test")
-//                .addAction(new Intent(),"Dismiss",true,false)
-//                .addAction(intent,"Done")
-//                .large_icon(R.mipmap.ic_launcher_round)
-//                .rrule("FREQ=MINUTELY;INTERVAL=5;COUNT=2")
-//                .build();
-//    }
+
 
 
     class MyTask extends AsyncTask<Void, Void, Void> {

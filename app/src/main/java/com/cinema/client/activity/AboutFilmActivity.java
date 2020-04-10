@@ -181,14 +181,12 @@ public class AboutFilmActivity extends AppCompatActivity {
             public void onResponse(Call<FilmAPI> call, Response<FilmAPI> response) {
 
 
-                Log.d("TAG", response.code() + "");
 
                 String displayResponse = "";
 
 //                FilmAPI resource = response.body();
                 currentFilm = response.body();
                 setContent(currentFilm);
-                Log.d("FILM", currentFilm.toString());
 
             }
 

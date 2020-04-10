@@ -280,102 +280,13 @@ public class MainFlowFragment extends Fragment {
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
 
-        //
-//        sharedpreferences = getActivity().getSharedPreferences(FAVOURITE_CINEMAS_PREF, Context.MODE_PRIVATE);
-//
-//        if (sharedpreferences != null) {
-//
-////            SharedPreferences.Editor editor = sharedpreferences.edit();
-//
-//
-//            String fav_json = sharedpreferences.getString("fav_json", null);
-//
-//            if (fav_json != null) {
-//                Gson gson = new GsonBuilder().create();
-//                List<Integer> favourite_cinema_id_list = gson.fromJson(fav_json, new TypeToken<List<Integer>>() {
-//                }.getType());
-//
-//                Log.d("id_list", favourite_cinema_id_list.size() + "");
-//
-//                if (favourite_cinema_id_list.size() == 0) {
-//                    favCinemasMainFlowFragmentCardView.setVisibility(View.GONE);
-//                } else {
-//                    favCinemasMainFlowFragmentCardView.setVisibility(View.VISIBLE);
-//                }
-//
-////                if(favourite_cinema_id_list.size()==0) {
-//
-//                List<CinemaItemSearch> list = new ArrayList<>();
-//
-//                for (Integer i : favourite_cinema_id_list) {
-//                    Call<CinemaAPI> call = apiInterface.getCinemaById(i);
-//                    try {
-//                        Response<CinemaAPI> temp = call.execute();
-//
-//                        CinemaItemSearch cinemaItemSearch = new CinemaItemSearch();
-//                        cinemaItemSearch.setCinemaId(temp.body().getId());
-//                        cinemaItemSearch.setCinemaName(temp.body().getName());
-//                        cinemaItemSearch.setCinemaImg(APIClient.HOST + temp.body().getPicUrl());
-//
-//                        list.add(cinemaItemSearch);
-//
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//
-//                favCinemasMainFlowFragmentRecyclerView.setHasFixedSize(false);
-//
-//                FavouriteCinemasAdapter favouriteCinemasAdapter = new FavouriteCinemasAdapter(list);
-//
-//
-//                LinearLayoutManager mLayoutManager = new LinearLayoutManager(getContext(), LinearLayout.HORIZONTAL, false);
-//                favCinemasMainFlowFragmentRecyclerView.setLayoutManager(mLayoutManager);
-//                favCinemasMainFlowFragmentRecyclerView.setAdapter(favouriteCinemasAdapter);
-////                }
-//
-//            }
-//
-//
-//        }
-//
-//        //
-//
-//        Call<List<FilmAPI>> call = apiInterface.getFilms();
-//
-//        call.enqueue(new Callback<List<FilmAPI>>() {
-//            @Override
-//            public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
-//
-//                films = response.body();
-//                Log.d("FILMS", films.size() + "");
-//
-//                Collections.sort(films, new Comparator<FilmAPI>() {
-//                    @Override
-//                    public int compare(FilmAPI filmAPI, FilmAPI t1) {
-//                        return t1.getDate().compareTo(filmAPI.getDate());
-//                    }
-//                });
-//
-//                setContent(films);
-//
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
-//                call.cancel();
-//                Intent intent = new Intent(getContext(), ErrorActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+
         update();
 
         //
         refreshMainFlow.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Toast.makeText(getContext(), "Reload", Toast.LENGTH_SHORT).show();
                 update();
             }
         });
@@ -399,7 +310,6 @@ public class MainFlowFragment extends Fragment {
                 List<Integer> favourite_cinema_id_list = gson.fromJson(fav_json, new TypeToken<List<Integer>>() {
                 }.getType());
 
-                Log.d("id_list", favourite_cinema_id_list.size() + "");
 
                 if (favourite_cinema_id_list.size() == 0) {
                     favCinemasMainFlowFragmentCardView.setVisibility(View.GONE);
@@ -452,7 +362,6 @@ public class MainFlowFragment extends Fragment {
             public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
 
                 films = response.body();
-                Log.d("FILMS", films.size() + "");
 
                 Collections.sort(films, new Comparator<FilmAPI>() {
                     @Override
@@ -506,7 +415,6 @@ public class MainFlowFragment extends Fragment {
                     @Override
                     public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
                         List<FilmAPI> films = response.body();
-//                        Log.d("POSTER",films.size()+"");
 
                         Gson gson = new GsonBuilder().create();
                         JsonArray myCustomArray = gson.toJsonTree(films).getAsJsonArray();
@@ -528,7 +436,6 @@ public class MainFlowFragment extends Fragment {
 
 
 //                startActivity(intent);
-                Toast.makeText(getActivity(), "comedyAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.actionAvatar:
                 intent = new Intent(getActivity(), PosterActivity.class);
@@ -537,7 +444,6 @@ public class MainFlowFragment extends Fragment {
                     @Override
                     public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
                         List<FilmAPI> films = response.body();
-//                        Log.d("POSTER",films.size()+"");
 
                         Gson gson = new GsonBuilder().create();
                         JsonArray myCustomArray = gson.toJsonTree(films).getAsJsonArray();
@@ -560,7 +466,6 @@ public class MainFlowFragment extends Fragment {
 
 
 //                startActivity(intent);
-                Toast.makeText(getActivity(), "comedyAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.historicalAvatar:
                 intent = new Intent(getActivity(), PosterActivity.class);
@@ -569,7 +474,6 @@ public class MainFlowFragment extends Fragment {
                     @Override
                     public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
                         List<FilmAPI> films = response.body();
-//                        Log.d("POSTER",films.size()+"");
 
                         Gson gson = new GsonBuilder().create();
                         JsonArray myCustomArray = gson.toJsonTree(films).getAsJsonArray();
@@ -592,7 +496,6 @@ public class MainFlowFragment extends Fragment {
 
 
 //                startActivity(intent);
-                Toast.makeText(getActivity(), "comedyAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.sciFiAvatar:
                 intent = new Intent(getActivity(), PosterActivity.class);
@@ -601,7 +504,6 @@ public class MainFlowFragment extends Fragment {
                     @Override
                     public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
                         List<FilmAPI> films = response.body();
-//                        Log.d("POSTER",films.size()+"");
 
                         Gson gson = new GsonBuilder().create();
                         JsonArray myCustomArray = gson.toJsonTree(films).getAsJsonArray();
@@ -624,7 +526,6 @@ public class MainFlowFragment extends Fragment {
 
 
 //                startActivity(intent);
-                Toast.makeText(getActivity(), "comedyAvatar", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.horrorAvatar:
                 intent = new Intent(getActivity(), PosterActivity.class);
@@ -633,7 +534,6 @@ public class MainFlowFragment extends Fragment {
                     @Override
                     public void onResponse(Call<List<FilmAPI>> call, Response<List<FilmAPI>> response) {
                         List<FilmAPI> films = response.body();
-//                        Log.d("POSTER",films.size()+"");
 
                         Gson gson = new GsonBuilder().create();
                         JsonArray myCustomArray = gson.toJsonTree(films).getAsJsonArray();
@@ -656,7 +556,6 @@ public class MainFlowFragment extends Fragment {
 
 
 //                startActivity(intent);
-                Toast.makeText(getActivity(), "comedyAvatar", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -668,31 +567,26 @@ public class MainFlowFragment extends Fragment {
                 intent = new Intent(getActivity(), SearchCinemaActivity.class);
                 intent.putExtra("cityId", 1);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "ivano_frankivsk", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.lviv:
                 intent = new Intent(getActivity(), SearchCinemaActivity.class);
                 intent.putExtra("cityId", 2);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "lviv", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.kiyv:
                 intent = new Intent(getActivity(), SearchCinemaActivity.class);
                 intent.putExtra("cityId", 3);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "kiyv", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.kharkiv:
                 intent = new Intent(getActivity(), SearchCinemaActivity.class);
                 intent.putExtra("cityId", 4);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "kharkiv", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.odessa:
                 intent = new Intent(getActivity(), SearchCinemaActivity.class);
                 intent.putExtra("cityId", 5);
                 startActivity(intent);
-                Toast.makeText(getActivity(), "odessa", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -704,12 +598,7 @@ public class MainFlowFragment extends Fragment {
 
     public void setContent(List<FilmAPI> content) {
 
-        Log.d("0", content.get(0).getDate());
-        Log.d("0", content.get(0).getTitle());
-        Log.d("1", content.get(1).getDate());
-        Log.d("1", content.get(1).getTitle());
-        Log.d("2", content.get(2).getDate());
-        Log.d("2", content.get(2).getTitle());
+
 
 
         ArrayList<FilmAPI> currentFilms = new ArrayList<>();
@@ -731,7 +620,6 @@ public class MainFlowFragment extends Fragment {
                 filmMoreMainFlowFragmentButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(getContext(), currentFilms.get(selectingPosition).getTitle(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getContext(), AboutFilmActivity.class);
                         intent.putExtra("filmId", currentFilms.get(selectingPosition).getId());
                         startActivity(intent);

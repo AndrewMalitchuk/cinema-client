@@ -182,7 +182,6 @@ public class BillActivity extends AppCompatActivity {
 
                                 final boolean[] success = {true};
 
-                                Log.d("NEW", token + " " + login + " " + password + " " + userId);
 
 
                                 RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
@@ -197,13 +196,11 @@ public class BillActivity extends AppCompatActivity {
                                     public void onResponse(Call<TokenAPI> call, Response<TokenAPI> response) {
 
                                         String token = response.body().getAccess();
-                                        Toast.makeText(BillActivity.this, token, Toast.LENGTH_SHORT).show();
 
 
                                         String ticketPlace = placesBillActivityExtendedEditText.getText().toString().split(";")[0];
 
 
-                                            Log.d("ticketPlace", ticketPlace);
 
 
 //                                            RequestBody place = RequestBody.create(MediaType.parse("text/plain"), placesBillActivityExtendedEditText.getText().toString().substring(0,5));
@@ -231,11 +228,9 @@ public class BillActivity extends AppCompatActivity {
                                             newTicket.enqueue(new Callback<TicketAPI>() {
                                                 @Override
                                                 public void onResponse(Call<TicketAPI> call, Response<TicketAPI> response) {
-//                                                    Toast.makeText(NewNewCardActivity.this, response.body().getCode(), Toast.LENGTH_SHORT).show();
 
                                                     if (response.isSuccessful()) {
 
-//                                                        Toast.makeText(NewNewCardActivity.this, "KEK", Toast.LENGTH_SHORT).show();
 
 //                                                        ;
 
@@ -402,18 +397,15 @@ public class BillActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK) {
                     String datetime = data.getStringExtra("datetime");
                     datetimeBillActivityExtendedEditText.setText(datetime);
-                    Log.d("datetime",datetime);
                     //
                     //TODO: REMOVE
 //                    datetimeBillActivityExtendedEditText.setText(datetime);
                     //
 
                     timeline_id = Integer.valueOf(data.getStringExtra("timeline_id"));
-                    Log.d("timeline_id", timeline_id.toString());
 
                     String price=data.getStringExtra("price");
                     priceBillActivityExtendedEditText.setText(price);
-                    Log.d("price",price);
 
                 }
                 break;
@@ -421,7 +413,6 @@ public class BillActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK) {
                     cinemaName = data.getStringExtra("cinemaName");
                     cinemaId = data.getIntExtra("cinemaId", -1);
-                    Log.d("CINEMA", cinemaName);
                     cinemaNameBillActivityExtendedEditText.setText(cinemaName);
 
 
@@ -431,7 +422,6 @@ public class BillActivity extends AppCompatActivity {
                 if (resultCode == RESULT_OK) {
                     hallPlace = data.getStringExtra("hallPlace");
                     placesBillActivityExtendedEditText.setText(hallPlace);
-                    Log.d("PLACE", hallPlace);
 
                     //
 
@@ -484,7 +474,6 @@ public class BillActivity extends AppCompatActivity {
                 .positiveButton("Yes, I'm sure", new DroidDialog.onPositiveListener() {
                     @Override
                     public void onPositive(Dialog droidDialog) {
-                        Toast.makeText(BillActivity.this, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
                         droidDialog.cancel();
                         //
                         Intent intent = new Intent(BillActivity.this, SearchCinemaActivity.class);
@@ -499,7 +488,6 @@ public class BillActivity extends AppCompatActivity {
                 .negativeButton("No, let's search", new DroidDialog.onNegativeListener() {
                     @Override
                     public void onNegative(Dialog droidDialog) {
-                        Toast.makeText(BillActivity.this, "No, let's search", Toast.LENGTH_SHORT).show();
                         //
                         Intent intent = new Intent(BillActivity.this, SearchCinemaActivity.class);
                         intent.putExtra("isForChoosing", true);
@@ -523,7 +511,6 @@ public class BillActivity extends AppCompatActivity {
 
         intent.putExtra("cinemaId", cinemaId);
         intent.putExtra("cinemaName", cinemaName);
-        Log.d("filmId", filmId + "");
         intent.putExtra("isFilmTimeline", true);
 
 

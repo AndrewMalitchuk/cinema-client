@@ -204,7 +204,6 @@ public class HallRender {
                                 selectedAbsoluteCells = gson.fromJson(dummy, new TypeToken<List<HallCellAPI>>() {
                                 }.getType());
 
-                                Log.d("BEFORE", dummy);
 
 
 //                                selectedAbsoluteCells.remove(cell.getAbsoluteLocation());
@@ -215,8 +214,6 @@ public class HallRender {
 
                                 dummyTextView.setText(gson.toJson(selectedAbsoluteCells));
 
-
-                                Log.d("AFTER", dummy);
 
 
                             }
@@ -333,7 +330,6 @@ public class HallRender {
             int col = cell.getOldCol();
 
             if (row == i && col == j) {
-                Log.d("DSBL", i + "x" + j);
 
                 button.setText((cell.getNewRow()) + "-" + (cell.getNewCol()));
                 HallCellAPI relativeLocation = new HallCellAPI();
@@ -364,7 +360,6 @@ public class HallRender {
             String temp[] = s.split("-");
 
             if (temp[0].charAt(0) == sector.charAt(0)) {
-//                Log.d("S",temp[0]);
 
 
                 String cellContent[] = cell.getText().toString().split("-");
@@ -394,13 +389,10 @@ public class HallRender {
             String[] sits = selectedPlacesTextView.getText().toString().split(";");
 
 
-            Log.d("SITS", sits.length + "");
 
             for (String s : sits) {
-                Log.d("IN", s);
                 if (!s.equals("") && !s.equals(" ")) {
                     selectedPlaces.add(s.trim());
-                    Log.d("OUT", s.trim());
 
                 }
             }

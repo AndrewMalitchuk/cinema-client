@@ -122,7 +122,6 @@ public class TicketActivity extends AppCompatActivity {
         int film_id = getIntent().getIntExtra("film_id", -1);
         timeline_id = getIntent().getIntExtra("timeline_id", -1);
         String datetime = getIntent().getStringExtra("datetime");
-        Log.d("intent", cinema_id + " " + film_id + " " + timeline_id + " " + datetime);
 
 
         sharedpreferences = getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE);
@@ -162,7 +161,6 @@ public class TicketActivity extends AppCompatActivity {
 
                 curentTicket = response.body();
 
-                Log.d("TICKET", curentTicket.toString());
 
 
                 setContent(curentTicket);

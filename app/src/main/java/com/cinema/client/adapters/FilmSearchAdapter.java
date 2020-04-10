@@ -61,7 +61,6 @@ public class FilmSearchAdapter extends RecyclerView.Adapter<FilmSearchAdapter.Vi
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(context,"The position is:"+position,Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(context, AboutFilmActivity.class);
                 intent.putExtra("filmId",myTickets.getFilmId());
                 context.startActivity(intent);

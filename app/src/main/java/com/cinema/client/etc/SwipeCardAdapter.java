@@ -137,7 +137,6 @@ public class SwipeCardAdapter extends RecyclerView.Adapter<SwipeCardItem> {
 
             context.startActivity(intent);
 
-            Toast.makeText(context, films.get(pos).getTitle(), Toast.LENGTH_SHORT).show();
 
 
         }

@@ -4748,6 +4748,10 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ic_videocam_black_24dp.xml.flat",
+        "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/drawable/ic_videocam_black_24dp.xml"
+    },
+    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_action_close.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/49ece50d6cc66db629fe6723e515b538/res/drawable-hdpi-v4/ic_action_close.png"
     },
@@ -4998,6 +5002,10 @@
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/interpolator_btn_radio_to_on_mtrl_animation_interpolator_0.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/interpolator/btn_radio_to_on_mtrl_animation_interpolator_0.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ic_personal_video_black_24dp.xml.flat",
+        "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/drawable/ic_personal_video_black_24dp.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ic_help_outline_white_24dp.xml.flat",

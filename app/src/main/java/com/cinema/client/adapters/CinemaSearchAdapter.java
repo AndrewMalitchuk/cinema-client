@@ -74,7 +74,6 @@ public class CinemaSearchAdapter extends RecyclerView.Adapter<CinemaSearchAdapte
                     activity.finish();
                 }else {
 
-//                Toast.makeText(context,"The position is:"+position,Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, AboutCinemaActivity.class);
                     intent.putExtra("cinemaId", cinemaItemSearch.getCinemaId());
                     context.startActivity(intent);

@@ -193,7 +193,6 @@ public class StatusActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            Log.d("DATE",getIntent().getStringExtra("selectedDate"));
 
             setTimeline(getIntent().getStringExtra("selectedDate"),cinema_id);
         }
@@ -216,7 +215,6 @@ public class StatusActivity extends AppCompatActivity {
                 dateStr=year+"-"+(month+1)+"-"+day;
 
 
-                Toast.makeText(StatusActivity.this, day+" "+(month+1)+" "+year, Toast.LENGTH_SHORT).show();
                 selectedDateTimeTextView.setText("Nothing yet...");
 
                 SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
@@ -287,7 +285,6 @@ public class StatusActivity extends AppCompatActivity {
 
     private void setTimeline(String date,int cinema_id){
 
-        Log.d("INPUT",date+" "+cinema_id);
 
         List<MyItem> list = new ArrayList<>();
         Call<List<TimelineAPI>> call = apiInterface.getTimelineByDateAndCinemaId(date,cinema_id);
@@ -303,7 +300,6 @@ public class StatusActivity extends AppCompatActivity {
 
                     DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                     Date date = new Date();
-                    Log.d("now",dateFormat.format(date));
 
 //                    String currentTime = "2020-01-01T00:00:00+02:00";
                     String currentTime = dateFormat.format(date);
@@ -320,11 +316,7 @@ public class StatusActivity extends AppCompatActivity {
 
                         list.add(new MyItem(false, timeline.getDate(),timeline.getTime(), film.getTitle(), false, timeline.getPrice()+" ₴"));
 
-                        //
-//                        Log.d("date",timeline.getDatetime().substring(0,18));
-//                        Date date1 = dateFormat1.parse( );
-                        //
-//                        Log.d("formated",dateFormat.format(date1));
+
                     }
 
                     if(list.size()==0){
@@ -375,7 +367,6 @@ public class StatusActivity extends AppCompatActivity {
 
         // film timeline
 
-        Log.d("INPUT",date+" "+cinema_id+" "+film_id);
 
         List<MyItem> list = new ArrayList<>();
         Call<List<TimelineAPI>> call = apiInterface.getTimelineByDateAndCinemaIdAndFilmId(date,cinema_id,film_id);
@@ -392,7 +383,6 @@ public class StatusActivity extends AppCompatActivity {
                     //XXX
                     DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
                     Date date = new Date();
-                    Log.d("now",dateFormat.format(date));
 
 //                    String currentTime = "2020-01-01T00:00:00+02:00";
                     String currentTime = dateFormat.format(date);
@@ -408,7 +398,6 @@ public class StatusActivity extends AppCompatActivity {
 
                         FilmAPI film = apiInterface.getFilmById(timeline.getFilmId()).execute().body();
 
-                        Log.d("timeling",timeline.toString());
 
                         list.add(new MyItem(false, timeline.getDate(),timeline.getTime(), film.getTitle(), false, timeline.getPrice()+" ₴",timeline));
                     }

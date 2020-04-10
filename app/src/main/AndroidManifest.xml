@@ -136,13 +136,7 @@
         </receiver>
 
         <!-- -->
-        <service android:name=".etc.AccountTypeService">
-            <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator"></action>
-            </intent-filter>
-            <meta-data android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/cinema_app_auth"></meta-data>
-        </service>
+
         <!-- -->
 
 

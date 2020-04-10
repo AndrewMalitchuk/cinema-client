@@ -12,8 +12,8 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int ic_warning_black_36dp = 0x7f08012c;
-        public static final int ic_warning_black_48dp = 0x7f08012d;
+        public static final int ic_warning_black_36dp = 0x7f08012e;
+        public static final int ic_warning_black_48dp = 0x7f08012f;
     }
     public static final class id {
         private id() {}

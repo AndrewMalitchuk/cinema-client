@@ -2204,6 +2204,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_my_location_black_24dp
 drawable ic_office_push_pin
 drawable ic_perm_identity_black_24dp
+drawable ic_personal_video_black_24dp
 drawable ic_photo_library_white_24dp
 drawable ic_progress_cancle
 drawable ic_progress_done
@@ -2228,6 +2229,7 @@ drawable ic_undraw_reminders_697p
 drawable ic_unionpay
 drawable ic_video_label_black_24dp
 drawable ic_video_label_white_24dp
+drawable ic_videocam_black_24dp
 drawable ic_visa
 drawable ic_visibility_black_24dp
 drawable ic_visibility_off_black_24dp
@@ -3528,6 +3530,7 @@ string action_settings
 string add_tag
 string android
 string app_name
+string app_title
 string appbar_scrolling_view_behavior
 string ayp_custom_action_left
 string ayp_custom_action_right

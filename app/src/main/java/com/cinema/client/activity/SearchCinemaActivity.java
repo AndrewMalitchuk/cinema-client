@@ -106,7 +106,6 @@ public class SearchCinemaActivity extends AppCompatActivity {
             List<Integer> favourite_cinema_id_list = gson.fromJson(fav_json, new TypeToken<List<Integer>>() {
             }.getType());
 
-            Log.d("id_list", favourite_cinema_id_list.size() + "");
 
             if (favourite_cinema_id_list.size() != 0) {
 
@@ -136,15 +135,11 @@ public class SearchCinemaActivity extends AppCompatActivity {
                     cinemaItemSearch.setCinemaName(cinema.getName());
                     cinemaItemSearch.setCinemaAddress(cinema.getAddress());
                     cinemaItemSearch.setCinemaImg(APIClient.HOST + cinema.getPicUrl());
-                    Log.d("CNM-PIC", cinemaItemSearch.getCinemaImg());
 
                     cinemaItemSearchList.add(cinemaItemSearch);
                 }
 
-                Log.d("SFACT", cinemaItemSearchList.size() + "");
 
-
-                Log.d("SFACT", cinemaItemSearchList.size() + "");
 
 
                 recyclerView = (RecyclerView) findViewById(R.id.myTicketsRecycleView);
@@ -201,15 +196,10 @@ public class SearchCinemaActivity extends AppCompatActivity {
                         cinemaItemSearch.setCinemaName(cinema.getName());
                         cinemaItemSearch.setCinemaAddress("Address: \n"+cinema.getAddress());
                         cinemaItemSearch.setCinemaImg(APIClient.HOST + cinema.getPicUrl());
-                        Log.d("CNM-PIC", cinemaItemSearch.getCinemaImg());
 
                         cinemaItemSearchList.add(cinemaItemSearch);
                     }
 
-                    Log.d("SFACT", cinemaItemSearchList.size() + "");
-
-
-                    Log.d("SFACT", cinemaItemSearchList.size() + "");
 
 
                     recyclerView = (RecyclerView) findViewById(R.id.myTicketsRecycleView);
@@ -259,7 +249,6 @@ public class SearchCinemaActivity extends AppCompatActivity {
         mSearchView.setOnSearchListener(new FloatingSearchView.OnSearchListener() {
             @Override
             public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
-                Toast.makeText(SearchCinemaActivity.this, searchSuggestion.getBody(), Toast.LENGTH_SHORT).show();
                 Call<CinemaAPI> call = apiInterface.getCinemaByName(searchSuggestion.getBody());
                 call.enqueue(new Callback<CinemaAPI>() {
                     @Override
@@ -278,7 +267,6 @@ public class SearchCinemaActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<CinemaAPI> call, Throwable t) {
-                        Log.d("#!", "SearchCinemaActivity: " + t.getLocalizedMessage());
                         call.cancel();
                         Intent intent = new Intent(SearchCinemaActivity.this, ErrorActivity.class);
                         startActivity(intent);

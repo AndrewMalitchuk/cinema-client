@@ -69,8 +69,6 @@ public class StoriesActivity extends AppCompatActivity {
                     @Override
                     public void onDescriptionClickListener(int position) {
 //                        if(position==0){
-//                            Toast.makeText(StoriesActivity.this, position+" ", Toast.LENGTH_SHORT).show();
-                        Toast.makeText(StoriesActivity.this, myStories.get(position).getDescription(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(StoriesActivity.this, AboutFilmActivity.class);
                         startActivity(intent);
 

@@ -38,7 +38,6 @@ public class MyItem{
         this.isActive = isActive;
         this.formattedDate = formattedDate;
         this.formattedTime=formattedTime;
-        Log.d("formattedDate",formattedDate);
         this.title = title;
         this.isSelected = isSelected;
         this.subtitle = subtitle;

@@ -117,10 +117,6 @@ public class SearchFilmActivity extends AppCompatActivity {
                     filmItemSearchList.add(filmItemSearch);
                 }
 
-                Log.d("SFACT", filmItemSearchList.size() + "");
-
-
-                Log.d("SFACT", filmItemSearchList.size() + "");
 
 
                 recyclerView = (RecyclerView) findViewById(R.id.myTicketsRecycleView);
@@ -155,7 +151,6 @@ public class SearchFilmActivity extends AppCompatActivity {
             public void onSearchTextChanged(String oldQuery, final String newQuery) {
 
 
-                Log.d("NEW", newQuery);
 
 //                ArrayList<MySearchSuggestion> temp=new ArrayList<>();
 //                temp.add(new MySearchSuggestion("Film #1"));
@@ -172,7 +167,6 @@ public class SearchFilmActivity extends AppCompatActivity {
         mSearchView.setOnSearchListener(new FloatingSearchView.OnSearchListener() {
             @Override
             public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
-                Toast.makeText(SearchFilmActivity.this, searchSuggestion.getBody(), Toast.LENGTH_SHORT).show();
 
                 Call<FilmAPI> call = apiInterface.getFilmByTitle(searchSuggestion.getBody());
 

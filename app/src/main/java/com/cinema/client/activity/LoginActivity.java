@@ -7,9 +7,6 @@ import android.os.Bundle;
 
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
-import com.cinema.client.requests.OkHttpClientInstance;
-import com.cinema.client.requests.TokenHolder;
-import com.cinema.client.requests.TokenService;
 import com.cinema.client.requests.entities.CreateUserResponse;
 import com.cinema.client.requests.entities.RegistrationAPI;
 import com.cinema.client.requests.entities.TokenAPI;
@@ -47,7 +44,8 @@ import retrofit2.Response;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class LoginActivity extends AppCompatActivity implements
+public class
+LoginActivity extends AppCompatActivity implements
         View.OnClickListener, MyLoadingButton.MyLoadingButtonClick {
 
 
@@ -106,7 +104,6 @@ public class LoginActivity extends AppCompatActivity implements
         signUpLoginActivityTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
                 startActivity(intent);
             }
@@ -140,7 +137,6 @@ public class LoginActivity extends AppCompatActivity implements
 
     @Override
     public void onMyLoadingButtonClick() {
-        Toast.makeText(this, "MyLoadingButton Click", Toast.LENGTH_SHORT).show();
 
         //
         // https://www.woolha.com/tutorials/android-retrofit-2-refresh-access-token-with-okhttpclient-and-authenticator
@@ -194,7 +190,6 @@ public class LoginActivity extends AppCompatActivity implements
 
                         if (response.isSuccessful()) {
 
-                            Log.d("TOKEN", response.body().getAccess());
 //                token=response.body().getAccess();
                             sharedpreferences_access = getSharedPreferences(ACCESS_TOKEN_PREF, Context.MODE_PRIVATE);
                             sharedpreferences_token = getSharedPreferences(REFRESH_TOKEN_PREF, Context.MODE_PRIVATE);
@@ -225,7 +220,6 @@ public class LoginActivity extends AppCompatActivity implements
                                     if(response.isSuccessful()){
                                         SharedPreferences.Editor editor = sharedpreferences.edit();
                                         editor.putInt("userId",response.body().getId());
-                                        Log.d("id",response.body().getId().toString());
                                         editor.commit();
 
                                     }

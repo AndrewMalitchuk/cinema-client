@@ -610,25 +610,25 @@ public final class R {
         public static final int ic_billing_amex_logo1 = 0x7f0800ce;
         public static final int ic_billing_mastercard_logo = 0x7f0800cf;
         public static final int ic_billing_visa_logo = 0x7f0800d0;
-        public static final int img_amex_center_face = 0x7f08012f;
-        public static final int master_back = 0x7f080139;
-        public static final int mastercard_back_bg = 0x7f08013a;
-        public static final int notification_action_background = 0x7f08014c;
-        public static final int notification_bg = 0x7f08014d;
-        public static final int notification_bg_low = 0x7f08014e;
-        public static final int notification_bg_low_normal = 0x7f08014f;
-        public static final int notification_bg_low_pressed = 0x7f080150;
-        public static final int notification_bg_normal = 0x7f080151;
-        public static final int notification_bg_normal_pressed = 0x7f080152;
-        public static final int notification_icon_background = 0x7f080153;
-        public static final int notification_template_icon_bg = 0x7f080154;
-        public static final int notification_template_icon_low_bg = 0x7f080155;
-        public static final int notification_tile_bg = 0x7f080156;
-        public static final int notify_panel_notification_icon_bg = 0x7f080157;
-        public static final int sign_strip = 0x7f080177;
-        public static final int sign_strip_mod = 0x7f080178;
-        public static final int visacard_back = 0x7f08018b;
-        public static final int visacard_back_bg = 0x7f08018c;
+        public static final int img_amex_center_face = 0x7f080131;
+        public static final int master_back = 0x7f08013b;
+        public static final int mastercard_back_bg = 0x7f08013c;
+        public static final int notification_action_background = 0x7f08014e;
+        public static final int notification_bg = 0x7f08014f;
+        public static final int notification_bg_low = 0x7f080150;
+        public static final int notification_bg_low_normal = 0x7f080151;
+        public static final int notification_bg_low_pressed = 0x7f080152;
+        public static final int notification_bg_normal = 0x7f080153;
+        public static final int notification_bg_normal_pressed = 0x7f080154;
+        public static final int notification_icon_background = 0x7f080155;
+        public static final int notification_template_icon_bg = 0x7f080156;
+        public static final int notification_template_icon_low_bg = 0x7f080157;
+        public static final int notification_tile_bg = 0x7f080158;
+        public static final int notify_panel_notification_icon_bg = 0x7f080159;
+        public static final int sign_strip = 0x7f080179;
+        public static final int sign_strip_mod = 0x7f08017a;
+        public static final int visacard_back = 0x7f08018d;
+        public static final int visacard_back_bg = 0x7f08018e;
     }
     public static final class id {
         private id() {}
@@ -855,22 +855,22 @@ public final class R {
         public static final int abc_toolbar_collapse_description = 0x7f11001a;
         public static final int action_settings = 0x7f110026;
         public static final int app_name = 0x7f110029;
-        public static final int card_expiry = 0x7f11003c;
-        public static final int card_holder = 0x7f11003d;
-        public static final int card_holder_name_sample = 0x7f11003e;
-        public static final int card_mm_yy = 0x7f11003f;
-        public static final int card_number = 0x7f110040;
-        public static final int done = 0x7f110069;
-        public static final int error_card_expired = 0x7f110070;
-        public static final int error_invalid_month = 0x7f110071;
-        public static final int expiry = 0x7f110072;
-        public static final int hello_world = 0x7f110092;
-        public static final int mm_yy = 0x7f1100df;
-        public static final int name_on_card = 0x7f1100e5;
-        public static final int next = 0x7f1100e8;
-        public static final int previous = 0x7f1100f3;
-        public static final int search_menu_title = 0x7f110105;
-        public static final int status_bar_notification_info_overflow = 0x7f110112;
+        public static final int card_expiry = 0x7f11003d;
+        public static final int card_holder = 0x7f11003e;
+        public static final int card_holder_name_sample = 0x7f11003f;
+        public static final int card_mm_yy = 0x7f110040;
+        public static final int card_number = 0x7f110041;
+        public static final int done = 0x7f11006a;
+        public static final int error_card_expired = 0x7f110071;
+        public static final int error_invalid_month = 0x7f110072;
+        public static final int expiry = 0x7f110073;
+        public static final int hello_world = 0x7f110093;
+        public static final int mm_yy = 0x7f1100e0;
+        public static final int name_on_card = 0x7f1100e6;
+        public static final int next = 0x7f1100e9;
+        public static final int previous = 0x7f1100f4;
+        public static final int search_menu_title = 0x7f110106;
+        public static final int status_bar_notification_info_overflow = 0x7f110113;
     }
     public static final class style {
         private style() {}

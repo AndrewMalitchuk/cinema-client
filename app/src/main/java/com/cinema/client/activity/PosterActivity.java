@@ -110,16 +110,13 @@ public class PosterActivity extends AppCompatActivity {
         toolbar.setTitle(genre);
 
         String json = i.getStringExtra("json");
-        Log.d("json", json);
         Gson gson = new GsonBuilder().create();
 
         List<FilmAPI> videos = gson.fromJson(json, new TypeToken<List<FilmAPI>>() {
         }.getType());
-//        Log.d("LIST",videos.get(0).toString());
 
 //        adapter.setFilms(videos);
         adapter = new SwipeCardAdapter(videos, getApplicationContext(),loadingView);
-        Log.d("ADPT", adapter.getFilms().size() + " " + adapter.getFilms().get(0).getTitle());
 
 
         //
@@ -135,9 +132,6 @@ public class PosterActivity extends AppCompatActivity {
                     public void onItemSwiped() {
                         adapter.removeTopItem();
 
-
-                        Log.d("Count R", recyclerView.getChildCount() + "");
-                        Log.d("Count A", adapter.getItemCount() + "");
 
                         if (adapter.getItemCount() == 0) {
                             stop.setVisibility(View.VISIBLE);

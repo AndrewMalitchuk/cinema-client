@@ -78,7 +78,6 @@ public class FavouriteCinemasAdapter extends RecyclerView.Adapter<FavouriteCinem
             @Override
             public boolean onLongClick(View view) {
 
-                Toast.makeText(context,"CNTX: The position is:"+position,Toast.LENGTH_SHORT).show();
 
                 PopupMenu popupMenu=new PopupMenu(context,holder.favCinemaLinearLayout);
                 popupMenu.getMenuInflater().inflate(R.menu.ticket_context_menu1,popupMenu.getMenu());
@@ -87,7 +86,6 @@ public class FavouriteCinemasAdapter extends RecyclerView.Adapter<FavouriteCinem
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         switch (menuItem.getItemId()){
                             case R.id.delete:
-                                Toast.makeText(context, "Delete #"+position, Toast.LENGTH_SHORT).show();
                                 SharedPreferences.Editor editor = sharedpreferences.edit();
 
                                 String json=sharedpreferences.getString("fav_json",null);

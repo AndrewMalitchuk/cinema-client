@@ -516,8 +516,8 @@ public final class R {
         public static final int btn_flat_normal = 0x7f080085;
         public static final int btn_flat_pressed = 0x7f080086;
         public static final int btn_flat_selector = 0x7f080087;
-        public static final int notification_template_icon_bg = 0x7f080154;
-        public static final int shadow = 0x7f080170;
+        public static final int notification_template_icon_bg = 0x7f080156;
+        public static final int shadow = 0x7f080172;
     }
     public static final class id {
         private id() {}
@@ -696,17 +696,17 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f110018;
         public static final int abc_shareactionprovider_share_with_application = 0x7f110019;
         public static final int abc_toolbar_collapse_description = 0x7f11001a;
-        public static final int define_bottomdialogs = 0x7f110066;
-        public static final int library_bottomdialogs_author = 0x7f1100a0;
-        public static final int library_bottomdialogs_authorWebsite = 0x7f1100a1;
-        public static final int library_bottomdialogs_isOpenSource = 0x7f1100a2;
-        public static final int library_bottomdialogs_libraryDescription = 0x7f1100a3;
-        public static final int library_bottomdialogs_libraryName = 0x7f1100a4;
-        public static final int library_bottomdialogs_libraryWebsite = 0x7f1100a5;
-        public static final int library_bottomdialogs_licenseId = 0x7f1100a6;
-        public static final int library_bottomdialogs_repositoryLink = 0x7f1100a7;
-        public static final int search_menu_title = 0x7f110105;
-        public static final int status_bar_notification_info_overflow = 0x7f110112;
+        public static final int define_bottomdialogs = 0x7f110067;
+        public static final int library_bottomdialogs_author = 0x7f1100a1;
+        public static final int library_bottomdialogs_authorWebsite = 0x7f1100a2;
+        public static final int library_bottomdialogs_isOpenSource = 0x7f1100a3;
+        public static final int library_bottomdialogs_libraryDescription = 0x7f1100a4;
+        public static final int library_bottomdialogs_libraryName = 0x7f1100a5;
+        public static final int library_bottomdialogs_libraryWebsite = 0x7f1100a6;
+        public static final int library_bottomdialogs_licenseId = 0x7f1100a7;
+        public static final int library_bottomdialogs_repositoryLink = 0x7f1100a8;
+        public static final int search_menu_title = 0x7f110106;
+        public static final int status_bar_notification_info_overflow = 0x7f110113;
     }
     public static final class style {
         private style() {}

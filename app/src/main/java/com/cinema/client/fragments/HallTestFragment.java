@@ -40,12 +40,10 @@ public class HallTestFragment extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null) {
             String json=bundle.getString("json");
-            Log.d("json",json);
 
             Gson gson = new GsonBuilder().create();
             hall=gson.fromJson(json, new TypeToken<HallAPI>(){}.getType());
 
-            Log.d("L",hall.getSector());
 
 
         }

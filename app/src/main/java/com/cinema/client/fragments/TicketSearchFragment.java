@@ -148,7 +148,6 @@ public class TicketSearchFragment extends Fragment {
 
 
     public void onToken(TokenAPI token) {
-        Log.d("RXTOKEN", token.getAccess());
         int userId = sharedpreferences.getInt("userId", -1);
         Observable<List<TicketAPI>> listObservable = apiInterface.getTicketByUserIdRx(userId, "Bearer " + token.getAccess());
         listObservable.subscribeOn(Schedulers.io())
@@ -181,8 +180,6 @@ public class TicketSearchFragment extends Fragment {
 
         ticketList=list;
 
-        Log.d("RXLIST", list.size() + "");
-        Log.d("RXLIST", ticketList.size() + "");
 
 
 
@@ -269,7 +266,6 @@ public class TicketSearchFragment extends Fragment {
 
                 for (TicketItemSearch ticketItemSearch : myTicketsArrayList) {
                     if (suggestion.equals(ticketItemSearch.getFilmName())) {
-                        Toast.makeText(getActivity(), ticketItemSearch.getTicketCode(), Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(getContext(), TicketActivity.class);
                         intent.putExtra("ticketCode", ticketItemSearch.getTicketCode());
                         intent.putExtra("timeline_id",ticketItemSearch.getTimelineId());

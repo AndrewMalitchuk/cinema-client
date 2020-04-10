@@ -198,15 +198,8 @@
         </receiver>
 
         <!--  -->
-        <service android:name="com.cinema.client.etc.AccountTypeService" >
-            <intent-filter>
-                <action android:name="android.accounts.AccountAuthenticator" />
-            </intent-filter>
 
-            <meta-data
-                android:name="android.accounts.AccountAuthenticator"
-                android:resource="@xml/cinema_app_auth" />
-        </service>
+
         <!--  -->
 
         <service

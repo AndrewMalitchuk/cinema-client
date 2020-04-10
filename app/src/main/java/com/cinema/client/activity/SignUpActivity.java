@@ -80,7 +80,7 @@ public class SignUpActivity extends AppCompatActivity implements
         loginSignUpActivityTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(getApplicationContext(),"Click",Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
             }
@@ -109,9 +109,7 @@ public class SignUpActivity extends AppCompatActivity implements
     @Override
     public void onMyLoadingButtonClick() {
 
-        Log.d("EM", emailSignUpActivityEditText.getText().length() + "");
-        Log.d("EM", emailSignUpActivityEditText.getText().equals("") + "");
-        Log.d("EM", (emailSignUpActivityEditText.getText() == null) + "");
+
 
 
         if (emailSignUpActivityEditText.getText().equals("") || passwordSignUpActivityEditText.getText().equals("") ||

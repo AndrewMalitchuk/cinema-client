@@ -119,7 +119,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "The position is:" + position, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, TicketActivity.class);
                 intent.putExtra("ticketCode", myTicketsList.get(position).getTicketCode());
                 //
@@ -138,8 +137,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
             @Override
             public boolean onLongClick(View view) {
 
-                Toast.makeText(context, "CNTX: The position is:" + position, Toast.LENGTH_SHORT).show();
-
                 PopupMenu popupMenu = new PopupMenu(context, holder.cv);
                 popupMenu.getMenuInflater().inflate(R.menu.ticket_context_menu2, popupMenu.getMenu());
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
@@ -147,7 +144,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         switch (menuItem.getItemId()) {
                             case R.id.cancel:
-                                Toast.makeText(context, "Delete #" + position, Toast.LENGTH_SHORT).show();
 
                                 if (myTicketsList.get(position).getStatus() ==2) {
 
@@ -162,7 +158,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                                             .positiveButton("Yes, I'm sure", new DroidDialog.onPositiveListener() {
                                                 @Override
                                                 public void onPositive(Dialog droidDialog) {
-                                                    Toast.makeText(context, "Yes, I'm sure", Toast.LENGTH_SHORT).show();
 //                                                droidDialog.cancel();
                                                     //
 
@@ -199,7 +194,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                                             .negativeButton("No, thanks", new DroidDialog.onNegativeListener() {
                                                 @Override
                                                 public void onNegative(Dialog droidDialog) {
-                                                    Toast.makeText(context, "No, thanks", Toast.LENGTH_SHORT).show();
                                                     //
                                                     droidDialog.cancel();
                                                     //
@@ -257,7 +251,7 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
             @Override
             public void onResponse(Call<TicketAPI> call, Response<TicketAPI> response) {
                 if (response.isSuccessful()) {
-                    Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
+
                 }
             }
 
@@ -281,7 +275,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
 
                 Gson gson = new Gson().newBuilder().create();
 
-                Log.d("hallCellAPI", hallCellAPI.toString());
 
 
                 List<HallAPI> hallAPI;
@@ -296,11 +289,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                     }.getType());
 
 
-                    Log.d("ABSOLUTE", getAbsolute(hallAPI.get(0).getCustom(), hallCellAPI).toString());
-
-                    Log.d("hall 0", removePlace(hallAPI.get(0).getBought(), getAbsolute(hallAPI.get(0).getCustom(), hallCellAPI)) + "");
-
-
                     hallAPI.get(0).getBought().remove(removePlace(hallAPI.get(0).getBought(), getAbsolute(hallAPI.get(0).getCustom(), hallCellAPI)));
 
                     hallAPI.get(0).getFree().add(getAbsolute(hallAPI.get(0).getCustom(), hallCellAPI));
@@ -308,7 +296,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
 
                     hall.setHallJson(gson.toJson(hallAPI));
 
-                    Log.d("NEW JSON", hall.getHallJson());
 
                 } else if (myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[0].equals("c")) {
 //                    hallCellAPI.setSector("center");
@@ -318,10 +305,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                     }.getType());
 
 
-                    Log.d("ABSOLUTE", getAbsolute(hallAPI.get(1).getCustom(), hallCellAPI).toString());
-
-                    Log.d("hall 1", removePlace(hallAPI.get(1).getBought(), getAbsolute(hallAPI.get(1).getCustom(), hallCellAPI)) + "");
-
 
                     hallAPI.get(1).getBought().remove(removePlace(hallAPI.get(1).getBought(), getAbsolute(hallAPI.get(1).getCustom(), hallCellAPI)));
 
@@ -330,7 +313,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
 
                     hall.setHallJson(gson.toJson(hallAPI));
 
-                    Log.d("NEW JSON", hall.getHallJson());
 
                 } else if (myTicketsList.get(positionOfDeleted).getFilmPlace().split("-")[0].equals("r")) {
 //                    hallCellAPI.setSector("right");
@@ -340,10 +322,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                     }.getType());
 
 
-                    Log.d("ABSOLUTE", getAbsolute(hallAPI.get(2).getCustom(), hallCellAPI).toString());
-
-                    Log.d("hall 2", removePlace(hallAPI.get(2).getBought(), getAbsolute(hallAPI.get(2).getCustom(), hallCellAPI)) + "");
-
 
                     hallAPI.get(2).getBought().remove(removePlace(hallAPI.get(2).getBought(), getAbsolute(hallAPI.get(2).getCustom(), hallCellAPI)));
 
@@ -352,11 +330,9 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
 
                     hall.setHallJson(gson.toJson(hallAPI));
 
-                    Log.d("NEW JSON", hall.getHallJson());
 
                 }
 
-                Log.d("OUT", hall.getHallJson());
 
 
                 //
@@ -383,7 +359,6 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
                     @Override
                     public void onResponse(Call<AllHallAPI> call, Response<AllHallAPI> response) {
                         if (response.isSuccessful()) {
-                            Log.d("!!!", "Yeah");
 
 
                             dialog.dialog.cancel();
@@ -416,11 +391,9 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
 //        for(HallCellAPI hallCellAPI:list){
         for (int i = 0; i < list.size(); i++) {
 
-            Log.d("removePlace", list.get(i).toString());
 
             if (list.get(i).getCol() == place.getCol() && list.get(i).getRow() == place.getRow()) {
 //                list.remove(hallCellAPI);
-                Log.d("removePlace", i + "");
                 return i;
             }
         }

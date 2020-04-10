@@ -39,18 +39,6 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
     @Setter
     boolean isFilmTimeline;
 
-//    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context) {
-//        this.items = items;
-//        this.context = context;
-//    }
-//
-//    public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, String activeDate, String activeTime) {
-//        this.items = items;
-//        this.context = context;
-//        this.selectedDateTimeTextView = selectedDateTimeTextView;
-//        this.activeDate = activeDate;
-//        this.activeTime = activeTime;
-//    }
 
     public StatusAdapter(List<com.cinema.client.etc.MyItem> items, Context context, TextView selectedDateTimeTextView, TextView selectedTimelineStatusActivityTextView, TextView selectedPriceStatusActivityTextView, String activeDate, String activeTime) {
         this.items = items;
@@ -89,73 +77,48 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
         Date temp = null;
         Date curentDate = null;
         Date tempDate = null;
-//        Time curent=null;
-//        Time temp=null;
         try {
-            // XXX
-//            curent=new SimpleDateFormat("dd.MM.yyy").parse(activeDate);
-//            temp=new SimpleDateFormat("dd.MM.yyy").parse(myItem.getFormattedDate());
 
-            Log.d("Active Date", activeDate);
-            Log.d("Formatter Date", myItem.getFormattedDate());
 
             curentDate = new SimpleDateFormat("yyyy-MM-dd").parse(activeDate);
-            Log.d("current", curentDate.toString());
 
             tempDate = new SimpleDateFormat("yyyy-MM-dd").parse(myItem.getFormattedDate());
-            Log.d("temp", tempDate.toString());
 
             //
 
-            Log.d("Active Date", activeTime);
-            Log.d("Formatter Date", myItem.getFormattedDate());
 
             curent = new SimpleDateFormat("HH:mm:ss").parse(activeTime);
-            Log.d("current", curent.toString());
 
             temp = new SimpleDateFormat("HH:mm:ss").parse(myItem.getFormattedTime());
-            Log.d("temp", temp.toString());
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        Log.d("KEK", tempDate + " | " + curentDate);
 
         if (tempDate.before(curentDate)) {
 
-            Log.d("KEK", "before");
 
             sequenceStep.setActive(false);
             sequenceStep.setSelected(false);
 
         } else if (tempDate.after(curentDate) || tempDate.compareTo(curentDate) == 0) {
 
-            Log.d("KEK", "after");
-
-            Log.d("KEK", temp + " | " + curent);
 
 
             if (temp.after(curent)) {
 
-                Log.d("KEK", "after time");
 
 
                 sequenceStep.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-//                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
                         selectedDateTimeTextView.setText(myItem.getFormattedTime());
 
-                        Log.d("TimelineAPI", myItem.getTimelineAPI().toString());
 
                         try {
-                            Log.d("null", (selectedTimelineStatusActivityTextView == null) + "");
 
-//                            selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getId());
-//
-//                            selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getPrice() + "");
 
                             selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getId() + "");
                             selectedPriceStatusActivityTextView.setText(myItem.getTimelineAPI().getPrice() + "");
@@ -167,10 +130,6 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
                 });
 
 
-//                if (temp.before(curent) == true) {
-//                    sequenceStep.setActive(true);
-//                    sequenceStep.setSelected(true);
-//                }
 
 
             }
@@ -178,26 +137,6 @@ public class StatusAdapter extends SequenceAdapter<MyItem> {
 
         }
 
-        Log.d("isFilmTimeline", isFilmTimeline + "");
-//        if (isFilmTimeline) {
-//
-//            if (true) {
-//                sequenceStep.setActive(true);
-//                sequenceStep.setSelected(true);
-//            }
-//
-//            sequenceStep.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-////                Toast.makeText(context,myItem.getTitle()+" "+myItem.getFormattedDate(),Toast.LENGTH_SHORT).show();
-//                    selectedDateTimeTextView.setText(myItem.getFormattedTime());
-//                    Log.d("TimelineAPI", myItem.getTimelineAPI().toString() + "");
-////                    Log.d("TimelineAPI",myItem.getTimelineAPI().getId()+"");
-//                    selectedTimelineStatusActivityTextView.setText(myItem.getTimelineAPI().getId() + "");
-//                    selectedPriceStatusActivityTextView.setText(myItem.getTimelineAPI().getPrice() + "");
-//                }
-//            });
-//        }
 
     }
 
