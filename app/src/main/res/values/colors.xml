@@ -17,4 +17,10 @@
     <color name="startup_3">#FDD835</color>
     <color name="startup_4">#FFA726</color>
     <color name="startup_5">#ef5350</color>
+
+    <color name="freeCell">#4CAF50</color>
+    <color name="bookedCell">#FDD835</color>
+    <color name="boughtCell">#F44336</color>
+    <color name="textCell">#FAFAFA</color>
+
 </resources>

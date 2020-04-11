@@ -26,14 +26,14 @@ public final class R {
     public static final class color {
         private color() {}
 
-        public static final int rippelColor = 0x7f06015e;
+        public static final int rippelColor = 0x7f060161;
     }
     public static final class id {
         private id() {}
 
-        public static final int doubleRipple = 0x7f0a00fc;
-        public static final int rectangle = 0x7f0a0233;
-        public static final int simpleRipple = 0x7f0a0282;
+        public static final int doubleRipple = 0x7f0a0100;
+        public static final int rectangle = 0x7f0a0239;
+        public static final int simpleRipple = 0x7f0a0288;
     }
     public static final class style {
         private style() {}

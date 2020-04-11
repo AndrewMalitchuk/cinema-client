@@ -16,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Parcelable;
 import android.os.StrictMode;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.liangfeizc.avatarview.AvatarView;
+import com.pd.chocobar.ChocoBar;
 import com.rw.loadingdialog.LoadingView;
 
 import java.io.IOException;
@@ -67,26 +69,11 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import uk.co.samuelwall.materialtaptargetprompt.MaterialTapTargetPrompt;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class MainFlowFragment extends Fragment {
-
-
-//    private static int[] images = {
-//            R.drawable.once_upon_a_time,
-//            R.drawable.drive_2011,
-//            R.drawable.pulp_fiction};
-//
-//    private static int[] banner = {
-//            R.drawable.once_upon_a_time,
-//            R.drawable.drive_2011,
-//            R.drawable.pulp_fiction};
-
-
-//    private TextView textView;
-//
-//    private CirclePageIndicator circlePageIndicator;
-//    private CirclePageIndicator circlePageIndicator1;
-//    private LinePageIndicator linePageIndicator;
 
 
     List<SimpleBannerData> list = new ArrayList<>();
@@ -192,6 +179,9 @@ public class MainFlowFragment extends Fragment {
     public static final String FAVOURITE_CINEMAS_PREF = "favourite_cinema_pref";
     private SharedPreferences sharedpreferences;
 
+
+    private SharedPreferences prefForCheckingFirstRun;
+
     LoadingView loadingView;
 
 
@@ -256,7 +246,6 @@ public class MainFlowFragment extends Fragment {
         //
 
 
-
         filmMoreMainFlowFragmentButton.setOnClickListener(e -> onAboutFilmClick(e));
         buttonCinema.setOnClickListener(e -> onFindCinemasButtonClick(e));
         buttonFilms.setOnClickListener(e -> onFindFilmsButtonClick(e));
@@ -280,7 +269,6 @@ public class MainFlowFragment extends Fragment {
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
 
-
         update();
 
         //
@@ -293,10 +281,16 @@ public class MainFlowFragment extends Fragment {
         //
 
 
+        prefForCheckingFirstRun = getActivity().getSharedPreferences("com.cinema.client", MODE_PRIVATE);
+
+
+        //
+
+
     }
 
-    public void update(){
-        sharedpreferences = getActivity().getSharedPreferences(FAVOURITE_CINEMAS_PREF, Context.MODE_PRIVATE);
+    public void update() {
+        sharedpreferences = getActivity().getSharedPreferences(FAVOURITE_CINEMAS_PREF, MODE_PRIVATE);
 
         if (sharedpreferences != null) {
 
@@ -373,7 +367,6 @@ public class MainFlowFragment extends Fragment {
                 setContent(films);
 
 
-
             }
 
             @Override
@@ -422,7 +415,7 @@ public class MainFlowFragment extends Fragment {
 //                        jsonObject.add( myCustomArray);
 
                         intent.putExtra("json", myCustomArray.toString());
-                        intent.putExtra("genre","Comedy");
+                        intent.putExtra("genre", "Comedy");
                         startActivity(intent);
                     }
 
@@ -451,7 +444,7 @@ public class MainFlowFragment extends Fragment {
 //                        jsonObject.add( myCustomArray);
 
                         intent.putExtra("json", myCustomArray.toString());
-                        intent.putExtra("genre","Action");
+                        intent.putExtra("genre", "Action");
 
                         startActivity(intent);
                     }
@@ -481,7 +474,7 @@ public class MainFlowFragment extends Fragment {
 //                        jsonObject.add( myCustomArray);
 
                         intent.putExtra("json", myCustomArray.toString());
-                        intent.putExtra("genre","Historical");
+                        intent.putExtra("genre", "Historical");
 
                         startActivity(intent);
                     }
@@ -511,7 +504,7 @@ public class MainFlowFragment extends Fragment {
 //                        jsonObject.add( myCustomArray);
 
                         intent.putExtra("json", myCustomArray.toString());
-                        intent.putExtra("genre","Sci-Fi");
+                        intent.putExtra("genre", "Sci-Fi");
 
                         startActivity(intent);
                     }
@@ -541,7 +534,7 @@ public class MainFlowFragment extends Fragment {
 //                        jsonObject.add( myCustomArray);
 
                         intent.putExtra("json", myCustomArray.toString());
-                        intent.putExtra("genre","Horror");
+                        intent.putExtra("genre", "Horror");
 
                         startActivity(intent);
                     }
@@ -591,14 +584,8 @@ public class MainFlowFragment extends Fragment {
         }
     }
 
-    public void onSelectedCinemaClick(View view) {
-        Intent intent = new Intent(getActivity(), AboutCinemaActivity.class);
-        startActivity(intent);
-    }
 
     public void setContent(List<FilmAPI> content) {
-
-
 
 
         ArrayList<FilmAPI> currentFilms = new ArrayList<>();
@@ -638,5 +625,64 @@ public class MainFlowFragment extends Fragment {
         refreshMainFlow.setRefreshing(false);
 
 
+    }
+
+
+    public void firstrun() {
+        new MaterialTapTargetPrompt.Builder(MainFlowFragment.this)
+                .setTarget(R.id.filmMoreMainFlowFragmentButton)
+                .setPrimaryText("New films")
+                .setSecondaryText("Tap to see trailer")
+                .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener() {
+                    @Override
+                    public void onPromptStateChanged(MaterialTapTargetPrompt prompt, int state) {
+                        if (state == MaterialTapTargetPrompt.STATE_FOCAL_PRESSED) {
+                            new MaterialTapTargetPrompt.Builder(MainFlowFragment.this)
+                                    .setTarget(R.id.buttonCinema)
+                                    .setPrimaryText("Search cinemas nearby")
+                                    .setSecondaryText("Tap to start searching")
+                                    .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener() {
+                                        @Override
+                                        public void onPromptStateChanged(MaterialTapTargetPrompt prompt, int state) {
+                                            if (state == MaterialTapTargetPrompt.STATE_FOCAL_PRESSED) {
+                                                new MaterialTapTargetPrompt.Builder(MainFlowFragment.this)
+                                                        .setTarget(R.id.buttonFilms)
+                                                        .setPrimaryText("Search available films")
+                                                        .setSecondaryText("Tap to search films")
+                                                        .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener() {
+                                                            @Override
+                                                            public void onPromptStateChanged(MaterialTapTargetPrompt prompt, int state) {
+                                                                if (state == MaterialTapTargetPrompt.STATE_FOCAL_PRESSED) {
+                                                                    ChocoBar.builder().setActivity(getActivity())
+                                                                            .setText("Congratulations!\nFeel yourself at home!")
+                                                                            .setDuration(ChocoBar.LENGTH_SHORT)
+                                                                            .green()
+                                                                            .show();
+                                                                }
+                                                            }
+                                                        })
+                                                        .show();
+                                            }
+                                        }
+                                    })
+                                    .show();
+                        }
+                    }
+                })
+                .show();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getContext());
+        boolean previouslyStarted = prefs.getBoolean("firstrun", false);
+        if (!previouslyStarted) {
+            SharedPreferences.Editor edit = prefs.edit();
+            edit.putBoolean("firstrun", Boolean.TRUE);
+            edit.commit();
+            firstrun();
+        }
     }
 }

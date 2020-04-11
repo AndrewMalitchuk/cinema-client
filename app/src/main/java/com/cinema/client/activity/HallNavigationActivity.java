@@ -16,7 +16,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -83,6 +85,8 @@ public class HallNavigationActivity extends AppCompatActivity {
 
     LoadingView loadingView;
 
+    int easterEggClick=0;
+
 
     Gson gson = new Gson().newBuilder().create();
 
@@ -125,41 +129,72 @@ public class HallNavigationActivity extends AppCompatActivity {
         //
 
 
+
+
         //
 
         apiInterface = APIClient.getClient().create(APIInterface.class);
 
         int cinema_id = getIntent().getIntExtra("id",-1);
 
-        Call<AllHallAPI> call = apiInterface.getHallById(cinema_id);
+//        Call<AllHallAPI> call = apiInterface.getHallById(cinema_id);
+//
+//        call.enqueue(new Callback<AllHallAPI>() {
+//            @Override
+//            public void onResponse(Call<AllHallAPI> call, Response<AllHallAPI> response) {
+//
+//                if (response.isSuccessful()) {
+//                    hall = gson.fromJson(response.body().getHallJson(), new TypeToken<List<HallAPI>>() {
+//                    }.getType());
+//
+//                    currentHall=response.body();
+//
+//
+//
+//                    toolbar.setTitle(response.body().getName());
+//
+//                    //
+//
+//                    //
+//
+//
+//
+//
+//                }
+//
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<AllHallAPI> call, Throwable t) {
+//
+//            }
+//        });
 
-        call.enqueue(new Callback<AllHallAPI>() {
-            @Override
-            public void onResponse(Call<AllHallAPI> call, Response<AllHallAPI> response) {
 
-                if (response.isSuccessful()) {
-                    hall = gson.fromJson(response.body().getHallJson(), new TypeToken<List<HallAPI>>() {
+        Observable<AllHallAPI> callRx=apiInterface.getHallByIdRx(cinema_id);
+
+        callRx.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .map(result -> result)
+                .doOnComplete(() -> {
+
+                    mt = new MyTask();
+                    mt.setJson("left_json");
+                    mt.setJson(gson.toJson(hall.get(0)));
+                    mt.execute();
+
+                })
+                .subscribe(allHallAPI -> {
+                    hall = gson.fromJson(allHallAPI.getHallJson(), new TypeToken<List<HallAPI>>() {
                     }.getType());
 
-                    currentHall=response.body();
+                    currentHall=allHallAPI;
 
 
 
-                    toolbar.setTitle(response.body().getName());
-
-
-
-
-                }
-
-
-            }
-
-            @Override
-            public void onFailure(Call<AllHallAPI> call, Throwable t) {
-
-            }
-        });
+                    toolbar.setTitle(allHallAPI.getName());
+                });
 
 
         //
@@ -190,10 +225,7 @@ public class HallNavigationActivity extends AppCompatActivity {
                     case R.id.right_side_of_hall:
 
 
-//
-//                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-//                        ft.replace(R.id.testFragment, new HallTestFragment());
-//                        ft.commit();
+
 
                         mt = new MyTask();
 //                        mt.setJson("right_json");
@@ -229,6 +261,36 @@ public class HallNavigationActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()) {
+            case R.id.help:
+
+                //
+                // custom dialog
+                final Dialog customDialog = new Dialog(HallNavigationActivity.this);
+                customDialog.setContentView(R.layout.hall_help_dialog);
+                customDialog.setTitle("Title...");
+
+
+                Button dialogButton = (Button) customDialog.findViewById(R.id.button6);
+                // if button is clicked, close the custom dialog
+                dialogButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        customDialog.dismiss();
+                    }
+                });
+
+                Button easterEggButton = (Button) customDialog.findViewById(R.id.button2);
+                easterEggButton.setOnClickListener(e->{
+                    easterEggClick++;
+                    if(easterEggClick==10){
+                        Toast.makeText(this, "10 clicks. It might be easter egg, isn't it?", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                customDialog.show();
+                //
+
+                break;
             case R.id.submit:
                 ChocoBar.builder().setActivity(HallNavigationActivity.this)
                         .setText("Success!")

@@ -18,6 +18,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -90,7 +91,6 @@ public class Main3Activity extends AppCompatActivity {
 
 
     private SharedPreferences pref;
-    private SharedPreferences prefForCheckingFirstRun;
     private SharedPreferences.Editor editor;
 
     private boolean firstRun = false;
@@ -121,7 +121,6 @@ public class Main3Activity extends AppCompatActivity {
         pref = getApplicationContext().getSharedPreferences("UserData", 0);
         editor = pref.edit();
 
-        prefForCheckingFirstRun = getSharedPreferences("com.cinema.client", MODE_PRIVATE);
 
 
         //
@@ -229,6 +228,8 @@ public class Main3Activity extends AppCompatActivity {
 //                                        getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE).edit().commit();
 
                                         getApplicationContext().getSharedPreferences("ACCOUNT_PREF", 0).edit().clear().commit();
+                                        getApplicationContext().getSharedPreferences("firstrun", 0).edit().clear().commit();
+                                        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().clear().commit();
 
 
                                         Intent intent = new Intent(Main3Activity.this, LoginActivity.class);
@@ -555,36 +556,7 @@ public class Main3Activity extends AppCompatActivity {
         });
 
 
-        if (prefForCheckingFirstRun.getBoolean("firstrun", true) == true) {
 
-            //
-            new MaterialTapTargetPrompt.Builder(Main3Activity.this)
-                    .setTarget(R.id.filmMoreMainFlowFragmentButton)
-                    .setPrimaryText("Send your first email")
-                    .setSecondaryText("Tap the envelope to start composing your first email")
-                    .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener() {
-                        @Override
-                        public void onPromptStateChanged(MaterialTapTargetPrompt prompt, int state) {
-                            if (state == MaterialTapTargetPrompt.STATE_FOCAL_PRESSED) {
-                                new MaterialTapTargetPrompt.Builder(Main3Activity.this)
-                                        .setTarget(R.id.textView23)
-                                        .setPrimaryText("Send your first email")
-                                        .setSecondaryText("Tap the envelope to start composing your first email")
-                                        .setIcon(R.drawable.ic_account_circle_black_24dp)
-                                        .setPromptStateChangeListener(new MaterialTapTargetPrompt.PromptStateChangeListener() {
-                                            @Override
-                                            public void onPromptStateChanged(MaterialTapTargetPrompt prompt, int state) {
-                                                if (state == MaterialTapTargetPrompt.STATE_FOCAL_PRESSED) {
-                                                    // User has pressed the prompt target
-                                                }
-                                            }
-                                        })
-                                        .show();
-                            }
-                        }
-                    })
-                    .show();
-        }
 
         //
         ChocoBar.builder().setActivity(Main3Activity.this)
@@ -606,63 +578,10 @@ public class Main3Activity extends AppCompatActivity {
 
         //
 
-//        // in method (?)
-
-
-//        Intent intent = new Intent(this, AboutFilmActivity.class);
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-//
-//
-//        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, getResources().getString(R.string.cinemaAppNotify))
-//                .setSmallIcon(R.drawable.ic_ticket_accent)
-//                .setContentTitle(getString(R.string.filmReminderNotificationMainActivityString))
-//                .setContentText("It's Fight Club in Kosmos cinema")
-//                .setContentIntent(pendingIntent)
-//                .setPriority(NotificationCompat.PRIORITY_HIGH);
-//
-//
-//        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-//
-//
-//        // notification_id (?)
-//        notificationManager.notify(10, builder.build());
 
         //
 
         Calendar cal = new GregorianCalendar(2020, 0, 23, 13, 40, 00);
-
-
-//        dpd = DatePickerDialog.newInstance(
-//                Main3Activity.this,
-//                now.get(Calendar.YEAR),
-//                now.get(Calendar.MONTH),
-//                now.get(Calendar.DAY_OF_MONTH)
-//        );
-//
-//        tpd = TimePickerDialog.newInstance(
-//                Main3Activity.this,
-//                now.get(Calendar.HOUR_OF_DAY),
-//                now.get(Calendar.MINUTE),
-//                now.get(Calendar.SECOND),
-//                false
-//        );
-//
-//        dpd.show(getFragmentManager(), "Datepickerdialog");
-
-
-//        Удивительно, но работает
-//        NotifyMe notifyMe = new NotifyMe.Builder(getApplicationContext())
-//                .title("title")
-//                .content("content")
-//                .color(255, 0, 0, 255)
-//                .led_color(255, 255, 255, 255)
-//                .time(cal)
-//                .key("test")
-//                .addAction(new Intent(this, AboutFilmActivity.class), "Open", true, false)
-//                .large_icon(R.drawable.ic_ticket_accent)
-//                .rrule("FREQ=MINUTELY;INTERVAL=5;COUNT=2")
-//                .build();
 
         //
         apiInterface = APIClient.getClient().create(APIInterface.class);
@@ -685,11 +604,7 @@ public class Main3Activity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        if (prefForCheckingFirstRun.getBoolean("firstrun", true)) {
-            // Do first run stuff here then set 'firstrun' as false
-            // using the following line to edit/commit prefs
-            prefForCheckingFirstRun.edit().putBoolean("firstrun", false).commit();
-        }
+
     }
 
     public void stories() {

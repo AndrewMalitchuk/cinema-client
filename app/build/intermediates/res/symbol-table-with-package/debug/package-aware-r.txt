@@ -1102,6 +1102,8 @@ color black_transparent
 color blue
 color blue_color
 color blue_color_gradient
+color bookedCell
+color boughtCell
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1229,6 +1231,7 @@ color error_color_material_light
 color flat_pressed
 color foreground_material_dark
 color foreground_material_light
+color freeCell
 color gray
 color gray_active_icon
 color gray_scale
@@ -1427,6 +1430,7 @@ color switch_thumb_material_light
 color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tag_bg
+color textCell
 color textColorPrimary
 color text_shadow
 color text_shadow_white
@@ -2479,6 +2483,10 @@ id bubble_title
 id button
 id button12
 id button19
+id button2
+id button3
+id button4
+id button6
 id buttonCinema
 id buttonFilms
 id buttonPanel
@@ -2660,6 +2668,7 @@ id front_card_number
 id front_card_outline
 id front_progress
 id fullscreen_button
+id genresCardView
 id ghost_view
 id glide_custom_view_target_tag
 id gone
@@ -2667,6 +2676,7 @@ id group_divider
 id group_layouttransition_backup
 id groups
 id guideline
+id help
 id historicalAvatar
 id home
 id homeAsUp
@@ -3058,6 +3068,7 @@ id textView3
 id textView30
 id textView31
 id textView32
+id textView4
 id textView5
 id textView6
 id textView8
@@ -3340,6 +3351,7 @@ layout fragment_test
 layout fragment_ticket_search
 layout front_card
 layout front_card_outline
+layout hall_help_dialog
 layout image
 layout item_onboarder
 layout item_pager

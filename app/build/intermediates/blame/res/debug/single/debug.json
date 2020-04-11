@@ -2588,6 +2588,10 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/20770dccd6403c8027a019226e749630/res/drawable-xhdpi-v4/googleg_disabled_color_18.png"
     },
     {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_hall_help_dialog.xml.flat",
+        "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/layout/hall_help_dialog.xml"
+    },
+    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ic_clear_white_24dp.xml.flat",
         "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/drawable/ic_clear_white_24dp.xml"
     },

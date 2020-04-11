@@ -185,6 +185,9 @@ public interface APIInterface {
     @GET(api_hall)
     Call<AllHallAPI> getHallById(@Query("id") int id);
 
+    @GET(api_hall)
+    Observable<AllHallAPI> getHallByIdRx(@Query("id") int id);
+
     @Multipart
     @PUT(api_hall)
     Call<AllHallAPI> updateHallByHallId(
