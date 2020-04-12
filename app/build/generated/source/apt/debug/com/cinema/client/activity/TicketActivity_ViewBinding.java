@@ -4,6 +4,7 @@ package com.cinema.client.activity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -35,6 +36,7 @@ public class TicketActivity_ViewBinding implements Unbinder {
     target.filmTimeTicketActivityEditText = Utils.findRequiredViewAsType(source, R.id.filmTimeTicketActivityEditText, "field 'filmTimeTicketActivityEditText'", AppCompatTextView.class);
     target.placeTicketActivityEditText = Utils.findRequiredViewAsType(source, R.id.placeTicketActivityEditText, "field 'placeTicketActivityEditText'", AppCompatTextView.class);
     target.frame = Utils.findRequiredViewAsType(source, R.id.frame, "field 'frame'", ConstraintLayout.class);
+    target.textView32 = Utils.findRequiredViewAsType(source, R.id.textView32, "field 'textView32'", TextView.class);
   }
 
   @Override
@@ -53,5 +55,6 @@ public class TicketActivity_ViewBinding implements Unbinder {
     target.filmTimeTicketActivityEditText = null;
     target.placeTicketActivityEditText = null;
     target.frame = null;
+    target.textView32 = null;
   }
 }

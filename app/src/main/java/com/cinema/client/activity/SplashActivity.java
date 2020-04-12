@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
@@ -97,6 +98,17 @@ public class SplashActivity extends AppCompatActivity {
             Intent intent=new Intent(this,LoginActivity.class);
             startActivity(intent);
         }
+
+
+
+
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
 
 
 

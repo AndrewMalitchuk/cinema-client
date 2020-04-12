@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.cinema.client.R;
 import com.cinema.client.requests.APIClient;
@@ -74,6 +75,10 @@ public class TicketActivity extends AppCompatActivity {
 
     @BindView(R.id.frame)
     ConstraintLayout frame;
+
+
+    @BindView(R.id.textView32)
+    TextView textView32;
 
 
     private APIInterface apiInterface;
@@ -268,8 +273,15 @@ public class TicketActivity extends AppCompatActivity {
 
         placeTicketActivityEditText.setText(content.getPlace());
 
+        textView32.setOnClickListener(e->{
+            onBackPressed();
+        });
+
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

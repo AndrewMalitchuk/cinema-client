@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.cinema.client.R;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
@@ -23,6 +24,9 @@ public class QRZoomActivity extends AppCompatActivity {
 
     @BindView(R.id.layout)
     LinearLayout layout;
+
+    @BindView(R.id.textView8)
+    TextView textView8;
 
 
     @Override
@@ -59,6 +63,17 @@ public class QRZoomActivity extends AppCompatActivity {
                 .onLinearLayout(layout)
                 .setTransitionDuration(4000)
                 .start();
+
+        textView8.setOnClickListener(e->{
+            onBackPressed();
+        });
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
 
     }
 }

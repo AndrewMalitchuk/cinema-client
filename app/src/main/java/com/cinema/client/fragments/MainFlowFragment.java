@@ -1,5 +1,6 @@
 package com.cinema.client.fragments;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,10 +34,13 @@ import com.cinema.client.R;
 import com.cinema.client.activity.AboutCinemaActivity;
 import com.cinema.client.activity.AboutFilmActivity;
 import com.cinema.client.activity.ErrorActivity;
+import com.cinema.client.activity.HallNavigationActivity;
 import com.cinema.client.activity.Main3Activity;
 import com.cinema.client.activity.PosterActivity;
 import com.cinema.client.activity.SearchCinemaActivity;
 import com.cinema.client.activity.SearchFilmActivity;
+import com.cinema.client.activity.SplashActivity;
+import com.cinema.client.activity.StartupActivity;
 import com.cinema.client.adapters.DemoInfiniteAdapter;
 import com.cinema.client.adapters.FavouriteCinemasAdapter;
 import com.cinema.client.entities.CinemaItemSearch;
@@ -43,6 +48,7 @@ import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.CinemaAPI;
 import com.cinema.client.requests.entities.FilmAPI;
+import com.droidbyme.dialoglib.DroidDialog;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.freegeek.android.materialbanner.MaterialBanner;
 import com.freegeek.android.materialbanner.simple.SimpleBannerData;
@@ -658,6 +664,37 @@ public class MainFlowFragment extends Fragment {
                                                                             .setDuration(ChocoBar.LENGTH_SHORT)
                                                                             .green()
                                                                             .show();
+
+                                                                    //
+                                                                    DroidDialog dialog = new DroidDialog.Builder(getContext())
+                                                                            .icon(R.drawable.ic_help_outline_white_24dp)
+                                                                            .title("Congratulations")
+                                                                            .content("Want to see introduction?")
+                                                                            .cancelable(true, false)
+                                                                            .positiveButton("Yes, I'm sure", new DroidDialog.onPositiveListener() {
+                                                                                @Override
+                                                                                public void onPositive(Dialog droidDialog) {
+                                                                                    droidDialog.cancel();
+
+                                                                                    startActivity(new Intent(getContext(),StartupActivity.class));
+                                                                                }
+                                                                            })
+                                                                            .negativeButton("No, it was a mistake", new DroidDialog.onNegativeListener() {
+                                                                                @Override
+                                                                                public void onNegative(Dialog droidDialog) {
+                                                                                    //
+
+                                                                                    //
+                                                                                }
+                                                                            })
+                                                                            .color(ContextCompat.getColor(getContext(), R.color.colorAccent),
+                                                                                    ContextCompat.getColor(getContext(), R.color.white),
+                                                                                    ContextCompat.getColor(getContext(), R.color.colorAccent))
+                                                                            .show();
+
+                                                                    //
+
+
                                                                 }
                                                             }
                                                         })
