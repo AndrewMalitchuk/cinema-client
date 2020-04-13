@@ -165,8 +165,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
         myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Main3Activity.class));
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
         //
@@ -276,6 +276,7 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
                 call.cancel();
                 Intent intent = new Intent(AboutCinemaActivity.this, ErrorActivity.class);
+                intent.putExtra("isNetworkError",true);
                 startActivity(intent);
             }
         });
@@ -412,7 +413,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
         } catch (IOException e) {
             e.printStackTrace();
-            Intent intent = new Intent(AboutCinemaActivity.this, ErrorActivity.class);
+            Intent intent=new Intent(AboutCinemaActivity.this, ErrorActivity.class);
+            intent.putExtra("isAppError",true);
             startActivity(intent);
         }
 
@@ -509,5 +511,8 @@ public class AboutCinemaActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

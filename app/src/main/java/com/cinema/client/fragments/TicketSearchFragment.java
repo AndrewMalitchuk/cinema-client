@@ -27,6 +27,7 @@ import com.cinema.client.R;
 import com.cinema.client.activity.TicketActivity;
 import com.cinema.client.adapters.TicketSearchAdapter;
 import com.cinema.client.entities.TicketItemSearch;
+import com.cinema.client.etc.MyItem;
 import com.cinema.client.etc.MySearchSuggestion;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
@@ -40,6 +41,8 @@ import com.rw.loadingdialog.LoadingView;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -235,6 +238,14 @@ public class TicketSearchFragment extends Fragment {
 
 
         }
+
+        Collections.sort(myTicketsArrayList, new Comparator<TicketItemSearch>() {
+            @Override
+            public int compare(TicketItemSearch u1, TicketItemSearch u2) {
+                return u1.getFilmDate().compareTo(u2.getFilmDate());
+            }
+        });
+
 
 
         myTicketsAdapter = new TicketSearchAdapter(myTicketsArrayList);

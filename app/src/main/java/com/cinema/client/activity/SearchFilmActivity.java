@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -65,7 +66,7 @@ public class SearchFilmActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Main3Activity.class));
+                onBackPressed();
             }
         });
 
@@ -137,7 +138,8 @@ public class SearchFilmActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<FilmAPI>> call, Throwable t) {
                 call.cancel();
-                Intent intent = new Intent(SearchFilmActivity.this, ErrorActivity.class);
+                Intent intent=new Intent(SearchFilmActivity.this, ErrorActivity.class);
+                intent.putExtra("isNetworkError",true);
                 startActivity(intent);
             }
         });
@@ -182,7 +184,8 @@ public class SearchFilmActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<FilmAPI> call, Throwable t) {
                         call.cancel();
-                        Intent intent = new Intent(SearchFilmActivity.this, ErrorActivity.class);
+                        Intent intent=new Intent(SearchFilmActivity.this, ErrorActivity.class);
+                        intent.putExtra("isNetworkError",true);
                         startActivity(intent);
                     }
                 });
@@ -213,4 +216,8 @@ public class SearchFilmActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

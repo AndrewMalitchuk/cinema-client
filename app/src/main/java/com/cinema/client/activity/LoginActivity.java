@@ -1,5 +1,6 @@
 package com.cinema.client.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -227,6 +228,9 @@ LoginActivity extends AppCompatActivity implements
 
                                 @Override
                                 public void onFailure(Call<UserAPI> call, Throwable t) {
+                                    Intent intent=new Intent(LoginActivity.this, ErrorActivity.class);
+                                    intent.putExtra("isNetworkError",true);
+                                    startActivity(intent);
 
                                 }
                             });

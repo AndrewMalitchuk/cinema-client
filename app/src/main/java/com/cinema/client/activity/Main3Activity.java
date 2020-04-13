@@ -693,6 +693,9 @@ public class Main3Activity extends AppCompatActivity {
             }
         } catch (ParseException e) {
             e.printStackTrace();
+            Intent intent=new Intent(Main3Activity.this, ErrorActivity.class);
+            intent.putExtra("isAppError",true);
+            startActivity(intent);
         }
 
 
@@ -751,6 +754,9 @@ public class Main3Activity extends AppCompatActivity {
 //                ft.commit();
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                Intent intent=new Intent(Main3Activity.this, ErrorActivity.class);
+                intent.putExtra("isAppError",true);
+                startActivity(intent);
             }
             return null;
         }
@@ -772,5 +778,10 @@ public class Main3Activity extends AppCompatActivity {
         Random r = new Random();
         int nextRandomNumberIndex = r.nextInt(input.size());
         return input.get(nextRandomNumberIndex);
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

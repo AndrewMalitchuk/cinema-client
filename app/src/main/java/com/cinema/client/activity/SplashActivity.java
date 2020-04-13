@@ -85,6 +85,7 @@ public class SplashActivity extends AppCompatActivity {
                     public void onFailure(Call<TokenAPI> call, Throwable t) {
                         Intent intent=new Intent(SplashActivity.this, LoginActivity.class);
                         startActivity(intent);
+
                     }
                 });
 

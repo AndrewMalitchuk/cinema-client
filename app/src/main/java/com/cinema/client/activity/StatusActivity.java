@@ -151,8 +151,8 @@ public class StatusActivity extends AppCompatActivity {
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), AboutFilmActivity.class));
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 
@@ -191,6 +191,9 @@ public class StatusActivity extends AppCompatActivity {
                 calendarView.setDate(new SimpleDateFormat("yyyy-MM-dd").parse(getIntent().getStringExtra("selectedDate")).getTime(), true, true);
             } catch (ParseException e) {
                 e.printStackTrace();
+                Intent intent=new Intent(StatusActivity.this, ErrorActivity.class);
+                intent.putExtra("isAppError",true);
+                startActivity(intent);
             }
 
 
@@ -357,8 +360,8 @@ public class StatusActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<TimelineAPI>> call, Throwable t) {
                 call.cancel();
-                Intent intent = new Intent(StatusActivity.this, ErrorActivity.class);
-                startActivity(intent);
+                Intent intent=new Intent(StatusActivity.this, ErrorActivity.class);
+                startActivity(intent);;
             }
         });
     }
@@ -457,9 +460,14 @@ public class StatusActivity extends AppCompatActivity {
             public void onFailure(Call<List<TimelineAPI>> call, Throwable t) {
                 call.cancel();
                 Intent intent = new Intent(StatusActivity.this, ErrorActivity.class);
+                intent.putExtra("isNetworkError",true);
                 startActivity(intent);
             }
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

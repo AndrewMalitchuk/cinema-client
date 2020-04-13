@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -126,8 +127,8 @@ public class BillActivity extends AppCompatActivity {
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), AboutFilmActivity.class));
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 
@@ -243,6 +244,9 @@ public class BillActivity extends AppCompatActivity {
 
                                                 @Override
                                                 public void onFailure(Call<TicketAPI> call, Throwable t) {
+                                                    Intent intent=new Intent(BillActivity.this, ErrorActivity.class);
+                                                    intent.putExtra("isNetworkError",true);
+                                                    startActivity(intent);
 
                                                 }
                                             });
@@ -255,6 +259,9 @@ public class BillActivity extends AppCompatActivity {
 
                                     @Override
                                     public void onFailure(Call<TokenAPI> call, Throwable t) {
+                                        Intent intent=new Intent(BillActivity.this, ErrorActivity.class);
+                                        intent.putExtra("isNetworkError",true);
+                                        startActivity(intent);
 
                                     }
                                 });
@@ -517,4 +524,8 @@ public class BillActivity extends AppCompatActivity {
         startActivityForResult(intent, PICK_DATETIME_REQUEST);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

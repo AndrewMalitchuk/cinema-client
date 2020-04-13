@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -112,8 +113,8 @@ public class HallNavigationActivity extends AppCompatActivity {
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), BillActivity.class));
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 
@@ -527,6 +528,9 @@ public class HallNavigationActivity extends AppCompatActivity {
                 ft.commit();
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                Intent intent=new Intent(HallNavigationActivity.this, ErrorActivity.class);
+                intent.putExtra("isAppError",true);
+                startActivity(intent);
             }
             return null;
         }
@@ -545,6 +549,9 @@ public class HallNavigationActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }
 

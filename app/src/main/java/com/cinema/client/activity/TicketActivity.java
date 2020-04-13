@@ -221,6 +221,8 @@ public class TicketActivity extends AppCompatActivity {
             Bitmap bitmap = barcodeEncoder.createBitmap(bitMatrix);
             qrCodeTicketActivityImageView.setImageBitmap(bitmap);
         } catch (WriterException e) {
+            Intent intent=new Intent(TicketActivity.this, ErrorActivity.class);
+            startActivity(intent);
             e.printStackTrace();
         }
 
@@ -240,7 +242,8 @@ public class TicketActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<FilmAPI> call, Throwable t) {
                 call.cancel();
-                Intent intent = new Intent(TicketActivity.this, ErrorActivity.class);
+                Intent intent=new Intent(TicketActivity.this, ErrorActivity.class);
+                intent.putExtra("isNetworkError",true);
                 startActivity(intent);
             }
         });
@@ -258,6 +261,7 @@ public class TicketActivity extends AppCompatActivity {
             public void onFailure(Call<CinemaAPI> call, Throwable t) {
                 call.cancel();
                 Intent intent = new Intent(TicketActivity.this, ErrorActivity.class);
+                intent.putExtra("isNetworkError",true);
                 startActivity(intent);
             }
         });

@@ -43,6 +43,9 @@ public class StoriesActivity extends AppCompatActivity {
                     "Joker"
             );
         } catch (ParseException e) {
+            Intent intent=new Intent(StoriesActivity.this, ErrorActivity.class);
+            intent.putExtra("isNetworkError",true);
+            startActivity(intent);
             e.printStackTrace();
         }
 

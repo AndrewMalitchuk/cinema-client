@@ -5,36 +5,33 @@
     build-mode="COLD"
     density="440dpi"
     format="10"
-    ir-eligibility="FIELD_ADDED"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.4.2"
-    timestamp="1586688024608"
+    timestamp="1586796039883"
     token="-2849268533494592384"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="47824" />
+        duration="32577" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="269" />
+        duration="39" />
     <task
         name="verifier"
-        duration="11" />
+        duration="4" />
 
     <artifact
-        location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1586687341151"
+        timestamp="1586792192774"
         verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
-            type="SPLIT" />
         <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
@@ -52,6 +49,9 @@
             type="SPLIT" />
         <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
@@ -74,11 +74,27 @@
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="FIELD_ADDED"
-        timestamp="1586688024608"
+        timestamp="1586793442119"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
+            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/resources/instant-run/debug/resources-debug.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1586795472504"
+        verifier="CLASS_ADDED" >
+        <artifact
             location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1586796039883"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/adular/Projects/Android/cinema-client/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
     </build>
 

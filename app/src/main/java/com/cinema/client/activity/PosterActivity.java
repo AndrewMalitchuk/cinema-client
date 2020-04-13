@@ -74,8 +74,8 @@ public class PosterActivity extends AppCompatActivity {
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), AboutCinemaActivity.class));
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
 
@@ -196,5 +196,10 @@ public class PosterActivity extends AppCompatActivity {
 //                itemTouchHelper.swipe(recyclerView.findViewHolderForAdapterPosition(0), ItemTouchHelper.DOWN);
 //            }
 //        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

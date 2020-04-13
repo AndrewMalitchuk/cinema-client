@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -104,8 +105,8 @@ public class AboutFilmActivity extends AppCompatActivity {
 
         myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Main3Activity.class));
+            public void onClick(View v) {
+                onBackPressed();
             }
         });
         //
@@ -193,7 +194,8 @@ public class AboutFilmActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<FilmAPI> call, Throwable t) {
                 call.cancel();
-                Intent intent = new Intent(AboutFilmActivity.this, ErrorActivity.class);
+                Intent intent=new Intent(AboutFilmActivity.this, ErrorActivity.class);
+                intent.putExtra("isNetworkError",true);
                 startActivity(intent);
             }
         });
@@ -267,5 +269,8 @@ public class AboutFilmActivity extends AppCompatActivity {
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

@@ -199,6 +199,9 @@ public class SignUpActivity extends AppCompatActivity implements
 
                             } catch (IOException e) {
                                 e.printStackTrace();
+                                Intent intent=new Intent(SignUpActivity.this, ErrorActivity.class);
+                                intent.putExtra("isNetworkError",true);
+                                startActivity(intent);
                             }
 
 

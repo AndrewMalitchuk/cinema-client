@@ -84,7 +84,7 @@ public class SearchCinemaActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Main3Activity.class));
+                onBackPressed();
             }
         });
 
@@ -122,6 +122,9 @@ public class SearchCinemaActivity extends AppCompatActivity {
 
                     } catch (IOException e) {
                         e.printStackTrace();
+                        Intent intent=new Intent(SearchCinemaActivity.this, ErrorActivity.class);
+                        intent.putExtra("isAppError",true);
+                        startActivity(intent);
                     }
 
 
@@ -228,7 +231,9 @@ public class SearchCinemaActivity extends AppCompatActivity {
                 public void onFailure(Call<List<CinemaAPI>> call, Throwable t) {
                     call.cancel();
                     Intent intent = new Intent(SearchCinemaActivity.this, ErrorActivity.class);
+                    intent.putExtra("isNetworkError",true);
                     startActivity(intent);
+
                 }
             });
 
@@ -269,6 +274,7 @@ public class SearchCinemaActivity extends AppCompatActivity {
                     public void onFailure(Call<CinemaAPI> call, Throwable t) {
                         call.cancel();
                         Intent intent = new Intent(SearchCinemaActivity.this, ErrorActivity.class);
+                        intent.putExtra("isNetworkError",true);
                         startActivity(intent);
                     }
                 });
@@ -298,5 +304,8 @@ public class SearchCinemaActivity extends AppCompatActivity {
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }
