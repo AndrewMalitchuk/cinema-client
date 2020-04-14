@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.NotificationChannel;
@@ -42,6 +43,8 @@ import com.keiferstone.nonet.NoNet;
 import com.mehdi.shortcut.interfaces.IReceiveStringExtra;
 import com.mehdi.shortcut.model.Shortcut;
 import com.mehdi.shortcut.util.ShortcutUtils;
+import com.nonzeroapps.whatisnewdialog.NewItemDialog;
+import com.nonzeroapps.whatisnewdialog.object.NewFeatureItem;
 import com.pd.chocobar.ChocoBar;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
@@ -154,16 +157,16 @@ public class Main3Activity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.action_settings:
                         MarkdownView markdownView = new MarkdownView(Main3Activity.this);
-                        markdownView.loadFromText("# Hello!\n ## Hello!\n **сюда кинь вступ з звіту**");
+                        markdownView.loadFromText("HELP!\nI need somebody");
                         Config defaultConfig = Config.getDefaultConfig();
                         defaultConfig.setDefaultMargin(25);
                         markdownView.setCurrentConfig(defaultConfig);
                         new SimpleDialog.Builder(Main3Activity.this)
                                 .setTitle("Need help?")
-                                .setCustomView(markdownView)
+                                .setContent(getResources().getString(R.string.help_text))
                                 .setBtnConfirmText("Thanks!")
                                 .setBtnConfirmTextSizeDp(16)
-                                .setBtnConfirmTextColor("#1fd1ab")
+                                .setBtnConfirmTextColor("#D81B60")
                                 .show();
                         break;
                     case R.id.action_feedback:
@@ -252,6 +255,49 @@ public class Main3Activity extends AppCompatActivity {
                                         ContextCompat.getColor(Main3Activity.this, R.color.colorAccent))
                                 .show();
 
+                        break;
+                    case R.id.action_whats_new:
+                        ArrayList<NewFeatureItem> arrayList = new ArrayList<>();
+
+                        NewFeatureItem newFeatureItem = new NewFeatureItem();
+                        newFeatureItem.setFeatureDesc("From now on, you can search all things you need - cinemas, films, tickets and even genre!");
+                        newFeatureItem.setFeatureTitle("Searching");
+                        newFeatureItem.setImageResource("https://media.giphy.com/media/cWVlY0EeQZOrm/source.gif");
+                        arrayList.add(newFeatureItem);
+
+                        NewFeatureItem newFeatureItem2 = new NewFeatureItem();
+                        newFeatureItem2.setFeatureTitle("Notify");
+                        newFeatureItem2.setFeatureDesc("Get notification when new film arrive and when your chosen film will be shown");
+                        newFeatureItem2.setImageResource("https://media.giphy.com/media/huyZxIJvtqVeRp7QcS/source.gif");
+                        arrayList.add(newFeatureItem2);
+
+                        NewFeatureItem newFeatureItem3 = new NewFeatureItem();
+                        newFeatureItem3.setFeatureTitle("Find in map");
+                        newFeatureItem3.setFeatureDesc("Find your favourite cinema theatre easily via map!");
+                        newFeatureItem3.setImageResource("https://media.giphy.com/media/3ov9jYkVbdGMo6UcG4/source.gif");
+                        arrayList.add(newFeatureItem3);
+
+                        NewFeatureItem newFeatureItem4 = new NewFeatureItem();
+                        newFeatureItem4.setFeatureTitle("More information");
+                        newFeatureItem4.setFeatureDesc("Watch trailer before choosing film.");
+                        newFeatureItem4.setImageResource("https://media.giphy.com/media/Iyqv0kE4hUwYE/source.gif");
+                        arrayList.add(newFeatureItem4);
+
+                        NewItemDialog
+                                .init(getApplicationContext())
+                                .setVersionName("1.2.0")
+                                .setDialogTitle("New Features of 0.1 Version!")
+                                .setPositiveButtonTitle("Close")
+                                .setCancelable(true)
+//                                .setCancelable(false)
+                                .setItems(arrayList)
+                                .setCancelButtonListener(new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                    }
+                                })
+                                .showDialog(Main3Activity.this);
                         break;
                 }
 

@@ -13,38 +13,38 @@ public final class R {
         private drawable() {}
 
         public static final int bonuspack_bubble = 0x7f08007b;
-        public static final int btn_moreinfo = 0x7f080088;
-        public static final int center = 0x7f080095;
-        public static final int ic_menu_compass = 0x7f080103;
-        public static final int ic_menu_mapmode = 0x7f080104;
-        public static final int ic_menu_mylocation = 0x7f080105;
-        public static final int ic_menu_offline = 0x7f080106;
-        public static final int marker_default = 0x7f080139;
-        public static final int marker_default_focused_base = 0x7f08013a;
-        public static final int moreinfo_arrow = 0x7f080142;
-        public static final int moreinfo_arrow_pressed = 0x7f080143;
-        public static final int navto_small = 0x7f08014a;
-        public static final int next = 0x7f08014d;
-        public static final int osm_ic_center_map = 0x7f08015e;
-        public static final int osm_ic_follow_me = 0x7f08015f;
-        public static final int osm_ic_follow_me_on = 0x7f080160;
-        public static final int osm_ic_ic_map_ortho = 0x7f080161;
-        public static final int person = 0x7f080163;
-        public static final int previous = 0x7f080164;
-        public static final int round_navigation_white_48 = 0x7f08016a;
-        public static final int sharp_add_black_36 = 0x7f080176;
-        public static final int sharp_remove_black_36 = 0x7f080177;
-        public static final int zoom_in = 0x7f080190;
-        public static final int zoom_out = 0x7f080191;
+        public static final int btn_moreinfo = 0x7f080089;
+        public static final int center = 0x7f080096;
+        public static final int ic_menu_compass = 0x7f080104;
+        public static final int ic_menu_mapmode = 0x7f080105;
+        public static final int ic_menu_mylocation = 0x7f080106;
+        public static final int ic_menu_offline = 0x7f080107;
+        public static final int marker_default = 0x7f08013a;
+        public static final int marker_default_focused_base = 0x7f08013b;
+        public static final int moreinfo_arrow = 0x7f080143;
+        public static final int moreinfo_arrow_pressed = 0x7f080144;
+        public static final int navto_small = 0x7f08014b;
+        public static final int next = 0x7f08014e;
+        public static final int osm_ic_center_map = 0x7f08015f;
+        public static final int osm_ic_follow_me = 0x7f080160;
+        public static final int osm_ic_follow_me_on = 0x7f080161;
+        public static final int osm_ic_ic_map_ortho = 0x7f080162;
+        public static final int person = 0x7f080164;
+        public static final int previous = 0x7f080165;
+        public static final int round_navigation_white_48 = 0x7f08016b;
+        public static final int sharp_add_black_36 = 0x7f080177;
+        public static final int sharp_remove_black_36 = 0x7f080178;
+        public static final int zoom_in = 0x7f080191;
+        public static final int zoom_out = 0x7f080192;
     }
     public static final class id {
         private id() {}
 
-        public static final int bubble_description = 0x7f0a0087;
-        public static final int bubble_image = 0x7f0a0088;
-        public static final int bubble_moreinfo = 0x7f0a0089;
-        public static final int bubble_subdescription = 0x7f0a008a;
-        public static final int bubble_title = 0x7f0a008b;
+        public static final int bubble_description = 0x7f0a0088;
+        public static final int bubble_image = 0x7f0a0089;
+        public static final int bubble_moreinfo = 0x7f0a008a;
+        public static final int bubble_subdescription = 0x7f0a008b;
+        public static final int bubble_title = 0x7f0a008c;
     }
     public static final class layout {
         private layout() {}
@@ -75,24 +75,24 @@ public final class R {
         public static final int format_distance_only_mile = 0x7f110085;
         public static final int format_distance_only_nautical_mile = 0x7f110086;
         public static final int format_distance_value_unit = 0x7f110087;
-        public static final int hills = 0x7f110096;
-        public static final int map_mode = 0x7f1100b2;
-        public static final int mapbox = 0x7f1100b3;
-        public static final int mapnik = 0x7f1100b4;
-        public static final int mapquest_aerial = 0x7f1100b5;
-        public static final int mapquest_osm = 0x7f1100b6;
-        public static final int my_location = 0x7f1100e5;
-        public static final int offline = 0x7f1100eb;
-        public static final int public_transport = 0x7f1100f7;
-        public static final int roads_nl = 0x7f110104;
-        public static final int samples = 0x7f110105;
-        public static final int set_mode_hide_me = 0x7f110107;
-        public static final int set_mode_offline = 0x7f110108;
-        public static final int set_mode_online = 0x7f110109;
-        public static final int set_mode_show_me = 0x7f11010a;
-        public static final int snapshot = 0x7f110111;
-        public static final int states = 0x7f110112;
-        public static final int topo = 0x7f110117;
-        public static final int unknown = 0x7f110119;
+        public static final int hills = 0x7f110097;
+        public static final int map_mode = 0x7f1100b3;
+        public static final int mapbox = 0x7f1100b4;
+        public static final int mapnik = 0x7f1100b5;
+        public static final int mapquest_aerial = 0x7f1100b6;
+        public static final int mapquest_osm = 0x7f1100b7;
+        public static final int my_location = 0x7f1100e6;
+        public static final int offline = 0x7f1100ec;
+        public static final int public_transport = 0x7f1100f8;
+        public static final int roads_nl = 0x7f110105;
+        public static final int samples = 0x7f110106;
+        public static final int set_mode_hide_me = 0x7f110108;
+        public static final int set_mode_offline = 0x7f110109;
+        public static final int set_mode_online = 0x7f11010a;
+        public static final int set_mode_show_me = 0x7f11010b;
+        public static final int snapshot = 0x7f110112;
+        public static final int states = 0x7f110113;
+        public static final int topo = 0x7f110118;
+        public static final int unknown = 0x7f11011a;
     }
 }

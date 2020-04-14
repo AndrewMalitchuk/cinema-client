@@ -19,6 +19,11 @@
         android:title="Change name"
         app:showAsAction="never"/>
 
+    <item android:id="@+id/action_whats_new"
+        android:title="What's new"
+        app:showAsAction="never"/>
+
+
     <item android:id="@+id/action_about_developer"
         android:title="About developer"
         app:showAsAction="never"/>

@@ -98,7 +98,6 @@
         <activity
             android:name="com.cinema.client.activity.ErrorActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.cinema.client.activity.WhatsNewActivity" />
         <activity
             android:name="com.cinema.client.activity.StatusActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -124,7 +123,6 @@
             android:name="com.cinema.client.activity.HallNavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.cinema.client.activity.StartupActivity" />
-        <activity android:name="com.cinema.client.activity.CardActivity" />
         <activity
             android:name="com.cinema.client.activity.AboutFilmActivity"
             android:theme="@style/AppTheme.NoActionBar" />

@@ -33,12 +33,12 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int dash = 0x7f0a00e7;
-        public static final int horizontal = 0x7f0a0154;
-        public static final int normal = 0x7f0a01fd;
-        public static final int rounded = 0x7f0a0245;
-        public static final int scallop = 0x7f0a0257;
-        public static final int vertical = 0x7f0a033a;
+        public static final int dash = 0x7f0a00e8;
+        public static final int horizontal = 0x7f0a0155;
+        public static final int normal = 0x7f0a01fe;
+        public static final int rounded = 0x7f0a0246;
+        public static final int scallop = 0x7f0a0258;
+        public static final int vertical = 0x7f0a033b;
     }
     public static final class string {
         private string() {}

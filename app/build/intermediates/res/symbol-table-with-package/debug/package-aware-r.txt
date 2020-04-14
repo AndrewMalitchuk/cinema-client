@@ -2059,6 +2059,7 @@ drawable bg
 drawable bg_black
 drawable bg_circle_notification
 drawable bonuspack_bubble
+drawable boom_emoji
 drawable bottom_sheet_shadow
 drawable box
 drawable brouding_simple_dialog_bg_round_white
@@ -2418,6 +2419,7 @@ id action_mode_close_button
 id action_settings
 id action_share
 id action_text
+id action_whats_new
 id actions
 id activity_chooser_view_content
 id activity_main
@@ -3649,6 +3651,7 @@ string google_storage_bucket
 string hello_blank_fragment
 string hello_world
 string help
+string help_text
 string hide_bottom_view_on_scroll_behavior
 string hills
 string icon

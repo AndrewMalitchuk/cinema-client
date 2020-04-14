@@ -46,7 +46,6 @@
         <activity
             android:name=".activity.ErrorActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.WhatsNewActivity" />
         <activity
             android:name=".activity.StatusActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -72,7 +71,6 @@
             android:name=".activity.HallNavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.StartupActivity" />
-        <activity android:name=".activity.CardActivity" />
         <activity
             android:name=".activity.AboutFilmActivity"
             android:theme="@style/AppTheme.NoActionBar" />
