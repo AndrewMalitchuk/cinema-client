@@ -34,7 +34,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="20dp"
-                        android:text="Show QR code to a doorman / an usher."
+                        android:text="@string/showQrQRZoomActivityTextView"
                         android:textAlignment="center"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -50,7 +50,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="20dp"
-                        android:text="Go back..."
+                        android:text="@string/goBackTextView"
                         android:textAlignment="center"
                         android:textSize="16sp"
                         android:textStyle="bold" />

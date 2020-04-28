@@ -56,19 +56,6 @@
         </RelativeLayout>
 
 
-        <!--<com.google.android.material.bottomnavigation.BottomNavigationView-->
-            <!--android:id="@+id/navigation"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_gravity="bottom"-->
-            <!--android:layout_weight="0"-->
-            <!--android:background="@color/colorAccent"-->
-            <!--android:hapticFeedbackEnabled="true"-->
-            <!--app:itemIconTint="@color/colorLoginActivityCardView"-->
-            <!--app:itemTextColor="@color/cardview_light_background"-->
-            <!--app:labelVisibilityMode="selected"-->
-            <!--app:menu="@menu/main_bottom_navigation" />-->
-
     </LinearLayout>
 
 

@@ -42,25 +42,25 @@ public final class R {
         private id() {}
 
         public static final int bottom = 0x7f0a0074;
-        public static final int current_scene = 0x7f0a00dd;
-        public static final int fade_in = 0x7f0a011a;
-        public static final int fade_in_out = 0x7f0a011b;
-        public static final int fade_out = 0x7f0a011c;
-        public static final int group_layouttransition_backup = 0x7f0a014e;
-        public static final int left = 0x7f0a018c;
-        public static final int overlay_layout_params_backup = 0x7f0a020f;
-        public static final int overlay_view = 0x7f0a0210;
-        public static final int parentMatrix = 0x7f0a0215;
-        public static final int right = 0x7f0a0241;
-        public static final int runningTransitions = 0x7f0a024a;
-        public static final int scene_layoutid_cache = 0x7f0a0259;
-        public static final int sequential = 0x7f0a027c;
-        public static final int together = 0x7f0a0313;
-        public static final int top = 0x7f0a031b;
-        public static final int transitionAlpha = 0x7f0a031e;
-        public static final int transitionName = 0x7f0a031f;
-        public static final int transitionPosition = 0x7f0a0320;
-        public static final int transitionTransform = 0x7f0a0321;
+        public static final int current_scene = 0x7f0a00da;
+        public static final int fade_in = 0x7f0a0117;
+        public static final int fade_in_out = 0x7f0a0118;
+        public static final int fade_out = 0x7f0a0119;
+        public static final int group_layouttransition_backup = 0x7f0a014b;
+        public static final int left = 0x7f0a0189;
+        public static final int overlay_layout_params_backup = 0x7f0a0208;
+        public static final int overlay_view = 0x7f0a0209;
+        public static final int parentMatrix = 0x7f0a020e;
+        public static final int right = 0x7f0a0239;
+        public static final int runningTransitions = 0x7f0a0242;
+        public static final int scene_layoutid_cache = 0x7f0a0251;
+        public static final int sequential = 0x7f0a0274;
+        public static final int together = 0x7f0a030b;
+        public static final int top = 0x7f0a0313;
+        public static final int transitionAlpha = 0x7f0a0316;
+        public static final int transitionName = 0x7f0a0317;
+        public static final int transitionPosition = 0x7f0a0318;
+        public static final int transitionTransform = 0x7f0a0319;
     }
     public static final class styleable {
         private styleable() {}

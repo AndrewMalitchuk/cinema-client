@@ -133,7 +133,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="5dp"
-                            android:text="Description:"
+                            android:text="@string/descriptionAboutFilmActivityTextView"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -152,7 +152,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="5dp"
-                            android:text="Date:"
+                            android:text="@string/dateAboutFilmActivityTextView"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -172,7 +172,7 @@
                             android:layout_marginLeft="5dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="5dp"
-                            android:text="Additional info:"
+                            android:text="@string/additionalInfoAboutFilmActivityTextView"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 

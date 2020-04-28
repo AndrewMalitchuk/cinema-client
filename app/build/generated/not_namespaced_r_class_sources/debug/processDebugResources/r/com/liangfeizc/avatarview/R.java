@@ -359,51 +359,51 @@ public final class R {
         public static final int activity_chooser_view_content = 0x7f0a0050;
         public static final int always = 0x7f0a0059;
         public static final int beginning = 0x7f0a006d;
-        public static final int checkbox = 0x7f0a00b7;
-        public static final int collapseActionView = 0x7f0a00cc;
-        public static final int decor_content_parent = 0x7f0a00ee;
-        public static final int default_activity_button = 0x7f0a00ef;
-        public static final int disableHome = 0x7f0a00fc;
-        public static final int edit_query = 0x7f0a0107;
-        public static final int end = 0x7f0a010c;
-        public static final int expand_activities_button = 0x7f0a0114;
-        public static final int expanded_menu = 0x7f0a0115;
-        public static final int home = 0x7f0a0153;
-        public static final int homeAsUp = 0x7f0a0154;
-        public static final int icon = 0x7f0a0157;
-        public static final int ifRoom = 0x7f0a015e;
-        public static final int image = 0x7f0a015f;
-        public static final int listMode = 0x7f0a0199;
-        public static final int list_item = 0x7f0a019a;
-        public static final int middle = 0x7f0a01d9;
-        public static final int never = 0x7f0a01f9;
-        public static final int none = 0x7f0a01fd;
-        public static final int normal = 0x7f0a01fe;
-        public static final int progress_circular = 0x7f0a022e;
-        public static final int progress_horizontal = 0x7f0a0233;
-        public static final int radio = 0x7f0a0239;
-        public static final int search_badge = 0x7f0a0262;
-        public static final int search_bar = 0x7f0a0263;
-        public static final int search_button = 0x7f0a0269;
-        public static final int search_close_btn = 0x7f0a026a;
-        public static final int search_edit_frame = 0x7f0a026b;
-        public static final int search_go_btn = 0x7f0a026c;
-        public static final int search_mag_icon = 0x7f0a026e;
-        public static final int search_plate = 0x7f0a026f;
-        public static final int search_src_text = 0x7f0a0271;
-        public static final int search_voice_btn = 0x7f0a0273;
-        public static final int shortcut = 0x7f0a027f;
-        public static final int showCustom = 0x7f0a0280;
-        public static final int showHome = 0x7f0a0282;
-        public static final int showTitle = 0x7f0a0284;
-        public static final int split_action_bar = 0x7f0a0294;
-        public static final int submit_area = 0x7f0a02aa;
-        public static final int tabMode = 0x7f0a02b0;
-        public static final int title = 0x7f0a0309;
-        public static final int up = 0x7f0a0338;
-        public static final int useLogo = 0x7f0a0339;
-        public static final int withText = 0x7f0a034f;
-        public static final int wrap_content = 0x7f0a0351;
+        public static final int checkbox = 0x7f0a00b5;
+        public static final int collapseActionView = 0x7f0a00ca;
+        public static final int decor_content_parent = 0x7f0a00eb;
+        public static final int default_activity_button = 0x7f0a00ec;
+        public static final int disableHome = 0x7f0a00f9;
+        public static final int edit_query = 0x7f0a0104;
+        public static final int end = 0x7f0a0109;
+        public static final int expand_activities_button = 0x7f0a0111;
+        public static final int expanded_menu = 0x7f0a0112;
+        public static final int home = 0x7f0a0150;
+        public static final int homeAsUp = 0x7f0a0151;
+        public static final int icon = 0x7f0a0154;
+        public static final int ifRoom = 0x7f0a015b;
+        public static final int image = 0x7f0a015c;
+        public static final int listMode = 0x7f0a0196;
+        public static final int list_item = 0x7f0a0197;
+        public static final int middle = 0x7f0a01d6;
+        public static final int never = 0x7f0a01f2;
+        public static final int none = 0x7f0a01f6;
+        public static final int normal = 0x7f0a01f7;
+        public static final int progress_circular = 0x7f0a0226;
+        public static final int progress_horizontal = 0x7f0a022b;
+        public static final int radio = 0x7f0a0231;
+        public static final int search_badge = 0x7f0a025a;
+        public static final int search_bar = 0x7f0a025b;
+        public static final int search_button = 0x7f0a0261;
+        public static final int search_close_btn = 0x7f0a0262;
+        public static final int search_edit_frame = 0x7f0a0263;
+        public static final int search_go_btn = 0x7f0a0264;
+        public static final int search_mag_icon = 0x7f0a0266;
+        public static final int search_plate = 0x7f0a0267;
+        public static final int search_src_text = 0x7f0a0269;
+        public static final int search_voice_btn = 0x7f0a026b;
+        public static final int shortcut = 0x7f0a0277;
+        public static final int showCustom = 0x7f0a0278;
+        public static final int showHome = 0x7f0a027a;
+        public static final int showTitle = 0x7f0a027c;
+        public static final int split_action_bar = 0x7f0a028c;
+        public static final int submit_area = 0x7f0a02a2;
+        public static final int tabMode = 0x7f0a02a8;
+        public static final int title = 0x7f0a0301;
+        public static final int up = 0x7f0a0330;
+        public static final int useLogo = 0x7f0a0331;
+        public static final int withText = 0x7f0a0347;
+        public static final int wrap_content = 0x7f0a0349;
     }
     public static final class layout {
         private layout() {}
@@ -428,7 +428,7 @@ public final class R {
         public static final int abc_screen_toolbar = 0x7f0d0017;
         public static final int abc_search_dropdown_item_icons_2line = 0x7f0d0018;
         public static final int abc_search_view = 0x7f0d0019;
-        public static final int support_simple_spinner_dropdown_item = 0x7f0d00c0;
+        public static final int support_simple_spinner_dropdown_item = 0x7f0d00ba;
     }
     public static final class string {
         private string() {}
@@ -447,7 +447,7 @@ public final class R {
         public static final int abc_shareactionprovider_share_with = 0x7f110018;
         public static final int abc_shareactionprovider_share_with_application = 0x7f110019;
         public static final int abc_toolbar_collapse_description = 0x7f11001a;
-        public static final int app_name = 0x7f110029;
+        public static final int app_name = 0x7f11002c;
     }
     public static final class style {
         private style() {}

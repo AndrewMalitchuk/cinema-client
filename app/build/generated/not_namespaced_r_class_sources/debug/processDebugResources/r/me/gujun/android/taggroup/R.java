@@ -36,7 +36,7 @@ public final class R {
     public static final class string {
         private string() {}
 
-        public static final int add_tag = 0x7f110027;
+        public static final int add_tag = 0x7f110029;
     }
     public static final class style {
         private style() {}

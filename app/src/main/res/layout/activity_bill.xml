@@ -22,7 +22,7 @@
             android:background="?attr/colorPrimary"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme"
-            app:title="Bill info" />
+            app:title="@string/titleActivityToolbar" />
 
         <com.developer.mtextfield.TextFieldBoxes
             android:id="@+id/text_field_boxes2"
@@ -35,7 +35,7 @@
             android:clickable="false"
             app:enabled="false"
             app:iconSignifier="@drawable/ic_ticket_black"
-            app:labelText="Film name">
+            app:labelText="@string/filmNameBillActivityTextFieldBoxes">
 
             <com.developer.mtextfield.ExtendedEditText
                 android:id="@+id/filmTitleBillActivityExtendedEditText"
@@ -65,7 +65,7 @@
                 android:clickable="false"
                 app:enabled="false"
                 app:iconSignifier="@drawable/ic_video_label_black_24dp"
-                app:labelText="Cinema">
+                app:labelText="@string/cinemaNameBillActivityTextFieldBoxes">
 
                 <com.developer.mtextfield.ExtendedEditText
                     android:id="@+id/cinemaNameBillActivityExtendedEditText"
@@ -105,7 +105,7 @@
                 android:clickable="false"
                 app:enabled="false"
                 app:iconSignifier="@drawable/ic_access_time_black_24dp"
-                app:labelText="Date and time">
+                app:labelText="@string/dateAndTimeBillActivityTextFieldBoxes">
 
                 <com.developer.mtextfield.ExtendedEditText
                     android:id="@+id/datetimeBillActivityExtendedEditText"
@@ -144,7 +144,7 @@
                 android:clickable="false"
                 app:enabled="false"
                 app:iconSignifier="@drawable/ic_event_seat_black_24dp"
-                app:labelText="Places">
+                app:labelText="@string/placeBillActivityTextFieldBoxes">
 
                 <com.developer.mtextfield.ExtendedEditText
                     android:id="@+id/placesBillActivityExtendedEditText"
@@ -183,7 +183,7 @@
                 android:clickable="false"
                 app:enabled="false"
                 app:iconSignifier="@drawable/ic_attach_money_black_24dp"
-                app:labelText="Price per ticket">
+                app:labelText="@string/priceBillActivityTextFieldBoxes">
 
                 <com.developer.mtextfield.ExtendedEditText
                     android:id="@+id/priceBillActivityExtendedEditText"
@@ -205,7 +205,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginBottom="5dp"
             android:backgroundTint="@color/colorAccent"
-            android:text="ADD CARD"
+            android:text="@string/addCardBillActivityTextView"
             android:textColor="@color/white" />
 
         <LinearLayout
@@ -224,7 +224,7 @@
             android:layout_marginBottom="5dp"
             app:arrow_color="#33FFFFFF"
             app:bg_color="#4CAF50"
-            app:btn_text="Buy"
+            app:btn_text="@string/buyBillActivityProSwipeButton"
             app:text_color="@android:color/white"
             app:text_size="12sp" />
 

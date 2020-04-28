@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cinema Client</string>
+    <string name="aboutDevNameMainMenuItem">Про розробника</string>
+    <string name="addCardBillActivityTextView">Додати карту</string>
+    <string name="additionalInfoAboutFilmActivityTextView">Додаткова інформація:</string>
+    <string name="app_title">cinema-app</string>
+    <string name="bookedHallHelpDialogTextView">Зарезервовано</string>
+    <string name="boughtHallHelpDialogTextView">Куплено</string>
+    <string name="buyBillActivityProSwipeButton">Купити</string>
+    <string name="cancelMenuItem">Відміна</string>
+    <string name="cardTitleCardActivityPaymentCardView">Оплатити</string>
+    <string name="centerHallNavigationMenuItem">Центр</string>
+    <string name="changeNameDialogTextView">Ваше ім\'я</string>
+    <string name="changeNameMainMenuItem">Змінити ім\'я</string>
+    <string name="cinemaAppNotify">cinema_app_notify_about_film</string>
+    <string name="cinemaNameBillActivityTextFieldBoxes">Кінотеатр</string>
+    <string name="citiesMainFlowFragmentTextView">Міста</string>
+    <string name="closeHallHelpDialogButoon">Закрити</string>
+    <string name="connectWithUsAboutActivityString">Зв\'яжіться з нами</string>
+    <string name="dateAboutFilmActivityTextView">Дата:</string>
+    <string name="dateAndTimeBillActivityTextFieldBoxes">Дата та час</string>
+    <string name="dateTicketActivityTextView">Дата</string>
+    <string name="deleteMenuItem">Видалити</string>
+    <string name="descriptionAboutActivityString">Опис</string>
+    <string name="descriptionAboutFilmActivityTextView">Опис:</string>
+    <string name="emailLoginActivityTextViewString">Електронна пошта</string>
+    <string name="emailLoginActivityTextViewStringHint">Ваша адреса</string>
+    <string name="feedbackMainMenuItem">Відгук</string>
+    <string name="filmNameBillActivityTextFieldBoxes">Назва фільму</string>
+    <string name="filmReminderNotificationMainActivityString">Агов, цей фільм скоро покажуть!</string>
+    <string name="freeHallHelpDialogTextView">Вільно</string>
+</resources>

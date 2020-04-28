@@ -124,6 +124,19 @@ public class HallRender {
                 b.setAbsoluteLocation(absoluteLocation);
 
 
+                //
+//                if (hall.getBooked() != null)
+//                    setCellStatus(b, hall.getBooked(), i, j, Status.BOOKED);
+//
+//                if (hall.getFree() != null)
+//                    setCellStatus(b, hall.getFree(), i, j, Status.FREE);
+//
+//                if (hall.getDisabled() != null)
+//                    setCellStatus(b, hall.getDisabled(), i, j, Status.DISABLED);
+//
+//                if (hall.getBought() != null)
+//                    setCellStatus(b, hall.getBought(), i, j, Status.BOUGHT);
+                //
 
 
                 setCellStatus(b, hall.getBooked(), i, j, Status.BOOKED);

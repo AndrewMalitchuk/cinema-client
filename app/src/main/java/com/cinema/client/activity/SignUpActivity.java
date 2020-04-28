@@ -68,10 +68,7 @@ public class SignUpActivity extends AppCompatActivity implements
                 .start();
 
         //
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        );
+
 
         // LoadingButton
         signUpSignUpActivityButton.setMyButtonClickListener(this);

@@ -33,17 +33,17 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int dash = 0x7f0a00e8;
-        public static final int horizontal = 0x7f0a0155;
-        public static final int normal = 0x7f0a01fe;
-        public static final int rounded = 0x7f0a0246;
-        public static final int scallop = 0x7f0a0258;
-        public static final int vertical = 0x7f0a033b;
+        public static final int dash = 0x7f0a00e5;
+        public static final int horizontal = 0x7f0a0152;
+        public static final int normal = 0x7f0a01f7;
+        public static final int rounded = 0x7f0a023e;
+        public static final int scallop = 0x7f0a0250;
+        public static final int vertical = 0x7f0a0333;
     }
     public static final class string {
         private string() {}
 
-        public static final int app_name = 0x7f110029;
+        public static final int app_name = 0x7f11002c;
     }
     public static final class styleable {
         private styleable() {}

@@ -1,6 +1,0 @@
-<account-authenticator xmlns:android="http://schemas.android.com/apk/res/android"
-    android:accountType="com.cinema.app"
-    android:icon="@drawable/ic_ticket_accent"
-    android:smallIcon="@drawable/ic_ticket_accent"
-    android:label="Cinema App"
-   ></account-authenticator>
