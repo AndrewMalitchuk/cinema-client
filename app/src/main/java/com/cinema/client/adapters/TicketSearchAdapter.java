@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,7 +11,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
@@ -20,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.cinema.client.R;
-import com.cinema.client.activity.Main3Activity;
+import com.cinema.client.activity.MainActivity;
 import com.cinema.client.activity.TicketActivity;
 import com.cinema.client.entities.TicketItemSearch;
 import com.cinema.client.requests.APIClient;
@@ -362,7 +360,7 @@ public class TicketSearchAdapter extends RecyclerView.Adapter<TicketSearchAdapte
 
 
                             dialog.dialog.cancel();
-                            context.startActivity(new Intent(context, Main3Activity.class));
+                            context.startActivity(new Intent(context, MainActivity.class));
 
                         }
                     }

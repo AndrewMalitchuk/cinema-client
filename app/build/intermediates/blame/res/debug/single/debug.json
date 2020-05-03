@@ -40,12 +40,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable/abc_ic_clear_material.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_design_menu_item_action_area.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/layout/design_menu_item_action_area.xml"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_empty_24dp.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/res/drawable-mdpi-v4/ic_empty_24dp.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_design_menu_item_action_area.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/layout/design_menu_item_action_area.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_clear_black_24dp.png.flat",
@@ -101,7 +101,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_privacy.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/privacy.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/privacy.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_tooltip_arrow_right.9.png.flat",
@@ -116,24 +116,24 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-v21/abc_dialog_material_background.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_navigation_empty_icon.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/drawable/navigation_empty_icon.xml"
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_sv_layout_complete.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3875908fd0962c200792c278677d2404/res/layout/sv_layout_complete.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v21_ic_card_discover.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/e06bb5f03a067f08b8006da03d4c04a4/res/drawable-hdpi-v21/ic_card_discover.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_sv_layout_complete.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3875908fd0962c200792c278677d2404/res/layout/sv_layout_complete.xml"
-    },
-    {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_mdtp_time_title_view.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/layout/mdtp_time_title_view.xml"
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_navigation_empty_icon.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/drawable/navigation_empty_icon.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xxxhdpi-v4/abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_mdtp_time_title_view.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/layout/mdtp_time_title_view.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-v19_mdtp_done_background_color.xml.flat",
@@ -177,7 +177,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_bitbucket.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/bitbucket.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/bitbucket.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_notification_bg.xml.flat",
@@ -225,7 +225,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_google_play_games.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/google_play_games.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/google_play_games.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_marker_default.png.flat",
@@ -269,7 +269,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_google_plus.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/google_plus.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/google_plus.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
@@ -285,7 +285,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_share.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/share.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/share.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_disabled.xml.flat",
@@ -296,12 +296,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xxxhdpi-v4/abc_ic_star_black_48dp.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_privacy.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/privacy.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-mdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_privacy.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/privacy.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
@@ -369,7 +369,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_help.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/help.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/help.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_mdtp_date_picker_dialog.xml.flat",
@@ -408,16 +408,16 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/e06bb5f03a067f08b8006da03d4c04a4/res/drawable-mdpi-v4/ic_card_default.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_warning_black_36dp.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/26406b9fa051c012cbb2281a500be857/res/drawable-hdpi-v4/ic_warning_black_36dp.png"
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_abc_ic_ab_back_material.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_abc_select_dialog_material.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/layout/abc_select_dialog_material.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_abc_ic_ab_back_material.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable/abc_ic_ab_back_material.xml"
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_warning_black_36dp.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/26406b9fa051c012cbb2281a500be857/res/drawable-hdpi-v4/ic_warning_black_36dp.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_design_ic_visibility.xml.flat",
@@ -492,12 +492,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/color/mtrl_bottom_nav_colored_item_tint.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-mdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ayp_drop_shadow_top.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3d96dcce8c0346e33dc00ba73cfb2799/res/drawable/ayp_drop_shadow_top.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_left_mtrl_dark.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-mdpi-v4/abc_text_select_handle_left_mtrl_dark.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_light.png.flat",
@@ -509,7 +509,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_intrduce.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/intrduce.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/intrduce.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_card_maestro.xml.flat",
@@ -540,28 +540,28 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable/btn_checkbox_checked_mtrl.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_undraw_address_udes.png.flat",
-        "source": "/home/adular/Projects/Android/cinema-client/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_undraw_address_udes.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_about_page.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/09e09ac1734c9d352be56fa957779b04/res/layout/about_page.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
-    },
-    {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_close.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/45eb3f4ff5739652ff921e7613c99ff4/res/drawable-xxxhdpi-v4/ic_close.png"
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_undraw_address_udes.png.flat",
+        "source": "/home/adular/Projects/Android/cinema-client/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_undraw_address_udes.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_mtrl_card_view_ripple.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/color/mtrl_card_view_ripple.xml"
     },
     {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_close.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/45eb3f4ff5739652ff921e7613c99ff4/res/drawable-xxxhdpi-v4/ic_close.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_star.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/star.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/star.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_collapse.xml.flat",
@@ -589,11 +589,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_xab_each_action.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/layout/xab_each_action.xml"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/layout/xab_each_action.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_facebook.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/facebook.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/facebook.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_card_jcb.png.flat",
@@ -636,16 +636,16 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/133a978ae2776624911f51c16f03cd9f/res/drawable-mdpi-v4/ic_visibility_black_24dp.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_history_black_24dp.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/07f288790f9e2d256ac5e9fa104f6d00/res/drawable-xxhdpi-v4/ic_history_black_24dp.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_activity_ticket.xml.flat",
         "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/layout/activity_ticket.xml"
     },
     {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_history_black_24dp.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/07f288790f9e2d256ac5e9fa104f6d00/res/drawable-xxhdpi-v4/ic_history_black_24dp.png"
+    },
+    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_dribbble.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/dribbble.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/dribbble.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_notification_template_part_time.xml.flat",
@@ -676,12 +676,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/07f288790f9e2d256ac5e9fa104f6d00/res/drawable-xxhdpi-v4/ic_search_black_24dp.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/f010b034b2dcb5484a3f426072275c7b/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_tooltip_arrow_down.9.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/2af11de41c6657e7c01eb57721881f89/res/drawable-xxhdpi-v4/tooltip_arrow_down.9.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/f010b034b2dcb5484a3f426072275c7b/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
@@ -745,11 +745,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_share.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/share.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/share.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_secondary_text_selector_light.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/color/secondary_text_selector_light.xml"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/color/secondary_text_selector_light.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_search_suggestion_item.xml.flat",
@@ -780,12 +780,12 @@
         "source": "/home/adular/Projects/Android/cinema-client/app/build/generated/res/pngs/debug/drawable-hdpi/ic_undraw_address_udes.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_card_amex.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/e06bb5f03a067f08b8006da03d4c04a4/res/drawable-mdpi-v4/ic_card_amex.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_mastercard.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/e2182ed88a31f7360ef64acfa2a0cf8a/res/drawable-xxhdpi-v4/ic_mastercard.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_card_amex.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/e06bb5f03a067f08b8006da03d4c04a4/res/drawable-mdpi-v4/ic_card_amex.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_mic_black_24dp.png.flat",
@@ -800,12 +800,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/20770dccd6403c8027a019226e749630/res/drawable-hdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_sign_in_button.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/a85a93be17b55a96456fcfa95183c964/res/drawable/sign_in_button.xml"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_unionpay.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/e2182ed88a31f7360ef64acfa2a0cf8a/res/drawable-anydpi-v21/ic_unionpay.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_sign_in_button.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/a85a93be17b55a96456fcfa95183c964/res/drawable/sign_in_button.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color-v23_mtrl_dark_on_surface_emphasis_high_type.xml.flat",
@@ -928,12 +928,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xhdpi-v4/abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_rw_rounded_rect_white.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/884cb0da62921aee63486c419ca39295/res/drawable/rw_rounded_rect_white.xml"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ic_android_white_192dp.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/a99a2e4f3bac3d35e30b580b7d1d747c/res/drawable-ldpi-v4/ic_android_white_192dp.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_rw_rounded_rect_white.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/884cb0da62921aee63486c419ca39295/res/drawable/rw_rounded_rect_white.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
@@ -949,7 +949,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_skype.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/skype.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/skype.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_abc_dialog_title_material.xml.flat",
@@ -964,12 +964,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/bf68f764dde7e6f74b53a87ebde7a5af/res/drawable-xhdpi-v4/sharp_remove_black_36.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ic_error_outline_black_24dp.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/res/drawable-xhdpi-v4/ic_error_outline_black_24dp.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_abc_btn_check_material.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ic_error_outline_black_24dp.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/res/drawable-xhdpi-v4/ic_error_outline_black_24dp.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color-v23_mtrl_dark_on_surface_emphasis_medium.xml.flat",
@@ -988,12 +988,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/bf68f764dde7e6f74b53a87ebde7a5af/res/drawable-xxhdpi-v4/marker_default_focused_base.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_marker_default.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/bf68f764dde7e6f74b53a87ebde7a5af/res/drawable-xxhdpi-v4/marker_default.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ic_more_vert_black_24dp.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/07f288790f9e2d256ac5e9fa104f6d00/res/drawable-xhdpi-v4/ic_more_vert_black_24dp.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_marker_default.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/bf68f764dde7e6f74b53a87ebde7a5af/res/drawable-xxhdpi-v4/marker_default.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_black_36dp.png.flat",
@@ -1029,19 +1029,19 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_google_plus.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/google_plus.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/google_plus.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_tooltip_frame_light.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable/tooltip_frame_light.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_googleg_standard_color_18.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/20770dccd6403c8027a019226e749630/res/drawable-hdpi-v4/googleg_standard_color_18.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xhdpi-v4/abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/20770dccd6403c8027a019226e749630/res/drawable-hdpi-v4/googleg_standard_color_18.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/interpolator_btn_checkbox_unchecked_mtrl_animation_interpolator_0.xml.flat",
@@ -1052,12 +1052,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable/abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xxxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ic_perm_identity_black_24dp.xml.flat",
         "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/drawable/ic_perm_identity_black_24dp.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xxxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
@@ -1065,7 +1065,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_bitbucket.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/bitbucket.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/bitbucket.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_check_mark.png.flat",
@@ -1132,12 +1132,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/9df792610ec8b327e63698ca9788e098/res/drawable-hdpi-v4/check_mark.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-v21_mdtp_material_button_selected.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/drawable-v21/mdtp_material_button_selected.xml"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_abc_list_menu_item_checkbox.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-v21_mdtp_material_button_selected.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/drawable-v21/mdtp_material_button_selected.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-v21_ic_card_amex.xml.flat",
@@ -1165,7 +1165,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_google_play_games.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/google_play_games.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/google_play_games.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_warning_mark.png.flat",
@@ -1264,12 +1264,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/49ece50d6cc66db629fe6723e515b538/res/anim/to_left.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_mtrl_fab_ripple_color.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/color/mtrl_fab_ripple_color.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-hdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_notification_template_lines_media.xml.flat",
@@ -1296,12 +1296,12 @@
         "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_drawable_tag.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/8b092e7940db481d2d7d6f82088ffa51/res/drawable/drawable_tag.xml"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_info_mark.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/9df792610ec8b327e63698ca9788e098/res/drawable-xhdpi-v4/info_mark.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_drawable_tag.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/8b092e7940db481d2d7d6f82088ffa51/res/drawable/drawable_tag.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
@@ -1321,7 +1321,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_google.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/google.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/google.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color-v23_mtrl_on_primary_disabled.xml.flat",
@@ -1349,7 +1349,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_privacy.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/privacy.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/privacy.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_marker_default_focused_base.png.flat",
@@ -1369,7 +1369,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_donate.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/donate.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/donate.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_check_circle_white_24dp.png.flat",
@@ -1377,11 +1377,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_skype.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/skype.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/skype.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_license.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/license.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/license.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_card_visa.xml.flat",
@@ -1397,7 +1397,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_privacy.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/privacy.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/privacy.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_mdtp_year_label_text_view.xml.flat",
@@ -1408,12 +1408,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xxhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_mdtp_done_text_color_dark.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/color/mdtp_done_text_color_dark.xml"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-hdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_mdtp_done_text_color_dark.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/color/mdtp_done_text_color_dark.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_abc_screen_simple_overlay_action_mode.xml.flat",
@@ -1421,7 +1421,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_linkedin.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/linkedin.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/linkedin.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_btn_checkbox_checked_to_unchecked_mtrl_animation.xml.flat",
@@ -1444,12 +1444,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/e06bb5f03a067f08b8006da03d4c04a4/res/drawable-xhdpi-v21/ic_card_maestro.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_info_outline_black_24dp.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/res/drawable-xxxhdpi-v4/ic_info_outline_black_24dp.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ayp_ic_play_36dp.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3d96dcce8c0346e33dc00ba73cfb2799/res/drawable-hdpi-v4/ayp_ic_play_36dp.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_info_outline_black_24dp.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/res/drawable-xxxhdpi-v4/ic_info_outline_black_24dp.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_activity_sign_up.xml.flat",
@@ -1473,7 +1473,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_share.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/share.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/share.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_info_mark.png.flat",
@@ -1537,7 +1537,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_google_play_store.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/google_play_store.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/google_play_store.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_warning_mark.png.flat",
@@ -1561,7 +1561,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_facebook.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/facebook.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/facebook.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_story_description_background.xml.flat",
@@ -1588,12 +1588,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/20770dccd6403c8027a019226e749630/res/drawable/common_google_signin_btn_icon_dark.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/anim_abc_fade_out.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/anim/abc_fade_out.xml"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_done_white_24dp.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/a99a2e4f3bac3d35e30b580b7d1d747c/res/drawable-anydpi-v21/ic_done_white_24dp.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/anim_abc_fade_out.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/anim/abc_fade_out.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
@@ -1693,7 +1693,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_changelog.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/changelog.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/changelog.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_american_express.png.flat",
@@ -1732,20 +1732,20 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ivano_frankivsk.png.flat",
-        "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/drawable/ivano_frankivsk.png"
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xxhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_design_navigation_item_subheader.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/layout/design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ivano_frankivsk.png.flat",
+        "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/drawable/ivano_frankivsk.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
@@ -1805,7 +1805,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_social_media_divider.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/drawable/social_media_divider.xml"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/drawable/social_media_divider.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_android_white_192dp.png.flat",
@@ -1853,7 +1853,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-nodpi-v4_profile_cover.jpg.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-nodpi-v4/profile_cover.jpg"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-nodpi-v4/profile_cover.jpg"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_mpm_ic_menu_left.png.flat",
@@ -1865,7 +1865,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_google_play_games.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/google_play_games.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/google_play_games.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
@@ -1896,16 +1896,16 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/8b092e7940db481d2d7d6f82088ffa51/res/drawable-xhdpi-v4/ic_cancel.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_progress_done.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/a85a93be17b55a96456fcfa95183c964/res/drawable-xxhdpi-v4/ic_progress_done.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-v21_ayp_background_item_selected.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3d96dcce8c0346e33dc00ba73cfb2799/res/drawable-v21/ayp_background_item_selected.xml"
     },
     {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_progress_done.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/a85a93be17b55a96456fcfa95183c964/res/drawable-xxhdpi-v4/ic_progress_done.png"
+    },
+    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_intrduce.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/intrduce.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/intrduce.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_american_express.xml.flat",
@@ -1929,7 +1929,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_google_play_store.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/google_play_store.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/google_play_store.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_ic_star_black_48dp.png.flat",
@@ -1941,19 +1941,19 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_update.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/update.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/update.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xhdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_chevron_right_black_24dp.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/drawable-xxhdpi-v4/ic_chevron_right_black_24dp.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-hdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_chevron_right_black_24dp.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/drawable-xxhdpi-v4/ic_chevron_right_black_24dp.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -1989,7 +1989,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_linkedin.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/linkedin.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/linkedin.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_osm_ic_ic_map_ortho.png.flat",
@@ -2009,11 +2009,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_license.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/license.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/license.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_android.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/android.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/android.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ic_mtrl_chip_close_circle.xml.flat",
@@ -2085,7 +2085,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_ads.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/ads.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/ads.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
@@ -2116,12 +2116,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/res/drawable-anydpi-v21/ic_error_outline_black_24dp.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_privacy.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/privacy.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_privacy.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/privacy.png"
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-ldrtl-xhdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-ldrtl-xhdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -2140,12 +2140,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/anim/abc_popup_exit.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_rounded_layout.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/e6d725161eb984ed78a03378220bab68/res/drawable/rounded_layout.xml"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_cross_mark.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/9df792610ec8b327e63698ca9788e098/res/drawable-anydpi-v21/cross_mark.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_rounded_layout.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/e6d725161eb984ed78a03378220bab68/res/drawable/rounded_layout.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_empty_24dp.png.flat",
@@ -2269,7 +2269,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_bitbucket.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/bitbucket.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/bitbucket.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v21_ic_card_diners.png.flat",
@@ -2281,7 +2281,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_whatsapp.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/whatsapp.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/whatsapp.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ic_progress_cancle.png.flat",
@@ -2300,12 +2300,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/layout/design_navigation_item_separator.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_activity_test.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/915afad1b6d4fc1b9bf4d40160881159/res/layout/activity_test.xml"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_material.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable/abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_activity_test.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/915afad1b6d4fc1b9bf4d40160881159/res/layout/activity_test.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-v21_btn_flat_selector.xml.flat",
@@ -2321,7 +2321,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_bitbucket.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/bitbucket.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/bitbucket.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_mic_black_24dp.png.flat",
@@ -2329,7 +2329,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_twitter.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/twitter.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/twitter.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_cross_mark.png.flat",
@@ -2353,7 +2353,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_twitter.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/twitter.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/twitter.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_arrow_back_black_24dp.png.flat",
@@ -2380,12 +2380,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cacf768680277cb566b674b976da470e/res/mipmap-xhdpi-v4/ic_launcher_foreground.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_ayp_ic_pause_36dp.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3d96dcce8c0346e33dc00ba73cfb2799/res/drawable-xhdpi-v4/ayp_ic_pause_36dp.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_visibility_black_24dp.png.flat",
@@ -2404,28 +2404,28 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/anim/btn_radio_to_on_mtrl_ring_outer_path_animation.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_newfeaturedialog.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/b10c032f3706a42e73b03a08fdc1f0c4/res/layout/newfeaturedialog.xml"
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_mdtp_date_picker_header_view.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/layout/mdtp_date_picker_header_view.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-hdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png"
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_newfeaturedialog.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/b10c032f3706a42e73b03a08fdc1f0c4/res/layout/newfeaturedialog.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color-v23_abc_color_highlight_material.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/color-v23/abc_color_highlight_material.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_odessa.png.flat",
-        "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/drawable/odessa.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_progress_done.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/a85a93be17b55a96456fcfa95183c964/res/drawable-anydpi-v21/ic_progress_done.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_odessa.png.flat",
+        "source": "/home/adular/Projects/Android/cinema-client/app/src/main/res/drawable/odessa.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -2441,7 +2441,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_whatsapp.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/whatsapp.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/whatsapp.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_mtrl_tabs_icon_color_selector_colored.xml.flat",
@@ -2461,19 +2461,19 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_google_plus.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/google_plus.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/google_plus.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_browser_actions_context_menu_row.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/61ecaf61e4a0cadb567f06be357790b5/res/layout/browser_actions_context_menu_row.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_mtrl_card_view_foreground.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/color/mtrl_card_view_foreground.xml"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_check_black_24dp.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/0299f38c01cb15e680f31526f5e0f1ab/res/drawable-mdpi-v4/ic_check_black_24dp.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_mtrl_card_view_foreground.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/33d565030e6dbda5660f39ef8570ded5/res/color/mtrl_card_view_foreground.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_abc_secondary_text_material_dark.xml.flat",
@@ -2489,7 +2489,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_github.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/github.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/github.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_rw_dialog_progress.xml.flat",
@@ -2500,12 +2500,12 @@
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable/tooltip_frame_dark.xml"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/f010b034b2dcb5484a3f426072275c7b/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/f010b034b2dcb5484a3f426072275c7b/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/f010b034b2dcb5484a3f426072275c7b/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
@@ -2565,7 +2565,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_feedback.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/feedback.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/feedback.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
@@ -2673,19 +2673,19 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_whatsapp.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/whatsapp.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/whatsapp.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_arrow_back_black_24dp.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/07f288790f9e2d256ac5e9fa104f6d00/res/drawable-xxhdpi-v4/ic_arrow_back_black_24dp.png"
     },
     {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ic_arrow_forward_white_24dp.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/a99a2e4f3bac3d35e30b580b7d1d747c/res/drawable-ldpi-v4/ic_arrow_forward_white_24dp.png"
-    },
-    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_abc_vector_test.xml.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/702c36e2d72a1f3d3e96cef08ad60ee0/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ic_arrow_forward_white_24dp.png.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/a99a2e4f3bac3d35e30b580b7d1d747c/res/drawable-ldpi-v4/ic_arrow_forward_white_24dp.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
@@ -2713,7 +2713,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_linkedin.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/linkedin.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/linkedin.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v21_ic_card_visa.png.flat",
@@ -2745,19 +2745,19 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_dribbble.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/dribbble.png"
-    },
-    {
-        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_view_proswipebtn.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/c7925a896032cb6c697bf355f0967b36/res/layout/view_proswipebtn.xml"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/dribbble.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/drawable-xxhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
+        "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_view_proswipebtn.xml.flat",
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/c7925a896032cb6c697bf355f0967b36/res/layout/view_proswipebtn.xml"
+    },
+    {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_facebook.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/facebook.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/facebook.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout-v21_notification_action.xml.flat",
@@ -2789,7 +2789,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_changelog.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/changelog.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/changelog.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_abc_tint_spinner.xml.flat",
@@ -2817,7 +2817,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_github.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/github.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/github.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/anim-v21_mtrl_bottom_sheet_slide_in.xml.flat",
@@ -2881,7 +2881,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_xab_each_link.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/layout/xab_each_link.xml"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/layout/xab_each_link.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_undraw_address_udes.png.flat",
@@ -2929,11 +2929,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_intrduce.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/intrduce.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/intrduce.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_website.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/website.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/website.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_osm_ic_center_map.png.flat",
@@ -2997,11 +2997,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_instagram.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/instagram.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/instagram.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_website.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/website.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/website.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_design_ic_visibility.png.flat",
@@ -3069,7 +3069,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_star.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/star.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/star.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_kiev.png.flat",
@@ -3149,7 +3149,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_update.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/update.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/update.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_gif_thinking_0.gif.flat",
@@ -3157,7 +3157,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_intrduce.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/intrduce.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/intrduce.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_credit_card.png.flat",
@@ -3269,7 +3269,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_primary_text_selector_dark.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/color/primary_text_selector_dark.xml"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/color/primary_text_selector_dark.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_check_circle_white_24dp.png.flat",
@@ -3321,7 +3321,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_website.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/website.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/website.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_about_icon_github.xml.flat",
@@ -3333,7 +3333,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_google_plus.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/google_plus.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/google_plus.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ic_stories_24dp.xml.flat",
@@ -3341,7 +3341,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_update.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/update.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/update.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_check_mark.png.flat",
@@ -3353,7 +3353,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_help.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/help.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/help.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ayp_ic_youtube_24dp.xml.flat",
@@ -3361,7 +3361,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_google_play_store.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/google_play_store.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/google_play_store.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ripple.xml.flat",
@@ -3385,7 +3385,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_twitter.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/twitter.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/twitter.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
@@ -3489,7 +3489,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_star.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/star.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/star.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
@@ -3541,7 +3541,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_instagram.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/instagram.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/instagram.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v21_ic_card_maestro.png.flat",
@@ -3549,7 +3549,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_website.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/website.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/website.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_check_mark.png.flat",
@@ -3581,7 +3581,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_feedback.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/feedback.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/feedback.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_abc_cab_background_internal_bg.xml.flat",
@@ -3617,7 +3617,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_donate.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/donate.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/donate.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ic_video_label_white_24dp.xml.flat",
@@ -3649,7 +3649,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_dribbble.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/dribbble.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/dribbble.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_ic_launcher_foreground.png.flat",
@@ -3657,7 +3657,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_youtube.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/youtube.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/youtube.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
@@ -3693,7 +3693,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_dribbble.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/dribbble.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/dribbble.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
@@ -3737,7 +3737,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_license.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/license.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/license.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ic_error_outline_black_24dp.png.flat",
@@ -3749,7 +3749,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_bitbucket.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/bitbucket.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/bitbucket.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/anim_abc_grow_fade_in_from_bottom.xml.flat",
@@ -3769,7 +3769,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_android.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/android.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/android.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout-v21_notification_template_custom_big.xml.flat",
@@ -3797,7 +3797,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_feedback.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/feedback.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/feedback.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_unionpay.png.flat",
@@ -3813,7 +3813,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_star.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/star.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/star.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_chevron_right_black_24dp.png.flat",
@@ -3865,11 +3865,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/anim_expand_in.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/anim/expand_in.xml"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/anim/expand_in.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_donate.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/donate.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/donate.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/font_tajawal_regular.ttf.flat",
@@ -3877,15 +3877,15 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_google.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/google.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/google.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_email.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/email.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/email.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_dribbble.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/dribbble.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/dribbble.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_progress_cancle.png.flat",
@@ -3897,7 +3897,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_youtube.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/youtube.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/youtube.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_more_vert_black_24dp.png.flat",
@@ -3913,7 +3913,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_update.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/update.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/update.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ic_more_vert_black_24dp.png.flat",
@@ -4001,7 +4001,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_youtube.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/youtube.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/youtube.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_visibility_black_24dp.png.flat",
@@ -4037,7 +4037,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_help.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/help.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/help.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ayp_ic_play_36dp.png.flat",
@@ -4069,7 +4069,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_email.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/email.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/email.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -4105,7 +4105,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_linkedin.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/linkedin.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/linkedin.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
@@ -4113,7 +4113,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_linkedin.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/linkedin.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/linkedin.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_undraw_movie_night_93wl.png.flat",
@@ -4169,7 +4169,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_twitter.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/twitter.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/twitter.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ayp_ic_youtube_24dp.png.flat",
@@ -4181,7 +4181,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_help.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/help.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/help.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_btn_switch_to_on_mtrl_00012.9.png.flat",
@@ -4253,11 +4253,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_ads.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/ads.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/ads.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_skype.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/skype.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/skype.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_ayp_ic_fullscreen_24dp.png.flat",
@@ -4265,7 +4265,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_google_play_store.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/google_play_store.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/google_play_store.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_original_state.xml.flat",
@@ -4285,7 +4285,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_changelog.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/changelog.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/changelog.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_sequence_dot.xml.flat",
@@ -4309,7 +4309,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_ads.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/ads.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/ads.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_ic_menu_mylocation.png.flat",
@@ -4325,7 +4325,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_android.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/android.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/android.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -4353,7 +4353,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_email.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/email.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/email.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_btn_checkbox_unchecked_mtrl.xml.flat",
@@ -4393,7 +4393,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_google.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/google.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/google.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_scrubber_control_off_mtrl_alpha.png.flat",
@@ -4429,7 +4429,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_android.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/android.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/android.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_forth_bg.xml.flat",
@@ -4445,7 +4445,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_changelog.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/changelog.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/changelog.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout-land_card.xml.flat",
@@ -4469,11 +4469,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_xab_about_layout_card.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/layout/xab_about_layout_card.xml"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/layout/xab_about_layout_card.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_youtube.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/youtube.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/youtube.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_test_reflow_chipgroup.xml.flat",
@@ -4509,7 +4509,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_instagram.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/instagram.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/instagram.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_015.png.flat",
@@ -4553,11 +4553,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_google_plus.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/google_plus.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/google_plus.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_update.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/update.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/update.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_chevron_right_black_24dp.png.flat",
@@ -4597,7 +4597,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_license.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/license.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/license.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color-v23_abc_btn_colored_text_material.xml.flat",
@@ -4633,7 +4633,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_android.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/android.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/android.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
@@ -4649,11 +4649,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_whatsapp.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/whatsapp.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/whatsapp.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_feedback.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/feedback.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/feedback.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_opo0432d.jpg.flat",
@@ -4681,7 +4681,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_google_play_games.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/google_play_games.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/google_play_games.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/anim_abc_slide_out_bottom.xml.flat",
@@ -4697,7 +4697,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_github.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/github.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/github.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_search_dialog_ic_search.png.flat",
@@ -4785,7 +4785,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_donate.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/donate.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/donate.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_star_black_36dp.png.flat",
@@ -4805,7 +4805,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_donate.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/donate.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/donate.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ic_unionpay.png.flat",
@@ -4829,7 +4829,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_license.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/license.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/license.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_indicator_material.xml.flat",
@@ -4849,7 +4849,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_google.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/google.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/google.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_android_white_192dp.xml.flat",
@@ -4925,11 +4925,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_feedback.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/feedback.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/feedback.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_help.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/help.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/help.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_abc_activity_chooser_view.xml.flat",
@@ -4941,7 +4941,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_whatsapp.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/whatsapp.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/whatsapp.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_btn_clear.png.flat",
@@ -4957,7 +4957,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_google_play_games.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/google_play_games.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/google_play_games.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
@@ -5017,7 +5017,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_google.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/google.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/google.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_abc_popup_menu_item_layout.xml.flat",
@@ -5253,7 +5253,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_skype.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/skype.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/skype.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ic_error_outline_black_24dp.png.flat",
@@ -5373,7 +5373,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_website.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/website.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/website.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/animator_mtrl_btn_unelevated_state_list_anim.xml.flat",
@@ -5389,7 +5389,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_changelog.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/changelog.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/changelog.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
@@ -5409,7 +5409,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_email.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/email.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/email.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_undraw_movie_night_93wl.xml.flat",
@@ -5429,7 +5429,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_instagram.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/instagram.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/instagram.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_activated_mtrl_alpha.9.png.flat",
@@ -5525,7 +5525,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_instagram.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/instagram.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/instagram.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_marker_default_focused_base.png.flat",
@@ -5561,7 +5561,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-nodpi-v4_profile_picture.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-nodpi-v4/profile_picture.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-nodpi-v4/profile_picture.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_lviv.png.flat",
@@ -5633,7 +5633,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_secondary_text_selector_dark.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/color/secondary_text_selector_dark.xml"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/color/secondary_text_selector_dark.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_zoom_in.png.flat",
@@ -5697,7 +5697,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_share.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/share.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/share.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_tooltip_arrow_left.9.png.flat",
@@ -5705,7 +5705,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_twitter.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/twitter.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/twitter.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_chevron_left_black_24dp.png.flat",
@@ -5713,7 +5713,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_facebook.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/facebook.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/facebook.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_warning_mark.png.flat",
@@ -5821,7 +5821,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_github.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/github.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/github.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_ayp_ic_play_36dp.png.flat",
@@ -5837,7 +5837,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_facebook.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/facebook.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/facebook.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_progress_done.png.flat",
@@ -5873,11 +5873,11 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_skype.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/skype.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/skype.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_intrduce.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/intrduce.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/intrduce.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_check_circle_white_24dp.xml.flat",
@@ -5969,7 +5969,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_ads.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/ads.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/ads.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light.xml.flat",
@@ -5993,7 +5993,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_share.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/share.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/share.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
@@ -6021,7 +6021,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_youtube.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxxhdpi-v4/youtube.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxxhdpi-v4/youtube.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_pressed_holo_light.9.png.flat",
@@ -6057,7 +6057,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_email.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/email.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/email.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_ic_discover.png.flat",
@@ -6117,7 +6117,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-hdpi-v4_google_play_store.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-hdpi-v4/google_play_store.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-hdpi-v4/google_play_store.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/layout_brouding_simple_dialog_test_layout_custom_long.xml.flat",
@@ -6125,7 +6125,7 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-mdpi-v4_star.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-mdpi-v4/star.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-mdpi-v4/star.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_ayp_ic_pause_36dp.png.flat",
@@ -6133,15 +6133,15 @@
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/color_primary_text_selector_light.xml.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/color/primary_text_selector_light.xml"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/color/primary_text_selector_light.xml"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_ads.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xhdpi-v4/ads.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xhdpi-v4/ads.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_github.png.flat",
-        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/cce6a62a5e971f585eb983237b0c6270/res/mipmap-xxhdpi-v4/github.png"
+        "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/515b15be3baecaea0faa6fd5c9e3a760/res/mipmap-xxhdpi-v4/github.png"
     },
     {
         "merged": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_undraw_movie_night_93wl.png.flat",

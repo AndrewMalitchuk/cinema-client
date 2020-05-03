@@ -1,54 +1,35 @@
 package com.cinema.client.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.cinema.client.R;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
-import com.cinema.client.requests.entities.CreateUserResponse;
-import com.cinema.client.requests.entities.RegistrationAPI;
 import com.cinema.client.requests.entities.TokenAPI;
 import com.cinema.client.requests.entities.UserAPI;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
 import com.example.myloadingbutton.MyLoadingButton;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.util.Log;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.cinema.client.R;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.pd.chocobar.ChocoBar;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.converter.gson.GsonConverterFactory;
 
-
-public class
-LoginActivity extends AppCompatActivity implements
+public class LoginActivity extends AppCompatActivity implements
         View.OnClickListener, MyLoadingButton.MyLoadingButtonClick {
-
 
     @BindView(R.id.loginLinearLayout)
     LinearLayout loginLinearLayout;
@@ -59,69 +40,54 @@ LoginActivity extends AppCompatActivity implements
     @BindView(R.id.signUpLoginActivityTextView)
     TextView signUpLoginActivityTextView;
 
-
     @BindView(R.id.emailSignUpActivityEditText)
     EditText emailSignUpActivityEditText;
 
     @BindView(R.id.passwordSignUpActivityEditText)
     EditText passwordSignUpActivityEditText;
 
-
     public static final String ACCESS_TOKEN_PREF = "accessToken";
+
     public static final String REFRESH_TOKEN_PREF = "refreshToken";
+
     private SharedPreferences sharedpreferences_access;
+
     private SharedPreferences sharedpreferences_token;
 
     public static final String ACCOUNT_PREF = "accountPref";
-    private SharedPreferences sharedpreferences;
 
+    private SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         ButterKnife.bind(this);
-
-        // Gradient
         FlowingGradientClass grad = new FlowingGradientClass();
         grad.setBackgroundResource(R.drawable.translate)
                 .onLinearLayout(loginLinearLayout)
                 .setTransitionDuration(4000)
                 .start();
-
-        //
-
-
         getApplicationContext().getSharedPreferences("accountPref", 0).edit().clear().commit();
-
-
-
-        // LoadingButton
         loginLoginActivityButton.setMyButtonClickListener(this);
         setLoadingButtonStyle();
-
-        // SignUp TextView
         signUpLoginActivityTextView.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
                 startActivity(intent);
             }
+
         });
-
-
-//        getWindow().setFlags(
-//                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-//                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-//        );
-
-
     }
 
+    /**
+     * Initialize LoadingButton
+     */
     private void setLoadingButtonStyle() {
         loginLoginActivityButton.setAnimationDuration(500)
-                .setButtonLabel("Login")
+                .setButtonLabel(getResources().getString(R.string.loginLoginActivityButtonString))
                 .setButtonLabelSize(20)
                 .setProgressLoaderColor(R.color.colorLoginActivityCardView)
                 .setButtonLabelColor(R.color.colorLoginActivityCardView)
@@ -132,21 +98,17 @@ LoginActivity extends AppCompatActivity implements
 
     @Override
     public void onClick(View view) {
-        int id = view.getId();
         loginLoginActivityButton.showNormalButton();
     }
 
+    /**
+     * Handler for LoadingButton click
+     */
     @Override
     public void onMyLoadingButtonClick() {
-
-        //
-        // https://www.woolha.com/tutorials/android-retrofit-2-refresh-access-token-with-okhttpclient-and-authenticator
         APIInterface apiInterface = APIClient.getClient().create(APIInterface.class);
-
-
         if (emailSignUpActivityEditText.getText().equals("") || passwordSignUpActivityEditText.getText().equals("") ||
                 emailSignUpActivityEditText.getText().length() == 0 || passwordSignUpActivityEditText.getText().length() == 0) {
-
             ChocoBar
                     .builder()
                     .setActivity(LoginActivity.this)
@@ -155,11 +117,7 @@ LoginActivity extends AppCompatActivity implements
                     .red()
                     .show();
             loginLoginActivityButton.showErrorButton();
-
-
         } else {
-
-
             if (passwordSignUpActivityEditText.getText().length() < 8) {
                 ChocoBar
                         .builder()
@@ -170,57 +128,39 @@ LoginActivity extends AppCompatActivity implements
                         .show();
                 loginLoginActivityButton.showErrorButton();
             } else {
-
-
                 setLoadingButtonStyle();
-
                 RequestBody password_ = RequestBody.create(MediaType.parse("text/plain"),
                         passwordSignUpActivityEditText.getText().toString());
 
                 RequestBody username_ = RequestBody.create(MediaType.parse("text/plain"),
                         emailSignUpActivityEditText.getText().toString().split("@")[0]);
-
-
-//        String token;
-
                 Call<TokenAPI> call = apiInterface.refreshToken(username_, password_);
                 call.enqueue(new Callback<TokenAPI>() {
+
                     @Override
                     public void onResponse(Call<TokenAPI> call, Response<TokenAPI> response) {
                         loginLoginActivityButton.showDoneButton();
-
                         if (response.isSuccessful()) {
-
-//                token=response.body().getAccess();
                             sharedpreferences_access = getSharedPreferences(ACCESS_TOKEN_PREF, Context.MODE_PRIVATE);
                             sharedpreferences_token = getSharedPreferences(REFRESH_TOKEN_PREF, Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor_access = sharedpreferences_access.edit();
                             SharedPreferences.Editor editor_refresh = sharedpreferences_token.edit();
-
-
                             editor_access.putString("accessToken", response.body().getAccess());
                             editor_refresh.putString("refreshToken", response.body().getRefresh());
-                            editor_refresh.putString("username",  emailSignUpActivityEditText.getText().toString().split("@")[0]);
+                            editor_refresh.putString("username", emailSignUpActivityEditText.getText().toString().split("@")[0]);
                             editor_refresh.putString("password", passwordSignUpActivityEditText.getText().toString());
                             editor_access.commit();
                             editor_refresh.commit();
-
-
-
-                            //
-
                             sharedpreferences = getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedpreferences.edit();
-
-                            int userId;
-
-                            Call<UserAPI> getLoggedUser=apiInterface.getCurrentUser("Bearer "+response.body().getAccess());
+                            Call<UserAPI> getLoggedUser = apiInterface.getCurrentUser("Bearer " + response.body().getAccess());
                             getLoggedUser.enqueue(new Callback<UserAPI>() {
+
                                 @Override
                                 public void onResponse(Call<UserAPI> call, Response<UserAPI> response) {
-                                    if(response.isSuccessful()){
+                                    if (response.isSuccessful()) {
                                         SharedPreferences.Editor editor = sharedpreferences.edit();
-                                        editor.putInt("userId",response.body().getId());
+                                        editor.putInt("userId", response.body().getId());
                                         editor.commit();
 
                                     }
@@ -228,37 +168,17 @@ LoginActivity extends AppCompatActivity implements
 
                                 @Override
                                 public void onFailure(Call<UserAPI> call, Throwable t) {
-                                    Intent intent=new Intent(LoginActivity.this, ErrorActivity.class);
-                                    intent.putExtra("isNetworkError",true);
+                                    Intent intent = new Intent(LoginActivity.this, ErrorActivity.class);
+                                    intent.putExtra("isNetworkError", true);
                                     startActivity(intent);
 
                                 }
+
                             });
-
-
-
-
-                            //
-
-
-                            //
-//                            sharedpreferences = getSharedPreferences(ACCOUNT_PREF, Context.MODE_PRIVATE);
-//                            SharedPreferences.Editor editor = sharedpreferences.edit();
-//                            editor = sharedpreferences.edit();
                             editor.putString("token", response.body().getAccess());
                             editor.putString("login", emailSignUpActivityEditText.getText().toString().split("@")[0]);
                             editor.putString("password", passwordSignUpActivityEditText.getText().toString());
-
                             editor.commit();
-                            //
-
-
-
-
-
-
-
-
                             ChocoBar
                                     .builder()
                                     .setActivity(LoginActivity.this)
@@ -266,18 +186,16 @@ LoginActivity extends AppCompatActivity implements
                                     .setDuration(ChocoBar.LENGTH_LONG)
                                     .green()
                                     .setAction("LOGIN", new View.OnClickListener() {
+
                                         @Override
                                         public void onClick(View view) {
-                                            startActivity(new Intent(LoginActivity.this, Main3Activity.class));
+                                            startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                         }
+
                                     })
                                     .show();
-
-
                         } else {
                             loginLoginActivityButton.showErrorButton();
-
-
                             ChocoBar
                                     .builder()
                                     .setActivity(LoginActivity.this)
@@ -285,10 +203,7 @@ LoginActivity extends AppCompatActivity implements
                                     .setDuration(ChocoBar.LENGTH_LONG)
                                     .red()
                                     .show();
-
-
                         }
-
                     }
 
                     @Override
@@ -303,26 +218,8 @@ LoginActivity extends AppCompatActivity implements
                                 .show();
 
                     }
+
                 });
-
-
-                // Не работает, кек
-//                TokenHolder myServiceHolder = new TokenHolder();
-//                OkHttpClient okHttpClient = new OkHttpClientInstance.Builder(LoginActivity.this, myServiceHolder)
-//                        .addHeader("Authorization", getSharedPreferences(REFRESH_TOKEN_PREF, Context.MODE_PRIVATE).getString("accessToken", null))
-//                        .build();
-//
-////        OkHttpClient client = new OkHttpClient();
-//
-//                TokenService myService = new retrofit2.Retrofit.Builder()
-//                        .baseUrl(APIClient.HOST)
-//                        .addConverterFactory(GsonConverterFactory.create())
-//                        .client(okHttpClient)
-//                        .build()
-//                        .create(TokenService.class);
-//
-//
-//                myServiceHolder.setMyService(myService);
             }
         }
 

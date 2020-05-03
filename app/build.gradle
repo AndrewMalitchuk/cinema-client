@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
@@ -22,11 +21,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
 apply plugin: 'com.android.application'
-
 apply plugin: 'com.google.gms.google-services'
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -36,7 +32,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
     // https://github.com/florent37/MaterialTextField
     implementation 'com.github.florent37:materialtextfield:1.0.7'
     // https://android-arsenal.com/details/1/5324?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Android_Arsenal+%28The+Android+Arsenal%29
@@ -52,176 +47,157 @@ dependencies {
     implementation 'com.github.javiersantos:BottomDialogs:1.2.1'
     // https://android-arsenal.com/details/1/3826?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Android_Arsenal+%28The+Android+Arsenal%29
     implementation 'com.tomergoldst.android:tooltips:1.0.10'
-    // https://android-arsenal.com/details/1/7469
-//    implementation 'com.github.Muki1992:MaterialLoadingButton:1.0'
-    //
+    // https://github.com/JakeWharton/butterknife
     implementation 'com.jakewharton:butterknife:10.2.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
-    //https://github.com/yatindeokar/MyLoadingButton
+    // https://github.com/yatindeokar/MyLoadingButton
     implementation 'com.github.yatindeokar:MyLoadingButton:v1.0.1'
-    //
+    // https://github.com/JakeWharton/butterknife
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-//    implementation 'com.android.support:design:24.0.0'
     //https://android-arsenal.com/details/1/6916?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Android_Arsenal+%28The+Android+Arsenal%29
     implementation 'com.github.medyo:android-about-page:1.2.5'
     //https://github.com/vipulasri/TicketView
     implementation 'com.vipulasri:ticketview:1.0.7'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-
-    //
+    // Support Library
     implementation 'com.google.android.material:material:1.0.0-beta01'
-    //
+    // https://github.com/devendroid/AutoCrashReporter
     implementation 'com.devs:acr:1.0.1'
-    //
-//    implementation 'com.github.florent37:arclayout:1.0.3'
-    //
+    // https://github.com/flavioarfaria/KenBurnsView
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
-    //
-//    implementation 'com.google.android.material:material:1.0.0-rc01'
-    //
+    // https://github.com/manojbhadane/PaymentCardView
     implementation 'com.github.manojbhadane:PaymentCardView:v1.3'
-    //
+    // https://github.com/mahimrocky/TagView
     implementation 'com.google.android:flexbox:1.0.0'
     implementation 'com.github.mahimrocky:TagView:1.0.3'
-    //
+    // https://github.com/2dxgujun/AndroidTagGroup
     implementation 'me.gujun.android.taggroup:library:1.4@aar'
-    //
+    // https://github.com/Swisyn/Android-Onboarder
     implementation 'com.cuneytayyildiz:onboarder:1.0.4'
-    //
+    // https://github.com/harrylefit/bottomnavigation
     implementation 'com.github.harrylefit:bottomnavigation:1.1.7'
-    //
+    // https://github.com/jrvansuita/MaterialAbout
     implementation 'com.github.jrvansuita:MaterialAbout:+'
-    //
+    // https://github.com/rubensousa/BottomSheetBuilder
     implementation 'com.github.rubensousa:bottomsheetbuilder:1.6.1'
-    //
+    // Support Library
     implementation 'com.android.support:design:27.1.1'
-    //
+    // https://github.com/SubhrajyotiSen/PasswordView
     implementation 'com.github.SubhrajyotiSen:library:1.1.2'
-    //
+    // https://github.com/armcha/PlayTabLayout
     implementation 'com.github.armcha:PlayTabLayout:2.0.0'
-    //
+    // https://github.com/TutorialsAndroid/MTextField
     implementation 'com.github.TutorialsAndroid:MTextField:v4.0.19'
-    //
+    // https://github.com/10bis/CompactCreditInput
     implementation "com.github.10bis:compactCreditInput:2.0.4"
-    //
+    // https://github.com/iammert/StatusView
     implementation 'com.github.iammert:StatusView:1.3'
-    //
+    // https://github.com/BROUDING/SimpleDialog
     implementation 'com.brouding:android-simple-dialog:0.3.1'
-    //
+    // https://github.com/chrisbanes/PhotoView
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
-    //
+    // https://github.com/rtugeek/MaterialBanner
     implementation 'com.github.rtugeek:materialbanner:1.0.2'
-    //
+    // https://github.com/liangpengfei/LoadingPopPoint
     implementation 'com.github.liangpengfei:LoadingPopPoint:912651e54d'
-    //
+    // https://github.com/qintong91/InsLoadingAnimation
     implementation 'com.qintong:insLoadingAnimation:1.1.0'
-    //
+    // https://github.com/transferwise/sequence-layout
     implementation 'com.github.transferwise:sequence-layout:1.0.11'
-    //
+    // https://github.com/javiersantos/BottomDialogs
     implementation "com.github.javiersantos:BottomDialogs:1.2.1"
-    //
+    // https://github.com/GrenderG/MarkdownView
     implementation 'com.github.GrenderG:MarkdownView:0.1.2'
-    //
+    // https://github.com/abdularis/AnalogTvNoiseView
     implementation 'com.github.abdularis:AnalogTvNoiseView:0.1'
-    //
+    // https://github.com/IamIsPra/EasyGifView
     implementation 'com.github.IsPra94:EasyGifView:1.0.1'
-    //
+    // https://github.com/liangfeidotme/AndroidAvatarView
     implementation 'com.liangfeizc:avatarview:0.0.1@aar'
-    //
-//    implementation 'com.github.car2go.AnyMaps:anymaps-base:6.0.1'
-//    implementation 'com.github.car2go.AnyMaps:anymaps-osm:6.0.1'
-//    implementation 'com.github.car2go.AnyMaps:anymaps-google:6.0.1'
-//    implementation 'com.google.android.gms:play-services-maps:18.3.0'
-    //
+    // https://github.com/osmdroid/osmdroid
     implementation 'org.osmdroid:osmdroid-android:6.1.2'
-    //
+    // https://github.com/PierfrancescoSoffritti/android-youtube-player
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
-    //
+    // https://github.com/sharish/CreditCardView
     implementation 'com.github.sharish:CreditCardView:v1.0.4'
-    //
+    // https://github.com/nonzeroapps/whatisnewdialog
     implementation 'com.github.nonzeroapps:whatisnewdialog:1.0.4'
-    //
+    // https://github.com/shadowfaxtech/proSwipeButton
     implementation 'in.shadowfax:proswipebutton:1.2.2'
-    //
+    // https://github.com/devendroid/ReadMoreOption
     implementation 'com.github.devendroid:ReadMoreOption:1.0.2'
-    //
+    // https://github.com/mirrajabi/search-dialog
     implementation 'com.github.mirrajabi:search-dialog:1.2.4'
-    //
+    // https://github.com/sangcomz/StickyTimeLine
     implementation 'com.github.sangcomz:StickyTimeLine:v0.0.20'
-    //
+    // https://android-arsenal.com/details/1/7651
     implementation 'com.vivekkaushik.datepicker:datePickerTimeline:0.0.3'
-    //
+    // https://github.com/MehdiKh93/Shortcut
     implementation 'com.github.MehdiKh93:Shortcut:1.0.2'
-    //
+    // https://github.com/bumptech/glide
     implementation 'com.github.bumptech.glide:glide:3.7.0'
-    //
+    // https://github.com/OMARIHAMZA/StoryView
     implementation 'com.github.OMARIHAMZA:StoryView:1.0.2-alpha'
-    //
-    implementation "com.github.skydoves:indicatorscrollview:1.0.2"
-    //
+    // https://github.com/skydoves/IndicatorScrollView
+    implementation 'com.github.skydoves:indicatorscrollview:1.0.2'
+    // https://github.com/arimorty/floatingsearchview
     implementation 'com.github.arimorty:floatingsearchview:2.1.1'
-    //
+    // https://github.com/sjwall/MaterialTapTargetPrompt
     implementation 'uk.co.samuelwall:material-tap-target-prompt:3.0.0'
-    //
+    // https://github.com/droidbyme/DroidDialog
     implementation 'com.github.droidbyme:DroidDialog:c6decc7167'
-    //
+    // https://github.com/Pradyuman7/ChocoBar
     implementation 'com.github.Pradyuman7:ChocoBar:V1.0'
-    //
+    // https://github.com/google/gson
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
-    //
+    // https://github.com/nihad92/SwipeableCards
     implementation 'com.github.nihad92:SwipeableCards:1.0.19'
-    //
+    // https://github.com/square/retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.7.1'
-    //
+    // https://github.com/square/okhttp
     implementation 'com.squareup.okhttp3:logging-interceptor:4.3.1'
     implementation 'com.squareup.okhttp3:okhttp:4.3.1'
-    //
+    // https://projectlombok.org/
     compileOnly "org.projectlombok:lombok:1.18.10"
     annotationProcessor 'org.projectlombok:lombok:1.18.10'
-    //
+    // https://github.com/bumptech/glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-    //
+    // https://github.com/zxing/zxing
     implementation 'com.google.zxing:core:3.2.1'
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
-    //
+    // https://github.com/siralam/LoopingViewPager
     implementation 'com.asksira.android:loopingviewpager:1.1.2'
-    //
+    // Firebase
     implementation 'com.google.firebase:firebase-messaging:20.1.0'
     implementation 'com.google.firebase:firebase-analytics:17.2.0'
     implementation 'com.google.firebase:firebase-core:17.2.1'
     implementation 'com.google.firebase:firebase-iid:20.0.2'
     implementation 'com.google.firebase:firebase-inappmessaging-display:17.2.0'
     implementation 'com.google.guava:guava:27.0.1-android'
-
-    //
-    implementation "androidx.work:work-runtime:2.2.0"
-    //
+    // AndroidX
+    implementation 'androidx.work:work-runtime:2.2.0'
+    // https://github.com/jakebonk/NotifyMe
     implementation 'com.github.jakebonk:NotifyMe:1.0.1'
-    //
+    // https://github.com/halysongoncalves/Pugnotification
     implementation 'com.github.halysongoncalves:pugnotification:1.8.1'
-    //
+    // https://github.com/wdullaer/MaterialDateTimePicker
     implementation 'com.wdullaer:materialdatetimepicker:3.6.0'
-    //
+    // https://github.com/zawadz88/MaterialPopupMenu
     implementation 'com.github.zawadz88.materialpopupmenu:material-popup-menu:4.0.1'
-     //
+    // https://github.com/luksoral/ExpandedMenuView
     implementation 'com.github.luksoral:ExpandedMenuView:1.0.3'
-    //
-//    implementation 'com.eightbitlab:supportrenderscriptblur:1.0.2'
+    // https://github.com/wasabeef/glide-transformations
     implementation 'jp.wasabeef:glide-transformations:4.0.0'
-    //https://android-arsenal.com/details/1/6433
+    // https://android-arsenal.com/details/1/6433
     implementation 'com.robertlevonyan.view:MaterialExpansionPanel:2.0.7'
-    //https://github.com/ReactiveX/RxAndroid
+    // https://github.com/ReactiveX/RxAndroid
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     implementation 'io.reactivex.rxjava3:rxjava:3.0.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     // https://android-arsenal.com/details/1/6093
     implementation 'com.github.ravindu1024:android-loadingdialog:1.0.3'
-
-
-
-
 
 }

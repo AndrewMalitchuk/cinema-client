@@ -35,7 +35,6 @@
         app:subtitleTextColor="@color/white"
         app:titleTextColor="@color/white" />
 
-
     <ScrollView
         android:id="@+id/mScrollView"
         android:layout_width="wrap_content"
@@ -45,13 +44,11 @@
         app:layout_constraintStart_toStartOf="@+id/my_toolbar"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
 
-
         <RelativeLayout
             android:id="@+id/activity_main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -89,12 +86,7 @@
                                 android:id="@+id/imageView5"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-
                                 android:scaleType="fitXY" />
-
-
-
-
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -113,25 +105,11 @@
                                     app:border_color="@color/colorAccent"
                                     app:shadow_color="@color/colorAccent" />
 
-
-
                             </LinearLayout>
-                        </FrameLayout>
-                    </androidx.cardview.widget.CardView>
 
-                    <!--<com.liangfeizc.avatarview.AvatarView-->
-                    <!--android:layout_width="250dp"-->
-                    <!--android:layout_height="250dp"-->
-                    <!--android:background="@android:color/transparent"-->
-                    <!--android:src="@drawable/pulp_fiction"-->
-                    <!--app:border_color="@color/colorLoginActivityText"-->
-                    <!--app:border_width="1dp"-->
-                    <!--app:shadow_color="@color/colorLoginActivityText"-->
-                    <!--app:shadow_width="2dp"-->
-                    <!--tools:layout_conversion_absoluteHeight="250dp"-->
-                    <!--tools:layout_conversion_absoluteWidth="250dp"-->
-                    <!--tools:layout_editor_absoluteX="175dp"-->
-                    <!--tools:layout_editor_absoluteY="114dp" />-->
+                        </FrameLayout>
+
+                    </androidx.cardview.widget.CardView>
 
                 </FrameLayout>
 
@@ -154,7 +132,6 @@
                         android:orientation="vertical"
                         android:padding="20dp">
 
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -168,9 +145,6 @@
                                 android:text="@string/loadingMessage"
                                 android:textSize="25sp"
                                 android:textStyle="bold" />
-
-
-
 
                         </LinearLayout>
 
@@ -205,7 +179,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/loadingMessage" />
-
 
                     </LinearLayout>
 
@@ -264,7 +237,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv3"
                     android:layout_width="match_parent"
@@ -285,7 +257,6 @@
             </LinearLayout>
 
         </RelativeLayout>
-
 
     </ScrollView>
 

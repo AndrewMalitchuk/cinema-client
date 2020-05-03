@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,25 +18,19 @@ import com.cinema.client.entities.FilmItemSearch;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
-import dagger.android.ContributesAndroidInjector;
-
-
 public class FilmSearchAdapter extends RecyclerView.Adapter<FilmSearchAdapter.ViewHolder> {
 
     List<FilmItemSearch> filmItemSearchList;
+
     Context context;
 
-
-    public FilmSearchAdapter(List<FilmItemSearch>filmItemSearchList)
-    {
+    public FilmSearchAdapter(List<FilmItemSearch> filmItemSearchList) {
         this.filmItemSearchList = filmItemSearchList;
     }
 
     @Override
     public FilmSearchAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_films_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_films_item, parent, false);
         FilmSearchAdapter.ViewHolder viewHolder = new FilmSearchAdapter.ViewHolder(view);
         context = parent.getContext();
         return viewHolder;
@@ -46,29 +39,22 @@ public class FilmSearchAdapter extends RecyclerView.Adapter<FilmSearchAdapter.Vi
     @Override
     public void onBindViewHolder(FilmSearchAdapter.ViewHolder holder, final int position) {
         FilmItemSearch myTickets = filmItemSearchList.get(position);
-
         holder.filmNameText.setText(myTickets.getFilmName());
         holder.filmDateTimeText.setText(myTickets.getFilmDateTime());
         holder.filmPlaceText.setText(myTickets.getFilmPlace());
         holder.filmCinemaText.setText(myTickets.getFilmCinema());
-
-//        holder.filmImage.setImageResource(myTickets.getFilmImg());
-
         Glide.with(context).load(myTickets.getFilmImg()).into(holder.filmImage);
-
-
-
         holder.cv.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context, AboutFilmActivity.class);
-                intent.putExtra("filmId",myTickets.getFilmId());
+                Intent intent = new Intent(context, AboutFilmActivity.class);
+                intent.putExtra("filmId", myTickets.getFilmId());
                 context.startActivity(intent);
 
             }
+
         });
-
-
     }
 
     @Override
@@ -76,8 +62,7 @@ public class FilmSearchAdapter extends RecyclerView.Adapter<FilmSearchAdapter.Vi
         return filmItemSearchList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder
-    {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView filmImage;
         TextView filmNameText;
         TextView filmDateTimeText;
@@ -85,19 +70,17 @@ public class FilmSearchAdapter extends RecyclerView.Adapter<FilmSearchAdapter.Vi
         TextView filmCinemaText;
         CardView cv;
 
-        public ViewHolder(View itemView)
-        {
-
+        public ViewHolder(View itemView) {
             super(itemView);
-
-            filmImage= (ImageView)itemView.findViewById(R.id.filmImage);;
-            filmNameText= (TextView)itemView.findViewById(R.id.cinemaName);
-            filmDateTimeText= (TextView)itemView.findViewById(R.id.cinemaAddress);
-            filmPlaceText= (TextView)itemView.findViewById(R.id.filmPlace);
-            filmCinemaText= (TextView)itemView.findViewById(R.id.filmCinema);
-
-            cv = (CardView)itemView.findViewById(R.id.cv);
+            filmImage = (ImageView) itemView.findViewById(R.id.filmImage);
+            ;
+            filmNameText = (TextView) itemView.findViewById(R.id.cinemaName);
+            filmDateTimeText = (TextView) itemView.findViewById(R.id.cinemaAddress);
+            filmPlaceText = (TextView) itemView.findViewById(R.id.filmPlace);
+            filmCinemaText = (TextView) itemView.findViewById(R.id.filmCinema);
+            cv = (CardView) itemView.findViewById(R.id.cv);
         }
 
     }
+
 }
