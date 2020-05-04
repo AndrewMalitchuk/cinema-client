@@ -13,8 +13,8 @@ import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.cinema.client.R;
-import com.cinema.client.etc.MyItem;
-import com.cinema.client.etc.StatusAdapter;
+import com.cinema.client.etc.TimelineItem;
+import com.cinema.client.etc.TimelineAdapter;
 import com.cinema.client.requests.APIClient;
 import com.cinema.client.requests.APIInterface;
 import com.cinema.client.requests.entities.FilmAPI;
@@ -201,7 +201,7 @@ public class StatusActivity extends AppCompatActivity {
      * @param cinema_id linked Cinema's ID
      */
     private void setTimeline(String date, int cinema_id) {
-        List<MyItem> list = new ArrayList<>();
+        List<TimelineItem> list = new ArrayList<>();
         Call<List<TimelineAPI>> call = apiInterface.getTimelineByDateAndCinemaId(date, cinema_id);
         call.enqueue(new Callback<List<TimelineAPI>>() {
 
@@ -215,7 +215,7 @@ public class StatusActivity extends AppCompatActivity {
                     String currentDate = dateFormat.format(date);
                     for (TimelineAPI timeline : response.body()) {
                         FilmAPI film = apiInterface.getFilmById(timeline.getFilmId()).execute().body();
-                        list.add(new MyItem(false, timeline.getDate(), timeline.getTime(), film.getTitle(), false, timeline.getPrice() + " ₴"));
+                        list.add(new TimelineItem(false, timeline.getDate(), timeline.getTime(), film.getTitle(), false, timeline.getPrice() + " ₴"));
                     }
                     if (list.size() == 0) {
                         ChocoBar.builder().setActivity(StatusActivity.this)
@@ -225,17 +225,17 @@ public class StatusActivity extends AppCompatActivity {
                                 .show();
                         sequenceLayout.removeAllSteps();
                     } else {
-                        Collections.sort(list, new Comparator<MyItem>() {
+                        Collections.sort(list, new Comparator<TimelineItem>() {
 
                             @Override
-                            public int compare(MyItem u1, MyItem u2) {
+                            public int compare(TimelineItem u1, TimelineItem u2) {
                                 return u1.getFormattedDate().compareTo(u2.getFormattedDate());
                             }
 
                         });
-                        sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, selectedTimelineStatusActivityTextView, selectedPriceStatusActivityTextView, currentDate, currentTime));
+                        sequenceLayout.setAdapter(new TimelineAdapter(list, getApplicationContext(), selectedDateTimeTextView, selectedTimelineStatusActivityTextView, selectedPriceStatusActivityTextView, currentDate, currentTime));
                     }
-                    sequenceLayout.setAdapter(new StatusAdapter(list, getApplicationContext(), selectedDateTimeTextView, selectedTimelineStatusActivityTextView, selectedPriceStatusActivityTextView, currentDate, currentTime));
+                    sequenceLayout.setAdapter(new TimelineAdapter(list, getApplicationContext(), selectedDateTimeTextView, selectedTimelineStatusActivityTextView, selectedPriceStatusActivityTextView, currentDate, currentTime));
                     loadingView.hide();
                     timelineLoadingView.hide();
                 } catch (Exception e) {
@@ -264,7 +264,7 @@ public class StatusActivity extends AppCompatActivity {
      * @param film_id   linked Film's ID
      */
     private void setTimeline(String date, int cinema_id, int film_id) {
-        List<MyItem> list = new ArrayList<>();
+        List<TimelineItem> list = new ArrayList<>();
         Call<List<TimelineAPI>> call = apiInterface.getTimelineByDateAndCinemaIdAndFilmId(date, cinema_id, film_id);
         call.enqueue(new Callback<List<TimelineAPI>>() {
 
@@ -278,7 +278,7 @@ public class StatusActivity extends AppCompatActivity {
                     String currentDate = dateFormat.format(date);
                     for (TimelineAPI timeline : response.body()) {
                         FilmAPI film = apiInterface.getFilmById(timeline.getFilmId()).execute().body();
-                        list.add(new MyItem(false, timeline.getDate(), timeline.getTime(), film.getTitle(), false, timeline.getPrice() + " ₴", timeline));
+                        list.add(new TimelineItem(false, timeline.getDate(), timeline.getTime(), film.getTitle(), false, timeline.getPrice() + " ₴", timeline));
                     }
                     if (list.size() == 0) {
                         ChocoBar.builder().setActivity(StatusActivity.this)
@@ -288,15 +288,15 @@ public class StatusActivity extends AppCompatActivity {
                                 .show();
                         sequenceLayout.removeAllSteps();
                     } else {
-                        Collections.sort(list, new Comparator<MyItem>() {
+                        Collections.sort(list, new Comparator<TimelineItem>() {
 
                             @Override
-                            public int compare(MyItem u1, MyItem u2) {
+                            public int compare(TimelineItem u1, TimelineItem u2) {
                                 return u1.getFormattedDate().compareTo(u2.getFormattedDate());
                             }
 
                         });
-                        StatusAdapter statusAdapter = new StatusAdapter(
+                        TimelineAdapter statusAdapter = new TimelineAdapter(
                                 list,
                                 getApplicationContext(),
                                 selectedDateTimeTextView,

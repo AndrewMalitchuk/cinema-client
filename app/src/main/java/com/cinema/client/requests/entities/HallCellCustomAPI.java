@@ -33,4 +33,5 @@ public class HallCellCustomAPI {
     @SerializedName("new_col")
     @Expose
     private Integer newCol;
+
 }

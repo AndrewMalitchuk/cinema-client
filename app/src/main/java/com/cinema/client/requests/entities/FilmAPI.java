@@ -2,21 +2,16 @@
 package com.cinema.client.requests.entities;
 
 import android.os.Parcel;
-import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-
-import java.io.Serializable;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-
 @ToString
 public class FilmAPI  {
-//public class FilmAPI  implements Parcelable {
 
     @Getter
     @Setter
@@ -116,8 +111,5 @@ public class FilmAPI  {
         videoUrl = in.readString();
         picUrl = in.readString();
     }
-
-
-
 
 }

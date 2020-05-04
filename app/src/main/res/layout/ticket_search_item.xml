@@ -59,10 +59,6 @@
                     android:text="@string/loadingMessage"
                     android:textColor="@color/black" />
 
-
-
-
-
                 <me.gujun.android.taggroup.TagGroup
                     android:id="@+id/status"
                     style="@style/TagGroup"
@@ -70,14 +66,14 @@
                     app:atg_checkedBackgroundColor="@color/colorAccent"
                     app:atg_checkedBorderColor="@color/colorAccent"
                     app:atg_textColor="@color/colorAccent"
-                    app:atg_textSize="15sp"
-                    >
+                    app:atg_textSize="15sp">
 
                 </me.gujun.android.taggroup.TagGroup>
 
             </LinearLayout>
 
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
 </LinearLayout>

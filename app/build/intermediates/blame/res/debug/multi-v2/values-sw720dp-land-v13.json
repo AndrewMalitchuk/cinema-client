@@ -4,7 +4,7 @@
             "outputFile": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/9847c3b66f085e5c53240a47021aa263/res/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/522e09295a85ce741649ac210fa55d86/res/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

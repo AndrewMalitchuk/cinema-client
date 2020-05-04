@@ -4,23 +4,6 @@
             "outputFile": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-zu/values-zu.xml",
             "map": [
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/values-zu/values-zu.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,166,232,344,458,541,662,784,910,1006,1097,1193,1282",
-                        "endColumns": "60,65,111,113,82,120,121,125,95,90,95,88,99",
-                        "endOffsets": "161,227,339,453,536,657,779,905,1001,1092,1188,1277,1377"
-                    },
-                    "to": {
-                        "startLines": "48,49,50,51,52,53,54,55,56,57,58,59,60",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "5680,5741,5807,5919,6033,6116,6237,6359,6485,6581,6672,6768,6857",
-                        "endColumns": "60,65,111,113,82,120,121,125,95,90,95,88,99",
-                        "endOffsets": "5736,5802,5914,6028,6111,6232,6354,6480,6576,6667,6763,6852,6952"
-                    }
-                },
-                {
                     "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/20770dccd6403c8027a019226e749630/res/values-zu/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -35,6 +18,23 @@
                         "startOffsets": "2791,2904,3112,3249,3355,3582,3713,3867,4197,4416,4528,4724,4857,5074,5261,5352,5451",
                         "endColumns": "112,207,136,105,226,130,153,138,218,111,195,132,216,186,90,98,113",
                         "endOffsets": "2899,3107,3244,3350,3577,3708,3862,4001,4411,4523,4719,4852,5069,5256,5347,5446,5560"
+                    }
+                },
+                {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/957976ba928d48bd9c4dc2232484848c/res/values-zu/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "207",
+                        "endColumns": "110",
+                        "endOffsets": "317"
+                    },
+                    "to": {
+                        "startLines": "47",
+                        "startColumns": "4",
+                        "startOffsets": "5565",
+                        "endColumns": "114",
+                        "endOffsets": "5675"
                     }
                 },
                 {
@@ -72,7 +72,7 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/b5f879673bec40ef55716eaca14bb4b7/res/values-zu/values.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/2ca2a6a5e3083758c210583a35ad712c/res/values-zu/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -89,20 +89,20 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/463874f79968f5e596b51bf6bb567c64/res/values-zu/values.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/99a5a842ff58931bbb52d35afba3effd/res/values-zu/values-zu.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "207",
-                        "endColumns": "110",
-                        "endOffsets": "317"
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,166,232,344,458,541,662,784,910,1006,1097,1193,1282",
+                        "endColumns": "60,65,111,113,82,120,121,125,95,90,95,88,99",
+                        "endOffsets": "161,227,339,453,536,657,779,905,1001,1092,1188,1277,1377"
                     },
                     "to": {
-                        "startLines": "47",
-                        "startColumns": "4",
-                        "startOffsets": "5565",
-                        "endColumns": "114",
-                        "endOffsets": "5675"
+                        "startLines": "48,49,50,51,52,53,54,55,56,57,58,59,60",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "5680,5741,5807,5919,6033,6116,6237,6359,6485,6581,6672,6768,6857",
+                        "endColumns": "60,65,111,113,82,120,121,125,95,90,95,88,99",
+                        "endOffsets": "5736,5802,5914,6028,6111,6232,6354,6480,6576,6667,6763,6852,6952"
                     }
                 }
             ]

@@ -25,5 +25,4 @@
         android:textAlignment="center"
         android:textColor="@color/colorLoginActivityText" />
 
-
 </LinearLayout>

@@ -14,7 +14,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 public class SwipeCardItem extends RecyclerView.ViewHolder {
+
     private TextView posterNameSwipeCardTextView;
+
     private ImageView posterSwipeCardImageView;
 
     @Setter
@@ -27,8 +29,9 @@ public class SwipeCardItem extends RecyclerView.ViewHolder {
         posterSwipeCardImageView = itemView.findViewById(R.id.posterSwipeCardImageView);
     }
 
-    public void bind(String title, String url,Context context) {
+    public void bind(String title, String url, Context context) {
         posterNameSwipeCardTextView.setText(title);
         Glide.with(context).load(url).into(posterSwipeCardImageView);
     }
+
 }

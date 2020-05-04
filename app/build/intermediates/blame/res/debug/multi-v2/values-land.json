@@ -4,24 +4,7 @@
             "outputFile": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/e6d725161eb984ed78a03378220bab68/res/values-land/values-land.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,131,203,276",
-                        "endColumns": "75,71,72,71",
-                        "endOffsets": "126,198,271,343"
-                    },
-                    "to": {
-                        "startLines": "6,7,8,9",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "303,379,451,524",
-                        "endColumns": "75,71,72,71",
-                        "endOffsets": "374,446,519,591"
-                    }
-                },
-                {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/values-land/values-land.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/99a5a842ff58931bbb52d35afba3effd/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -57,6 +40,16 @@
                     }
                 },
                 {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/522e09295a85ce741649ac210fa55d86/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "38",
+                        "endOffsets": "89"
+                    }
+                },
+                {
                     "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/6600b268ed0f2dc946d91f420953bb14/res/values-land/values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
@@ -74,13 +67,20 @@
                     }
                 },
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/9847c3b66f085e5c53240a47021aa263/res/values-land/values-land.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/bd275ce7ec35690884cf958783f89ced/res/values-land/values-land.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "38",
-                        "endOffsets": "89"
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,131,203,276",
+                        "endColumns": "75,71,72,71",
+                        "endOffsets": "126,198,271,343"
+                    },
+                    "to": {
+                        "startLines": "6,7,8,9",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "303,379,451,524",
+                        "endColumns": "75,71,72,71",
+                        "endOffsets": "374,446,519,591"
                     }
                 }
             ]

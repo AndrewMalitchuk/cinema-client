@@ -17,12 +17,9 @@ public class SitButton extends Button {
     @Setter
     private HallCellAPI absoluteLocation;
 
-
     @Getter
     @Setter
     private HallCellAPI relativeLocation;
-
-
 
     public SitButton(Context context) {
         super(context);
@@ -40,15 +37,12 @@ public class SitButton extends Button {
         super(context, attrs, defStyleAttr, defStyleRes);
     }
 
-
     public String absoluteLocationToString(){
         return absoluteLocation.getSector().charAt(0)+"-"+absoluteLocation.getRow()+"-"+absoluteLocation.getCol();
     }
 
     public String relativeLocationToString(){
         return relativeLocation.getSector().charAt(0)+"-"+relativeLocation.getRow()+"-"+relativeLocation.getCol();
-
     }
-
 
 }

@@ -28,13 +28,6 @@ public class TimelineAPI {
     @Expose
     private String date;
 
-
-//    @Getter
-//    @Setter
-//    @SerializedName("datetime")
-//    @Expose
-//    private String datetime;
-
     @Getter
     @Setter
     @SerializedName("cinema_id")
@@ -58,4 +51,5 @@ public class TimelineAPI {
     @SerializedName("hall_id")
     @Expose
     private Integer hallId;
+
 }

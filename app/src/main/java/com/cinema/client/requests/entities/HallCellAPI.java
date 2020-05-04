@@ -10,7 +10,6 @@ import lombok.ToString;
 @ToString
 public class HallCellAPI {
 
-    //TODO: нормально сделай
     @Getter
     @Setter
     private String sector;
@@ -26,6 +25,5 @@ public class HallCellAPI {
     @SerializedName("col")
     @Expose
     private Integer col;
-
 
 }

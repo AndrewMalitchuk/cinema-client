@@ -2,13 +2,10 @@
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refreshMainFlow"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.MainFlowFragment"
-    android:id="@+id/refreshMainFlow"
-    >
-
-
+    tools:context=".fragments.MainFlowFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +21,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-
 
                 <FrameLayout
                     android:id="@+id/frame"
@@ -102,10 +98,10 @@
                                     android:text="@string/moreMainFlowFragmentButton"
                                     android:textColor="@color/white" />
 
-
                             </LinearLayout>
 
                         </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -116,8 +112,6 @@
                         app:cardCornerRadius="5dp"
                         app:cardElevation="5dp">
 
-
-
                         <com.asksira.loopingviewpager.LoopingViewPager
                             android:id="@+id/viewpager"
                             android:layout_width="150dp"
@@ -127,9 +121,7 @@
                             app:isInfinite="true"
                             app:scrollInterval="5000" />
 
-
                     </androidx.cardview.widget.CardView>
-
 
                 </FrameLayout>
 
@@ -161,7 +153,6 @@
                             android:layout_margin="10dp"
                             app:cardCornerRadius="5dp"
                             app:cardElevation="5dp">
-
 
                             <FrameLayout
                                 android:layout_width="match_parent"
@@ -216,13 +207,15 @@
                                             android:layout_marginBottom="5dp"
                                             android:layout_weight="1"
                                             android:backgroundTint="@color/colorAccent"
-
                                             android:text="@string/lookingForFilmMainFlowFragmentButton"
                                             android:textColor="@color/white" />
 
                                     </LinearLayout>
+
                                 </LinearLayout>
+
                             </FrameLayout>
+
                         </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
@@ -438,7 +431,9 @@
                                     </LinearLayout>
 
                                 </LinearLayout>
+
                             </HorizontalScrollView>
+
                         </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
@@ -613,20 +608,20 @@
                                     </LinearLayout>
 
                                 </LinearLayout>
+
                             </HorizontalScrollView>
+
                         </androidx.cardview.widget.CardView>
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
 
-
-
             </LinearLayout>
-        </androidx.core.widget.NestedScrollView >
-        <!--</ScrollView>-->
+
+        </androidx.core.widget.NestedScrollView>
 
 
     </LinearLayout>
-    <!--</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -23,7 +23,6 @@
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp">
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -37,7 +36,6 @@
                     app:srcCompat="@drawable/ic_ticket_white" />
 
             </LinearLayout>
-
 
         </androidx.cardview.widget.CardView>
 
@@ -74,6 +72,7 @@
                 android:text="@string/versionSplashActivityTextView"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/colorLoginActivityText" />
+
         </FrameLayout>
 
     </LinearLayout>

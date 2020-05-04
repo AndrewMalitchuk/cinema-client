@@ -34,5 +34,4 @@ public class AllHallAPI {
     @Expose
     private Integer cinemaId;
 
-
 }

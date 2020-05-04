@@ -61,6 +61,4 @@ public class HallAPI {
     @Expose
     private List<HallCellCustomAPI> custom = null;
 
-
-
 }

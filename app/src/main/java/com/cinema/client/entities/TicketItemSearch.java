@@ -30,10 +30,20 @@ public class TicketItemSearch {
     @Setter
     String filmTime;
 
-
+    @Getter
+    @Setter
     private String filmName;
+
+    @Getter
+    @Setter
     private String filmDateTime;
+
+    @Getter
+    @Setter
     private String filmPlace;
+
+    @Getter
+    @Setter
     private String filmCinema;
 
     @Getter
@@ -52,51 +62,12 @@ public class TicketItemSearch {
     @Setter
     private Integer hallId;
 
-
     @Getter
     @Setter
     private int status;
 
+    @Getter
+    @Setter
     private int filmImg;
 
-
-    public String getFilmName() {
-        return filmName;
-    }
-
-    public void setFilmName(String filmName) {
-        this.filmName = filmName;
-    }
-
-    public String getFilmDateTime() {
-        return filmDateTime;
-    }
-
-    public void setFilmDateTime(String filmDateTime) {
-        this.filmDateTime = filmDateTime;
-    }
-
-    public String getFilmPlace() {
-        return filmPlace;
-    }
-
-    public void setFilmPlace(String filmPlace) {
-        this.filmPlace = filmPlace;
-    }
-
-    public String getFilmCinema() {
-        return filmCinema;
-    }
-
-    public void setFilmCinema(String filmCinema) {
-        this.filmCinema = filmCinema;
-    }
-
-    public int getFilmImg() {
-        return filmImg;
-    }
-
-    public void setFilmImg(int filmImg) {
-        this.filmImg = filmImg;
-    }
 }

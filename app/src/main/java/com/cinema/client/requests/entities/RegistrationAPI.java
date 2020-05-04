@@ -33,4 +33,5 @@ public class RegistrationAPI {
     @SerializedName("is_staff")
     @Expose
     private Boolean isStaff;
+
 }

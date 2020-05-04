@@ -13,5 +13,4 @@ public class CreateUserResponse {
     @Setter
     private List<String> username = null;
 
-
 }

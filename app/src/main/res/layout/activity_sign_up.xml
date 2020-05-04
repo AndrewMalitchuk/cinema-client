@@ -4,18 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".activity.LoginActivity"
-    tools:ignore="LabelFor"
-    android:fillViewport="true">
-
+    tools:ignore="LabelFor">
 
     <LinearLayout
         android:id="@+id/signUpLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:fillViewport="true">
-
+        android:fillViewport="true"
+        android:orientation="vertical">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -26,14 +24,14 @@
                 android:id="@+id/signUpCardView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:fillViewport="true"
                 android:foregroundGravity="center"
                 android:padding="50dp"
                 app:cardBackgroundColor="@color/colorLoginActivityCardView"
                 app:cardCornerRadius="5dp"
-                app:cardElevation="5dp"
-                android:fillViewport="true">
+                app:cardElevation="5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -57,6 +55,7 @@
                             android:layout_margin="50dp"
                             android:contentDescription="@string/ticketLoginActivityImageViewString"
                             app:srcCompat="@drawable/ic_account_circle_black_24dp" />
+
                     </androidx.cardview.widget.CardView>
 
                     <TextView
@@ -93,7 +92,6 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/passwordSignUpActivityTextInputLayout"
                         android:layout_width="match_parent"
@@ -110,7 +108,6 @@
                             android:layout_height="wrap_content"
                             android:colorControlHighlight="@color/colorAccent"
                             android:textColor="@color/colorLoginActivityText"
-
                             android:textCursorDrawable="@null"
                             app:eyeTint="@color/colorAccent"
                             app:strikeThrough="true" />
@@ -144,14 +141,12 @@
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
-
                 </LinearLayout>
 
-
             </androidx.cardview.widget.CardView>
+
         </FrameLayout>
 
     </LinearLayout>
-
 
 </ScrollView>

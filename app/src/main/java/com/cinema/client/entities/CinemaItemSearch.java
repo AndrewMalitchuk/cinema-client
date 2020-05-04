@@ -23,15 +23,4 @@ public class CinemaItemSearch {
     @Setter
     private String cinemaImg;
 
-    public CinemaItemSearch(int cinemaId,String cinemaName, String cinemaAddress, String cinemaImg) {
-        this.cinemaId=cinemaId;
-        this.cinemaName = cinemaName;
-        this.cinemaAddress = cinemaAddress;
-        this.cinemaImg = cinemaImg;
-    }
-
-    public CinemaItemSearch() {
-    }
-
-
 }

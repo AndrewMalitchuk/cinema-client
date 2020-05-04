@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,57 +18,37 @@ import com.google.gson.reflect.TypeToken;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
+import lombok.Getter;
+import lombok.Setter;
 
 public class HallTestFragment extends Fragment {
 
     @BindView(R.id.tableLayout1)
     TableLayout tableLayout1;
 
-
+    @Getter
+    @Setter
     private HallAPI hall;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
-        // Defines the xml file for the fragment
-
         View view = inflater.inflate(R.layout.fragment_hall_test, parent, false);
         ButterKnife.bind(this, view);
-
-
         Bundle bundle = this.getArguments();
         if (bundle != null) {
-            String json=bundle.getString("json");
-
+            String json = bundle.getString("json");
             Gson gson = new GsonBuilder().create();
-            hall=gson.fromJson(json, new TypeToken<HallAPI>(){}.getType());
-
-
-
+            hall = gson.fromJson(json, new TypeToken<HallAPI>() {
+            }.getType());
         }
-
-        //
-
-        //
-
         return view;
-
-
     }
 
     // This event is triggered soon after onCreateView().
     // Any view setup should occur here.  E.g., view lookups and attaching view listeners.
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-
-        tableLayout1=new HallRender(getContext()).render(hall,tableLayout1);
-
+        tableLayout1 = new HallRender(getContext()).render(hall, tableLayout1);
     }
-
-
-
-
-
-
 
 }

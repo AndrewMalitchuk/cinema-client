@@ -51,7 +51,6 @@ public class FilmSearchAdapter extends RecyclerView.Adapter<FilmSearchAdapter.Vi
                 Intent intent = new Intent(context, AboutFilmActivity.class);
                 intent.putExtra("filmId", myTickets.getFilmId());
                 context.startActivity(intent);
-
             }
 
         });
@@ -73,7 +72,6 @@ public class FilmSearchAdapter extends RecyclerView.Adapter<FilmSearchAdapter.Vi
         public ViewHolder(View itemView) {
             super(itemView);
             filmImage = (ImageView) itemView.findViewById(R.id.filmImage);
-            ;
             filmNameText = (TextView) itemView.findViewById(R.id.cinemaName);
             filmDateTimeText = (TextView) itemView.findViewById(R.id.cinemaAddress);
             filmPlaceText = (TextView) itemView.findViewById(R.id.filmPlace);

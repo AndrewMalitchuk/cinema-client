@@ -63,4 +63,5 @@
         android:backgroundTint="@color/colorAccent"
         android:text="@string/closeHallHelpDialogButoon"
         android:textColor="@color/textCell" />
+
 </LinearLayout>

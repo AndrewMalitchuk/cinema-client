@@ -4,24 +4,7 @@
             "outputFile": "/home/adular/Projects/Android/cinema-client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-land-v13/values-sw600dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/3e03738f10d92e7103316f2ea78b9f59/res/values-sw600dp-land-v13/values-sw600dp-land-v13.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,107,161,224,286,347,409,460,511,565,619,680,732",
-                        "endColumns": "51,53,62,61,60,61,50,50,53,53,60,51,61",
-                        "endOffsets": "102,156,219,281,342,404,455,506,560,614,675,727,789"
-                    },
-                    "to": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "151,203,257,320,382,443,505,556,607,661,715,776,828",
-                        "endColumns": "51,53,62,61,60,61,50,50,53,53,60,51,61",
-                        "endOffsets": "198,252,315,377,438,500,551,602,656,710,771,823,885"
-                    }
-                },
-                {
-                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/9847c3b66f085e5c53240a47021aa263/res/values-sw600dp-land-v13/values-sw600dp-land-v13.xml",
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/522e09295a85ce741649ac210fa55d86/res/values-sw600dp-land-v13/values-sw600dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -35,6 +18,23 @@
                         "startOffsets": "55,101,890",
                         "endColumns": "45,49,56",
                         "endOffsets": "96,146,942"
+                    }
+                },
+                {
+                    "source": "/home/adular/.gradle/caches/transforms-2/files-2.1/99a5a842ff58931bbb52d35afba3effd/res/values-sw600dp-land-v13/values-sw600dp-land-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,107,161,224,286,347,409,460,511,565,619,680,732",
+                        "endColumns": "51,53,62,61,60,61,50,50,53,53,60,51,61",
+                        "endOffsets": "102,156,219,281,342,404,455,506,560,614,675,727,789"
+                    },
+                    "to": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "151,203,257,320,382,443,505,556,607,661,715,776,828",
+                        "endColumns": "51,53,62,61,60,61,50,50,53,53,60,51,61",
+                        "endOffsets": "198,252,315,377,438,500,551,602,656,710,771,823,885"
                     }
                 }
             ]

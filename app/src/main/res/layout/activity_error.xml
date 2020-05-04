@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".activity.ErrorActivity">
 
-
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -66,6 +65,7 @@
                         android:onClick="onUnderstandButtonClick"
                         android:text="@string/understandErrorActivityButton"
                         android:textColor="@color/white" />
+
                 </FrameLayout>
 
             </LinearLayout>

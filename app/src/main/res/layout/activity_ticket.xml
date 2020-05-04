@@ -2,11 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.TicketActivity"
-    android:id="@+id/frame">
-
+    tools:context=".activity.TicketActivity">
 
     <LinearLayout
         android:id="@+id/ticketLinearLayout"
@@ -38,7 +37,6 @@
                 app:ticketScallopRadius="10dp"
                 app:ticketShowBorder="false"
                 app:ticketShowDivider="true" />
-
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"
@@ -228,6 +226,7 @@
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

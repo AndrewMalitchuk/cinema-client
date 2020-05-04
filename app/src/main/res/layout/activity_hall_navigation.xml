@@ -2,18 +2,16 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:importantForAutofill="noExcludeDescendants"
-    tools:ignore="UnusedAttribute"
-    android:id="@+id/frame">
-
+    tools:ignore="UnusedAttribute">
 
     <include
         android:id="@+id/llProgressBar"
         layout="@layout/progress_layout"
         android:visibility="gone" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,7 +39,7 @@
             android:layout_height="100dp"
             android:layout_margin="10dp"
             app:cardCornerRadius="5dp"
-            app:cardElevation="5dp" >
+            app:cardElevation="5dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -71,7 +69,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="gone" />
+
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -85,6 +85,7 @@
             app:itemTextColor="@color/cardview_light_background"
             app:labelVisibilityMode="selected"
             app:menu="@menu/bottom_navigation" />
+
     </LinearLayout>
 
 </FrameLayout>

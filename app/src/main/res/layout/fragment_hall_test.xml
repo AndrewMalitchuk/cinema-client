@@ -70,12 +70,15 @@
                                 android:foregroundGravity="center_horizontal"
                                 android:gravity="center_horizontal" />
                         </TableLayout>
+
                     </FrameLayout>
 
                 </LinearLayout>
+
             </HorizontalScrollView>
 
         </LinearLayout>
+
     </ScrollView>
 
 </FrameLayout>

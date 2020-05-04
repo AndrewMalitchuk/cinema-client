@@ -19,4 +19,5 @@
             app:srcCompat="@drawable/ic_ticket_accent" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

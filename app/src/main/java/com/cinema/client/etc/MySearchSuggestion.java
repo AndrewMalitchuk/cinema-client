@@ -1,6 +1,5 @@
 package com.cinema.client.etc;
 
-
 import android.annotation.SuppressLint;
 import android.os.Parcel;
 
@@ -10,7 +9,6 @@ import com.arlib.floatingsearchview.suggestions.model.SearchSuggestion;
 public class MySearchSuggestion implements SearchSuggestion {
 
     String text;
-
 
     public MySearchSuggestion(String text) {
         this.text = text;
@@ -30,4 +28,5 @@ public class MySearchSuggestion implements SearchSuggestion {
     public void writeToParcel(Parcel parcel, int i) {
 
     }
+
 }
