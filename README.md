@@ -13,7 +13,7 @@ This is a part of Bachelor diploma project "cinema-app" which consist of:
 
 This project is a [REST API]() client for Android OS, and aimed for user, for displaying main content and for performing  ticket buying process. Also, this app can be used as a e-ticket (QR-code). [Here]() you can check JavaDoc. 
 
-You can see simple demo below or [download video](). 
+You can see simple demo below or [download video](https://github.com/AndrewMalitchuk/cinema-client/blob/documentation/README/1.mp4). 
 
 **App demo:**
 
