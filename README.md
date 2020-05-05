@@ -17,14 +17,14 @@ You can see simple demo below or [download video]().
 
 **App demo:**
 
-![](https://github.com/AndrewMalitchuk/cinema-client/blob/master/README/1.gif)
+![](https://github.com/AndrewMalitchuk/cinema-client/blob/documentation/README/1.gif)
 
 **App screenshots:**
 
-| ![](https://github.com/AndrewMalitchuk/cinema-client/blob/master/README/1.png) | ![](https://github.com/AndrewMalitchuk/cinema-client/blob/master/README/2.png) |
+| ![](https://github.com/AndrewMalitchuk/cinema-client/blob/documentation/README/1.png) | ![](https://github.com/AndrewMalitchuk/cinema-client/blob/documentation/README/2.png) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![](https://github.com/AndrewMalitchuk/cinema-client/blob/master/README/3.png) | ![](https://github.com/AndrewMalitchuk/cinema-client/blob/master/README/4.png) |
-| ![](https://github.com/AndrewMalitchuk/cinema-client/blob/master/README/5.png) | ![](https://github.com/AndrewMalitchuk/cinema-client/blob/master/README/6.png) |
+| ![](https://github.com/AndrewMalitchuk/cinema-client/blob/documentation/README/3.png) | ![](https://github.com/AndrewMalitchuk/cinema-client/blob/documentation/README/4.png) |
+| ![](https://github.com/AndrewMalitchuk/cinema-client/blob/documentation/README/5.png) | ![](https://github.com/AndrewMalitchuk/cinema-client/blob/documentation/README/6.png) |
 
 ## Features/Used technologies
 

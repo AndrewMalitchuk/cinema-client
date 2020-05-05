@@ -327,6 +327,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ToolWindowFavorites.ShowToolbar" value="false" />
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="device.picker.selection" value="127d8c8a" />
     <property name="full.screen.before.presentation.mode" value="false" />
