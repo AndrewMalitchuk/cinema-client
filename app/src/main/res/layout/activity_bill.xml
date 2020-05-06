@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BillActivity">
+
+    <LinearLayout
+        android:id="@+id/card_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:title="@string/titleActivityToolbar" />
+
+        <com.developer.mtextfield.TextFieldBoxes
+            android:id="@+id/text_field_boxes2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:clickable="false"
+            app:enabled="false"
+            app:iconSignifier="@drawable/ic_ticket_black"
+            app:labelText="@string/filmNameBillActivityTextFieldBoxes">
+
+            <com.developer.mtextfield.ExtendedEditText
+                android:id="@+id/filmTitleBillActivityExtendedEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/loadingMessage" />
+
+        </com.developer.mtextfield.TextFieldBoxes>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.developer.mtextfield.TextFieldBoxes
+                android:id="@+id/text_field_boxes5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                app:enabled="false"
+                app:iconSignifier="@drawable/ic_video_label_black_24dp"
+                app:labelText="@string/cinemaNameBillActivityTextFieldBoxes">
+
+                <com.developer.mtextfield.ExtendedEditText
+                    android:id="@+id/cinemaNameBillActivityExtendedEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </com.developer.mtextfield.TextFieldBoxes>
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0"
+                android:backgroundTint="@color/colorAccent"
+                android:onClick="onChooseCinemaImageButtonClick"
+                android:tint="@android:color/white"
+                app:srcCompat="@drawable/ic_create_black_24dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.developer.mtextfield.TextFieldBoxes
+                android:id="@+id/text_field_boxes3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                app:enabled="false"
+                app:iconSignifier="@drawable/ic_access_time_black_24dp"
+                app:labelText="@string/dateAndTimeBillActivityTextFieldBoxes">
+
+                <com.developer.mtextfield.ExtendedEditText
+                    android:id="@+id/datetimeBillActivityExtendedEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </com.developer.mtextfield.TextFieldBoxes>
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0"
+                android:backgroundTint="@color/colorAccent"
+                android:onClick="onChooseDateTimeImageButtonClick"
+                android:tint="@android:color/white"
+                app:srcCompat="@drawable/ic_create_black_24dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.developer.mtextfield.TextFieldBoxes
+                android:id="@+id/text_field_boxes4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                app:enabled="false"
+                app:iconSignifier="@drawable/ic_event_seat_black_24dp"
+                app:labelText="@string/placeBillActivityTextFieldBoxes">
+
+                <com.developer.mtextfield.ExtendedEditText
+                    android:id="@+id/placesBillActivityExtendedEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </com.developer.mtextfield.TextFieldBoxes>
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="0"
+                android:backgroundTint="@color/colorAccent"
+                android:onClick="onChoosePlaceImageButtonClick"
+                android:tint="@android:color/white"
+                app:srcCompat="@drawable/ic_create_black_24dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.developer.mtextfield.TextFieldBoxes
+                android:id="@+id/text_field_boxes6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:clickable="false"
+                app:enabled="false"
+                app:iconSignifier="@drawable/ic_attach_money_black_24dp"
+                app:labelText="@string/priceBillActivityTextFieldBoxes">
+
+                <com.developer.mtextfield.ExtendedEditText
+                    android:id="@+id/priceBillActivityExtendedEditText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </com.developer.mtextfield.TextFieldBoxes>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_card"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/addCardBillActivityTextView"
+            android:textColor="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/cardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"></LinearLayout>
+
+        <in.shadowfax.proswipebutton.ProSwipeButton
+            android:id="@+id/proswipebutton_main_error"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            app:arrow_color="#33FFFFFF"
+            app:bg_color="#4CAF50"
+            app:btn_text="@string/buyBillActivityProSwipeButton"
+            app:text_color="@android:color/white"
+            app:text_size="12sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

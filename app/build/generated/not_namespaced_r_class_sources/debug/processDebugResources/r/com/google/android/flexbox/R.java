@@ -12,53 +12,53 @@ public final class R {
     public static final class attr {
         private attr() {}
 
-        public static final int alignContent = 0x7f03002a;
-        public static final int alignItems = 0x7f03002b;
-        public static final int dividerDrawable = 0x7f03011a;
-        public static final int dividerDrawableHorizontal = 0x7f03011b;
-        public static final int dividerDrawableVertical = 0x7f03011c;
-        public static final int flexDirection = 0x7f03015e;
-        public static final int flexWrap = 0x7f03015f;
-        public static final int justifyContent = 0x7f0301ce;
-        public static final int layout_alignSelf = 0x7f0301d8;
-        public static final int layout_flexBasisPercent = 0x7f03020a;
-        public static final int layout_flexGrow = 0x7f03020b;
-        public static final int layout_flexShrink = 0x7f03020c;
-        public static final int layout_maxHeight = 0x7f030215;
-        public static final int layout_maxWidth = 0x7f030216;
-        public static final int layout_minHeight = 0x7f030217;
-        public static final int layout_minWidth = 0x7f030218;
-        public static final int layout_order = 0x7f03021a;
-        public static final int layout_wrapBefore = 0x7f03021d;
-        public static final int maxLine = 0x7f03024e;
-        public static final int showDivider = 0x7f0302d8;
-        public static final int showDividerHorizontal = 0x7f0302d9;
-        public static final int showDividerVertical = 0x7f0302da;
+        public static final int alignContent = 0x7f04002a;
+        public static final int alignItems = 0x7f04002b;
+        public static final int dividerDrawable = 0x7f04011e;
+        public static final int dividerDrawableHorizontal = 0x7f04011f;
+        public static final int dividerDrawableVertical = 0x7f040120;
+        public static final int flexDirection = 0x7f04016f;
+        public static final int flexWrap = 0x7f040170;
+        public static final int justifyContent = 0x7f0401e2;
+        public static final int layout_alignSelf = 0x7f0401ec;
+        public static final int layout_flexBasisPercent = 0x7f04021e;
+        public static final int layout_flexGrow = 0x7f04021f;
+        public static final int layout_flexShrink = 0x7f040220;
+        public static final int layout_maxHeight = 0x7f040229;
+        public static final int layout_maxWidth = 0x7f04022a;
+        public static final int layout_minHeight = 0x7f04022b;
+        public static final int layout_minWidth = 0x7f04022c;
+        public static final int layout_order = 0x7f04022e;
+        public static final int layout_wrapBefore = 0x7f040231;
+        public static final int maxLine = 0x7f040264;
+        public static final int showDivider = 0x7f0402fa;
+        public static final int showDividerHorizontal = 0x7f0402fb;
+        public static final int showDividerVertical = 0x7f0402fc;
     }
     public static final class id {
         private id() {}
 
-        public static final int auto = 0x7f09005b;
-        public static final int baseline = 0x7f090064;
-        public static final int center = 0x7f0900af;
-        public static final int column = 0x7f0900c5;
-        public static final int column_reverse = 0x7f0900c6;
-        public static final int flex_end = 0x7f09011a;
-        public static final int flex_start = 0x7f09011b;
-        public static final int nowrap = 0x7f0901b6;
-        public static final int row = 0x7f0901ed;
-        public static final int row_reverse = 0x7f0901ee;
-        public static final int space_around = 0x7f09022c;
-        public static final int space_between = 0x7f09022d;
-        public static final int space_evenly = 0x7f09022e;
-        public static final int stretch = 0x7f090240;
-        public static final int wrap = 0x7f0902f0;
-        public static final int wrap_reverse = 0x7f0902f2;
+        public static final int auto = 0x7f0a0060;
+        public static final int baseline = 0x7f0a006c;
+        public static final int center = 0x7f0a00ae;
+        public static final int column = 0x7f0a00cc;
+        public static final int column_reverse = 0x7f0a00cd;
+        public static final int flex_end = 0x7f0a0135;
+        public static final int flex_start = 0x7f0a0136;
+        public static final int nowrap = 0x7f0a0201;
+        public static final int row = 0x7f0a0240;
+        public static final int row_reverse = 0x7f0a0241;
+        public static final int space_around = 0x7f0a0288;
+        public static final int space_between = 0x7f0a0289;
+        public static final int space_evenly = 0x7f0a028a;
+        public static final int stretch = 0x7f0a029d;
+        public static final int wrap = 0x7f0a0348;
+        public static final int wrap_reverse = 0x7f0a034a;
     }
     public static final class styleable {
         private styleable() {}
 
-        public static final int[] FlexboxLayout = { 0x7f03002a, 0x7f03002b, 0x7f03011a, 0x7f03011b, 0x7f03011c, 0x7f03015e, 0x7f03015f, 0x7f0301ce, 0x7f03024e, 0x7f0302d8, 0x7f0302d9, 0x7f0302da };
+        public static final int[] FlexboxLayout = { 0x7f04002a, 0x7f04002b, 0x7f04011e, 0x7f04011f, 0x7f040120, 0x7f04016f, 0x7f040170, 0x7f0401e2, 0x7f040264, 0x7f0402fa, 0x7f0402fb, 0x7f0402fc };
         public static final int FlexboxLayout_alignContent = 0;
         public static final int FlexboxLayout_alignItems = 1;
         public static final int FlexboxLayout_dividerDrawable = 2;
@@ -71,7 +71,7 @@ public final class R {
         public static final int FlexboxLayout_showDivider = 9;
         public static final int FlexboxLayout_showDividerHorizontal = 10;
         public static final int FlexboxLayout_showDividerVertical = 11;
-        public static final int[] FlexboxLayout_Layout = { 0x7f0301d8, 0x7f03020a, 0x7f03020b, 0x7f03020c, 0x7f030215, 0x7f030216, 0x7f030217, 0x7f030218, 0x7f03021a, 0x7f03021d };
+        public static final int[] FlexboxLayout_Layout = { 0x7f0401ec, 0x7f04021e, 0x7f04021f, 0x7f040220, 0x7f040229, 0x7f04022a, 0x7f04022b, 0x7f04022c, 0x7f04022e, 0x7f040231 };
         public static final int FlexboxLayout_Layout_layout_alignSelf = 0;
         public static final int FlexboxLayout_Layout_layout_flexBasisPercent = 1;
         public static final int FlexboxLayout_Layout_layout_flexGrow = 2;

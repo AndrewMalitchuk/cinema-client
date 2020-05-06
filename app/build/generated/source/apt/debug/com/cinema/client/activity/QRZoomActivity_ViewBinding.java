@@ -3,6 +3,7 @@ package com.cinema.client.activity;
 
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import butterknife.Unbinder;
@@ -24,6 +25,7 @@ public class QRZoomActivity_ViewBinding implements Unbinder {
     this.target = target;
 
     target.layout = Utils.findRequiredViewAsType(source, R.id.layout, "field 'layout'", LinearLayout.class);
+    target.textView8 = Utils.findRequiredViewAsType(source, R.id.textView8, "field 'textView8'", TextView.class);
   }
 
   @Override
@@ -34,5 +36,6 @@ public class QRZoomActivity_ViewBinding implements Unbinder {
     this.target = null;
 
     target.layout = null;
+    target.textView8 = null;
   }
 }

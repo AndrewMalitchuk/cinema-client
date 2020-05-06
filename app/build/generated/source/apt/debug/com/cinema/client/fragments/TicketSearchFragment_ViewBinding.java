@@ -2,6 +2,7 @@
 package com.cinema.client.fragments;
 
 import android.view.View;
+import android.widget.FrameLayout;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,6 +22,7 @@ public class TicketSearchFragment_ViewBinding implements Unbinder {
 
     target.recyclerView = Utils.findRequiredViewAsType(source, R.id.myTicketsRecycleView, "field 'recyclerView'", RecyclerView.class);
     target.mSearchView = Utils.findRequiredViewAsType(source, R.id.floating_search_view, "field 'mSearchView'", FloatingSearchView.class);
+    target.frame = Utils.findRequiredViewAsType(source, R.id.frame, "field 'frame'", FrameLayout.class);
   }
 
   @Override
@@ -32,5 +34,6 @@ public class TicketSearchFragment_ViewBinding implements Unbinder {
 
     target.recyclerView = null;
     target.mSearchView = null;
+    target.frame = null;
   }
 }

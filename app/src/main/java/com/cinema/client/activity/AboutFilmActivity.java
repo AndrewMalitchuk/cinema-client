@@ -1,53 +1,46 @@
 package com.cinema.client.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.content.ContextCompat;
-import androidx.core.widget.NestedScrollView;
-
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.cinema.client.MainActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.appcompat.widget.Toolbar;
+
+import com.bumptech.glide.Glide;
 import com.cinema.client.R;
+import com.cinema.client.requests.APIClient;
+import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.FilmAPI;
 import com.devs.readmoreoption.ReadMoreOption;
-import com.droidbyme.dialoglib.DroidDialog;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
-import com.github.rubensousa.bottomsheetbuilder.BottomSheetBuilder;
-import com.github.rubensousa.bottomsheetbuilder.BottomSheetMenuDialog;
-import com.github.rubensousa.bottomsheetbuilder.adapter.BottomSheetItemClickListener;
+import com.flaviofaria.kenburnsview.KenBurnsView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
-import com.skyhope.materialtagview.TagView;
-import com.skyhope.materialtagview.enums.TagSeparator;
-
-
-import java.util.ArrayList;
+import com.rw.loadingdialog.LoadingView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import me.gujun.android.taggroup.TagGroup;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AboutFilmActivity extends AppCompatActivity {
 
-    @BindView(R.id.textView4)
-    TextView textView4;
+    APIInterface apiInterface;
+
+    @BindView(R.id.cinemaLocationCinemaActivityTextView)
+    TextView filmDescriptionFilmActivityEditText;
 
     @BindView(R.id.mScrollView)
     ScrollView scrollView;
@@ -58,134 +51,125 @@ public class AboutFilmActivity extends AppCompatActivity {
     @BindView(R.id.linLayout)
     LinearLayout linLayout;
 
+    @BindView(R.id.cinemaNameBigCinemaActivityTextView)
+    AppCompatTextView filmTitleFilmActivityEditText;
 
-    private BottomSheetMenuDialog mBottomSheetDialog;
-    private boolean mShowingLongDialog;
+    @BindView(R.id.my_toolbar)
+    Toolbar myToolbar;
+
+    @BindView(R.id.telephoneAboutCinemaTextView)
+    AppCompatTextView dateFilmActivityEditText;
+
+    @BindView(R.id.youtubePreviewFilmActivityPlayerView)
+    YouTubePlayerView youtubePreviewFilmActivityPlayerView;
+
+    @BindView(R.id.filmPosterFilmActivityImageView)
+    KenBurnsView filmPosterFilmActivityImageView;
+
+    @BindView(R.id.additionalInfoFilmActivityTagGroup)
+    TagGroup additionalInfoFilmActivityTagGroup;
+
+    private ReadMoreOption readMoreOption;
+
+    private FilmAPI currentFilm;
+
+    private LoadingView loadingView;
+
+    @BindView(R.id.frame)
+    RelativeLayout frame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_film);
-
         ButterKnife.bind(this);
-
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-
-        myToolbar.setTitle("Once upon a time in Hollywood");
+        myToolbar.setTitle(R.string.loadingMessage);
         setSupportActionBar(myToolbar);
-
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
         myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            public void onClick(View v) {
+                onBackPressed();
             }
+
         });
+        loadingView = new LoadingView.Builder(getApplication())
+                .setProgressColorResource(R.color.colorAccent)
+                .setBackgroundColorRes(R.color.white)
+                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+                .attachTo(frame);
 
-
-        //
-        TagGroup mTagGroup = (TagGroup) findViewById(R.id.tag_group);
-        mTagGroup.setTags(new String[]{"Tag1", "Tag2", "Tag3"});
-
-
-        //
-        YouTubePlayerView youTubePlayerView = findViewById(R.id.youtube_player_view);
-        getLifecycle().addObserver(youTubePlayerView);
-
-        youTubePlayerView.getYouTubePlayerWhenReady(e -> {
-//            e.loadVideo("bGS3n7yFNv0", 0);
-            e.cueVideo("bGS3n7yFNv0", 0);
-        });
-
-
-
-        youTubePlayerView.enableBackgroundPlayback(false);
-        youTubePlayerView.setEnableAutomaticInitialization(false);
-
-
-//        youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
-//            @Override
-//            public void onReady(@NonNull YouTubePlayer youTubePlayer) {
-//                String videoId = "bGS3n7yFNv0";
-//                youTubePlayer.loadVideo(videoId, 0);
-//            }
-//        });
-
-
-        //
-
+        loadingView.show();
+        getLifecycle().addObserver(youtubePreviewFilmActivityPlayerView);
+        youtubePreviewFilmActivityPlayerView.enableBackgroundPlayback(false);
+        youtubePreviewFilmActivityPlayerView.setEnableAutomaticInitialization(false);
         FlowingGradientClass grad = new FlowingGradientClass();
         grad.setBackgroundResource(R.drawable.translate)
                 .onLinearLayout(linLayout)
                 .setTransitionDuration(4000)
                 .start();
-
-        //
-        ReadMoreOption readMoreOption = new ReadMoreOption.Builder(this)
-                .textLength(3, ReadMoreOption.TYPE_LINE) // OR
-                //.textLength(300, ReadMoreOption.TYPE_CHARACTER)
+        readMoreOption = new ReadMoreOption.Builder(this)
+                .textLength(3, ReadMoreOption.TYPE_LINE)
                 .moreLabel("MORE")
                 .lessLabel("LESS")
-                .moreLabelColor(Color.RED)
+                .moreLabelColor(R.color.colorAccent)
                 .lessLabelColor(Color.BLUE)
                 .labelUnderLine(true)
                 .expandAnimation(true)
                 .build();
+        apiInterface = APIClient.getClient().create(APIInterface.class);
+        int id = getIntent().getIntExtra("filmId", -1);
+        if (id == -1) {
+            id = 12;
+        }
+        Call<FilmAPI> call = apiInterface.getFilmById(id);
+        call.enqueue(new Callback<FilmAPI>() {
 
-//        readMoreOption.addReadMoreTo(textView4, getString(R.string.long_desc));
-        readMoreOption.addReadMoreTo(textView4, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum tempus egestas sed sed risus pretium quam vulputate dignissim. Malesuada pellentesque elit eget gravida cum. Duis ultricies lacus sed turpis tincidunt id. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu. Mattis vulputate enim nulla aliquet porttitor lacus. Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum tellus. Blandit volutpat maecenas volutpat blandit aliquam etiam erat. Facilisis sed odio morbi quis commodo odio aenean. Ridiculus mus mauris vitae ultricies leo. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum enim. Ipsum dolor sit amet consectetur. Consectetur a erat nam at lectus urna. Aenean et tortor at risus viverra adipiscing at in tellus. Nibh praesent tristique magna sit amet purus gravida quis. Ornare lectus sit amet est placerat in egestas erat imperdiet. Morbi tincidunt ornare massa eget egestas purus viverra accumsan. Interdum velit euismod in pellentesque massa placerat.  Risus ultricies tristique nulla aliquet enim. At augue eget arcu dictum. Semper eget duis at tellus at urna. A cras semper auctor neque. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Leo urna molestie at elementum eu. Ut eu sem integer vitae justo eget magna fermentum. Id leo in vitae turpis. Ultricies lacus sed turpis tincidunt id aliquet risus. Aliquam ultrices sagittis orci a scelerisque. Tellus at urna condimentum mattis pellentesque id nibh tortor id. Sit amet facilisis magna etiam tempor orci. Sit amet luctus venenatis lectus magna fringilla. Ac ut consequat semper viverra nam libero. Est ullamcorper eget nulla facilisi etiam dignissim diam. Tempus quam pellentesque nec nam aliquam. Enim diam vulputate ut pharetra sit amet aliquam.  Integer quis auctor elit sed. Luctus venenatis lectus magna fringilla urna. Sit amet volutpat consequat mauris. Sed turpis tincidunt id aliquet risus feugiat. Eu feugiat pretium nibh ipsum consequat. Ultricies integer quis auctor elit sed vulputate mi sit amet. Non enim praesent elementum facilisis leo. Ut tortor pretium viverra suspendisse potenti nullam ac tortor. Purus non enim praesent elementum. Risus at ultrices mi tempus imperdiet nulla malesuada pellentesque. Sit amet mauris commodo quis imperdiet massa. Lectus magna fringilla urna porttitor rhoncus dolor. Orci a scelerisque purus semper eget. Elementum facilisis leo vel fringilla est ullamcorper eget nulla. Pharetra convallis posuere morbi leo urna molestie at. Nascetur ridiculus mus mauris vitae ultricies.\n");
+            @Override
+            public void onResponse(Call<FilmAPI> call, Response<FilmAPI> response) {
+                currentFilm = response.body();
+                setContent(currentFilm);
+            }
 
+            @Override
+            public void onFailure(Call<FilmAPI> call, Throwable t) {
+                call.cancel();
+                Intent intent = new Intent(AboutFilmActivity.this, ErrorActivity.class);
+                intent.putExtra("isNetworkError", true);
+                startActivity(intent);
+            }
 
+        });
     }
 
+    /**
+     * Opens activity for zooming film's poster
+     *
+     * @param view
+     */
     public void onImageClick(View view) {
         Intent intent = new Intent(this, ZoomImageActivity.class);
+        intent.putExtra("url", currentFilm.getPicUrl());
         startActivity(intent);
     }
 
-
+    /**
+     * The handler for FAB click; launch BillActivity
+     *
+     * @param view
+     */
     public void onFabClick(View view) {
-//        mShowingLongDialog = true;
-//        mBottomSheetDialog = new BottomSheetBuilder(this, R.style.AppTheme_BottomSheetDialog)
-//                .setMode(BottomSheetBuilder.MODE_LIST)
-//                .setMenu(R.menu.navigation)
-//                .addDividerItem()
-//                .addTitleItem("Share")
-//                .setItemClickListener(new BottomSheetItemClickListener() {
-//                    @Override
-//                    public void onBottomSheetItemClick(MenuItem item) {
-//                        Log.d("Item click", item.getTitle() + "");
-//                        mShowingLongDialog = false;
-//                    }
-//                })
-//                .createDialog();
-//
-//        mBottomSheetDialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-//            @Override
-//            public void onCancel(DialogInterface dialog) {
-//                mShowingLongDialog = false;
-//            }
-//        });
-//        mBottomSheetDialog.show();
-
-        // Share link (?)
-//        Intent share = new Intent(android.content.Intent.ACTION_SEND);
-//        share.setType("text/plain");
-//        share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
-//
-//        // Add data to the intent, the receiving app will decide
-//        // what to do with it.
-//        share.putExtra(Intent.EXTRA_SUBJECT, "Title Of The Post");
-//        share.putExtra(Intent.EXTRA_TEXT, "http://www.codeofaninja.com");
-//
-//        startActivity(Intent.createChooser(share, "Share link!"));
-
-
-
-        Intent intent = new Intent(AboutFilmActivity.this, NewNewCardActivity.class);
+        Intent intent = new Intent(AboutFilmActivity.this, BillActivity.class);
+        intent.putExtra("filmTitle", currentFilm.getTitle());
+        intent.putExtra("filmId", currentFilm.getId());
+        String cinemaName = getIntent().getStringExtra("cinemaName");
+        int cinemaId = getIntent().getIntExtra("cinemaId", -1);
+        if (cinemaId != -1 && cinemaName != null) {
+            intent.putExtra("cinemaId", cinemaId);
+            intent.putExtra("cinemaName", cinemaName);
+        }
         startActivity(intent);
 
     }
@@ -198,22 +182,44 @@ public class AboutFilmActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         switch (item.getItemId()) {
             case R.id.action_share:
                 Intent share = new Intent(android.content.Intent.ACTION_SEND);
                 share.setType("text/plain");
                 share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
-
-                // Add data to the intent, the receiving app will decide
-                // what to do with it.
-                share.putExtra(Intent.EXTRA_SUBJECT, "Once upon a time in Hollywood");
-                share.putExtra(Intent.EXTRA_TEXT, "https://www.imdb.com/title/tt7131622/?ref_=nv_sr_srsg_0");
-
-                startActivity(Intent.createChooser(share, "Look what I choose!"));
+                share.putExtra(Intent.EXTRA_SUBJECT, currentFilm.getTitle());
+                share.putExtra(Intent.EXTRA_TEXT, currentFilm.getVideoUrl());
+                startActivity(Intent.createChooser(share, "cinema-app"));
                 break;
         }
-
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * The method that set content for activity.
+     *
+     * @param content  current Cinema entity
+     */
+    public void setContent(FilmAPI content) {
+        if (content != null) {
+            Glide.with(this).load(APIClient.HOST + content.getPicUrl()).into(filmPosterFilmActivityImageView);
+            filmTitleFilmActivityEditText.setText(content.getTitle());
+            myToolbar.setTitle(content.getTitle());
+            readMoreOption.addReadMoreTo(filmDescriptionFilmActivityEditText, content.getDescription());
+            dateFilmActivityEditText.setText(content.getDate());
+            additionalInfoFilmActivityTagGroup.setTags(content.getDuration().toString() + " min.");
+            youtubePreviewFilmActivityPlayerView.getYouTubePlayerWhenReady(e -> {
+                e.cueVideo(content.getVideoUrl().split("v=")[1], 0);
+            });
+            loadingView.hide();
+        } else {
+            Intent intent = new Intent(this, ErrorActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

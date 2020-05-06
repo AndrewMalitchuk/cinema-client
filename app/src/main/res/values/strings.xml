@@ -18,4 +18,98 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="cinemaAppNotify">cinema_app_notify_about_film</string>
+    <string name="filmReminderNotificationMainActivityString">Hey, your film will be shown soon!</string>
+
+    <string name="loadingMessage">Loading...</string>
+    <string name="app_title">cinema-app</string>
+
+    <string name="help_text">Mетою даного дипломного проекту є демонстрація отриманих знань та навичок для побудови складної інформаційної системи для надання кінцевим користувачам всіх необхідних функціональних можливостей для купівлі/бронювання квитків онлайн.\n\nГоловне завдання дипломного проекту – реалізувати проект, який буде справно функіонувати, виконувати всі поставлені вимоги та задовільняти потреби користувачів; іншими словами – виконати всі необхідні дії починаючи від етапу формування ідеї та технічного завдання закінчюючи тестуванням та розгортанням розробленої програмної системи та її компнетів.</string>
+
+
+    <string name="locationAboutCinemaActivityTextView">Location:</string>
+    <string name="telephoneAboutCinemaActivityTextView">Telephone:</string>
+    <string name="timelineAboutCinemaActivityTextView">Timeline:</string>
+
+    <string name="descriptionAboutFilmActivityTextView">Description:</string>
+    <string name="dateAboutFilmActivityTextView">Date:</string>
+    <string name="additionalInfoAboutFilmActivityTextView">Additional info:</string>
+
+    <string name="addCardBillActivityTextView">ADD CARD</string>
+    <string name="buyBillActivityProSwipeButton">Buy</string>
+    <string name="titleActivityToolbar">Bill info</string>
+    <string name="filmNameBillActivityTextFieldBoxes">Film name</string>
+    <string name="cinemaNameBillActivityTextFieldBoxes">Cinema</string>
+    <string name="dateAndTimeBillActivityTextFieldBoxes">Date and time</string>
+    <string name="placeBillActivityTextFieldBoxes">Place</string>
+    <string name="priceBillActivityTextFieldBoxes">Price</string>
+
+    <string name="cardTitleCardActivityPaymentCardView">Pay Now</string>
+    <string name="submitCardActivityPaymentCardView">Done</string>
+
+    <string name="understandErrorActivityButton">understand and forgive</string>
+
+    <string name="sectorHallNavigationActivityTextView">Selected places</string>
+
+    <string name="thatSAllPosterActivityTextView">That\'s all</string>
+    <string name="posterPosterActivityToolbar">Poster</string>
+
+    <string name="showQrQRZoomActivityTextView">Show QR code to a doorman / an usher.</string>
+
+    <string name="searchSearchCinemaActivityFloatingSearchView">I\'m want to go to...</string>
+    <string name="searchSearchFilmActivityFloatingSearchView">I\'m want to watch...</string>
+
+    <string name="versionSplashActivityTextView">version 0.1</string>
+
+    <string name="selectedDateStatusActivityTextView">Selected date:</string>
+    <string name="selectedTimeStatusActivityTextView">Selected time:</string>
+
+    <string name="dateTicketActivityTextView">Date</string>
+    <string name="timeTicketActivityTextView">Time</string>
+    <string name="seatTicketActivityTextView">Seat</string>
+
+    <string name="moreMainFlowFragmentButton">More</string>
+    <string name="lookingForMainFlowFragmentTextView">I\'m looking for...</string>
+    <string name="lookingForCinemaMainFlowFragmentButton">Cinemas</string>
+    <string name="lookingForFilmMainFlowFragmentButton">Films</string>
+    <string name="selectedCinemasMainFlowFragmentTextView">Selected Cinemas</string>
+    <string name="genreMainFlowFragmentTextView">Genre</string>
+    <string name="citiesMainFlowFragmentTextView">Cities</string>
+
+    <string name="searchTicketActivityFloatingSearchView">I\'m want to find ticket to...</string>
+
+    <string name="goBackTextView">Go back</string>
+
+    <string name="changeNameDialogTextView">Your name</string>
+
+    <string name="statusHallHelpDialogTextView">Cell status</string>
+    <string name="freeHallHelpDialogTextView">Free</string>
+    <string name="bookedHallHelpDialogTextView">Booked</string>
+    <string name="boughtHallHelpDialogTextView">Bought</string>
+    <string name="closeHallHelpDialogButoon">Close</string>
+
+
+    <string name="shareFilmMenuItem">Share</string>
+
+    <string name="leftHallNavigationMenuItem">Left</string>
+    <string name="centerHallNavigationMenuItem">Center</string>
+    <string name="rightHallNavigationMenuItem">Right</string>
+
+    <string name="pinCinemaMenuItem">Pin to favourite</string>
+    <string name="mapCinemaMenuItem">Let\'s go</string>
+
+    <string name="helpHallMenuItem">Help</string>
+    <string name="okHallMenuItem">OK</string>
+
+    <string name="feedbackMainMenuItem">Feedback</string>
+    <string name="changeNameMainMenuItem">Change name</string>
+    <string name="whatsNewNameMainMenuItem">What\'s new</string>
+    <string name="aboutDevNameMainMenuItem">About developer</string>
+    <string name="logoutNameMainMenuItem">Logout</string>
+
+    <string name="deleteMenuItem">Delete</string>
+    <string name="cancelMenuItem">Cancel</string>
+
+
 </resources>

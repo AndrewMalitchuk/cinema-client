@@ -1,44 +1,52 @@
 package com.cinema.client.activity;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.cardview.widget.CardView;
-
 import android.Manifest;
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.preference.PreferenceManager;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
-import com.cinema.client.MainActivity;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.cinema.client.R;
-import com.devs.readmoreoption.ReadMoreOption;
+import com.cinema.client.requests.APIClient;
+import com.cinema.client.requests.APIInterface;
+import com.cinema.client.requests.entities.CinemaAPI;
+import com.cinema.client.requests.entities.FilmAPI;
+import com.cinema.client.requests.entities.TimelineAPI;
 import com.dynamitechetan.flowinggradient.FlowingGradientClass;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.reflect.TypeToken;
+import com.liangfeizc.avatarview.AvatarView;
 import com.pd.chocobar.ChocoBar;
+import com.rw.loadingdialog.LoadingView;
 import com.vivekkaushik.datepicker.DatePickerTimeline;
 import com.vivekkaushik.datepicker.OnDateSelectedListener;
+
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
@@ -46,17 +54,26 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.ScaleBarOverlay;
-import org.osmdroid.views.overlay.infowindow.MarkerInfoWindow;
+
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import me.gujun.android.taggroup.TagGroup;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
+import jp.wasabeef.glide.transformations.BlurTransformation;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AboutCinemaActivity extends AppCompatActivity {
-
-
-    @BindView(R.id.textView4)
-    TextView textView4;
 
     @BindView(R.id.mScrollView)
     ScrollView scrollView;
@@ -73,111 +90,99 @@ public class AboutCinemaActivity extends AppCompatActivity {
     @BindView(R.id.cv3)
     CardView cv3;
 
-
     @BindView(R.id.datePickerTimeline)
     DatePickerTimeline datePickerTimeline;
 
-    @BindView(R.id.textView7)
-    TextView textView7;
+    @BindView(R.id.cinemaPictureCinemaActivityAvatarView)
+    AvatarView cinemaPictureCinemaActivityAvatarView;
 
+    @BindView(R.id.cinemaNameBigCinemaActivityTextView)
+    TextView cinemaNameBigCinemaActivityTextView;
 
-//    private MapContainerView mapView;
+    @BindView(R.id.cinemaLocationCinemaActivityTextView)
+    TextView cinemaLocationCinemaActivityTextView;
 
+    @BindView(R.id.telephoneAboutCinemaTextView)
+    TextView telephoneAboutCinemaTextView;
 
-//    private MapView mapView;
+    @BindView(R.id.my_toolbar)
+    Toolbar myToolbar;
 
-    MapView map = null;
+    @BindView(R.id.imageView5)
+    ImageView blurImageView;
 
+    @BindView(R.id.relativeLayout2)
+    ConstraintLayout relativeLayout2;
+
+    LoadingView loadingView;
+
+    MapView map;
+    private Marker marker;
+
+    private APIInterface apiInterface;
+    private CinemaAPI currentCinema;
+
+    public static final String FAVOURITE_CINEMAS_PREF = "favourite_cinema_pref";
+    private SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about_cinema);
-
         ButterKnife.bind(this);
-
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        myToolbar.setTitle("Kosmos");
+        if (android.os.Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
+        myToolbar.setTitle(this.getResources().getString(R.string.loadingMessage).toString());
         setSupportActionBar(myToolbar);
-
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-
         myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            public void onClick(View v) {
+                onBackPressed();
             }
+
         });
-
-
+        loadingView = new LoadingView.Builder(this)
+                .setProgressColorResource(R.color.colorAccent)
+                .setProgressStyle(LoadingView.ProgressStyle.CYCLIC)
+                .attachTo(relativeLayout2);
         cv1.setElevation(5);
-//        cv2.setElevation(5);
-//        cv3.setElevation(5);
-
-
-        //
-
-//        blurImageView.setBlur(10);
-
-
-        SpannableString content = new SpannableString("+380 (50) 541 52 21");
-        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-        textView7.setText(content);
-        textView7.setOnClickListener(this::onPhoneClick);
-        //
-
-
+        sharedpreferences = getSharedPreferences(FAVOURITE_CINEMAS_PREF, Context.MODE_PRIVATE);
         FlowingGradientClass grad = new FlowingGradientClass();
         grad.setBackgroundResource(R.drawable.translate)
                 .onLinearLayout(linLayout)
                 .setTransitionDuration(4000)
                 .start();
-
-
         Context ctx = getApplicationContext();
         Configuration.getInstance().load(ctx, PreferenceManager.getDefaultSharedPreferences(ctx));
-
-
-        map = (MapView) findViewById(R.id.map);
+        map = findViewById(R.id.map);
         map.setTileSource(TileSourceFactory.MAPNIK);
-
         map.setBuiltInZoomControls(false);
         map.setMultiTouchControls(true);
-
-
-        IMapController mapController = map.getController();
-        mapController.setZoom(16.5);
-        GeoPoint startPoint = new GeoPoint(48.931572, 24.697925);
-        mapController.setCenter(startPoint);
-
-
-        //
-        Marker marker = new Marker(map);
-
-        marker.setPosition(new GeoPoint(48.931572, 24.697925));
-        marker.setIcon(getResources().getDrawable(R.drawable.ic_ticket_black));
-        marker.setTitle("lorem ipsum dolor sit amet");
-        marker.showInfoWindow();
-        map.getOverlays().add(marker);
-        map.invalidate();
-
-
-        final Context context = getApplicationContext();
-        final DisplayMetrics dm = context.getResources().getDisplayMetrics();
-        ScaleBarOverlay mScaleBarOverlay = new ScaleBarOverlay(map);
-        mScaleBarOverlay.setCentred(true);
-//play around with these about_film_menu to get the location on screen in the right place for your application
-        mScaleBarOverlay.setScaleBarOffset(dm.widthPixels / 2, 10);
-        map.getOverlays().add(mScaleBarOverlay);
-
-
-        //
+        marker = new Marker(map);
+        LocalDateTime date;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            date = LocalDateTime.now();
+            datePickerTimeline.setInitialDate(date.getYear(), date.getMonthValue() - 1, date.getDayOfMonth());
+        }
         datePickerTimeline.setOnDateSelectedListener(new OnDateSelectedListener() {
+
             @Override
             public void onDateSelected(int year, int month, int day, int dayOfWeek) {
-                Log.d("Date:", year + " " + month + " " + day);
                 Intent intent = new Intent(AboutCinemaActivity.this, StatusActivity.class);
+                intent.putExtra("cinemaName", currentCinema.getName());
+                Date date = new Date();
+                date.setYear(year);
+                date.setMonth(month);
+                date.setDate(day);
+                Toast.makeText(AboutCinemaActivity.this, "" + date.toString(), Toast.LENGTH_SHORT).show();
+                intent.putExtra("selectedDate", year + "-" + (month + 1) + "-" + day);
+                intent.putExtra("cinemaId", currentCinema.getId());
+                intent.putExtra("isFilmTimeline", false);
                 startActivity(intent);
             }
 
@@ -185,26 +190,63 @@ public class AboutCinemaActivity extends AppCompatActivity {
             public void onDisabledDateSelected(int year, int month, int day, int dayOfWeek, boolean isDisabled) {
 
             }
+
         });
+        int id = getIntent().getIntExtra("cinemaId", -1);
+        if (id == -1) {
+            id = 9;
+        }
+        apiInterface = APIClient.getClient().create(APIInterface.class);
+        Call<CinemaAPI> call = apiInterface.getCinemaById(id);
+        call.enqueue(new Callback<CinemaAPI>() {
 
+            @Override
+            public void onResponse(Call<CinemaAPI> call, Response<CinemaAPI> response) {
+                currentCinema = response.body();
+                setContent(currentCinema);
+            }
+
+            @Override
+            public void onFailure(Call<CinemaAPI> call, Throwable t) {
+                call.cancel();
+                Intent intent = new Intent(AboutCinemaActivity.this, ErrorActivity.class);
+                intent.putExtra("isNetworkError", true);
+                startActivity(intent);
+            }
+
+        });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.cinema_menu, menu);
-
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.maps_direction) {
-            Uri gmmIntentUri = Uri.parse("geo:48.931572, 24.697925");
+            Uri gmmIntentUri = Uri.parse("geo:" + currentCinema.getGeoLat() + ", " + currentCinema.getGeoLon());
             Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
             mapIntent.setPackage("com.google.android.apps.maps");
             startActivity(mapIntent);
-        }else if (item.getItemId()==R.id.pin_action){
+        } else if (item.getItemId() == R.id.pin_action) {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            String json = sharedpreferences.getString("fav_json", null);
+            Gson gson = new GsonBuilder().create();
+            List<Integer> list;
+            if (json == null) {
+                list = new ArrayList<>();
+            } else {
+                list = gson.fromJson(json, new TypeToken<List<Integer>>() {
+                }.getType());
+            }
+            if (list.contains(currentCinema.getId()) == false) {
+                list.add(currentCinema.getId());
+            }
+            editor.remove("fav_json");
+            editor.putString("fav_json", gson.toJson(list));
+            editor.commit();
             ChocoBar.builder().setActivity(AboutCinemaActivity.this)
                     .setText("Pin to favourite")
                     .setDuration(ChocoBar.LENGTH_SHORT)
@@ -214,20 +256,72 @@ public class AboutCinemaActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Opens activity for zooming cinema's picture
+     *
+     * @param view
+     */
     public void onImageClick(View view) {
         Intent intent = new Intent(AboutCinemaActivity.this, ZoomImageActivity.class);
+        intent.putExtra("url", currentCinema.getPicUrl());
         startActivity(intent);
     }
 
+    /**
+     * The handler for FAB click; perform Timeline API request
+     *
+     * @param view
+     */
     public void onFabClick(View view) {
-        Intent intent = new Intent(AboutCinemaActivity.this, PosterActivity.class);
-        startActivity(intent);
+        loadingView.show();
+        Observable<List<TimelineAPI>> callRx = apiInterface.getTimelineByCinemaIdRx(currentCinema.getId());
+        callRx.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .map(result -> result)
+                .doOnComplete(() -> loadingView.hide())
+                .subscribe(this::onTimelineSuccess);
     }
 
+    /**
+     * The handler for successful Timeline API request
+     *
+     * @param result result of Timeline API request
+     */
+    private void onTimelineSuccess(List<TimelineAPI> result) {
+        try {
+            Set<Integer> uniqueFilms = new HashSet<>();
+            for (TimelineAPI timeline : result) {
+                Call<FilmAPI> film = apiInterface.getFilmById(timeline.getFilmId());
+                uniqueFilms.add(film.execute().body().getId());
+            }
+            List<FilmAPI> res = new ArrayList<>();
+            for (Integer i : uniqueFilms) {
+                res.add(apiInterface.getFilmById(i).execute().body());
+            }
+            Gson gson = new GsonBuilder().create();
+            JsonArray myCustomArray = gson.toJsonTree(res).getAsJsonArray();
+            Intent intent = new Intent(AboutCinemaActivity.this, PosterActivity.class);
+            intent.putExtra("json", myCustomArray.toString());
+            intent.putExtra("genre", currentCinema.getName());
+            intent.putExtra("cinemaId", currentCinema.getId());
+            intent.putExtra("cinemaName", currentCinema.getName());
+            loadingView.hide();
+            startActivity(intent);
+        } catch (IOException e) {
+            e.printStackTrace();
+            Intent intent = new Intent(AboutCinemaActivity.this, ErrorActivity.class);
+            intent.putExtra("isAppError", true);
+            startActivity(intent);
+        }
+    }
 
-
+    /**
+     * Handler for on phone number click
+     *
+     * @param view
+     */
     public void onPhoneClick(View view) {
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "+380 (50) 541 52 21"));
+        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + currentCinema.getTelephone()));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
@@ -241,6 +335,48 @@ public class AboutCinemaActivity extends AppCompatActivity {
             }
         }
         startActivity(intent);
+    }
+
+    /**
+     * The method that set content for activity.
+     *
+     * @param content  current Cinema entity
+     */
+    public void setContent(CinemaAPI content) {
+        Glide.with(this).load(APIClient.HOST + content.getPicUrl()).into(cinemaPictureCinemaActivityAvatarView);
+        cinemaNameBigCinemaActivityTextView.setText(content.getName());
+        myToolbar.setTitle(content.getName());
+        cinemaLocationCinemaActivityTextView.setText(content.getAddress());
+        telephoneAboutCinemaTextView.setText(content.getTelephone());
+        SpannableString spannableString = new SpannableString(content.getTelephone());
+        spannableString.setSpan(new UnderlineSpan(), 0, spannableString.length(), 0);
+        telephoneAboutCinemaTextView.setText(spannableString);
+        telephoneAboutCinemaTextView.setOnClickListener(this::onPhoneClick);
+        Glide.with(this)
+                .load(APIClient.HOST + content.getPicUrl())
+                .apply(RequestOptions.bitmapTransform(new BlurTransformation(25, 3)))
+                .into(blurImageView);
+        marker.setPosition(new GeoPoint(content.getGeoLat(), content.getGeoLon()));
+        marker.setIcon(getResources().getDrawable(R.drawable.ic_ticket_black));
+        marker.setTitle(content.getName());
+        marker.showInfoWindow();
+        map.getOverlays().add(marker);
+        map.invalidate();
+        final Context context = getApplicationContext();
+        final DisplayMetrics dm = context.getResources().getDisplayMetrics();
+        ScaleBarOverlay mScaleBarOverlay = new ScaleBarOverlay(map);
+        mScaleBarOverlay.setCentred(true);
+        mScaleBarOverlay.setScaleBarOffset(dm.widthPixels / 2, 10);
+        map.getOverlays().add(mScaleBarOverlay);
+        IMapController mapController = map.getController();
+        mapController.setZoom(19);
+        GeoPoint startPoint = new GeoPoint(content.getGeoLat(), content.getGeoLon());
+        mapController.setCenter(startPoint);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
 }

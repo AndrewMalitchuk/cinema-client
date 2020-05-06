@@ -2,10 +2,13 @@
 package com.cinema.client.activity;
 
 import android.view.View;
+import android.widget.CalendarView;
 import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.cinema.client.R;
@@ -28,8 +31,14 @@ public class StatusActivity_ViewBinding implements Unbinder {
 
     target.sequenceLayout = Utils.findRequiredViewAsType(source, R.id.status, "field 'sequenceLayout'", SequenceLayout.class);
     target.selectedDateTimeTextView = Utils.findRequiredViewAsType(source, R.id.selectedDateTimeTextView, "field 'selectedDateTimeTextView'", TextView.class);
+    target.selectedTimelineStatusActivityTextView = Utils.findRequiredViewAsType(source, R.id.selectedTimelineStatusActivityTextView, "field 'selectedTimelineStatusActivityTextView'", TextView.class);
+    target.selectedPriceStatusActivityTextView = Utils.findRequiredViewAsType(source, R.id.selectedPriceStatusActivityTextView, "field 'selectedPriceStatusActivityTextView'", TextView.class);
     target.floatingActionButton = Utils.findRequiredViewAsType(source, R.id.floatingActionButton, "field 'floatingActionButton'", FloatingActionButton.class);
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar7, "field 'toolbar'", Toolbar.class);
+    target.calendarView = Utils.findRequiredViewAsType(source, R.id.calendarView, "field 'calendarView'", CalendarView.class);
+    target.frame = Utils.findRequiredViewAsType(source, R.id.frame, "field 'frame'", ConstraintLayout.class);
+    target.timelineFrame = Utils.findRequiredViewAsType(source, R.id.timelineFrame, "field 'timelineFrame'", ConstraintLayout.class);
+    target.selectedCardView = Utils.findRequiredViewAsType(source, R.id.selectedCardView, "field 'selectedCardView'", CardView.class);
   }
 
   @Override
@@ -41,7 +50,13 @@ public class StatusActivity_ViewBinding implements Unbinder {
 
     target.sequenceLayout = null;
     target.selectedDateTimeTextView = null;
+    target.selectedTimelineStatusActivityTextView = null;
+    target.selectedPriceStatusActivityTextView = null;
     target.floatingActionButton = null;
     target.toolbar = null;
+    target.calendarView = null;
+    target.frame = null;
+    target.timelineFrame = null;
+    target.selectedCardView = null;
   }
 }

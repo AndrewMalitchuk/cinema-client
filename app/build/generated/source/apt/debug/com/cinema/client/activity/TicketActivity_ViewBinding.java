@@ -2,9 +2,13 @@
 package com.cinema.client.activity;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.cinema.client.R;
@@ -24,6 +28,15 @@ public class TicketActivity_ViewBinding implements Unbinder {
     this.target = target;
 
     target.ticketLinearLayout = Utils.findRequiredViewAsType(source, R.id.ticketLinearLayout, "field 'ticketLinearLayout'", LinearLayout.class);
+    target.qrCodeTicketActivityImageView = Utils.findRequiredViewAsType(source, R.id.qrCodeTicketActivityImageView, "field 'qrCodeTicketActivityImageView'", ImageView.class);
+    target.qrCodeTicketActivityEditText = Utils.findRequiredViewAsType(source, R.id.qrCodeTicketActivityEditText, "field 'qrCodeTicketActivityEditText'", AppCompatTextView.class);
+    target.filmTitleTicketActivityEditText = Utils.findRequiredViewAsType(source, R.id.filmTitleTicketActivityEditText, "field 'filmTitleTicketActivityEditText'", AppCompatTextView.class);
+    target.cinemaNameTicketActivityEditText = Utils.findRequiredViewAsType(source, R.id.cinemaNameTicketActivityEditText, "field 'cinemaNameTicketActivityEditText'", AppCompatTextView.class);
+    target.filmDateTicketActivityEditText = Utils.findRequiredViewAsType(source, R.id.filmDateTicketActivityEditText, "field 'filmDateTicketActivityEditText'", AppCompatTextView.class);
+    target.filmTimeTicketActivityEditText = Utils.findRequiredViewAsType(source, R.id.filmTimeTicketActivityEditText, "field 'filmTimeTicketActivityEditText'", AppCompatTextView.class);
+    target.placeTicketActivityEditText = Utils.findRequiredViewAsType(source, R.id.placeTicketActivityEditText, "field 'placeTicketActivityEditText'", AppCompatTextView.class);
+    target.frame = Utils.findRequiredViewAsType(source, R.id.frame, "field 'frame'", ConstraintLayout.class);
+    target.textView32 = Utils.findRequiredViewAsType(source, R.id.textView32, "field 'textView32'", TextView.class);
   }
 
   @Override
@@ -34,5 +47,14 @@ public class TicketActivity_ViewBinding implements Unbinder {
     this.target = null;
 
     target.ticketLinearLayout = null;
+    target.qrCodeTicketActivityImageView = null;
+    target.qrCodeTicketActivityEditText = null;
+    target.filmTitleTicketActivityEditText = null;
+    target.cinemaNameTicketActivityEditText = null;
+    target.filmDateTicketActivityEditText = null;
+    target.filmTimeTicketActivityEditText = null;
+    target.placeTicketActivityEditText = null;
+    target.frame = null;
+    target.textView32 = null;
   }
 }

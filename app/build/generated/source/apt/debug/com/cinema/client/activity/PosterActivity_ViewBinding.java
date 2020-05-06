@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.cinema.client.R;
@@ -31,6 +32,7 @@ public class PosterActivity_ViewBinding implements Unbinder {
     target.imageView4 = Utils.findRequiredViewAsType(source, R.id.imageView4, "field 'imageView4'", ImageView.class);
     target.textView31 = Utils.findRequiredViewAsType(source, R.id.textView31, "field 'textView31'", TextView.class);
     target.toolbar = Utils.findRequiredViewAsType(source, R.id.toolbar10, "field 'toolbar'", Toolbar.class);
+    target.frame = Utils.findRequiredViewAsType(source, R.id.frame, "field 'frame'", ConstraintLayout.class);
   }
 
   @Override
@@ -45,5 +47,6 @@ public class PosterActivity_ViewBinding implements Unbinder {
     target.imageView4 = null;
     target.textView31 = null;
     target.toolbar = null;
+    target.frame = null;
   }
 }

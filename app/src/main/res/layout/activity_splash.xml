@@ -23,7 +23,6 @@
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp">
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -38,7 +37,6 @@
 
             </LinearLayout>
 
-
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -47,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
             android:layout_weight="0"
-            android:text="Ticket Cinema App"
+            android:text="@string/app_title"
             android:textAlignment="center"
             android:textColor="@color/colorLoginActivityText"
             android:textSize="26sp"
@@ -71,9 +69,10 @@
                 android:layout_gravity="bottom|end"
                 android:layout_margin="10dp"
                 android:shadowColor="@color/about_background_color"
-                android:text="version 0.1"
+                android:text="@string/versionSplashActivityTextView"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/colorLoginActivityText" />
+
         </FrameLayout>
 
     </LinearLayout>

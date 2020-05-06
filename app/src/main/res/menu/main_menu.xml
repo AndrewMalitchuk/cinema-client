@@ -4,24 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.luasoftware.luapass.MainActivity">
 
-
-    <!-- Settings, should always be in the overflow -->
-    <item android:id="@+id/action_settings"
-        android:title="Help"
+    <item
+        android:id="@+id/action_settings"
         android:icon="@drawable/ic_help_outline_white_24dp"
-        app:showAsAction="ifRoom"/>
+        android:title="@string/helpHallMenuItem"
+        app:showAsAction="ifRoom" />
 
-    <item android:id="@+id/action_feedback"
-        android:title="Feedback"
-        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_feedback"
+        android:title="@string/feedbackMainMenuItem"
+        app:showAsAction="never" />
 
-    <item android:id="@+id/action_change_name"
-        android:title="Change name"
-        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_change_name"
+        android:title="@string/changeNameMainMenuItem"
+        app:showAsAction="never" />
 
-    <item android:id="@+id/action_logout"
-        android:title="Logout"
-        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_whats_new"
+        android:title="@string/whatsNewNameMainMenuItem"
+        app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_about_developer"
+        android:title="@string/aboutDevNameMainMenuItem"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:title="@string/logoutNameMainMenuItem"
+        app:showAsAction="never" />
 
 </menu>

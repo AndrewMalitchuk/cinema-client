@@ -1,4 +1,10 @@
-#Thu Dec 26 16:18:31 EET 2019
-base.0=/home/adular/Projects/Android/cinema-client/app/build/intermediates/transforms/dexMerger/debug/10
+#Thu Apr 30 20:35:24 EEST 2020
+path.2=classes3.dex
+path.1=classes2.dex
 path.0=classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
+base.2=/home/adular/Projects/Android/cinema-client/app/build/intermediates/transforms/dexMerger/debug/10
+base.1=/home/adular/Projects/Android/cinema-client/app/build/intermediates/transforms/dexMerger/debug/10
+base.0=/home/adular/Projects/Android/cinema-client/app/build/intermediates/transforms/dexMerger/debug/10

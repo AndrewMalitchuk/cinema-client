@@ -7,10 +7,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.CallSuper;
 import androidx.annotation.UiThread;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
+import com.asksira.loopingviewpager.LoopingViewPager;
 import com.cinema.client.R;
-import com.freegeek.android.materialbanner.MaterialBanner;
 import com.liangfeizc.avatarview.AvatarView;
 import java.lang.IllegalStateException;
 import java.lang.Override;
@@ -23,14 +26,11 @@ public class MainFlowFragment_ViewBinding implements Unbinder {
     this.target = target;
 
     target.linLayout = Utils.findRequiredViewAsType(source, R.id.linLayout, "field 'linLayout'", LinearLayout.class);
-    target.button21 = Utils.findRequiredViewAsType(source, R.id.button21, "field 'button21'", Button.class);
+    target.filmMoreMainFlowFragmentButton = Utils.findRequiredViewAsType(source, R.id.filmMoreMainFlowFragmentButton, "field 'filmMoreMainFlowFragmentButton'", Button.class);
     target.textView23 = Utils.findRequiredViewAsType(source, R.id.textView23, "field 'textView23'", TextView.class);
-    target.materialBanner = Utils.findRequiredViewAsType(source, R.id.material_banner, "field 'materialBanner'", MaterialBanner.class);
-    target.adsBanner = Utils.findRequiredViewAsType(source, R.id.material_banner_adds, "field 'adsBanner'", MaterialBanner.class);
+    target.refreshMainFlow = Utils.findRequiredViewAsType(source, R.id.refreshMainFlow, "field 'refreshMainFlow'", SwipeRefreshLayout.class);
     target.buttonCinema = Utils.findRequiredViewAsType(source, R.id.buttonCinema, "field 'buttonCinema'", Button.class);
     target.buttonFilms = Utils.findRequiredViewAsType(source, R.id.buttonFilms, "field 'buttonFilms'", Button.class);
-    target.av1 = Utils.findRequiredViewAsType(source, R.id.av1, "field 'av1'", AvatarView.class);
-    target.av2 = Utils.findRequiredViewAsType(source, R.id.av2, "field 'av2'", AvatarView.class);
     target.comedyAvatar = Utils.findRequiredViewAsType(source, R.id.comedyAvatar, "field 'comedyAvatar'", AvatarView.class);
     target.actionAvatar = Utils.findRequiredViewAsType(source, R.id.actionAvatar, "field 'actionAvatar'", AvatarView.class);
     target.historicalAvatar = Utils.findRequiredViewAsType(source, R.id.historicalAvatar, "field 'historicalAvatar'", AvatarView.class);
@@ -41,6 +41,12 @@ public class MainFlowFragment_ViewBinding implements Unbinder {
     target.kiyv = Utils.findRequiredViewAsType(source, R.id.kiyv, "field 'kiyv'", AvatarView.class);
     target.kharkiv = Utils.findRequiredViewAsType(source, R.id.kharkiv, "field 'kharkiv'", AvatarView.class);
     target.odessa = Utils.findRequiredViewAsType(source, R.id.odessa, "field 'odessa'", AvatarView.class);
+    target.filmTitleMainFlowFragmentTextView = Utils.findRequiredViewAsType(source, R.id.filmTitleMainFlowFragmentTextView, "field 'filmTitleMainFlowFragmentTextView'", TextView.class);
+    target.filmDateMainFlowFragmentTextView = Utils.findRequiredViewAsType(source, R.id.filmDateMainFlowFragmentTextView, "field 'filmDateMainFlowFragmentTextView'", TextView.class);
+    target.filmDurationMainFlowFragmentTextView = Utils.findRequiredViewAsType(source, R.id.filmDurationMainFlowFragmentTextView, "field 'filmDurationMainFlowFragmentTextView'", TextView.class);
+    target.viewPager = Utils.findRequiredViewAsType(source, R.id.viewpager, "field 'viewPager'", LoopingViewPager.class);
+    target.favCinemasMainFlowFragmentRecyclerView = Utils.findRequiredViewAsType(source, R.id.favCinemasMainFlowFragmentRecyclerView, "field 'favCinemasMainFlowFragmentRecyclerView'", RecyclerView.class);
+    target.favCinemasMainFlowFragmentCardView = Utils.findRequiredViewAsType(source, R.id.favCinemasMainFlowFragmentCardView, "field 'favCinemasMainFlowFragmentCardView'", CardView.class);
   }
 
   @Override
@@ -51,14 +57,11 @@ public class MainFlowFragment_ViewBinding implements Unbinder {
     this.target = null;
 
     target.linLayout = null;
-    target.button21 = null;
+    target.filmMoreMainFlowFragmentButton = null;
     target.textView23 = null;
-    target.materialBanner = null;
-    target.adsBanner = null;
+    target.refreshMainFlow = null;
     target.buttonCinema = null;
     target.buttonFilms = null;
-    target.av1 = null;
-    target.av2 = null;
     target.comedyAvatar = null;
     target.actionAvatar = null;
     target.historicalAvatar = null;
@@ -69,5 +72,11 @@ public class MainFlowFragment_ViewBinding implements Unbinder {
     target.kiyv = null;
     target.kharkiv = null;
     target.odessa = null;
+    target.filmTitleMainFlowFragmentTextView = null;
+    target.filmDateMainFlowFragmentTextView = null;
+    target.filmDurationMainFlowFragmentTextView = null;
+    target.viewPager = null;
+    target.favCinemasMainFlowFragmentRecyclerView = null;
+    target.favCinemasMainFlowFragmentCardView = null;
   }
 }

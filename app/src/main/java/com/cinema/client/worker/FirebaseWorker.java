@@ -1,0 +1,24 @@
+package com.cinema.client.worker;
+
+import android.content.Context;
+
+import androidx.annotation.NonNull;
+import androidx.work.Worker;
+import androidx.work.WorkerParameters;
+
+public class FirebaseWorker extends Worker {
+
+    private static final String TAG = "MyWorker";
+
+    public FirebaseWorker(@NonNull Context appContext, @NonNull WorkerParameters workerParams) {
+        super(appContext, workerParams);
+    }
+
+    @NonNull
+    @Override
+    public Result doWork() {
+        // TODO(developer): add long running task here.
+        return Result.success();
+    }
+
+}
