@@ -1,0 +1,11 @@
+com.cinema.client
+com.cinema.client.activity
+com.cinema.client.adapters
+com.cinema.client.entities
+com.cinema.client.etc
+com.cinema.client.fragments
+com.cinema.client.requests
+com.cinema.client.requests.entities
+com.cinema.client.services
+com.cinema.client.utils
+com.cinema.client.worker
